@@ -66,6 +66,18 @@ class AssistantIntegrationTest {
         var stale=assertThrows(Problem.class,()->tx.execute(t->controller.accept(jwt,tenant,caseId,jobId,UUID.randomUUID().toString(),new AssistantController.AcceptInput(1L,Set.of("currency")))));
         assertEquals(409,stale.status);
     }
+    @Test void comparisonIsPinnedAndDeduplicatedSeparatelyFromOrdinaryReview() {
+        assertFalse(json.convert(Map.of("kind","REVIEW","expectedVersion",0),AssistantController.RunInput.class).compareRetrieval());
+        admin.update("UPDATE core.cases SET policies_initialized=true WHERE id=?",caseId);
+        admin.update("UPDATE worker.ai_budget SET total_limit_usd=1,tenant_daily_limit_usd=1");
+        var ordinary=tx.execute(t->controller.run(jwt,tenant,caseId,UUID.randomUUID().toString(),new AssistantController.RunInput(AssistantController.Kind.REVIEW,0L,null)));
+        var compared=tx.execute(t->controller.run(jwt,tenant,caseId,UUID.randomUUID().toString(),new AssistantController.RunInput(AssistantController.Kind.REVIEW,0L,null,true)));
+        var repeated=tx.execute(t->controller.run(jwt,tenant,caseId,UUID.randomUUID().toString(),new AssistantController.RunInput(AssistantController.Kind.REVIEW,0L,null,true)));
+        assertNotEquals(ordinary.get("jobId"),compared.get("jobId"));
+        assertEquals(compared.get("jobId"),repeated.get("jobId"));
+        assertEquals("true",db.queryForObject("SELECT input->>'compareRetrieval' FROM core.job_requests WHERE job_id=?",String.class,compared.get("jobId")));
+        assertEquals(400,assertThrows(Problem.class,()->tx.execute(t->controller.run(jwt,tenant,caseId,UUID.randomUUID().toString(),new AssistantController.RunInput(AssistantController.Kind.EXTRACTION,0L,null,true)))).status);
+    }
     @Test void rejectsUnsupportedFieldsAndRevokedMembership() {
         assertEquals(400,assertThrows(Problem.class,()->tx.execute(t->controller.accept(jwt,tenant,caseId,jobId,UUID.randomUUID().toString(),new AssistantController.AcceptInput(0L,Set.of("total"))))).status);
         admin.update("UPDATE core.memberships SET active=false WHERE tenant_id=? AND user_id=?",tenant,actor);

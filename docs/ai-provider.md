@@ -86,3 +86,25 @@ annotation verification, successful evaluation execution and held-out report, re
 manual-versus-assisted measurements, full assisted browser regression, broader
 failure and permission tests. The configured SDK timeout is a network timeout;
 strict end-to-end provider wall-clock containment also needs verification.
+
+## Experimental retrieval comparison
+
+An explicit `compareRetrieval: true` review command pins a comparison request in
+the immutable job input. Ordinary reviews remain full-text based. Comparison jobs
+record full-text, exact cosine and RRF(k=60) rankings over the same eligible policy
+corpus/query; this metadata does not replace the evidence used for the displayed
+review. Comparison and ordinary jobs deduplicate independently.
+
+The shared budget now also supports `text-embedding-3-small` at USD 0.02 per
+million input tokens (official model/API links and trade-offs in ADR 0004).
+Calls use 256 dimensions and float encoding, with no SDK retries. Empty corpora
+make no embedding call. Model-specific actual charges use the model recorded in
+the reservation; generation and embeddings cannot each spend the full allowance.
+
+V10 stores worker-owned immutable chunk vectors keyed by tenant, chunk ID/hash,
+model, embedding version and dimension. Exact cosine search is bounded to 200
+eligible chunks, plus an aggregate byte/token input limit. There is no separate
+vector database or approximate index. Current authorization is checked before and
+after sending; cache writes also require the current unexpired lease. The API
+role cannot read vectors. A cache miss can add latency and cost; larger corpora
+require a separate measured indexing decision.

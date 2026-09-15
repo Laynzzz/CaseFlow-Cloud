@@ -46,7 +46,7 @@ const schemas = {
   AIResult: object({output:{oneOf:[ref('AIExtraction'),ref('AIReview')]},model:str,promptVersion:str,schemaVersion:str,promptHash:str,schemaHash:str,callId:uuid,elapsedMs:{type:'integer'},inputTokens:{type:'integer'},outputTokens:{type:'integer'},estimatedCostUsd:str,pricingVersion:str,revision:version,retrievalMethod:str,evidence:{type:'object',additionalProperties:ref('AIEvidence')}}),
   AIJob: object({jobId:uuid,kind:{type:'string',enum:['EXTRACTION','REVIEW']},status:str,failureCode:nullable(str),revision:version,stale:bool,result:nullable(ref('AIResult'))}),
   AIJobs: object({enabled:bool,items:array(ref('AIJob'))}),
-  AIRun: object({kind:{type:'string',enum:['EXTRACTION','REVIEW']},expectedVersion:version,sourceId:nullable(uuid)},['kind','expectedVersion']),
+  AIRun: object({kind:{type:'string',enum:['EXTRACTION','REVIEW']},expectedVersion:version,sourceId:nullable(uuid),compareRetrieval:bool},['kind','expectedVersion']),
   AIAccept: object({expectedVersion:version,fields:{type:'array',minItems:1,maxItems:3,uniqueItems:true,items:{type:'string',enum:['vendor','currency','lineItems']}}}),
   AIAccepted: object({accepted:bool,version}),
   Document: object({jobId:uuid,attempt:{type:'integer'},status:str,failureCode:nullable(str),sha256:nullable(str),byteSize:nullable({type:'integer'}),createdAt:{type:'string',format:'date-time'}}),
@@ -67,6 +67,7 @@ const schemas = {
 Object.assign(schemas.AIResult.properties,{sourceId:nullable(uuid),sourceVersion:nullable(version),sourceSha256:nullable(str)});
 // Optional for historical results written before rank provenance was introduced.
 Object.assign(schemas.AIResult.properties,{retrievalQuery:nullable(str),retrievedChunkIds:array(uuid)});
+schemas.AIResult.properties.retrievalComparison={type:'object',additionalProperties:true};
 schemas.AIResult.required.push('sourceId','sourceVersion','sourceSha256');
 const paths = {};
 function endpoint(path, method, operationId, output, input, {auth=true,command=false,list=false}={}) {

@@ -19,7 +19,10 @@ import org.springframework.web.bind.annotation.*;
 public class AssistantController {
     private final JdbcTemplate db;private final Access access;private final Commands commands;private final Json json;private final Validator validator;
     public AssistantController(JdbcTemplate db,Access access,Commands commands,Json json,Validator validator){this.db=db;this.access=access;this.commands=commands;this.json=json;this.validator=validator;}
-    public record RunInput(@NotNull Kind kind,@NotNull @PositiveOrZero Long expectedVersion,UUID sourceId) {}
+    public record RunInput(@NotNull Kind kind,@NotNull @PositiveOrZero Long expectedVersion,UUID sourceId,Boolean compareRetrieval) {
+        public RunInput { compareRetrieval=Boolean.TRUE.equals(compareRetrieval); }
+        public RunInput(Kind kind,Long expectedVersion,UUID sourceId){this(kind,expectedVersion,sourceId,false);}
+    }
     public record AcceptInput(@NotNull @PositiveOrZero Long expectedVersion,@NotNull @Size(min=1,max=3) Set<String> fields) {}
     public enum Kind { EXTRACTION,REVIEW }
     private Map<String,Object> current(UUID tenant,UUID caseId,boolean lock) {
@@ -55,6 +58,7 @@ public class AssistantController {
             if(!Boolean.TRUE.equals(db.queryForObject("SELECT enabled FROM worker.ai_availability",Boolean.class)))throw new Problem(503,"AI testing is not configured. Manual purchase entry and policy search are available.");
             List<String> policies=new ArrayList<>();
             if(input.kind()==Kind.EXTRACTION) {
+                Problem.require(!input.compareRetrieval(),"Retrieval comparison is available for policy reviews only");
                 access.role(tenantId,actor,"REQUESTER",false);
                 if(!actor.equals(row.get("owner_id"))||!"DRAFT".equals(row.get("state")))throw Problem.forbidden();
                 if(input.sourceId()==null||!Boolean.TRUE.equals(db.queryForObject("SELECT EXISTS(SELECT 1 FROM core.sources WHERE tenant_id=? AND id=? AND case_id=? AND kind='QUOTE' AND state='INDEXED')",Boolean.class,tenantId,input.sourceId(),caseId)))throw Problem.missing();
@@ -67,11 +71,12 @@ public class AssistantController {
             }
             // Bound queue admission as well as provider spending; repeats at one revision reuse the logical job.
             if(!Boolean.TRUE.equals(db.queryForObject("SELECT pg_try_advisory_xact_lock(hashtextextended(?,29))",Boolean.class,tenantId.toString())))throw new Problem(409,"AI admission is busy. Retry with the same key.",true);
-            var existing=db.queryForList("SELECT * FROM core.job_requests WHERE tenant_id=? AND case_id=? AND kind=? AND source_id IS NOT DISTINCT FROM ? AND input->>'revision'=? AND status<>'FAILED' ORDER BY created_at DESC LIMIT 1",tenantId,caseId,input.kind().name(),input.sourceId(),Long.toString(revision));
+            var existing=db.queryForList("SELECT * FROM core.job_requests WHERE tenant_id=? AND case_id=? AND kind=? AND source_id IS NOT DISTINCT FROM ? AND input->>'revision'=? AND COALESCE((input->>'compareRetrieval')::boolean,false)=? AND status<>'FAILED' ORDER BY created_at DESC LIMIT 1",tenantId,caseId,input.kind().name(),input.sourceId(),Long.toString(revision),input.compareRetrieval());
             if(!existing.isEmpty())return output(existing.getFirst(),revision);
             int active=db.queryForObject("SELECT count(*) FROM core.job_requests WHERE tenant_id=? AND kind IN ('EXTRACTION','REVIEW') AND status IN ('QUEUED','RUNNING','RETRY_WAIT')",Integer.class,tenantId);
             if(active>=10)throw new Problem(409,"The organization AI queue is full. Try again later.",true);
             UUID jobId=UUID.randomUUID();var payload=new LinkedHashMap<String,Object>();payload.put("revision",revision);payload.put("purchase",json.object(row.get("purchase").toString()));payload.put("policyIds",policies);payload.put("sourceId",input.sourceId());
+            payload.put("compareRetrieval",input.compareRetrieval());
             if(input.kind()==Kind.EXTRACTION) {
                 var source=db.queryForMap("SELECT version,sha256 FROM core.sources WHERE tenant_id=? AND id=?",tenantId,input.sourceId());
                 payload.put("sourceVersion",source.get("version"));payload.put("sourceSha256",source.get("sha256"));

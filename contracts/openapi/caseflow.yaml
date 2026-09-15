@@ -5503,6 +5503,10 @@
               "type": "string",
               "format": "uuid"
             }
+          },
+          "retrievalComparison": {
+            "type": "object",
+            "additionalProperties": true
           }
         },
         "required": [
@@ -5608,6 +5612,9 @@
             "type": "string",
             "format": "uuid",
             "nullable": true
+          },
+          "compareRetrieval": {
+            "type": "boolean"
           }
         },
         "required": [

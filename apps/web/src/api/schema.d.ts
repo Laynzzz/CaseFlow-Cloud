@@ -789,6 +789,9 @@ export interface components {
       sourceSha256: string | null;
       retrievalQuery?: string | null;
       retrievedChunkIds?: string[];
+      retrievalComparison?: {
+        [key: string]: unknown;
+      };
     };
     AIJob: {
       /** Format: uuid */
@@ -811,6 +814,7 @@ export interface components {
       expectedVersion: number;
       /** Format: uuid */
       sourceId?: string | null;
+      compareRetrieval?: boolean;
     };
     AIAccept: {
       expectedVersion: number;
