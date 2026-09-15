@@ -1,0 +1,24 @@
+Observed local browser regression, 2026-09-15. Synthetic data only.
+
+Case: 776e82aa-ff09-49bf-996d-05773e339614, requester in Acme Studio.
+Initially vendor Synthetic Equipment Ltd, two Equipment items at USD 2100 each,
+total USD 4200, saved purchase version 4.
+
+1. Browser displayed the native file-upload button, but activating it exposed no
+   controllable native Open window. No file was selected; that specific picker
+   regression remains unverified. No unrelated Windows app was controlled.
+2. Selected Source format -> Paste plain text. Entered quote name Synthetic
+   browser upload and the text in fixtures/quotes/browser-upload.txt.
+3. Upload and index queued real storage/parser work. Source became INDEXED and
+   appeared in the Quote to extract selector. The form cleared after success.
+   The purchase advanced to version 5 with the original saved values preserved.
+4. Selected that quote and requested real AI extraction. It succeeded under
+   prompt v5: vendor Synthetic Browser Supplies 12, Desk lamp quantity 2 at
+   USD 35 each, quoted total USD 70. Citations displayed source c2b30024, page 1.
+5. Checked only Vendor and accepted selected fields. Saved version became 6.
+   Vendor changed to Synthetic Browser Supplies 12; Equipment 2 x USD 2100 and
+   total USD 4200 remained unchanged. Historical suggestions were stale.
+
+This is a browser observation, not a reusable automated browser suite or a
+human quality grade. It verifies the pasted-TXT path and selected acceptance;
+it does not claim that native file-picker selection was tested successfully.

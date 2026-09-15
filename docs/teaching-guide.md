@@ -530,3 +530,11 @@ child receives runtime paths but no database, storage or AI environment secrets.
 A small compressed PDF expanding beyond the 8 MiB content-stream limit is rejected,
 and a real resource-limited child refuses a 600 MiB allocation. The configured
 512 MiB memory limit is containment, not a filesystem/network sandbox.
+
+The React/TypeScript `Sources.tsx` screen now supports pasted plain text as well
+as PDF/TXT files. Pasted text becomes a TXT `File` in the browser and uses the
+same authenticated upload/finalize/index pipeline. Editing happens before upload;
+indexed content remains immutable. No second storage format or server endpoint
+was introduced. The real browser check uploaded a USD 70 quote, extracted it,
+then accepted only the supplier name. The existing USD 4200 line items and total
+stayed unchanged, demonstrating explicit field selection and revision checks.

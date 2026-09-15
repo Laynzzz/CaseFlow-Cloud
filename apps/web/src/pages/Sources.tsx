@@ -58,6 +58,8 @@ export function Sources({
   const cache = useQueryClient();
   const [name, setName] = useState("");
   const [file, setFile] = useState<File>();
+  const [inputMode, setInputMode] = useState<"file" | "text">("file");
+  const [sourceText, setSourceText] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<unknown>();
   const [expanded, setExpanded] = useState<string>();
@@ -91,12 +93,16 @@ export function Sources({
   }
   async function upload(event: React.FormEvent) {
     event.preventDefault();
-    if (!file) return;
-    const extension = file.name.split(".").pop()?.toLowerCase();
+    const selectedFile =
+      inputMode === "text"
+        ? new File([sourceText], "pasted-source.txt", { type: "text/plain" })
+        : file;
+    if (!selectedFile) return;
+    const extension = selectedFile.name.split(".").pop()?.toLowerCase();
     if (
       !["pdf", "txt"].includes(extension ?? "") ||
-      file.size === 0 ||
-      file.size > 10485760
+      selectedFile.size === 0 ||
+      selectedFile.size > 10485760
     ) {
       setError("Choose a nonempty PDF or TXT file up to 10 MB.");
       return;
@@ -112,7 +118,7 @@ export function Sources({
             kind: caseId ? "QUOTE" : "POLICY",
             caseId,
             expectedCaseVersion: caseVersion,
-            byteSize: file.size,
+            byteSize: selectedFile.size,
             mediaType: extension === "pdf" ? "application/pdf" : "text/plain",
           },
         }),
@@ -126,7 +132,7 @@ export function Sources({
             Authorization: `Bearer ${auth.token}`,
             "Content-Type": "application/octet-stream",
           },
-          body: file,
+          body: selectedFile,
         },
       );
       if (!response.ok)
@@ -146,6 +152,7 @@ export function Sources({
         }),
       );
       setFile(undefined);
+      setSourceText("");
       setName("");
       setUploadKey((k) => k + 1);
     } catch (e) {
@@ -204,25 +211,63 @@ export function Sources({
             {caseId ? "Quote name" : "Policy name"}
             <input
               required
+              disabled={busy}
               maxLength={120}
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
           </label>
           <label>
-            PDF or TXT file
-            <input
-              key={uploadKey}
-              type="file"
-              accept=".pdf,.txt"
-              onChange={(e) => setFile(e.target.files?.[0])}
-            />
+            Source format
+            <select
+              disabled={busy}
+              value={inputMode}
+              onChange={(e) => setInputMode(e.target.value as "file" | "text")}
+            >
+              <option value="file">Upload a PDF or TXT file</option>
+              <option value="text">Paste plain text</option>
+            </select>
           </label>
+          {inputMode === "file" ? (
+            <label>
+              PDF or TXT file
+              <input
+                key={uploadKey}
+                type="file"
+                disabled={busy}
+                accept=".pdf,.txt"
+                onChange={(e) => setFile(e.target.files?.[0])}
+              />
+            </label>
+          ) : (
+            <label>
+              {caseId ? "Quote text" : "Policy text"}
+              <textarea
+                required
+                disabled={busy}
+                rows={9}
+                maxLength={1000000}
+                value={sourceText}
+                onChange={(e) => setSourceText(e.target.value)}
+              />
+            </label>
+          )}
           <p className="hint">
             Up to 10 MB and 50 pages. PDFs must contain selectable text; scanned
             images and encrypted files are unsupported.
           </p>
-          <button disabled={busy || !file}>
+          {inputMode === "text" && (
+            <p className="hint">
+              Check and edit the text before uploading. It will be saved as a
+              TXT source. To correct an indexed source, upload a corrected
+              source.
+            </p>
+          )}
+          <button
+            disabled={
+              busy || (inputMode === "file" ? !file : !sourceText.trim())
+            }
+          >
             {busy ? "Uploading…" : "Upload and index"}
           </button>
         </form>

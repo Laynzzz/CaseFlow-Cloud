@@ -1,0 +1,6 @@
+Vendor: Synthetic Browser Supplies 12
+Item: Desk lamp
+Quantity: 2
+Unit price: 35.00
+Currency: USD
+Total: 70.00
