@@ -1,5 +1,24 @@
 # Evidence index
 
+## 2026-09-15: live AI compatibility and development evaluation
+
+The user funded the API account after initial HTTP 429 failures. Live extraction,
+selected acceptance and review now work locally; R2 remains experimental.
+
+| Claim | Evidence |
+| --- | --- |
+| Real extraction, acceptance/replay and cited review | [API journey](evidence/2026-09-15-r2/live-1789475915496/journey.json), [provider call provenance](evidence/2026-09-15-r2/live-1789475915496/calls.json) |
+| Browser requests suggestions, accepts vendor only, increments revision and shows a new review | [Observed requester flow](evidence/2026-09-15-r2/browser-live.txt) |
+| Currency suffix rejected, then numeric schema tightened | [Rejected output](evidence/2026-09-15-r2/live-1789475807108/calls.json) |
+| Malformed citation rejected before schema enum restricted IDs | [Initial development calls](evidence/2026-09-15-r2/development-first/calls.json) |
+| First 10 development cases: 40/40 fields, Recall@5 8/8, correct abstention 2/2, false abstention 3/8 | [Diagnostic report](evidence/2026-09-15-r2/development-v3/smoke-report.json), [raw predictions](evidence/2026-09-15-r2/development-v3/predictions.jsonl), [all 20 calls](evidence/2026-09-15-r2/development-v3/calls.json) |
+| All 42 worker checks pass after V9 and schema hardening | [Worker report](evidence/2026-09-15-r2/live-worker-tests.xml) |
+
+These are synthetic development observations in one family, with generated
+references awaiting human verification. Claim support is ungraded. No held-out
+score, real-user time saving or R2 completion is claimed. Historical evidence
+below retains the status at those earlier checkpoints.
+
 ## 2026-09-15: R2 implementation checkpoint (release still open)
 
 Commits through this checkpoint add bounded PDF/TXT parsing, immutable quote and

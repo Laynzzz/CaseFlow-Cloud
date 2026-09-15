@@ -421,3 +421,29 @@ The runner's held-out guard requires a real human reference-review record with
 matching dataset hashes and full reviewed counts. The schema guard is not itself
 proof that someone did the review. Dry validation and automated tests pass; a
 successful live run and quality results still await provider access and review.
+
+## R2 checkpoint: live AI works, and development failures guide fixes (2026-09-15)
+
+After the user resolved billing, the real model returned a total formatted as
+`4200.00 USD`; the numeric validator correctly rejected it. A later development
+response invented part of a citation ID. The output schema now requires decimal
+amounts and separate currency codes and restricts citations to the supplied IDs.
+Post-validation remains the final check. Neither fix relied on held-out data.
+
+Private call evidence in migration V9 preserves rejected model output and its
+hashes without making it a business result or exposing it through API views.
+This matters because debugging only successful output hides the failure modes.
+The exporter scopes an evidence file to explicitly recorded synthetic job IDs.
+
+The real API journey now extracts a quote, accepts selected fields, and generates
+a cited review. Browser verification requested another extraction, accepted only
+the vendor, observed the version advance from 3 to 4, and requested a new review.
+Old proposals became stale. Line items display as readable quantities and prices
+instead of JSON. All 42 worker checks and the frontend build pass.
+
+The first 10 development cases under schema v3 completed: 40/40 reference fields,
+8/8 relevant passages retrieved, 2/2 correct abstentions, and 3/8 false abstentions.
+These are preliminary comparisons with generated references in one development
+family. Human reference verification, claim support, held-out results, embedding
+comparison and outcome measurements remain open. Do not describe this as a 100%
+accurate system; the false-abstention result already demonstrates a limitation.

@@ -1,0 +1,37 @@
+{
+  "jobIds": [
+    "edccbca4-fd33-49ef-9881-8a3d106020f2"
+  ],
+  "calls": [
+    {
+      "id": "16909f31-a23e-4e1e-ad98-2692df6608b5",
+      "tenant_id": "69461d55-4af7-46b4-aac9-946d0807eac9",
+      "job_id": "edccbca4-fd33-49ef-9881-8a3d106020f2",
+      "attempt": 1,
+      "fence": 1,
+      "purpose": "extraction",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "pricing_version": "openai-standard-2026-09-15",
+      "reserved_usd": "0.019661",
+      "actual_usd": "0.000590",
+      "input_tokens": 590,
+      "output_tokens": 221,
+      "state": "SETTLED",
+      "error_code": "INVALID_TOTAL",
+      "elapsed_ms": 3234,
+      "created_at": "2026-09-15 12:37:12.352677+00:00",
+      "response_evidence": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "rawOutput": "{\"vendor\":{\"value\":\"Synthetic Equipment Ltd\",\"citations\":[{\"chunkId\":\"c4f73f14-48cd-5b69-9934-d858cb587502\",\"quote\":\"Vendor: Synthetic Equipment Ltd\"}]},\"currency\":{\"value\":\"USD\",\"citations\":[{\"chunkId\":\"c4f73f14-48cd-5b69-9934-d858cb587502\",\"quote\":\"Currency: USD\"}]},\"total\":{\"value\":\"4200.00 USD\",\"citations\":[{\"chunkId\":\"c4f73f14-48cd-5b69-9934-d858cb587502\",\"quote\":\"Total: 4200.00 USD\"}]},\"lineItems\":{\"value\":[{\"description\":\"Equipment\",\"quantity\":\"2\",\"unitPrice\":\"2100.00\"}],\"citations\":[{\"chunkId\":\"c4f73f14-48cd-5b69-9934-d858cb587502\",\"quote\":\"Item: Equipment; Quantity: 2; Unit price: 2100.00\"}]},\"warnings\":[]}",
+        "truncated": false,
+        "promptHash": "efdbb037a58576c6941512869697478b5a39ffa3ef1364bbd8bc6a56335382db",
+        "schemaHash": "c6d9996a26972b671708a7c05b51b0aee5480327ce10bb9dff3c427460ef3873",
+        "promptVersion": "purchase-assistant-2026-09-15-v2",
+        "schemaVersion": "purchase-assistant-v1",
+        "rawOutputSha256": "b956f8da99532e0461afe4d9fb4b90d5f3d277c7a77736ffeff636c4dba8f2f6"
+      }
+    }
+  ],
+  "accountedUsd": "0.000590",
+  "scope": "Selected synthetic job IDs only; unknown usage retains its reservation"
+}

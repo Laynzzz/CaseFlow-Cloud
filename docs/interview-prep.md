@@ -1,10 +1,24 @@
 # CaseFlow interview preparation
 
-Status: local purchase and document checkpoint, September 14, 2026.
-AI and cloud remain planned. Use the evidence index before making claims.
-The document checkpoint at the end records the asynchronous implementation.
+Status: local purchase, document and live AI checkpoint, September 15, 2026.
+AI extraction, explicit acceptance and cited review run locally; held-out quality
+and cloud gates remain open. Use the evidence index before making claims.
 
 ## Explain the product in 30 seconds
+
+Latest AI checkpoint: real quote extraction, explicit selected-field acceptance,
+and a cited policy review work locally. In the first ten development cases,
+schema v3 produced 40/40 field matches and 8/8 relevant passages, but 3/8 answerable
+reviews incorrectly flagged insufficient evidence. References and claim support
+still need human review; these results do not establish held-out quality.
+
+- **Why use both a strict model schema and code validation?** The schema constrains
+  decimal formats and allowed citation IDs; code still checks exact source quotes,
+  arithmetic, permissions and draft versions. Live failures exposed a currency
+  suffix and a malformed citation ID, both rejected before acceptance.
+- **Does a valid citation make a claim true?** No. It proves the quoted text exists
+  in authorized evidence. A person still needs to check whether the passage
+  supports the whole claim. The release report keeps that measure ungraded.
 
 CaseFlow lets an employee submit a purchase request, assign two reviewers and
 track their decisions. For example, a $4,200 laptop request goes to a manager

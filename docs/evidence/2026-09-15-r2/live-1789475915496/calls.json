@@ -1,0 +1,66 @@
+{
+  "jobIds": [
+    "0aafca6e-a677-41b7-ae4a-3369b25df09b",
+    "e850855c-cfc9-477b-9f61-d9d7a8b62028"
+  ],
+  "calls": [
+    {
+      "id": "a10172ee-78a8-4f1b-a76d-853e9b6d8580",
+      "tenant_id": "69461d55-4af7-46b4-aac9-946d0807eac9",
+      "job_id": "0aafca6e-a677-41b7-ae4a-3369b25df09b",
+      "attempt": 1,
+      "fence": 1,
+      "purpose": "extraction",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "pricing_version": "openai-standard-2026-09-15",
+      "reserved_usd": "0.019661",
+      "actual_usd": "0.000702",
+      "input_tokens": 794,
+      "output_tokens": 240,
+      "state": "SETTLED",
+      "error_code": null,
+      "elapsed_ms": 5266,
+      "created_at": "2026-09-15 12:39:08.800800+00:00",
+      "response_evidence": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "rawOutput": "{\"vendor\":{\"value\":\"Synthetic Equipment Ltd\",\"citations\":[{\"chunkId\":\"9d12ba02-e3f8-5c19-817a-63e6091d1b0e\",\"quote\":\"Vendor: Synthetic Equipment Ltd\"}]},\"currency\":{\"value\":\"USD\",\"citations\":[{\"chunkId\":\"9d12ba02-e3f8-5c19-817a-63e6091d1b0e\",\"quote\":\"Currency: USD\"}]},\"total\":{\"value\":\"4200.00\",\"citations\":[{\"chunkId\":\"9d12ba02-e3f8-5c19-817a-63e6091d1b0e\",\"quote\":\"Total: 4200.00 USD\"}]},\"lineItems\":{\"value\":[{\"description\":\"Equipment\",\"quantity\":\"2\",\"unitPrice\":\"2100.00\"}],\"citations\":[{\"chunkId\":\"9d12ba02-e3f8-5c19-817a-63e6091d1b0e\",\"quote\":\"Item: Equipment; Quantity: 2; Unit price: 2100.00\"}]},\"warnings\":[]}",
+        "truncated": false,
+        "promptHash": "f451f8f2f29a80f8d496e8cb6f58a3a474518d3354568eb0539ec7160c8e4707",
+        "schemaHash": "ea8cffeb68d70dd397d09686c866493dc3fdea6e4b810d261b53a2cfcf540664",
+        "promptVersion": "purchase-assistant-2026-09-15-v3",
+        "schemaVersion": "purchase-assistant-v2",
+        "rawOutputSha256": "d1314927ed76a323c15c9d8f0165fba3dd4045c2b639f86d0a4e8f591906d4ef"
+      }
+    },
+    {
+      "id": "c5135ab5-4320-4a04-8753-46b2b9e68435",
+      "tenant_id": "69461d55-4af7-46b4-aac9-946d0807eac9",
+      "job_id": "e850855c-cfc9-477b-9f61-d9d7a8b62028",
+      "attempt": 1,
+      "fence": 1,
+      "purpose": "review",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "pricing_version": "openai-standard-2026-09-15",
+      "reserved_usd": "0.019661",
+      "actual_usd": "0.000680",
+      "input_tokens": 894,
+      "output_tokens": 201,
+      "state": "SETTLED",
+      "error_code": null,
+      "elapsed_ms": 2359,
+      "created_at": "2026-09-15 12:39:15.618681+00:00",
+      "response_evidence": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "rawOutput": "{\"summary\":\"The purchase request is for equipment totaling 4200.00 USD from Synthetic Equipment Ltd with 2 units at a unit price of 2100.00 each. The description and justification are provided. However, the cost center is missing, which is required for equipment purchases before approval according to the purchasing policy.\",\"missing_information\":[\"Cost center\"],\"policy_findings\":[{\"claim\":\"Equipment purchases require a cost center before approval.\",\"citations\":[{\"chunkId\":\"1a6aa1cf-f7c1-55af-80ad-e5ddabcc7e94\",\"quote\":\"Equipment purchases require a cost center before approval. This is a synthetic purchasing policy.\"}]}],\"citations\":[{\"chunkId\":\"1a6aa1cf-f7c1-55af-80ad-e5ddabcc7e94\",\"quote\":\"Equipment purchases require a cost center before approval. This is a synthetic purchasing policy.\"}],\"insufficient_evidence\":false}",
+        "truncated": false,
+        "promptHash": "d984ec86e96f2ae16244878a019ea57773db40048f61acee13c7023226edd7f3",
+        "schemaHash": "d6d1e34659091e68901fa181d127579ac18fc56647f638a1777d9df24816633d",
+        "promptVersion": "purchase-assistant-2026-09-15-v3",
+        "schemaVersion": "purchase-assistant-v2",
+        "rawOutputSha256": "4168540612d8350bd8ab0e4c7d9e4d985aecbadc8f252a77c0025faa19f93d2c"
+      }
+    }
+  ],
+  "accountedUsd": "0.001382",
+  "scope": "Selected synthetic job IDs only; unknown usage retains its reservation"
+}

@@ -1,0 +1,232 @@
+Observed synthetic requester flow: requested extraction on purchase version 3, checked only Vendor, accepted selected fields, saw saved version 4 and old results disabled; requested review on version 4 and observed a successful cost-center finding with a source quotation.
+
+- link "Skip to content":
+  - /url: "#workspace"
+- complementary:
+  - link "CaseFlowCloud":
+    - /url: /
+  - text: Organization
+  - combobox "Organization":
+    - option "Select organization" [disabled]
+    - option "Acme Studio" [selected]
+  - navigation "Main navigation":
+    - link "Purchase requests":
+      - /url: /
+    - link "New request":
+      - /url: /new
+    - link "My account":
+      - /url: /account
+  - strong: requester
+  - generic: requester
+  - button "Sign out"
+- main:
+  - link "← Purchase requests":
+    - /url: /
+  - paragraph: Synthetic Equipment Ltd
+  - heading "Equipment purchase" [level=1]
+  - generic: draft
+  - heading "Purchase details" [level=2]
+  - term: Total
+  - definition: USD 4200.00
+  - term: Cost center
+  - definition: Not entered
+  - term: Business justification
+  - definition: Synthetic equipment replacement
+  - table:
+    - rowgroup:
+      - row "Item Quantity Unit price":
+        - columnheader "Item"
+        - columnheader "Quantity"
+        - columnheader "Unit price"
+    - rowgroup:
+      - row "Equipment 2 2100.00":
+        - cell "Equipment"
+        - cell "2"
+        - cell "2100.00"
+  - paragraph: Saved version 4 · 9/15/2026, 8:42:47 AM
+  - button "Edit draft"
+  - heading "Approval steps" [level=2]
+  - generic: "01"
+  - heading "First review" [level=3]
+  - text: Reviewer for step 1
+  - combobox "Reviewer for step 1":
+    - option "Select reviewer" [selected]
+    - option "finance"
+    - option "manager"
+  - generic: "02"
+  - heading "Final review" [level=3]
+  - text: Reviewer for step 2
+  - combobox "Reviewer for step 2":
+    - option "Select reviewer" [selected]
+    - option "finance"
+    - option "manager"
+  - button "Save reviewers"
+  - button "Submit for approval"
+  - button "Cancel request"
+  - heading "Policies for this purchase" [level=2]
+  - paragraph: Choose the currently published policies for this draft. Refreshing replaces the selection and makes older review results stale.
+  - button "Refresh published policies"
+  - strong: Synthetic live policy
+  - paragraph: Pinned version 2
+  - generic: published
+  - button "Read policy"
+  - strong: Synthetic live policy
+  - paragraph: Pinned version 2
+  - generic: published
+  - button "Read policy"
+  - strong: Synthetic live policy
+  - paragraph: Pinned version 2
+  - generic: published
+  - button "Read policy"
+  - strong: Synthetic live policy
+  - paragraph: Pinned version 2
+  - generic: published
+  - button "Read policy"
+  - strong: Synthetic live policy
+  - paragraph: Pinned version 2
+  - generic: published
+  - button "Read policy"
+  - text: Search policy text
+  - textbox "Search policy text":
+    - /placeholder: "Example: cost center"
+  - button "Find passages"
+  - paragraph: Keyword search returns up to five matching passages. This is source text, not an AI interpretation.
+  - heading "Vendor quotes" [level=2]
+  - paragraph: Attach the quote that supports this purchase. Your saved purchase details stay under your control.
+  - text: Quote name
+  - textbox "Quote name"
+  - text: PDF or TXT file
+  - button "PDF or TXT file"
+  - paragraph: Up to 10 MB and 50 pages. PDFs must contain selectable text; scanned images and encrypted files are unsupported.
+  - button "Upload and index" [disabled]
+  - button "Check source status"
+  - strong: Synthetic live quote
+  - paragraph: 1 KB · version 1
+  - generic: indexed
+  - button "View source text"
+  - heading "AI review assistant" [level=2]
+  - paragraph: Experimental assistance. Check each suggestion against its source. You choose what to save; people make every approval decision.
+  - text: Quote to extract
+  - combobox "Quote to extract":
+    - option "Select an indexed quote"
+    - option "Synthetic live quote" [selected]
+  - button "Suggest purchase details"
+  - button "Create policy review"
+  - button "Check AI status"
+  - article:
+    - heading "Policy review · purchase version 4" [level=3]
+    - generic: succeeded
+    - paragraph: The purchase request is for equipment costing a total of 4200.00 USD from Synthetic Equipment Ltd. The justification and description correspond to equipment purchase and replacement. However, the request lacks a specified cost center, which is mandatory according to the synthetic purchasing policy for equipment purchases.
+    - paragraph: "Missing information: Cost center"
+    - paragraph: Equipment purchases require a cost center before approval.
+    - blockquote:
+      - generic: Source 09e127f3 · page 1
+      - paragraph: Equipment purchases require a cost center before approval. This is a synthetic purchasing policy.
+  - article:
+    - heading "Purchase suggestions · purchase version 3" [level=3]
+    - generic: succeeded
+    - status: This result uses an older purchase or policy selection. It cannot be accepted into the current draft.
+    - checkbox "Vendor" [disabled]
+    - text: Vendor
+    - text: Currently saved
+    - generic: Synthetic Equipment Ltd
+    - text: Suggested
+    - generic: Synthetic Equipment Ltd
+    - blockquote:
+      - generic: Source c18d6472 · page 1
+      - paragraph: "Vendor: Synthetic Equipment Ltd"
+    - checkbox "Currency" [disabled]
+    - text: Currency
+    - text: Currently saved
+    - generic: USD
+    - text: Suggested
+    - generic: USD
+    - blockquote:
+      - generic: Source c18d6472 · page 1
+      - paragraph: "Currency: USD"
+    - checkbox "Line items" [disabled]
+    - text: Line items
+    - text: Currently saved
+    - generic: "Equipment: 2 × 2100.00 each"
+    - text: Suggested
+    - generic: "Equipment: 2 × 2100.00 each"
+    - blockquote:
+      - generic: Source c18d6472 · page 1
+      - paragraph: "Item: Equipment; Quantity: 2; Unit price: 2100.00"
+    - paragraph: "Quoted total: 4200.00. The saved total is calculated from accepted line items and currency."
+    - button "Accept selected fields" [disabled]
+  - article:
+    - heading "Policy review · purchase version 3" [level=3]
+    - generic: succeeded
+    - status: This result uses an older purchase or policy selection. It cannot be accepted into the current draft.
+    - paragraph: The purchase request is for equipment totaling 4200.00 USD from Synthetic Equipment Ltd with 2 units at a unit price of 2100.00 each. The description and justification are provided. However, the cost center is missing, which is required for equipment purchases before approval according to the purchasing policy.
+    - paragraph: "Missing information: Cost center"
+    - paragraph: Equipment purchases require a cost center before approval.
+    - blockquote:
+      - generic: Source 09e127f3 · page 1
+      - paragraph: Equipment purchases require a cost center before approval. This is a synthetic purchasing policy.
+  - article:
+    - heading "Purchase suggestions · purchase version 2" [level=3]
+    - generic: succeeded
+    - status: This result uses an older purchase or policy selection. It cannot be accepted into the current draft.
+    - checkbox "Vendor" [disabled]
+    - text: Vendor
+    - text: Currently saved
+    - generic: Synthetic Equipment Ltd
+    - text: Suggested
+    - generic: Synthetic Equipment Ltd
+    - blockquote:
+      - generic: Source c18d6472 · page 1
+      - paragraph: "Vendor: Synthetic Equipment Ltd"
+    - checkbox "Currency" [disabled]
+    - text: Currency
+    - text: Currently saved
+    - generic: USD
+    - text: Suggested
+    - generic: USD
+    - blockquote:
+      - generic: Source c18d6472 · page 1
+      - paragraph: "Currency: USD"
+    - checkbox "Line items" [disabled]
+    - text: Line items
+    - text: Currently saved
+    - generic: "Equipment: 2 × 2100.00 each"
+    - text: Suggested
+    - generic: "Equipment: 2 × 2100.00 each"
+    - blockquote:
+      - generic: Source c18d6472 · page 1
+      - paragraph: "Item: Equipment; Quantity: 2; Unit price: 2100.00"
+    - paragraph: "Quoted total: 4200.00. The saved total is calculated from accepted line items and currency."
+    - button "Accept selected fields" [disabled]
+  - heading "Discussion and audit history" [level=2]
+  - text: Add a comment
+  - textbox "Add a comment"
+  - button "Post comment" [disabled]
+  - list:
+    - strong: review succeeded
+    - time: 9/15/2026, 8:39:18 AM
+    - strong: review running
+    - time: 9/15/2026, 8:39:15 AM
+    - strong: ai review requested
+    - time: 9/15/2026, 8:39:15 AM
+    - strong: ai suggestions accepted
+    - time: 9/15/2026, 8:39:15 AM
+    - strong: extraction succeeded
+    - time: 9/15/2026, 8:39:14 AM
+    - strong: extraction running
+    - time: 9/15/2026, 8:39:08 AM
+    - strong: ai extraction requested
+    - time: 9/15/2026, 8:39:07 AM
+    - strong: policies refreshed
+    - time: 9/15/2026, 8:39:07 AM
+    - strong: ingestion succeeded
+    - time: 9/15/2026, 8:39:07 AM
+    - strong: ingestion running
+    - time: 9/15/2026, 8:39:06 AM
+    - strong: source finalized
+    - time: 9/15/2026, 8:39:06 AM
+    - strong: source upload created
+    - time: 9/15/2026, 8:39:05 AM
+    - strong: draft created
+    - time: 9/15/2026, 8:38:34 AM
+  - generic: Development build · Synthetic demonstration data

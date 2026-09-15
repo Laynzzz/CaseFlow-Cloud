@@ -1,0 +1,171 @@
+{
+  "id": "equipment-001",
+  "startedAt": "2026-09-15T12:39:44.079Z",
+  "sourceMap": {
+    "53bb75cf-d1e1-42b1-a0ea-021edce14d93": "equipment-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "equipment-p1",
+      "source": {
+        "id": "53bb75cf-d1e1-42b1-a0ea-021edce14d93",
+        "kind": "POLICY",
+        "name": "Synthetic equipment-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 58,
+        "sha256": "d23d7939ddf5c48a4275d8f563f49f8ae3f762a9157cafae9d4edef837f5d8d4",
+        "jobId": "c5b2c753-07c7-4d6d-b10d-e005c743605c",
+        "failureCode": null
+      },
+      "chunks": {
+        "items": [
+          {
+            "id": "f9aec103-e16b-5026-a579-712269beabee",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 58,
+            "text": "Equipment purchases require a cost center before approval.",
+            "sha256": "d23d7939ddf5c48a4275d8f563f49f8ae3f762a9157cafae9d4edef837f5d8d4"
+          }
+        ],
+        "source": {
+          "id": "53bb75cf-d1e1-42b1-a0ea-021edce14d93",
+          "kind": "POLICY",
+          "name": "Synthetic equipment-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 58,
+          "sha256": "d23d7939ddf5c48a4275d8f563f49f8ae3f762a9157cafae9d4edef837f5d8d4",
+          "jobId": "c5b2c753-07c7-4d6d-b10d-e005c743605c",
+          "failureCode": null
+        },
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        }
+      }
+    }
+  ],
+  "tenantId": "2757759f-1349-4124-83de-640cb682893c",
+  "caseId": "c3ec9ca3-7fdf-49c6-877d-d1e8718a2cdc",
+  "quote": {
+    "id": "421a925f-7d39-4e9c-920c-6bb20f102d75",
+    "kind": "QUOTE",
+    "name": "Synthetic equipment-001 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "c3ec9ca3-7fdf-49c6-877d-d1e8718a2cdc",
+    "mediaType": "text/plain",
+    "byteSize": 114,
+    "sha256": "b4c573ff5f52550f8bb92329892c24b607a18d2541a7f1526ed7a7fa7d3fd22a",
+    "jobId": "54e1747c-3760-42c5-9919-ddfcff8e0807",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "53bb75cf-d1e1-42b1-a0ea-021edce14d93",
+        "name": "Synthetic equipment-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Equipment kit",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "a53366c7-b1e9-4cb1-9db6-5ec265311f67",
+    "kind": "EXTRACTION",
+    "status": "FAILED",
+    "failureCode": "INVALID_AI_OUTPUT",
+    "revision": 2,
+    "stale": false,
+    "result": null
+  },
+  "review": {
+    "jobId": "6031c601-a390-47d4-a7e4-cca5fa9b89f7",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "0130a234-fb3c-4953-8647-014a9ff0f3a5",
+      "output": {
+        "summary": "The purchase request is incomplete because it lacks a cost center, description details, justification, vendor information, and line items. According to the policy, equipment purchases require a cost center before approval, which is missing here.",
+        "citations": [
+          {
+            "quote": "Equipment purchases require a cost center before approval.",
+            "chunkId": "f9aec103-e16b-5026-a579-712269beabee"
+          }
+        ],
+        "policy_findings": [
+          {
+            "claim": "Equipment purchases require a cost center before approval.",
+            "citations": [
+              {
+                "quote": "Equipment purchases require a cost center before approval.",
+                "chunkId": "f9aec103-e16b-5026-a579-712269beabee"
+              }
+            ]
+          }
+        ],
+        "missing_information": [
+          "costCenter",
+          "justification",
+          "vendor",
+          "lineItems",
+          "description"
+        ],
+        "insufficient_evidence": false
+      },
+      "evidence": {
+        "f9aec103-e16b-5026-a579-712269beabee": {
+          "page": 1,
+          "text": "Equipment purchases require a cost center before approval.",
+          "start": 0,
+          "sourceId": "53bb75cf-d1e1-42b1-a0ea-021edce14d93"
+        }
+      },
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 1936,
+      "promptHash": "784499ce70e8a14067edfd1e9a0781fcc14a3f501b9aa664eddd32818840a1d2",
+      "schemaHash": "d6d1e34659091e68901fa181d127579ac18fc56647f638a1777d9df24816633d",
+      "inputTokens": 528,
+      "outputTokens": 164,
+      "sourceSha256": null,
+      "promptVersion": "purchase-assistant-2026-09-15-v3",
+      "schemaVersion": "purchase-assistant-v2",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Equipment OR kit OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000474",
+      "retrievedChunkIds": [
+        "f9aec103-e16b-5026-a579-712269beabee"
+      ]
+    }
+  },
+  "retrievedPassageIds": [
+    "equipment-p1"
+  ],
+  "finishedAt": "2026-09-15T12:39:57.650Z"
+}
