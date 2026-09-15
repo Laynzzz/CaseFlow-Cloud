@@ -324,6 +324,38 @@ export interface paths {
     patch?: never;
     trace?: never;
   };
+  "/api/v1/tenants/{tenantId}/cases/{caseId}/assistant": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get: operations["assistantJobs"];
+    put?: never;
+    post: operations["runAssistant"];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/api/v1/tenants/{tenantId}/cases/{caseId}/assistant/{jobId}/accept": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    post: operations["acceptSuggestions"];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
   "/api/v1/tenants/{tenantId}/cases/{caseId}/policies": {
     parameters: {
       query?: never;
@@ -693,6 +725,98 @@ export interface components {
     PolicySearch: {
       method: string;
       items: components["schemas"]["PolicyPassage"][];
+    };
+    AICitation: {
+      chunkId: string;
+      quote: string;
+    };
+    AIText: {
+      value: string | null;
+      citations: components["schemas"]["AICitation"][];
+    };
+    AIItems: {
+      value: components["schemas"]["LineItem"][] | null;
+      citations: components["schemas"]["AICitation"][];
+    };
+    AIExtraction: {
+      vendor: components["schemas"]["AIText"];
+      currency: components["schemas"]["AIText"];
+      total: components["schemas"]["AIText"];
+      lineItems: components["schemas"]["AIItems"];
+      warnings: string[];
+    };
+    AIReview: {
+      summary: string;
+      missing_information: string[];
+      policy_findings: {
+        claim: string;
+        citations: components["schemas"]["AICitation"][];
+      }[];
+      citations: components["schemas"]["AICitation"][];
+      insufficient_evidence: boolean;
+    };
+    AIEvidence: {
+      /** Format: uuid */
+      sourceId: string;
+      page: number;
+      start: number;
+      text: string;
+    };
+    AIResult: {
+      output:
+        | components["schemas"]["AIExtraction"]
+        | components["schemas"]["AIReview"];
+      model: string;
+      promptVersion: string;
+      schemaVersion: string;
+      promptHash: string;
+      schemaHash: string;
+      /** Format: uuid */
+      callId: string;
+      elapsedMs: number;
+      inputTokens: number;
+      outputTokens: number;
+      estimatedCostUsd: string;
+      pricingVersion: string;
+      revision: number;
+      retrievalMethod: string;
+      evidence: {
+        [key: string]: components["schemas"]["AIEvidence"];
+      };
+      /** Format: uuid */
+      sourceId: string | null;
+      sourceVersion: number | null;
+      sourceSha256: string | null;
+    };
+    AIJob: {
+      /** Format: uuid */
+      jobId: string;
+      /** @enum {string} */
+      kind: "EXTRACTION" | "REVIEW";
+      status: string;
+      failureCode: string | null;
+      revision: number;
+      stale: boolean;
+      result: components["schemas"]["AIResult"];
+    };
+    AIJobs: {
+      enabled: boolean;
+      items: components["schemas"]["AIJob"][];
+    };
+    AIRun: {
+      /** @enum {string} */
+      kind: "EXTRACTION" | "REVIEW";
+      expectedVersion: number;
+      /** Format: uuid */
+      sourceId?: string | null;
+    };
+    AIAccept: {
+      expectedVersion: number;
+      fields: ("vendor" | "currency" | "lineItems")[];
+    };
+    AIAccepted: {
+      accepted: boolean;
+      version: number;
     };
     Document: {
       /** Format: uuid */
@@ -2836,6 +2960,250 @@ export interface operations {
         };
         content: {
           "application/json": components["schemas"]["Case"];
+        };
+      };
+      /** @description Structured error; inaccessible resources return 404 */
+      400: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/problem+json": components["schemas"]["Problem"];
+        };
+      };
+      /** @description Structured error; inaccessible resources return 404 */
+      401: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/problem+json": components["schemas"]["Problem"];
+        };
+      };
+      /** @description Structured error; inaccessible resources return 404 */
+      403: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/problem+json": components["schemas"]["Problem"];
+        };
+      };
+      /** @description Structured error; inaccessible resources return 404 */
+      404: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/problem+json": components["schemas"]["Problem"];
+        };
+      };
+      /** @description Structured error; inaccessible resources return 404 */
+      409: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/problem+json": components["schemas"]["Problem"];
+        };
+      };
+      /** @description Structured error; inaccessible resources return 404 */
+      503: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/problem+json": components["schemas"]["Problem"];
+        };
+      };
+    };
+  };
+  assistantJobs: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        tenantId: string;
+        caseId: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description Success */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["AIJobs"];
+        };
+      };
+      /** @description Structured error; inaccessible resources return 404 */
+      400: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/problem+json": components["schemas"]["Problem"];
+        };
+      };
+      /** @description Structured error; inaccessible resources return 404 */
+      401: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/problem+json": components["schemas"]["Problem"];
+        };
+      };
+      /** @description Structured error; inaccessible resources return 404 */
+      403: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/problem+json": components["schemas"]["Problem"];
+        };
+      };
+      /** @description Structured error; inaccessible resources return 404 */
+      404: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/problem+json": components["schemas"]["Problem"];
+        };
+      };
+      /** @description Structured error; inaccessible resources return 404 */
+      409: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/problem+json": components["schemas"]["Problem"];
+        };
+      };
+      /** @description Structured error; inaccessible resources return 404 */
+      503: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/problem+json": components["schemas"]["Problem"];
+        };
+      };
+    };
+  };
+  runAssistant: {
+    parameters: {
+      query?: never;
+      header: {
+        "Idempotency-Key": string;
+      };
+      path: {
+        tenantId: string;
+        caseId: string;
+      };
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["AIRun"];
+      };
+    };
+    responses: {
+      /** @description Success */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["AIJob"];
+        };
+      };
+      /** @description Structured error; inaccessible resources return 404 */
+      400: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/problem+json": components["schemas"]["Problem"];
+        };
+      };
+      /** @description Structured error; inaccessible resources return 404 */
+      401: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/problem+json": components["schemas"]["Problem"];
+        };
+      };
+      /** @description Structured error; inaccessible resources return 404 */
+      403: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/problem+json": components["schemas"]["Problem"];
+        };
+      };
+      /** @description Structured error; inaccessible resources return 404 */
+      404: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/problem+json": components["schemas"]["Problem"];
+        };
+      };
+      /** @description Structured error; inaccessible resources return 404 */
+      409: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/problem+json": components["schemas"]["Problem"];
+        };
+      };
+      /** @description Structured error; inaccessible resources return 404 */
+      503: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/problem+json": components["schemas"]["Problem"];
+        };
+      };
+    };
+  };
+  acceptSuggestions: {
+    parameters: {
+      query?: never;
+      header: {
+        "Idempotency-Key": string;
+      };
+      path: {
+        tenantId: string;
+        caseId: string;
+        jobId: string;
+      };
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["AIAccept"];
+      };
+    };
+    responses: {
+      /** @description Success */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["AIAccepted"];
         };
       };
       /** @description Structured error; inaccessible resources return 404 */

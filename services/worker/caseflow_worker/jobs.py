@@ -12,7 +12,7 @@ from .settings import database
 class Envelope(BaseModel):
     model_config = ConfigDict(extra="forbid")
     eventId: UUID
-    eventType: Literal["document.requested", "ingestion.requested"]
+    eventType: Literal["document.requested", "ingestion.requested", "extraction.requested", "review.requested"]
     schemaVersion: Literal[1]
     timestamp: datetime
     tenantId: UUID
@@ -120,6 +120,9 @@ def finish(job, artifact):
             return False
         if job["kind"] == "INGESTION":
             from .ingestion import persist
+            persist(db, job, artifact)
+        elif job["kind"] in ("EXTRACTION","REVIEW"):
+            from .assistant import persist
             persist(db, job, artifact)
         else:
             db.execute("""INSERT INTO worker.artifacts(tenant_id,job_id,attempt,fence,object_key,sha256,byte_size)

@@ -188,3 +188,18 @@ Evidence: `tests/e2e/source-api.mjs`, `services/worker/tests/test_policy_pins.py
 Evidence: `test_ai_contracts.py`, `test_ai_budget.py`, `test_ai_provider.py` and
 `docs/ai-provider.md`. Transport fixtures pass; application AI wiring and live
 quality evaluation remain unfinished at this checkpoint.
+# R2 human acceptance checkpoint (2026-09-15)
+
+- How can you prove AI cannot silently change purchase data? Job results live in
+  worker-owned storage. Only a separate authorized Java acceptance command writes
+  chosen draft fields, with revision checks, decimal validation and an audit record.
+- What if I click Accept twice? The same idempotency key replays the first response
+  without another mutation. A new command using the old proposal is stale after
+  the first acceptance increments the draft revision.
+- What has actually been verified? Database-backed acceptance and access rules,
+  worker eligibility/fencing and mocked transport contracts. Live AI quality and
+  the full assisted browser journey have not yet been verified.
+
+Evidence: Java `AssistantIntegrationTest` and Python `test_assistant.py`. The
+running application explicitly leaves live AI disabled while budget/key setup is
+pending. There is no production/adoption or measured time-saving claim.

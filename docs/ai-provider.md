@@ -1,10 +1,11 @@
 # R2 provider and budget contract
 
 Implementation status, 2026-09-15: typed extraction/review validation, a single
-OpenAI transport adapter, and a PostgreSQL spend ledger are implemented and tested
-with synthetic transport fixtures. They are not yet connected to application AI
-jobs or suggestion-acceptance screens. No live calls or AI quality measurements
-have been made.
+OpenAI transport adapter, and a PostgreSQL spend ledger are connected to durable
+application jobs and selected-field acceptance screens. Synthetic transport and
+disposable-database checks pass. Live calls are disabled by zero spending limits;
+no live calls or AI quality measurements have been made. The complete assisted
+browser journey remains unverified.
 
 Pinned provider SDK: openai 3.14.0. Initial model snapshot:
 `gpt-4.1-mini-2025-04-14`. It supports structured JSON and offers a small initial
@@ -36,9 +37,21 @@ explicitly rejected until currency metadata is extended. Decimal per-line roundi
 is checked before display. Matching citations and sums are structural validity;
 semantic claim support still requires the human evaluation rubric.
 
-Tests: `services/worker/tests/test_ai_contracts.py`, `test_ai_budget.py`, and
-`test_ai_provider.py`. These verify invalid citations, absent values, arithmetic,
+Tests: `services/worker/tests/test_ai_contracts.py`, `test_ai_budget.py`,
+`test_ai_provider.py`, `test_assistant.py`, and Java `AssistantIntegrationTest`.
+These verify invalid citations, absent values, arithmetic,
 unsupported actions, concurrent admission, unknown costs, schema errors, transport
 failure and permission revocation before sending. Fake provider output cannot
 satisfy the held-out evaluation gate. API-key configuration and the user's test
-budget remain pending.
+budget remain pending. After explicit budget authorization, an operator can run
+`services/worker/.venv/Scripts/python.exe services/worker/tools/configure_ai_budget.py --total-usd APPROVED_TOTAL --tenant-daily-usd APPROVED_DAILY`
+after `. ./scripts/dev-env.ps1`. Both limits are required. The total is a lifetime
+ceiling for this ledger, not a fresh allowance on each invocation. Setting both
+to zero disables future admission. The ignored `.env` key is loaded only by the
+worker startup script; it is not part of the frontend bundle or API responses.
+
+Remaining R2 gates: live provider compatibility, embedding/hybrid comparison,
+annotation verification, evaluation runner and held-out report, repeated runs,
+manual-versus-assisted measurements, full assisted browser regression, broader
+failure and permission tests. The configured SDK timeout is a network timeout;
+strict end-to-end provider wall-clock containment also needs verification.

@@ -6,7 +6,7 @@ from datetime import datetime, timezone
 from uuid import uuid4
 from confluent_kafka import Consumer, Producer, KafkaException
 from pydantic import ValidationError
-from . import jobs, render, ingestion
+from . import jobs, render, ingestion, assistant
 from .settings import database, BROKER, REQUEST_TOPIC, COMPLETION_TOPIC, DEAD_TOPIC
 
 
@@ -104,13 +104,19 @@ class Runtime:
         heartbeat = threading.Thread(target=renew, daemon=True)
         heartbeat.start()
         try:
-            executor = ingestion if job["kind"] == "INGESTION" else render
+            executor = {"INGESTION":ingestion,"DOCUMENT":render,"EXTRACTION":assistant,"REVIEW":assistant}[job["kind"]]
             artifact = executor.execute(job, jobs.input_for(job))
             selected = jobs.finish(job, artifact)
             log("job_finished", kind=job["kind"], job_id=str(job["job_id"]), attempt=job["attempt"], fence=job["fence"], selected=selected)
         except Exception as error:
             permanent = isinstance(error, (ValueError, KeyError))
             code = "INVALID_DOCUMENT_INPUT" if permanent else "DEPENDENCY_UNAVAILABLE"
+            if permanent and job["kind"] in ("EXTRACTION","REVIEW"):
+                known_ai={"AI_NOT_CONFIGURED","AI_INPUT_LIMIT","AI_BUDGET_EXCEEDED","STALE_AI_EXECUTION",
+                          "AI_CALL_ALREADY_RESERVED","AI_PROVIDER_UNAVAILABLE","AI_REFUSED_OR_INCOMPLETE",
+                          "UNEXPECTED_MODEL_VERSION","AI_USAGE_UNAVAILABLE","AI_TOKEN_LIMIT","INVALID_AI_OUTPUT",
+                          "AI_INPUT_STALE_OR_ACCESS_REVOKED","AI_SOURCE_UNAVAILABLE"}
+                code=str(error) if str(error) in known_ai else "INVALID_AI_INPUT"
             if permanent and job["kind"] == "INGESTION":
                 known = {"SOURCE_SIZE_LIMIT", "SOURCE_PAGE_LIMIT", "SOURCE_TEXT_LIMIT", "NO_EXTRACTABLE_TEXT",
                          "ENCRYPTED_PDF_UNSUPPORTED", "MALFORMED_PDF", "INVALID_UTF8", "BINARY_TEXT_UNSUPPORTED",

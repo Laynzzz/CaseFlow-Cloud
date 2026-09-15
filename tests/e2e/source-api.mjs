@@ -84,3 +84,11 @@ await requester(`${path}/${policy.id}/chunks`,{expected:404});
 assert.ok((await requester(`${tenant}/cases/${draft.id}/policies/search?query=cost%20center`)).items.some(p=>p.sourceId===policy.id));
 console.log('PASS clear malformed-file failure, failed-policy publication blocked, deactivated policy excluded');
 console.log('PASS policy refresh, scoped full-text retrieval, started pin immutability, historical deactivated-policy access');
+const assistant=await requester(`${tenant}/cases/${draft.id}/assistant`);
+if(!assistant.enabled) {
+  const before=assistant.items.length;
+  await requester(`${tenant}/cases/${draft.id}/assistant`,{method:'POST',body:{kind:'REVIEW',expectedVersion:started.version},expected:503});
+  assert.equal((await requester(`${tenant}/cases/${draft.id}/assistant`)).items.length,before);
+  console.log('PASS disabled AI budget rejects job admission; manual source and policy workflows remain available');
+}
+await outsider(`${tenant}/cases/${draft.id}/assistant`,{expected:404});

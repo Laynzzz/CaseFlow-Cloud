@@ -2,8 +2,8 @@
 
 A purchase approval application: employees explain a purchase, two assigned
 reviewers decide in order, and the system records the decision and its history.
-The document worker produces the approved Word document. The planned
-AI assistant will suggest quote fields and cite purchasing policies; people
+The document worker produces the approved Word document. The experimental
+AI assistant is being built to suggest quote fields and cite purchasing policies; people
 accept suggestions and make approval decisions.
 
 ## Current status
@@ -28,8 +28,11 @@ still open. Baseline database lease/concurrency tests and broker redeliveries
 pass; these are not the complete crash matrix.
 **R2 is in progress:** quote and policy PDF/TXT uploads, bounded background parsing,
 source text previews, publication and deactivation are implemented. The synthetic
-60/60 evaluation split is recorded; references await human verification. Model
-extraction, cited review, acceptance and live evaluation remain unfinished.
+60/60 evaluation split is recorded; references await human verification. AI job,
+provider, cited-output validation, spending-ledger and selected-field acceptance
+code is connected, with database and mocked-provider checks. Live calls remain
+disabled by a zero budget. Provider integration, embedding comparison, held-out
+quality evaluation and the full assisted browser journey are not yet verified.
 R2 AI and R3 reliability/portfolio gates are also unfinished. No production
 readiness, adoption or measured AI quality is claimed.
 

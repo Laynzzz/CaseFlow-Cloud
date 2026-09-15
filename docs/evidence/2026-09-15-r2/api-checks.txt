@@ -1,0 +1,18 @@
+Observed local command output, 2026-09-15. Synthetic data; real Keycloak/PostgreSQL/Kafka/object storage.
+
+node tests/e2e/source-api.mjs
+PASS policy upload, immutable bytes, idempotency, asynchronous text index, publication and tenant isolation
+PASS quote owner permissions, stale draft protection, revision bump, unchanged manual purchase data
+PASS clear malformed-file failure, failed-policy publication blocked, deactivated policy excluded
+PASS policy refresh, scoped full-text retrieval, started pin immutability, historical deactivated-policy access
+PASS disabled AI budget rejects job admission; manual source and policy workflows remain available
+
+node tests/e2e/document-api.mjs
+PASS real approval -> Java outbox -> Kafka -> Python DOCX -> worker outbox -> Java completion
+PASS authenticated download authorization, SHA-256/size and parsed Word contents
+Observed statuses: QUEUED -> SUCCEEDED. Synthetic case: ea54cff3-8906-4296-8859-d5c4a5f7d3fd
+
+npm --prefix apps/web run build
+TypeScript typecheck passed. Vite production build passed: 179 modules transformed.
+
+No live provider call, embedding comparison or held-out AI score is represented by these checks.

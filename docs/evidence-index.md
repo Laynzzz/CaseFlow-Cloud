@@ -1,5 +1,31 @@
 # Evidence index
 
+## 2026-09-15: R2 implementation checkpoint (release still open)
+
+Commits through this checkpoint add bounded PDF/TXT parsing, immutable quote and
+policy uploads, indexed publication, case policy pins, scoped full-text search,
+AI output contracts, durable spending limits, application AI jobs and selected
+suggestion acceptance. Live calls remain disabled; no AI quality is claimed.
+
+| Claim | Check | Evidence |
+| --- | --- | --- |
+| Source upload/index/publication and owner/tenant boundaries | Real local API suite, including malformed PDF and stale draft | [Observed API checks](evidence/2026-09-15-r2/api-checks.txt) |
+| Started policies remain accessible historically after deactivation | Refresh/search/start/deactivation API checks | Same API output and `tests/e2e/source-api.mjs` |
+| Parser bounds, SQL ownership, fencing, AI schemas/budgets and eligibility | 40 pytest checks; disposable databases and synthetic transport fixtures | [Worker report](evidence/2026-09-15-r2/worker-tests.xml) |
+| Explicit selected-field acceptance, replay, stale/revoked access and zero-budget admission | Three Java integration checks on disposable PostgreSQL | [Java report](evidence/2026-09-15-r2/assistant-java-tests.xml), hostname generalized |
+| Existing approval-to-DOCX still works | Real document regression after R2 migrations | [Observed API checks](evidence/2026-09-15-r2/api-checks.txt) |
+
+Browser checks observed policy source text, historical policy search and the
+disabled-live-AI manual fallback on the running React app. Upload file-picker and
+positive model-to-acceptance browser regression still need verification. A Vite
+transform cached an empty new module during formatting; restarting this project's
+development server restored it without changing product code.
+
+Outstanding R2 gates: provider key and explicitly authorized live-test budget,
+positive provider/assisted browser checks, embedding comparison, reference review,
+held-out reports and repeated-run/user-outcome measurements. R1 cloud/operations
+gates remain open by the user's authorized sequencing. See `docs/ai-provider.md`.
+
 ## 2026-09-14: local approved-document checkpoint
 
 Revisions: templates `4e484a6`, worker `b371906`, completion/download API

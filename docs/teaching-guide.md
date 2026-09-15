@@ -333,3 +333,36 @@ have run. See `docs/ai-provider.md` for limits, checked sources and dated prices
 
 Verification: the full worker suite has 37 passing checks, including deterministic
 transport fixtures. These test engineering behavior, not AI quality.
+# R2 checkpoint: application AI jobs and human acceptance (2026-09-15)
+
+Behavior now wired: a requester can choose an indexed quote and request field
+suggestions; eligible case participants can request a policy brief. The UI shows
+queued/failed/complete states and cited text. Suggestions show current versus
+proposed values and require explicit field selection. Live jobs currently remain
+disabled because the durable budget is zero; this is visible in the UI alongside
+manual purchase entry and policy search.
+
+Java owns AI job admission, access checks and acceptance. Python loads only the
+requested quote or pinned policy passages, rechecks current access/revision,
+reserves spend, calls the provider, validates output and selects a fenced result.
+The standard completion event updates Java's job status. SQL eligibility views
+avoid giving the worker general membership/case write access.
+
+Acceptance locks the draft and verifies the purchase revision again. Java applies
+only vendor, currency and/or line items selected by the requester, runs bean and
+decimal validation, calculates the total, increments the revision and audits
+before/suggested/accepted values. A changed draft, an already started case or a
+revoked membership prevents acceptance. Quote currency must match accepted items.
+Accepting one subset makes other proposals from the old revision stale.
+
+Evidence: 40 worker checks pass; three new Java integration checks use fresh
+disposable PostgreSQL databases and synthetic model-result fixtures. They verify
+selected acceptance, idempotent replay, stale protection, unsupported fields,
+membership revocation and disabled-budget admission. The real source API suite
+and approval-to-DOCX regression pass. Model-result fixtures never enter the running
+demo database and do not measure AI quality.
+
+Remaining: live provider and positive assisted browser checks, embedding candidate
+comparison, human annotation review and held-out report. The application remains
+experimental. A development preview blanked because Vite cached an empty module
+during formatting; an owned-server restart restored the current source module.

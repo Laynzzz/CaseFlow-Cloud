@@ -2841,6 +2841,359 @@
         }
       }
     },
+    "/api/v1/tenants/{tenantId}/cases/{caseId}/assistant": {
+      "get": {
+        "operationId": "assistantJobs",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "tenantId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "caseId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AIJobs"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Structured error; inaccessible resources return 404",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Structured error; inaccessible resources return 404",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Structured error; inaccessible resources return 404",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Structured error; inaccessible resources return 404",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Structured error; inaccessible resources return 404",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Structured error; inaccessible resources return 404",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "runAssistant",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "tenantId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "caseId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AIJob"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Structured error; inaccessible resources return 404",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Structured error; inaccessible resources return 404",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Structured error; inaccessible resources return 404",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Structured error; inaccessible resources return 404",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Structured error; inaccessible resources return 404",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Structured error; inaccessible resources return 404",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AIRun"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/tenants/{tenantId}/cases/{caseId}/assistant/{jobId}/accept": {
+      "post": {
+        "operationId": "acceptSuggestions",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "tenantId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "caseId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "jobId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AIAccepted"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Structured error; inaccessible resources return 404",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Structured error; inaccessible resources return 404",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Structured error; inaccessible resources return 404",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Structured error; inaccessible resources return 404",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Structured error; inaccessible resources return 404",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Structured error; inaccessible resources return 404",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AIAccept"
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/tenants/{tenantId}/cases/{caseId}/policies": {
       "get": {
         "operationId": "casePolicies",
@@ -4895,6 +5248,405 @@
         "required": [
           "method",
           "items"
+        ]
+      },
+      "AICitation": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "chunkId": {
+            "type": "string"
+          },
+          "quote": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "chunkId",
+          "quote"
+        ]
+      },
+      "AIText": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "value": {
+            "type": "string",
+            "nullable": true
+          },
+          "citations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AICitation"
+            }
+          }
+        },
+        "required": [
+          "value",
+          "citations"
+        ]
+      },
+      "AIItems": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LineItem"
+            },
+            "nullable": true
+          },
+          "citations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AICitation"
+            }
+          }
+        },
+        "required": [
+          "value",
+          "citations"
+        ]
+      },
+      "AIExtraction": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor": {
+            "$ref": "#/components/schemas/AIText"
+          },
+          "currency": {
+            "$ref": "#/components/schemas/AIText"
+          },
+          "total": {
+            "$ref": "#/components/schemas/AIText"
+          },
+          "lineItems": {
+            "$ref": "#/components/schemas/AIItems"
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "vendor",
+          "currency",
+          "total",
+          "lineItems",
+          "warnings"
+        ]
+      },
+      "AIReview": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "summary": {
+            "type": "string"
+          },
+          "missing_information": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "policy_findings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "claim": {
+                  "type": "string"
+                },
+                "citations": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AICitation"
+                  }
+                }
+              },
+              "required": [
+                "claim",
+                "citations"
+              ]
+            }
+          },
+          "citations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AICitation"
+            }
+          },
+          "insufficient_evidence": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "summary",
+          "missing_information",
+          "policy_findings",
+          "citations",
+          "insufficient_evidence"
+        ]
+      },
+      "AIEvidence": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "sourceId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "page": {
+            "type": "integer"
+          },
+          "start": {
+            "type": "integer"
+          },
+          "text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "sourceId",
+          "page",
+          "start",
+          "text"
+        ]
+      },
+      "AIResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "output": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/AIExtraction"
+              },
+              {
+                "$ref": "#/components/schemas/AIReview"
+              }
+            ]
+          },
+          "model": {
+            "type": "string"
+          },
+          "promptVersion": {
+            "type": "string"
+          },
+          "schemaVersion": {
+            "type": "string"
+          },
+          "promptHash": {
+            "type": "string"
+          },
+          "schemaHash": {
+            "type": "string"
+          },
+          "callId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "elapsedMs": {
+            "type": "integer"
+          },
+          "inputTokens": {
+            "type": "integer"
+          },
+          "outputTokens": {
+            "type": "integer"
+          },
+          "estimatedCostUsd": {
+            "type": "string"
+          },
+          "pricingVersion": {
+            "type": "string"
+          },
+          "revision": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "retrievalMethod": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/AIEvidence"
+            }
+          },
+          "sourceId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "sourceVersion": {
+            "type": "integer",
+            "minimum": 0,
+            "nullable": true
+          },
+          "sourceSha256": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": [
+          "output",
+          "model",
+          "promptVersion",
+          "schemaVersion",
+          "promptHash",
+          "schemaHash",
+          "callId",
+          "elapsedMs",
+          "inputTokens",
+          "outputTokens",
+          "estimatedCostUsd",
+          "pricingVersion",
+          "revision",
+          "retrievalMethod",
+          "evidence",
+          "sourceId",
+          "sourceVersion",
+          "sourceSha256"
+        ]
+      },
+      "AIJob": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "jobId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "EXTRACTION",
+              "REVIEW"
+            ]
+          },
+          "status": {
+            "type": "string"
+          },
+          "failureCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "revision": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "stale": {
+            "type": "boolean"
+          },
+          "result": {
+            "$ref": "#/components/schemas/AIResult",
+            "nullable": true
+          }
+        },
+        "required": [
+          "jobId",
+          "kind",
+          "status",
+          "failureCode",
+          "revision",
+          "stale",
+          "result"
+        ]
+      },
+      "AIJobs": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AIJob"
+            }
+          }
+        },
+        "required": [
+          "enabled",
+          "items"
+        ]
+      },
+      "AIRun": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "EXTRACTION",
+              "REVIEW"
+            ]
+          },
+          "expectedVersion": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "sourceId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          }
+        },
+        "required": [
+          "kind",
+          "expectedVersion"
+        ]
+      },
+      "AIAccept": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "expectedVersion": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "fields": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 3,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "enum": [
+                "vendor",
+                "currency",
+                "lineItems"
+              ]
+            }
+          }
+        },
+        "required": [
+          "expectedVersion",
+          "fields"
+        ]
+      },
+      "AIAccepted": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "accepted": {
+            "type": "boolean"
+          },
+          "version": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "accepted",
+          "version"
         ]
       },
       "Document": {

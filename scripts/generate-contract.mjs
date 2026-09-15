@@ -37,6 +37,18 @@ const schemas = {
   PolicyPins: object({initialized:bool,items:array(ref('PolicyPin'))}),
   PolicyPassage: object({id:uuid,sourceId:uuid,name:str,page:{type:'integer'},section:str,start:{type:'integer'},end:{type:'integer'},text:str,sha256:str,score:{type:'number'}}),
   PolicySearch: object({method:str,items:array(ref('PolicyPassage'))}),
+  AICitation: object({chunkId:str,quote:str}),
+  AIText: object({value:nullable(str),citations:array(ref('AICitation'))}),
+  AIItems: object({value:nullable(array(ref('LineItem'))),citations:array(ref('AICitation'))}),
+  AIExtraction: object({vendor:ref('AIText'),currency:ref('AIText'),total:ref('AIText'),lineItems:ref('AIItems'),warnings:array(str)}),
+  AIReview: object({summary:str,missing_information:array(str),policy_findings:array(object({claim:str,citations:array(ref('AICitation'))})),citations:array(ref('AICitation')),insufficient_evidence:bool}),
+  AIEvidence: object({sourceId:uuid,page:{type:'integer'},start:{type:'integer'},text:str}),
+  AIResult: object({output:{oneOf:[ref('AIExtraction'),ref('AIReview')]},model:str,promptVersion:str,schemaVersion:str,promptHash:str,schemaHash:str,callId:uuid,elapsedMs:{type:'integer'},inputTokens:{type:'integer'},outputTokens:{type:'integer'},estimatedCostUsd:str,pricingVersion:str,revision:version,retrievalMethod:str,evidence:{type:'object',additionalProperties:ref('AIEvidence')}}),
+  AIJob: object({jobId:uuid,kind:{type:'string',enum:['EXTRACTION','REVIEW']},status:str,failureCode:nullable(str),revision:version,stale:bool,result:nullable(ref('AIResult'))}),
+  AIJobs: object({enabled:bool,items:array(ref('AIJob'))}),
+  AIRun: object({kind:{type:'string',enum:['EXTRACTION','REVIEW']},expectedVersion:version,sourceId:nullable(uuid)},['kind','expectedVersion']),
+  AIAccept: object({expectedVersion:version,fields:{type:'array',minItems:1,maxItems:3,uniqueItems:true,items:{type:'string',enum:['vendor','currency','lineItems']}}}),
+  AIAccepted: object({accepted:bool,version}),
   Document: object({jobId:uuid,attempt:{type:'integer'},status:str,failureCode:nullable(str),sha256:nullable(str),byteSize:nullable({type:'integer'}),createdAt:{type:'string',format:'date-time'}}),
   Documents: object({items:array(ref('Document'))}),
   Download: object({url:str,expiresInSeconds:{type:'integer'}}),
@@ -52,6 +64,8 @@ const schemas = {
   Audit: object({id:uuid,actorId:uuid,eventType:str,details:{type:'object',additionalProperties:true},createdAt:{type:'string',format:'date-time'}}),
   AuditPage: object({items:array(ref('Audit')),nextCursor:nullable(str)}),
 };
+Object.assign(schemas.AIResult.properties,{sourceId:nullable(uuid),sourceVersion:nullable(version),sourceSha256:nullable(str)});
+schemas.AIResult.required.push('sourceId','sourceVersion','sourceSha256');
 const paths = {};
 function endpoint(path, method, operationId, output, input, {auth=true,command=false,list=false}={}) {
   const parameters = [...path.matchAll(/\{(\w+)\}/g)].map(([,name]) => ({name,in:'path',required:true,schema:uuid}));
@@ -90,6 +104,9 @@ endpoint(t+'/templates/{templateId}/publish','post','publishTemplate','Template'
 endpoint(t+'/cases','get','listCases','CasePage',null,{list:true});
 endpoint(t+'/cases','post','createCase','Case','CaseInput',{command:true});
 endpoint(t+'/cases/{caseId}','get','getCase','Case');
+endpoint(t+'/cases/{caseId}/assistant','get','assistantJobs','AIJobs');
+endpoint(t+'/cases/{caseId}/assistant','post','runAssistant','AIJob','AIRun',{command:true});
+endpoint(t+'/cases/{caseId}/assistant/{jobId}/accept','post','acceptSuggestions','AIAccepted','AIAccept',{command:true});
 endpoint(t+'/cases/{caseId}/policies','get','casePolicies','PolicyPins');
 endpoint(t+'/cases/{caseId}/policies/refresh','post','refreshPolicies','PolicyPins','VersionInput',{command:true});
 endpoint(t+'/cases/{caseId}/policies/search','get','searchPolicies','PolicySearch');

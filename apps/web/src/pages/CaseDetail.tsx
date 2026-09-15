@@ -6,6 +6,7 @@ import { DraftForm } from "./DraftForm";
 import { Documents } from "./Documents";
 import { Sources } from "./Sources";
 import { Policies } from "./Policies";
+import { Assistant } from "./Assistant";
 import { Empty, Notice, Status } from "../components";
 export function CaseDetail({
   tenant,
@@ -366,6 +367,19 @@ export function CaseDetail({
           item.state === "DRAFT" &&
           item.ownerId === userId &&
           roles.includes("REQUESTER")
+        }
+      />
+      <Assistant
+        tenant={tenant}
+        item={item}
+        editable={
+          item.state === "DRAFT" &&
+          item.ownerId === userId &&
+          roles.includes("REQUESTER")
+        }
+        canReview={
+          ["DRAFT", "ACTIVE"].includes(item.state) &&
+          roles.some((r) => ["ADMIN", "REQUESTER", "APPROVER"].includes(r))
         }
       />
       <section className="panel">
