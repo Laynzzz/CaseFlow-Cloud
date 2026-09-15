@@ -22,6 +22,7 @@ const schemas = {
   Workflows: object({items:array(ref('Workflow'))}),
   WorkflowInput: object({name:{type:'string',minLength:1,maxLength:120},steps:{type:'array',minItems:2,maxItems:2,items:{type:'string',minLength:1,maxLength:80}},expectedVersion:nullable(version)},['name','steps']),
   VersionInput: object({expectedVersion:version}),
+  RetryInput: object({expectedAttempt:{type:'integer',minimum:1}}),
   Template: object({id:uuid,name:str,state:{type:'string',enum:['UPLOADING','VALIDATED','PUBLISHED']},version,byteSize:{type:'integer'},sha256:nullable(str)}),
   Templates: object({items:array(ref('Template'))}),
   TemplateInput: object({name:{type:'string',minLength:1,maxLength:120},byteSize:{type:'integer',minimum:1,maximum:10485760}}),
@@ -78,7 +79,7 @@ endpoint(t+'/cases/{caseId}/audit','get','getAudit','AuditPage',null,{list:true}
 endpoint(t+'/cases/{caseId}/documents','get','listDocuments','Documents');
 endpoint(t+'/cases/{caseId}/documents/{jobId}/download-url','post','downloadDocument','Download');
 endpoint(t+'/jobs/{jobId}','get','getJob','Document');
-endpoint(t+'/jobs/{jobId}/retry','post','retryJob','Document','VersionInput',{command:true});
+endpoint(t+'/jobs/{jobId}/retry','post','retryJob','Document','RetryInput',{command:true});
 const contract={openapi:'3.0.3',info:{title:'CaseFlow API',version:'0.2.0',description:'Phase 0/1 contracts. See docs/contracts.md for permissions and command semantics. Success responses use 200, including command replay.'},paths,components:{securitySchemes:{bearerAuth:{type:'http',scheme:'bearer',bearerFormat:'JWT'}},schemas}};
 writeFileSync(new URL('../contracts/openapi/caseflow.yaml',import.meta.url),JSON.stringify(contract,null,2)+'\n');
 console.log('Generated OpenAPI (JSON is valid YAML).');

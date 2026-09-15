@@ -126,7 +126,7 @@ class Runtime:
                     row = db.execute("""SELECT * FROM worker.outbox WHERE published_at IS NULL
                         ORDER BY created_at FOR UPDATE SKIP LOCKED LIMIT 1""").fetchone()
                     if row:
-                        self.send(COMPLETION_TOPIC, str(row["tenant_id"])+":"+str(row["job_id"]), row["payload"])
+                        self.send(COMPLETION_TOPIC, str(row["tenant_id"])+":"+row["payload"]["aggregateId"], row["payload"])
                         db.execute("UPDATE worker.outbox SET published_at=now() WHERE event_id=%s", (row["event_id"],))
             except Exception as error:
                 log("completion_publish_retry", error_type=type(error).__name__)

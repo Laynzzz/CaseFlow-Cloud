@@ -3,6 +3,7 @@ import json
 import random
 from datetime import datetime, timezone
 from uuid import UUID, uuid4
+from typing import Literal
 from psycopg.types.json import Jsonb
 from pydantic import BaseModel, Field, ConfigDict
 from .settings import database
@@ -11,12 +12,12 @@ from .settings import database
 class Envelope(BaseModel):
     model_config = ConfigDict(extra="forbid")
     eventId: UUID
-    eventType: str
-    schemaVersion: int = Field(ge=1, le=1)
+    eventType: Literal["document.requested"]
+    schemaVersion: Literal[1]
     timestamp: datetime
     tenantId: UUID
     aggregateId: UUID
-    aggregateType: str
+    aggregateType: Literal["case"]
     aggregateSequence: int = Field(ge=0)
     jobId: UUID
     attempt: int = Field(ge=1)
@@ -51,11 +52,14 @@ def schedule(event: Envelope):
 
 
 def emit(db, job, status, code=None):
+    source = db.execute("SELECT input->>'revision' AS revision FROM core.worker_job_inputs WHERE tenant_id=%s AND job_id=%s",
+                        (job["tenant_id"], job["job_id"])).fetchone()
     event = dict(eventId=str(uuid4()), eventType="document."+status.lower(), schemaVersion=1,
                  timestamp=datetime.now(timezone.utc).isoformat(), tenantId=str(job["tenant_id"]),
                  aggregateId=str(job["case_id"]), aggregateType="case", jobId=str(job["job_id"]),
                  attempt=job["attempt"], fence=job["fence"], status=status, failureCode=code,
-                 inputHash=job["input_hash"], correlationId=str(job["job_id"]), traceContext={})
+                 inputHash=job["input_hash"], correlationId=str(job["job_id"]),
+                 causationId=str(job["job_id"]), aggregateSequence=int(source["revision"] or 0), traceContext={})
     db.execute("INSERT INTO worker.outbox(event_id,tenant_id,job_id,payload) VALUES (%s,%s,%s,%s)",
                (event["eventId"],job["tenant_id"],job["job_id"],Jsonb(event)))
 
