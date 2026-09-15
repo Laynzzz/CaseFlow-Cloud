@@ -2,6 +2,7 @@
 import assert from 'node:assert/strict';
 import {readFileSync, mkdirSync, writeFileSync} from 'node:fs';
 import {client, signIn} from './oidc-session.mjs';
+import {uploadIndexedSource, waitAssistantJob} from './ai-workflow.mjs';
 
 if (!process.argv.includes('--live')) throw new Error('Requires --live and a configured, authorized AI budget');
 const fixture = JSON.parse(readFileSync(new URL('../../infrastructure/local/generated/demo-ids.json', import.meta.url)));
@@ -13,29 +14,9 @@ const directory = new URL(`../../docs/evidence/2026-09-15-r2/live-${Date.now()}/
 mkdirSync(directory, {recursive: true});
 const save = () => writeFileSync(new URL('journey.json', directory), JSON.stringify(run, null, 2)+'\n');
 async function source(actor, bearer, kind, text, draft) {
-  const bytes = Buffer.from(text);
-  let value = await actor(tenant+'/sources', {method:'POST', body:{name:`Synthetic live ${kind.toLowerCase()}`, kind, mediaType:'text/plain', byteSize:bytes.length,
-    ...(draft ? {caseId:draft.id, expectedCaseVersion:draft.version} : {})}});
-  const path = `${tenant}/sources/${value.id}`;
-  const response = await fetch(`http://127.0.0.1:8080/api/v1${path}/content`, {method:'PUT', headers:{Authorization:`Bearer ${bearer}`, 'Content-Type':'application/octet-stream'}, body:bytes});
-  assert.equal(response.status, 200);
-  await actor(path+'/finalize', {method:'POST', body:{expectedVersion:0, ...(draft ? {expectedCaseVersion:draft.version} : {})}});
-  for (let i=0; i<80; i++) {
-    value = await actor(path);
-    if (value.state==='INDEXED') return value;
-    assert.notEqual(value.state, 'FAILED', value.failureCode);
-    await new Promise(resolve=>setTimeout(resolve,750));
-  }
-  throw new Error('Source indexing timed out');
+  return uploadIndexedSource(actor,bearer,tenant,{kind,text,draft,name:`Synthetic live ${kind.toLowerCase()}`});
 }
-async function completed(path, requested) {
-  for (let i=0; i<100; i++) {
-    const job = (await requester(path)).items.find(item=>item.jobId===requested.jobId);
-    if (job && ['SUCCEEDED','FAILED'].includes(job.status)) return job;
-    await new Promise(resolve=>setTimeout(resolve,750));
-  }
-  throw new Error('Assistant job timed out');
-}
+const completed=(path,requested)=>waitAssistantJob(requester,path,requested);
 try {
   const purchase = {vendor:'', description:'Equipment purchase', currency:'USD', costCenter:'', justification:'Synthetic equipment replacement', lineItems:[]};
   let draft = await requester(tenant+'/cases', {method:'POST', body:{purchase}});

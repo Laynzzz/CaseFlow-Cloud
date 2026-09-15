@@ -1,7 +1,41 @@
 # R2 synthetic evaluation protocol v1
 
 Status: split and provisional gates fixed before prompt work; generated references
-still require human verification. No model or retrieval quality has been measured.
+still require human verification. The live runner is implemented; provider HTTP
+429 blocks successful live results. No model or retrieval quality has been measured.
+
+## Live runner
+
+`node evals/run-live.mjs --validate-only --split development --limit 2` checks the
+frozen files and selection without signing in, creating records or calling AI.
+
+After provider access works, an authorized run is:
+
+```powershell
+node evals/run-live.mjs --live --split development --limit 2 --output docs/evidence/2026-09-15-r2/development-first
+```
+
+The directory must be new. Each case uses an isolated synthetic tenant and the
+normal API, Kafka and worker pipeline. All tenants share the existing global USD
+10 lifetime ceiling; the runner never enables or resets a budget. It uses the
+first N rows in frozen file order, stops on provider/budget failures, and preserves
+job IDs before polling. Partial runs remain partial; score the full split so absent
+cases stay in denominators. Do not infer suite accuracy from a two-case smoke run.
+
+Each case file records actual jobs, source metadata/chunks, source-to-annotation
+mapping and the supplied manual purchase. Proposed fields are not accepted in this
+diagnostic run; review sees the same manual facts across cases. The separate
+`tests/e2e/assistant-live.mjs` checks acceptance. Quote extraction excludes draft
+defaults from provider input. Retrieval stores query and an explicit ranked chunk
+array because PostgreSQL JSONB object key order cannot represent search rank.
+
+Held-out execution requires `--annotation-review PATH`. The JSON must record
+`status: verified`, `method: human-reference-review`, the `datasetVersion`, actual
+`reviewer`, `reviewedAt`, and `files` entries for both JSONL files with the frozen
+`sha256` and `reviewedCount` equal to all rows. This file must describe real human
+review; filling its fields is not a substitute for reviewing the references.
+No such review has yet been recorded. Automated guard tests use synthetic review
+fixtures only. The runner and scorer never mark the release complete.
 
 ## Offline validation and diagnostic scoring
 
@@ -22,8 +56,8 @@ Each JSONL record contains dataset `id`, `extraction` and `review` job responses
 (including `status` and `result`), and ordered `retrievedPassageIds` mapped from
 actual retrieved source/chunk IDs to this dataset's annotated passage IDs. The
 live runner must retain the mapping and raw source/job provenance. Do not fill
-these fields with reference answers. That runner and embedding comparison remain
-unfinished; this scorer is an offline diagnostic tool.
+these fields with reference answers. The live runner writes this format; embedding
+comparison remains unfinished. This scorer is an offline diagnostic tool.
 
 Missing/failed cases stay in field and abstention denominators. A failed job does
 not receive credit for a reference null. Decimal formatting is normalized, while

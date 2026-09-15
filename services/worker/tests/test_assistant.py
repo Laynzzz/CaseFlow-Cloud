@@ -24,6 +24,8 @@ def test_review_eligibility_revoked_before_result_selection(event,isolated_datab
         return dict(output={"summary":"No evidence", "insufficient_evidence":True},model="synthetic-fixture")
     monkeypatch.setattr(assistant.ai_provider,"request",fake_provider)
     result=assistant.execute(job,jobs.input_for(job))
+    assert result["retrievedChunkIds"]==[]
+    assert result["retrievalQuery"]=="Synthetic OR equipment OR purchase OR cost OR center OR justification"
     with psycopg.connect(**isolated_database) as db:
         db.execute("UPDATE core.memberships SET active=false WHERE tenant_id=%s",(request.tenantId,))
     with pytest.raises(ValueError,match="AI_INPUT_STALE_OR_ACCESS_REVOKED"):jobs.finish(job,result)

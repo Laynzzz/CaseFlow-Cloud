@@ -64,7 +64,7 @@ job results and failures are saved under a unique R2 evidence directory. Passing
 this journey establishes compatibility, not benchmark accuracy or claim support.
 
 Remaining R2 gates: live provider compatibility, embedding/hybrid comparison,
-annotation verification, evaluation runner and held-out report, repeated runs,
+annotation verification, successful evaluation execution and held-out report, repeated runs,
 manual-versus-assisted measurements, full assisted browser regression, broader
 failure and permission tests. The configured SDK timeout is a network timeout;
 strict end-to-end provider wall-clock containment also needs verification.

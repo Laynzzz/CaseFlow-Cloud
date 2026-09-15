@@ -401,3 +401,23 @@ unknown charges as zero would allow repeated failures to bypass the ceiling.
 `ai_budget_status.py` reads totals and allowlisted failure codes without printing
 keys, provider bodies, or headers. Five provider tests now pass, including the
 safe error-code and unknown-cost regression.
+
+## R2 checkpoint: collecting evaluation evidence (2026-09-15)
+
+The Node evaluation runner uses the application's ordinary sign-in, upload,
+asynchronous job and result endpoints. Each synthetic case gets its own tenant
+so its policy corpus exactly matches the annotations, while every call still
+uses the same global spending ledger. It stops the suite on provider failures
+and saves partial records instead of quietly omitting difficult cases.
+
+Two decisions prevent misleading results. Extraction receives quote evidence
+without existing draft defaults, so the draft's USD selection cannot fill a
+currency absent from a quote. Retrieval saves a ranked ID array separately from
+the evidence object: PostgreSQL JSONB can reorder object keys, so iterating that
+object would not recover the actual search ranking. The prompt input version is
+now v2; the earlier failed attempts retain v1 history.
+
+The runner's held-out guard requires a real human reference-review record with
+matching dataset hashes and full reviewed counts. The schema guard is not itself
+proof that someone did the review. Dry validation and automated tests pass; a
+successful live run and quality results still await provider access and review.

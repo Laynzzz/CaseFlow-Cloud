@@ -13,7 +13,7 @@ another confirmation unless an actual unresolved problem prevents the transition
 | Accept selected suggestions | Current-versus-proposed UI, separate acceptance command | Real SQL acceptance/replay/stale/revocation tests with synthetic results | Positive browser journey with a live model result |
 | Generate a cited review | Fixed facts/evidence pipeline, abstention and citation checks | Contract/eligibility/fencing tests | Live claim-support and adversarial evaluation |
 | Control AI spend | Zero-default lifetime/tenant-day ceilings and durable reservations | Concurrent reservations, duplicate calls, unknown costs; user-authorized USD 10 ceiling configured | Wall-clock containment checks |
-| Demonstrate quality | 120 synthetic cases, disjoint 60/60 families, rubric, targets and offline scorer | Dataset hashes/families and five scorer tests | Reference verification, live runner, raw held-out outputs, scores, repeated runs and outcome measurements |
+| Demonstrate quality | 120 synthetic cases, disjoint 60/60 families, rubric, offline scorer and opt-in live runner | Dataset hashes/families, scorer tests, runner dry validation and annotation guards | Reference verification, successful live run, raw held-out outputs, scores, repeated runs and outcome measurements |
 
 Two live extraction attempts reached the provider but failed; the second recorded
 HTTP 429. Neither produced a model result. The ledger conservatively retains USD

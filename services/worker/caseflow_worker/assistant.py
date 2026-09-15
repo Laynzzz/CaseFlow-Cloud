@@ -12,6 +12,7 @@ def authorized(job):
 
 def execute(job, source):
     authorized(job)
+    query=None
     with database() as db:
         if job["kind"]=="EXTRACTION":
             rows=db.execute("""SELECT id,source_id,page,start_offset,text FROM worker.chunks
@@ -26,7 +27,9 @@ def execute(job, source):
     chunks={str(c["id"]):dict(sourceId=str(c["source_id"]),page=c["page"],start=c["start_offset"],text=c["text"]) for c in rows}
     if job["kind"]=="EXTRACTION" and not chunks:raise ValueError("AI_SOURCE_UNAVAILABLE")
     result=ai_provider.request(job,job["kind"],source["purchase"],chunks,lambda:authorized(job))
-    result.update(revision=source["revision"],evidence=chunks,retrievalMethod="postgres-full-text-v1" if job["kind"]=="REVIEW" else "quote-pages-v1")
+    # JSONB objects do not preserve insertion/rank order; store rank as an explicit array.
+    result.update(revision=source["revision"],evidence=chunks,retrievedChunkIds=list(chunks),retrievalQuery=query,
+                  retrievalMethod="postgres-full-text-v1" if job["kind"]=="REVIEW" else "quote-pages-v1")
     result.update(sourceId=source.get("sourceId"),sourceVersion=source.get("sourceVersion"),sourceSha256=source.get("sourceSha256"))
     return result
 

@@ -1,5 +1,6 @@
 from types import SimpleNamespace
 from uuid import uuid4
+import json
 import pytest
 from caseflow_worker import ai_provider, ai_budget, jobs
 from test_ai_contracts import extraction, CHUNKS
@@ -8,9 +9,10 @@ from test_ai_budget import enable
 
 class FakeProvider:
     """CI transport fixture, not a quality or live-provider evaluation."""
-    def __init__(self, output, fail=False):self.responses=self;self.output=output;self.fail=fail;self.calls=0
+    def __init__(self, output, fail=False):self.responses=self;self.output=output;self.fail=fail;self.calls=0;self.arguments=None
     def create(self,**args):
         self.calls+=1
+        self.arguments=args
         assert args["store"] is False and "tools" not in args
         assert args["model"]==ai_budget.MODEL
         if self.fail:raise TimeoutError("synthetic timeout")
@@ -21,10 +23,11 @@ class FakeProvider:
 def test_provider_schema_validation_and_provenance(event,isolated_database):
     jobs.schedule(event);job=jobs.claim(uuid4());enable(isolated_database,1)
     client=FakeProvider(extraction().model_dump_json())
-    result=ai_provider.request(job,"EXTRACTION",{},CHUNKS,lambda:None,client)
+    result=ai_provider.request(job,"EXTRACTION",{"vendor":"Incorrect draft vendor","currency":"EUR"},CHUNKS,lambda:None,client)
     assert result["output"]["vendor"]["value"]=="Synthetic Tools"
     assert len(result["promptHash"])==64 and result["schemaVersion"]=="purchase-assistant-v1"
     assert client.calls==1
+    assert json.loads(client.arguments["input"][1]["content"])["purchase"]=={}
 
 
 def test_bad_output_is_not_a_displayable_result(event,isolated_database):
