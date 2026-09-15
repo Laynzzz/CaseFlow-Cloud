@@ -173,3 +173,18 @@ Evidence: `tests/e2e/source-api.mjs`, `services/worker/tests/test_ingestion.py`,
 
 Evidence: `tests/e2e/source-api.mjs`, `services/worker/tests/test_policy_pins.py`,
 `db/migrations/V6__policy_pins.sql`, `PolicyPinController.java`.
+# R2 AI contract checkpoint (2026-09-15)
+
+- Does valid JSON mean reliable AI? No. Schema validation proves shape, citation
+  validation proves a supplied passage contains the quote, and arithmetic checks
+  prove numeric consistency. None alone proves that the passage supports the claim.
+- How do you bound spend across retries? Reserve the worst-case cost before each
+  call in a transaction. Unknown usage keeps the reservation; settled actual usage
+  releases only unused budget. Concurrent reservations share a durable lock.
+- What happens when access changes during a call? Recheck before sending and
+  selecting the result. Stop further use after revocation; already-sent provider
+  content cannot be recalled. SDK retries are disabled and no arbitrary tools exist.
+
+Evidence: `test_ai_contracts.py`, `test_ai_budget.py`, `test_ai_provider.py` and
+`docs/ai-provider.md`. Transport fixtures pass; application AI wiring and live
+quality evaluation remain unfinished at this checkpoint.

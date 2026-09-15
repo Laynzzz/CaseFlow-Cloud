@@ -310,3 +310,26 @@ denied cross-tenant search, no refresh after start, and historical reads/search
 after deactivation. `test_policy_pins.py` verifies publication/immutability SQL
 constraints in disposable databases. The complete worker suite has 23 passing
 checks, and approval-to-DOCX regression and frontend build still pass.
+# R2 checkpoint: AI validation and durable spending limits (2026-09-15)
+
+The Python provider adapter now defines extraction proposals and policy review
+briefs as strict data structures. It validates supplied chunk IDs, exact quoted
+text and decimal arithmetic. It cannot invoke approval actions or arbitrary tools.
+These modules are not yet wired to application AI job/acceptance screens.
+
+Decision: reserve worst-case API cost in PostgreSQL before calling the provider.
+A transaction lock serializes competing reservations; global and tenant-day
+ceilings both start at zero. If a timeout hides token usage, keep the reservation
+charged. Otherwise a retry could repeatedly incur costs while appearing free.
+Disable SDK retries so retry/billing behavior stays explicit. Recheck permission
+before sending and before returning a result. A call already sent cannot be
+retracted when a permission changes.
+
+Trade-offs: conservative reservation may stop testing earlier than actual billing
+requires. Structured JSON and valid citations still cannot establish that a claim
+is true or supported; human grading and held-out runs remain required. The initial
+model is a pinned baseline, not a proven optimal choice. No live provider calls
+have run. See `docs/ai-provider.md` for limits, checked sources and dated prices.
+
+Verification: the full worker suite has 37 passing checks, including deterministic
+transport fixtures. These test engineering behavior, not AI quality.
