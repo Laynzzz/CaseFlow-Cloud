@@ -6,6 +6,19 @@ still require human verification. The live runner is implemented; provider HTTP
 
 ## Live runner
 
+Add `--compare-retrieval` to record full-text, semantic and hybrid rankings on
+the same runtime query and authorized corpus. The displayed review still uses
+full-text evidence. `score_run.py` includes paired Recall@5, missing comparisons,
+component timing and known embedding cost. The provider call export includes
+both the generation and embedding calls for each selected review job.
+
+`node evals/run-retrieval-challenges.mjs --live --output NEW_DIRECTORY` runs three
+separate author-defined development probes with eight distractors per relevant
+policy. These probes are explicitly outside the frozen held-out split; their
+references also await human review. They help diagnose ranking behavior beyond
+the primary dataset's mostly single-passage corpora. Never combine their scores
+with the held-out denominator or describe them as independently validated quality.
+
 `node evals/run-live.mjs --validate-only --split development --limit 2` checks the
 frozen files and selection without signing in, creating records or calling AI.
 

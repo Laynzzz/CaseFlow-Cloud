@@ -4,6 +4,7 @@ import hashlib
 import json
 from pathlib import Path
 from scoring import load_dataset,score
+from retrieval_scoring import compare_scores
 
 
 def score_run(directory):
@@ -19,7 +20,9 @@ def score_run(directory):
     digest=hashlib.sha256(raw).hexdigest()
     if digest!=run.get("predictionsSha256"):
         raise ValueError("Run predictions checksum is absent or changed")
-    report=score(splits[split][:len(selected)],[json.loads(line) for line in raw.decode().splitlines()],manifest["targets"])
+    records=[json.loads(line) for line in raw.decode().splitlines()]
+    report=score(splits[split][:len(selected)],records,manifest["targets"])
+    if run.get('compareRetrieval'):report['retrievalComparison']=compare_scores(splits[split][:len(selected)],records)
     report.update(scope=f"First {len(selected)} {split} cases selected before calls; not a release report",
                   selectedIds=selected,datasetSha256=run["datasetSha256"],predictionsSha256=digest,
                   annotationStatus=manifest["annotationStatus"],split=split,datasetVersion=manifest["version"])

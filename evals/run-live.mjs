@@ -8,7 +8,7 @@ import {client,signIn} from '../tests/e2e/oidc-session.mjs';
 import {uploadIndexedSource,waitAssistantJob} from '../tests/e2e/ai-workflow.mjs';
 import {loadFrozenDataset,requireAnnotationReview} from './dataset.mjs';
 
-const {values}=parseArgs({options:{live:{type:'boolean'},'validate-only':{type:'boolean'},split:{type:'string',default:'development'},limit:{type:'string'},output:{type:'string'},'annotation-review':{type:'string'}}});
+const {values}=parseArgs({options:{live:{type:'boolean'},'validate-only':{type:'boolean'},'compare-retrieval':{type:'boolean'},split:{type:'string',default:'development'},limit:{type:'string'},output:{type:'string'},'annotation-review':{type:'string'}}});
 const root=fileURLToPath(new URL('.',import.meta.url));
 const {manifest,splits}=loadFrozenDataset(root);
 if(!['development','heldout'].includes(values.split)) throw new Error('Split must be development or heldout');
@@ -27,6 +27,7 @@ const directory=resolve(values.output);
 if(existsSync(directory)) throw new Error('Output directory already exists; use a new directory to preserve prior evidence');
 mkdirSync(directory,{recursive:true});
 const metadata={startedAt:new Date().toISOString(),datasetVersion:manifest.version,split:values.split,
+  compareRetrieval:Boolean(values['compare-retrieval']),
   datasetSha256:manifest.files[values.split+'.jsonl'].sha256,selectedIds:cases.map(c=>c.id),
   transport:'real-oidc-api-kafka-worker',selection:'first N in frozen file order',releaseGatePassed:false,
   note:'Synthetic diagnostic run. Reference and claim review required; failed calls need ledger reconciliation.'};
@@ -59,7 +60,7 @@ for(const item of cases) {
     record.manualPurchase=draft.purchase;record.revision=draft.version;
     const path=`${tenant}/cases/${draft.id}/assistant`;
     for(const kind of ['EXTRACTION','REVIEW']) {
-      const requested=await actor(path,{method:'POST',body:{kind,expectedVersion:draft.version,...(kind==='EXTRACTION'?{sourceId:record.quote.id}:{})}});
+      const requested=await actor(path,{method:'POST',body:{kind,expectedVersion:draft.version,...(kind==='EXTRACTION'?{sourceId:record.quote.id}:{compareRetrieval:Boolean(values['compare-retrieval'])})}});
       // Persist the logical job ID before waiting, including interruption/timeout evidence.
       record[kind.toLowerCase()]=requested;
       writeFileSync(join(directory,`${item.id}.json`),JSON.stringify(record,null,2)+'\n');
@@ -79,6 +80,19 @@ for(const item of cases) {
       if(!id) throw new Error('Retrieved source is outside the annotated corpus');
       return id;
     }))];
+    if(values['compare-retrieval'] && record.review?.status==='SUCCEEDED') {
+      const comparison=record.review.result.retrievalComparison;
+      if(!comparison || comparison.query!==record.review.result.retrievalQuery) throw new Error('Comparison query differs from baseline');
+      const sourceByChunk=new Map(comparison.corpus.map(row=>[row.chunkId,row.sourceId]));
+      record.retrievalComparisons={};
+      for(const [method,key] of [['fullText','baselineChunkIds'],['semantic','semanticChunkIds'],['hybrid','hybridChunkIds']]) {
+        record.retrievalComparisons[method]=[...new Set(comparison[key].map(id=>{
+          const passage=record.sourceMap[sourceByChunk.get(id)];
+          if(!passage) throw new Error('Comparison passage is outside the annotated corpus');
+          return passage;
+        }))];
+      }
+    }
     record.finishedAt=new Date().toISOString();
   } catch(error) {
     // Test API errors contain only application problem text; never include tokens/headers.

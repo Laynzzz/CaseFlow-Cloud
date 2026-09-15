@@ -1,0 +1,32 @@
+{
+  "version": "retrieval-development-probes-v1",
+  "annotationStatus": "author-defined-synthetic-awaiting-human-review",
+  "purpose": "Supplementary development probes with distractors; never part of the frozen held-out split",
+  "distractors": [
+    "Purchase records must be archived with their cost center and justification for seven years.",
+    "The purchase cost center must appear on invoices for printing supplies.",
+    "A justification is required when a purchase concerns office stationery.",
+    "Cost center owners reconcile purchase receipts for catering each month.",
+    "Purchase orders for warehouse packaging must include a business justification.",
+    "Facilities allocate the cost center for cleaning service purchases.",
+    "Marketing purchases need a campaign code and written justification.",
+    "Purchase records for fleet fuel must identify the vehicle and cost center."
+  ],
+  "cases": [
+    {
+      "id": "portable-computer",
+      "query": "May I buy a replacement laptop for my remote workspace?",
+      "relevantPolicy": "Portable computers issued for home working require authorization from the technology team before an order is placed."
+    },
+    {
+      "id": "ergonomic-seating",
+      "query": "Can I order a chair to reduce back pain at my desk?",
+      "relevantPolicy": "Ergonomic seating for employees with musculoskeletal discomfort requires an occupational health assessment."
+    },
+    {
+      "id": "air-travel",
+      "query": "Are plane tickets for an overseas client visit allowed?",
+      "relevantPolicy": "International business airfare must be booked in economy class and authorized by the department manager."
+    }
+  ]
+}
