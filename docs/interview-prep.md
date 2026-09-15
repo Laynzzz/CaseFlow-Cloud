@@ -159,3 +159,17 @@ subsequent work; do not describe them as verified by these parser tests.
 
 Evidence: `tests/e2e/source-api.mjs`, `services/worker/tests/test_ingestion.py`,
 `db/migrations/V5__evidence_sources.sql`. AI quality is not measured by these tests.
+# R2 policy history checkpoint (2026-09-15)
+
+- What happens when a policy changes? Upload/publish a new immutable version.
+  Drafts explicitly refresh their selection; started purchases retain old pins.
+  Deactivation excludes new use while preserving authorized historical evidence.
+- Why PostgreSQL full-text search first? It is a small, inspectable baseline using
+  the existing database and tenant/source filters. It may miss synonyms. The
+  embedding/hybrid alternative must show improvement on identical frozen queries;
+  no retrieval-quality improvement has been measured yet.
+- Can a requester refresh policies during an approval? No. The Java command and
+  SQL trigger reject pin changes outside DRAFT; this protects the review history.
+
+Evidence: `tests/e2e/source-api.mjs`, `services/worker/tests/test_policy_pins.py`,
+`db/migrations/V6__policy_pins.sql`, `PolicyPinController.java`.

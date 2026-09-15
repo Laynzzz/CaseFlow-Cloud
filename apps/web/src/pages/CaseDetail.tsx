@@ -5,6 +5,7 @@ import { api, unwrap, commandHeaders } from "../api/client";
 import { DraftForm } from "./DraftForm";
 import { Documents } from "./Documents";
 import { Sources } from "./Sources";
+import { Policies } from "./Policies";
 import { Empty, Notice, Status } from "../components";
 export function CaseDetail({
   tenant,
@@ -347,6 +348,16 @@ export function CaseDetail({
           )}
         </>
       )}
+      <Policies
+        tenant={tenant}
+        caseId={caseId}
+        version={item.version}
+        editable={
+          item.state === "DRAFT" &&
+          item.ownerId === userId &&
+          roles.includes("REQUESTER")
+        }
+      />
       <Sources
         tenant={tenant}
         caseId={caseId}

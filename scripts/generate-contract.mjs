@@ -33,6 +33,10 @@ const schemas = {
   SourceVersionInput: object({expectedVersion:version,expectedCaseVersion:nullable(version)},['expectedVersion']),
   SourceChunk: object({id:uuid,page:{type:'integer'},section:str,start:{type:'integer'},end:{type:'integer'},text:str,sha256:str}),
   SourceChunks: object({source:ref('Source'),metadata:object({parserVersion:str,chunkVersion:str,pageCount:{type:'integer'}}),items:array(ref('SourceChunk'))}),
+  PolicyPin: object({id:uuid,name:str,version,state:str}),
+  PolicyPins: object({initialized:bool,items:array(ref('PolicyPin'))}),
+  PolicyPassage: object({id:uuid,sourceId:uuid,name:str,page:{type:'integer'},section:str,start:{type:'integer'},end:{type:'integer'},text:str,sha256:str,score:{type:'number'}}),
+  PolicySearch: object({method:str,items:array(ref('PolicyPassage'))}),
   Document: object({jobId:uuid,attempt:{type:'integer'},status:str,failureCode:nullable(str),sha256:nullable(str),byteSize:nullable({type:'integer'}),createdAt:{type:'string',format:'date-time'}}),
   Documents: object({items:array(ref('Document'))}),
   Download: object({url:str,expiresInSeconds:{type:'integer'}}),
@@ -67,6 +71,7 @@ paths[t+'/sources'].get.parameters.push({name:'caseId',in:'query',schema:uuid});
 endpoint(t+'/sources','post','allocateSource','Source','SourceInput',{command:true});
 endpoint(t+'/sources/{sourceId}','get','getSource','Source');
 endpoint(t+'/sources/{sourceId}/chunks','get','sourceChunks','SourceChunks');
+paths[t+'/sources/{sourceId}/chunks'].get.parameters.push({name:'caseId',in:'query',schema:uuid});
 endpoint(t+'/sources/{sourceId}/content','put','uploadSource','Uploaded');
 paths[t+'/sources/{sourceId}/content'].put.requestBody={required:true,content:{'application/octet-stream':{schema:{type:'string',format:'binary'}}}};
 for(const action of ['finalize','publish','deactivate']) endpoint(t+'/sources/{sourceId}/'+action,'post',action+'Source','Source','SourceVersionInput',{command:true});
@@ -85,6 +90,10 @@ endpoint(t+'/templates/{templateId}/publish','post','publishTemplate','Template'
 endpoint(t+'/cases','get','listCases','CasePage',null,{list:true});
 endpoint(t+'/cases','post','createCase','Case','CaseInput',{command:true});
 endpoint(t+'/cases/{caseId}','get','getCase','Case');
+endpoint(t+'/cases/{caseId}/policies','get','casePolicies','PolicyPins');
+endpoint(t+'/cases/{caseId}/policies/refresh','post','refreshPolicies','PolicyPins','VersionInput',{command:true});
+endpoint(t+'/cases/{caseId}/policies/search','get','searchPolicies','PolicySearch');
+paths[t+'/cases/{caseId}/policies/search'].get.parameters.push({name:'query',in:'query',required:true,schema:{type:'string',minLength:1,maxLength:500}});
 endpoint(t+'/cases/{caseId}','put','updateCase','Case','CaseInput',{command:true});
 endpoint(t+'/cases/{caseId}/assignments','put','assignCase','Case','AssignInput',{command:true});
 endpoint(t+'/cases/{caseId}/start','post','startCase','Case','VersionInput',{command:true});

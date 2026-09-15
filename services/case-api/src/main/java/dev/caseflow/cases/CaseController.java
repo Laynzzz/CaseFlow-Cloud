@@ -3,6 +3,7 @@ package dev.caseflow.cases;
 import dev.caseflow.common.*;
 import dev.caseflow.identity.Access;
 import dev.caseflow.documents.DocumentJobs;
+import dev.caseflow.evidence.PolicyPins;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
 import java.time.Instant;
@@ -17,7 +18,8 @@ import org.springframework.web.bind.annotation.*;
 public class CaseController {
     private final JdbcTemplate db; private final Access access; private final Commands commands; private final Json json; private final CaseQueries queries;
     private final DocumentJobs documents;
-    public CaseController(JdbcTemplate db,Access access,Commands commands,Json json,CaseQueries queries,DocumentJobs documents) {this.db=db;this.access=access;this.commands=commands;this.json=json;this.queries=queries;this.documents=documents;}
+    private final PolicyPins policies;
+    public CaseController(JdbcTemplate db,Access access,Commands commands,Json json,CaseQueries queries,DocumentJobs documents,PolicyPins policies) {this.db=db;this.access=access;this.commands=commands;this.json=json;this.queries=queries;this.documents=documents;this.policies=policies;}
     public record Input(@NotNull @Valid Purchase purchase,UUID workflowId,UUID templateId,UUID originalCaseId,@PositiveOrZero Long expectedVersion) {}
     public record AssignInput(@NotNull @PositiveOrZero Long expectedVersion,@NotNull @Size(min=2,max=2) List<@NotNull UUID> approverIds) {}
     public record VersionInput(@NotNull @PositiveOrZero Long expectedVersion) {}
@@ -100,6 +102,7 @@ public class CaseController {
             var assignments=db.queryForList("SELECT user_id FROM core.assignments WHERE tenant_id=? AND case_id=? ORDER BY step",tenantId,caseId);
             Problem.require(assignments.size()==2,"Assign two approval steps");
             assignments.stream().map(a->(UUID)a.get("user_id")).distinct().sorted().forEach(id->{Problem.require(!actor.equals(id),"Self-approval is prohibited");access.role(tenantId,id,"APPROVER",true);});
+            policies.beforeStart(tenantId,caseId);
             db.update("UPDATE core.cases SET state='ACTIVE',workflow_snapshot=(SELECT steps FROM core.workflow_versions WHERE tenant_id=? AND id=?),version=version+1,updated_at=now() WHERE tenant_id=? AND id=?",tenantId,row.get("workflowId"),tenantId,caseId);
             commands.audit(tenantId,caseId,actor,"CASE_STARTED",Map.of("workflowId",row.get("workflowId")));return queries.one(tenantId,caseId,false);
         });

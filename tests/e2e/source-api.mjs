@@ -58,6 +58,17 @@ await outsider(`${path}?caseId=${draft.id}`,{expected:404});
 assert.equal((await requester(`${path}/${quote.id}/chunks`)).items[0].text,quoteBytes.toString());
 console.log('PASS quote owner permissions, stale draft protection, revision bump, unchanged manual purchase data');
 
+const pins=await requester(`${tenant}/cases/${draft.id}/policies/refresh`,{method:'POST',body:{expectedVersion:changed.version}});
+assert.ok(pins.items.some(p=>p.id===policy.id));
+const search=await requester(`${tenant}/cases/${draft.id}/policies/search?query=cost%20center`);
+assert.ok(search.items.some(p=>p.sourceId===policy.id));
+await outsider(`${tenant}/cases/${draft.id}/policies/search?query=cost`,{expected:404});
+let started=await requester(`${tenant}/cases/${draft.id}`);
+started=await requester(`${tenant}/cases/${draft.id}`,{method:'PUT',body:{purchase:{...purchase,costCenter:'OPS-TEST'},workflowId:fixture.workflowId,templateId:fixture.templateId,expectedVersion:started.version}});
+started=await requester(`${tenant}/cases/${draft.id}/assignments`,{method:'PUT',body:{expectedVersion:started.version,approverIds:[fixture.users.manager,fixture.users.finance]}});
+started=await requester(`${tenant}/cases/${draft.id}/start`,{method:'POST',body:{expectedVersion:started.version}});
+await requester(`${tenant}/cases/${draft.id}/policies/refresh`,{method:'POST',body:{expectedVersion:started.version},expected:409});
+
 const invalid=Buffer.from('%PDF-not-a-valid-file');
 const bad=await admin(path,{method:'POST',body:{...body,name:'Synthetic malformed PDF',mediaType:'application/pdf',byteSize:invalid.length}});
 await upload(bad.id,invalid);
@@ -68,4 +79,8 @@ await admin(`${path}/${bad.id}/publish`,{method:'POST',body:{expectedVersion:fai
 policy=await admin(`${path}/${policy.id}/deactivate`,{method:'POST',body:{expectedVersion:policy.version}});
 assert.equal(policy.state,'DEACTIVATED');
 assert.ok(!(await requester(path)).items.some(s=>s.id===policy.id));
+assert.equal((await requester(`${path}/${policy.id}/chunks?caseId=${draft.id}`)).items[0].text,bytes.toString());
+await requester(`${path}/${policy.id}/chunks`,{expected:404});
+assert.ok((await requester(`${tenant}/cases/${draft.id}/policies/search?query=cost%20center`)).items.some(p=>p.sourceId===policy.id));
 console.log('PASS clear malformed-file failure, failed-policy publication blocked, deactivated policy excluded');
+console.log('PASS policy refresh, scoped full-text retrieval, started pin immutability, historical deactivated-policy access');

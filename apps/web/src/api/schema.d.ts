@@ -324,6 +324,54 @@ export interface paths {
     patch?: never;
     trace?: never;
   };
+  "/api/v1/tenants/{tenantId}/cases/{caseId}/policies": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get: operations["casePolicies"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/api/v1/tenants/{tenantId}/cases/{caseId}/policies/refresh": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    post: operations["refreshPolicies"];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/api/v1/tenants/{tenantId}/cases/{caseId}/policies/search": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get: operations["searchPolicies"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
   "/api/v1/tenants/{tenantId}/cases/{caseId}/assignments": {
     parameters: {
       query?: never;
@@ -616,6 +664,35 @@ export interface components {
         pageCount: number;
       };
       items: components["schemas"]["SourceChunk"][];
+    };
+    PolicyPin: {
+      /** Format: uuid */
+      id: string;
+      name: string;
+      version: number;
+      state: string;
+    };
+    PolicyPins: {
+      initialized: boolean;
+      items: components["schemas"]["PolicyPin"][];
+    };
+    PolicyPassage: {
+      /** Format: uuid */
+      id: string;
+      /** Format: uuid */
+      sourceId: string;
+      name: string;
+      page: number;
+      section: string;
+      start: number;
+      end: number;
+      text: string;
+      sha256: string;
+      score: number;
+    };
+    PolicySearch: {
+      method: string;
+      items: components["schemas"]["PolicyPassage"][];
     };
     Document: {
       /** Format: uuid */
@@ -1200,7 +1277,9 @@ export interface operations {
   };
   sourceChunks: {
     parameters: {
-      query?: never;
+      query?: {
+        caseId?: string;
+      };
       header?: never;
       path: {
         tenantId: string;
@@ -2757,6 +2836,245 @@ export interface operations {
         };
         content: {
           "application/json": components["schemas"]["Case"];
+        };
+      };
+      /** @description Structured error; inaccessible resources return 404 */
+      400: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/problem+json": components["schemas"]["Problem"];
+        };
+      };
+      /** @description Structured error; inaccessible resources return 404 */
+      401: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/problem+json": components["schemas"]["Problem"];
+        };
+      };
+      /** @description Structured error; inaccessible resources return 404 */
+      403: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/problem+json": components["schemas"]["Problem"];
+        };
+      };
+      /** @description Structured error; inaccessible resources return 404 */
+      404: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/problem+json": components["schemas"]["Problem"];
+        };
+      };
+      /** @description Structured error; inaccessible resources return 404 */
+      409: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/problem+json": components["schemas"]["Problem"];
+        };
+      };
+      /** @description Structured error; inaccessible resources return 404 */
+      503: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/problem+json": components["schemas"]["Problem"];
+        };
+      };
+    };
+  };
+  casePolicies: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        tenantId: string;
+        caseId: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description Success */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["PolicyPins"];
+        };
+      };
+      /** @description Structured error; inaccessible resources return 404 */
+      400: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/problem+json": components["schemas"]["Problem"];
+        };
+      };
+      /** @description Structured error; inaccessible resources return 404 */
+      401: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/problem+json": components["schemas"]["Problem"];
+        };
+      };
+      /** @description Structured error; inaccessible resources return 404 */
+      403: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/problem+json": components["schemas"]["Problem"];
+        };
+      };
+      /** @description Structured error; inaccessible resources return 404 */
+      404: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/problem+json": components["schemas"]["Problem"];
+        };
+      };
+      /** @description Structured error; inaccessible resources return 404 */
+      409: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/problem+json": components["schemas"]["Problem"];
+        };
+      };
+      /** @description Structured error; inaccessible resources return 404 */
+      503: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/problem+json": components["schemas"]["Problem"];
+        };
+      };
+    };
+  };
+  refreshPolicies: {
+    parameters: {
+      query?: never;
+      header: {
+        "Idempotency-Key": string;
+      };
+      path: {
+        tenantId: string;
+        caseId: string;
+      };
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["VersionInput"];
+      };
+    };
+    responses: {
+      /** @description Success */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["PolicyPins"];
+        };
+      };
+      /** @description Structured error; inaccessible resources return 404 */
+      400: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/problem+json": components["schemas"]["Problem"];
+        };
+      };
+      /** @description Structured error; inaccessible resources return 404 */
+      401: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/problem+json": components["schemas"]["Problem"];
+        };
+      };
+      /** @description Structured error; inaccessible resources return 404 */
+      403: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/problem+json": components["schemas"]["Problem"];
+        };
+      };
+      /** @description Structured error; inaccessible resources return 404 */
+      404: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/problem+json": components["schemas"]["Problem"];
+        };
+      };
+      /** @description Structured error; inaccessible resources return 404 */
+      409: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/problem+json": components["schemas"]["Problem"];
+        };
+      };
+      /** @description Structured error; inaccessible resources return 404 */
+      503: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/problem+json": components["schemas"]["Problem"];
+        };
+      };
+    };
+  };
+  searchPolicies: {
+    parameters: {
+      query: {
+        query: string;
+      };
+      header?: never;
+      path: {
+        tenantId: string;
+        caseId: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description Success */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["PolicySearch"];
         };
       };
       /** @description Structured error; inaccessible resources return 404 */

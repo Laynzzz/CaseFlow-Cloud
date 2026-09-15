@@ -52,6 +52,14 @@ public class SourceController {
         if(!"DRAFT".equals(row.get("state")))throw new Problem(409,"Quotes can only be attached to a draft");
         if(expected!=null&&expected.longValue()!=((Number)row.get("version")).longValue())throw Problem.conflict();
     }
+    private void authorizeRead(UUID tenant,UUID actor,Map<String,Object> source,UUID caseContext) {
+        if(caseContext!=null && "POLICY".equals(source.get("kind"))) {
+            access.caseVisible(tenant,actor,caseContext,false);
+            if(!Boolean.TRUE.equals(db.queryForObject("SELECT EXISTS(SELECT 1 FROM core.case_policy_pins p JOIN core.cases c ON c.tenant_id=p.tenant_id AND c.id=p.case_id WHERE p.tenant_id=? AND p.case_id=? AND p.source_id=? AND (c.state<>'DRAFT' OR ?='PUBLISHED'))",Boolean.class,tenant,caseContext,source.get("id"),source.get("state"))))throw Problem.missing();
+            return;
+        }
+        authorize(tenant,actor,source,false,false);
+    }
     private Map<String,Object> output(Map<String,Object> row) {
         var result=new LinkedHashMap<String,Object>();
         for(String field:List.of("id","kind","name","state","version"))result.put(field,row.get(field));
@@ -74,9 +82,9 @@ public class SourceController {
         authorize(tenantId,actor,row,false,false);return output(row);
     }
     @GetMapping("/{sourceId}/chunks")
-    public Map<String,Object> chunks(@AuthenticationPrincipal Jwt jwt,@PathVariable UUID tenantId,@PathVariable UUID sourceId) {
+    public Map<String,Object> chunks(@AuthenticationPrincipal Jwt jwt,@PathVariable UUID tenantId,@PathVariable UUID sourceId,@RequestParam(required=false) UUID caseId) {
         UUID actor=access.identity(jwt);access.member(tenantId,actor,false);var row=one(tenantId,sourceId,false);
-        authorize(tenantId,actor,row,false,false);
+        authorizeRead(tenantId,actor,row,caseId);
         Problem.require(Set.of("INDEXED","PUBLISHED","DEACTIVATED").contains(row.get("state")),"Source indexing has not succeeded");
         var metadata=db.queryForList("SELECT parser_version AS \"parserVersion\",chunk_version AS \"chunkVersion\",page_count AS \"pageCount\" FROM worker.source_results WHERE tenant_id=? AND source_id=?",tenantId,sourceId);
         return Map.of("source",output(row),"metadata",metadata.getFirst(),"items",db.queryForList("SELECT id,page,section,start_offset AS start,end_offset AS end,text,sha256 FROM worker.source_chunks WHERE tenant_id=? AND source_id=? ORDER BY ordinal LIMIT 1000",tenantId,sourceId));

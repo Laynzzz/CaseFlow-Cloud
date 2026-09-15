@@ -4,19 +4,21 @@ import { api, unwrap, commandHeaders } from "../api/client";
 import { auth } from "../auth";
 import { Notice, Status } from "../components";
 
-function SourceText({
+export function SourceText({
   tenant,
   sourceId,
+  caseId,
 }: {
   tenant: string;
   sourceId: string;
+  caseId?: string;
 }) {
   const result = useQuery({
-    queryKey: ["source-text", tenant, sourceId],
+    queryKey: ["source-text", tenant, sourceId, caseId],
     queryFn: () =>
       unwrap(
         api.GET("/api/v1/tenants/{tenantId}/sources/{sourceId}/chunks", {
-          params: { path: { tenantId: tenant, sourceId } },
+          params: { path: { tenantId: tenant, sourceId }, query: { caseId } },
         }),
       ),
   });

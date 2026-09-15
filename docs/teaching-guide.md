@@ -283,3 +283,30 @@ publication gates, owner/tenant denials, stale draft versions, unchanged purchas
 data and malformed-PDF failure. Existing approval-to-DOCX regression still passes.
 Worker checks total 22 at this checkpoint. Browser upload interaction still needs
 its own verification; a frontend build alone does not prove the browser journey.
+# R2 checkpoint: pinned policies and scoped search (2026-09-15)
+
+Purchase behavior: the requester explicitly refreshes the published policy
+selection while the case is a draft. Starting selects policies if none were
+selected yet. After starting, SQL prevents replacement or deletion of the pins.
+Deactivated policies disappear from new selections and draft searches, but remain
+readable/searchable through purchases that already started with them. A draft
+containing a deactivated selection must refresh before starting.
+
+Java `PolicyPins.java` handles the selection; `PolicyPinController.java` authorizes
+the purchase before searching its pinned source chunks. PostgreSQL full-text
+search matches normalized words and ranks up to five passages. It is a measured
+baseline candidate, not semantic AI or evidence of retrieval quality. The later
+embedding comparison must use the same frozen queries. No passage is returned
+from an unpinned or unauthorized tenant merely because it matches the words.
+
+Decision: store policy source IDs and publication versions rather than copying
+policy text into every purchase. Immutable source bytes keep historical citations
+reproducible. Shared policy locks serialize pinning with deactivation; the case
+lock serializes refresh/start with purchase changes. Explicit refresh increments
+the purchase revision and will invalidate older AI suggestions.
+
+Verified: `node tests/e2e/source-api.mjs` now covers refresh, scoped retrieval,
+denied cross-tenant search, no refresh after start, and historical reads/search
+after deactivation. `test_policy_pins.py` verifies publication/immutability SQL
+constraints in disposable databases. The complete worker suite has 23 passing
+checks, and approval-to-DOCX regression and frontend build still pass.
