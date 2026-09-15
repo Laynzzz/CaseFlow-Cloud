@@ -4,7 +4,7 @@ import re
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Annotated
 
-SCHEMA_VERSION = "purchase-assistant-v3"
+SCHEMA_VERSION = "purchase-assistant-v4"
 
 
 class StrictModel(BaseModel):

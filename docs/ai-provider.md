@@ -42,8 +42,10 @@ is checked before display. Matching citations and sums are structural validity;
 semantic claim support still requires the human evaluation rubric.
 
 Live testing exposed two rejected outputs: a currency suffix in the decimal total
-and a malformed citation ID. Schema v3 now specifies decimal/currency patterns
-and an enum of the exact authorized chunk IDs for that request. Prompt v3 explains
+and a malformed citation ID. Schema v4 specifies decimal/currency patterns
+and an enum of the exact authorized chunk IDs for that request. With no policy
+passages, the schema requires abstention and empty citations/findings. Prompt v4
+distinguishes missing policy evidence from missing purchase fields, and explains
 normalization while citation quotes retain original text. Existing validation
 remains mandatory; these restrictions do not prove semantic accuracy.
 
