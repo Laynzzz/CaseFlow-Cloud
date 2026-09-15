@@ -1,0 +1,250 @@
+{
+  "recorded_at": "2026-09-11T12:17:37.5957052Z",
+  "base_commit": "61c1be5e9c4889b95f4d0d52a6842d79eb101265",
+  "revision_state": "uncommitted working tree; evidence files excluded from source hashes",
+  "fixture_version": "demo-scenario-v1 (specification only)",
+  "node": "v22.20.0",
+  "jar_sha256": "29361cb6b19489478cadc634701d4ae07b585e0617c01ad83d13e56649044485",
+  "sources": [
+    {
+      "path": ".gitattributes",
+      "sha256": "33b0ac3413cdbd398e9ad02a032c0a2c689d5ec0fff98a87a1de6a2c487e8ab0"
+    },
+    {
+      "path": ".github/workflows/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "841bc3fe1bb3fa2d6b3db1af99de950d970dd58d8e1f47a09d6757f2d9f2df0c"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "f505a33e005bb0080ef827754e7f77ab01e9e25d3062dc5b489ccf619aa3517b"
+    },
+    {
+      "path": "apps/web/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "apps/web/index.html",
+      "sha256": "6c4d6ee916ecd32eea7de5dca9f24315436e2014afead4c443faa75004559062"
+    },
+    {
+      "path": "apps/web/package-lock.json",
+      "sha256": "62a90ded1f4b5de998ec20459dd96ac18a04db434e84aa87b3f70f27120d2818"
+    },
+    {
+      "path": "apps/web/package.json",
+      "sha256": "6acb61f88e4b05cf0978616ccb07b71c289850cfc9a7383b75e4fe411a58b55c"
+    },
+    {
+      "path": "apps/web/src/api/client.ts",
+      "sha256": "6d7f937a984bed87861c27d710c722761b2d4938378768e2fceed734de07028b"
+    },
+    {
+      "path": "apps/web/src/api/schema.d.ts",
+      "sha256": "961203dc75c928ab63541a687e6bd5cb8d12bfffce8e1e04fd401b946e190b17"
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "sha256": "afbf764c36cc73f282c6d2665a44881c9d9da0137a2b8ced94bb3c2a4bbac43a"
+    },
+    {
+      "path": "apps/web/src/main.tsx",
+      "sha256": "7bc1ba66885c1fb063d6cd79beda0d464031d0b2eae1d761f41f8c25bff7ed2a"
+    },
+    {
+      "path": "apps/web/src/styles.css",
+      "sha256": "02ada0e561db5f6777bbaa941fb25513d539987934fce835cfbf8fa3a5726ccb"
+    },
+    {
+      "path": "apps/web/tsconfig.json",
+      "sha256": "382c3c4a68901c016c3038c9653f1adaf145738c68de40a34821181ead2d7289"
+    },
+    {
+      "path": "apps/web/vite.config.ts",
+      "sha256": "7a0fc0ce1c40e0775fa0b8e5954ffd4aef7839acd011865d618646b3c4ffcca5"
+    },
+    {
+      "path": "CLAUDE.md",
+      "sha256": "6f47da4d2f5661f4b6d207b8aca0d7ca7a02bbba3f3b76e1f09a308edc4b20a2"
+    },
+    {
+      "path": "compose.yaml",
+      "sha256": "54660c8aa84b84006bdc69de1425aa2f4d7b60e394c161cab5f76c970cfed08d"
+    },
+    {
+      "path": "contracts/events/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contracts/openapi/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contracts/openapi/caseflow.yaml",
+      "sha256": "fa7dd9e350542e97f9dab23149edb4a09f69e78d8f6b7268f7b4999fa4876774"
+    },
+    {
+      "path": "db/migrations/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "db/migrations/V1__foundation.sql",
+      "sha256": "3294f9713fe9acc147a1fab6dd56b129fa09a2ea7530eab90d8112eceb864b4a"
+    },
+    {
+      "path": "docs/adr/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/adr/0001-foundation.md",
+      "sha256": "1420c32744e85de667bf1f7f8f03f9d980e283662120eb6034f10c92f2527ad6"
+    },
+    {
+      "path": "docs/demo-scenario.md",
+      "sha256": "071a36797d8230beb27b7cc00d74ba7a38ad5014db7f50e4be988c495fa298e4"
+    },
+    {
+      "path": "docs/diagrams/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence-index.md",
+      "sha256": "6e3a9e0084d44cde8d8ba5140c3a6e89364a8ea3012a958b953eddca5726bc61"
+    },
+    {
+      "path": "docs/interview-prep.md",
+      "sha256": "e4f9740b05b58ab025c0cc7bcf144ce864806af7af3281b95b84c92f04425466"
+    },
+    {
+      "path": "docs/versions.md",
+      "sha256": "500d7fa1f5bb634607f35879ca60c22ef52b9d8aec58a46e72d9829aacc84d9b"
+    },
+    {
+      "path": "evals/datasets/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evals/reports/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evals/runners/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "infrastructure/local/init-db.sh",
+      "sha256": "da422d1438409cc1470005bbf0dd8f98ceacf1485022381ed8bc09739d104efe"
+    },
+    {
+      "path": "infrastructure/observability/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "infrastructure/terraform/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "plan.md",
+      "sha256": "b8f9eb72258a7e1cbc1dbf3c678dd1c4fd412da87733114eaf1ec0f72b982bdb"
+    },
+    {
+      "path": "README.md",
+      "sha256": "1442c9d87e095abeda4bcda7cb0ddb5360843af1acd9bf6d9188a759b9dfa7d5"
+    },
+    {
+      "path": "scripts/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "scripts/dev-env.ps1",
+      "sha256": "e22c5d841a04d32d8059a37aaac01c56f7fedae3a7f9df7df58f5f2199b94408"
+    },
+    {
+      "path": "scripts/init-local.mjs",
+      "sha256": "55c5d937b21fe7793743b920a28eda7ff85befd796a5a4279e0bd8ab611de14c"
+    },
+    {
+      "path": "scripts/smoke.mjs",
+      "sha256": "d5a6aac5c41095b37d27dba2d7e26f6a3143cae0a53e8c059402901047b6c130"
+    },
+    {
+      "path": "services/case-api/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "services/case-api/build.gradle",
+      "sha256": "dca37db40f4bacbb34c3177c511a6304568f87f3e7eb482b5ab64563d11e4b96"
+    },
+    {
+      "path": "services/case-api/gradle.lockfile",
+      "sha256": "2827f99295954ff035a877117dccaab96f80309ac7aa21aa3a647873e4cc4ba7"
+    },
+    {
+      "path": "services/case-api/gradle/wrapper/gradle-wrapper.jar",
+      "sha256": "7a9ce74cff467ca1bf60a4fcd9f05185acceda4d0f382434d393e17864262c5d"
+    },
+    {
+      "path": "services/case-api/gradle/wrapper/gradle-wrapper.properties",
+      "sha256": "d0bebe8133babb74ab29a31ee6616c56ef8985fc801e1fd16c61b5ed2189e907"
+    },
+    {
+      "path": "services/case-api/gradlew",
+      "sha256": "a5a5c199ba02189ae8c46a334223371a20599d9c298ef65e7540ede4a3f72d59"
+    },
+    {
+      "path": "services/case-api/gradlew.bat",
+      "sha256": "d539676c48b596afda64c963ec8f7ee56c7b3fe7e3b81d1dbe2d1a1e3dd9e9f8"
+    },
+    {
+      "path": "services/case-api/settings.gradle",
+      "sha256": "5cc1e7ae6cd3e5c269a7694bf5ecac4ff0ffc52b0dae5f88dbe34bf775a49703"
+    },
+    {
+      "path": "services/case-api/src/main/java/dev/caseflow/CaseApiApplication.java",
+      "sha256": "b46e729cdef22ab02844604be59fcd865dd70deffabe0a814724049a77328a25"
+    },
+    {
+      "path": "services/case-api/src/main/java/dev/caseflow/health/HealthController.java",
+      "sha256": "5184f17002d572a10ff039dc4a0bf80735f460f34dbb87e068770c60a6325a12"
+    },
+    {
+      "path": "services/case-api/src/main/java/dev/caseflow/security/SecurityConfiguration.java",
+      "sha256": "4673d8ade9b31adeb27a19e953f61f991d1919a6b1d7cfa9025d22f9a4a8db13"
+    },
+    {
+      "path": "services/case-api/src/main/resources/application.yaml",
+      "sha256": "d35a776aa49baecfe155921d62ae04eca0dfa80cc31c8f1c51188e4d5fed850f"
+    },
+    {
+      "path": "services/case-api/src/test/java/dev/caseflow/health/HealthControllerTest.java",
+      "sha256": "81447a1afcab3b696a07398dd74127b34456c867cdfb7c0799a998809ba82fc4"
+    },
+    {
+      "path": "services/worker/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tests/e2e/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tests/load/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tests/resilience/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tests/security/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tests/security/foundation-privileges.sql",
+      "sha256": "85bf435568e59fc3fce33dfde2d3b89fbc78d6f16946296cd4393ad45f0ac6ad"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+DO
+                                   result                                    
+-----------------------------------------------------------------------------
+ PASS: runtime grants, schema boundaries, non-superuser roles, one migration
+(1 row)
+

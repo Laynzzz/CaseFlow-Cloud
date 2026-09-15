@@ -1,0 +1,18 @@
+
+> @caseflow/web@0.1.0 build
+> npm run typecheck && vite build
+
+
+> @caseflow/web@0.1.0 typecheck
+> tsc --noEmit
+
+vite v8.3.0 building client environment for production...
+transforming...
+✓ 18 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.44 kB │ gzip:  0.29 kB
+dist/assets/index-x1EO1Yym.css    2.18 kB │ gzip:  0.94 kB
+dist/assets/index-BQqCSZJS.js   228.96 kB │ gzip: 71.90 kB
+
+✓ built in 258ms

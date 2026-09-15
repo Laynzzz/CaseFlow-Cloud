@@ -1,0 +1,35 @@
+Observed on 2026-09-11T12:17:36.768Z in Codex in-app browser.
+Initial API stopped: connection unavailable; retry button enabled.
+API running: Connected — the API can read the initialized database.
+Controlled PostgreSQL stop: connection unavailable; retry button enabled.
+PostgreSQL restarted, clicked Check again: Connected — the API can read the initialized database.
+Narrow viewport requested 390x844; actual document clientWidth=375, scrollWidth=375; no horizontal overflow.
+Desktop screenshot saved as preview.jpg. These are session observations, not a repeatable browser test suite.
+
+- main:
+  - link "CaseFlowCloud":
+    - /url: /
+  - generic: Development preview
+  - region "Every purchase starts with a clear request.":
+    - paragraph: A clear path from request to approval
+    - heading "Every purchase starts with a clear request." [level=1]:
+      - text: Every purchase starts
+      - text: with a clear request.
+    - paragraph: Bring purchase details, supporting quotes, and human approvals into one place.
+  - region "The workflow we’re building":
+    - heading "The workflow we’re building" [level=2]
+    - list:
+      - text: "01"
+      - heading "Make a request" [level=3]
+      - paragraph: Explain what you need, what it costs, and why it matters.
+      - text: "02"
+      - heading "Get two approvals" [level=3]
+      - paragraph: Your manager reviews first. Finance makes the final decision.
+      - text: "03"
+      - heading "Keep the record" [level=3]
+      - paragraph: Download the approved document and see the decision history.
+  - 'region "First milestone: connect the application"':
+    - 'heading "First milestone: connect the application" [level=2]'
+    - status: Connected — the API can read the initialized database.
+    - button "Check again"
+  - generic: Foundation preview. Purchase submission, sign-in, approvals, and AI assistance are not available yet.

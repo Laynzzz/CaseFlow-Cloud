@@ -1,0 +1,25 @@
+2026-09-11 local foundation setup: exact relevant error excerpts.
+Machine-specific paths replaced with <LOCAL_RUNTIME> or <PROJECT>.
+
+Initial Java version command:
+The term 'java' is not recognized as a name of a cmdlet, function, script file, or executable program.
+
+Initial npm install with TypeScript 6.0.3:
+npm error code ERESOLVE
+npm error ERESOLVE unable to resolve dependency tree
+npm error Found: typescript@6.0.3
+npm error peer typescript@"^5.x" from openapi-typescript@7.13.0
+
+First npm ci with the Vite dev server still running:
+npm error code EPERM
+npm error syscall unlink
+npm error path <PROJECT>\apps\web\node_modules\@rolldown\binding-win32-x64-msvc\rolldown-binding.win32-x64-msvc.node
+
+Docker startup, first socket:
+starting services: initializing Inference manager: listening on unix://<LOCAL_RUNTIME>\Docker\run\dockerInference: remove <LOCAL_RUNTIME>\Docker\run\dockerInference: The file cannot be accessed by the system. (listener: The filename, directory name, or volume label syntax is incorrect.)
+
+Attempt to rename the exact inaccessible socket:
+Rename-Item: The file cannot be accessed by the system.
+
+Docker startup, second socket:
+starting services: initializing Secrets Engine: listening on unix://<LOCAL_RUNTIME>\docker-secrets-engine\engine.sock: remove <LOCAL_RUNTIME>\docker-secrets-engine\engine.sock: The file cannot be accessed by the system. (listener: The filename, directory name, or volume label syntax is incorrect.)

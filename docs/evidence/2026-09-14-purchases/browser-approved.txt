@@ -1,0 +1,70 @@
+- link "Skip to content":
+  - /url: "#workspace"
+- complementary:
+  - link "CaseFlowCloud":
+    - /url: /
+  - text: Organization
+  - combobox "Organization":
+    - option "Select organization" [disabled]
+    - option "Acme Studio" [selected]
+  - navigation "Main navigation":
+    - link "Purchase requests":
+      - /url: /
+    - link "My account":
+      - /url: /account
+  - strong: finance
+  - button "Sign out"
+- main:
+  - link "← Purchase requests":
+    - /url: /
+  - paragraph: Synthetic Equipment Supply
+  - heading "Browser demo editing laptop" [level=1]
+  - generic: approved
+  - heading "Purchase details" [level=2]
+  - term: Total
+  - definition: USD 4200.00
+  - term: Cost center
+  - definition: CREATIVE-01
+  - term: Business justification
+  - definition: Replace the synthetic studio editing laptop for training.
+  - table:
+    - rowgroup:
+      - row "Item Quantity Unit price":
+        - columnheader "Item"
+        - columnheader "Quantity"
+        - columnheader "Unit price"
+    - rowgroup:
+      - row "Editing laptop 1 4200.00":
+        - cell "Editing laptop"
+        - cell "1"
+        - cell "4200.00"
+  - paragraph: Saved version 4 · 9/14/2026, 9:19:41 PM
+  - heading "Approval steps" [level=2]
+  - generic: "01"
+  - heading "First review" [level=3]
+  - paragraph: manager
+  - generic: approved
+  - generic: "02"
+  - heading "Final review" [level=3]
+  - paragraph: finance
+  - generic: approved
+  - heading "Approved document" [level=2]
+  - generic: queued
+  - paragraph: The purchase is approved. Document processing has a separate status.
+  - paragraph: Document execution is being implemented; downloads are not available in this development milestone.
+  - heading "Discussion and audit history" [level=2]
+  - text: Add a comment
+  - textbox "Add a comment"
+  - button "Post comment" [disabled]
+  - list:
+    - strong: case approve
+    - time: 9/14/2026, 9:19:41 PM
+    - strong: case approve
+    - time: 9/14/2026, 9:17:51 PM
+    - strong: case started
+    - time: 9/14/2026, 9:15:04 PM
+    - strong: assignments changed
+    - time: 9/14/2026, 9:14:56 PM
+    - strong: draft created
+    - time: 9/14/2026, 9:14:40 PM
+  - generic: Development build · Synthetic demonstration data
