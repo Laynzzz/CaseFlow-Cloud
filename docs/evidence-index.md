@@ -14,6 +14,21 @@ selected acceptance and review now work locally; R2 remains experimental.
 | First 10 development cases: 40/40 fields, Recall@5 8/8, correct abstention 2/2, false abstention 3/8 | [Diagnostic report](evidence/2026-09-15-r2/development-v3/smoke-report.json), [raw predictions](evidence/2026-09-15-r2/development-v3/predictions.jsonl), [all 20 calls](evidence/2026-09-15-r2/development-v3/calls.json) |
 | All 42 worker checks pass after V9 and schema hardening | [Worker report](evidence/2026-09-15-r2/live-worker-tests.xml) |
 
+Follow-up: prompt v4 distinguishes missing purchase facts from missing policy
+evidence; schema v4 requires abstention and empty citations when no policy was
+retrieved. The same first ten development cases then returned 40/40 field matches,
+8/8 relevant passages, 2/2 correct abstentions and 0/8 false abstentions, with no
+failed jobs. See the [latest diagnostic report](evidence/2026-09-15-r2/development-schema-v4/smoke-report.json)
+and [20 underlying calls](evidence/2026-09-15-r2/development-schema-v4/calls.json).
+The intermediate [prompt-only run](evidence/2026-09-15-r2/development-prompt-v4/smoke-report.json)
+retains its one incorrect empty-policy response, which validation rejected.
+The [budget snapshot](evidence/2026-09-15-r2/live-budget-latest.json) includes
+successful, failed and unknown attempts under the shared USD 10 ceiling.
+Final checks for this iteration: [43 worker tests](evidence/2026-09-15-r2/schema-v4-worker-tests.xml)
+pass, along with six Python evaluation tests, two Node dataset/annotation guards,
+frontend typecheck/build and formatting. The current accounted total is USD
+0.082986, including USD 0.039322 reserved for unknown earlier usage.
+
 These are synthetic development observations in one family, with generated
 references awaiting human verification. Claim support is ungraded. No held-out
 score, real-user time saving or R2 completion is claimed. Historical evidence

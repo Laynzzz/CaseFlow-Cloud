@@ -13,7 +13,7 @@ another confirmation unless an actual unresolved problem prevents the transition
 | Accept selected suggestions | Current-versus-proposed UI, separate acceptance command | Real SQL tests plus live API acceptance/replay and browser selected acceptance | Broader browser regression |
 | Generate a cited review | Fixed facts/evidence pipeline, abstention and citation checks | Contract/eligibility/fencing tests | Live claim-support and adversarial evaluation |
 | Control AI spend | Zero-default lifetime/tenant-day ceilings and durable reservations | Concurrent reservations, duplicate calls, unknown costs; user-authorized USD 10 ceiling configured | Wall-clock containment checks |
-| Demonstrate quality | 120 synthetic cases, disjoint 60/60 families, rubric, offline scorer and opt-in live runner | Dataset hashes/families, scorer tests, runner dry validation and annotation guards | Reference verification, successful live run, raw held-out outputs, scores, repeated runs and outcome measurements |
+| Demonstrate quality | 120 synthetic cases, disjoint 60/60 families, rubric, scorers, live runner and human review packet | Latest 10-case development run: 40/40 fields, Recall@5 8/8, correct abstention 2/2, false abstention 0/8 | Broader development coverage, reference verification, raw held-out outputs, claim support, repeated held-out runs and outcome measurements |
 
 The user resolved provider billing, and the live extraction/acceptance/review
 journey now passes. Initial failures remain in evidence: HTTP 429, a malformed
@@ -27,6 +27,12 @@ The worker was restarted to load it. Both the global lifetime and tenant/day cap
 are USD 10; repeated tests share the global cap. Credentials are never included
 in evidence. Successful model responses establish compatibility, not held-out
 quality; human reference review and the remaining release gates are still open.
+
+Latest evidence: `development-schema-v4` records prompt v4/schema v4 results for
+the first ten development cases. This is one generated family and remains a
+diagnostic smoke test. Earlier runs and failures are preserved. The offline
+`reference-review.html` packet supports actual human review and progress export;
+generating the packet does not verify the annotations.
 
 Implementation notes and interview material are maintained in
 `docs/teaching-guide.md` and `docs/interview-prep.md`. Claims and observed outputs

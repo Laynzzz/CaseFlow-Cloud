@@ -12,6 +12,12 @@ schema v3 produced 40/40 field matches and 8/8 relevant passages, but 3/8 answer
 reviews incorrectly flagged insufficient evidence. References and claim support
 still need human review; these results do not establish held-out quality.
 
+After clarifying missing facts versus missing policy evidence and constraining
+the empty-evidence schema, the same ten development cases returned 40/40 field
+matches, 8/8 retrieval, 2/2 correct abstentions and 0/8 false abstentions. Describe
+this as a small development iteration; the preserved failures explain the
+engineering decisions and are not evidence of broad model reliability.
+
 - **Why use both a strict model schema and code validation?** The schema constrains
   decimal formats and allowed citation IDs; code still checks exact source quotes,
   arithmetic, permissions and draft versions. Live failures exposed a currency

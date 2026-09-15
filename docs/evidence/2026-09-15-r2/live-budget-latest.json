@@ -1,0 +1,43 @@
+{
+  "totalLimitUsd": "10.000000",
+  "tenantDailyLimitUsd": "10.000000",
+  "accountedUsd": "0.082986",
+  "calls": [
+    {
+      "state": "SETTLED",
+      "errorCode": "EXPECTED_ABSTENTION",
+      "count": 1,
+      "accountedUsd": "0.000316"
+    },
+    {
+      "state": "SETTLED",
+      "errorCode": "INVALID_CITATION",
+      "count": 1,
+      "accountedUsd": "0.000688"
+    },
+    {
+      "state": "SETTLED",
+      "errorCode": "INVALID_TOTAL",
+      "count": 1,
+      "accountedUsd": "0.000590"
+    },
+    {
+      "state": "SETTLED",
+      "errorCode": null,
+      "count": 69,
+      "accountedUsd": "0.042070"
+    },
+    {
+      "state": "UNKNOWN",
+      "errorCode": "PROVIDER_HTTP_429",
+      "count": 1,
+      "accountedUsd": "0.019661"
+    },
+    {
+      "state": "UNKNOWN",
+      "errorCode": "PROVIDER_UNAVAILABLE",
+      "count": 1,
+      "accountedUsd": "0.019661"
+    }
+  ]
+}

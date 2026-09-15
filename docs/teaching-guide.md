@@ -447,3 +447,18 @@ These are preliminary comparisons with generated references in one development
 family. Human reference verification, claim support, held-out results, embedding
 comparison and outcome measurements remain open. Do not describe this as a 100%
 accurate system; the false-abstention result already demonstrates a limitation.
+
+The next development iteration separated two meanings: a missing cost center is
+missing purchase information, while no retrieved policy is missing evidence.
+Prompt v4 makes that distinction; schema v4 forces abstention and empty findings
+when no policy text exists. The same first ten cases then produced 40/40 field
+matches, 8/8 retrieval, 2/2 correct abstentions and 0/8 false abstentions. Earlier
+outputs remain available; this is development improvement, not a held-out claim.
+
+`evals/score_run.py` scores the first-N scope selected in the run manifest before
+calls, checks hashes/order, and keeps missing jobs in that scope's denominators.
+The human review packet displays the 120 frozen sources and expected answers,
+allows progress downloads, and never marks itself reviewed. A small Python
+static-file server on loopback can preview it without adding an application
+framework or sending review data to a backend. No human verification is claimed
+from generating or viewing that packet.
