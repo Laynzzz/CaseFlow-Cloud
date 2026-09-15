@@ -88,6 +88,7 @@ def score(cases, records, targets):
     correct_abstentions = unanswerable = false_abstentions = answerable = 0
     correct_answers = failed_extractions = failed_reviews = 0
     claim_rows = []
+    mismatches = []
     known_cost = Decimal(0)
     successful_results_without_cost = 0
     for case in cases:
@@ -105,6 +106,10 @@ def score(cases, records, targets):
             except (ValueError, TypeError, KeyError, AttributeError, InvalidOperation):
                 matches = False
             counts[field][0] += matches; counts[field][1] += 1
+            if not matches:
+                mismatches.append(dict(id=case['id'],field=field,expected=reference,
+                                       proposed=None if proposed is MISSING else proposed,
+                                       proposalPresent=proposed is not MISSING))
             categories[case["category"]][0] += matches; categories[case["category"]][1] += 1
             if reference is None:
                 missing_count += 1; missing_correct += matches
@@ -137,6 +142,7 @@ def score(cases, records, targets):
     extraction_score = rate(sum(v[0] for v in counts.values()), sum(v[1] for v in counts.values()))
     retrieval_score = rate(recalled, relevant)
     return dict(caseCount=len(cases), recordedCaseCount=len(by_id), missingCaseIds=sorted(allowed-by_id.keys()),
+                extractionMismatches=mismatches,
                 extraction=extraction_score, extractionByField={k:rate(*v) for k,v in counts.items()},
                 extractionByCategory={k:rate(*v) for k,v in sorted(categories.items())},
                 missingValueAccuracy=rate(missing_correct,missing_count), recallAt5=retrieval_score,

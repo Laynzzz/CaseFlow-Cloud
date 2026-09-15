@@ -1,6 +1,6 @@
 # ADR 0005: enforce provider deadlines from the worker parent
 
-Date: 2026-09-15. Status: implemented; live compatibility verification pending.
+Date: 2026-09-15. Status: implemented and verified on the local Windows host.
 
 A socket read timeout can restart as bytes arrive. It is insufficient to enforce
 the plan's elapsed-time limit for an AI call. A disposable Python child now owns
@@ -36,3 +36,8 @@ Evidence: `services/worker/tests/test_provider_transport.py` kills a real sleepi
 child and verifies it cannot write afterward, checks credential exclusion and
 rejects malformed output. `test_ai_provider.py` verifies that a parent deadline
 creates one UNKNOWN charge with the reserved amount retained.
+
+The real-provider `bounded-provider-smoke` run completed two extraction and two
+comparison-review jobs, including two embedding calls, through the restricted
+child. All six calls settled. This proves local compatibility, not production
+availability or a latency improvement. The 55-test worker suite also passed.

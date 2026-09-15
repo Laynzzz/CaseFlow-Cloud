@@ -141,3 +141,16 @@ RUN_DIRECTORY --output NEW_REPORT.json`. The scorer verifies dataset/prediction
 hashes and uses predeclared policy IDs from the fixture, never answers supplied
 by the prediction record. Missing cases remain in denominators. These three
 author-defined examples cannot establish general semantic quality.
+
+For actual claim grading, create an offline form with
+`python evals/build-claim-review-page.py --directory RUN_DIRECTORY --output NEW_PAGE.html`.
+It displays each recorded finding/summary with the saved purchase and evidence.
+The reviewer splits compound text into individual claims, chooses supported /
+unsupported / not factual, records a reason, and confirms complete coverage.
+Nothing starts graded. Export/import progress is bound to the run and text hashes.
+After an actual person returns the completed file, run
+`python evals/claim_review.py --directory RUN_DIRECTORY --review HUMAN_REVIEW.json --output NEW_REPORT.json`.
+Missing, ungraded or mismatched outputs are rejected. Unit-test grades are explicit
+synthetic fixtures and cannot be used as human evidence. The scorer checks record
+completeness; it cannot verify the truth of the human's judgment or establish R2
+completion by itself.
