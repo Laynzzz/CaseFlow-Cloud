@@ -1,0 +1,18 @@
+{
+  "startedAt": "2026-09-15T13:05:33.422Z",
+  "datasetVersion": "synthetic-v1",
+  "split": "development",
+  "compareRetrieval": true,
+  "datasetSha256": "fec73306673b441cea651c7ad498d8645af6351e4450f13bd5213c5dbd93086a",
+  "selectedIds": [
+    "equipment-001",
+    "equipment-002"
+  ],
+  "transport": "real-oidc-api-kafka-worker",
+  "selection": "first N in frozen file order",
+  "releaseGatePassed": false,
+  "note": "Synthetic diagnostic run. Reference and claim review required; failed calls need ledger reconciliation.",
+  "finishedAt": "2026-09-15T13:05:56.451Z",
+  "stoppedEarly": true,
+  "predictionsSha256": "cc07f063b19b2f0ea4ee5d631116d7a5dc8f64d9bbc58f510c72035c719611bf"
+}

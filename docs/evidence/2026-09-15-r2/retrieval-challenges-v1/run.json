@@ -1,0 +1,13 @@
+{
+  "datasetVersion": "retrieval-development-probes-v1",
+  "datasetSha256": "e2bcbb8bb7d45b34b083a2d90777ec33560ad0119b779cde828c4bdf485139f2",
+  "startedAt": "2026-09-15T13:11:34.439Z",
+  "selectedIds": [
+    "portable-computer",
+    "ergonomic-seating",
+    "air-travel"
+  ],
+  "releaseGatePassed": false,
+  "finishedAt": "2026-09-15T13:12:47.997Z",
+  "predictionsSha256": "ee55f82bdfc43def4fe2500f63db19df34569a0222a6424b33b4d7d7af7222f6"
+}

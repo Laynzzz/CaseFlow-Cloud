@@ -1,0 +1,438 @@
+{
+  "id": "ergonomic-seating",
+  "query": "Can I order a chair to reduce back pain at my desk?",
+  "sourceMap": {
+    "5e5a95bf-dee6-4c9f-b2c1-a6918f4afaa4": "distractor-1",
+    "561fb74c-3325-45d5-93d5-abd73b8fd7ef": "distractor-2",
+    "1ee0aa86-ea11-4fcb-bb4f-b0be2238ad07": "distractor-3",
+    "a903069a-7294-4a75-be2a-44ca6630cf28": "distractor-4",
+    "00968410-3128-4ce2-aa02-bc40badf6c01": "distractor-5",
+    "b0774047-5e9b-44ba-81ce-61c56e1bba5f": "distractor-6",
+    "f8b1bb46-e942-4dc6-b601-039544ca28b6": "distractor-7",
+    "4103a82d-bd55-4f7f-a4a1-6299c3e44bc2": "distractor-8",
+    "7d1087b0-164a-4e10-8cd2-e03062b25b31": "ergonomic-seating-policy"
+  },
+  "sources": [
+    {
+      "source": {
+        "id": "5e5a95bf-dee6-4c9f-b2c1-a6918f4afaa4",
+        "kind": "POLICY",
+        "name": "Synthetic distractor-1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 91,
+        "sha256": "3339ed0824ddaf59fac9f16cefb434278de5717653e92da69093a1164480eb38",
+        "jobId": "7141923b-f0d5-41f3-a79a-fd2828774331",
+        "failureCode": null
+      },
+      "passage": {
+        "id": "distractor-1",
+        "text": "Purchase records must be archived with their cost center and justification for seven years."
+      }
+    },
+    {
+      "source": {
+        "id": "561fb74c-3325-45d5-93d5-abd73b8fd7ef",
+        "kind": "POLICY",
+        "name": "Synthetic distractor-2",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 71,
+        "sha256": "19a5a7a4473c96ebcfbc70ffe89489f5be35b65429869f131e7b7adb85f9d905",
+        "jobId": "2030fc4b-8caf-46ed-87b5-62ac4f1effc9",
+        "failureCode": null
+      },
+      "passage": {
+        "id": "distractor-2",
+        "text": "The purchase cost center must appear on invoices for printing supplies."
+      }
+    },
+    {
+      "source": {
+        "id": "1ee0aa86-ea11-4fcb-bb4f-b0be2238ad07",
+        "kind": "POLICY",
+        "name": "Synthetic distractor-3",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 71,
+        "sha256": "a8ed41e6fd7e5898626ffbdd2584cfcad278620332f7cf72cf0cc92a080aa711",
+        "jobId": "aab3f114-81d5-426e-b39b-b880e282256e",
+        "failureCode": null
+      },
+      "passage": {
+        "id": "distractor-3",
+        "text": "A justification is required when a purchase concerns office stationery."
+      }
+    },
+    {
+      "source": {
+        "id": "a903069a-7294-4a75-be2a-44ca6630cf28",
+        "kind": "POLICY",
+        "name": "Synthetic distractor-4",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 71,
+        "sha256": "fdfbe127245116196a5f1201c1e5440c2d05e42621b5203733d5e3b07c44c607",
+        "jobId": "ef7a881b-0e9c-46bb-bf6c-db23d2a48193",
+        "failureCode": null
+      },
+      "passage": {
+        "id": "distractor-4",
+        "text": "Cost center owners reconcile purchase receipts for catering each month."
+      }
+    },
+    {
+      "source": {
+        "id": "00968410-3128-4ce2-aa02-bc40badf6c01",
+        "kind": "POLICY",
+        "name": "Synthetic distractor-5",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 78,
+        "sha256": "76a8cc8a67599f4a1891838cb0bcc9a033600b2980cbadc73e8c1c0ea4e8ed3e",
+        "jobId": "c24a98d6-37d2-4bc1-aa2d-85cc70e6f9a8",
+        "failureCode": null
+      },
+      "passage": {
+        "id": "distractor-5",
+        "text": "Purchase orders for warehouse packaging must include a business justification."
+      }
+    },
+    {
+      "source": {
+        "id": "b0774047-5e9b-44ba-81ce-61c56e1bba5f",
+        "kind": "POLICY",
+        "name": "Synthetic distractor-6",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 67,
+        "sha256": "93f9d6d79a2ec256525da9c44bbf1901802ce4f06ce51fcea13f11ed0c8d3eb1",
+        "jobId": "1781dc66-d59d-45ad-a0ca-fee959768b33",
+        "failureCode": null
+      },
+      "passage": {
+        "id": "distractor-6",
+        "text": "Facilities allocate the cost center for cleaning service purchases."
+      }
+    },
+    {
+      "source": {
+        "id": "f8b1bb46-e942-4dc6-b601-039544ca28b6",
+        "kind": "POLICY",
+        "name": "Synthetic distractor-7",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 67,
+        "sha256": "5754b42f2c7ce135199b4558d76978b6ae2286e55e6aa38d9c3bbb4a9b0c9084",
+        "jobId": "f332b9b8-725e-4e29-9ef4-63867b15145f",
+        "failureCode": null
+      },
+      "passage": {
+        "id": "distractor-7",
+        "text": "Marketing purchases need a campaign code and written justification."
+      }
+    },
+    {
+      "source": {
+        "id": "4103a82d-bd55-4f7f-a4a1-6299c3e44bc2",
+        "kind": "POLICY",
+        "name": "Synthetic distractor-8",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 74,
+        "sha256": "d4bac48bee917bddcc0bac78cf7c434efefc64c0df18fe42c971b5b093dce7ce",
+        "jobId": "51d173b7-0644-48a2-bf89-7e06207f7565",
+        "failureCode": null
+      },
+      "passage": {
+        "id": "distractor-8",
+        "text": "Purchase records for fleet fuel must identify the vehicle and cost center."
+      }
+    },
+    {
+      "source": {
+        "id": "7d1087b0-164a-4e10-8cd2-e03062b25b31",
+        "kind": "POLICY",
+        "name": "Synthetic ergonomic-seating-policy",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 107,
+        "sha256": "e29a6875202ebf5fdd7df255e2ec3f0098a76fdf69bb9449216d9229b848a707",
+        "jobId": "c8a31e53-18dc-4e6a-aa73-18960b130aae",
+        "failureCode": null
+      },
+      "passage": {
+        "id": "ergonomic-seating-policy",
+        "text": "Ergonomic seating for employees with musculoskeletal discomfort requires an occupational health assessment."
+      }
+    }
+  ],
+  "reference": {
+    "relevantPassages": [
+      "ergonomic-seating-policy"
+    ]
+  },
+  "tenantId": "25c8f3d2-5456-4907-96c5-116b1ff49096",
+  "caseId": "b96a852e-07c9-46eb-90a4-fc359378528a",
+  "review": {
+    "jobId": "aaa0f057-fd53-4e5b-a1f5-66385cd2ee15",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 1,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "51332754-f353-4f00-ab9e-e33f971209da",
+      "output": {
+        "summary": "The purchase request is missing key required information including cost center and justification, which are necessary according to policies for archiving and approval. The description is vague and no line items or vendor details are provided.",
+        "citations": [
+          {
+            "quote": "Purchase records must be archived with their cost center and justification for seven years.",
+            "chunkId": "e4bad001-c8fa-58c9-9503-8d59c48502da"
+          }
+        ],
+        "policy_findings": [
+          {
+            "claim": "Purchase records must be archived with their cost center and justification for seven years.",
+            "citations": [
+              {
+                "quote": "Purchase records must be archived with their cost center and justification for seven years.",
+                "chunkId": "e4bad001-c8fa-58c9-9503-8d59c48502da"
+              }
+            ]
+          },
+          {
+            "claim": "Purchase orders for warehouse packaging must include a business justification.",
+            "citations": [
+              {
+                "quote": "Purchase orders for warehouse packaging must include a business justification.",
+                "chunkId": "efc1700c-6911-52f9-a392-8854e20e8f4b"
+              }
+            ]
+          },
+          {
+            "claim": "Purchase records for fleet fuel must identify the vehicle and cost center.",
+            "citations": [
+              {
+                "quote": "Purchase records for fleet fuel must identify the vehicle and cost center.",
+                "chunkId": "162b9a99-d30a-5056-b1bd-0d6867c7385c"
+              }
+            ]
+          },
+          {
+            "claim": "The purchase cost center must appear on invoices for printing supplies.",
+            "citations": [
+              {
+                "quote": "The purchase cost center must appear on invoices for printing supplies.",
+                "chunkId": "fc0fc3de-f4df-557d-8734-0493cc962d13"
+              }
+            ]
+          },
+          {
+            "claim": "Cost center owners reconcile purchase receipts for catering each month.",
+            "citations": [
+              {
+                "quote": "Cost center owners reconcile purchase receipts for catering each month.",
+                "chunkId": "77388d51-dc4c-58fb-a650-80a30751e0d0"
+              }
+            ]
+          }
+        ],
+        "missing_information": [
+          "costCenter",
+          "justification",
+          "lineItems",
+          "vendor"
+        ],
+        "insufficient_evidence": true
+      },
+      "evidence": {
+        "162b9a99-d30a-5056-b1bd-0d6867c7385c": {
+          "page": 1,
+          "text": "Purchase records for fleet fuel must identify the vehicle and cost center.",
+          "start": 0,
+          "sourceId": "4103a82d-bd55-4f7f-a4a1-6299c3e44bc2"
+        },
+        "77388d51-dc4c-58fb-a650-80a30751e0d0": {
+          "page": 1,
+          "text": "Cost center owners reconcile purchase receipts for catering each month.",
+          "start": 0,
+          "sourceId": "a903069a-7294-4a75-be2a-44ca6630cf28"
+        },
+        "e4bad001-c8fa-58c9-9503-8d59c48502da": {
+          "page": 1,
+          "text": "Purchase records must be archived with their cost center and justification for seven years.",
+          "start": 0,
+          "sourceId": "5e5a95bf-dee6-4c9f-b2c1-a6918f4afaa4"
+        },
+        "efc1700c-6911-52f9-a392-8854e20e8f4b": {
+          "page": 1,
+          "text": "Purchase orders for warehouse packaging must include a business justification.",
+          "start": 0,
+          "sourceId": "00968410-3128-4ce2-aa02-bc40badf6c01"
+        },
+        "fc0fc3de-f4df-557d-8734-0493cc962d13": {
+          "page": 1,
+          "text": "The purchase cost center must appear on invoices for printing supplies.",
+          "start": 0,
+          "sourceId": "561fb74c-3325-45d5-93d5-abd73b8fd7ef"
+        }
+      },
+      "revision": 1,
+      "sourceId": null,
+      "elapsedMs": 4141,
+      "promptHash": "330d88e4db6bab8dbef150a068490d432687e97841598699b8049c4a1d53295f",
+      "schemaHash": "83731551859e0683841fa0974c94fc0ab01f85be502133abbc8661e0b57a0440",
+      "inputTokens": 1021,
+      "outputTokens": 427,
+      "sourceSha256": null,
+      "promptVersion": "purchase-assistant-2026-09-15-v4",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Can OR I OR order OR a OR chair OR to OR reduce OR back OR pain OR at OR my OR desk OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.001092",
+      "retrievedChunkIds": [
+        "e4bad001-c8fa-58c9-9503-8d59c48502da",
+        "efc1700c-6911-52f9-a392-8854e20e8f4b",
+        "162b9a99-d30a-5056-b1bd-0d6867c7385c",
+        "fc0fc3de-f4df-557d-8734-0493cc962d13",
+        "77388d51-dc4c-58fb-a650-80a30751e0d0"
+      ],
+      "retrievalElapsedMs": 31,
+      "retrievalComparison": {
+        "model": "text-embedding-3-small",
+        "query": "Can OR I OR order OR a OR chair OR to OR reduce OR back OR pain OR at OR my OR desk OR purchase OR cost OR center OR justification",
+        "corpus": [
+          {
+            "cosine": 0.49423912294265576,
+            "sha256": "76a8cc8a67599f4a1891838cb0bcc9a033600b2980cbadc73e8c1c0ea4e8ed3e",
+            "chunkId": "efc1700c-6911-52f9-a392-8854e20e8f4b",
+            "sourceId": "00968410-3128-4ce2-aa02-bc40badf6c01"
+          },
+          {
+            "cosine": 0.5361524186232725,
+            "sha256": "a8ed41e6fd7e5898626ffbdd2584cfcad278620332f7cf72cf0cc92a080aa711",
+            "chunkId": "7419f0ae-0cb5-5b2f-be4b-2c448b5e3b59",
+            "sourceId": "1ee0aa86-ea11-4fcb-bb4f-b0be2238ad07"
+          },
+          {
+            "cosine": 0.3197376661360012,
+            "sha256": "d4bac48bee917bddcc0bac78cf7c434efefc64c0df18fe42c971b5b093dce7ce",
+            "chunkId": "162b9a99-d30a-5056-b1bd-0d6867c7385c",
+            "sourceId": "4103a82d-bd55-4f7f-a4a1-6299c3e44bc2"
+          },
+          {
+            "cosine": 0.44026761662695973,
+            "sha256": "19a5a7a4473c96ebcfbc70ffe89489f5be35b65429869f131e7b7adb85f9d905",
+            "chunkId": "fc0fc3de-f4df-557d-8734-0493cc962d13",
+            "sourceId": "561fb74c-3325-45d5-93d5-abd73b8fd7ef"
+          },
+          {
+            "cosine": 0.3716501624193189,
+            "sha256": "3339ed0824ddaf59fac9f16cefb434278de5717653e92da69093a1164480eb38",
+            "chunkId": "e4bad001-c8fa-58c9-9503-8d59c48502da",
+            "sourceId": "5e5a95bf-dee6-4c9f-b2c1-a6918f4afaa4"
+          },
+          {
+            "cosine": 0.4543306685686828,
+            "sha256": "e29a6875202ebf5fdd7df255e2ec3f0098a76fdf69bb9449216d9229b848a707",
+            "chunkId": "2f2f58da-f72c-5c2b-ae8c-5f934f72d81d",
+            "sourceId": "7d1087b0-164a-4e10-8cd2-e03062b25b31"
+          },
+          {
+            "cosine": 0.44077623869603816,
+            "sha256": "fdfbe127245116196a5f1201c1e5440c2d05e42621b5203733d5e3b07c44c607",
+            "chunkId": "77388d51-dc4c-58fb-a650-80a30751e0d0",
+            "sourceId": "a903069a-7294-4a75-be2a-44ca6630cf28"
+          },
+          {
+            "cosine": 0.2925651206477328,
+            "sha256": "93f9d6d79a2ec256525da9c44bbf1901802ce4f06ce51fcea13f11ed0c8d3eb1",
+            "chunkId": "8342a0ab-7430-52e2-88d9-105742d6ff48",
+            "sourceId": "b0774047-5e9b-44ba-81ce-61c56e1bba5f"
+          },
+          {
+            "cosine": 0.36494826977194234,
+            "sha256": "5754b42f2c7ce135199b4558d76978b6ae2286e55e6aa38d9c3bbb4a9b0c9084",
+            "chunkId": "94093994-d24a-5d28-9035-78244f5053e7",
+            "sourceId": "f8b1bb46-e942-4dc6-b601-039544ca28b6"
+          }
+        ],
+        "method": "exact-cosine-rrf60-v1",
+        "elapsedMs": 641,
+        "dimensions": 256,
+        "corpusCount": 9,
+        "cachedChunks": 0,
+        "hybridChunkIds": [
+          "efc1700c-6911-52f9-a392-8854e20e8f4b",
+          "e4bad001-c8fa-58c9-9503-8d59c48502da",
+          "7419f0ae-0cb5-5b2f-be4b-2c448b5e3b59",
+          "77388d51-dc4c-58fb-a650-80a30751e0d0",
+          "fc0fc3de-f4df-557d-8734-0493cc962d13"
+        ],
+        "providerCalled": true,
+        "embeddingCallId": "63196b9f-7428-4487-9659-4aa2bb3c4ba4",
+        "baselineChunkIds": [
+          "e4bad001-c8fa-58c9-9503-8d59c48502da",
+          "efc1700c-6911-52f9-a392-8854e20e8f4b",
+          "162b9a99-d30a-5056-b1bd-0d6867c7385c",
+          "fc0fc3de-f4df-557d-8734-0493cc962d13",
+          "77388d51-dc4c-58fb-a650-80a30751e0d0"
+        ],
+        "embeddingCostUsd": "0.000003",
+        "embeddingVersion": "openai-small-256-v1",
+        "semanticChunkIds": [
+          "7419f0ae-0cb5-5b2f-be4b-2c448b5e3b59",
+          "efc1700c-6911-52f9-a392-8854e20e8f4b",
+          "2f2f58da-f72c-5c2b-ae8c-5f934f72d81d",
+          "77388d51-dc4c-58fb-a650-80a30751e0d0",
+          "fc0fc3de-f4df-557d-8734-0493cc962d13"
+        ]
+      }
+    }
+  },
+  "retrievalComparisons": {
+    "fullText": [
+      "distractor-1",
+      "distractor-5",
+      "distractor-8",
+      "distractor-2",
+      "distractor-4"
+    ],
+    "semantic": [
+      "distractor-3",
+      "distractor-5",
+      "ergonomic-seating-policy",
+      "distractor-4",
+      "distractor-2"
+    ],
+    "hybrid": [
+      "distractor-5",
+      "distractor-1",
+      "distractor-3",
+      "distractor-4",
+      "distractor-2"
+    ]
+  }
+}

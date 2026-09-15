@@ -1,0 +1,93 @@
+{
+  "id": "equipment-001",
+  "startedAt": "2026-09-15T13:05:33.424Z",
+  "sourceMap": {
+    "e44d9023-6724-467b-9417-14c1583f318c": "equipment-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "equipment-p1",
+      "source": {
+        "id": "e44d9023-6724-467b-9417-14c1583f318c",
+        "kind": "POLICY",
+        "name": "Synthetic equipment-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 58,
+        "sha256": "d23d7939ddf5c48a4275d8f563f49f8ae3f762a9157cafae9d4edef837f5d8d4",
+        "jobId": "8ddea38a-37a1-4dcc-9e2e-351d383c9bc9",
+        "failureCode": null
+      },
+      "chunks": {
+        "items": [
+          {
+            "id": "7ea61dd1-6e46-545e-91f0-397e8fe45309",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 58,
+            "text": "Equipment purchases require a cost center before approval.",
+            "sha256": "d23d7939ddf5c48a4275d8f563f49f8ae3f762a9157cafae9d4edef837f5d8d4"
+          }
+        ],
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "source": {
+          "id": "e44d9023-6724-467b-9417-14c1583f318c",
+          "kind": "POLICY",
+          "name": "Synthetic equipment-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 58,
+          "sha256": "d23d7939ddf5c48a4275d8f563f49f8ae3f762a9157cafae9d4edef837f5d8d4",
+          "jobId": "8ddea38a-37a1-4dcc-9e2e-351d383c9bc9",
+          "failureCode": null
+        }
+      }
+    }
+  ],
+  "tenantId": "e7ff1565-f576-4473-b409-98fa271149a0",
+  "caseId": "6466b71a-8189-4860-a97a-de79dd919428",
+  "quote": {
+    "id": "1d159a46-2b94-46ef-9a89-6ed0266d6dbb",
+    "kind": "QUOTE",
+    "name": "Synthetic equipment-001 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "6466b71a-8189-4860-a97a-de79dd919428",
+    "mediaType": "text/plain",
+    "byteSize": 114,
+    "sha256": "b4c573ff5f52550f8bb92329892c24b607a18d2541a7f1526ed7a7fa7d3fd22a",
+    "jobId": "a2d05a94-cce4-4e13-8621-acce8c3ad26c",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "e44d9023-6724-467b-9417-14c1583f318c",
+        "name": "Synthetic equipment-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Equipment kit",
+    "justification": ""
+  },
+  "revision": 2,
+  "failure": "POST /tenants/e7ff1565-f576-4473-b409-98fa271149a0/cases/6466b71a-8189-4860-a97a-de79dd919428/assistant: expected 200, got 400: Invalid request. Check the supplied fields."
+}

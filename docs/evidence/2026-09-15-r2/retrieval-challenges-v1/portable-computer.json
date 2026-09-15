@@ -1,0 +1,446 @@
+{
+  "id": "portable-computer",
+  "query": "May I buy a replacement laptop for my remote workspace?",
+  "sourceMap": {
+    "bf9726e5-71cf-443a-a035-6c46dcb902d2": "distractor-1",
+    "219f3174-47ec-4565-b998-2bb11605a393": "distractor-2",
+    "04d8f4d4-7f7b-4ad7-a021-bf379d32896e": "distractor-3",
+    "cff2258e-2385-42d4-bf54-717b29fcf2bc": "distractor-4",
+    "5fc1de62-3f91-4f67-8b49-ecdb5835e257": "distractor-5",
+    "acc021f8-2ed1-4bcf-a4b7-a5d119f16f18": "distractor-6",
+    "ed9fd6df-ba05-4ef6-8e22-339cd99f522c": "distractor-7",
+    "72c69b4e-aa1c-4a57-b45a-18d41574b2f0": "distractor-8",
+    "172abc66-e73b-4cf6-970b-b92838c85bbb": "portable-computer-policy"
+  },
+  "sources": [
+    {
+      "source": {
+        "id": "bf9726e5-71cf-443a-a035-6c46dcb902d2",
+        "kind": "POLICY",
+        "name": "Synthetic distractor-1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 91,
+        "sha256": "3339ed0824ddaf59fac9f16cefb434278de5717653e92da69093a1164480eb38",
+        "jobId": "ee374885-0b9c-4c1e-a892-4205092fdd32",
+        "failureCode": null
+      },
+      "passage": {
+        "id": "distractor-1",
+        "text": "Purchase records must be archived with their cost center and justification for seven years."
+      }
+    },
+    {
+      "source": {
+        "id": "219f3174-47ec-4565-b998-2bb11605a393",
+        "kind": "POLICY",
+        "name": "Synthetic distractor-2",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 71,
+        "sha256": "19a5a7a4473c96ebcfbc70ffe89489f5be35b65429869f131e7b7adb85f9d905",
+        "jobId": "be808643-b2c1-4a93-b2eb-6c8f8a162ea7",
+        "failureCode": null
+      },
+      "passage": {
+        "id": "distractor-2",
+        "text": "The purchase cost center must appear on invoices for printing supplies."
+      }
+    },
+    {
+      "source": {
+        "id": "04d8f4d4-7f7b-4ad7-a021-bf379d32896e",
+        "kind": "POLICY",
+        "name": "Synthetic distractor-3",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 71,
+        "sha256": "a8ed41e6fd7e5898626ffbdd2584cfcad278620332f7cf72cf0cc92a080aa711",
+        "jobId": "030de26d-fd3d-496b-86d6-6231d97e9411",
+        "failureCode": null
+      },
+      "passage": {
+        "id": "distractor-3",
+        "text": "A justification is required when a purchase concerns office stationery."
+      }
+    },
+    {
+      "source": {
+        "id": "cff2258e-2385-42d4-bf54-717b29fcf2bc",
+        "kind": "POLICY",
+        "name": "Synthetic distractor-4",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 71,
+        "sha256": "fdfbe127245116196a5f1201c1e5440c2d05e42621b5203733d5e3b07c44c607",
+        "jobId": "e603f405-2007-42c0-af7e-ea63d1718605",
+        "failureCode": null
+      },
+      "passage": {
+        "id": "distractor-4",
+        "text": "Cost center owners reconcile purchase receipts for catering each month."
+      }
+    },
+    {
+      "source": {
+        "id": "5fc1de62-3f91-4f67-8b49-ecdb5835e257",
+        "kind": "POLICY",
+        "name": "Synthetic distractor-5",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 78,
+        "sha256": "76a8cc8a67599f4a1891838cb0bcc9a033600b2980cbadc73e8c1c0ea4e8ed3e",
+        "jobId": "12053a61-2435-48d8-a34d-23919ad4e737",
+        "failureCode": null
+      },
+      "passage": {
+        "id": "distractor-5",
+        "text": "Purchase orders for warehouse packaging must include a business justification."
+      }
+    },
+    {
+      "source": {
+        "id": "acc021f8-2ed1-4bcf-a4b7-a5d119f16f18",
+        "kind": "POLICY",
+        "name": "Synthetic distractor-6",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 67,
+        "sha256": "93f9d6d79a2ec256525da9c44bbf1901802ce4f06ce51fcea13f11ed0c8d3eb1",
+        "jobId": "1916a1ee-906c-4fe4-bee8-d70d763a2d92",
+        "failureCode": null
+      },
+      "passage": {
+        "id": "distractor-6",
+        "text": "Facilities allocate the cost center for cleaning service purchases."
+      }
+    },
+    {
+      "source": {
+        "id": "ed9fd6df-ba05-4ef6-8e22-339cd99f522c",
+        "kind": "POLICY",
+        "name": "Synthetic distractor-7",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 67,
+        "sha256": "5754b42f2c7ce135199b4558d76978b6ae2286e55e6aa38d9c3bbb4a9b0c9084",
+        "jobId": "f8e0eb93-f803-419b-99d9-35173f17a058",
+        "failureCode": null
+      },
+      "passage": {
+        "id": "distractor-7",
+        "text": "Marketing purchases need a campaign code and written justification."
+      }
+    },
+    {
+      "source": {
+        "id": "72c69b4e-aa1c-4a57-b45a-18d41574b2f0",
+        "kind": "POLICY",
+        "name": "Synthetic distractor-8",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 74,
+        "sha256": "d4bac48bee917bddcc0bac78cf7c434efefc64c0df18fe42c971b5b093dce7ce",
+        "jobId": "6013f500-a351-42e3-9e22-158643da9454",
+        "failureCode": null
+      },
+      "passage": {
+        "id": "distractor-8",
+        "text": "Purchase records for fleet fuel must identify the vehicle and cost center."
+      }
+    },
+    {
+      "source": {
+        "id": "172abc66-e73b-4cf6-970b-b92838c85bbb",
+        "kind": "POLICY",
+        "name": "Synthetic portable-computer-policy",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 116,
+        "sha256": "f7c89bfc8473bee4c8d69c6bbb3840b05b28b0e440010dd1c7e46b5f1243b015",
+        "jobId": "52f0ce79-7676-4327-b20c-8847f59cde72",
+        "failureCode": null
+      },
+      "passage": {
+        "id": "portable-computer-policy",
+        "text": "Portable computers issued for home working require authorization from the technology team before an order is placed."
+      }
+    }
+  ],
+  "reference": {
+    "relevantPassages": [
+      "portable-computer-policy"
+    ]
+  },
+  "tenantId": "391515bf-b3ee-4d41-bc44-bdf20a05afbd",
+  "caseId": "4e8ead86-7d68-46a7-b288-3dc7746822b6",
+  "review": {
+    "jobId": "046ba60c-6d5e-4ed4-89f6-6ef5376b542f",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 1,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "c1364d6b-fac8-4ff7-8852-f55866faa59e",
+      "output": {
+        "summary": "The purchase request for a replacement laptop lacks critical information such as cost center and justification. Policy requires cost center and justification to be archived with purchase records.",
+        "citations": [
+          {
+            "quote": "Purchase records must be archived with their cost center and justification for seven years.",
+            "chunkId": "86b1db40-3e4a-5d44-bff9-94f1505be52c"
+          },
+          {
+            "quote": "The purchase cost center must appear on invoices for printing supplies.",
+            "chunkId": "35f20ec8-d402-5dda-a3a1-d565eb809158"
+          },
+          {
+            "quote": "Purchase records for fleet fuel must identify the vehicle and cost center.",
+            "chunkId": "aa8d4b13-79c2-544b-b3cd-a45244016a74"
+          },
+          {
+            "quote": "Facilities allocate the cost center for cleaning service purchases.",
+            "chunkId": "b47b43ae-c01f-548d-949c-b49d51c652e6"
+          },
+          {
+            "quote": "Cost center owners reconcile purchase receipts for catering each month.",
+            "chunkId": "b9707cbc-a626-5799-b3b6-80b82b6bde4c"
+          }
+        ],
+        "policy_findings": [
+          {
+            "claim": "Purchase records must be archived with their cost center and justification for seven years.",
+            "citations": [
+              {
+                "quote": "Purchase records must be archived with their cost center and justification for seven years.",
+                "chunkId": "86b1db40-3e4a-5d44-bff9-94f1505be52c"
+              }
+            ]
+          },
+          {
+            "claim": "The purchase cost center must appear on invoices for printing supplies.",
+            "citations": [
+              {
+                "quote": "The purchase cost center must appear on invoices for printing supplies.",
+                "chunkId": "35f20ec8-d402-5dda-a3a1-d565eb809158"
+              }
+            ]
+          },
+          {
+            "claim": "Facilities allocate the cost center for cleaning service purchases.",
+            "citations": [
+              {
+                "quote": "Facilities allocate the cost center for cleaning service purchases.",
+                "chunkId": "b47b43ae-c01f-548d-949c-b49d51c652e6"
+              }
+            ]
+          },
+          {
+            "claim": "Cost center owners reconcile purchase receipts for catering each month.",
+            "citations": [
+              {
+                "quote": "Cost center owners reconcile purchase receipts for catering each month.",
+                "chunkId": "b9707cbc-a626-5799-b3b6-80b82b6bde4c"
+              }
+            ]
+          }
+        ],
+        "missing_information": [
+          "costCenter",
+          "justification",
+          "vendor",
+          "lineItems",
+          "total"
+        ],
+        "insufficient_evidence": true
+      },
+      "evidence": {
+        "35f20ec8-d402-5dda-a3a1-d565eb809158": {
+          "page": 1,
+          "text": "The purchase cost center must appear on invoices for printing supplies.",
+          "start": 0,
+          "sourceId": "219f3174-47ec-4565-b998-2bb11605a393"
+        },
+        "86b1db40-3e4a-5d44-bff9-94f1505be52c": {
+          "page": 1,
+          "text": "Purchase records must be archived with their cost center and justification for seven years.",
+          "start": 0,
+          "sourceId": "bf9726e5-71cf-443a-a035-6c46dcb902d2"
+        },
+        "aa8d4b13-79c2-544b-b3cd-a45244016a74": {
+          "page": 1,
+          "text": "Purchase records for fleet fuel must identify the vehicle and cost center.",
+          "start": 0,
+          "sourceId": "72c69b4e-aa1c-4a57-b45a-18d41574b2f0"
+        },
+        "b47b43ae-c01f-548d-949c-b49d51c652e6": {
+          "page": 1,
+          "text": "Facilities allocate the cost center for cleaning service purchases.",
+          "start": 0,
+          "sourceId": "acc021f8-2ed1-4bcf-a4b7-a5d119f16f18"
+        },
+        "b9707cbc-a626-5799-b3b6-80b82b6bde4c": {
+          "page": 1,
+          "text": "Cost center owners reconcile purchase receipts for catering each month.",
+          "start": 0,
+          "sourceId": "cff2258e-2385-42d4-bf54-717b29fcf2bc"
+        }
+      },
+      "revision": 1,
+      "sourceId": null,
+      "elapsedMs": 5905,
+      "promptHash": "a1317f31245d99ecd10c571a870de77c716333c2bf2042892076781ed9f11acc",
+      "schemaHash": "a9660999157bbdc3ba16ea3ba3ec033c0d017ac307ced2d35d610ccb5bda1bc4",
+      "inputTokens": 1012,
+      "outputTokens": 517,
+      "sourceSha256": null,
+      "promptVersion": "purchase-assistant-2026-09-15-v4",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "May OR I OR buy OR a OR replacement OR laptop OR for OR my OR remote OR workspace OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.001232",
+      "retrievedChunkIds": [
+        "86b1db40-3e4a-5d44-bff9-94f1505be52c",
+        "35f20ec8-d402-5dda-a3a1-d565eb809158",
+        "aa8d4b13-79c2-544b-b3cd-a45244016a74",
+        "b47b43ae-c01f-548d-949c-b49d51c652e6",
+        "b9707cbc-a626-5799-b3b6-80b82b6bde4c"
+      ],
+      "retrievalElapsedMs": 15,
+      "retrievalComparison": {
+        "model": "text-embedding-3-small",
+        "query": "May OR I OR buy OR a OR replacement OR laptop OR for OR my OR remote OR workspace OR purchase OR cost OR center OR justification",
+        "corpus": [
+          {
+            "cosine": 0.49968998727714053,
+            "sha256": "a8ed41e6fd7e5898626ffbdd2584cfcad278620332f7cf72cf0cc92a080aa711",
+            "chunkId": "e1cd5a37-3059-5163-a1f2-e0e9140b90fa",
+            "sourceId": "04d8f4d4-7f7b-4ad7-a021-bf379d32896e"
+          },
+          {
+            "cosine": 0.4266703274320423,
+            "sha256": "f7c89bfc8473bee4c8d69c6bbb3840b05b28b0e440010dd1c7e46b5f1243b015",
+            "chunkId": "f40dec35-1869-5d24-9a9d-8a5f3b49863f",
+            "sourceId": "172abc66-e73b-4cf6-970b-b92838c85bbb"
+          },
+          {
+            "cosine": 0.43369287039948934,
+            "sha256": "19a5a7a4473c96ebcfbc70ffe89489f5be35b65429869f131e7b7adb85f9d905",
+            "chunkId": "35f20ec8-d402-5dda-a3a1-d565eb809158",
+            "sourceId": "219f3174-47ec-4565-b998-2bb11605a393"
+          },
+          {
+            "cosine": 0.4408468318021826,
+            "sha256": "76a8cc8a67599f4a1891838cb0bcc9a033600b2980cbadc73e8c1c0ea4e8ed3e",
+            "chunkId": "d1c19531-7133-5c72-973f-981f2f1cd345",
+            "sourceId": "5fc1de62-3f91-4f67-8b49-ecdb5835e257"
+          },
+          {
+            "cosine": 0.3393325465372962,
+            "sha256": "d4bac48bee917bddcc0bac78cf7c434efefc64c0df18fe42c971b5b093dce7ce",
+            "chunkId": "aa8d4b13-79c2-544b-b3cd-a45244016a74",
+            "sourceId": "72c69b4e-aa1c-4a57-b45a-18d41574b2f0"
+          },
+          {
+            "cosine": 0.2741909973558233,
+            "sha256": "93f9d6d79a2ec256525da9c44bbf1901802ce4f06ce51fcea13f11ed0c8d3eb1",
+            "chunkId": "b47b43ae-c01f-548d-949c-b49d51c652e6",
+            "sourceId": "acc021f8-2ed1-4bcf-a4b7-a5d119f16f18"
+          },
+          {
+            "cosine": 0.3514988492988572,
+            "sha256": "3339ed0824ddaf59fac9f16cefb434278de5717653e92da69093a1164480eb38",
+            "chunkId": "86b1db40-3e4a-5d44-bff9-94f1505be52c",
+            "sourceId": "bf9726e5-71cf-443a-a035-6c46dcb902d2"
+          },
+          {
+            "cosine": 0.4160136789970551,
+            "sha256": "fdfbe127245116196a5f1201c1e5440c2d05e42621b5203733d5e3b07c44c607",
+            "chunkId": "b9707cbc-a626-5799-b3b6-80b82b6bde4c",
+            "sourceId": "cff2258e-2385-42d4-bf54-717b29fcf2bc"
+          },
+          {
+            "cosine": 0.37568535744291887,
+            "sha256": "5754b42f2c7ce135199b4558d76978b6ae2286e55e6aa38d9c3bbb4a9b0c9084",
+            "chunkId": "e89fd978-09a4-52ee-a57c-9c19334d8ed2",
+            "sourceId": "ed9fd6df-ba05-4ef6-8e22-339cd99f522c"
+          }
+        ],
+        "method": "exact-cosine-rrf60-v1",
+        "elapsedMs": 407,
+        "dimensions": 256,
+        "corpusCount": 9,
+        "cachedChunks": 0,
+        "hybridChunkIds": [
+          "35f20ec8-d402-5dda-a3a1-d565eb809158",
+          "e1cd5a37-3059-5163-a1f2-e0e9140b90fa",
+          "86b1db40-3e4a-5d44-bff9-94f1505be52c",
+          "d1c19531-7133-5c72-973f-981f2f1cd345",
+          "b9707cbc-a626-5799-b3b6-80b82b6bde4c"
+        ],
+        "providerCalled": true,
+        "embeddingCallId": "53bb650e-d552-4d76-a489-2c46df7f4d73",
+        "baselineChunkIds": [
+          "86b1db40-3e4a-5d44-bff9-94f1505be52c",
+          "35f20ec8-d402-5dda-a3a1-d565eb809158",
+          "aa8d4b13-79c2-544b-b3cd-a45244016a74",
+          "b47b43ae-c01f-548d-949c-b49d51c652e6",
+          "b9707cbc-a626-5799-b3b6-80b82b6bde4c"
+        ],
+        "embeddingCostUsd": "0.000003",
+        "embeddingVersion": "openai-small-256-v1",
+        "semanticChunkIds": [
+          "e1cd5a37-3059-5163-a1f2-e0e9140b90fa",
+          "d1c19531-7133-5c72-973f-981f2f1cd345",
+          "35f20ec8-d402-5dda-a3a1-d565eb809158",
+          "f40dec35-1869-5d24-9a9d-8a5f3b49863f",
+          "b9707cbc-a626-5799-b3b6-80b82b6bde4c"
+        ]
+      }
+    }
+  },
+  "retrievalComparisons": {
+    "fullText": [
+      "distractor-1",
+      "distractor-2",
+      "distractor-8",
+      "distractor-6",
+      "distractor-4"
+    ],
+    "semantic": [
+      "distractor-3",
+      "distractor-5",
+      "distractor-2",
+      "portable-computer-policy",
+      "distractor-4"
+    ],
+    "hybrid": [
+      "distractor-2",
+      "distractor-3",
+      "distractor-1",
+      "distractor-5",
+      "distractor-4"
+    ]
+  }
+}

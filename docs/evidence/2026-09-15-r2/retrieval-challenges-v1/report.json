@@ -1,0 +1,62 @@
+{
+  "caseCount": 3,
+  "recallAt5": {
+    "fullText": {
+      "numerator": 0,
+      "denominator": 3,
+      "rate": 0.0
+    },
+    "semantic": {
+      "numerator": 3,
+      "denominator": 3,
+      "rate": 1.0
+    },
+    "hybrid": {
+      "numerator": 0,
+      "denominator": 3,
+      "rate": 0.0
+    }
+  },
+  "missingComparisonIds": [],
+  "knownEmbeddingCostUsd": "0.000009",
+  "cases": [
+    {
+      "id": "portable-computer",
+      "query": "May OR I OR buy OR a OR replacement OR laptop OR for OR my OR remote OR workspace OR purchase OR cost OR center OR justification",
+      "corpusCount": 9,
+      "fullTextElapsedMs": 15,
+      "comparisonElapsedMs": 407,
+      "providerCalled": true,
+      "embeddingCostUsd": "0.000003"
+    },
+    {
+      "id": "ergonomic-seating",
+      "query": "Can OR I OR order OR a OR chair OR to OR reduce OR back OR pain OR at OR my OR desk OR purchase OR cost OR center OR justification",
+      "corpusCount": 9,
+      "fullTextElapsedMs": 31,
+      "comparisonElapsedMs": 641,
+      "providerCalled": true,
+      "embeddingCostUsd": "0.000003"
+    },
+    {
+      "id": "air-travel",
+      "query": "Are OR plane OR tickets OR for OR an OR overseas OR client OR visit OR allowed OR purchase OR cost OR center OR justification",
+      "corpusCount": 9,
+      "fullTextElapsedMs": 14,
+      "comparisonElapsedMs": 422,
+      "providerCalled": true,
+      "embeddingCostUsd": "0.000003"
+    }
+  ],
+  "releaseGatePassed": false,
+  "limitations": [
+    "Synthetic generated annotations await human verification.",
+    "One-passage corpora cannot establish a semantic advantage. Empty corpora have no recall denominator.",
+    "Timings are local component observations, not load benchmarks. Failed calls require ledger reconciliation."
+  ],
+  "datasetVersion": "retrieval-development-probes-v1",
+  "datasetSha256": "e2bcbb8bb7d45b34b083a2d90777ec33560ad0119b779cde828c4bdf485139f2",
+  "predictionsSha256": "ee55f82bdfc43def4fe2500f63db19df34569a0222a6424b33b4d7d7af7222f6",
+  "annotationStatus": "author-defined-synthetic-awaiting-human-review",
+  "scope": "Supplementary development probes with distractors; never part of the frozen held-out split"
+}
