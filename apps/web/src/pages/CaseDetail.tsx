@@ -3,6 +3,7 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { Link, useParams } from "react-router-dom";
 import { api, unwrap, commandHeaders } from "../api/client";
 import { DraftForm } from "./DraftForm";
+import { Documents } from "./Documents";
 import { Empty, Notice, Status } from "../components";
 export function CaseDetail({
   tenant,
@@ -341,18 +342,7 @@ export function CaseDetail({
             </section>
           </div>
           {item.state === "APPROVED" && (
-            <section className="panel">
-              <h2>Approved document</h2>
-              <Status value={item.documentStatus ?? "QUEUED"} />
-              <p>
-                The purchase is approved. Document processing has a separate
-                status.
-              </p>
-              <p className="hint">
-                Document execution is being implemented; downloads are not
-                available in this development milestone.
-              </p>
-            </section>
+            <Documents tenant={tenant} caseId={caseId} canRetry={admin} />
           )}
         </>
       )}

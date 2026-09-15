@@ -421,6 +421,9 @@ export interface components {
     VersionInput: {
       expectedVersion: number;
     };
+    RetryInput: {
+      expectedAttempt: number;
+    };
     Template: {
       /** Format: uuid */
       id: string;
@@ -2570,7 +2573,7 @@ export interface operations {
     };
     requestBody: {
       content: {
-        "application/json": components["schemas"]["VersionInput"];
+        "application/json": components["schemas"]["RetryInput"];
       };
     };
     responses: {
