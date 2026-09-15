@@ -128,3 +128,19 @@ preserving denied access to base tables. The durable event replayed successfully
 Supporting code: `services/worker/caseflow_worker/jobs.py`,
 `services/worker/tests/test_jobs.py`, `services/worker/tools/replay_document.py`,
 `db/migrations/V4__api_worker_view_access.sql`, and the document evidence folder.
+# R2 evidence preparation checkpoint (2026-09-14)
+
+- Why parse before calling AI? The assistant needs a bounded, immutable record of
+  what the quote/policy says. Python extracts page text and hashes chunks so later
+  citations can be checked against exact source versions. Follow-up: PDF text
+  extraction can lose layout; source existence alone does not prove claim support.
+- Why run a separate parser process? Memory/time limits contain oversized or
+  pathological files without blocking the long-running worker. Follow-up: process
+  limits are not a complete security sandbox; container restrictions remain work.
+- Why freeze evaluation before prompts? A family-separated held-out split reduces
+  tuning leakage. The 120 synthetic references currently await human review;
+  there are no measured model-quality or user-time-saving claims.
+
+Evidence: `services/worker/tests/test_parsing.py` (13 passing checks),
+`docs/adr/0003-r2-evidence.md`, `evals/README.md`. Upload wiring and AI calls are
+subsequent work; do not describe them as verified by these parser tests.

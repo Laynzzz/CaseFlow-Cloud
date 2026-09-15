@@ -223,3 +223,29 @@ memorizing the individual SQL statements. See the document evidence directory.
 
 Extend each section as implementation lands with decision, alternative, trade-off,
 failure example, implementation links, and verification evidence.
+# R2 checkpoint: evidence parsing and evaluation setup (2026-09-14)
+
+User behavior being built: attach a vendor quote or an organization policy, then
+see suggestions supported by that exact document. The first implemented piece is
+the Python parser, not yet an AI result or a browser upload flow.
+
+`services/worker/caseflow_worker/parsing.py` is Python: text extraction and
+deterministic page chunks. pypdf reads embedded PDF text; OCR is a separate,
+deferred capability. A child process enforces 512 MiB memory and 20 seconds wall
+time. Windows uses a Job Object; Unix uses resource limits. If limits cannot be
+installed, parsing fails instead of running unbounded. This does not constitute
+a complete network/filesystem sandbox.
+
+Checksums identify the immutable source bytes and extracted chunks. Citation
+offsets identify exact characters in extracted page text, not PDF binary offsets.
+Overlapping fixed-size chunks are reproducible but can split tables/sentences;
+quality evaluation must determine whether a different strategy is worthwhile.
+
+`evals/manifest.json` fixes the initial 60/60 synthetic family split and targets.
+References are generated and await human verification. No AI quality score exists
+yet. The user authorized R2 implementation while R1 deployment gates remain open.
+
+Verification: `$env:PYTHONPATH='services/worker'; services/worker/.venv/Scripts/python.exe -m pytest services/worker/tests/test_parsing.py -q`
+passes 13 cases covering actual PDF text, character offsets/hashes, encrypted or
+empty PDFs, malformed/binary input and size/page limits. `-q` prints a concise
+result. See ADR 0003 for decisions and limits.

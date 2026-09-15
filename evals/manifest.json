@@ -1,0 +1,35 @@
+{
+  "version": "synthetic-v1",
+  "annotationStatus": "awaiting-human-review",
+  "targets": {
+    "extraction": 0.9,
+    "recallAt5": 0.9,
+    "claimSupport": 0.95
+  },
+  "files": {
+    "development.jsonl": {
+      "count": 60,
+      "sha256": "fec73306673b441cea651c7ad498d8645af6351e4450f13bd5213c5dbd93086a",
+      "families": [
+        "equipment",
+        "lighting",
+        "network",
+        "printing",
+        "seating",
+        "storage"
+      ]
+    },
+    "heldout.jsonl": {
+      "count": 60,
+      "sha256": "85040bef582526702c8f9adb7635ec2f0618501ea15622bee676a0a57f9a2ab2",
+      "families": [
+        "audio",
+        "display",
+        "lab",
+        "safety",
+        "shipping",
+        "tools"
+      ]
+    }
+  }
+}
