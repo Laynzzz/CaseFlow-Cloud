@@ -3,6 +3,40 @@
 Status: split and provisional gates fixed before prompt work; generated references
 still require human verification. No model or retrieval quality has been measured.
 
+## Offline validation and diagnostic scoring
+
+`services/worker/.venv/Scripts/python.exe evals/scoring.py --validate-dataset`
+checks file hashes, counts, unique IDs, annotated passage references and family
+separation. It makes no provider calls and reports no AI quality score.
+
+`services/worker/.venv/Scripts/python.exe -m pytest evals/test_scoring.py -q`
+checks scoring behavior using synthetic output fixtures.
+
+For actual recorded outputs:
+
+```powershell
+services/worker/.venv/Scripts/python.exe evals/scoring.py --split development --predictions PATH_TO_RUN_JSONL --output PATH_TO_NEW_REPORT_JSON
+```
+
+Each JSONL record contains dataset `id`, `extraction` and `review` job responses
+(including `status` and `result`), and ordered `retrievedPassageIds` mapped from
+actual retrieved source/chunk IDs to this dataset's annotated passage IDs. The
+live runner must retain the mapping and raw source/job provenance. Do not fill
+these fields with reference answers. That runner and embedding comparison remain
+unfinished; this scorer is an offline diagnostic tool.
+
+Missing/failed cases stay in field and abstention denominators. A failed job does
+not receive credit for a reference null. Decimal formatting is normalized, while
+line order, quantities and prices are preserved. Recall considers only the first
+five retrieved passages. Duplicate/unknown case IDs are rejected. Generated
+summary/finding text is inventoried for manual grading, never automatically marked
+supported. Reports preserve the input/dataset hashes and refuse to overwrite an
+existing output. Known successful-result cost is a subtotal, not total billing;
+failed/unknown calls still require ledger reconciliation.
+
+`releaseGatePassed` remains false in these diagnostic reports. Human reference
+verification, claim grading and the remaining R2 checks require separate evidence.
+
 `python evals/build_dataset.py` creates 120 synthetic cases: 60 development and 60
 held out, with disjoint quote/policy families. Checked-in JSONL files and SHA-256
 manifest are the input contract. Do not tune prompts on held-out outputs. If a

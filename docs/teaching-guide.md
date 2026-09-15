@@ -366,3 +366,22 @@ Remaining: live provider and positive assisted browser checks, embedding candida
 comparison, human annotation review and held-out report. The application remains
 experimental. A development preview blanked because Vite cached an empty module
 during formatting; an owned-server restart restored the current source module.
+# R2 checkpoint: trustworthy evaluation denominators (2026-09-15)
+
+The offline Python scorer now validates the frozen dataset and scores recorded
+extraction/review jobs. Failed or absent jobs remain in accuracy denominators;
+otherwise dropping a difficult timeout could make the assistant appear more
+accurate. Missing reference values count as correct only when a successful result
+explicitly proposes null. Decimal formatting differences do not change meaning.
+
+Citation support remains ungraded until a person checks the generated claim
+against the passage. The tool creates an inventory for that review and keeps the
+release flag false. Provider usage on failed calls is not assumed free: successful
+result cost is explicitly a subtotal pending spend-ledger reconciliation.
+
+Verification: `python evals/scoring.py --validate-dataset` confirms 60 development
+and 60 held-out cases with disjoint families and unchanged hashes. Five scorer
+tests pass, covering failed/missing records, decimal normalization, retrieval
+rank limits, duplicate IDs and missing cost/support evidence. No live quality
+evaluation was run. The user's R2-to-R3 continuation instruction is recorded in
+AGENTS.md and CLAUDE.md; R3 starts after R2's gates pass without another request.

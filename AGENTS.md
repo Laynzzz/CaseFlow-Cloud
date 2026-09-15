@@ -44,6 +44,11 @@ Interview preparation is an ongoing part of building this project, not only a fi
 
 ## Execution expectations
 
+- User direction (2026-09-15): finish R2, verify its acceptance gates, and then
+  continue directly into R3 without asking again if no unresolved problem blocks
+  the transition. Report actual blockers and keep work that can proceed moving.
+  Do not treat pending live AI credentials/budget as evidence that R2 passed.
+
 - User requested incremental commits on 2026-09-14. Commit meaningful, verified
   progress in small cohesive batches with short messages. Do not accumulate the
   entire project into one large commit. Never include local credentials or

@@ -1,6 +1,8 @@
 # R2 implementation map — 2026-09-15
 
 Release status: **in progress / experimental**. R1 cloud gates also remain open.
+User direction: after R2 passes its gates, continue directly into R3 without
+another confirmation unless an actual unresolved problem prevents the transition.
 
 | Product step | Implemented | Verified so far | Remaining |
 | --- | --- | --- | --- |
@@ -11,7 +13,7 @@ Release status: **in progress / experimental**. R1 cloud gates also remain open.
 | Accept selected suggestions | Current-versus-proposed UI, separate acceptance command | Real SQL acceptance/replay/stale/revocation tests with synthetic results | Positive browser journey with a live model result |
 | Generate a cited review | Fixed facts/evidence pipeline, abstention and citation checks | Contract/eligibility/fencing tests | Live claim-support and adversarial evaluation |
 | Control AI spend | Zero-default lifetime/tenant-day ceilings and durable reservations | Concurrent reservations, duplicate calls, unknown costs | Approved live-test budget, key configuration, wall-clock containment checks |
-| Demonstrate quality | 120 synthetic cases, disjoint 60/60 families, rubric and targets | Dataset files checked into Git before prompt work | Reference verification, runner, raw held-out outputs, scores, repeated runs and outcome measurements |
+| Demonstrate quality | 120 synthetic cases, disjoint 60/60 families, rubric, targets and offline scorer | Dataset hashes/families and five scorer tests | Reference verification, live runner, raw held-out outputs, scores, repeated runs and outcome measurements |
 
 No live provider call has been made. Passing mock and SQL tests does not establish
 AI quality. The user-facing app keeps manual purchase entry and policy search

@@ -28,6 +28,10 @@ The user is building this to learn, not only to ship. Treat every task as a teac
 
 ## Working rules from plan.md section 21
 
+- User direction (2026-09-15): after completing and verifying R2, proceed directly
+  to R3 if no unresolved problem blocks it. No new confirmation is needed for
+  authorized implementation. Preserve short commits and cumulative teaching notes.
+
 - Work phase by phase and demonstrate the exit criterion before marking a phase complete.
 - Create an ADR under `docs/adr/` before changing a pinned architecture decision. Routine implementation choices do not need confirmation unless they materially change scope, cost authority, or product behavior.
 - Use official documentation for compatible versions. Pin versions, images, lockfiles, the Gradle Wrapper, and model/embedding identifiers. Installed global tooling does not establish compatibility.

@@ -203,3 +203,14 @@ quality evaluation remain unfinished at this checkpoint.
 Evidence: Java `AssistantIntegrationTest` and Python `test_assistant.py`. The
 running application explicitly leaves live AI disabled while budget/key setup is
 pending. There is no production/adoption or measured time-saving claim.
+# R2 evaluation accounting checkpoint (2026-09-15)
+
+- Why include failed AI jobs in accuracy denominators? Users experience those
+  failures. Dropping them would overstate successful task completion. A missing
+  prediction also cannot masquerade as a correct null-valued extraction.
+- Does a 100% fixture score establish model quality? No. Fixtures test the scorer.
+  Actual provider outputs, verified references and semantic grading are separate
+  evidence. The diagnostic scorer cannot mark the release complete.
+
+Evidence: `evals/scoring.py`, `evals/test_scoring.py` (five passing checks), and
+dataset checksum validation. Live runs and embedding comparison remain pending.
