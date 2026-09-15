@@ -25,15 +25,22 @@ def test_provider_schema_validation_and_provenance(event,isolated_database):
     client=FakeProvider(extraction().model_dump_json())
     result=ai_provider.request(job,"EXTRACTION",{"vendor":"Incorrect draft vendor","currency":"EUR"},CHUNKS,lambda:None,client)
     assert result["output"]["vendor"]["value"]=="Synthetic Tools"
-    assert len(result["promptHash"])==64 and result["schemaVersion"]=="purchase-assistant-v1"
+    assert len(result["promptHash"])==64 and result["schemaVersion"]=="purchase-assistant-v3"
     assert client.calls==1
     assert json.loads(client.arguments["input"][1]["content"])["purchase"]=={}
+    assert client.arguments["text"]["format"]["schema"]["$defs"]["Citation"]["properties"]["chunkId"]["enum"]==list(CHUNKS)
 
 
 def test_bad_output_is_not_a_displayable_result(event,isolated_database):
     jobs.schedule(event);job=jobs.claim(uuid4());enable(isolated_database,1)
     with pytest.raises(ValueError,match="INVALID_AI_OUTPUT"):
         ai_provider.request(job,"EXTRACTION",{},CHUNKS,lambda:None,FakeProvider('{"approve":true}'))
+    from caseflow_worker.settings import database
+    with database() as db:
+        row=db.execute("SELECT error_code,response_evidence FROM worker.ai_calls").fetchone()
+        assert row["error_code"]=="AI_SCHEMA_INVALID"
+        assert row["response_evidence"]["rawOutput"]=='{"approve":true}'
+        assert db.execute("SELECT count(*) AS n FROM worker.ai_results").fetchone()["n"]==0
 
 
 def test_timeout_has_no_hidden_transport_retry(event,isolated_database):

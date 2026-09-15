@@ -2,8 +2,9 @@
 from decimal import Decimal, ROUND_HALF_UP
 import re
 from pydantic import BaseModel, ConfigDict, Field
+from typing import Annotated
 
-SCHEMA_VERSION = "purchase-assistant-v1"
+SCHEMA_VERSION = "purchase-assistant-v3"
 
 
 class StrictModel(BaseModel):
@@ -20,10 +21,18 @@ class TextSuggestion(StrictModel):
     citations: list[Citation]
 
 
+class CurrencySuggestion(TextSuggestion):
+    value: Annotated[str, Field(pattern=r"^[A-Z]{3}$", description="Three-letter currency code only, for example USD.")] | None
+
+
+class AmountSuggestion(TextSuggestion):
+    value: Annotated[str, Field(pattern=r"^[0-9]{1,12}(\.[0-9]{1,4})?$", description="Decimal amount only, without currency, commas or symbols; for example 4200.00.")] | None
+
+
 class LineItem(StrictModel):
     description: str = Field(min_length=1, max_length=500)
-    quantity: str
-    unitPrice: str
+    quantity: str = Field(pattern=r"^[0-9]{1,10}(\.[0-9]{1,3})?$")
+    unitPrice: str = Field(pattern=r"^[0-9]{1,12}(\.[0-9]{1,4})?$")
 
 
 class ItemSuggestion(StrictModel):
@@ -33,8 +42,8 @@ class ItemSuggestion(StrictModel):
 
 class Extraction(StrictModel):
     vendor: TextSuggestion
-    currency: TextSuggestion
-    total: TextSuggestion
+    currency: CurrencySuggestion
+    total: AmountSuggestion
     lineItems: ItemSuggestion
     warnings: list[str]
 

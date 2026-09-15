@@ -1,6 +1,7 @@
 """Reserve worst-case spend durably before each transport call; unknown usage stays charged."""
 from decimal import Decimal, ROUND_CEILING
 from uuid import uuid4
+from psycopg.types.json import Jsonb
 from .settings import database
 
 MODEL = "gpt-4.1-mini-2025-04-14"
@@ -49,3 +50,10 @@ def settle(call_id, input_tokens, output_tokens, elapsed_ms, error_code=None):
         db.execute("""UPDATE worker.ai_calls SET state=%s,input_tokens=%s,output_tokens=%s,actual_usd=%s,elapsed_ms=%s,error_code=%s
             WHERE id=%s AND state='RESERVED'""",("SETTLED" if known else "UNKNOWN",input_tokens if known else None,
             output_tokens if known else None,cost(input_tokens,output_tokens) if known else None,elapsed_ms,error_code,call_id))
+
+
+def record_response(call_id, evidence, error_code=None):
+    """Private, bounded evaluation evidence; never overwrite a previously recorded response."""
+    with database() as db:
+        db.execute("""UPDATE worker.ai_calls SET response_evidence=%s,error_code=COALESCE(%s,error_code)
+            WHERE id=%s AND response_evidence IS NULL""",(Jsonb(evidence),error_code,call_id))

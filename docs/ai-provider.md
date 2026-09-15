@@ -6,8 +6,10 @@ application jobs and selected-field acceptance screens. Synthetic transport and
 disposable-database checks pass. On 2026-09-15 the user configured the ignored
 local key and authorized USD 10 total for synthetic live testing. The shared
 lifetime and tenant/day ceilings are both USD 10; the global ceiling applies
-across all tenants and runs. Live compatibility checks are in progress. The
-complete assisted browser journey and AI quality remain unverified.
+across all tenants and runs. Live extraction, selected-field acceptance and cited
+review now pass through the real application. Browser checks also confirm a live
+suggestion can be selected and accepted, advancing the draft revision and making
+older results stale. Broader file-upload regression and AI quality remain open.
 
 Pinned provider SDK: openai 3.14.0. Initial model snapshot:
 `gpt-4.1-mini-2025-04-14`. It supports structured JSON and offers a small initial
@@ -39,6 +41,20 @@ explicitly rejected until currency metadata is extended. Decimal per-line roundi
 is checked before display. Matching citations and sums are structural validity;
 semantic claim support still requires the human evaluation rubric.
 
+Live testing exposed two rejected outputs: a currency suffix in the decimal total
+and a malformed citation ID. Schema v3 now specifies decimal/currency patterns
+and an enum of the exact authorized chunk IDs for that request. Prompt v3 explains
+normalization while citation quotes retain original text. Existing validation
+remains mandatory; these restrictions do not prove semantic accuracy.
+
+V9 adds private, bounded response evidence to the worker call ledger, including
+rejected output, version/hash provenance and a safe validation code. The API has
+no read access to that ledger. Raw model output is untrusted evidence, never an
+accepted purchase value. `tools/export_ai_calls.py --records SYNTHETIC_RUN_JSON_OR_JSONL --output NEW_JSON`
+exports calls for only those recorded job IDs with the migrator credential;
+it never exports API keys, HTTP headers or provider error bodies. Output files
+are created exclusively, preserving prior evidence. Review before sharing.
+
 Tests: `services/worker/tests/test_ai_contracts.py`, `test_ai_budget.py`,
 `test_ai_provider.py`, `test_assistant.py`, and Java `AssistantIntegrationTest`.
 These verify invalid citations, absent values, arithmetic,
@@ -63,7 +79,7 @@ review. Each invocation can spend from the same approved ceiling. Raw synthetic
 job results and failures are saved under a unique R2 evidence directory. Passing
 this journey establishes compatibility, not benchmark accuracy or claim support.
 
-Remaining R2 gates: live provider compatibility, embedding/hybrid comparison,
+Remaining R2 gates: embedding/hybrid comparison,
 annotation verification, successful evaluation execution and held-out report, repeated runs,
 manual-versus-assisted measurements, full assisted browser regression, broader
 failure and permission tests. The configured SDK timeout is a network timeout;

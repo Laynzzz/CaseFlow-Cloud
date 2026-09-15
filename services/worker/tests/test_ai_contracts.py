@@ -24,6 +24,12 @@ def test_missing_values_remain_null():
     assert validate_extraction(result,CHUNKS).vendor.value is None
 
 
+def test_schema_rejects_currency_suffix_in_amount_from_live_failure():
+    value=extraction().model_dump()
+    value["total"]["value"]="4200.00 USD"
+    with pytest.raises(ValidationError):Extraction.model_validate(value)
+
+
 @pytest.mark.parametrize("field,value,code",[("total","4199","INCONSISTENT_TOTAL"),("total","NaN","INVALID_TOTAL"),("currency","ZZZ","AI_CURRENCY_UNSUPPORTED")])
 def test_invalid_purchase_values_rejected(field,value,code):
     result=extraction();getattr(result,field).value=value
