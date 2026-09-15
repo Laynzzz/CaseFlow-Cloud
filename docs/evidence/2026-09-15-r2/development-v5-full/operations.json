@@ -1,0 +1,78 @@
+{
+  "predictionsSha256": "2c90cf0c08e46abaf0e719852d018a0e2700548712b9ead02cc62ca9e085e18a",
+  "callsSha256": "e32d25ac8046ec7650fa1dda0851bc101f862aa0caf8f6544d55a7f7a02f115a",
+  "jobTimingsSha256": "2583e9bf3868a44165f99599063daf892f9bf4d8416e6402aefbea49cff72f33",
+  "exportedTimingRows": 120,
+  "invalidJobIntervals": [
+    {
+      "jobId": "cc58f304-8960-40cc-aeac-6d6ab7523119",
+      "endpoint": "first_claim_at",
+      "elapsedMs": -503,
+      "reason": "NEGATIVE_WALL_CLOCK_INTERVAL"
+    },
+    {
+      "jobId": "53c189c6-7bdb-44dd-b604-97d3465d3ce1",
+      "endpoint": "first_claim_at",
+      "elapsedMs": -1028,
+      "reason": "NEGATIVE_WALL_CLOCK_INTERVAL"
+    }
+  ],
+  "requestedJobCount": 120,
+  "recordedCallCount": 180,
+  "states": {
+    "SETTLED": 180
+  },
+  "jobsWithoutCalls": [],
+  "jobsWithMultipleCallAttempts": 0,
+  "knownEstimatedUsd": "0.077731",
+  "unsettledReservedUsd": "0",
+  "accountedUsd": "0.077731",
+  "providerElapsedMsByPurpose": {
+    "extraction": {
+      "count": 60,
+      "p50": 4813,
+      "p95": 5843
+    },
+    "retrieval-embedding": {
+      "count": 60,
+      "p50": 1796,
+      "p95": 2204
+    },
+    "review": {
+      "count": 60,
+      "p50": 4077,
+      "p95": 4891
+    }
+  },
+  "callsWithoutElapsed": 0,
+  "scenarioElapsedMs": {
+    "count": 60,
+    "p50": 17949,
+    "p95": 21028
+  },
+  "queueDelayMs": {
+    "count": 118,
+    "p50": 598,
+    "p95": 981
+  },
+  "jobEndToEndMs": {
+    "count": 120,
+    "p50": 6610,
+    "p95": 8695
+  },
+  "releaseGatePassed": false,
+  "definitions": {
+    "quantile": "Nearest rank, ceil(q*N), without interpolation.",
+    "providerElapsedMs": "Parent-observed admission/transport interval; includes child startup when enabled, not server-only inference.",
+    "scenarioElapsedMs": "Runner-observed setup, sign-in, uploads, indexing and both assistant jobs; not user completion time.",
+    "queueDelayMs": "API request transaction to first RUNNING worker outbox transaction; includes messaging/scheduling. Null if not exported. Invalid intervals excluded and listed.",
+    "jobEndToEndMs": "API request transaction to terminal API job update; includes worker processing and completion delivery. Invalid intervals excluded and listed.",
+    "accountedUsd": "Dated local pricing estimate plus full unknown reservations; not a provider invoice."
+  },
+  "limitations": [
+    "Sequential local synthetic run, not a controlled load benchmark.",
+    "Host sleep, startup, polling and other concurrent work can affect observations.",
+    "Wall-clock timestamps are not monotonic; negative intervals are preserved as anomalies, never clamped to zero.",
+    "Failed and unknown costs remain accounted; no user time-saving claim."
+  ]
+}

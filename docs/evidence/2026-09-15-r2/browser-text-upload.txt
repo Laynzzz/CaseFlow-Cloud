@@ -18,6 +18,9 @@ total USD 4200, saved purchase version 4.
 5. Checked only Vendor and accepted selected fields. Saved version became 6.
    Vendor changed to Synthetic Browser Supplies 12; Equipment 2 x USD 2100 and
    total USD 4200 remained unchanged. Historical suggestions were stale.
+6. Requested policy review for purchase version 6. It succeeded, described the
+   current USD 4200 equipment purchase and selected vendor, and cited the missing
+   cost-center rule from source 09e127f3, page 1.
 
 This is a browser observation, not a reusable automated browser suite or a
 human quality grade. It verifies the pasted-TXT path and selected acceptance;

@@ -1,0 +1,258 @@
+{
+  "id": "lighting-008",
+  "startedAt": "2026-09-15T13:41:07.964Z",
+  "sourceMap": {
+    "36542b97-bdfe-494f-976b-712254c0d2cc": "lighting-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "lighting-p1",
+      "source": {
+        "id": "36542b97-bdfe-494f-976b-712254c0d2cc",
+        "kind": "POLICY",
+        "name": "Synthetic lighting-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 42,
+        "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+        "jobId": "4e20e5a0-73e3-4006-a032-cb44e899a853",
+        "failureCode": null
+      },
+      "chunks": {
+        "items": [
+          {
+            "id": "18fc2364-8905-542c-bec9-f291c520f3b7",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 42,
+            "text": "Office walls are painted every five years.",
+            "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1"
+          }
+        ],
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "source": {
+          "id": "36542b97-bdfe-494f-976b-712254c0d2cc",
+          "kind": "POLICY",
+          "name": "Synthetic lighting-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 42,
+          "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+          "jobId": "4e20e5a0-73e3-4006-a032-cb44e899a853",
+          "failureCode": null
+        }
+      }
+    }
+  ],
+  "tenantId": "2f8e478b-7e02-48c1-a20d-b3fb568dec8f",
+  "caseId": "201603a3-5780-4cea-902b-1007cdc32372",
+  "quote": {
+    "id": "e6ac794c-414d-4a36-bcb7-36e8ccb8c6a0",
+    "kind": "QUOTE",
+    "name": "Synthetic lighting-008 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "201603a3-5780-4cea-902b-1007cdc32372",
+    "mediaType": "text/plain",
+    "byteSize": 115,
+    "sha256": "60b02949a3e021970c00c248c42d27dbe6645aba7a4b1a3475ae38e890423eac",
+    "jobId": "c9bbaaa3-a859-409d-af71-a5031dc12718",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "36542b97-bdfe-494f-976b-712254c0d2cc",
+        "name": "Synthetic lighting-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Lighting kit",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "a8dd881d-0ea5-4331-8ec8-11115264645c",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "2900cc4d-6f02-4cc1-8085-a500de2f5f9e",
+      "output": {
+        "total": {
+          "value": "2200.00",
+          "citations": [
+            {
+              "quote": "invoice-total=2200.00",
+              "chunkId": "967ca098-fc37-592f-9e14-9b2fd4ab2c43"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Synthetic Lighting Works 8",
+          "citations": [
+            {
+              "quote": "Seller=Synthetic Lighting Works 8",
+              "chunkId": "967ca098-fc37-592f-9e14-9b2fd4ab2c43"
+            }
+          ]
+        },
+        "currency": {
+          "value": "USD",
+          "citations": [
+            {
+              "quote": "currency=USD",
+              "chunkId": "967ca098-fc37-592f-9e14-9b2fd4ab2c43"
+            }
+          ]
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "8",
+              "unitPrice": "275.00",
+              "description": "Lighting kit"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "product=Lighting kit; units=8; price=275.00",
+              "chunkId": "967ca098-fc37-592f-9e14-9b2fd4ab2c43"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "967ca098-fc37-592f-9e14-9b2fd4ab2c43": {
+          "page": 1,
+          "text": "Seller=Synthetic Lighting Works 8; product=Lighting kit; units=8; price=275.00; currency=USD; invoice-total=2200.00",
+          "start": 0,
+          "sourceId": "e6ac794c-414d-4a36-bcb7-36e8ccb8c6a0"
+        }
+      },
+      "revision": 2,
+      "sourceId": "e6ac794c-414d-4a36-bcb7-36e8ccb8c6a0",
+      "elapsedMs": 4483,
+      "promptHash": "31e82129f55aacf99f7e664dd6042a291b98e1034ec4ebf09eed40c2be30556f",
+      "schemaHash": "666d568a1a2d8f50ae23a2ad46390ea48f396229a898895f577dfb8a39a56021",
+      "inputTokens": 987,
+      "outputTokens": 228,
+      "sourceSha256": "60b02949a3e021970c00c248c42d27dbe6645aba7a4b1a3475ae38e890423eac",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000760",
+      "retrievedChunkIds": [
+        "967ca098-fc37-592f-9e14-9b2fd4ab2c43"
+      ],
+      "retrievalElapsedMs": 0
+    }
+  },
+  "review": {
+    "jobId": "86b2b52f-b8d9-4a1f-bf00-355bc5ebe7f7",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "457eb538-bb76-4b83-9bbc-bb8ce68d4de5",
+      "output": {
+        "summary": "The purchase request is missing critical information such as cost center, vendor, detailed line items including quantities and unit prices, justification for the purchase, and a non-zero total amount. There is also no policy evidence provided to evaluate the request against relevant rules.",
+        "citations": [],
+        "policy_findings": [],
+        "missing_information": [
+          "cost center",
+          "vendor",
+          "line items",
+          "justification",
+          "total amount"
+        ],
+        "insufficient_evidence": true
+      },
+      "evidence": {},
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 3030,
+      "promptHash": "dde32eff5b067a7ef4c039013afa4bb25446aa199bf5f66575b1e42d4ac3f2c7",
+      "schemaHash": "b98285198169ab64911aaa5187c252cb985a6388455f7bf370f85e8bcff2acf5",
+      "inputTokens": 631,
+      "outputTokens": 88,
+      "sourceSha256": null,
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Lighting OR kit OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000394",
+      "retrievedChunkIds": [],
+      "retrievalElapsedMs": 16,
+      "retrievalComparison": {
+        "model": "text-embedding-3-small",
+        "query": "Lighting OR kit OR purchase OR cost OR center OR justification",
+        "corpus": [
+          {
+            "cosine": 0.14156027853506448,
+            "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+            "chunkId": "18fc2364-8905-542c-bec9-f291c520f3b7",
+            "sourceId": "36542b97-bdfe-494f-976b-712254c0d2cc"
+          }
+        ],
+        "method": "exact-cosine-rrf60-v1",
+        "elapsedMs": 1967,
+        "dimensions": 256,
+        "corpusCount": 1,
+        "cachedChunks": 0,
+        "hybridChunkIds": [
+          "18fc2364-8905-542c-bec9-f291c520f3b7"
+        ],
+        "providerCalled": true,
+        "embeddingCallId": "47b0c3c2-d8ee-483c-af38-8e3dc0840f1f",
+        "baselineChunkIds": [],
+        "embeddingCostUsd": "0.000001",
+        "embeddingVersion": "openai-small-256-v1",
+        "semanticChunkIds": [
+          "18fc2364-8905-542c-bec9-f291c520f3b7"
+        ]
+      }
+    }
+  },
+  "retrievedPassageIds": [],
+  "retrievalComparisons": {
+    "fullText": [],
+    "semantic": [
+      "lighting-p1"
+    ],
+    "hybrid": [
+      "lighting-p1"
+    ]
+  },
+  "finishedAt": "2026-09-15T13:41:23.632Z"
+}

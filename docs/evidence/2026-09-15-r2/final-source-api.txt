@@ -1,0 +1,4 @@
+PASS policy upload, immutable bytes, idempotency, asynchronous text index, publication and tenant isolation
+PASS quote owner permissions, stale draft protection, revision bump, unchanged manual purchase data
+PASS clear malformed-file failure, failed-policy publication blocked, deactivated policy excluded
+PASS policy refresh, scoped full-text retrieval, started pin immutability, historical deactivated-policy access

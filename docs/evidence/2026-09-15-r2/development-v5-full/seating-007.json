@@ -1,0 +1,258 @@
+{
+  "id": "seating-007",
+  "startedAt": "2026-09-15T13:31:44.834Z",
+  "sourceMap": {
+    "49c245f2-7953-4887-a99c-605cee51ded8": "seating-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "seating-p1",
+      "source": {
+        "id": "49c245f2-7953-4887-a99c-605cee51ded8",
+        "kind": "POLICY",
+        "name": "Synthetic seating-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 42,
+        "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+        "jobId": "ee5fa808-0698-4624-b889-2d654d3bbecc",
+        "failureCode": null
+      },
+      "chunks": {
+        "items": [
+          {
+            "id": "a9c70910-2b0e-5feb-9559-e7495e24ccb2",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 42,
+            "text": "Office walls are painted every five years.",
+            "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1"
+          }
+        ],
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "source": {
+          "id": "49c245f2-7953-4887-a99c-605cee51ded8",
+          "kind": "POLICY",
+          "name": "Synthetic seating-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 42,
+          "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+          "jobId": "ee5fa808-0698-4624-b889-2d654d3bbecc",
+          "failureCode": null
+        }
+      }
+    }
+  ],
+  "tenantId": "87f8ab40-0012-4e5d-aab6-881ccf063a3a",
+  "caseId": "8409f5b7-671d-4d9e-bdfc-c791ab345bb7",
+  "quote": {
+    "id": "48d651b5-63cf-4f12-93a5-b1c4697bdeae",
+    "kind": "QUOTE",
+    "name": "Synthetic seating-007 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "8409f5b7-671d-4d9e-bdfc-c791ab345bb7",
+    "mediaType": "text/plain",
+    "byteSize": 100,
+    "sha256": "d6c3fc7640577bd959084102db129f1cb9a7cac54f9528b3a15f293af40ea68f",
+    "jobId": "ba1e40ec-eef8-40b4-903d-e72d76b7ce73",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "49c245f2-7953-4887-a99c-605cee51ded8",
+        "name": "Synthetic seating-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Seating kit",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "fd88f5c9-8e90-45ea-af46-c74cf7fdf4f0",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "c683adcc-3d8c-4e94-8406-64d724fdeb94",
+      "output": {
+        "total": {
+          "value": "1400.00",
+          "citations": [
+            {
+              "quote": "Amount payable: 1400.00 USD.",
+              "chunkId": "f6bd5ff1-b053-5703-8178-b260d677b3ee"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Synthetic Seating Works 7",
+          "citations": [
+            {
+              "quote": "Supplier Synthetic Seating Works 7 offers",
+              "chunkId": "f6bd5ff1-b053-5703-8178-b260d677b3ee"
+            }
+          ]
+        },
+        "currency": {
+          "value": "USD",
+          "citations": [
+            {
+              "quote": "Amount payable: 1400.00 USD.",
+              "chunkId": "f6bd5ff1-b053-5703-8178-b260d677b3ee"
+            }
+          ]
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "7",
+              "unitPrice": "200.00",
+              "description": "Seating kit"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "Synthetic Seating Works 7 offers 7 Seating kit at 200.00 each.",
+              "chunkId": "f6bd5ff1-b053-5703-8178-b260d677b3ee"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "f6bd5ff1-b053-5703-8178-b260d677b3ee": {
+          "page": 1,
+          "text": "Supplier Synthetic Seating Works 7 offers 7 Seating kit at 200.00 each. Amount payable: 1400.00 USD.",
+          "start": 0,
+          "sourceId": "48d651b5-63cf-4f12-93a5-b1c4697bdeae"
+        }
+      },
+      "revision": 2,
+      "sourceId": "48d651b5-63cf-4f12-93a5-b1c4697bdeae",
+      "elapsedMs": 4641,
+      "promptHash": "9732c61cdac2de4c66d4eb82a9c5cda21e06a547a50b4f8f4d4ae94e8d9447ca",
+      "schemaHash": "677812802eb39482bfe5332ddf4a2ec4fa6127f26cb7a093ccb96844027e9c59",
+      "inputTokens": 976,
+      "outputTokens": 234,
+      "sourceSha256": "d6c3fc7640577bd959084102db129f1cb9a7cac54f9528b3a15f293af40ea68f",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000765",
+      "retrievedChunkIds": [
+        "f6bd5ff1-b053-5703-8178-b260d677b3ee"
+      ],
+      "retrievalElapsedMs": 15
+    }
+  },
+  "review": {
+    "jobId": "a31b7b60-ba07-4141-803f-a9affb4d2f1b",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "27a6e6fe-b1b0-42b4-aadb-37b9fac25e77",
+      "output": {
+        "summary": "The purchase request for a seating kit lacks critical details including cost center, line items, the total amount, vendor information, and justification. Without these key elements, the request cannot be properly reviewed or approved.",
+        "citations": [],
+        "policy_findings": [],
+        "missing_information": [
+          "cost center",
+          "line items",
+          "total amount",
+          "vendor",
+          "justification"
+        ],
+        "insufficient_evidence": true
+      },
+      "evidence": {},
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 3655,
+      "promptHash": "1cfc6f5264bc44217cafaa277c6174723e3706f92d3490dd02d0e438fcc2aae8",
+      "schemaHash": "b98285198169ab64911aaa5187c252cb985a6388455f7bf370f85e8bcff2acf5",
+      "inputTokens": 632,
+      "outputTokens": 79,
+      "sourceSha256": null,
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Seating OR kit OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000380",
+      "retrievedChunkIds": [],
+      "retrievalElapsedMs": 0,
+      "retrievalComparison": {
+        "model": "text-embedding-3-small",
+        "query": "Seating OR kit OR purchase OR cost OR center OR justification",
+        "corpus": [
+          {
+            "cosine": 0.14554448356539623,
+            "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+            "chunkId": "a9c70910-2b0e-5feb-9559-e7495e24ccb2",
+            "sourceId": "49c245f2-7953-4887-a99c-605cee51ded8"
+          }
+        ],
+        "method": "exact-cosine-rrf60-v1",
+        "elapsedMs": 1968,
+        "dimensions": 256,
+        "corpusCount": 1,
+        "cachedChunks": 0,
+        "hybridChunkIds": [
+          "a9c70910-2b0e-5feb-9559-e7495e24ccb2"
+        ],
+        "providerCalled": true,
+        "embeddingCallId": "a21f9d5f-67e5-48ed-821a-99b87b5cdffd",
+        "baselineChunkIds": [],
+        "embeddingCostUsd": "0.000001",
+        "embeddingVersion": "openai-small-256-v1",
+        "semanticChunkIds": [
+          "a9c70910-2b0e-5feb-9559-e7495e24ccb2"
+        ]
+      }
+    }
+  },
+  "retrievedPassageIds": [],
+  "retrievalComparisons": {
+    "fullText": [],
+    "semantic": [
+      "seating-p1"
+    ],
+    "hybrid": [
+      "seating-p1"
+    ]
+  },
+  "finishedAt": "2026-09-15T13:32:02.020Z"
+}

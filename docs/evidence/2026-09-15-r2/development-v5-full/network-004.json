@@ -1,0 +1,277 @@
+{
+  "id": "network-004",
+  "startedAt": "2026-09-15T13:33:52.325Z",
+  "sourceMap": {
+    "2217aa16-f344-41bc-95f4-1b3833949831": "network-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "network-p1",
+      "source": {
+        "id": "2217aa16-f344-41bc-95f4-1b3833949831",
+        "kind": "POLICY",
+        "name": "Synthetic network-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 57,
+        "sha256": "f5f48a29c28752827fc3e208ee14b3ce78676bd415942409945866d96b1d5a2b",
+        "jobId": "49047b27-9feb-4962-81d0-7f123802f45e",
+        "failureCode": null
+      },
+      "chunks": {
+        "items": [
+          {
+            "id": "226f09cf-e9a0-595b-8ef2-0be4ccab851b",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 57,
+            "text": "Network procurement cannot proceed without a cost center.",
+            "sha256": "f5f48a29c28752827fc3e208ee14b3ce78676bd415942409945866d96b1d5a2b"
+          }
+        ],
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "source": {
+          "id": "2217aa16-f344-41bc-95f4-1b3833949831",
+          "kind": "POLICY",
+          "name": "Synthetic network-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 57,
+          "sha256": "f5f48a29c28752827fc3e208ee14b3ce78676bd415942409945866d96b1d5a2b",
+          "jobId": "49047b27-9feb-4962-81d0-7f123802f45e",
+          "failureCode": null
+        }
+      }
+    }
+  ],
+  "tenantId": "c132197e-ea65-449c-a22d-082dc7c262e8",
+  "caseId": "41c783f2-f163-4d5a-a50e-0756dcb1e57f",
+  "quote": {
+    "id": "b2a9a985-67f3-4a1c-b9da-7e778ce68513",
+    "kind": "QUOTE",
+    "name": "Synthetic network-004 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "41c783f2-f163-4d5a-a50e-0756dcb1e57f",
+    "mediaType": "text/plain",
+    "byteSize": 97,
+    "sha256": "ee94e828fb30da81bc0f279b800f6c800541bc903e5190e49de3f53592826eb1",
+    "jobId": "aefcf1e3-f796-4a41-bb35-48d0f6d5cdf0",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "2217aa16-f344-41bc-95f4-1b3833949831",
+        "name": "Synthetic network-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Network kit",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "cb3d0ae7-c156-444e-96d5-6b7c6ff01e76",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "a7acaa29-8deb-4e35-8d1e-7402e0820450",
+      "output": {
+        "total": {
+          "value": "900.00",
+          "citations": [
+            {
+              "quote": "Grand total ([not supplied]): 900.00",
+              "chunkId": "2af79cca-b142-57c9-aed9-a72d9607bf50"
+            }
+          ]
+        },
+        "vendor": {
+          "value": null,
+          "citations": []
+        },
+        "currency": {
+          "value": null,
+          "citations": []
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "4",
+              "unitPrice": "225.00",
+              "description": "Network kit"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "Network kit | count 4 | each 225.00",
+              "chunkId": "2af79cca-b142-57c9-aed9-a72d9607bf50"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "2af79cca-b142-57c9-aed9-a72d9607bf50": {
+          "page": 1,
+          "text": "QUOTATION\n[not supplied]\nNetwork kit | count 4 | each 225.00\nGrand total ([not supplied]): 900.00",
+          "start": 0,
+          "sourceId": "b2a9a985-67f3-4a1c-b9da-7e778ce68513"
+        }
+      },
+      "revision": 2,
+      "sourceId": "b2a9a985-67f3-4a1c-b9da-7e778ce68513",
+      "elapsedMs": 3639,
+      "promptHash": "e6834b6439d198641fb15e34a9bdbd8d3d7cec05777e46ae09a6e37b529daa1c",
+      "schemaHash": "08bb7e2c349cafd2d72422a7ad98c55c9cc2631c0e8591343cffde011f954c1e",
+      "inputTokens": 979,
+      "outputTokens": 146,
+      "sourceSha256": "ee94e828fb30da81bc0f279b800f6c800541bc903e5190e49de3f53592826eb1",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000626",
+      "retrievedChunkIds": [
+        "2af79cca-b142-57c9-aed9-a72d9607bf50"
+      ],
+      "retrievalElapsedMs": 15
+    }
+  },
+  "review": {
+    "jobId": "2e1ae9d0-0f36-463e-9381-548e519d6189",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "46565ce8-5379-46a0-a88b-cf87341cb06b",
+      "output": {
+        "summary": "The purchase request lacks critical information including cost center, vendor, line items, and justification, which are necessary for network procurement approval.",
+        "citations": [
+          {
+            "quote": "Network procurement cannot proceed without a cost center.",
+            "chunkId": "226f09cf-e9a0-595b-8ef2-0be4ccab851b"
+          }
+        ],
+        "policy_findings": [
+          {
+            "claim": "Network procurement cannot proceed without a cost center.",
+            "citations": [
+              {
+                "quote": "Network procurement cannot proceed without a cost center.",
+                "chunkId": "226f09cf-e9a0-595b-8ef2-0be4ccab851b"
+              }
+            ]
+          }
+        ],
+        "missing_information": [
+          "costCenter",
+          "vendor",
+          "lineItems",
+          "justification"
+        ],
+        "insufficient_evidence": false
+      },
+      "evidence": {
+        "226f09cf-e9a0-595b-8ef2-0be4ccab851b": {
+          "page": 1,
+          "text": "Network procurement cannot proceed without a cost center.",
+          "start": 0,
+          "sourceId": "2217aa16-f344-41bc-95f4-1b3833949831"
+        }
+      },
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 4156,
+      "promptHash": "487b767e40c5aa6094fa31ec343785563f0afcaf2329f24e5c545557c48f12e3",
+      "schemaHash": "6cac8a02ef10ef02dd199bb8357b2c64dbf8bad9c729e24a79539ae75d9542bf",
+      "inputTokens": 724,
+      "outputTokens": 157,
+      "sourceSha256": null,
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Network OR kit OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000541",
+      "retrievedChunkIds": [
+        "226f09cf-e9a0-595b-8ef2-0be4ccab851b"
+      ],
+      "retrievalElapsedMs": 14,
+      "retrievalComparison": {
+        "model": "text-embedding-3-small",
+        "query": "Network OR kit OR purchase OR cost OR center OR justification",
+        "corpus": [
+          {
+            "cosine": 0.5801497813841322,
+            "sha256": "f5f48a29c28752827fc3e208ee14b3ce78676bd415942409945866d96b1d5a2b",
+            "chunkId": "226f09cf-e9a0-595b-8ef2-0be4ccab851b",
+            "sourceId": "2217aa16-f344-41bc-95f4-1b3833949831"
+          }
+        ],
+        "method": "exact-cosine-rrf60-v1",
+        "elapsedMs": 2110,
+        "dimensions": 256,
+        "corpusCount": 1,
+        "cachedChunks": 0,
+        "hybridChunkIds": [
+          "226f09cf-e9a0-595b-8ef2-0be4ccab851b"
+        ],
+        "providerCalled": true,
+        "embeddingCallId": "493f2509-7c62-4357-8c60-56cf3acc8d68",
+        "baselineChunkIds": [
+          "226f09cf-e9a0-595b-8ef2-0be4ccab851b"
+        ],
+        "embeddingCostUsd": "0.000001",
+        "embeddingVersion": "openai-small-256-v1",
+        "semanticChunkIds": [
+          "226f09cf-e9a0-595b-8ef2-0be4ccab851b"
+        ]
+      }
+    }
+  },
+  "retrievedPassageIds": [
+    "network-p1"
+  ],
+  "retrievalComparisons": {
+    "fullText": [
+      "network-p1"
+    ],
+    "semantic": [
+      "network-p1"
+    ],
+    "hybrid": [
+      "network-p1"
+    ]
+  },
+  "finishedAt": "2026-09-15T13:34:10.385Z"
+}
