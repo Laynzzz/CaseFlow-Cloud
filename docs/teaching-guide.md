@@ -516,3 +516,17 @@ reasons, and confirms all claims are represented. Counting a citation as valid i
 automatic; deciding whether it supports the entire claim is human evaluation.
 Missing review outputs stay visible separately. No automated tool can certify
 that a reviewer made a truthful judgment; that is an explicit limitation.
+
+Operational reports use existing durable job/outbox timestamps rather than
+inventing queue durations. The first full run contained two negative first-claim
+intervals. Their cause is not established; timestamp anomalies remain visible in
+the report and raw export. Percentiles exclude those invalid intervals with an
+explicit sample count. Provider durations use the parent's monotonic elapsed
+clock, while database wall-clock timestamps serve a different purpose. Neither
+these local observations nor passing tests establishes a production SLA.
+
+Parser hardening extends the same isolation principle to untrusted PDFs: the
+child receives runtime paths but no database, storage or AI environment secrets.
+A small compressed PDF expanding beyond the 8 MiB content-stream limit is rejected,
+and a real resource-limited child refuses a 600 MiB allocation. The configured
+512 MiB memory limit is containment, not a filesystem/network sandbox.

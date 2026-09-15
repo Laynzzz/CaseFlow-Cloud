@@ -2,6 +2,7 @@
 import hashlib
 import io
 import json
+import os
 import subprocess
 import sys
 
@@ -9,6 +10,12 @@ MAX_BYTES = 10 * 1024 * 1024
 MAX_CHARS = 1_000_000
 PARSER_VERSION = "pypdf-6.18.1+utf8-v1"
 CHUNK_VERSION = "page-window-1200-150-v1"
+
+
+def child_environment():
+    # Parsing needs its runtime, not database, object-store or hosted-AI credentials.
+    allowed={'path','systemroot','windir','systemdrive','temp','tmp','pathext','pythonpath','pythonhome','home','userprofile'}
+    return {key:value for key,value in os.environ.items() if key.lower() in allowed}
 
 
 def parse(data: bytes, media_type: str):
@@ -76,7 +83,8 @@ def isolated_parse(data: bytes, media_type: str):
     try:
         process = subprocess.run([sys.executable, "-m", "caseflow_worker.parser_process", media_type],
                                  input=data, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL,
-                                 timeout=20, check=False)
+                                 timeout=20, check=False,env=child_environment(),
+                                 creationflags=subprocess.CREATE_NO_WINDOW if os.name=='nt' else 0)
     except subprocess.TimeoutExpired:
         raise ValueError("PARSER_TIME_LIMIT") from None
     if process.returncode != 0:

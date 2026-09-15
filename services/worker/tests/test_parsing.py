@@ -1,5 +1,7 @@
 import hashlib
 import io
+import subprocess
+import sys
 import pytest
 from pypdf import PdfWriter
 from pypdf.generic import DictionaryObject, NameObject, DecodedStreamObject
@@ -64,3 +66,43 @@ def test_pdf_rejections():
                        (pdf("secret", password="synthetic"), "ENCRYPTED_PDF_UNSUPPORTED")]:
         with pytest.raises(ValueError, match=code):
             isolated_parse(data, "application/pdf")
+
+
+def test_compressed_pdf_content_is_bounded_after_inflation():
+    writer=PdfWriter();page=writer.add_blank_page(612,792)
+    stream=DecodedStreamObject();stream.set_data(b' '*(8*1024*1024+1))
+    page[NameObject('/Contents')]=writer._add_object(stream.flate_encode())
+    output=io.BytesIO();writer.write(output)
+    assert len(output.getvalue())<100_000
+    with pytest.raises(ValueError,match='PDF_STREAM_LIMIT'):
+        isolated_parse(output.getvalue(),'application/pdf')
+
+
+def test_parser_call_excludes_service_credentials(monkeypatch):
+    from caseflow_worker import parsing
+    monkeypatch.setenv('DB_WORKER_PASSWORD','synthetic-db')
+    monkeypatch.setenv('S3_SECRET_KEY','synthetic-storage')
+    monkeypatch.setenv('OPENAI_API_KEY','synthetic-provider')
+    original=subprocess.run;seen=[]
+    def inspected(*args,**kwargs):
+        assert not {'DB_WORKER_PASSWORD','S3_SECRET_KEY','OPENAI_API_KEY'} & kwargs['env'].keys()
+        seen.append(True)
+        return original(*args,**kwargs)
+    monkeypatch.setattr(parsing.subprocess,'run',inspected)
+    assert isolated_parse(b'Synthetic policy','text/plain')['chunks'][0]['text']=='Synthetic policy'
+    assert seen==[True]
+
+
+def test_child_memory_limit_rejects_oversized_allocation():
+    script='''from caseflow_worker.parser_process import limits
+limits()
+try:
+    data=bytearray(600*1024*1024)
+except MemoryError:
+    print("MEMORY_LIMIT")
+else:
+    raise RuntimeError("Memory bound was not enforced")
+'''
+    from caseflow_worker.parsing import child_environment
+    result=subprocess.run([sys.executable,'-c',script],capture_output=True,timeout=20,env=child_environment())
+    assert result.returncode==0 and result.stdout.strip()==b'MEMORY_LIMIT'
