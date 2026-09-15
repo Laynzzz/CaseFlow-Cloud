@@ -1,5 +1,15 @@
 # Evidence index
 
+## 2026-09-15: user-delegated AI reference review
+
+The [AI audit summary](evidence/2026-09-15-r2/ai-reference-review/summary.md) and
+[120 row assessments](evidence/2026-09-15-r2/ai-reference-review/audit.json) record
+480 matching source/reference field checks and eight laboratory cases needing a
+policy-wording clarification. This is not a model-accuracy score or human
+verification. Frozen sources and product prompts remain unchanged. The checker
+is confined to `evals/audit_references.py`; a Node guard rejects its provenance
+as a substitute for the current human-review gate.
+
 ## 2026-09-15: full development evaluation and bounded provider transport
 
 R2 remains experimental. These are synthetic development results with unverified

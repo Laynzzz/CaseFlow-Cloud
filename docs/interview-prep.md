@@ -252,6 +252,15 @@ Evidence: [provider contract](ai-provider.md),
 [safe diagnostic test](../services/worker/tests/test_ai_provider.py).
 # R2 additions: retrieval choices and provider deadlines (2026-09-15)
 
+Reference-review follow-up: the user delegated the 120-case reference audit to
+the assistant. The AI audit found matching source-derived fields and one ambiguous
+laboratory-policy sentence repeated in eight cases. No human verification is
+claimed. **Why audit the expected answers?** A model score is only meaningful
+against defensible references. Here the literal wording says purchases must be
+completed, while the intended rule is to supply a cost center. A clarification
+needs a new dataset version, not a silent change to old evidence. See the AI
+reference-review summary in `docs/evidence/2026-09-15-r2/ai-reference-review/`.
+
 Latest measured checkpoint: two full 60-case development runs, extraction
 207/240 -> 225/240 after a prompt change; the latter still misses 12 vendor values
 and three item descriptions. All three retrieval methods obtain 48/48 in simple

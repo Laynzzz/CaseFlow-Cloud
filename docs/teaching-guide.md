@@ -545,3 +545,14 @@ call-file hashes differ after checkout. JSON/JSONL now use LF in Git attributes
 and Python exports explicitly write LF. Derived hashes were corrected and checked
 against committed Git bytes; the frozen datasets and prediction bytes did not
 change. This is an example of reproducibility extending beyond model parameters.
+
+## Delegating reference review without inventing human evidence
+
+The user asked the assistant to perform the reference review. The resulting AI
+audit checked all 120 sources and found the field references consistent, while
+flagging one ambiguous laboratory policy appearing in eight cases. It records the
+AI reviewer identity and frozen dataset hashes. It does not tick human-review
+checkboxes, change the held-out prompt, or relabel AI work as independent human
+verification. Source clarity matters: a benchmark can mark a reasonable answer
+wrong when its question or policy is ambiguous. Proposed source corrections must
+be versioned so older reported results keep their original meaning.

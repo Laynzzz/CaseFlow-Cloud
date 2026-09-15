@@ -42,6 +42,11 @@ dialog, so that particular interaction is still unverified.
 
 Current human gate: complete `reference-review.html` and return the exported
 review file. The held-out runner refuses absent, partial or stale review files.
+At the user's request, an AI reference audit has now checked all 120 cases:
+480/480 source-derived field checks match, and eight laboratory cases have a
+policy-wording ambiguity. See `evidence/2026-09-15-r2/ai-reference-review/summary.md`.
+It is explicitly not human verification; no review checkboxes or frozen source
+files were changed. The proposed wording correction needs a versioned dataset.
 The separate claim-review form inventories 108 finding/summary outputs from the
 latest run, initially ungraded; the reviewer must split compound claims and give
 reasons. Do not grade the output as supported merely because a citation exists.
