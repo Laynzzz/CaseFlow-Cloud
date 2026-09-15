@@ -95,7 +95,10 @@ and three item-description errors. Prompt v5 asks for complete source names,
 recognition of clearly identified quotation headings, and separation of adjacent
 quantity/supplier fields from item descriptions. Null remains required when
 ambiguous. These changes use development evidence only; references still await
-human verification and the next run must measure their effect.
+human verification. The full v5 rerun measured 225/240 matches: vendor 48/60,
+currency 60/60, total 60/60 and items 57/60. All jobs completed, with no false
+abstentions among 48 answerable cases. Remaining vendor/item errors and every raw
+response are preserved; the development result is not a held-out release claim.
 
 ## Experimental retrieval comparison
 

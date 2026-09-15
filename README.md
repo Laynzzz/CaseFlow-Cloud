@@ -3,7 +3,7 @@
 A purchase approval application: employees explain a purchase, two assigned
 reviewers decide in order, and the system records the decision and its history.
 The document worker produces the approved Word document. The experimental
-AI assistant is being built to suggest quote fields and cite purchasing policies; people
+AI assistant suggests quote fields and cites purchasing policies; people
 accept suggestions and make approval decisions.
 
 ## Current status
@@ -26,15 +26,18 @@ ordered decisions and cursor behavior. See [evidence](docs/evidence-index.md).
 deployment, the complete browser journey and remaining acceptance checks are
 still open. Baseline database lease/concurrency tests and broker redeliveries
 pass; these are not the complete crash matrix.
-**R2 is in progress:** quote and policy PDF/TXT uploads, bounded background parsing,
-source text previews, publication and deactivation are implemented. The synthetic
-60/60 evaluation split is recorded; references await human verification. AI job,
-provider, cited-output validation, spending-ledger and selected-field acceptance
-code is connected, with database and mocked-provider checks. Live calls remain
-disabled by a zero budget. Provider integration, embedding comparison, held-out
-quality evaluation and the full assisted browser journey are not yet verified.
-R2 AI and R3 reliability/portfolio gates are also unfinished. No production
-readiness, adoption or measured AI quality is claimed.
+**R2 is in progress / experimental:** quote and policy PDF/TXT uploads and pasted
+text, bounded parsing, publication, pinned policy retrieval, live AI extraction,
+cited review and explicit selected-field acceptance work locally. Provider calls
+share the user-authorized USD 10 lifetime ledger and have enforced deadlines.
+The full 60-case development rerun matched 225/240 fields (93.75%), retrieved
+48/48 expected passages and correctly abstained in 12/12 insufficient-evidence
+cases. Vendor match remains only 48/60. These generated references await human
+verification; cited-claim support is ungraded and held-out testing has not run.
+The embedding/hybrid comparison and raw failures are preserved in
+[the evidence index](docs/evidence-index.md); see the [R2 map](docs/r2-status.md)
+for remaining gates. R3 has not started. No production readiness, adoption or
+real-world AI-quality guarantee is claimed.
 
 ## Run locally (PowerShell)
 

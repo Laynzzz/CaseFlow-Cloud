@@ -252,6 +252,29 @@ Evidence: [provider contract](ai-provider.md),
 [safe diagnostic test](../services/worker/tests/test_ai_provider.py).
 # R2 additions: retrieval choices and provider deadlines (2026-09-15)
 
+Latest measured checkpoint: two full 60-case development runs, extraction
+207/240 -> 225/240 after a prompt change; the latter still misses 12 vendor values
+and three item descriptions. All three retrieval methods obtain 48/48 in simple
+corpora, but three distractor probes give text 0/3, semantic 3/3, hybrid 0/3.
+These are generated references awaiting a real reviewer. Claim support remains
+ungraded and there are no held-out results. See `docs/evidence-index.md` for raw
+outputs, ledger rows and tests.
+
+- **Can you call the AI accurate because every job succeeded?** No. The first
+  full run had no failed jobs but only 86.25% field match. Schema validation proves
+  structure, not correctness. Follow-up: report vendor accuracy separately, keep
+  null/missing cases in denominators, and verify references before held-out tests.
+- **What did the deadline cost?** It adds a process and SDK startup for each call.
+  The bounded v5 run observed review p50/p95 of 4077/4891 ms versus 2297/4030 ms
+  in the earlier direct-transport run. These runs also changed prompts and shared
+  a development host; they do not isolate causal overhead. Follow-up: design a
+  controlled comparison before claiming a performance result.
+- **How do you know an accepted suggestion did not overwrite everything?** The
+  browser pasted a USD 70 quote into an existing USD 4200 draft, requested
+  extraction and accepted only Vendor. The supplier changed and the version
+  increased; the existing line items and USD 4200 total stayed unchanged. Java
+  enforces selected fields and matching revision; AI does not approve purchases.
+
 - **Why compare text and semantic retrieval?** A purchase can use different words
   from its policy. The implementation records three rankings for the same query
   and tenant-scoped pinned corpus. The displayed review retains the text baseline

@@ -6,14 +6,14 @@ another confirmation unless an actual unresolved problem prevents the transition
 
 | Product step | Implemented | Verified so far | Remaining |
 | --- | --- | --- | --- |
-| Attach a vendor quote | PDF/TXT upload, immutable bytes, bounded parsing, text preview | Parser, database, real API/storage/worker checks | File-picker browser regression and broader hostile-file suite |
-| Publish purchasing policies | Indexed publication, deactivation, immutable case pins | Real API and SQL invariants; browser text/search checks | Draft-content editing experience and broader history regressions |
-| Find policy evidence | Authorized PostgreSQL full-text search, top five passages | Tenant/pin filtering and historical access tests | Embedding/hybrid candidate and measured comparison |
-| Suggest purchase details | Provider adapter, strict schema, citations, arithmetic, durable jobs | Live provider/API and browser extraction; invalid amount/citation rejected | Broader live quality and adversarial evaluation |
-| Accept selected suggestions | Current-versus-proposed UI, separate acceptance command | Real SQL tests plus live API acceptance/replay and browser selected acceptance | Broader browser regression |
-| Generate a cited review | Fixed facts/evidence pipeline, abstention and citation checks | Contract/eligibility/fencing tests | Live claim-support and adversarial evaluation |
-| Control AI spend | Zero-default lifetime/tenant-day ceilings and durable reservations | Concurrent reservations, duplicate calls, unknown costs; user-authorized USD 10 ceiling configured | Wall-clock containment checks |
-| Demonstrate quality | 120 synthetic cases, disjoint 60/60 families, rubric, scorers, live runner and human review packet | Latest 10-case development run: 40/40 fields, Recall@5 8/8, correct abstention 2/2, false abstention 0/8 | Broader development coverage, reference verification, raw held-out outputs, claim support, repeated held-out runs and outcome measurements |
+| Attach a vendor quote | PDF/TXT or pasted text, immutable bytes, bounded parsing, text preview | Real API/storage/worker checks and browser pasted-TXT upload; compressed-stream and memory limits | Native file-picker selection remains unverified; broader browser regression |
+| Publish purchasing policies | Indexed publication, deactivation, immutable case pins; edit pasted text before upload | Real API/SQL invariants and browser source text/search | Broader history/browser regressions |
+| Find policy evidence | Authorized full-text baseline plus opt-in semantic/hybrid comparison | All methods 48/48 in simple dev corpora; three distractor probes: text 0/3, semantic 3/3, hybrid 0/3 | Human-verified held-out comparison; larger and more realistic corpora |
+| Suggest purchase details | Live provider, strict schema, citations, arithmetic, durable jobs | Full dev rerun 225/240 fields; browser extraction and acceptance | Vendor accuracy remains 48/60; held-out evaluation |
+| Accept selected suggestions | Current-versus-proposed UI, matching-revision acceptance | SQL and API replay tests; browser vendor-only acceptance preserves unselected items/total | Broader browser regression |
+| Generate a cited review | Fixed facts/evidence pipeline, abstention and citation checks | Real dev jobs; correct abstention 12/12, false abstention 0/48 | Human claim-support grading and held-out results |
+| Control AI spend | Shared lifetime/tenant-day ceilings, unknown reservations, bounded provider child | Real generation/embedding calls, revoked/stale cache writes, timeout termination, credential exclusion | Cloud-host validation and broader failure matrix |
+| Demonstrate quality | Frozen 60/60 split, scorers, reference and claim review forms, timing/cost exporters | Two complete 60-case development runs, raw outputs/failures, 58 worker and 17 eval checks | Reference verification, held-out results/repeats, claim grades and manual-versus-assisted outcome measurements |
 
 The user resolved provider billing, and the live extraction/acceptance/review
 journey now passes. Initial failures remain in evidence: HTTP 429, a malformed
@@ -28,11 +28,24 @@ are USD 10; repeated tests share the global cap. Credentials are never included
 in evidence. Successful model responses establish compatibility, not held-out
 quality; human reference review and the remaining release gates are still open.
 
-Latest evidence: `development-schema-v4` records prompt v4/schema v4 results for
-the first ten development cases. This is one generated family and remains a
-diagnostic smoke test. Earlier runs and failures are preserved. The offline
-`reference-review.html` packet supports actual human review and progress export;
-generating the packet does not verify the annotations.
+Latest evidence: `development-v5-full` records all 60 development cases under
+prompt v5/schema v4 with the bounded provider transport. It improves the prior
+full-run extraction score from 207/240 to 225/240. Twelve vendor and three item
+errors remain. All 120 assistant jobs completed, with 180 settled provider calls
+and estimated run cost USD 0.077731. Total lifetime accounted cost is USD 0.241278,
+including USD 0.039322 reserved for unknown earlier calls, under the USD 10 cap.
+
+The source-entry browser flow uploaded a new quote, extracted it, accepted only
+the vendor and generated a review for the new revision. It did not silently change
+the existing purchase total. Native file-picker automation exposed no controllable
+dialog, so that particular interaction is still unverified.
+
+Current human gate: complete `reference-review.html` and return the exported
+review file. The held-out runner refuses absent, partial or stale review files.
+The separate claim-review form inventories 108 finding/summary outputs from the
+latest run, initially ungraded; the reviewer must split compound claims and give
+reasons. Do not grade the output as supported merely because a citation exists.
+R3 remains pending until the R2 acceptance evidence is complete.
 
 Implementation notes and interview material are maintained in
 `docs/teaching-guide.md` and `docs/interview-prep.md`. Claims and observed outputs

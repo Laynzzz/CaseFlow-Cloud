@@ -1,5 +1,36 @@
 # Evidence index
 
+## 2026-09-15: full development evaluation and bounded provider transport
+
+R2 remains experimental. These are synthetic development results with unverified
+reference annotations, not held-out quality or a production claim.
+
+| Evidence | Observed result |
+| --- | --- |
+| [Full v4 baseline](evidence/2026-09-15-r2/development-retrieval-full/report.json) | 207/240 extraction fields (86.25%), 48/48 retrieval, correct abstention 12/12, false abstention 1/48 |
+| [Full v5 rerun](evidence/2026-09-15-r2/development-v5-full/report.json) | 225/240 fields (93.75%); vendor 48/60, currency and total 60/60 each, items 57/60; 48/48 retrieval, correct abstention 12/12, false abstention 0/48 |
+| [V5 raw predictions](evidence/2026-09-15-r2/development-v5-full/predictions.jsonl), [all calls](evidence/2026-09-15-r2/development-v5-full/calls.json) | All 120 assistant jobs succeeded; 180 settled calls; run estimate USD 0.077731 |
+| [Nine-policy retrieval probes](evidence/2026-09-15-r2/retrieval-challenges-v1/report.json) | Three author-defined queries: full-text 0/3, semantic 3/3, hybrid 0/3; diagnostic only |
+| [Provider child smoke](evidence/2026-09-15-r2/bounded-provider-smoke/report.json) | Two extraction and two comparison-review jobs succeed through the restricted child |
+| [Final worker suite](evidence/2026-09-15-r2/final-worker-tests.xml) | 58 tests pass, including real deadline termination, memory enforcement, compressed-PDF stream bounds and credential exclusion |
+| [Final source API regression](evidence/2026-09-15-r2/final-source-api.txt) | Immutable upload/index/publication, owner/tenant isolation, malformed-file failure and historical policy pins pass after parser restart |
+| [Browser pasted-source flow](evidence/2026-09-15-r2/browser-text-upload.txt) | Upload -> index -> live extraction -> vendor-only acceptance -> fresh cited review; existing total remains unchanged |
+| [Local timing observations](evidence/2026-09-15-r2/development-v5-full/operations.json), [raw job timestamps](evidence/2026-09-15-r2/development-v5-full/job-timings.json) | Provider and job p50/p95 with counts and definitions; two negative first-claim intervals preserved as anomalies, not treated as zero |
+| [Lifetime budget snapshot](evidence/2026-09-15-r2/final-budget.json) | USD 0.241278 accounted against USD 10, including USD 0.039322 retained for unknown earlier usage |
+
+Additional checks: 15 Python evaluation checks and two Node dataset/annotation
+guards pass; frontend build and typecheck pass. [ADR 0004](adr/0004-retrieval-comparison.md)
+records the bounded vector comparison and [ADR 0005](adr/0005-provider-call-deadline.md)
+records process deadlines. These observations include local concurrent development
+work and cannot establish a performance improvement or production SLA.
+
+The [reference review page](evidence/2026-09-15-r2/reference-review.html) needs an
+actual human review before held-out execution. The [v5 claim-review form](evidence/2026-09-15-r2/development-v5-claim-review.html)
+contains 108 ungraded finding/summary sections, which the reviewer must split into
+individual claims. Generating a form or testing its controls does not grade it.
+Native file-picker selection, held-out/repeated results and human outcome
+measurements remain open. R1 cloud gates and R3 also remain open.
+
 ## 2026-09-15: live AI compatibility and development evaluation
 
 The user funded the API account after initial HTTP 429 failures. Live extraction,
