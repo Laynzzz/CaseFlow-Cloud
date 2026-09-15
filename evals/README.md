@@ -154,3 +154,14 @@ Missing, ungraded or mismatched outputs are rejected. Unit-test grades are expli
 synthetic fixtures and cannot be used as human evidence. The scorer checks record
 completeness; it cannot verify the truth of the human's judgment or establish R2
 completion by itself.
+
+Local operational observations can be reproduced with
+`python services/worker/tools/export_job_timings.py --records RUN_DIRECTORY/predictions.jsonl --output RUN_DIRECTORY/job-timings.json`
+after loading the development environment, followed by
+`python evals/report_operations.py --directory RUN_DIRECTORY --output NEW_OPERATIONS.json`.
+The call ledger export must already exist as `calls.json`. These report nearest-rank
+p50/p95 with counts for provider intervals, first-claim queue delay and terminal
+API completion. Provider intervals include transport and child startup, not just
+inference. Negative wall-clock intervals are explicitly listed and excluded, never
+changed to zero. Local sequential observations are not load benchmarks or evidence
+of user time savings.
