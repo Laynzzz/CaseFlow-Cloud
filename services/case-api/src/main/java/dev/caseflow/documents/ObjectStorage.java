@@ -34,7 +34,8 @@ public class ObjectStorage implements AutoCloseable {
         AwsCredentialsProvider credentials = endpoint.isBlank()
             ? DefaultCredentialsProvider.builder().build()
             : StaticCredentialsProvider.create(AwsBasicCredentials.create(accessKey, secretKey));
-        var configuration = S3Configuration.builder().pathStyleAccessEnabled(!endpoint.isBlank()).build();
+        var configuration = S3Configuration.builder().pathStyleAccessEnabled(!endpoint.isBlank())
+            .chunkedEncodingEnabled(false).build();
         var builder = S3Client.builder().region(Region.of(region)).credentialsProvider(credentials)
             .serviceConfiguration(configuration)
             .httpClientBuilder(UrlConnectionHttpClient.builder().connectionTimeout(Duration.ofSeconds(3)).socketTimeout(Duration.ofSeconds(15)))
@@ -46,7 +47,8 @@ public class ObjectStorage implements AutoCloseable {
     }
 
     public void put(String key, byte[] bytes, boolean immutable) {
-        var request = PutObjectRequest.builder().bucket(bucket).key(key).contentType(DOCX);
+        var request = PutObjectRequest.builder().bucket(bucket).key(key).contentType(DOCX)
+            .checksumSHA256(java.util.Base64.getEncoder().encodeToString(HexFormat.of().parseHex(checksum(bytes))));
         if (immutable) request.ifNoneMatch("*");
         client.putObject(request.build(), RequestBody.fromBytes(bytes));
     }
