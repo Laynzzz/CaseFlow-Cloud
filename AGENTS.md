@@ -44,6 +44,13 @@ Interview preparation is an ongoing part of building this project, not only a fi
 
 ## Execution expectations
 
+- User communication preference (2026-09-15): end every progress update and final
+  response with a clear statement of what is needed from the user. If nothing is
+  currently needed, say "Needed from you: nothing right now." When action is
+  needed, give the concrete next step and explain what it unblocks. Distinguish
+  actions needed now from later review tasks; continue independent authorized
+  work without unnecessary permission requests.
+
 - User authorized USD 10 total for synthetic live AI testing on 2026-09-15 and
   configured the ignored local API key. Keep the shared lifetime ledger ceiling
   at USD 10; this is not a fresh allowance per run or per tenant. Never print keys.
