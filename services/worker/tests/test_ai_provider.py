@@ -61,6 +61,25 @@ def test_timeout_has_no_hidden_transport_retry(event,isolated_database):
     assert client.calls==1
 
 
+def test_parent_deadline_keeps_unknown_charge_reserved(event,isolated_database,monkeypatch):
+    from caseflow_worker import provider_transport
+    from caseflow_worker.settings import database
+    jobs.schedule(event);job=jobs.claim(uuid4());enable(isolated_database,1)
+    monkeypatch.setenv('OPENAI_API_KEY','synthetic-not-sent')
+    calls=[]
+    def deadline(*args,**kwargs):
+        calls.append(1)
+        raise provider_transport.ProviderBoundaryError('provider_time_limit')
+    monkeypatch.setattr(provider_transport,'run_child',deadline)
+    with pytest.raises(ValueError,match='AI_PROVIDER_UNAVAILABLE'):
+        ai_provider.request(job,'EXTRACTION',{},CHUNKS,lambda:None)
+    assert len(calls)==1
+    with database() as db:
+        row=db.execute('SELECT state,error_code,reserved_usd,actual_usd FROM worker.ai_calls').fetchone()
+    assert row['state']=='UNKNOWN' and row['actual_usd'] is None and row['reserved_usd']>0
+    assert row['error_code']=='PROVIDER_TIME_LIMIT'
+
+
 def test_permission_revocation_before_send_prevents_call(event,isolated_database):
     jobs.schedule(event);job=jobs.claim(uuid4());enable(isolated_database,1)
     checks=0

@@ -4,7 +4,7 @@ import json
 import math
 import os
 import time
-from openai import OpenAI
+from .provider_transport import BoundedProvider,safe_error_code
 from . import ai_budget
 from .settings import database
 
@@ -59,10 +59,10 @@ def compare(job,source,query,baseline,authorize,client=None):
         ai_budget.settle(call_id,0,0,0,"ACCESS_CHANGED_BEFORE_SEND");raise
     owned=client is None;call_started=time.monotonic()
     try:
-        if owned:client=OpenAI(api_key=os.environ['OPENAI_API_KEY'],base_url='https://api.openai.com/v1',max_retries=0,timeout=30.0)
+        if owned:client=BoundedProvider()
         response=client.embeddings.create(model=MODEL,input=texts,dimensions=DIMENSIONS,encoding_format="float")
-    except Exception:
-        ai_budget.settle(call_id,None,None,int((time.monotonic()-call_started)*1000),"EMBEDDING_PROVIDER_UNAVAILABLE")
+    except Exception as error:
+        ai_budget.settle(call_id,None,None,int((time.monotonic()-call_started)*1000),safe_error_code(error))
         raise ValueError("AI_PROVIDER_UNAVAILABLE") from None
     finally:
         if owned and client is not None:client.close()

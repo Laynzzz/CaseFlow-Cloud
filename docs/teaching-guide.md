@@ -462,3 +462,32 @@ allows progress downloads, and never marks itself reviewed. A small Python
 static-file server on loopback can preview it without adding an application
 framework or sending review data to a backend. No human verification is claimed
 from generating or viewing that packet.
+
+## R2 architecture: comparing search and bounding AI calls
+
+For a laptop purchase, the policy might say "portable computers" instead of
+"laptop." PostgreSQL full-text search matches words; embeddings represent text as
+numeric vectors so similar meanings can rank together. The Python worker now
+offers an explicit comparison mode, keeping the same query and authorized policy
+versions for full-text, cosine similarity and combined reciprocal-rank rankings.
+The displayed review continues to use full-text evidence while the candidates are
+evaluated. A candidate's relevant passage does not prove that a generated claim
+would be supported.
+
+`retrieval.py` is Python running in the background worker. Migration V10 is SQL
+and adds immutable, tenant-scoped embedding cache rows. Java's assistant endpoint
+pins the comparison flag into the job input and distinguishes it when deduplicating
+requests. Embeddings share the same USD 10 lifetime budget as generation. Cached
+passages save calls, but a new query still needs an embedding. Exact comparison
+is limited to 200 chunks; pgvector indexing is a possible scaling step, not an
+installed dependency or a demonstrated performance improvement. ADR 0004 records
+the model/version/cache boundaries and alternatives.
+
+`provider_transport.py` and `provider_process.py` are Python, also in the worker.
+The former keeps control in the parent while the latter makes the HTTP call in a
+disposable child. A network timeout alone is not an elapsed-time deadline: a slow
+stream can keep delivering bytes. The parent stops the child after 30 seconds;
+the trade-off is startup overhead and potentially discarding a billed answer.
+Unknown cost stays reserved. Resource limits and removal of database/storage
+environment credentials reduce exposure but do not constitute a general sandbox.
+ADR 0005 records the exact boundaries and tests.

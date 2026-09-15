@@ -250,3 +250,23 @@ dataset checksum validation. Live runs and embedding comparison remain pending.
 Evidence: [provider contract](ai-provider.md),
 [live test](../tests/e2e/assistant-live.mjs),
 [safe diagnostic test](../services/worker/tests/test_ai_provider.py).
+# R2 additions: retrieval choices and provider deadlines (2026-09-15)
+
+- **Why compare text and semantic retrieval?** A purchase can use different words
+  from its policy. The implementation records three rankings for the same query
+  and tenant-scoped pinned corpus. The displayed review retains the text baseline
+  pending measured quality. Follow-up: Recall@5 does not measure whether generated
+  claims are supported; that requires separate manual grading.
+- **Why not install a vector database immediately?** The experimental corpus is
+  capped at 200 chunks, so exact cosine comparison over PostgreSQL-cached vectors
+  is sufficient for this measurement. Follow-up: this is linear work with a hard
+  limit; a larger corpus requires an indexing decision and new measurements.
+- **What happens when an AI call never finishes?** A parent-enforced deadline
+  terminates the disposable provider process. A test verifies the child cannot
+  write afterward. The reservation stays UNKNOWN because a missing response does
+  not prove the provider charged nothing. Follow-up: deadlines add startup cost
+  and can discard late valid answers; they are per call, not the whole job.
+
+Evidence: ADRs 0004/0005, worker retrieval and provider transport tests. Live
+development measurements are diagnostics; human review and held-out gates remain
+open. No production usage or retrieval-quality guarantee is claimed.

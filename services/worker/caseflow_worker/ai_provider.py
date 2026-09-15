@@ -4,7 +4,7 @@ import json
 import os
 import time
 import re
-from openai import OpenAI
+from .provider_transport import BoundedProvider,safe_error_code
 from . import ai_budget
 from .ai_contracts import Extraction, Review, SCHEMA_VERSION, validate_extraction, validate_review
 
@@ -62,7 +62,7 @@ def request(job, kind, facts, chunks, authorize, client=None):
         raise
     owned=client is None
     if owned:
-        client=OpenAI(api_key=os.environ["OPENAI_API_KEY"],base_url="https://api.openai.com/v1",max_retries=0,timeout=30.0)
+        client=BoundedProvider()
     try:
         response=client.responses.create(model=ai_budget.MODEL,
             input=[dict(role="system",content=SYSTEM),dict(role="user",content=user_text)],
@@ -70,13 +70,7 @@ def request(job, kind, facts, chunks, authorize, client=None):
             max_output_tokens=ai_budget.MAX_OUTPUT_TOKENS,store=False,truncation="disabled")
     except Exception as error:
         # Never persist exception text, response bodies or headers: they can contain secrets.
-        status=getattr(error,"status_code",None)
-        provider_code=getattr(error,"code",None)
-        code="PROVIDER_UNAVAILABLE"
-        if type(status) is int and 400<=status<=599:
-            code=f"PROVIDER_HTTP_{status}"
-        if provider_code in ("insufficient_quota","invalid_api_key","model_not_found","rate_limit_exceeded"):
-            code="PROVIDER_"+provider_code.upper()
+        code=safe_error_code(error)
         ai_budget.settle(call_id,None,None,int((time.monotonic()-start)*1000),code)
         raise ValueError("AI_PROVIDER_UNAVAILABLE") from None
     finally:
