@@ -1,0 +1,36 @@
+server:
+  address: ${API_ADDRESS:127.0.0.1}
+  port: ${API_PORT:8080}
+spring:
+  application:
+    name: case-api
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${OIDC_ISSUER:http://127.0.0.1:8180/realms/caseflow}
+          jwk-set-uri: ${OIDC_JWKS:http://127.0.0.1:8180/realms/caseflow/protocol/openid-connect/certs}
+          audiences: caseflow-api
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://127.0.0.1:54320/caseflow}
+    username: caseflow_api
+    password: ${DB_API_PASSWORD}
+    hikari:
+      connection-timeout: 3000
+      maximum-pool-size: 5
+      data-source-properties:
+        connectTimeout: 3
+        socketTimeout: 5
+  flyway:
+    url: ${DB_URL:jdbc:postgresql://127.0.0.1:54320/caseflow}
+    user: caseflow_migrator
+    password: ${DB_MIGRATOR_PASSWORD}
+    default-schema: public
+    clean-disabled: true
+  sql:
+    init:
+      mode: never
+logging:
+  structured:
+    format:
+      console: ecs

@@ -1,0 +1,8 @@
+PASS command replay and mismatched-body conflict
+PASS cross-tenant, unassigned reviewer, auditor, foreign workflow and self-approval denials
+PASS optimistic concurrency, start validation, input immutability, ordered approval and replay
+PASS concurrent final approval produces one successful transition and two total approval audit events
+PASS terminal cancellation, linked correction and keyset pagination under insertion
+PASS membership revocation denies new reads and cached command replay
+PASS missing and malformed bearer tokens rejected
+Purchase API suite passed against real PostgreSQL and Keycloak. Document execution is not part of this suite.
