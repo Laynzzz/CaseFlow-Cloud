@@ -1,0 +1,34 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {client,signIn} from './oidc-session.mjs';
+const fixture=JSON.parse(readFileSync(new URL('../../infrastructure/local/generated/demo-ids.json',import.meta.url)));
+const adminToken=await signIn('admin'),admin=client(adminToken);
+const outsider=client(await signIn('outsider')),requester=client(await signIn('requester'));
+const path=`/tenants/${fixture.acmeId}/templates`;
+const bytes=readFileSync(new URL('../../infrastructure/local/generated/purchase-template.docx',import.meta.url));
+const body={name:'Synthetic validation test',byteSize:bytes.length};
+await requester(path,{method:'POST',body,expected:403});
+let template=await admin(path,{method:'POST',body});
+await outsider(`${path}/${template.id}/finalize`,{method:'POST',body:{expectedVersion:0},expected:404});
+async function upload(id,content,expected=200) {
+  const response=await fetch(`http://127.0.0.1:8080/api/v1${path}/${id}/content`,{method:'PUT',headers:{Authorization:`Bearer ${adminToken}`,'Content-Type':'application/octet-stream'},body:content});
+  assert.equal(response.status,expected);
+}
+await upload(template.id,Buffer.from('size mismatch'),400);
+await upload(template.id,bytes);
+const key=crypto.randomUUID();
+template=await admin(`${path}/${template.id}/finalize`,{method:'POST',key,body:{expectedVersion:0}});
+assert.equal(template.state,'VALIDATED');assert.match(template.sha256,/^[a-f0-9]{64}$/);
+assert.deepEqual(await admin(`${path}/${template.id}/finalize`,{method:'POST',key,body:{expectedVersion:0}}),template);
+await upload(template.id,bytes,400);
+template=await admin(`${path}/${template.id}/publish`,{method:'POST',body:{expectedVersion:template.version}});
+assert.equal(template.state,'PUBLISHED');
+await admin(`${path}/${template.id}/publish`,{method:'POST',body:{expectedVersion:0},expected:409});
+console.log('PASS upload authorization, declared size, validation, checksum, replay, closed upload and stale publication');
+const invalid=Buffer.from('This is not a Word archive.');
+const bad=await admin(path,{method:'POST',body:{name:'Synthetic malformed template',byteSize:invalid.length}});
+await upload(bad.id,invalid);
+await admin(`${path}/${bad.id}/finalize`,{method:'POST',body:{expectedVersion:0},expected:400});
+const visible=(await requester(path)).items;
+assert.ok(visible.some(t=>t.id===template.id));assert.ok(!visible.some(t=>t.id===bad.id));
+console.log('PASS malformed DOCX rejected and unpublished templates hidden from requesters');

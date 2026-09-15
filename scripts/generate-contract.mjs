@@ -22,14 +22,21 @@ const schemas = {
   Workflows: object({items:array(ref('Workflow'))}),
   WorkflowInput: object({name:{type:'string',minLength:1,maxLength:120},steps:{type:'array',minItems:2,maxItems:2,items:{type:'string',minLength:1,maxLength:80}},expectedVersion:nullable(version)},['name','steps']),
   VersionInput: object({expectedVersion:version}),
+  Template: object({id:uuid,name:str,state:{type:'string',enum:['UPLOADING','VALIDATED','PUBLISHED']},version,byteSize:{type:'integer'},sha256:nullable(str)}),
+  Templates: object({items:array(ref('Template'))}),
+  TemplateInput: object({name:{type:'string',minLength:1,maxLength:120},byteSize:{type:'integer',minimum:1,maximum:10485760}}),
+  Uploaded: object({uploaded:bool}),
+  Document: object({jobId:uuid,attempt:{type:'integer'},status:str,failureCode:nullable(str),sha256:nullable(str),byteSize:nullable({type:'integer'}),createdAt:{type:'string',format:'date-time'}}),
+  Documents: object({items:array(ref('Document'))}),
+  Download: object({url:str,expiresInSeconds:{type:'integer'}}),
   LineItem: object({description:{type:'string',maxLength:500},quantity:{type:'string',pattern:'^[0-9]+(\\.[0-9]{1,3})?$'},unitPrice:{type:'string',pattern:'^[0-9]+(\\.[0-9]{1,4})?$'}}),
   PurchaseInput: object({vendor:{type:'string',maxLength:200},description:{type:'string',maxLength:2000},currency:{type:'string',minLength:3,maxLength:3},costCenter:{type:'string',maxLength:100},justification:{type:'string',maxLength:4000},lineItems:{type:'array',maxItems:100,items:ref('LineItem')}}),
   Purchase: object({vendor:str,description:str,currency:str,costCenter:str,justification:str,lineItems:array(ref('LineItem')),total:str}),
-  CaseInput: object({purchase:ref('PurchaseInput'),workflowId:nullable(uuid),originalCaseId:nullable(uuid),expectedVersion:nullable(version)},['purchase']),
+  CaseInput: object({purchase:ref('PurchaseInput'),workflowId:nullable(uuid),templateId:nullable(uuid),originalCaseId:nullable(uuid),expectedVersion:nullable(version)},['purchase']),
   Assignment: object({step:{type:'integer'},userId:uuid,displayName:str,outcome:nullable(str)}),
   AssignInput: object({expectedVersion:version,approverIds:{type:'array',minItems:2,maxItems:2,items:uuid}}),
   ActionInput: object({expectedVersion:version,action:{type:'string',enum:['APPROVE','REJECT','CANCEL','COMMENT']},comment:{type:'string',maxLength:4000}},['expectedVersion','action']),
-  Case: object({id:uuid,ownerId:uuid,state:{type:'string',enum:['DRAFT','ACTIVE','APPROVED','REJECTED','CANCELLED']},purchase:ref('Purchase'),workflowId:nullable(uuid),originalCaseId:nullable(uuid),version,createdAt:{type:'string',format:'date-time'},updatedAt:{type:'string',format:'date-time'},documentStatus:nullable(str),assignments:array(ref('Assignment'))}),
+  Case: object({id:uuid,ownerId:uuid,state:{type:'string',enum:['DRAFT','ACTIVE','APPROVED','REJECTED','CANCELLED']},purchase:ref('Purchase'),workflowId:nullable(uuid),templateId:nullable(uuid),originalCaseId:nullable(uuid),version,createdAt:{type:'string',format:'date-time'},updatedAt:{type:'string',format:'date-time'},documentStatus:nullable(str),assignments:array(ref('Assignment'))}),
   CasePage: object({items:array(ref('Case')),nextCursor:nullable(str)}),
   Audit: object({id:uuid,actorId:uuid,eventType:str,details:{type:'object',additionalProperties:true},createdAt:{type:'string',format:'date-time'}}),
   AuditPage: object({items:array(ref('Audit')),nextCursor:nullable(str)}),
@@ -54,6 +61,12 @@ endpoint(t+'/workflows','get','listWorkflows','Workflows');
 endpoint(t+'/workflows','post','createWorkflow','Workflow','WorkflowInput',{command:true});
 endpoint(t+'/workflows/{workflowId}','put','updateWorkflow','Workflow','WorkflowInput',{command:true});
 endpoint(t+'/workflows/{workflowId}/publish','post','publishWorkflow','Workflow','VersionInput',{command:true});
+endpoint(t+'/templates','get','listTemplates','Templates');
+endpoint(t+'/templates','post','allocateTemplate','Template','TemplateInput',{command:true});
+endpoint(t+'/templates/{templateId}/content','put','uploadTemplate','Uploaded');
+paths[t+'/templates/{templateId}/content'].put.requestBody={required:true,content:{'application/octet-stream':{schema:{type:'string',format:'binary'}}}};
+endpoint(t+'/templates/{templateId}/finalize','post','finalizeTemplate','Template','VersionInput',{command:true});
+endpoint(t+'/templates/{templateId}/publish','post','publishTemplate','Template','VersionInput',{command:true});
 endpoint(t+'/cases','get','listCases','CasePage',null,{list:true});
 endpoint(t+'/cases','post','createCase','Case','CaseInput',{command:true});
 endpoint(t+'/cases/{caseId}','get','getCase','Case');
@@ -62,6 +75,10 @@ endpoint(t+'/cases/{caseId}/assignments','put','assignCase','Case','AssignInput'
 endpoint(t+'/cases/{caseId}/start','post','startCase','Case','VersionInput',{command:true});
 endpoint(t+'/cases/{caseId}/actions','post','actOnCase','Case','ActionInput',{command:true});
 endpoint(t+'/cases/{caseId}/audit','get','getAudit','AuditPage',null,{list:true});
+endpoint(t+'/cases/{caseId}/documents','get','listDocuments','Documents');
+endpoint(t+'/cases/{caseId}/documents/{jobId}/download-url','post','downloadDocument','Download');
+endpoint(t+'/jobs/{jobId}','get','getJob','Document');
+endpoint(t+'/jobs/{jobId}/retry','post','retryJob','Document','VersionInput',{command:true});
 const contract={openapi:'3.0.3',info:{title:'CaseFlow API',version:'0.2.0',description:'Phase 0/1 contracts. See docs/contracts.md for permissions and command semantics. Success responses use 200, including command replay.'},paths,components:{securitySchemes:{bearerAuth:{type:'http',scheme:'bearer',bearerFormat:'JWT'}},schemas}};
 writeFileSync(new URL('../contracts/openapi/caseflow.yaml',import.meta.url),JSON.stringify(contract,null,2)+'\n');
 console.log('Generated OpenAPI (JSON is valid YAML).');

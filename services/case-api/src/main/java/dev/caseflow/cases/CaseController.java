@@ -2,6 +2,7 @@ package dev.caseflow.cases;
 
 import dev.caseflow.common.*;
 import dev.caseflow.identity.Access;
+import dev.caseflow.documents.DocumentJobs;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
 import java.time.Instant;
@@ -15,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/v1/tenants/{tenantId}/cases")
 public class CaseController {
     private final JdbcTemplate db; private final Access access; private final Commands commands; private final Json json; private final CaseQueries queries;
-    public CaseController(JdbcTemplate db,Access access,Commands commands,Json json,CaseQueries queries) {this.db=db;this.access=access;this.commands=commands;this.json=json;this.queries=queries;}
-    public record Input(@NotNull @Valid Purchase purchase,UUID workflowId,UUID originalCaseId,@PositiveOrZero Long expectedVersion) {}
+    private final DocumentJobs documents;
+    public CaseController(JdbcTemplate db,Access access,Commands commands,Json json,CaseQueries queries,DocumentJobs documents) {this.db=db;this.access=access;this.commands=commands;this.json=json;this.queries=queries;this.documents=documents;}
+    public record Input(@NotNull @Valid Purchase purchase,UUID workflowId,UUID templateId,UUID originalCaseId,@PositiveOrZero Long expectedVersion) {}
     public record AssignInput(@NotNull @PositiveOrZero Long expectedVersion,@NotNull @Size(min=2,max=2) List<@NotNull UUID> approverIds) {}
     public record VersionInput(@NotNull @PositiveOrZero Long expectedVersion) {}
     public record ActionInput(@NotNull @PositiveOrZero Long expectedVersion,@NotNull Action action,@Size(max=4000) String comment) {}
@@ -30,6 +32,9 @@ public class CaseController {
     private void workflow(UUID tenant,UUID id) {
         if(id!=null && !Boolean.TRUE.equals(db.queryForObject("SELECT EXISTS(SELECT 1 FROM core.workflow_versions WHERE tenant_id=? AND id=? AND published)",Boolean.class,tenant,id))) throw Problem.missing();
     }
+    private void template(UUID tenant,UUID id) {
+        if(id!=null && !Boolean.TRUE.equals(db.queryForObject("SELECT EXISTS(SELECT 1 FROM core.template_versions WHERE tenant_id=? AND id=? AND state='PUBLISHED')",Boolean.class,tenant,id)))throw Problem.missing();
+    }
     @GetMapping
     public Map<String,Object> list(@AuthenticationPrincipal Jwt jwt,@PathVariable UUID tenantId,@RequestParam(required=false) String state,@RequestParam(defaultValue="false") boolean assignedToMe,@RequestParam(required=false) String cursor,@RequestParam(defaultValue="25") int limit) {
         return queries.list(tenantId,access.identity(jwt),state,assignedToMe,cursor,limit);
@@ -42,13 +47,13 @@ public class CaseController {
     public Map<String,Object> create(@AuthenticationPrincipal Jwt jwt,@PathVariable UUID tenantId,@RequestHeader("Idempotency-Key") String key,@Valid @RequestBody Input input) {
         UUID actor=access.identity(jwt);
         return commands.run(tenantId,actor,"case:create",key,input,()->access.role(tenantId,actor,"REQUESTER",true),()->{
-            workflow(tenantId,input.workflowId());
+            workflow(tenantId,input.workflowId());template(tenantId,input.templateId());
             if(input.originalCaseId()!=null) {
                 access.caseVisible(tenantId,actor,input.originalCaseId(),false);var old=queries.one(tenantId,input.originalCaseId(),true);owner(old,actor);
                 Problem.require(Set.of("REJECTED","CANCELLED").contains(old.get("state")),"Only rejected or cancelled cases can be corrected");
             }
             UUID id=UUID.randomUUID();
-            db.update("INSERT INTO core.cases(tenant_id,id,owner_id,purchase,workflow_id,original_case_id) VALUES (?,?,?,?::jsonb,?,?)",tenantId,id,actor,json.write(input.purchase().normalized(false)),input.workflowId(),input.originalCaseId());
+            db.update("INSERT INTO core.cases(tenant_id,id,owner_id,purchase,workflow_id,template_id,original_case_id) VALUES (?,?,?,?::jsonb,?,?,?)",tenantId,id,actor,json.write(input.purchase().normalized(false)),input.workflowId(),input.templateId(),input.originalCaseId());
             commands.audit(tenantId,id,actor,"DRAFT_CREATED",Map.of()); return queries.one(tenantId,id,false);
         });
     }
@@ -56,8 +61,8 @@ public class CaseController {
     public Map<String,Object> update(@AuthenticationPrincipal Jwt jwt,@PathVariable UUID tenantId,@PathVariable UUID caseId,@RequestHeader("Idempotency-Key") String key,@Valid @RequestBody Input input) {
         UUID actor=access.identity(jwt);
         return commands.run(tenantId,actor,"case:update:"+caseId,key,input,()->{access.caseVisible(tenantId,actor,caseId,true);access.role(tenantId,actor,"REQUESTER",false);},()->{
-            var row=queries.one(tenantId,caseId,true);owner(row,actor);draft(row);version(row,input.expectedVersion());workflow(tenantId,input.workflowId());
-            db.update("UPDATE core.cases SET purchase=?::jsonb,workflow_id=?,version=version+1,updated_at=now() WHERE tenant_id=? AND id=?",json.write(input.purchase().normalized(false)),input.workflowId(),tenantId,caseId);
+            var row=queries.one(tenantId,caseId,true);owner(row,actor);draft(row);version(row,input.expectedVersion());workflow(tenantId,input.workflowId());template(tenantId,input.templateId());
+            db.update("UPDATE core.cases SET purchase=?::jsonb,workflow_id=?,template_id=?,version=version+1,updated_at=now() WHERE tenant_id=? AND id=?",json.write(input.purchase().normalized(false)),input.workflowId(),input.templateId(),tenantId,caseId);
             commands.audit(tenantId,caseId,actor,"DRAFT_UPDATED",Map.of("previousVersion",row.get("version")));return queries.one(tenantId,caseId,false);
         });
     }
@@ -91,6 +96,7 @@ public class CaseController {
             var row=queries.one(tenantId,caseId,true);owner(row,actor);draft(row);version(row,input.expectedVersion());
             var purchase=new LinkedHashMap<>((Map<String,Object>)row.get("purchase"));purchase.remove("total");json.convert(purchase,Purchase.class).normalized(true);
             Problem.require(row.get("workflowId")!=null,"Select a published workflow");workflow(tenantId,(UUID)row.get("workflowId"));
+            Problem.require(row.get("templateId")!=null,"Select a published document template");template(tenantId,(UUID)row.get("templateId"));
             var assignments=db.queryForList("SELECT user_id FROM core.assignments WHERE tenant_id=? AND case_id=? ORDER BY step",tenantId,caseId);
             Problem.require(assignments.size()==2,"Assign two approval steps");
             assignments.stream().map(a->(UUID)a.get("user_id")).distinct().sorted().forEach(id->{Problem.require(!actor.equals(id),"Self-approval is prohibited");access.role(tenantId,id,"APPROVER",true);});
@@ -125,11 +131,8 @@ public class CaseController {
                 db.update("UPDATE core.assignments SET outcome=?,decided_at=now() WHERE tenant_id=? AND case_id=? AND step=?",outcome,tenantId,caseId,next.getFirst().get("step"));
                 if(input.action()==Action.REJECT) db.update("UPDATE core.cases SET state='REJECTED' WHERE tenant_id=? AND id=?",tenantId,caseId);
                 else if(((Number)next.getFirst().get("step")).intValue()==1) {
-                    UUID job=UUID.randomUUID(),event=UUID.randomUUID();
+                    UUID job=documents.request(tenantId,caseId,actor,row,key);
                     db.update("UPDATE core.cases SET state='APPROVED',approved_at=now(),generation_id=?,document_status='QUEUED' WHERE tenant_id=? AND id=?",job,tenantId,caseId);
-                    var envelope=new LinkedHashMap<String,Object>();
-                    envelope.put("eventId",event);envelope.put("eventType","document.requested");envelope.put("schemaVersion",1);envelope.put("timestamp",Instant.now().toString());envelope.put("tenantId",tenantId);envelope.put("aggregateId",caseId);envelope.put("aggregateType","case");envelope.put("aggregateSequence",((Number)row.get("version")).longValue()+1);envelope.put("jobId",job);envelope.put("attempt",1);envelope.put("correlationId",event);envelope.put("causationId",key);envelope.put("inputHash",json.hash(row.get("purchase")));
-                    db.update("INSERT INTO core.outbox(event_id,tenant_id,case_id,event_type,payload) VALUES (?,?,?,'document.requested',?::jsonb)",event,tenantId,caseId,json.write(envelope));
                 }
             }
             bump(tenantId,caseId);commands.audit(tenantId,caseId,actor,"CASE_"+input.action(),Map.of("comment",input.comment()==null?"":input.comment()));return queries.one(tenantId,caseId,false);

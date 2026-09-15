@@ -1,5 +1,6 @@
 import {client,signIn} from '../tests/e2e/oidc-session.mjs';
 import {writeFileSync} from 'node:fs';
+import {seedTemplate} from './seed-template.mjs';
 const names=['admin','requester','manager','finance','auditor','outsider'];
 const clients={},identities={};
 for(const name of names) { clients[name]=client(await signIn(name)); identities[name]=await clients[name]('/me'); }
@@ -18,5 +19,6 @@ if(!workflow) {
 }
 let northstar=identities.outsider.memberships.find(t=>t.name==='Northstar Workshop');
 if(!northstar) northstar=await clients.outsider('/tenants',{method:'POST',body:{name:'Northstar Workshop'}});
-writeFileSync(new URL('../infrastructure/local/generated/demo-ids.json',import.meta.url),JSON.stringify({acmeId:acme.id,northstarId:northstar.id,workflowId:workflow.id,users:Object.fromEntries(names.map(name=>[name,identities[name].id]))},null,2));
+const templateId=await seedTemplate(acme.id);
+writeFileSync(new URL('../infrastructure/local/generated/demo-ids.json',import.meta.url),JSON.stringify({acmeId:acme.id,northstarId:northstar.id,workflowId:workflow.id,templateId,users:Object.fromEntries(names.map(name=>[name,identities[name].id]))},null,2));
 console.log('Seeded two synthetic organizations, five Acme roles, and a published two-step workflow. No tokens written.');

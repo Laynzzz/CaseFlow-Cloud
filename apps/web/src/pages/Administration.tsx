@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Templates } from "./Templates";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { api, unwrap, commandHeaders } from "../api/client";
 import { Empty, Notice, Status } from "../components";
@@ -255,6 +256,7 @@ export function Administration({ tenant }: { tenant: string }) {
           ))}
         </div>
       </section>
+      <Templates tenant={tenant} />
     </>
   );
 }

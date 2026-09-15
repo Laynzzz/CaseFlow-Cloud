@@ -19,7 +19,8 @@ public class ProblemHandler {
         return ResponseEntity.status(error.status).body(detail);
     }
     @ExceptionHandler({MethodArgumentNotValidException.class, HttpMessageNotReadableException.class,
-            MethodArgumentTypeMismatchException.class, IllegalArgumentException.class})
+            MethodArgumentTypeMismatchException.class, IllegalArgumentException.class,
+            org.springframework.web.bind.MissingRequestHeaderException.class})
     ResponseEntity<ProblemDetail> validation(Exception error) {
         return problem(new Problem(400, "Invalid request. Check the supplied fields."));
     }
@@ -30,5 +31,9 @@ public class ProblemHandler {
     @ExceptionHandler(TransientDataAccessException.class)
     ResponseEntity<ProblemDetail> transientFailure(TransientDataAccessException error) {
         return problem(new Problem(503, "The service is temporarily unavailable. Try again.", true));
+    }
+    @ExceptionHandler(software.amazon.awssdk.core.exception.SdkException.class)
+    ResponseEntity<ProblemDetail> storageFailure(Exception error) {
+        return problem(new Problem(503,"File storage is temporarily unavailable. Try again.",true));
     }
 }

@@ -7,7 +7,10 @@ import { api, unwrap, commandHeaders } from "../api/client";
 import type { components } from "../api/schema";
 import { Notice } from "../components";
 type Case = components["schemas"]["Case"];
-type Form = components["schemas"]["PurchaseInput"] & { workflowId: string };
+type Form = components["schemas"]["PurchaseInput"] & {
+  workflowId: string;
+  templateId: string;
+};
 const number = z
   .string()
   .regex(/^\d+(\.\d{1,4})?$/, "Enter a nonnegative decimal amount");
@@ -58,6 +61,15 @@ export function DraftForm({
         }),
       ),
   });
+  const templates = useQuery({
+    queryKey: ["templates", tenant],
+    queryFn: () =>
+      unwrap(
+        api.GET("/api/v1/tenants/{tenantId}/templates", {
+          params: { path: { tenantId: tenant } },
+        }),
+      ),
+  });
   const {
     register,
     control,
@@ -74,6 +86,7 @@ export function DraftForm({
         { description: "", quantity: "1", unitPrice: "0.00" },
       ],
       workflowId: existing?.workflowId ?? "",
+      templateId: existing?.templateId ?? "",
     },
   });
   const { fields, append, remove } = useFieldArray({
@@ -91,6 +104,7 @@ export function DraftForm({
       const body = {
         purchase: parsed.data,
         workflowId: values.workflowId || null,
+        templateId: values.templateId || null,
         ...(originalCaseId ? { originalCaseId } : {}),
         ...(existing && !originalCaseId
           ? { expectedVersion: initialVersion.current }
@@ -211,6 +225,20 @@ export function DraftForm({
             .map((w) => (
               <option key={w.id} value={w.id}>
                 {w.name}
+              </option>
+            ))}
+        </select>
+      </label>
+      <Notice error={templates.error} />
+      <label>
+        Document template
+        <select {...register("templateId")}>
+          <option value="">Select a published template</option>
+          {templates.data?.items
+            .filter((t) => t.state === "PUBLISHED")
+            .map((t) => (
+              <option key={t.id} value={t.id}>
+                {t.name}
               </option>
             ))}
         </select>

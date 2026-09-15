@@ -7,7 +7,7 @@ for(const name of ['admin','requester','manager','finance','auditor','outsider']
 const path=`/tenants/${fixture.acmeId}/cases`;
 const tenant=`/tenants/${fixture.acmeId}`;
 const purchase={vendor:'Synthetic Equipment Supply',description:'Video editing laptop',currency:'USD',costCenter:'CREATIVE-01',justification:'Edit training videos',lineItems:[{description:'Laptop',quantity:'1',unitPrice:'4200.00'}]};
-const body={purchase,workflowId:fixture.workflowId};
+const body={purchase,workflowId:fixture.workflowId,templateId:fixture.templateId};
 const key=crypto.randomUUID();
 let item=await api.requester(path,{method:'POST',body,key});
 assert.deepEqual(await api.requester(path,{method:'POST',body,key}),item);

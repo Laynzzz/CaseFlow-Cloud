@@ -17,6 +17,7 @@ public class CaseQueries {
         var out=new LinkedHashMap<String,Object>();
         out.put("id",rs.getObject("id")); out.put("ownerId",rs.getObject("owner_id")); out.put("state",rs.getString("state"));
         out.put("purchase",json.object(rs.getString("purchase"))); out.put("workflowId",rs.getObject("workflow_id"));
+        out.put("templateId",rs.getObject("template_id"));
         out.put("originalCaseId",rs.getObject("original_case_id")); out.put("version",rs.getLong("version"));
         out.put("createdAt",rs.getObject("created_at",OffsetDateTime.class).toString());
         out.put("updatedAt",rs.getObject("updated_at",OffsetDateTime.class).toString());
