@@ -1,0 +1,42 @@
+{
+  "startedAt": "2026-09-15T12:22:33.179Z",
+  "tenantId": "69461d55-4af7-46b4-aac9-946d0807eac9",
+  "checks": [],
+  "caseId": "92373462-8f76-4bd7-8479-d28414bd01fc",
+  "policy": {
+    "id": "c013da10-bc18-421f-97e2-35d9da3d1559",
+    "kind": "POLICY",
+    "name": "Synthetic live policy",
+    "state": "PUBLISHED",
+    "version": 2,
+    "caseId": null,
+    "mediaType": "text/plain",
+    "byteSize": 97,
+    "sha256": "a12aede895e0828c7e6143b2e209721bc27505c8e230125ea39094708178549b",
+    "jobId": "722b39c8-7a03-4c48-9956-4ed9190bc167",
+    "failureCode": null
+  },
+  "quote": {
+    "id": "f60404c6-1ae1-4239-9491-ffc352254409",
+    "kind": "QUOTE",
+    "name": "Synthetic live quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "92373462-8f76-4bd7-8479-d28414bd01fc",
+    "mediaType": "text/plain",
+    "byteSize": 114,
+    "sha256": "871bd3ef7ddf9f1839dd6c22b738278d9487c3121a5a350ce8edcc42532463e6",
+    "jobId": "54b251e4-6f9f-4908-9ecc-0217ef00bdfc",
+    "failureCode": null
+  },
+  "extraction": {
+    "jobId": "6cd15226-9232-444f-94df-a7c42a9fc228",
+    "kind": "EXTRACTION",
+    "status": "FAILED",
+    "failureCode": "AI_PROVIDER_UNAVAILABLE",
+    "revision": 2,
+    "stale": false,
+    "result": null
+  },
+  "failure": "AI_PROVIDER_UNAVAILABLE\n+ actual - expected\n\n+ 'FAILED'\n- 'SUCCEEDED'\n"
+}

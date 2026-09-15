@@ -385,3 +385,19 @@ tests pass, covering failed/missing records, decimal normalization, retrieval
 rank limits, duplicate IDs and missing cost/support evidence. No live quality
 evaluation was run. The user's R2-to-R3 continuation instruction is recorded in
 AGENTS.md and CLAUDE.md; R3 starts after R2's gates pass without another request.
+
+## R2 checkpoint: live provider failure and the shared budget (2026-09-15)
+
+The user authorized USD 10 total and configured the ignored local key. Two actual
+extraction requests failed, with HTTP 429 recorded on the second after adding safe
+diagnostics. No suggestion was accepted or model quality score produced. The
+purchase remains editable manually. The evidence preserves these failures rather
+than replacing them with mock successes.
+
+The budget is a shared lifetime ceiling across tenants and test runs. An unknown
+provider charge retains its worst-case reservation: USD 0.039322 across these two
+attempts. This is conservative accounted cost, not confirmed billing. Releasing
+unknown charges as zero would allow repeated failures to bypass the ceiling.
+`ai_budget_status.py` reads totals and allowlisted failure codes without printing
+keys, provider bodies, or headers. Five provider tests now pass, including the
+safe error-code and unknown-cost regression.

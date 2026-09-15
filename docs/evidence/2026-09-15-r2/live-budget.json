@@ -1,0 +1,19 @@
+{
+  "totalLimitUsd": "10.000000",
+  "tenantDailyLimitUsd": "10.000000",
+  "accountedUsd": "0.039322",
+  "calls": [
+    {
+      "state": "UNKNOWN",
+      "errorCode": "PROVIDER_HTTP_429",
+      "count": 1,
+      "accountedUsd": "0.019661"
+    },
+    {
+      "state": "UNKNOWN",
+      "errorCode": "PROVIDER_UNAVAILABLE",
+      "count": 1,
+      "accountedUsd": "0.019661"
+    }
+  ]
+}

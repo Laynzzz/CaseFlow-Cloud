@@ -214,3 +214,19 @@ pending. There is no production/adoption or measured time-saving claim.
 
 Evidence: `evals/scoring.py`, `evals/test_scoring.py` (five passing checks), and
 dataset checksum validation. Live runs and embedding comparison remain pending.
+# Live-provider failure checkpoint — 2026-09-15
+
+- **What happens if the AI provider rejects a request?** The worker records a
+  failed job, the purchase stays unchanged, and manual entry remains available.
+  Two real extraction attempts failed; the second recorded HTTP 429. This is
+  failure-handling evidence, not AI-quality evidence.
+- **Why reserve money before sending?** A shared PostgreSQL lock and ledger
+  prevent concurrent workers spending the same allowance. Unknown usage retains
+  its upper-bound reservation. The authorized USD 10 is global across runs;
+  USD 0.039322 is currently reserved for two uncertain attempts, not proven billing.
+  Follow-up: conservative reservations can exhaust the allowance earlier than
+  actual provider billing; reconciliation needs evidence before releasing them.
+
+Evidence: [provider contract](ai-provider.md),
+[live test](../tests/e2e/assistant-live.mjs),
+[safe diagnostic test](../services/worker/tests/test_ai_provider.py).

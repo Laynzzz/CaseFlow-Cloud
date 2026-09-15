@@ -44,6 +44,10 @@ Interview preparation is an ongoing part of building this project, not only a fi
 
 ## Execution expectations
 
+- User authorized USD 10 total for synthetic live AI testing on 2026-09-15 and
+  configured the ignored local API key. Keep the shared lifetime ledger ceiling
+  at USD 10; this is not a fresh allowance per run or per tenant. Never print keys.
+
 - User direction (2026-09-15): finish R2, verify its acceptance gates, and then
   continue directly into R3 without asking again if no unresolved problem blocks
   the transition. Report actual blockers and keep work that can proceed moving.

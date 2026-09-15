@@ -3,9 +3,11 @@
 Implementation status, 2026-09-15: typed extraction/review validation, a single
 OpenAI transport adapter, and a PostgreSQL spend ledger are connected to durable
 application jobs and selected-field acceptance screens. Synthetic transport and
-disposable-database checks pass. Live calls are disabled by zero spending limits;
-no live calls or AI quality measurements have been made. The complete assisted
-browser journey remains unverified.
+disposable-database checks pass. On 2026-09-15 the user configured the ignored
+local key and authorized USD 10 total for synthetic live testing. The shared
+lifetime and tenant/day ceilings are both USD 10; the global ceiling applies
+across all tenants and runs. Live compatibility checks are in progress. The
+complete assisted browser journey and AI quality remain unverified.
 
 Pinned provider SDK: openai 3.14.0. Initial model snapshot:
 `gpt-4.1-mini-2025-04-14`. It supports structured JSON and offers a small initial
@@ -42,13 +44,24 @@ Tests: `services/worker/tests/test_ai_contracts.py`, `test_ai_budget.py`,
 These verify invalid citations, absent values, arithmetic,
 unsupported actions, concurrent admission, unknown costs, schema errors, transport
 failure and permission revocation before sending. Fake provider output cannot
-satisfy the held-out evaluation gate. API-key configuration and the user's test
-budget remain pending. After explicit budget authorization, an operator can run
+satisfy the held-out evaluation gate. After explicit budget authorization, an operator can run
 `services/worker/.venv/Scripts/python.exe services/worker/tools/configure_ai_budget.py --total-usd APPROVED_TOTAL --tenant-daily-usd APPROVED_DAILY`
 after `. ./scripts/dev-env.ps1`. Both limits are required. The total is a lifetime
 ceiling for this ledger, not a fresh allowance on each invocation. Setting both
 to zero disables future admission. The ignored `.env` key is loaded only by the
 worker startup script; it is not part of the frontend bundle or API responses.
+
+Read-only inspection after loading `scripts/dev-env.ps1`:
+`services/worker/.venv/Scripts/python.exe services/worker/tools/ai_budget_status.py`.
+This reports ceilings, counts, safe error codes and settled/reserved cost without
+credentials or provider response bodies. Unknown usage stays reserved.
+
+Opt-in integration check: `node tests/e2e/assistant-live.mjs --live`. It creates
+synthetic quote/policy/case records, requests live extraction through the normal
+API and worker, checks explicit acceptance and replay, then requests a cited
+review. Each invocation can spend from the same approved ceiling. Raw synthetic
+job results and failures are saved under a unique R2 evidence directory. Passing
+this journey establishes compatibility, not benchmark accuracy or claim support.
 
 Remaining R2 gates: live provider compatibility, embedding/hybrid comparison,
 annotation verification, evaluation runner and held-out report, repeated runs,

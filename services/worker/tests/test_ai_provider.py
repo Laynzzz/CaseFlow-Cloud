@@ -52,3 +52,21 @@ def test_permission_revocation_before_send_prevents_call(event,isolated_database
     with pytest.raises(ValueError,match="ACCESS_REVOKED"):
         ai_provider.request(job,"EXTRACTION",{},CHUNKS,authorize,client)
     assert client.calls==0
+
+
+def test_provider_failure_records_safe_code_not_response_text(event,isolated_database):
+    jobs.schedule(event);job=jobs.claim(uuid4());enable(isolated_database,1)
+    class RejectedProvider:
+        @property
+        def responses(self):return self
+        def create(self,**args):
+            error=RuntimeError("synthetic secret must not be recorded")
+            error.status_code=429;error.code="insufficient_quota"
+            raise error
+    with pytest.raises(ValueError,match="AI_PROVIDER_UNAVAILABLE"):
+        ai_provider.request(job,"EXTRACTION",{},CHUNKS,lambda:None,RejectedProvider())
+    from caseflow_worker.settings import database
+    with database() as db:
+        row=db.execute("SELECT error_code,state,actual_usd FROM worker.ai_calls").fetchone()
+    assert row["error_code"]=="PROVIDER_INSUFFICIENT_QUOTA"
+    assert row["state"]=="UNKNOWN" and row["actual_usd"] is None

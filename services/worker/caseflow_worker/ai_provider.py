@@ -51,8 +51,16 @@ def request(job, kind, facts, chunks, authorize, client=None):
             input=[dict(role="system",content=SYSTEM),dict(role="user",content=user_text)],
             text={"format":{"type":"json_schema","name":kind.lower(),"schema":schema_json,"strict":True}},
             max_output_tokens=ai_budget.MAX_OUTPUT_TOKENS,store=False,truncation="disabled")
-    except Exception:
-        ai_budget.settle(call_id,None,None,int((time.monotonic()-start)*1000),"PROVIDER_UNAVAILABLE")
+    except Exception as error:
+        # Never persist exception text, response bodies or headers: they can contain secrets.
+        status=getattr(error,"status_code",None)
+        provider_code=getattr(error,"code",None)
+        code="PROVIDER_UNAVAILABLE"
+        if type(status) is int and 400<=status<=599:
+            code=f"PROVIDER_HTTP_{status}"
+        if provider_code in ("insufficient_quota","invalid_api_key","model_not_found","rate_limit_exceeded"):
+            code="PROVIDER_"+provider_code.upper()
+        ai_budget.settle(call_id,None,None,int((time.monotonic()-start)*1000),code)
         raise ValueError("AI_PROVIDER_UNAVAILABLE") from None
     finally:
         if owned:client.close()
