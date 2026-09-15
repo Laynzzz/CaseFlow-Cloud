@@ -787,6 +787,8 @@ export interface components {
       sourceId: string | null;
       sourceVersion: number | null;
       sourceSha256: string | null;
+      retrievalQuery?: string | null;
+      retrievedChunkIds?: string[];
     };
     AIJob: {
       /** Format: uuid */

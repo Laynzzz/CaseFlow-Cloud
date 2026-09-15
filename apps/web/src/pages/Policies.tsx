@@ -67,7 +67,7 @@ export function Policies({
       <p>
         {editable
           ? "Choose the currently published policies for this draft. Refreshing replaces the selection and makes older review results stale."
-          : "These policy versions stay fixed for this purchase, even if an administrator later deactivates them."}
+          : "These are the selected policy versions. The requester can refresh them while the purchase is a draft; they become fixed when approval starts."}
       </p>
       <Notice error={error} />
       <Notice error={policies.error} />

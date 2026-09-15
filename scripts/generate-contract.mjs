@@ -65,6 +65,8 @@ const schemas = {
   AuditPage: object({items:array(ref('Audit')),nextCursor:nullable(str)}),
 };
 Object.assign(schemas.AIResult.properties,{sourceId:nullable(uuid),sourceVersion:nullable(version),sourceSha256:nullable(str)});
+// Optional for historical results written before rank provenance was introduced.
+Object.assign(schemas.AIResult.properties,{retrievalQuery:nullable(str),retrievedChunkIds:array(uuid)});
 schemas.AIResult.required.push('sourceId','sourceVersion','sourceSha256');
 const paths = {};
 function endpoint(path, method, operationId, output, input, {auth=true,command=false,list=false}={}) {

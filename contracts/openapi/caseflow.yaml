@@ -5492,6 +5492,17 @@
           "sourceSha256": {
             "type": "string",
             "nullable": true
+          },
+          "retrievalQuery": {
+            "type": "string",
+            "nullable": true
+          },
+          "retrievedChunkIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
           }
         },
         "required": [

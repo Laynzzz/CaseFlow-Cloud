@@ -7,12 +7,21 @@ import { Notice, Status } from "../components";
 type Schemas = components["schemas"];
 type Field = "vendor" | "currency" | "lineItems";
 const fields: Field[] = ["vendor", "currency", "lineItems"];
-const show = (value: unknown) =>
-  value === null
-    ? "Not supplied"
-    : typeof value === "string"
+const show = (value: unknown) => {
+  if (value === null || value === undefined) return "Not supplied";
+  if (typeof value === "string") return value || "Not entered";
+  if (Array.isArray(value)) {
+    return value.length
       ? value
-      : JSON.stringify(value, null, 2);
+          .map(
+            (item) =>
+              `${item.description}: ${item.quantity} × ${item.unitPrice} each`,
+          )
+          .join("\n")
+      : "No line items";
+  }
+  return String(value);
+};
 
 function Citations({
   citations,
@@ -247,7 +256,11 @@ export function Assistant({
                             }))
                           }
                         />
-                        {field === "lineItems" ? "Line items" : field}
+                        {field === "lineItems"
+                          ? "Line items"
+                          : field === "vendor"
+                            ? "Vendor"
+                            : "Currency"}
                       </label>
                       <div className="member">
                         <div>
