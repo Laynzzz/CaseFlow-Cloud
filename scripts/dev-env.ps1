@@ -5,7 +5,7 @@ if (-not (Test-Path -LiteralPath $caseflowEnv)) {
     throw 'Run node scripts/init-local.mjs from the repository root first.'
 }
 foreach ($line in Get-Content -LiteralPath $caseflowEnv) {
-    if ($line -match '^(DB_(?:ADMIN|MIGRATOR|API|WORKER)_PASSWORD)=([a-f0-9]+)$') {
+    if ($line -match '^(DB_(?:ADMIN|MIGRATOR|API|WORKER)_PASSWORD|S3_ACCESS_KEY|S3_SECRET_KEY)=([a-f0-9]+)$') {
         [Environment]::SetEnvironmentVariable($Matches[1], $Matches[2], 'Process')
     }
 }
