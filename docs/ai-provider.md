@@ -81,11 +81,21 @@ review. Each invocation can spend from the same approved ceiling. Raw synthetic
 job results and failures are saved under a unique R2 evidence directory. Passing
 this journey establishes compatibility, not benchmark accuracy or claim support.
 
-Remaining R2 gates: embedding/hybrid comparison,
+Remaining R2 gates: broader retrieval quality,
 annotation verification, successful evaluation execution and held-out report, repeated runs,
 manual-versus-assisted measurements, full assisted browser regression, broader
-failure and permission tests. The configured SDK timeout is a network timeout;
-strict end-to-end provider wall-clock containment also needs verification.
+failure and permission tests. Generation and embedding calls now use a disposable
+child with a parent-enforced 30-second elapsed deadline, restricted environment,
+memory limits, and no SDK retries (ADR 0005). Uncertain billing retains its
+reservation. This deadline is per provider call, not an end-to-end job SLA.
+
+The full 60-case development run under prompt v4 found 207/240 extraction matches:
+30 vendor errors (mostly omitted numeric name suffixes or unrecognized headings)
+and three item-description errors. Prompt v5 asks for complete source names,
+recognition of clearly identified quotation headings, and separation of adjacent
+quantity/supplier fields from item descriptions. Null remains required when
+ambiguous. These changes use development evidence only; references still await
+human verification and the next run must measure their effect.
 
 ## Experimental retrieval comparison
 
