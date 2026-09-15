@@ -37,6 +37,21 @@ review; filling its fields is not a substitute for reviewing the references.
 No such review has yet been recorded. Automated guard tests use synthetic review
 fixtures only. The runner and scorer never mark the release complete.
 
+Create a human review packet with
+`services/worker/.venv/Scripts/python.exe evals/build-review-page.py --output NEW_HTML`.
+The page contains all frozen quotes, policies and expected answers, starts with
+no approvals, and allows a reviewer to save/import progress. A correction or an
+unchecked case keeps the exported review incomplete. It makes no model calls and
+does not send data to a server. Its downloaded review file can be passed to the
+held-out runner only after an actual person has finished checking the references.
+
+To score a completed runner manifest's preselected first-N scope:
+`services/worker/.venv/Scripts/python.exe evals/score_run.py --directory RUN_DIRECTORY --output NEW_REPORT_JSON`.
+This verifies dataset/prediction hashes and frozen first-N selection. Missing jobs
+within that preselected scope remain failures; this is a diagnostic subset report,
+not a full-split or release result. The original `scoring.py` CLI scores the full
+split regardless of how many records were supplied.
+
 ## Offline validation and diagnostic scoring
 
 `services/worker/.venv/Scripts/python.exe evals/scoring.py --validate-dataset`
