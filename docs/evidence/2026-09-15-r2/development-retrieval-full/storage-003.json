@@ -1,0 +1,278 @@
+{
+  "id": "storage-003",
+  "startedAt": "2026-09-15T13:21:28.730Z",
+  "sourceMap": {
+    "4923218a-2f47-4f04-b54a-a8537e125970": "storage-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "storage-p1",
+      "source": {
+        "id": "4923218a-2f47-4f04-b54a-a8537e125970",
+        "kind": "POLICY",
+        "name": "Synthetic storage-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 66,
+        "sha256": "f2ac8efd3a88c2159e6e1d56a0906f488c4f3d4c5348081affe33a6f0973d828",
+        "jobId": "1a0ea99b-d793-4c3a-88bd-d4a0cdb522eb",
+        "failureCode": null
+      },
+      "chunks": {
+        "items": [
+          {
+            "id": "b0c15a42-c827-5d13-9fd7-d3f8a93ab02b",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 66,
+            "text": "Storage procurement requires a valid cost center on every request.",
+            "sha256": "f2ac8efd3a88c2159e6e1d56a0906f488c4f3d4c5348081affe33a6f0973d828"
+          }
+        ],
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "source": {
+          "id": "4923218a-2f47-4f04-b54a-a8537e125970",
+          "kind": "POLICY",
+          "name": "Synthetic storage-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 66,
+          "sha256": "f2ac8efd3a88c2159e6e1d56a0906f488c4f3d4c5348081affe33a6f0973d828",
+          "jobId": "1a0ea99b-d793-4c3a-88bd-d4a0cdb522eb",
+          "failureCode": null
+        }
+      }
+    }
+  ],
+  "tenantId": "afb57f57-9659-411f-b81a-95d02f33add8",
+  "caseId": "f95edb39-b938-4127-8878-67db81358116",
+  "quote": {
+    "id": "0fcc6412-0c8c-487f-bcbe-632eefe02091",
+    "kind": "QUOTE",
+    "name": "Synthetic storage-003 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "f95edb39-b938-4127-8878-67db81358116",
+    "mediaType": "text/plain",
+    "byteSize": 91,
+    "sha256": "589b21b759af6ae36379727c7cdbe6999cee18f7f75aec39857a80ff878780ec",
+    "jobId": "643958df-4309-4432-8f5e-cc3a058c9641",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "4923218a-2f47-4f04-b54a-a8537e125970",
+        "name": "Synthetic storage-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Storage kit",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "34773977-9873-486c-9836-e7e5ddce66f6",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "56e0cdd9-ffdd-4554-b740-0aad6167b556",
+      "output": {
+        "total": {
+          "value": "900.00",
+          "citations": [
+            {
+              "quote": "Pay 900.00 in [not supplied]",
+              "chunkId": "97e14beb-bd59-595a-ae63-dc70d02ae04c"
+            }
+          ]
+        },
+        "vendor": {
+          "value": null,
+          "citations": []
+        },
+        "currency": {
+          "value": null,
+          "citations": []
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "3",
+              "unitPrice": "300.00",
+              "description": "Storage kit"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "Storage kit\nPer-unit 300.00; number ordered 3",
+              "chunkId": "97e14beb-bd59-595a-ae63-dc70d02ae04c"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "97e14beb-bd59-595a-ae63-dc70d02ae04c": {
+          "page": 1,
+          "text": "[not supplied] / Storage kit\nPer-unit 300.00; number ordered 3\nPay 900.00 in [not supplied]",
+          "start": 0,
+          "sourceId": "0fcc6412-0c8c-487f-bcbe-632eefe02091"
+        }
+      },
+      "revision": 2,
+      "sourceId": "0fcc6412-0c8c-487f-bcbe-632eefe02091",
+      "elapsedMs": 1782,
+      "promptHash": "36caf1af22dffd8419e18e6230a28282afa51fb03ff8a2323d4bf8b5986fc45b",
+      "schemaHash": "21213b0e939d001dca949ceccaa092840b184257af8ee97f4e292e924359eda1",
+      "inputTokens": 854,
+      "outputTokens": 150,
+      "sourceSha256": "589b21b759af6ae36379727c7cdbe6999cee18f7f75aec39857a80ff878780ec",
+      "promptVersion": "purchase-assistant-2026-09-15-v4",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000582",
+      "retrievedChunkIds": [
+        "97e14beb-bd59-595a-ae63-dc70d02ae04c"
+      ],
+      "retrievalElapsedMs": 15
+    }
+  },
+  "review": {
+    "jobId": "d3bf3377-0008-4dd5-81b6-024e28ec0bca",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "e0c04f7e-e7cf-4acf-a7f0-4c06b3871e00",
+      "output": {
+        "summary": "The purchase request for a storage kit is missing a valid cost center, which is required according to the provided policy evidence.",
+        "citations": [
+          {
+            "quote": "Storage procurement requires a valid cost center on every request.",
+            "chunkId": "b0c15a42-c827-5d13-9fd7-d3f8a93ab02b"
+          }
+        ],
+        "policy_findings": [
+          {
+            "claim": "Storage procurement requires a valid cost center on every request.",
+            "citations": [
+              {
+                "quote": "Storage procurement requires a valid cost center on every request.",
+                "chunkId": "b0c15a42-c827-5d13-9fd7-d3f8a93ab02b"
+              }
+            ]
+          }
+        ],
+        "missing_information": [
+          "costCenter",
+          "description",
+          "justification",
+          "lineItems",
+          "vendor"
+        ],
+        "insufficient_evidence": false
+      },
+      "evidence": {
+        "b0c15a42-c827-5d13-9fd7-d3f8a93ab02b": {
+          "page": 1,
+          "text": "Storage procurement requires a valid cost center on every request.",
+          "start": 0,
+          "sourceId": "4923218a-2f47-4f04-b54a-a8537e125970"
+        }
+      },
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 3204,
+      "promptHash": "8c604cb0d9a81f58299a54c3070b32acbf7817ceb4032a2e5e98bc9f22a0e5f1",
+      "schemaHash": "6d3dde2551a0bc54a3047e31c1ddc107a144fa01744a7e4124264bd481f8e15a",
+      "inputTokens": 610,
+      "outputTokens": 167,
+      "sourceSha256": null,
+      "promptVersion": "purchase-assistant-2026-09-15-v4",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Storage OR kit OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000512",
+      "retrievedChunkIds": [
+        "b0c15a42-c827-5d13-9fd7-d3f8a93ab02b"
+      ],
+      "retrievalElapsedMs": 32,
+      "retrievalComparison": {
+        "model": "text-embedding-3-small",
+        "query": "Storage OR kit OR purchase OR cost OR center OR justification",
+        "corpus": [
+          {
+            "cosine": 0.5244660822599757,
+            "sha256": "f2ac8efd3a88c2159e6e1d56a0906f488c4f3d4c5348081affe33a6f0973d828",
+            "chunkId": "b0c15a42-c827-5d13-9fd7-d3f8a93ab02b",
+            "sourceId": "4923218a-2f47-4f04-b54a-a8537e125970"
+          }
+        ],
+        "method": "exact-cosine-rrf60-v1",
+        "elapsedMs": 515,
+        "dimensions": 256,
+        "corpusCount": 1,
+        "cachedChunks": 0,
+        "hybridChunkIds": [
+          "b0c15a42-c827-5d13-9fd7-d3f8a93ab02b"
+        ],
+        "providerCalled": true,
+        "embeddingCallId": "d34002f9-88bb-47c2-8775-29c2c369ce50",
+        "baselineChunkIds": [
+          "b0c15a42-c827-5d13-9fd7-d3f8a93ab02b"
+        ],
+        "embeddingCostUsd": "0.000001",
+        "embeddingVersion": "openai-small-256-v1",
+        "semanticChunkIds": [
+          "b0c15a42-c827-5d13-9fd7-d3f8a93ab02b"
+        ]
+      }
+    }
+  },
+  "retrievedPassageIds": [
+    "storage-p1"
+  ],
+  "retrievalComparisons": {
+    "fullText": [
+      "storage-p1"
+    ],
+    "semantic": [
+      "storage-p1"
+    ],
+    "hybrid": [
+      "storage-p1"
+    ]
+  },
+  "finishedAt": "2026-09-15T13:21:39.781Z"
+}

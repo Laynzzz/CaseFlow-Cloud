@@ -1,0 +1,258 @@
+{
+  "id": "network-008",
+  "startedAt": "2026-09-15T13:16:09.885Z",
+  "sourceMap": {
+    "f5c42fff-370d-48b5-82b3-a97d9d0df9a7": "network-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "network-p1",
+      "source": {
+        "id": "f5c42fff-370d-48b5-82b3-a97d9d0df9a7",
+        "kind": "POLICY",
+        "name": "Synthetic network-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 42,
+        "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+        "jobId": "c08cb2f3-0515-4651-9648-4f4801d88930",
+        "failureCode": null
+      },
+      "chunks": {
+        "items": [
+          {
+            "id": "3cb376e7-e98a-59ed-a292-a4df0ffad950",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 42,
+            "text": "Office walls are painted every five years.",
+            "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1"
+          }
+        ],
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "source": {
+          "id": "f5c42fff-370d-48b5-82b3-a97d9d0df9a7",
+          "kind": "POLICY",
+          "name": "Synthetic network-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 42,
+          "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+          "jobId": "c08cb2f3-0515-4651-9648-4f4801d88930",
+          "failureCode": null
+        }
+      }
+    }
+  ],
+  "tenantId": "852e0f32-ab28-45fb-bf68-4b028d35b25c",
+  "caseId": "098b84c5-722e-4f72-be98-5096a5dad4aa",
+  "quote": {
+    "id": "b521b92a-256c-4185-a281-e1d1a2ad7f00",
+    "kind": "QUOTE",
+    "name": "Synthetic network-008 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "098b84c5-722e-4f72-be98-5096a5dad4aa",
+    "mediaType": "text/plain",
+    "byteSize": 98,
+    "sha256": "be3aaae75baf1f57dde452b4e64b7d3b920bc00dce9f447841f52f4bd6681d50",
+    "jobId": "320927ff-3bf0-42ad-ac25-c54570a3f5c5",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "f5c42fff-370d-48b5-82b3-a97d9d0df9a7",
+        "name": "Synthetic network-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Network kit",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "a55d7969-1433-4c9e-a55f-5befc04599dd",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "3ec81f60-637e-4bde-b480-3aebf6f40a04",
+      "output": {
+        "total": {
+          "value": "1800.00",
+          "citations": [
+            {
+              "quote": "Grand total (USD): 1800.00",
+              "chunkId": "fd104254-e45e-511b-ae90-0380d1a3fdb5"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Synthetic Network Works",
+          "citations": [
+            {
+              "quote": "Synthetic Network Works",
+              "chunkId": "fd104254-e45e-511b-ae90-0380d1a3fdb5"
+            }
+          ]
+        },
+        "currency": {
+          "value": "USD",
+          "citations": [
+            {
+              "quote": "Grand total (USD)",
+              "chunkId": "fd104254-e45e-511b-ae90-0380d1a3fdb5"
+            }
+          ]
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "8",
+              "unitPrice": "225.00",
+              "description": "Network kit"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "Network kit | count 8 | each 225.00",
+              "chunkId": "fd104254-e45e-511b-ae90-0380d1a3fdb5"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "fd104254-e45e-511b-ae90-0380d1a3fdb5": {
+          "page": 1,
+          "text": "QUOTATION\nSynthetic Network Works 8\nNetwork kit | count 8 | each 225.00\nGrand total (USD): 1800.00",
+          "start": 0,
+          "sourceId": "b521b92a-256c-4185-a281-e1d1a2ad7f00"
+        }
+      },
+      "revision": 2,
+      "sourceId": "b521b92a-256c-4185-a281-e1d1a2ad7f00",
+      "elapsedMs": 2313,
+      "promptHash": "63059c9e38c5cbc10e13fc3eb4145a9f7a6675bc7c38ad42655b68dabfb21835",
+      "schemaHash": "899cf3e7d285be4ac1db7ba26e272a64f517481e693a5076c3134ed4ea8766b1",
+      "inputTokens": 861,
+      "outputTokens": 221,
+      "sourceSha256": "be3aaae75baf1f57dde452b4e64b7d3b920bc00dce9f447841f52f4bd6681d50",
+      "promptVersion": "purchase-assistant-2026-09-15-v4",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000698",
+      "retrievedChunkIds": [
+        "fd104254-e45e-511b-ae90-0380d1a3fdb5"
+      ],
+      "retrievalElapsedMs": 31
+    }
+  },
+  "review": {
+    "jobId": "2ad21016-847f-4447-ba70-05149fee41ce",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "009f7387-4c7e-46c6-9106-af2c92754a29",
+      "output": {
+        "summary": "The purchase request for a 'Network kit' is incomplete with missing cost center, vendor, justification, and line items, and has a total of 0.00 USD.",
+        "citations": [],
+        "policy_findings": [],
+        "missing_information": [
+          "costCenter",
+          "vendor",
+          "justification",
+          "lineItems",
+          "total"
+        ],
+        "insufficient_evidence": true
+      },
+      "evidence": {},
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 2047,
+      "promptHash": "8c537bd296842b11692d8fe10b505b745c4f0a7ffe7d1d9f438afa87eace24d8",
+      "schemaHash": "b98285198169ab64911aaa5187c252cb985a6388455f7bf370f85e8bcff2acf5",
+      "inputTokens": 510,
+      "outputTokens": 72,
+      "sourceSha256": null,
+      "promptVersion": "purchase-assistant-2026-09-15-v4",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Network OR kit OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000320",
+      "retrievedChunkIds": [],
+      "retrievalElapsedMs": 0,
+      "retrievalComparison": {
+        "model": "text-embedding-3-small",
+        "query": "Network OR kit OR purchase OR cost OR center OR justification",
+        "corpus": [
+          {
+            "cosine": 0.12467177319813011,
+            "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+            "chunkId": "3cb376e7-e98a-59ed-a292-a4df0ffad950",
+            "sourceId": "f5c42fff-370d-48b5-82b3-a97d9d0df9a7"
+          }
+        ],
+        "method": "exact-cosine-rrf60-v1",
+        "elapsedMs": 594,
+        "dimensions": 256,
+        "corpusCount": 1,
+        "cachedChunks": 0,
+        "hybridChunkIds": [
+          "3cb376e7-e98a-59ed-a292-a4df0ffad950"
+        ],
+        "providerCalled": true,
+        "embeddingCallId": "c344ad6f-e648-46de-ba1d-1a4b63901395",
+        "baselineChunkIds": [],
+        "embeddingCostUsd": "0.000001",
+        "embeddingVersion": "openai-small-256-v1",
+        "semanticChunkIds": [
+          "3cb376e7-e98a-59ed-a292-a4df0ffad950"
+        ]
+      }
+    }
+  },
+  "retrievedPassageIds": [],
+  "retrievalComparisons": {
+    "fullText": [],
+    "semantic": [
+      "network-p1"
+    ],
+    "hybrid": [
+      "network-p1"
+    ]
+  },
+  "finishedAt": "2026-09-15T13:16:20.167Z"
+}

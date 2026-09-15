@@ -1,0 +1,258 @@
+{
+  "id": "equipment-008",
+  "startedAt": "2026-09-15T13:11:52.855Z",
+  "sourceMap": {
+    "11661b77-f1b6-48ae-a122-631d4e4613ab": "equipment-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "equipment-p1",
+      "source": {
+        "id": "11661b77-f1b6-48ae-a122-631d4e4613ab",
+        "kind": "POLICY",
+        "name": "Synthetic equipment-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 42,
+        "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+        "jobId": "3aa4ef90-ea36-477e-ae40-1c6e97f3990f",
+        "failureCode": null
+      },
+      "chunks": {
+        "items": [
+          {
+            "id": "c5ca0370-a5e7-5f8f-8bf5-f26231de61ee",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 42,
+            "text": "Office walls are painted every five years.",
+            "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1"
+          }
+        ],
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "source": {
+          "id": "11661b77-f1b6-48ae-a122-631d4e4613ab",
+          "kind": "POLICY",
+          "name": "Synthetic equipment-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 42,
+          "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+          "jobId": "3aa4ef90-ea36-477e-ae40-1c6e97f3990f",
+          "failureCode": null
+        }
+      }
+    }
+  ],
+  "tenantId": "6b0d4f45-25eb-4505-89e9-2fc544e1c897",
+  "caseId": "c4c5ef4c-b469-4cc7-a57a-23b5bf97d288",
+  "quote": {
+    "id": "cabad923-e6dc-4f8a-a12e-4255d5cace61",
+    "kind": "QUOTE",
+    "name": "Synthetic equipment-008 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "c4c5ef4c-b469-4cc7-a57a-23b5bf97d288",
+    "mediaType": "text/plain",
+    "byteSize": 115,
+    "sha256": "6e74aa6f19f76b2a54f5c6fbbaedc1ae1029810665d6133dcd094800c7628149",
+    "jobId": "20a87b0e-624a-4e19-a328-394960c48c84",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "11661b77-f1b6-48ae-a122-631d4e4613ab",
+        "name": "Synthetic equipment-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Equipment kit",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "63cacac6-0fa0-4122-9a89-e296bd971232",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "338ce827-f47a-452d-abbb-5c273d7d71ac",
+      "output": {
+        "total": {
+          "value": "1400.00",
+          "citations": [
+            {
+              "quote": "Total: 1400.00",
+              "chunkId": "39596b70-4ce2-588a-afba-d3f5d32309df"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Synthetic Equipment Works",
+          "citations": [
+            {
+              "quote": "Vendor: Synthetic Equipment Works",
+              "chunkId": "39596b70-4ce2-588a-afba-d3f5d32309df"
+            }
+          ]
+        },
+        "currency": {
+          "value": "USD",
+          "citations": [
+            {
+              "quote": "Currency: USD",
+              "chunkId": "39596b70-4ce2-588a-afba-d3f5d32309df"
+            }
+          ]
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "8",
+              "unitPrice": "175.00",
+              "description": "Equipment kit"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "Item: Equipment kit\nQuantity: 8\nUnit price: 175.00",
+              "chunkId": "39596b70-4ce2-588a-afba-d3f5d32309df"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "39596b70-4ce2-588a-afba-d3f5d32309df": {
+          "page": 1,
+          "text": "Vendor: Synthetic Equipment Works 8\nItem: Equipment kit\nQuantity: 8\nUnit price: 175.00\nCurrency: USD\nTotal: 1400.00",
+          "start": 0,
+          "sourceId": "cabad923-e6dc-4f8a-a12e-4255d5cace61"
+        }
+      },
+      "revision": 2,
+      "sourceId": "cabad923-e6dc-4f8a-a12e-4255d5cace61",
+      "elapsedMs": 3280,
+      "promptHash": "0b074076172eb8089b5cf921a7f8200e062dfc19f779758d7c2f0a52a3b5026c",
+      "schemaHash": "09ab8374825f07605335e17ff476fc3e028a02e05930cbed9f45895e3b84a87b",
+      "inputTokens": 862,
+      "outputTokens": 219,
+      "sourceSha256": "6e74aa6f19f76b2a54f5c6fbbaedc1ae1029810665d6133dcd094800c7628149",
+      "promptVersion": "purchase-assistant-2026-09-15-v4",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000696",
+      "retrievedChunkIds": [
+        "39596b70-4ce2-588a-afba-d3f5d32309df"
+      ],
+      "retrievalElapsedMs": 16
+    }
+  },
+  "review": {
+    "jobId": "c4932e05-e9a9-4864-9f67-189a6e5ce564",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "e3382597-2a9f-4846-887e-5694feeaa083",
+      "output": {
+        "summary": "The purchase request for an equipment kit is incomplete and lacks essential details such as cost center, vendor, justification, line items, and total amount is zero.",
+        "citations": [],
+        "policy_findings": [],
+        "missing_information": [
+          "cost center",
+          "vendor",
+          "justification",
+          "line items",
+          "total amount"
+        ],
+        "insufficient_evidence": true
+      },
+      "evidence": {},
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 1843,
+      "promptHash": "eb1e0a574ef4947d99ee5c235844ae30f8c0089fb4463b4cf782423ded3cf3ea",
+      "schemaHash": "b98285198169ab64911aaa5187c252cb985a6388455f7bf370f85e8bcff2acf5",
+      "inputTokens": 510,
+      "outputTokens": 69,
+      "sourceSha256": null,
+      "promptVersion": "purchase-assistant-2026-09-15-v4",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Equipment OR kit OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000315",
+      "retrievedChunkIds": [],
+      "retrievalElapsedMs": 0,
+      "retrievalComparison": {
+        "model": "text-embedding-3-small",
+        "query": "Equipment OR kit OR purchase OR cost OR center OR justification",
+        "corpus": [
+          {
+            "cosine": 0.07978554820364818,
+            "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+            "chunkId": "c5ca0370-a5e7-5f8f-8bf5-f26231de61ee",
+            "sourceId": "11661b77-f1b6-48ae-a122-631d4e4613ab"
+          }
+        ],
+        "method": "exact-cosine-rrf60-v1",
+        "elapsedMs": 516,
+        "dimensions": 256,
+        "corpusCount": 1,
+        "cachedChunks": 0,
+        "hybridChunkIds": [
+          "c5ca0370-a5e7-5f8f-8bf5-f26231de61ee"
+        ],
+        "providerCalled": true,
+        "embeddingCallId": "0333b7b4-3954-4d3b-a383-d4d9f70be8c1",
+        "baselineChunkIds": [],
+        "embeddingCostUsd": "0.000001",
+        "embeddingVersion": "openai-small-256-v1",
+        "semanticChunkIds": [
+          "c5ca0370-a5e7-5f8f-8bf5-f26231de61ee"
+        ]
+      }
+    }
+  },
+  "retrievedPassageIds": [],
+  "retrievalComparisons": {
+    "fullText": [],
+    "semantic": [
+      "equipment-p1"
+    ],
+    "hybrid": [
+      "equipment-p1"
+    ]
+  },
+  "finishedAt": "2026-09-15T13:12:06.220Z"
+}

@@ -1,0 +1,258 @@
+{
+  "id": "storage-007",
+  "startedAt": "2026-09-15T13:22:30.893Z",
+  "sourceMap": {
+    "819d69d2-3d69-404a-8f00-f50928fc1749": "storage-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "storage-p1",
+      "source": {
+        "id": "819d69d2-3d69-404a-8f00-f50928fc1749",
+        "kind": "POLICY",
+        "name": "Synthetic storage-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 42,
+        "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+        "jobId": "a1aaee99-73b0-4160-9a52-d726619afb73",
+        "failureCode": null
+      },
+      "chunks": {
+        "items": [
+          {
+            "id": "ab1ed357-6d54-5c30-8b34-2846e7f9318e",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 42,
+            "text": "Office walls are painted every five years.",
+            "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1"
+          }
+        ],
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "source": {
+          "id": "819d69d2-3d69-404a-8f00-f50928fc1749",
+          "kind": "POLICY",
+          "name": "Synthetic storage-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 42,
+          "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+          "jobId": "a1aaee99-73b0-4160-9a52-d726619afb73",
+          "failureCode": null
+        }
+      }
+    }
+  ],
+  "tenantId": "68f4fd48-1192-4f70-9039-125ef13f70a1",
+  "caseId": "c96dc41c-b524-45c4-97f7-51a6fd8380b8",
+  "quote": {
+    "id": "8721b235-e49f-4ded-a05d-f42c87ac826c",
+    "kind": "QUOTE",
+    "name": "Synthetic storage-007 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "c96dc41c-b524-45c4-97f7-51a6fd8380b8",
+    "mediaType": "text/plain",
+    "byteSize": 92,
+    "sha256": "f7f51141abc71f6cc5717a7dbbcd09c2f8b590f64a0826cbba4ab4be9dcb8b00",
+    "jobId": "4c792fbd-59a1-4640-b3d3-e4d3b5de0be0",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "819d69d2-3d69-404a-8f00-f50928fc1749",
+        "name": "Synthetic storage-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Storage kit",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "6c51d9cf-0424-41a6-bffd-85a3818af43f",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "aaf7b0d6-d18b-4029-b31e-cd717adb3824",
+      "output": {
+        "total": {
+          "value": "2100.00",
+          "citations": [
+            {
+              "quote": "Pay 2100.00 in USD",
+              "chunkId": "8df897a2-45b3-516b-a5f8-4ae8f9b7900f"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Synthetic Storage Works",
+          "citations": [
+            {
+              "quote": "Synthetic Storage Works",
+              "chunkId": "8df897a2-45b3-516b-a5f8-4ae8f9b7900f"
+            }
+          ]
+        },
+        "currency": {
+          "value": "USD",
+          "citations": [
+            {
+              "quote": "Pay 2100.00 in USD",
+              "chunkId": "8df897a2-45b3-516b-a5f8-4ae8f9b7900f"
+            }
+          ]
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "7",
+              "unitPrice": "300.00",
+              "description": "Storage kit"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "Synthetic Storage Works 7 / Storage kit\nPer-unit 300.00; number ordered 7",
+              "chunkId": "8df897a2-45b3-516b-a5f8-4ae8f9b7900f"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "8df897a2-45b3-516b-a5f8-4ae8f9b7900f": {
+          "page": 1,
+          "text": "Synthetic Storage Works 7 / Storage kit\nPer-unit 300.00; number ordered 7\nPay 2100.00 in USD",
+          "start": 0,
+          "sourceId": "8721b235-e49f-4ded-a05d-f42c87ac826c"
+        }
+      },
+      "revision": 2,
+      "sourceId": "8721b235-e49f-4ded-a05d-f42c87ac826c",
+      "elapsedMs": 4281,
+      "promptHash": "3055186a32bf93882afae277475a4706e2b24f461c077f38e2a04df6b6cb1d4a",
+      "schemaHash": "0f6eb7e2c97914707a07f077eb5e59ebf40eb0570d5a346045b31e87c19a1731",
+      "inputTokens": 862,
+      "outputTokens": 246,
+      "sourceSha256": "f7f51141abc71f6cc5717a7dbbcd09c2f8b590f64a0826cbba4ab4be9dcb8b00",
+      "promptVersion": "purchase-assistant-2026-09-15-v4",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000739",
+      "retrievedChunkIds": [
+        "8df897a2-45b3-516b-a5f8-4ae8f9b7900f"
+      ],
+      "retrievalElapsedMs": 47
+    }
+  },
+  "review": {
+    "jobId": "bd4687ae-ff98-432a-a1dc-08efd38ed2a7",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "4800fdb4-df25-4605-8beb-92ded8e2ad0c",
+      "output": {
+        "summary": "The purchase request lacks sufficient detail including cost center, vendor, line items, total amount, and justification for the storage kit. There is no supporting evidence or policy information provided to validate or assess the purchase.",
+        "citations": [],
+        "policy_findings": [],
+        "missing_information": [
+          "costCenter",
+          "vendor",
+          "lineItems",
+          "total",
+          "justification"
+        ],
+        "insufficient_evidence": true
+      },
+      "evidence": {},
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 1704,
+      "promptHash": "6b2e4a83e69cd109f0e385e8e96d3e84fceae161cb88ed59514113ada1a30529",
+      "schemaHash": "b98285198169ab64911aaa5187c252cb985a6388455f7bf370f85e8bcff2acf5",
+      "inputTokens": 510,
+      "outputTokens": 78,
+      "sourceSha256": null,
+      "promptVersion": "purchase-assistant-2026-09-15-v4",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Storage OR kit OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000329",
+      "retrievedChunkIds": [],
+      "retrievalElapsedMs": 15,
+      "retrievalComparison": {
+        "model": "text-embedding-3-small",
+        "query": "Storage OR kit OR purchase OR cost OR center OR justification",
+        "corpus": [
+          {
+            "cosine": 0.12211209781357785,
+            "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+            "chunkId": "ab1ed357-6d54-5c30-8b34-2846e7f9318e",
+            "sourceId": "819d69d2-3d69-404a-8f00-f50928fc1749"
+          }
+        ],
+        "method": "exact-cosine-rrf60-v1",
+        "elapsedMs": 672,
+        "dimensions": 256,
+        "corpusCount": 1,
+        "cachedChunks": 0,
+        "hybridChunkIds": [
+          "ab1ed357-6d54-5c30-8b34-2846e7f9318e"
+        ],
+        "providerCalled": true,
+        "embeddingCallId": "8e2c40a1-74d8-4378-b3c8-a88b807918dd",
+        "baselineChunkIds": [],
+        "embeddingCostUsd": "0.000001",
+        "embeddingVersion": "openai-small-256-v1",
+        "semanticChunkIds": [
+          "ab1ed357-6d54-5c30-8b34-2846e7f9318e"
+        ]
+      }
+    }
+  },
+  "retrievedPassageIds": [],
+  "retrievalComparisons": {
+    "fullText": [],
+    "semantic": [
+      "storage-p1"
+    ],
+    "hybrid": [
+      "storage-p1"
+    ]
+  },
+  "finishedAt": "2026-09-15T13:22:45.781Z"
+}

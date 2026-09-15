@@ -1,0 +1,258 @@
+{
+  "id": "printing-007",
+  "startedAt": "2026-09-15T13:18:09.205Z",
+  "sourceMap": {
+    "06ef47bd-730a-40cb-99a0-841475322995": "printing-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "printing-p1",
+      "source": {
+        "id": "06ef47bd-730a-40cb-99a0-841475322995",
+        "kind": "POLICY",
+        "name": "Synthetic printing-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 42,
+        "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+        "jobId": "253a0801-15e4-4e01-82d8-c914650f9099",
+        "failureCode": null
+      },
+      "chunks": {
+        "items": [
+          {
+            "id": "8ac0828a-3075-54b6-a8e5-c93b4c4bfe04",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 42,
+            "text": "Office walls are painted every five years.",
+            "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1"
+          }
+        ],
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "source": {
+          "id": "06ef47bd-730a-40cb-99a0-841475322995",
+          "kind": "POLICY",
+          "name": "Synthetic printing-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 42,
+          "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+          "jobId": "253a0801-15e4-4e01-82d8-c914650f9099",
+          "failureCode": null
+        }
+      }
+    }
+  ],
+  "tenantId": "1bf468e8-1f45-4379-ad2d-02de6eeacdf0",
+  "caseId": "b4446da1-12e4-48e7-9157-c3456872e030",
+  "quote": {
+    "id": "bcac2ccd-2454-4872-9265-75bf5706586d",
+    "kind": "QUOTE",
+    "name": "Synthetic printing-007 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "b4446da1-12e4-48e7-9157-c3456872e030",
+    "mediaType": "text/plain",
+    "byteSize": 103,
+    "sha256": "5cad87a731b334a974a4acd6a3d3047bcd964f523bcf90cc3e1b56f4cd915ab5",
+    "jobId": "283f6703-89d0-4e85-8fc7-7c35bef3f910",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "06ef47bd-730a-40cb-99a0-841475322995",
+        "name": "Synthetic printing-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Printing kit",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "d9922a3a-e575-4749-a518-3b22c7cf8d64",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "b8c9d6aa-d2dd-4034-b5ad-3ee9b2e9b26c",
+      "output": {
+        "total": {
+          "value": "1750.00",
+          "citations": [
+            {
+              "quote": "total due 1750.00",
+              "chunkId": "f7ab6c77-fe1c-5f66-9a99-60017c0b0df7"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Synthetic Printing Works",
+          "citations": [
+            {
+              "quote": "From Synthetic Printing Works",
+              "chunkId": "f7ab6c77-fe1c-5f66-9a99-60017c0b0df7"
+            }
+          ]
+        },
+        "currency": {
+          "value": "USD",
+          "citations": [
+            {
+              "quote": "Quote currency USD",
+              "chunkId": "f7ab6c77-fe1c-5f66-9a99-60017c0b0df7"
+            }
+          ]
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "7",
+              "unitPrice": "250.00",
+              "description": "Printing kit"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "Printing kit, 7 units x 250.00",
+              "chunkId": "f7ab6c77-fe1c-5f66-9a99-60017c0b0df7"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "f7ab6c77-fe1c-5f66-9a99-60017c0b0df7": {
+          "page": 1,
+          "text": "From Synthetic Printing Works 7: Printing kit, 7 units x 250.00. Quote currency USD; total due 1750.00.",
+          "start": 0,
+          "sourceId": "bcac2ccd-2454-4872-9265-75bf5706586d"
+        }
+      },
+      "revision": 2,
+      "sourceId": "bcac2ccd-2454-4872-9265-75bf5706586d",
+      "elapsedMs": 2672,
+      "promptHash": "00fc893f7cf1d57284a6ed6032d1791478db1e02617e9c44ed38619123e2d2e6",
+      "schemaHash": "710f2d68d4dd456d1ec3d67ca0e90c298937abe64ce593a260a69295f1cafa06",
+      "inputTokens": 864,
+      "outputTokens": 232,
+      "sourceSha256": "5cad87a731b334a974a4acd6a3d3047bcd964f523bcf90cc3e1b56f4cd915ab5",
+      "promptVersion": "purchase-assistant-2026-09-15-v4",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000717",
+      "retrievedChunkIds": [
+        "f7ab6c77-fe1c-5f66-9a99-60017c0b0df7"
+      ],
+      "retrievalElapsedMs": 30
+    }
+  },
+  "review": {
+    "jobId": "507b20fc-2ef0-472b-9223-013b6c2fbd3d",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "d77888e9-e94e-43e8-9a13-f829deb8d021",
+      "output": {
+        "summary": "The purchase request lacks essential information such as cost center, vendor, justification, and line items, making it incomplete and insufficient for approval.",
+        "citations": [],
+        "policy_findings": [],
+        "missing_information": [
+          "costCenter",
+          "vendor",
+          "justification",
+          "lineItems",
+          "total amount appears to be 0.00, which may be incorrect or requires clarification"
+        ],
+        "insufficient_evidence": true
+      },
+      "evidence": {},
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 1936,
+      "promptHash": "57d435013d74c5174fac4d0adda961f42555de3411e624a13a4e6d1103d58c8c",
+      "schemaHash": "b98285198169ab64911aaa5187c252cb985a6388455f7bf370f85e8bcff2acf5",
+      "inputTokens": 510,
+      "outputTokens": 80,
+      "sourceSha256": null,
+      "promptVersion": "purchase-assistant-2026-09-15-v4",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Printing OR kit OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000332",
+      "retrievedChunkIds": [],
+      "retrievalElapsedMs": 16,
+      "retrievalComparison": {
+        "model": "text-embedding-3-small",
+        "query": "Printing OR kit OR purchase OR cost OR center OR justification",
+        "corpus": [
+          {
+            "cosine": 0.11793354295143867,
+            "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+            "chunkId": "8ac0828a-3075-54b6-a8e5-c93b4c4bfe04",
+            "sourceId": "06ef47bd-730a-40cb-99a0-841475322995"
+          }
+        ],
+        "method": "exact-cosine-rrf60-v1",
+        "elapsedMs": 500,
+        "dimensions": 256,
+        "corpusCount": 1,
+        "cachedChunks": 0,
+        "hybridChunkIds": [
+          "8ac0828a-3075-54b6-a8e5-c93b4c4bfe04"
+        ],
+        "providerCalled": true,
+        "embeddingCallId": "71f7a870-d4a1-4845-b87e-ba1ca07dd376",
+        "baselineChunkIds": [],
+        "embeddingCostUsd": "0.000001",
+        "embeddingVersion": "openai-small-256-v1",
+        "semanticChunkIds": [
+          "8ac0828a-3075-54b6-a8e5-c93b4c4bfe04"
+        ]
+      }
+    }
+  },
+  "retrievedPassageIds": [],
+  "retrievalComparisons": {
+    "fullText": [],
+    "semantic": [
+      "printing-p1"
+    ],
+    "hybrid": [
+      "printing-p1"
+    ]
+  },
+  "finishedAt": "2026-09-15T13:18:20.973Z"
+}

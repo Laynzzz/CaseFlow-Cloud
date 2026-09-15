@@ -1,0 +1,290 @@
+{
+  "id": "lighting-005",
+  "startedAt": "2026-09-15T13:19:45.364Z",
+  "sourceMap": {
+    "dcde53af-13cb-4588-8d5c-c10dc2133087": "lighting-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "lighting-p1",
+      "source": {
+        "id": "dcde53af-13cb-4588-8d5c-c10dc2133087",
+        "kind": "POLICY",
+        "name": "Synthetic lighting-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 66,
+        "sha256": "ee7e9ea894da644457ce1c84c2c25351746a4d6c823e0fe189ec78b5797c1ac9",
+        "jobId": "ac9ec232-84b2-4849-ac2c-44b9ab51d1be",
+        "failureCode": null
+      },
+      "chunks": {
+        "items": [
+          {
+            "id": "c0003d27-11eb-545d-b5a6-14585cf835f6",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 66,
+            "text": "Lighting orders require the department cost center to be recorded.",
+            "sha256": "ee7e9ea894da644457ce1c84c2c25351746a4d6c823e0fe189ec78b5797c1ac9"
+          }
+        ],
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "source": {
+          "id": "dcde53af-13cb-4588-8d5c-c10dc2133087",
+          "kind": "POLICY",
+          "name": "Synthetic lighting-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 66,
+          "sha256": "ee7e9ea894da644457ce1c84c2c25351746a4d6c823e0fe189ec78b5797c1ac9",
+          "jobId": "ac9ec232-84b2-4849-ac2c-44b9ab51d1be",
+          "failureCode": null
+        }
+      }
+    }
+  ],
+  "tenantId": "a85bbb17-6c68-45ec-9b22-e05e7bb8b7d6",
+  "caseId": "ec954983-2d43-49ec-9a45-301dfcc49a85",
+  "quote": {
+    "id": "62526cf3-1d68-48fc-9e8b-cb2788e3a02b",
+    "kind": "QUOTE",
+    "name": "Synthetic lighting-005 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "ec954983-2d43-49ec-9a45-301dfcc49a85",
+    "mediaType": "text/plain",
+    "byteSize": 181,
+    "sha256": "ca37a7cd08f43e65a440c5d9f7142727e27a441e83d79405639156216f233d44",
+    "jobId": "4eb1050c-e3c3-4ded-a3a7-10d575077a45",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "dcde53af-13cb-4588-8d5c-c10dc2133087",
+        "name": "Synthetic lighting-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Lighting kit",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "29b6e74d-2575-45aa-8e4c-5430f3a4ef94",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "7ecc69de-47cb-4c8b-ad8d-5dfc84474752",
+      "output": {
+        "total": {
+          "value": null,
+          "citations": [
+            {
+              "quote": "invoice-total=1375.00\nUnresolved correction: total 1412.00. Neither total is confirmed.",
+              "chunkId": "bf5913c3-20c9-543c-a7ed-9931326cfad1"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Synthetic Lighting Works 5",
+          "citations": [
+            {
+              "quote": "Seller=Synthetic Lighting Works 5",
+              "chunkId": "bf5913c3-20c9-543c-a7ed-9931326cfad1"
+            }
+          ]
+        },
+        "currency": {
+          "value": "USD",
+          "citations": [
+            {
+              "quote": "currency=USD",
+              "chunkId": "bf5913c3-20c9-543c-a7ed-9931326cfad1"
+            }
+          ]
+        },
+        "warnings": [
+          "Conflicting totals: 1375.00 and 1412.00, neither confirmed."
+        ],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "5",
+              "unitPrice": "275.00",
+              "description": "Lighting kit"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "product=Lighting kit; units=5; price=275.00",
+              "chunkId": "bf5913c3-20c9-543c-a7ed-9931326cfad1"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "bf5913c3-20c9-543c-a7ed-9931326cfad1": {
+          "page": 1,
+          "text": "Seller=Synthetic Lighting Works 5; product=Lighting kit; units=5; price=275.00; currency=USD; invoice-total=1375.00\nUnresolved correction: total 1412.00. Neither total is confirmed.",
+          "start": 0,
+          "sourceId": "62526cf3-1d68-48fc-9e8b-cb2788e3a02b"
+        }
+      },
+      "revision": 2,
+      "sourceId": "62526cf3-1d68-48fc-9e8b-cb2788e3a02b",
+      "elapsedMs": 3015,
+      "promptHash": "a7580891aa06e9cd2cdbf788ee79406df060aca6b5bee4175aa031d8a60e2b35",
+      "schemaHash": "2c4032791e265d7cebc93d24a173a5e6903787543a8d1ee4bc9713d338b62e41",
+      "inputTokens": 881,
+      "outputTokens": 259,
+      "sourceSha256": "ca37a7cd08f43e65a440c5d9f7142727e27a441e83d79405639156216f233d44",
+      "promptVersion": "purchase-assistant-2026-09-15-v4",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000767",
+      "retrievedChunkIds": [
+        "bf5913c3-20c9-543c-a7ed-9931326cfad1"
+      ],
+      "retrievalElapsedMs": 31
+    }
+  },
+  "review": {
+    "jobId": "1ebd75c3-e1c1-4ea8-9379-6b35e64f9777",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "d9127237-3744-4a69-bf90-c20a102dc8af",
+      "output": {
+        "summary": "The purchase request for a lighting kit is missing a cost center and vendor information, and contains no line items, justification, or a total amount greater than zero. According to the policy, lighting orders require the department cost center to be recorded.",
+        "citations": [
+          {
+            "quote": "Lighting orders require the department cost center to be recorded.",
+            "chunkId": "c0003d27-11eb-545d-b5a6-14585cf835f6"
+          }
+        ],
+        "policy_findings": [
+          {
+            "claim": "Lighting orders require the department cost center to be recorded.",
+            "citations": [
+              {
+                "quote": "Lighting orders require the department cost center to be recorded.",
+                "chunkId": "c0003d27-11eb-545d-b5a6-14585cf835f6"
+              }
+            ]
+          }
+        ],
+        "missing_information": [
+          "costCenter",
+          "vendor",
+          "lineItems",
+          "justification",
+          "total"
+        ],
+        "insufficient_evidence": false
+      },
+      "evidence": {
+        "c0003d27-11eb-545d-b5a6-14585cf835f6": {
+          "page": 1,
+          "text": "Lighting orders require the department cost center to be recorded.",
+          "start": 0,
+          "sourceId": "dcde53af-13cb-4588-8d5c-c10dc2133087"
+        }
+      },
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 2750,
+      "promptHash": "5cf03c4b17d2853246985a77a2280cfe04710e014bb147aaa5707cf874a217d6",
+      "schemaHash": "271aabb2a80a87563768998fd42a221dd21bd30dc0993d811dbb3d3494063ddc",
+      "inputTokens": 604,
+      "outputTokens": 185,
+      "sourceSha256": null,
+      "promptVersion": "purchase-assistant-2026-09-15-v4",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Lighting OR kit OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000538",
+      "retrievedChunkIds": [
+        "c0003d27-11eb-545d-b5a6-14585cf835f6"
+      ],
+      "retrievalElapsedMs": 16,
+      "retrievalComparison": {
+        "model": "text-embedding-3-small",
+        "query": "Lighting OR kit OR purchase OR cost OR center OR justification",
+        "corpus": [
+          {
+            "cosine": 0.5798350507643015,
+            "sha256": "ee7e9ea894da644457ce1c84c2c25351746a4d6c823e0fe189ec78b5797c1ac9",
+            "chunkId": "c0003d27-11eb-545d-b5a6-14585cf835f6",
+            "sourceId": "dcde53af-13cb-4588-8d5c-c10dc2133087"
+          }
+        ],
+        "method": "exact-cosine-rrf60-v1",
+        "elapsedMs": 936,
+        "dimensions": 256,
+        "corpusCount": 1,
+        "cachedChunks": 0,
+        "hybridChunkIds": [
+          "c0003d27-11eb-545d-b5a6-14585cf835f6"
+        ],
+        "providerCalled": true,
+        "embeddingCallId": "b9b8d379-8249-431f-9b0c-23a980fd87fb",
+        "baselineChunkIds": [
+          "c0003d27-11eb-545d-b5a6-14585cf835f6"
+        ],
+        "embeddingCostUsd": "0.000001",
+        "embeddingVersion": "openai-small-256-v1",
+        "semanticChunkIds": [
+          "c0003d27-11eb-545d-b5a6-14585cf835f6"
+        ]
+      }
+    }
+  },
+  "retrievedPassageIds": [
+    "lighting-p1"
+  ],
+  "retrievalComparisons": {
+    "fullText": [
+      "lighting-p1"
+    ],
+    "semantic": [
+      "lighting-p1"
+    ],
+    "hybrid": [
+      "lighting-p1"
+    ]
+  },
+  "finishedAt": "2026-09-15T13:19:58.655Z"
+}

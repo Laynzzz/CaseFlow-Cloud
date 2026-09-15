@@ -1,0 +1,289 @@
+{
+  "id": "seating-005",
+  "startedAt": "2026-09-15T13:13:24.666Z",
+  "sourceMap": {
+    "a92ceab0-37cd-437d-a1b8-565c4d80bdb0": "seating-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "seating-p1",
+      "source": {
+        "id": "a92ceab0-37cd-437d-a1b8-565c4d80bdb0",
+        "kind": "POLICY",
+        "name": "Synthetic seating-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 63,
+        "sha256": "a69df4790a57cfe92eeb92447c9f43fc01d78b0c3e87331482b8bd5593de01ec",
+        "jobId": "d8f834b5-ccc3-4d10-9d0d-14cc65ad9d4d",
+        "failureCode": null
+      },
+      "chunks": {
+        "items": [
+          {
+            "id": "20aeea9e-f21c-5133-ad5f-694e7297d09d",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 63,
+            "text": "Seating requests must include a cost center for finance review.",
+            "sha256": "a69df4790a57cfe92eeb92447c9f43fc01d78b0c3e87331482b8bd5593de01ec"
+          }
+        ],
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "source": {
+          "id": "a92ceab0-37cd-437d-a1b8-565c4d80bdb0",
+          "kind": "POLICY",
+          "name": "Synthetic seating-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 63,
+          "sha256": "a69df4790a57cfe92eeb92447c9f43fc01d78b0c3e87331482b8bd5593de01ec",
+          "jobId": "d8f834b5-ccc3-4d10-9d0d-14cc65ad9d4d",
+          "failureCode": null
+        }
+      }
+    }
+  ],
+  "tenantId": "04d0a029-27d6-42fb-97f1-9a641301fd26",
+  "caseId": "f3e72beb-f8b1-4d1a-be03-48566b5af0f3",
+  "quote": {
+    "id": "da49a34a-4098-462c-a1d1-e06ee482c819",
+    "kind": "QUOTE",
+    "name": "Synthetic seating-005 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "f3e72beb-f8b1-4d1a-be03-48566b5af0f3",
+    "mediaType": "text/plain",
+    "byteSize": 166,
+    "sha256": "08e380043cabe295e7bf5d36f3dce474dbca43ec0f793b6527bf0b3874790bcc",
+    "jobId": "07f81e69-4f84-4b45-bada-f20fa69fb4a9",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "a92ceab0-37cd-437d-a1b8-565c4d80bdb0",
+        "name": "Synthetic seating-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Seating kit",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "5cd7a833-e9a2-4916-93b7-2a6c560911e6",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "b6ca686e-a5f6-49f4-bbd6-a73cad7403a8",
+      "output": {
+        "total": {
+          "value": null,
+          "citations": [
+            {
+              "quote": "Amount payable: 1000.00 USD.\nUnresolved correction: total 1037.00.",
+              "chunkId": "e45ef5e3-72b1-5fd9-9922-f745991d7027"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Synthetic Seating Works",
+          "citations": [
+            {
+              "quote": "Supplier Synthetic Seating Works",
+              "chunkId": "e45ef5e3-72b1-5fd9-9922-f745991d7027"
+            }
+          ]
+        },
+        "currency": {
+          "value": "USD",
+          "citations": [
+            {
+              "quote": "Amount payable: 1000.00 USD",
+              "chunkId": "e45ef5e3-72b1-5fd9-9922-f745991d7027"
+            }
+          ]
+        },
+        "warnings": [
+          "Conflicting totals 1000.00 and 1037.00; total set to null."
+        ],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "5",
+              "unitPrice": "200.00",
+              "description": "Seating kit"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "offers 5 Seating kit at 200.00 each",
+              "chunkId": "e45ef5e3-72b1-5fd9-9922-f745991d7027"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "e45ef5e3-72b1-5fd9-9922-f745991d7027": {
+          "page": 1,
+          "text": "Supplier Synthetic Seating Works 5 offers 5 Seating kit at 200.00 each. Amount payable: 1000.00 USD.\nUnresolved correction: total 1037.00. Neither total is confirmed.",
+          "start": 0,
+          "sourceId": "da49a34a-4098-462c-a1d1-e06ee482c819"
+        }
+      },
+      "revision": 2,
+      "sourceId": "da49a34a-4098-462c-a1d1-e06ee482c819",
+      "elapsedMs": 4438,
+      "promptHash": "86fbc58a53f0af24f0e2cade89bb65949f2c07ec7fcc7f052d86d1cfade1a3a3",
+      "schemaHash": "d5cf36bc8ea3689429af291e6e139061e50e47cd7502ed817aadd2ebe7cf23ae",
+      "inputTokens": 873,
+      "outputTokens": 260,
+      "sourceSha256": "08e380043cabe295e7bf5d36f3dce474dbca43ec0f793b6527bf0b3874790bcc",
+      "promptVersion": "purchase-assistant-2026-09-15-v4",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000766",
+      "retrievedChunkIds": [
+        "e45ef5e3-72b1-5fd9-9922-f745991d7027"
+      ],
+      "retrievalElapsedMs": 15
+    }
+  },
+  "review": {
+    "jobId": "f65c5df8-d3a9-4abd-b347-333d1a1c5bf0",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "a191fa81-ce30-43b2-b4ea-117458352a4f",
+      "output": {
+        "summary": "The purchase request for a seating kit is missing the required cost center, vendor, line items, and justification. The total is zero, indicating no amount has been specified. According to policy, a seating request must include a cost center for finance review.",
+        "citations": [
+          {
+            "quote": "Seating requests must include a cost center for finance review.",
+            "chunkId": "20aeea9e-f21c-5133-ad5f-694e7297d09d"
+          }
+        ],
+        "policy_findings": [
+          {
+            "claim": "Seating requests must include a cost center for finance review.",
+            "citations": [
+              {
+                "quote": "Seating requests must include a cost center for finance review.",
+                "chunkId": "20aeea9e-f21c-5133-ad5f-694e7297d09d"
+              }
+            ]
+          }
+        ],
+        "missing_information": [
+          "cost center",
+          "vendor",
+          "line items",
+          "justification"
+        ],
+        "insufficient_evidence": false
+      },
+      "evidence": {
+        "20aeea9e-f21c-5133-ad5f-694e7297d09d": {
+          "page": 1,
+          "text": "Seating requests must include a cost center for finance review.",
+          "start": 0,
+          "sourceId": "a92ceab0-37cd-437d-a1b8-565c4d80bdb0"
+        }
+      },
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 2608,
+      "promptHash": "69eb041d4aa4970da14ffc9683b61e4a15bc90e408ee4d6c598cda49b1204cf4",
+      "schemaHash": "8d42dc73d604dd4361b7e155b68bdbba1340fbaaa5b1baa0126ad0d2ebe7c152",
+      "inputTokens": 611,
+      "outputTokens": 190,
+      "sourceSha256": null,
+      "promptVersion": "purchase-assistant-2026-09-15-v4",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Seating OR kit OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000549",
+      "retrievedChunkIds": [
+        "20aeea9e-f21c-5133-ad5f-694e7297d09d"
+      ],
+      "retrievalElapsedMs": 0,
+      "retrievalComparison": {
+        "model": "text-embedding-3-small",
+        "query": "Seating OR kit OR purchase OR cost OR center OR justification",
+        "corpus": [
+          {
+            "cosine": 0.5870944296004592,
+            "sha256": "a69df4790a57cfe92eeb92447c9f43fc01d78b0c3e87331482b8bd5593de01ec",
+            "chunkId": "20aeea9e-f21c-5133-ad5f-694e7297d09d",
+            "sourceId": "a92ceab0-37cd-437d-a1b8-565c4d80bdb0"
+          }
+        ],
+        "method": "exact-cosine-rrf60-v1",
+        "elapsedMs": 516,
+        "dimensions": 256,
+        "corpusCount": 1,
+        "cachedChunks": 0,
+        "hybridChunkIds": [
+          "20aeea9e-f21c-5133-ad5f-694e7297d09d"
+        ],
+        "providerCalled": true,
+        "embeddingCallId": "b8567b0b-cbb7-42a7-89b0-cd92af80f8d3",
+        "baselineChunkIds": [
+          "20aeea9e-f21c-5133-ad5f-694e7297d09d"
+        ],
+        "embeddingCostUsd": "0.000001",
+        "embeddingVersion": "openai-small-256-v1",
+        "semanticChunkIds": [
+          "20aeea9e-f21c-5133-ad5f-694e7297d09d"
+        ]
+      }
+    }
+  },
+  "retrievedPassageIds": [
+    "seating-p1"
+  ],
+  "retrievalComparisons": {
+    "fullText": [
+      "seating-p1"
+    ],
+    "semantic": [
+      "seating-p1"
+    ],
+    "hybrid": [
+      "seating-p1"
+    ]
+  },
+  "finishedAt": "2026-09-15T13:13:38.823Z"
+}

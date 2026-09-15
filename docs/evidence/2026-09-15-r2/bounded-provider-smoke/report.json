@@ -1,0 +1,185 @@
+{
+  "caseCount": 2,
+  "recordedCaseCount": 2,
+  "missingCaseIds": [],
+  "extraction": {
+    "numerator": 8,
+    "denominator": 8,
+    "rate": 1.0
+  },
+  "extractionByField": {
+    "vendor": {
+      "numerator": 2,
+      "denominator": 2,
+      "rate": 1.0
+    },
+    "currency": {
+      "numerator": 2,
+      "denominator": 2,
+      "rate": 1.0
+    },
+    "total": {
+      "numerator": 2,
+      "denominator": 2,
+      "rate": 1.0
+    },
+    "lineItems": {
+      "numerator": 2,
+      "denominator": 2,
+      "rate": 1.0
+    }
+  },
+  "extractionByCategory": {
+    "ordinary": {
+      "numerator": 8,
+      "denominator": 8,
+      "rate": 1.0
+    }
+  },
+  "missingValueAccuracy": {
+    "numerator": 0,
+    "denominator": 0,
+    "rate": null
+  },
+  "recallAt5": {
+    "numerator": 2,
+    "denominator": 2,
+    "rate": 1.0
+  },
+  "correctAbstention": {
+    "numerator": 0,
+    "denominator": 0,
+    "rate": null
+  },
+  "falseAbstention": {
+    "numerator": 0,
+    "denominator": 2,
+    "rate": 0.0
+  },
+  "answeredAnswerableCases": {
+    "numerator": 2,
+    "denominator": 2,
+    "rate": 1.0
+  },
+  "failedOrMissingExtractions": 0,
+  "failedOrMissingReviews": 0,
+  "ungradedClaims": [
+    {
+      "id": "equipment-001",
+      "location": "finding:0",
+      "text": "Equipment purchases require a cost center before approval.",
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "b52a0e9d-8587-561d-811f-9670368ad61a"
+        }
+      ]
+    },
+    {
+      "id": "equipment-001",
+      "location": "summary",
+      "text": "The equipment purchase lacks a specified cost center, which is required.",
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "b52a0e9d-8587-561d-811f-9670368ad61a"
+        }
+      ]
+    },
+    {
+      "id": "equipment-002",
+      "location": "finding:0",
+      "text": "Equipment purchases require a cost center before approval.",
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "1e93602c-8d33-5efa-bd87-d46d3bb316a9"
+        }
+      ]
+    },
+    {
+      "id": "equipment-002",
+      "location": "summary",
+      "text": "The purchase lacks a cost center, description, justification, vendor information, and line items, which are necessary details. The total amount is zero, indicating missing or incomplete pricing details.",
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "1e93602c-8d33-5efa-bd87-d46d3bb316a9"
+        }
+      ]
+    }
+  ],
+  "claimSupport": null,
+  "knownSuccessfulResultCostUsd": "0.002380",
+  "successfulResultsWithoutCost": 0,
+  "costScope": "Successful result metadata only; failed/unknown call ledger reconciliation required",
+  "targets": {
+    "extraction": 0.9,
+    "recallAt5": 0.9,
+    "claimSupport": 0.95
+  },
+  "releaseGatePassed": false,
+  "limitations": [
+    "Scores describe supplied synthetic run records, not independently verified provider calls.",
+    "Manual annotation verification, semantic claim grading, retrieval comparison and release checks remain required.",
+    "Failed and absent cases stay in accuracy denominators; they are not successful abstentions."
+  ],
+  "retrievalComparison": {
+    "caseCount": 2,
+    "recallAt5": {
+      "fullText": {
+        "numerator": 2,
+        "denominator": 2,
+        "rate": 1.0
+      },
+      "semantic": {
+        "numerator": 2,
+        "denominator": 2,
+        "rate": 1.0
+      },
+      "hybrid": {
+        "numerator": 2,
+        "denominator": 2,
+        "rate": 1.0
+      }
+    },
+    "missingComparisonIds": [],
+    "knownEmbeddingCostUsd": "0.000002",
+    "cases": [
+      {
+        "id": "equipment-001",
+        "query": "Equipment OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 31,
+        "comparisonElapsedMs": 2327,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "equipment-002",
+        "query": "Equipment OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 15,
+        "comparisonElapsedMs": 2046,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      }
+    ],
+    "releaseGatePassed": false,
+    "limitations": [
+      "Synthetic generated annotations await human verification.",
+      "One-passage corpora cannot establish a semantic advantage. Empty corpora have no recall denominator.",
+      "Timings are local component observations, not load benchmarks. Failed calls require ledger reconciliation."
+    ]
+  },
+  "scope": "First 2 development cases selected before calls; not a release report",
+  "selectedIds": [
+    "equipment-001",
+    "equipment-002"
+  ],
+  "datasetSha256": "fec73306673b441cea651c7ad498d8645af6351e4450f13bd5213c5dbd93086a",
+  "predictionsSha256": "53cdc2d01c6654f465e739bed4cebdb57603cc7b4540ee5da75b023372842de4",
+  "annotationStatus": "awaiting-human-review",
+  "split": "development",
+  "datasetVersion": "synthetic-v1"
+}

@@ -1,0 +1,51 @@
+{
+  "predictionsSha256": "15c7bbee2375417eaf30d49ef41a4712547784109ee773df91708a6f85742906",
+  "callsSha256": "a7ce843651a24fdd1685868ebe9883c009c69ef9080ef4ea1e07eb945adfb692",
+  "requestedJobCount": 120,
+  "recordedCallCount": 180,
+  "states": {
+    "SETTLED": 180
+  },
+  "jobsWithoutCalls": [],
+  "jobsWithMultipleCallAttempts": 0,
+  "knownEstimatedUsd": "0.070786",
+  "unsettledReservedUsd": "0",
+  "accountedUsd": "0.070786",
+  "providerElapsedMsByPurpose": {
+    "extraction": {
+      "count": 60,
+      "p50": 2844,
+      "p95": 4968
+    },
+    "retrieval-embedding": {
+      "count": 60,
+      "p50": 297,
+      "p95": 500
+    },
+    "review": {
+      "count": 60,
+      "p50": 2297,
+      "p95": 4030
+    }
+  },
+  "callsWithoutElapsed": 0,
+  "scenarioElapsedMs": {
+    "count": 60,
+    "p50": 12616,
+    "p95": 17176
+  },
+  "queueDelayMs": null,
+  "releaseGatePassed": false,
+  "definitions": {
+    "quantile": "Nearest rank, ceil(q*N), without interpolation.",
+    "providerElapsedMs": "Parent-observed admission/transport interval; includes child startup when enabled, not server-only inference.",
+    "scenarioElapsedMs": "Runner-observed setup, sign-in, uploads, indexing and both assistant jobs; not user completion time.",
+    "queueDelayMs": "Not included in this initial export. Superseded by operations-with-job-timings.json.",
+    "accountedUsd": "Dated local pricing estimate plus full unknown reservations; not a provider invoice."
+  },
+  "limitations": [
+    "Sequential local synthetic run, not a controlled load benchmark.",
+    "Host sleep, startup, polling and other concurrent work can affect observations.",
+    "Failed and unknown costs remain accounted; no user time-saving claim."
+  ]
+}

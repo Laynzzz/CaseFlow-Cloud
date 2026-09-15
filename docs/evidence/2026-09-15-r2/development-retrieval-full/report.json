@@ -1,0 +1,1869 @@
+{
+  "caseCount": 60,
+  "recordedCaseCount": 60,
+  "missingCaseIds": [],
+  "extraction": {
+    "numerator": 207,
+    "denominator": 240,
+    "rate": 0.8625
+  },
+  "extractionByField": {
+    "vendor": {
+      "numerator": 30,
+      "denominator": 60,
+      "rate": 0.5
+    },
+    "currency": {
+      "numerator": 60,
+      "denominator": 60,
+      "rate": 1.0
+    },
+    "total": {
+      "numerator": 60,
+      "denominator": 60,
+      "rate": 1.0
+    },
+    "lineItems": {
+      "numerator": 57,
+      "denominator": 60,
+      "rate": 0.95
+    }
+  },
+  "extractionByCategory": {
+    "conflicting_totals": {
+      "numerator": 41,
+      "denominator": 48,
+      "rate": 0.8541666666666666
+    },
+    "hostile_instructions": {
+      "numerator": 40,
+      "denominator": 48,
+      "rate": 0.8333333333333334
+    },
+    "insufficient_policy": {
+      "numerator": 37,
+      "denominator": 48,
+      "rate": 0.7708333333333334
+    },
+    "missing_fields": {
+      "numerator": 48,
+      "denominator": 48,
+      "rate": 1.0
+    },
+    "ordinary": {
+      "numerator": 41,
+      "denominator": 48,
+      "rate": 0.8541666666666666
+    }
+  },
+  "missingValueAccuracy": {
+    "numerator": 36,
+    "denominator": 36,
+    "rate": 1.0
+  },
+  "recallAt5": {
+    "numerator": 48,
+    "denominator": 48,
+    "rate": 1.0
+  },
+  "correctAbstention": {
+    "numerator": 12,
+    "denominator": 12,
+    "rate": 1.0
+  },
+  "falseAbstention": {
+    "numerator": 1,
+    "denominator": 48,
+    "rate": 0.020833333333333332
+  },
+  "answeredAnswerableCases": {
+    "numerator": 47,
+    "denominator": 48,
+    "rate": 0.9791666666666666
+  },
+  "failedOrMissingExtractions": 0,
+  "failedOrMissingReviews": 0,
+  "ungradedClaims": [
+    {
+      "id": "equipment-001",
+      "location": "finding:0",
+      "text": "Equipment purchases require a cost center before approval.",
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "30573868-1410-5618-8bf0-5651bc8cf4d7"
+        }
+      ]
+    },
+    {
+      "id": "equipment-001",
+      "location": "summary",
+      "text": "The purchase request for an equipment kit lacks a cost center and other critical details such as vendor, justification, and line items. According to the policy, equipment purchases require a cost center before approval.",
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "30573868-1410-5618-8bf0-5651bc8cf4d7"
+        }
+      ]
+    },
+    {
+      "id": "equipment-002",
+      "location": "finding:0",
+      "text": "Equipment purchases require a cost center before approval.",
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "57673eb3-d88a-5acd-9734-fe370ac04f9d"
+        }
+      ]
+    },
+    {
+      "id": "equipment-002",
+      "location": "summary",
+      "text": "The purchase request is for an equipment kit but lacks a cost center, vendor, justification, line items, and total other than zero.",
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "57673eb3-d88a-5acd-9734-fe370ac04f9d"
+        }
+      ]
+    },
+    {
+      "id": "equipment-003",
+      "location": "finding:0",
+      "text": "Equipment purchases require a cost center before approval.",
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "5f4b4247-e1b3-554e-bec9-98064ecca5bb"
+        }
+      ]
+    },
+    {
+      "id": "equipment-003",
+      "location": "summary",
+      "text": "The purchase of equipment requires a cost center for approval. The submitted purchase request lacks a cost center and other details such as vendor, justification, description, and line items, and has a total of 0.00 USD.",
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "5f4b4247-e1b3-554e-bec9-98064ecca5bb"
+        }
+      ]
+    },
+    {
+      "id": "equipment-004",
+      "location": "finding:0",
+      "text": "Equipment purchases require a cost center before approval.",
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "00324f99-8915-57e0-9cfc-61c82c910439"
+        }
+      ]
+    },
+    {
+      "id": "equipment-004",
+      "location": "summary",
+      "text": "The purchase request for an equipment kit is missing critical information including cost center, vendor, justification, line items, and total amount. According to the provided policy evidence, equipment purchases require a cost center before approval.",
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "00324f99-8915-57e0-9cfc-61c82c910439"
+        }
+      ]
+    },
+    {
+      "id": "equipment-005",
+      "location": "finding:0",
+      "text": "Equipment purchases require a cost center before approval.",
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "1787a73f-30c1-5c77-9832-cf7be98fe197"
+        }
+      ]
+    },
+    {
+      "id": "equipment-005",
+      "location": "summary",
+      "text": "The purchase request lacks a cost center required for equipment purchases. No other details on vendor, justification, description, or line items were provided.",
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "1787a73f-30c1-5c77-9832-cf7be98fe197"
+        }
+      ]
+    },
+    {
+      "id": "equipment-006",
+      "location": "finding:0",
+      "text": "Equipment purchases require a cost center before approval.",
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "1fcb2186-a23b-5874-9d85-44cfc787afd7"
+        }
+      ]
+    },
+    {
+      "id": "equipment-006",
+      "location": "summary",
+      "text": "The purchase request for an equipment kit lacks a cost center, which is required for equipment purchases according to policy.",
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "1fcb2186-a23b-5874-9d85-44cfc787afd7"
+        }
+      ]
+    },
+    {
+      "id": "equipment-007",
+      "location": "summary",
+      "text": "The purchase request for an equipment kit lacks essential information such as cost center, vendor, justification, line items, and a valid total amount. There is insufficient data to assess compliance with any specific policies due to the absence of supporting evidence.",
+      "citations": []
+    },
+    {
+      "id": "equipment-008",
+      "location": "summary",
+      "text": "The purchase request for an equipment kit is incomplete and lacks essential details such as cost center, vendor, justification, line items, and total amount is zero.",
+      "citations": []
+    },
+    {
+      "id": "equipment-009",
+      "location": "finding:0",
+      "text": "Equipment purchases require a cost center before approval.",
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "1d694783-15bd-56d2-9131-78dcd00ccdaa"
+        }
+      ]
+    },
+    {
+      "id": "equipment-009",
+      "location": "summary",
+      "text": "The purchase request for an Equipment kit lacks a cost center, justification, vendor details, and line items. The total amount is zero, which may indicate incomplete pricing information.",
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "1d694783-15bd-56d2-9131-78dcd00ccdaa"
+        }
+      ]
+    },
+    {
+      "id": "equipment-010",
+      "location": "finding:0",
+      "text": "Equipment purchases require a cost center before approval.",
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "5655c5ee-1db3-5479-9ac9-88017ef0f2f7"
+        }
+      ]
+    },
+    {
+      "id": "equipment-010",
+      "location": "summary",
+      "text": "The purchase request lacks a cost center, which is required for equipment purchases according to the policy.",
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "5655c5ee-1db3-5479-9ac9-88017ef0f2f7"
+        }
+      ]
+    },
+    {
+      "id": "seating-001",
+      "location": "finding:0",
+      "text": "Seating requests must include a cost center for finance review.",
+      "citations": [
+        {
+          "quote": "Seating requests must include a cost center for finance review.",
+          "chunkId": "8e65554a-e5c0-5065-ac43-cc647ff615c2"
+        }
+      ]
+    },
+    {
+      "id": "seating-001",
+      "location": "summary",
+      "text": "The purchase request for a seating kit lacks a cost center, which is required for finance review as per the policy.",
+      "citations": [
+        {
+          "quote": "Seating requests must include a cost center for finance review.",
+          "chunkId": "8e65554a-e5c0-5065-ac43-cc647ff615c2"
+        }
+      ]
+    },
+    {
+      "id": "seating-002",
+      "location": "finding:0",
+      "text": "Seating requests must include a cost center for finance review.",
+      "citations": [
+        {
+          "quote": "Seating requests must include a cost center for finance review.",
+          "chunkId": "305484cd-e8cd-5d37-af8c-9cf26c9a5698"
+        }
+      ]
+    },
+    {
+      "id": "seating-002",
+      "location": "summary",
+      "text": "The purchase request for a seating kit lacks a specified cost center and justification, with no line items or vendor information provided. Policy requires inclusion of a cost center for finance review, which is missing in this request.",
+      "citations": [
+        {
+          "quote": "Seating requests must include a cost center for finance review.",
+          "chunkId": "305484cd-e8cd-5d37-af8c-9cf26c9a5698"
+        }
+      ]
+    },
+    {
+      "id": "seating-003",
+      "location": "finding:0",
+      "text": "A cost center is required for finance review of seating requests.",
+      "citations": [
+        {
+          "quote": "Seating requests must include a cost center for finance review.",
+          "chunkId": "bbdaf425-3343-50ba-8e3f-490484fda2e4"
+        }
+      ]
+    },
+    {
+      "id": "seating-003",
+      "location": "summary",
+      "text": "The purchase request for a seating kit lacks both a specified cost center and justification, which are required for proper finance review according to policy.",
+      "citations": [
+        {
+          "quote": "Seating requests must include a cost center for finance review.",
+          "chunkId": "bbdaf425-3343-50ba-8e3f-490484fda2e4"
+        }
+      ]
+    },
+    {
+      "id": "seating-004",
+      "location": "finding:0",
+      "text": "Seating requests must include a cost center for finance review.",
+      "citations": [
+        {
+          "quote": "Seating requests must include a cost center for finance review.",
+          "chunkId": "0a9442b8-1c37-570f-951c-d5a9e51124ea"
+        }
+      ]
+    },
+    {
+      "id": "seating-004",
+      "location": "summary",
+      "text": "The purchase request lacks a cost center, which is required for finance review according to the cited policy.",
+      "citations": [
+        {
+          "quote": "Seating requests must include a cost center for finance review.",
+          "chunkId": "0a9442b8-1c37-570f-951c-d5a9e51124ea"
+        }
+      ]
+    },
+    {
+      "id": "seating-005",
+      "location": "finding:0",
+      "text": "Seating requests must include a cost center for finance review.",
+      "citations": [
+        {
+          "quote": "Seating requests must include a cost center for finance review.",
+          "chunkId": "20aeea9e-f21c-5133-ad5f-694e7297d09d"
+        }
+      ]
+    },
+    {
+      "id": "seating-005",
+      "location": "summary",
+      "text": "The purchase request for a seating kit is missing the required cost center, vendor, line items, and justification. The total is zero, indicating no amount has been specified. According to policy, a seating request must include a cost center for finance review.",
+      "citations": [
+        {
+          "quote": "Seating requests must include a cost center for finance review.",
+          "chunkId": "20aeea9e-f21c-5133-ad5f-694e7297d09d"
+        }
+      ]
+    },
+    {
+      "id": "seating-006",
+      "location": "finding:0",
+      "text": "Seating requests must include a cost center for finance review.",
+      "citations": [
+        {
+          "quote": "Seating requests must include a cost center for finance review.",
+          "chunkId": "7a96dee8-2f25-5db8-b573-88fefb0dd5bf"
+        }
+      ]
+    },
+    {
+      "id": "seating-006",
+      "location": "summary",
+      "text": "The purchase request for a seating kit is missing a cost center, justification, vendor, and line items, which are essential for finance review and proper purchase processing.",
+      "citations": [
+        {
+          "quote": "Seating requests must include a cost center for finance review.",
+          "chunkId": "7a96dee8-2f25-5db8-b573-88fefb0dd5bf"
+        }
+      ]
+    },
+    {
+      "id": "seating-007",
+      "location": "summary",
+      "text": "The purchase request is for a seating kit with no cost center, vendor, or line items specified, and a total cost of 0.00 USD. There is no justification or detailed description provided beyond 'Seating kit'.",
+      "citations": []
+    },
+    {
+      "id": "seating-008",
+      "location": "summary",
+      "text": "The purchase request is for a seating kit with no cost center, vendor, line items, or justification provided, and a total cost of 0.00 USD.",
+      "citations": []
+    },
+    {
+      "id": "seating-009",
+      "location": "finding:0",
+      "text": "Seating requests must include a cost center for finance review.",
+      "citations": [
+        {
+          "quote": "Seating requests must include a cost center for finance review.",
+          "chunkId": "90ca6f84-9638-5584-96e6-519a76c1c7fa"
+        }
+      ]
+    },
+    {
+      "id": "seating-009",
+      "location": "summary",
+      "text": "The purchase request for a seating kit is missing a cost center, description details are minimal, justification and vendor information are absent, and there are no line items provided. The total amount is zero.",
+      "citations": [
+        {
+          "quote": "Seating requests must include a cost center for finance review.",
+          "chunkId": "90ca6f84-9638-5584-96e6-519a76c1c7fa"
+        }
+      ]
+    },
+    {
+      "id": "seating-010",
+      "location": "finding:0",
+      "text": "Seating requests must include a cost center for finance review.",
+      "citations": [
+        {
+          "quote": "Seating requests must include a cost center for finance review.",
+          "chunkId": "456c40c7-2ef5-5d48-b8e1-335dcc95c3de"
+        }
+      ]
+    },
+    {
+      "id": "seating-010",
+      "location": "summary",
+      "text": "The purchase request for a seating kit is missing a cost center as required by policy.",
+      "citations": [
+        {
+          "quote": "Seating requests must include a cost center for finance review.",
+          "chunkId": "456c40c7-2ef5-5d48-b8e1-335dcc95c3de"
+        }
+      ]
+    },
+    {
+      "id": "network-001",
+      "location": "finding:0",
+      "text": "Network procurement cannot proceed without a cost center.",
+      "citations": [
+        {
+          "quote": "Network procurement cannot proceed without a cost center.",
+          "chunkId": "3cd80de4-a361-5279-b26f-03b9dad22f8b"
+        }
+      ]
+    },
+    {
+      "id": "network-001",
+      "location": "summary",
+      "text": "The purchase request for a network kit is incomplete, missing key information such as cost center, vendor, justification, line items, and a valid total. Policy states that network procurement cannot proceed without a cost center, which is absent here.",
+      "citations": [
+        {
+          "quote": "Network procurement cannot proceed without a cost center.",
+          "chunkId": "3cd80de4-a361-5279-b26f-03b9dad22f8b"
+        }
+      ]
+    },
+    {
+      "id": "network-002",
+      "location": "finding:0",
+      "text": "Network procurement cannot proceed without a cost center.",
+      "citations": [
+        {
+          "quote": "Network procurement cannot proceed without a cost center.",
+          "chunkId": "d5ea9ab4-b4b8-5eb9-aef3-3c324dadf87e"
+        }
+      ]
+    },
+    {
+      "id": "network-002",
+      "location": "summary",
+      "text": "The purchase request for 'Network kit' lacks a cost center, vendor, line items, and justification, and shows a total cost of 0.00 USD. The evidence specifies that network procurement cannot proceed without a cost center.",
+      "citations": [
+        {
+          "quote": "Network procurement cannot proceed without a cost center.",
+          "chunkId": "d5ea9ab4-b4b8-5eb9-aef3-3c324dadf87e"
+        }
+      ]
+    },
+    {
+      "id": "network-003",
+      "location": "finding:0",
+      "text": "Network procurement cannot proceed without a cost center.",
+      "citations": [
+        {
+          "quote": "Network procurement cannot proceed without a cost center.",
+          "chunkId": "2f4d2bb0-da0b-5359-8789-5f9262ea3faa"
+        }
+      ]
+    },
+    {
+      "id": "network-003",
+      "location": "summary",
+      "text": "The purchase request for a network kit lacks a cost center, which is required according to the policy evidence. Other fields such as justification, line items, and vendor information are also missing, making the request incomplete.",
+      "citations": [
+        {
+          "quote": "Network procurement cannot proceed without a cost center.",
+          "chunkId": "2f4d2bb0-da0b-5359-8789-5f9262ea3faa"
+        }
+      ]
+    },
+    {
+      "id": "network-004",
+      "location": "finding:0",
+      "text": "Network procurement cannot proceed without a cost center.",
+      "citations": [
+        {
+          "quote": "Network procurement cannot proceed without a cost center.",
+          "chunkId": "0e22105b-ba92-5578-b36a-bcf3d26075b8"
+        }
+      ]
+    },
+    {
+      "id": "network-004",
+      "location": "summary",
+      "text": "The purchase request lacks a cost center, which is required for network procurement according to the policy evidence provided. Other purchase information such as description and total amount is present but minimal, and no line items or vendor information are supplied.",
+      "citations": [
+        {
+          "quote": "Network procurement cannot proceed without a cost center.",
+          "chunkId": "0e22105b-ba92-5578-b36a-bcf3d26075b8"
+        }
+      ]
+    },
+    {
+      "id": "network-005",
+      "location": "finding:0",
+      "text": "Network procurement cannot proceed without a cost center.",
+      "citations": [
+        {
+          "quote": "Network procurement cannot proceed without a cost center.",
+          "chunkId": "4bac2b58-3f07-5e96-895b-711555bc6b37"
+        }
+      ]
+    },
+    {
+      "id": "network-005",
+      "location": "summary",
+      "text": "The purchase request for 'Network kit' lacks a cost center, vendor, justification, and line items, and shows a total of 0.00 USD.",
+      "citations": [
+        {
+          "quote": "Network procurement cannot proceed without a cost center.",
+          "chunkId": "4bac2b58-3f07-5e96-895b-711555bc6b37"
+        }
+      ]
+    },
+    {
+      "id": "network-006",
+      "location": "finding:0",
+      "text": "Network procurement cannot proceed without a cost center.",
+      "citations": [
+        {
+          "quote": "Network procurement cannot proceed without a cost center.",
+          "chunkId": "04af33df-90f0-532f-8733-80f50616b880"
+        }
+      ]
+    },
+    {
+      "id": "network-006",
+      "location": "summary",
+      "text": "The purchase request lacks a cost center, description details, justification, line items, total amount, and vendor information. The total amount is reported as 0.00 USD, but no line items are provided to validate this total. According to the policy, network procurement cannot proceed without a cost center, indicating a policy violation in this purchase request.",
+      "citations": [
+        {
+          "quote": "Network procurement cannot proceed without a cost center.",
+          "chunkId": "04af33df-90f0-532f-8733-80f50616b880"
+        }
+      ]
+    },
+    {
+      "id": "network-007",
+      "location": "summary",
+      "text": "The purchase request lacks critical information including cost center, vendor, justification, line items, and has a total of 0.00 USD. There is insufficient evidence to support approving this purchase as key details are missing.",
+      "citations": []
+    },
+    {
+      "id": "network-008",
+      "location": "summary",
+      "text": "The purchase request for a 'Network kit' is incomplete with missing cost center, vendor, justification, and line items, and has a total of 0.00 USD.",
+      "citations": []
+    },
+    {
+      "id": "network-009",
+      "location": "finding:0",
+      "text": "Network procurement cannot proceed without a cost center.",
+      "citations": [
+        {
+          "quote": "Network procurement cannot proceed without a cost center.",
+          "chunkId": "a86869c6-6734-5d93-b416-dd59e609d9f4"
+        }
+      ]
+    },
+    {
+      "id": "network-009",
+      "location": "summary",
+      "text": "The purchase request lacks a cost center, which is required for network procurement according to the provided policy evidence. Other important purchase details such as vendor, justification, line items, and total amount are either missing or zero, indicating insufficient information to proceed with the procurement.",
+      "citations": [
+        {
+          "quote": "Network procurement cannot proceed without a cost center.",
+          "chunkId": "a86869c6-6734-5d93-b416-dd59e609d9f4"
+        }
+      ]
+    },
+    {
+      "id": "network-010",
+      "location": "finding:0",
+      "text": "Network procurement cannot proceed without a cost center.",
+      "citations": [
+        {
+          "quote": "Network procurement cannot proceed without a cost center.",
+          "chunkId": "31a5b5bb-6e6c-5340-ab04-379a5a66e1e1"
+        }
+      ]
+    },
+    {
+      "id": "network-010",
+      "location": "summary",
+      "text": "The purchase request lacks a cost center, which is required for network procurement according to policy. Other purchase details such as description, justification, line items, total, and vendor are also missing or empty.",
+      "citations": [
+        {
+          "quote": "Network procurement cannot proceed without a cost center.",
+          "chunkId": "31a5b5bb-6e6c-5340-ab04-379a5a66e1e1"
+        }
+      ]
+    },
+    {
+      "id": "printing-001",
+      "location": "finding:0",
+      "text": "Printing expenditure must identify the requesting cost center.",
+      "citations": [
+        {
+          "quote": "Printing expenditure must identify the requesting cost center.",
+          "chunkId": "b7432ea4-7c0f-5c65-b672-ed73c71fe684"
+        }
+      ]
+    },
+    {
+      "id": "printing-001",
+      "location": "summary",
+      "text": "The purchase request for a printing kit does not identify the requesting cost center, which is a requirement according to the policy.",
+      "citations": [
+        {
+          "quote": "Printing expenditure must identify the requesting cost center.",
+          "chunkId": "b7432ea4-7c0f-5c65-b672-ed73c71fe684"
+        }
+      ]
+    },
+    {
+      "id": "printing-002",
+      "location": "finding:0",
+      "text": "Printing expenditure must identify the requesting cost center.",
+      "citations": [
+        {
+          "quote": "Printing expenditure must identify the requesting cost center.",
+          "chunkId": "579ab982-dcef-5fdb-ab3d-ad7aab44bea7"
+        }
+      ]
+    },
+    {
+      "id": "printing-002",
+      "location": "summary",
+      "text": "The purchase request for a printing kit lacks a specified cost center, which is required according to the policy that printing expenditure must identify the requesting cost center.",
+      "citations": [
+        {
+          "quote": "Printing expenditure must identify the requesting cost center.",
+          "chunkId": "579ab982-dcef-5fdb-ab3d-ad7aab44bea7"
+        }
+      ]
+    },
+    {
+      "id": "printing-003",
+      "location": "finding:0",
+      "text": "Printing expenditure must identify the requesting cost center.",
+      "citations": [
+        {
+          "quote": "Printing expenditure must identify the requesting cost center.",
+          "chunkId": "bf9ed251-2ab8-5d7a-9522-e83d0e2769be"
+        }
+      ]
+    },
+    {
+      "id": "printing-003",
+      "location": "summary",
+      "text": "The purchase request for a printing kit lacks mandatory information such as the requesting cost center and vendor details, and there is no justification or line items provided. The total amount is zero, which might indicate incomplete cost information.",
+      "citations": [
+        {
+          "quote": "Printing expenditure must identify the requesting cost center.",
+          "chunkId": "bf9ed251-2ab8-5d7a-9522-e83d0e2769be"
+        }
+      ]
+    },
+    {
+      "id": "printing-004",
+      "location": "finding:0",
+      "text": "Printing expenditure must identify the requesting cost center.",
+      "citations": [
+        {
+          "quote": "Printing expenditure must identify the requesting cost center.",
+          "chunkId": "2ece1ee4-8ed4-5581-9eb3-c173e6278197"
+        }
+      ]
+    },
+    {
+      "id": "printing-004",
+      "location": "summary",
+      "text": "The purchase request for a printing kit does not identify the requesting cost center, which is required by the printing expenditure policy.",
+      "citations": [
+        {
+          "quote": "Printing expenditure must identify the requesting cost center.",
+          "chunkId": "2ece1ee4-8ed4-5581-9eb3-c173e6278197"
+        }
+      ]
+    },
+    {
+      "id": "printing-005",
+      "location": "finding:0",
+      "text": "Printing expenditure must identify the requesting cost center.",
+      "citations": [
+        {
+          "quote": "Printing expenditure must identify the requesting cost center.",
+          "chunkId": "2cd49ae9-2a7e-5ae8-aee2-6032dcedcd14"
+        }
+      ]
+    },
+    {
+      "id": "printing-005",
+      "location": "summary",
+      "text": "The purchase request for a printing kit lacks the identification of the requesting cost center, which is required according to the provided policy evidence.",
+      "citations": [
+        {
+          "quote": "Printing expenditure must identify the requesting cost center.",
+          "chunkId": "2cd49ae9-2a7e-5ae8-aee2-6032dcedcd14"
+        }
+      ]
+    },
+    {
+      "id": "printing-006",
+      "location": "finding:0",
+      "text": "Printing expenditure must identify the requesting cost center.",
+      "citations": [
+        {
+          "quote": "Printing expenditure must identify the requesting cost center.",
+          "chunkId": "d25cdbc7-1f27-55a8-80be-0c6e6dc31234"
+        }
+      ]
+    },
+    {
+      "id": "printing-006",
+      "location": "summary",
+      "text": "The purchase request for a printing kit does not include a cost center, which is required for printing expenditures according to policy.",
+      "citations": [
+        {
+          "quote": "Printing expenditure must identify the requesting cost center.",
+          "chunkId": "d25cdbc7-1f27-55a8-80be-0c6e6dc31234"
+        }
+      ]
+    },
+    {
+      "id": "printing-007",
+      "location": "summary",
+      "text": "The purchase request lacks essential information such as cost center, vendor, justification, and line items, making it incomplete and insufficient for approval.",
+      "citations": []
+    },
+    {
+      "id": "printing-008",
+      "location": "summary",
+      "text": "The purchase request for a printing kit lacks critical information including cost center, vendor, justification, and line items. The total amount is zero, which is unusual for a printing kit purchase and may indicate incomplete cost data.",
+      "citations": []
+    },
+    {
+      "id": "printing-009",
+      "location": "finding:0",
+      "text": "Printing expenditure must identify the requesting cost center.",
+      "citations": [
+        {
+          "quote": "Printing expenditure must identify the requesting cost center.",
+          "chunkId": "280ccd26-dcad-5fa8-ab82-4a12b77187bd"
+        }
+      ]
+    },
+    {
+      "id": "printing-009",
+      "location": "summary",
+      "text": "The purchase request for a printing kit lacks a specified cost center, which is required according to the provided policy evidence. There is also no vendor, justification, or line items specified, with a total of 0.00 USD.",
+      "citations": [
+        {
+          "quote": "Printing expenditure must identify the requesting cost center.",
+          "chunkId": "280ccd26-dcad-5fa8-ab82-4a12b77187bd"
+        }
+      ]
+    },
+    {
+      "id": "printing-010",
+      "location": "finding:0",
+      "text": "Printing expenditure must identify the requesting cost center.",
+      "citations": [
+        {
+          "quote": "Printing expenditure must identify the requesting cost center.",
+          "chunkId": "97c1cfc5-e34e-58aa-8dac-a369cb7d27ec"
+        }
+      ]
+    },
+    {
+      "id": "printing-010",
+      "location": "summary",
+      "text": "The purchase request for a printing kit lacks a specified cost center, justification, vendor, and line items, though the total amount is stated as 0.00 USD. According to the policy evidence, printing expenditures must identify the requesting cost center.",
+      "citations": [
+        {
+          "quote": "Printing expenditure must identify the requesting cost center.",
+          "chunkId": "97c1cfc5-e34e-58aa-8dac-a369cb7d27ec"
+        }
+      ]
+    },
+    {
+      "id": "lighting-001",
+      "location": "finding:0",
+      "text": "Lighting orders require the department cost center to be recorded.",
+      "citations": [
+        {
+          "quote": "Lighting orders require the department cost center to be recorded.",
+          "chunkId": "f5465edd-76d2-5260-9551-f10cb217dd90"
+        }
+      ]
+    },
+    {
+      "id": "lighting-001",
+      "location": "summary",
+      "text": "The purchase request for a lighting kit lacks a specified department cost center, which is required for lighting orders according to the policy evidence provided.",
+      "citations": [
+        {
+          "quote": "Lighting orders require the department cost center to be recorded.",
+          "chunkId": "f5465edd-76d2-5260-9551-f10cb217dd90"
+        }
+      ]
+    },
+    {
+      "id": "lighting-002",
+      "location": "finding:0",
+      "text": "Lighting orders require the department cost center to be recorded.",
+      "citations": [
+        {
+          "quote": "Lighting orders require the department cost center to be recorded.",
+          "chunkId": "fdf2a3f6-0928-528f-8295-ecd84b679894"
+        }
+      ]
+    },
+    {
+      "id": "lighting-002",
+      "location": "summary",
+      "text": "The purchase request is missing required information, including the department cost center and vendor details, which are needed for lighting orders as per policy.",
+      "citations": [
+        {
+          "quote": "Lighting orders require the department cost center to be recorded.",
+          "chunkId": "fdf2a3f6-0928-528f-8295-ecd84b679894"
+        }
+      ]
+    },
+    {
+      "id": "lighting-003",
+      "location": "finding:0",
+      "text": "Lighting orders require the department cost center to be recorded.",
+      "citations": [
+        {
+          "quote": "Lighting orders require the department cost center to be recorded.",
+          "chunkId": "31b2238f-018f-549d-9f58-5b7baf53ee12"
+        }
+      ]
+    },
+    {
+      "id": "lighting-003",
+      "location": "summary",
+      "text": "The purchase request is for a lighting kit but lacks critical information including the department cost center, description details, justification, line items, total cost, and vendor information. Policy requires a department cost center for lighting orders, which is missing here.",
+      "citations": [
+        {
+          "quote": "Lighting orders require the department cost center to be recorded.",
+          "chunkId": "31b2238f-018f-549d-9f58-5b7baf53ee12"
+        }
+      ]
+    },
+    {
+      "id": "lighting-004",
+      "location": "finding:0",
+      "text": "Lighting orders require the department cost center to be recorded.",
+      "citations": [
+        {
+          "quote": "Lighting orders require the department cost center to be recorded.",
+          "chunkId": "e3d6e145-7624-5a3b-b06d-2dd22359817f"
+        }
+      ]
+    },
+    {
+      "id": "lighting-004",
+      "location": "summary",
+      "text": "The purchase request for a lighting kit is missing the department cost center, which is required according to the policy.",
+      "citations": [
+        {
+          "quote": "Lighting orders require the department cost center to be recorded.",
+          "chunkId": "e3d6e145-7624-5a3b-b06d-2dd22359817f"
+        }
+      ]
+    },
+    {
+      "id": "lighting-005",
+      "location": "finding:0",
+      "text": "Lighting orders require the department cost center to be recorded.",
+      "citations": [
+        {
+          "quote": "Lighting orders require the department cost center to be recorded.",
+          "chunkId": "c0003d27-11eb-545d-b5a6-14585cf835f6"
+        }
+      ]
+    },
+    {
+      "id": "lighting-005",
+      "location": "summary",
+      "text": "The purchase request for a lighting kit is missing a cost center and vendor information, and contains no line items, justification, or a total amount greater than zero. According to the policy, lighting orders require the department cost center to be recorded.",
+      "citations": [
+        {
+          "quote": "Lighting orders require the department cost center to be recorded.",
+          "chunkId": "c0003d27-11eb-545d-b5a6-14585cf835f6"
+        }
+      ]
+    },
+    {
+      "id": "lighting-006",
+      "location": "finding:0",
+      "text": "Lighting orders require the department cost center to be recorded.",
+      "citations": [
+        {
+          "quote": "Lighting orders require the department cost center to be recorded.",
+          "chunkId": "10064ca0-3156-51f3-a099-0033ed5493d1"
+        }
+      ]
+    },
+    {
+      "id": "lighting-006",
+      "location": "summary",
+      "text": "The purchase request for a lighting kit lacks a specified department cost center, which is required according to the policy provided.",
+      "citations": [
+        {
+          "quote": "Lighting orders require the department cost center to be recorded.",
+          "chunkId": "10064ca0-3156-51f3-a099-0033ed5493d1"
+        }
+      ]
+    },
+    {
+      "id": "lighting-007",
+      "location": "summary",
+      "text": "The purchase request lacks key information including the cost center, vendor, justification, line items, and a non-zero total amount. Without these details, the purchase cannot be properly evaluated or approved.",
+      "citations": []
+    },
+    {
+      "id": "lighting-008",
+      "location": "summary",
+      "text": "The purchase request for a lighting kit lacks essential information such as cost center, vendor, justification, line items, and total amount details. These omissions prevent a thorough review and approval process.",
+      "citations": []
+    },
+    {
+      "id": "lighting-009",
+      "location": "finding:0",
+      "text": "Lighting orders require the department cost center to be recorded.",
+      "citations": [
+        {
+          "quote": "Lighting orders require the department cost center to be recorded.",
+          "chunkId": "cf7bd55d-b741-51ab-94d0-3c1e8051835d"
+        }
+      ]
+    },
+    {
+      "id": "lighting-009",
+      "location": "summary",
+      "text": "The purchase request for a lighting kit does not include a department cost center, which is required according to the provided policy.",
+      "citations": [
+        {
+          "quote": "Lighting orders require the department cost center to be recorded.",
+          "chunkId": "cf7bd55d-b741-51ab-94d0-3c1e8051835d"
+        }
+      ]
+    },
+    {
+      "id": "lighting-010",
+      "location": "finding:0",
+      "text": "Lighting orders require the department cost center to be recorded.",
+      "citations": [
+        {
+          "quote": "Lighting orders require the department cost center to be recorded.",
+          "chunkId": "4a101213-0c60-5475-bb83-30e0e3e15d17"
+        }
+      ]
+    },
+    {
+      "id": "lighting-010",
+      "location": "summary",
+      "text": "The purchase request for a lighting kit lacks the required department cost center information and other essential fields such as vendor, justification, line items, and an accurate total. Policy states that lighting orders require the department cost center to be recorded, which is missing in this request.",
+      "citations": [
+        {
+          "quote": "Lighting orders require the department cost center to be recorded.",
+          "chunkId": "4a101213-0c60-5475-bb83-30e0e3e15d17"
+        }
+      ]
+    },
+    {
+      "id": "storage-001",
+      "location": "finding:0",
+      "text": "Storage procurement requires a valid cost center on every request.",
+      "citations": [
+        {
+          "quote": "Storage procurement requires a valid cost center on every request.",
+          "chunkId": "c7e11a4a-4279-5e10-b322-649b26a414f8"
+        }
+      ]
+    },
+    {
+      "id": "storage-001",
+      "location": "summary",
+      "text": "The purchase request for a storage kit lacks a valid cost center, which is required for storage procurement according to policy.",
+      "citations": [
+        {
+          "quote": "Storage procurement requires a valid cost center on every request.",
+          "chunkId": "c7e11a4a-4279-5e10-b322-649b26a414f8"
+        }
+      ]
+    },
+    {
+      "id": "storage-002",
+      "location": "finding:0",
+      "text": "Storage procurement requires a valid cost center on every request.",
+      "citations": [
+        {
+          "quote": "Storage procurement requires a valid cost center on every request.",
+          "chunkId": "265277b1-23d1-5c81-9582-69d4217d4d82"
+        }
+      ]
+    },
+    {
+      "id": "storage-002",
+      "location": "summary",
+      "text": "The purchase request for a storage kit lacks a valid cost center, description, justification, line items, and vendor information. The total amount is zero, which is unusual for a procurement request. According to the policy, every storage procurement requires a valid cost center, which is missing here.",
+      "citations": [
+        {
+          "quote": "Storage procurement requires a valid cost center on every request.",
+          "chunkId": "265277b1-23d1-5c81-9582-69d4217d4d82"
+        }
+      ]
+    },
+    {
+      "id": "storage-003",
+      "location": "finding:0",
+      "text": "Storage procurement requires a valid cost center on every request.",
+      "citations": [
+        {
+          "quote": "Storage procurement requires a valid cost center on every request.",
+          "chunkId": "b0c15a42-c827-5d13-9fd7-d3f8a93ab02b"
+        }
+      ]
+    },
+    {
+      "id": "storage-003",
+      "location": "summary",
+      "text": "The purchase request for a storage kit is missing a valid cost center, which is required according to the provided policy evidence.",
+      "citations": [
+        {
+          "quote": "Storage procurement requires a valid cost center on every request.",
+          "chunkId": "b0c15a42-c827-5d13-9fd7-d3f8a93ab02b"
+        }
+      ]
+    },
+    {
+      "id": "storage-004",
+      "location": "finding:0",
+      "text": "Storage procurement requires a valid cost center on every request.",
+      "citations": [
+        {
+          "quote": "Storage procurement requires a valid cost center on every request.",
+          "chunkId": "44800cf9-3f02-597b-9b4c-e4d9fec26f4f"
+        }
+      ]
+    },
+    {
+      "id": "storage-004",
+      "location": "summary",
+      "text": "The purchase request for a storage kit is missing a valid cost center, vendor, justification, and line items, which are necessary for a complete procurement request. The total amount is zero, indicating no line items have been added.",
+      "citations": [
+        {
+          "quote": "Storage procurement requires a valid cost center on every request.",
+          "chunkId": "44800cf9-3f02-597b-9b4c-e4d9fec26f4f"
+        }
+      ]
+    },
+    {
+      "id": "storage-005",
+      "location": "finding:0",
+      "text": "Storage procurement requires a valid cost center on every request.",
+      "citations": [
+        {
+          "quote": "Storage procurement requires a valid cost center on every request.",
+          "chunkId": "0478bd9c-de88-5826-93fe-66cef7acaa20"
+        }
+      ]
+    },
+    {
+      "id": "storage-005",
+      "location": "summary",
+      "text": "The storage procurement request is missing a valid cost center, which is required according to policy.",
+      "citations": [
+        {
+          "quote": "Storage procurement requires a valid cost center on every request.",
+          "chunkId": "0478bd9c-de88-5826-93fe-66cef7acaa20"
+        }
+      ]
+    },
+    {
+      "id": "storage-006",
+      "location": "finding:0",
+      "text": "Storage procurement requires a valid cost center on every request.",
+      "citations": [
+        {
+          "quote": "Storage procurement requires a valid cost center on every request.",
+          "chunkId": "d224e79c-7691-534b-bf18-97e63b8cd82a"
+        }
+      ]
+    },
+    {
+      "id": "storage-006",
+      "location": "summary",
+      "text": "The purchase request for a storage kit lacks a valid cost center as required by policy. Additionally, it misses several key details such as vendor, justification, line items, and has a total cost of 0.00, which is likely incomplete or incorrect.",
+      "citations": [
+        {
+          "quote": "Storage procurement requires a valid cost center on every request.",
+          "chunkId": "d224e79c-7691-534b-bf18-97e63b8cd82a"
+        }
+      ]
+    },
+    {
+      "id": "storage-007",
+      "location": "summary",
+      "text": "The purchase request lacks sufficient detail including cost center, vendor, line items, total amount, and justification for the storage kit. There is no supporting evidence or policy information provided to validate or assess the purchase.",
+      "citations": []
+    },
+    {
+      "id": "storage-008",
+      "location": "summary",
+      "text": "The purchase request lacks essential information including cost center, vendor, justification, line items, and has a total cost of zero despite including a description of 'Storage kit'.",
+      "citations": []
+    },
+    {
+      "id": "storage-009",
+      "location": "finding:0",
+      "text": "Storage procurement requires a valid cost center on every request.",
+      "citations": [
+        {
+          "quote": "Storage procurement requires a valid cost center on every request.",
+          "chunkId": "9a2dbb7c-100a-5cad-a43b-6192c3c5eec3"
+        }
+      ]
+    },
+    {
+      "id": "storage-009",
+      "location": "summary",
+      "text": "The purchase request lacks a valid cost center, which is required for storage procurement.",
+      "citations": [
+        {
+          "quote": "Storage procurement requires a valid cost center on every request.",
+          "chunkId": "9a2dbb7c-100a-5cad-a43b-6192c3c5eec3"
+        }
+      ]
+    },
+    {
+      "id": "storage-010",
+      "location": "finding:0",
+      "text": "Storage procurement requires a valid cost center on every request.",
+      "citations": [
+        {
+          "quote": "Storage procurement requires a valid cost center on every request.",
+          "chunkId": "dbfa7186-0535-5f62-9cf4-66bed5b1c691"
+        }
+      ]
+    },
+    {
+      "id": "storage-010",
+      "location": "summary",
+      "text": "The purchase request for a storage kit lacks a valid cost center, which is required for storage procurement according to the policy. The request also misses details such as vendor, justification, and line items.",
+      "citations": [
+        {
+          "quote": "Storage procurement requires a valid cost center on every request.",
+          "chunkId": "dbfa7186-0535-5f62-9cf4-66bed5b1c691"
+        }
+      ]
+    }
+  ],
+  "claimSupport": null,
+  "knownSuccessfulResultCostUsd": "0.070726",
+  "successfulResultsWithoutCost": 0,
+  "costScope": "Successful result metadata only; failed/unknown call ledger reconciliation required",
+  "targets": {
+    "extraction": 0.9,
+    "recallAt5": 0.9,
+    "claimSupport": 0.95
+  },
+  "releaseGatePassed": false,
+  "limitations": [
+    "Scores describe supplied synthetic run records, not independently verified provider calls.",
+    "Manual annotation verification, semantic claim grading, retrieval comparison and release checks remain required.",
+    "Failed and absent cases stay in accuracy denominators; they are not successful abstentions."
+  ],
+  "retrievalComparison": {
+    "caseCount": 60,
+    "recallAt5": {
+      "fullText": {
+        "numerator": 48,
+        "denominator": 48,
+        "rate": 1.0
+      },
+      "semantic": {
+        "numerator": 48,
+        "denominator": 48,
+        "rate": 1.0
+      },
+      "hybrid": {
+        "numerator": 48,
+        "denominator": 48,
+        "rate": 1.0
+      }
+    },
+    "missingComparisonIds": [],
+    "knownEmbeddingCostUsd": "0.000060",
+    "cases": [
+      {
+        "id": "equipment-001",
+        "query": "Equipment OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 14,
+        "comparisonElapsedMs": 907,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "equipment-002",
+        "query": "Equipment OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 516,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "equipment-003",
+        "query": "Equipment OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 514,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "equipment-004",
+        "query": "Equipment OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 406,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "equipment-005",
+        "query": "Equipment OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 31,
+        "comparisonElapsedMs": 468,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "equipment-006",
+        "query": "Equipment OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 0,
+        "comparisonElapsedMs": 672,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "equipment-007",
+        "query": "Equipment OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 718,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "equipment-008",
+        "query": "Equipment OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 0,
+        "comparisonElapsedMs": 516,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "equipment-009",
+        "query": "Equipment OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 15,
+        "comparisonElapsedMs": 500,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "equipment-010",
+        "query": "Equipment OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 32,
+        "comparisonElapsedMs": 422,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "seating-001",
+        "query": "Seating OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 422,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "seating-002",
+        "query": "Seating OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 15,
+        "comparisonElapsedMs": 407,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "seating-003",
+        "query": "Seating OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 32,
+        "comparisonElapsedMs": 437,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "seating-004",
+        "query": "Seating OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 32,
+        "comparisonElapsedMs": 483,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "seating-005",
+        "query": "Seating OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 0,
+        "comparisonElapsedMs": 516,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "seating-006",
+        "query": "Seating OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 483,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "seating-007",
+        "query": "Seating OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 500,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "seating-008",
+        "query": "Seating OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 31,
+        "comparisonElapsedMs": 483,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "seating-009",
+        "query": "Seating OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 15,
+        "comparisonElapsedMs": 421,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "seating-010",
+        "query": "Seating OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 546,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "network-001",
+        "query": "Network OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 15,
+        "comparisonElapsedMs": 468,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "network-002",
+        "query": "Network OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 14,
+        "comparisonElapsedMs": 532,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "network-003",
+        "query": "Network OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 0,
+        "comparisonElapsedMs": 532,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "network-004",
+        "query": "Network OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 47,
+        "comparisonElapsedMs": 577,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "network-005",
+        "query": "Network OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 0,
+        "comparisonElapsedMs": 438,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "network-006",
+        "query": "Network OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 30,
+        "comparisonElapsedMs": 500,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "network-007",
+        "query": "Network OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 420,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "network-008",
+        "query": "Network OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 0,
+        "comparisonElapsedMs": 594,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "network-009",
+        "query": "Network OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 32,
+        "comparisonElapsedMs": 545,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "network-010",
+        "query": "Network OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 31,
+        "comparisonElapsedMs": 484,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "printing-001",
+        "query": "Printing OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 15,
+        "comparisonElapsedMs": 546,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "printing-002",
+        "query": "Printing OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 15,
+        "comparisonElapsedMs": 452,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "printing-003",
+        "query": "Printing OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 14,
+        "comparisonElapsedMs": 469,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "printing-004",
+        "query": "Printing OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 468,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "printing-005",
+        "query": "Printing OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 30,
+        "comparisonElapsedMs": 485,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "printing-006",
+        "query": "Printing OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 31,
+        "comparisonElapsedMs": 577,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "printing-007",
+        "query": "Printing OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 500,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "printing-008",
+        "query": "Printing OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 31,
+        "comparisonElapsedMs": 468,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "printing-009",
+        "query": "Printing OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 0,
+        "comparisonElapsedMs": 609,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "printing-010",
+        "query": "Printing OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 0,
+        "comparisonElapsedMs": 405,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "lighting-001",
+        "query": "Lighting OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 625,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "lighting-002",
+        "query": "Lighting OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 0,
+        "comparisonElapsedMs": 452,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "lighting-003",
+        "query": "Lighting OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 31,
+        "comparisonElapsedMs": 593,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "lighting-004",
+        "query": "Lighting OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 31,
+        "comparisonElapsedMs": 421,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "lighting-005",
+        "query": "Lighting OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 936,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "lighting-006",
+        "query": "Lighting OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 546,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "lighting-007",
+        "query": "Lighting OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 453,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "lighting-008",
+        "query": "Lighting OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 15,
+        "comparisonElapsedMs": 500,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "lighting-009",
+        "query": "Lighting OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 31,
+        "comparisonElapsedMs": 468,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "lighting-010",
+        "query": "Lighting OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 15,
+        "comparisonElapsedMs": 484,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "storage-001",
+        "query": "Storage OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 467,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "storage-002",
+        "query": "Storage OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 46,
+        "comparisonElapsedMs": 656,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "storage-003",
+        "query": "Storage OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 32,
+        "comparisonElapsedMs": 515,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "storage-004",
+        "query": "Storage OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 15,
+        "comparisonElapsedMs": 547,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "storage-005",
+        "query": "Storage OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 531,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "storage-006",
+        "query": "Storage OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 500,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "storage-007",
+        "query": "Storage OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 15,
+        "comparisonElapsedMs": 672,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "storage-008",
+        "query": "Storage OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 32,
+        "comparisonElapsedMs": 592,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "storage-009",
+        "query": "Storage OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 641,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "storage-010",
+        "query": "Storage OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 561,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      }
+    ],
+    "releaseGatePassed": false,
+    "limitations": [
+      "Synthetic generated annotations await human verification.",
+      "One-passage corpora cannot establish a semantic advantage. Empty corpora have no recall denominator.",
+      "Timings are local component observations, not load benchmarks. Failed calls require ledger reconciliation."
+    ]
+  },
+  "scope": "First 60 development cases selected before calls; not a release report",
+  "selectedIds": [
+    "equipment-001",
+    "equipment-002",
+    "equipment-003",
+    "equipment-004",
+    "equipment-005",
+    "equipment-006",
+    "equipment-007",
+    "equipment-008",
+    "equipment-009",
+    "equipment-010",
+    "seating-001",
+    "seating-002",
+    "seating-003",
+    "seating-004",
+    "seating-005",
+    "seating-006",
+    "seating-007",
+    "seating-008",
+    "seating-009",
+    "seating-010",
+    "network-001",
+    "network-002",
+    "network-003",
+    "network-004",
+    "network-005",
+    "network-006",
+    "network-007",
+    "network-008",
+    "network-009",
+    "network-010",
+    "printing-001",
+    "printing-002",
+    "printing-003",
+    "printing-004",
+    "printing-005",
+    "printing-006",
+    "printing-007",
+    "printing-008",
+    "printing-009",
+    "printing-010",
+    "lighting-001",
+    "lighting-002",
+    "lighting-003",
+    "lighting-004",
+    "lighting-005",
+    "lighting-006",
+    "lighting-007",
+    "lighting-008",
+    "lighting-009",
+    "lighting-010",
+    "storage-001",
+    "storage-002",
+    "storage-003",
+    "storage-004",
+    "storage-005",
+    "storage-006",
+    "storage-007",
+    "storage-008",
+    "storage-009",
+    "storage-010"
+  ],
+  "datasetSha256": "fec73306673b441cea651c7ad498d8645af6351e4450f13bd5213c5dbd93086a",
+  "predictionsSha256": "15c7bbee2375417eaf30d49ef41a4712547784109ee773df91708a6f85742906",
+  "annotationStatus": "awaiting-human-review",
+  "split": "development",
+  "datasetVersion": "synthetic-v1"
+}
