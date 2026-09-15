@@ -1,0 +1,37 @@
+name: caseflow-local
+services:
+  postgres:
+    image: postgres:18.6-bookworm@sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af
+    environment:
+      POSTGRES_USER: caseflow_admin
+      POSTGRES_DB: caseflow
+      POSTGRES_PASSWORD: ${DB_ADMIN_PASSWORD:?Run node scripts/init-local.mjs}
+      DB_MIGRATOR_PASSWORD: ${DB_MIGRATOR_PASSWORD:?Local environment is required}
+      DB_API_PASSWORD: ${DB_API_PASSWORD:?Local environment is required}
+      DB_WORKER_PASSWORD: ${DB_WORKER_PASSWORD:?Local environment is required}
+    ports:
+      - '127.0.0.1:54320:5432'
+    volumes:
+      - postgres-data:/var/lib/postgresql
+      - ./infrastructure/local/init-db.sh:/docker-entrypoint-initdb.d/01-roles.sh:ro
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U caseflow_admin -d caseflow']
+      interval: 3s
+      timeout: 3s
+      retries: 20
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.7.3@sha256:e03b95891c214fba3ab72f12f40c983211549e817c5fce8d0f37761db04ae185
+    command: ['start-dev', '--import-realm']
+    environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: local-admin
+      KC_BOOTSTRAP_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD:?Run node scripts/generate-demo.mjs}
+      KC_HOSTNAME: http://127.0.0.1:8180
+      KC_HEALTH_ENABLED: 'true'
+    ports:
+      - '127.0.0.1:8180:8080'
+    volumes:
+      - keycloak-data:/opt/keycloak/data
+      - ./infrastructure/local/generated:/opt/keycloak/data/import:ro
+volumes:
+  postgres-data:
+  keycloak-data:

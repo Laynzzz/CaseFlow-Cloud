@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.gradle/
+build/
+.env
+.env.*
+!.env.example
+*.log
+test-results/
+playwright-report/
+.idea/
+.vscode/
+__pycache__/
+.venv/
+infrastructure/local/generated/

@@ -44,6 +44,11 @@ Interview preparation is an ongoing part of building this project, not only a fi
 
 ## Execution expectations
 
+- User requested incremental commits on 2026-09-14. Commit meaningful, verified
+  progress in small cohesive batches with short messages. Do not accumulate the
+  entire project into one large commit. Never include local credentials or
+  unrelated user changes; do not push unless requested.
+
 - Follow the releases and acceptance gates in `plan.md`; demonstrate the relevant exit criteria before marking work complete.
 - Preserve the plan's architecture and scope. Record an ADR before changing a pinned architectural decision.
 - Use synthetic data, keep changes reviewable, and link engineering claims to evidence.
