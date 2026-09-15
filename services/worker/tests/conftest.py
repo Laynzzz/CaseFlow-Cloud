@@ -22,7 +22,7 @@ def isolated_database(monkeypatch):
     migrator = dict(connection, dbname=name, user="caseflow_migrator", password=os.environ["DB_MIGRATOR_PASSWORD"])
     try:
         with psycopg.connect(**migrator) as db:
-            for migration in sorted((ROOT / "db/migrations").glob("V*__*.sql")):
+            for migration in sorted((ROOT / "db/migrations").glob("V*__*.sql"),key=lambda p:int(p.name.split('__')[0][1:])):
                 db.execute(migration.read_text(encoding="utf-8"))
         yield migrator
     finally:

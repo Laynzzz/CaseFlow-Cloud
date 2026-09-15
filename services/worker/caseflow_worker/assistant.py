@@ -1,7 +1,8 @@
 import re
+import time
 from psycopg.types.json import Jsonb
 from .settings import database
-from . import ai_provider
+from . import ai_provider, retrieval
 
 
 def authorized(job):
@@ -13,6 +14,7 @@ def authorized(job):
 def execute(job, source):
     authorized(job)
     query=None
+    retrieval_started=time.monotonic()
     with database() as db:
         if job["kind"]=="EXTRACTION":
             rows=db.execute("""SELECT id,source_id,page,start_offset,text FROM worker.chunks
@@ -25,12 +27,15 @@ def execute(job, source):
                 ORDER BY ts_rank_cd(search,websearch_to_tsquery('english',%s)) DESC,source_id,ordinal LIMIT 5""",
                 (job["tenant_id"],source["policyIds"],query,query)).fetchall()
     chunks={str(c["id"]):dict(sourceId=str(c["source_id"]),page=c["page"],start=c["start_offset"],text=c["text"]) for c in rows}
+    retrieval_elapsed=int((time.monotonic()-retrieval_started)*1000)
     if job["kind"]=="EXTRACTION" and not chunks:raise ValueError("AI_SOURCE_UNAVAILABLE")
+    comparison=retrieval.compare(job,source,query,list(chunks),lambda:authorized(job)) if job['kind']=='REVIEW' and source.get('compareRetrieval') else None
     result=ai_provider.request(job,job["kind"],source["purchase"],chunks,lambda:authorized(job))
     # JSONB objects do not preserve insertion/rank order; store rank as an explicit array.
-    result.update(revision=source["revision"],evidence=chunks,retrievedChunkIds=list(chunks),retrievalQuery=query,
+    result.update(revision=source["revision"],evidence=chunks,retrievedChunkIds=list(chunks),retrievalQuery=query,retrievalElapsedMs=retrieval_elapsed,
                   retrievalMethod="postgres-full-text-v1" if job["kind"]=="REVIEW" else "quote-pages-v1")
     result.update(sourceId=source.get("sourceId"),sourceVersion=source.get("sourceVersion"),sourceSha256=source.get("sourceSha256"))
+    if comparison is not None:result['retrievalComparison']=comparison
     return result
 
 

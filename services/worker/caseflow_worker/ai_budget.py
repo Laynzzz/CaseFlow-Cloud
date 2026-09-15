@@ -10,14 +10,19 @@ INPUT_PER_MILLION = Decimal("0.40")
 OUTPUT_PER_MILLION = Decimal("1.60")
 MAX_INPUT_TOKENS = 32768
 MAX_OUTPUT_TOKENS = 4096
+EMBEDDING_MODEL = "text-embedding-3-small"
+RATES = {MODEL:(INPUT_PER_MILLION,OUTPUT_PER_MILLION,MAX_INPUT_TOKENS,MAX_OUTPUT_TOKENS),
+         EMBEDDING_MODEL:(Decimal("0.02"),Decimal("0"),32768,0)}
 
 
-def cost(input_tokens, output_tokens):
-    return ((Decimal(input_tokens)*INPUT_PER_MILLION+Decimal(output_tokens)*OUTPUT_PER_MILLION)/1_000_000).quantize(Decimal("0.000001"),rounding=ROUND_CEILING)
+def cost(input_tokens, output_tokens, model=MODEL):
+    rates=RATES[model]
+    return ((Decimal(input_tokens)*rates[0]+Decimal(output_tokens)*rates[1])/1_000_000).quantize(Decimal("0.000001"),rounding=ROUND_CEILING)
 
 
-def reserve(job, purpose):
-    upper = cost(MAX_INPUT_TOKENS, MAX_OUTPUT_TOKENS)
+def reserve(job, purpose, model=MODEL):
+    if model not in RATES:raise ValueError("UNSUPPORTED_AI_MODEL")
+    upper = cost(RATES[model][2],RATES[model][3],model)
     with database() as db:
         # A transaction advisory lock works with a SELECT-only configuration role.
         db.execute("SELECT pg_advisory_xact_lock(846201)")
@@ -39,7 +44,7 @@ def reserve(job, purpose):
         call_id=uuid4()
         db.execute("""INSERT INTO worker.ai_calls(id,tenant_id,job_id,attempt,fence,purpose,model,pricing_version,reserved_usd)
             VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)""",
-            (call_id,job["tenant_id"],job["job_id"],job["attempt"],job["fence"],purpose,MODEL,PRICING_VERSION,upper))
+            (call_id,job["tenant_id"],job["job_id"],job["attempt"],job["fence"],purpose,model,PRICING_VERSION,upper))
         return call_id
 
 
@@ -47,9 +52,11 @@ def settle(call_id, input_tokens, output_tokens, elapsed_ms, error_code=None):
     known = isinstance(input_tokens,int) and not isinstance(input_tokens,bool) and input_tokens>=0 and isinstance(output_tokens,int) and not isinstance(output_tokens,bool) and output_tokens>=0
     with database() as db:
         db.execute("SELECT pg_advisory_xact_lock(846201)")
+        row=db.execute("SELECT model FROM worker.ai_calls WHERE id=%s AND state='RESERVED'",(call_id,)).fetchone()
+        if not row:return
         db.execute("""UPDATE worker.ai_calls SET state=%s,input_tokens=%s,output_tokens=%s,actual_usd=%s,elapsed_ms=%s,error_code=%s
             WHERE id=%s AND state='RESERVED'""",("SETTLED" if known else "UNKNOWN",input_tokens if known else None,
-            output_tokens if known else None,cost(input_tokens,output_tokens) if known else None,elapsed_ms,error_code,call_id))
+            output_tokens if known else None,cost(input_tokens,output_tokens,row["model"]) if known else None,elapsed_ms,error_code,call_id))
 
 
 def record_response(call_id, evidence, error_code=None):

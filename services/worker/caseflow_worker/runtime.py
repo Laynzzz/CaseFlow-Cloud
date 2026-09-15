@@ -115,7 +115,7 @@ class Runtime:
                 known_ai={"AI_NOT_CONFIGURED","AI_INPUT_LIMIT","AI_BUDGET_EXCEEDED","STALE_AI_EXECUTION",
                           "AI_CALL_ALREADY_RESERVED","AI_PROVIDER_UNAVAILABLE","AI_REFUSED_OR_INCOMPLETE",
                           "UNEXPECTED_MODEL_VERSION","AI_USAGE_UNAVAILABLE","AI_TOKEN_LIMIT","INVALID_AI_OUTPUT",
-                          "AI_INPUT_STALE_OR_ACCESS_REVOKED","AI_SOURCE_UNAVAILABLE"}
+                          "AI_INPUT_STALE_OR_ACCESS_REVOKED","AI_SOURCE_UNAVAILABLE","AI_RETRIEVAL_LIMIT","INVALID_EMBEDDING"}
                 code=str(error) if str(error) in known_ai else "INVALID_AI_INPUT"
             if permanent and job["kind"] == "INGESTION":
                 known = {"SOURCE_SIZE_LIMIT", "SOURCE_PAGE_LIMIT", "SOURCE_TEXT_LIMIT", "NO_EXTRACTABLE_TEXT",
