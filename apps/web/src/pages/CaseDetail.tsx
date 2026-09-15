@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { api, unwrap, commandHeaders } from "../api/client";
 import { DraftForm } from "./DraftForm";
 import { Documents } from "./Documents";
+import { Sources } from "./Sources";
 import { Empty, Notice, Status } from "../components";
 export function CaseDetail({
   tenant,
@@ -346,6 +347,16 @@ export function CaseDetail({
           )}
         </>
       )}
+      <Sources
+        tenant={tenant}
+        caseId={caseId}
+        caseVersion={item.version}
+        canUpload={
+          item.state === "DRAFT" &&
+          item.ownerId === userId &&
+          roles.includes("REQUESTER")
+        }
+      />
       <section className="panel">
         <h2>Discussion and audit history</h2>
         {roles.some((r) => ["ADMIN", "REQUESTER", "APPROVER"].includes(r)) && (

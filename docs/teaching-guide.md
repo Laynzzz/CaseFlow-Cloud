@@ -249,3 +249,37 @@ Verification: `$env:PYTHONPATH='services/worker'; services/worker/.venv/Scripts/
 passes 13 cases covering actual PDF text, character offsets/hashes, encrypted or
 empty PDFs, malformed/binary input and size/page limits. `-q` prints a concise
 result. See ADR 0003 for decisions and limits.
+# R2 checkpoint: upload to indexed evidence (2026-09-14)
+
+Behavior now implemented: requesters attach PDF/TXT quotes to owned drafts;
+administrators upload policies, inspect their extracted text, then publish or
+deactivate them. File failures explain why indexing failed. Manual purchase data
+does not change when a quote is attached.
+
+Architecture: React `Sources.tsx` calls Java `SourceController.java`; Java copies
+the temporary upload into an immutable object, records its hash and a job in the
+same database transaction as an outbox event. Python checks the source hash,
+parses in a limited child process, and atomically selects chunks with a completion
+event. Java consumes the completion before marking the source indexed. Policy
+jobs use policy aggregates and nullable case IDs; no fake purchase cases exist.
+
+The worker still owns its tables. Java reads designated result/chunk views;
+tenant and resource checks precede evidence reads. SQL composite foreign keys
+and source/job ownership checks reject mismatched references. A quote finalization
+locks the draft and checks its version; it increments the draft version so older
+suggestions can later be detected as stale. Published source bytes cannot change.
+
+Trade-offs: API-mediated uploads use Java bandwidth and bounded storage I/O inside
+the command transaction. Failed/interrupted UI uploads currently need a fresh
+upload; unfinished temporary uploads are retained pending garbage collection.
+Lists are capped at 100 sources. Policy pinning, retrieval and AI are subsequent
+work; source text preview is not an AI-generated interpretation.
+
+Verification commands: `node tests/e2e/source-api.mjs`,
+`node tests/e2e/document-api.mjs`, `node tests/e2e/purchase-api.mjs`,
+`npm --prefix apps/web run build`, and the complete worker pytest suite.
+The source suite checks real Keycloak/PostgreSQL/Kafka/storage integration,
+publication gates, owner/tenant denials, stale draft versions, unchanged purchase
+data and malformed-PDF failure. Existing approval-to-DOCX regression still passes.
+Worker checks total 22 at this checkpoint. Browser upload interaction still needs
+its own verification; a frontend build alone does not prove the browser journey.

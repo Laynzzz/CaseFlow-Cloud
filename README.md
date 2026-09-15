@@ -26,6 +26,10 @@ ordered decisions and cursor behavior. See [evidence](docs/evidence-index.md).
 deployment, the complete browser journey and remaining acceptance checks are
 still open. Baseline database lease/concurrency tests and broker redeliveries
 pass; these are not the complete crash matrix.
+**R2 is in progress:** quote and policy PDF/TXT uploads, bounded background parsing,
+source text previews, publication and deactivation are implemented. The synthetic
+60/60 evaluation split is recorded; references await human verification. Model
+extraction, cited review, acceptance and live evaluation remain unfinished.
 R2 AI and R3 reliability/portfolio gates are also unfinished. No production
 readiness, adoption or measured AI quality is claimed.
 

@@ -27,6 +27,12 @@ const schemas = {
   Templates: object({items:array(ref('Template'))}),
   TemplateInput: object({name:{type:'string',minLength:1,maxLength:120},byteSize:{type:'integer',minimum:1,maximum:10485760}}),
   Uploaded: object({uploaded:bool}),
+  Source: object({id:uuid,kind:{type:'string',enum:['QUOTE','POLICY']},caseId:nullable(uuid),name:str,mediaType:str,state:{type:'string',enum:['UPLOADING','INDEXING','INDEXED','FAILED','PUBLISHED','DEACTIVATED']},version,byteSize:{type:'integer'},sha256:nullable(str),jobId:nullable(uuid),failureCode:nullable(str)}),
+  Sources: object({items:array(ref('Source'))}),
+  SourceInput: object({name:{type:'string',minLength:1,maxLength:120},kind:{type:'string',enum:['QUOTE','POLICY']},caseId:nullable(uuid),mediaType:{type:'string',enum:['text/plain','application/pdf']},byteSize:{type:'integer',minimum:1,maximum:10485760},expectedCaseVersion:nullable(version)},['name','kind','mediaType','byteSize']),
+  SourceVersionInput: object({expectedVersion:version,expectedCaseVersion:nullable(version)},['expectedVersion']),
+  SourceChunk: object({id:uuid,page:{type:'integer'},section:str,start:{type:'integer'},end:{type:'integer'},text:str,sha256:str}),
+  SourceChunks: object({source:ref('Source'),metadata:object({parserVersion:str,chunkVersion:str,pageCount:{type:'integer'}}),items:array(ref('SourceChunk'))}),
   Document: object({jobId:uuid,attempt:{type:'integer'},status:str,failureCode:nullable(str),sha256:nullable(str),byteSize:nullable({type:'integer'}),createdAt:{type:'string',format:'date-time'}}),
   Documents: object({items:array(ref('Document'))}),
   Download: object({url:str,expiresInSeconds:{type:'integer'}}),
@@ -56,6 +62,14 @@ endpoint('/api/v1/health','get','getHealth','Health',null,{auth:false});
 endpoint('/api/v1/me','get','getMe','Me');
 endpoint('/api/v1/tenants','post','createTenant','Tenant','TenantInput');
 const t='/api/v1/tenants/{tenantId}';
+endpoint(t+'/sources','get','listSources','Sources');
+paths[t+'/sources'].get.parameters.push({name:'caseId',in:'query',schema:uuid});
+endpoint(t+'/sources','post','allocateSource','Source','SourceInput',{command:true});
+endpoint(t+'/sources/{sourceId}','get','getSource','Source');
+endpoint(t+'/sources/{sourceId}/chunks','get','sourceChunks','SourceChunks');
+endpoint(t+'/sources/{sourceId}/content','put','uploadSource','Uploaded');
+paths[t+'/sources/{sourceId}/content'].put.requestBody={required:true,content:{'application/octet-stream':{schema:{type:'string',format:'binary'}}}};
+for(const action of ['finalize','publish','deactivate']) endpoint(t+'/sources/{sourceId}/'+action,'post',action+'Source','Source','SourceVersionInput',{command:true});
 endpoint(t+'/memberships','get','listMemberships','Memberships');
 endpoint(t+'/memberships','put','saveMembership','Membership','MembershipInput',{command:true});
 endpoint(t+'/workflows','get','listWorkflows','Workflows');

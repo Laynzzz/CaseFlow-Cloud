@@ -12,12 +12,12 @@ from .settings import database
 class Envelope(BaseModel):
     model_config = ConfigDict(extra="forbid")
     eventId: UUID
-    eventType: Literal["document.requested"]
+    eventType: Literal["document.requested", "ingestion.requested"]
     schemaVersion: Literal[1]
     timestamp: datetime
     tenantId: UUID
     aggregateId: UUID
-    aggregateType: Literal["case"]
+    aggregateType: Literal["case", "policy"]
     aggregateSequence: int = Field(ge=0)
     jobId: UUID
     attempt: int = Field(ge=1)
@@ -28,12 +28,12 @@ class Envelope(BaseModel):
 
 
 def schedule(event: Envelope):
-    if event.eventType != "document.requested" or event.aggregateType != "case":
-        raise ValueError("UNSUPPORTED_EVENT")
     with database() as db:
         source = db.execute("""SELECT * FROM core.worker_job_inputs
             WHERE tenant_id=%s AND job_id=%s""", (event.tenantId, event.jobId)).fetchone()
-        if not source or source["case_id"] != event.aggregateId or source["input_hash"] != event.inputHash:
+        if (not source or (source["case_id"] or source["source_id"]) != event.aggregateId
+            or ("case" if source["case_id"] else "policy") != event.aggregateType
+            or source["kind"].lower()+".requested" != event.eventType or source["input_hash"] != event.inputHash):
             raise ValueError("INVALID_JOB_REFERENCE")
         if source["attempt"] < event.attempt:
             raise ValueError("FUTURE_ATTEMPT")
@@ -41,22 +41,22 @@ def schedule(event: Envelope):
                              (event.eventId,)).fetchone()
         if not receipt or source["attempt"] > event.attempt or source["status"] == "SUCCEEDED":
             return False
-        db.execute("""INSERT INTO worker.jobs(tenant_id,job_id,case_id,kind,attempt,input_hash,status)
-            VALUES (%s,%s,%s,'DOCUMENT',%s,%s,'QUEUED')
+        db.execute("""INSERT INTO worker.jobs(tenant_id,job_id,case_id,source_id,kind,attempt,input_hash,status)
+            VALUES (%s,%s,%s,%s,%s,%s,%s,'QUEUED')
             ON CONFLICT (tenant_id,job_id) DO UPDATE SET attempt=EXCLUDED.attempt,status='QUEUED',
             fence=worker.jobs.fence+1,executions=0,available_at=now(),updated_at=now(),
             lease_owner=NULL,lease_until=NULL,failure_code=NULL
             WHERE worker.jobs.status='FAILED' AND worker.jobs.attempt<EXCLUDED.attempt""",
-            (event.tenantId,event.jobId,event.aggregateId,event.attempt,event.inputHash))
+            (event.tenantId,event.jobId,source["case_id"],source["source_id"],source["kind"],event.attempt,event.inputHash))
         return True
 
 
 def emit(db, job, status, code=None):
     source = db.execute("SELECT input->>'revision' AS revision FROM core.worker_job_inputs WHERE tenant_id=%s AND job_id=%s",
                         (job["tenant_id"], job["job_id"])).fetchone()
-    event = dict(eventId=str(uuid4()), eventType="document."+status.lower(), schemaVersion=1,
+    event = dict(eventId=str(uuid4()), eventType=job["kind"].lower()+"."+status.lower(), schemaVersion=1,
                  timestamp=datetime.now(timezone.utc).isoformat(), tenantId=str(job["tenant_id"]),
-                 aggregateId=str(job["case_id"]), aggregateType="case", jobId=str(job["job_id"]),
+                 aggregateId=str(job["case_id"] or job["source_id"]), aggregateType="case" if job["case_id"] else "policy", jobId=str(job["job_id"]),
                  attempt=job["attempt"], fence=job["fence"], status=status, failureCode=code,
                  inputHash=job["input_hash"], correlationId=str(job["job_id"]),
                  causationId=str(job["job_id"]), aggregateSequence=int(source["revision"] or 0), traceContext={})
@@ -103,7 +103,7 @@ def heartbeat(job, lease_seconds=30):
 def input_for(job):
     with database() as db:
         row = db.execute("""SELECT input FROM core.worker_job_inputs WHERE tenant_id=%s AND job_id=%s
-            AND case_id=%s AND attempt=%s AND input_hash=%s""",
+            AND case_id IS NOT DISTINCT FROM %s AND attempt=%s AND input_hash=%s""",
             (job["tenant_id"],job["job_id"],job["case_id"],job["attempt"],job["input_hash"])).fetchone()
         if not row:
             raise ValueError("STALE_INPUT")
@@ -118,9 +118,13 @@ def finish(job, artifact):
             (job["tenant_id"],job["job_id"],job["attempt"],job["fence"],job["lease_owner"])).fetchone()
         if not updated:
             return False
-        db.execute("""INSERT INTO worker.artifacts(tenant_id,job_id,attempt,fence,object_key,sha256,byte_size)
-            VALUES (%s,%s,%s,%s,%s,%s,%s)""",
-            (job["tenant_id"],job["job_id"],job["attempt"],job["fence"],artifact["key"],artifact["sha256"],artifact["size"]))
+        if job["kind"] == "INGESTION":
+            from .ingestion import persist
+            persist(db, job, artifact)
+        else:
+            db.execute("""INSERT INTO worker.artifacts(tenant_id,job_id,attempt,fence,object_key,sha256,byte_size)
+                VALUES (%s,%s,%s,%s,%s,%s,%s)""",
+                (job["tenant_id"],job["job_id"],job["attempt"],job["fence"],artifact["key"],artifact["sha256"],artifact["size"]))
         emit(db,job,"SUCCEEDED")
         return True
 

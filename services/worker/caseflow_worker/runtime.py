@@ -6,7 +6,7 @@ from datetime import datetime, timezone
 from uuid import uuid4
 from confluent_kafka import Consumer, Producer, KafkaException
 from pydantic import ValidationError
-from . import jobs, render
+from . import jobs, render, ingestion
 from .settings import database, BROKER, REQUEST_TOPIC, COMPLETION_TOPIC, DEAD_TOPIC
 
 
@@ -104,17 +104,24 @@ class Runtime:
         heartbeat = threading.Thread(target=renew, daemon=True)
         heartbeat.start()
         try:
-            artifact = render.execute(job, jobs.input_for(job))
+            executor = ingestion if job["kind"] == "INGESTION" else render
+            artifact = executor.execute(job, jobs.input_for(job))
             selected = jobs.finish(job, artifact)
-            log("document_finished", job_id=str(job["job_id"]), attempt=job["attempt"], fence=job["fence"], selected=selected)
+            log("job_finished", kind=job["kind"], job_id=str(job["job_id"]), attempt=job["attempt"], fence=job["fence"], selected=selected)
         except Exception as error:
             permanent = isinstance(error, (ValueError, KeyError))
             code = "INVALID_DOCUMENT_INPUT" if permanent else "DEPENDENCY_UNAVAILABLE"
+            if permanent and job["kind"] == "INGESTION":
+                known = {"SOURCE_SIZE_LIMIT", "SOURCE_PAGE_LIMIT", "SOURCE_TEXT_LIMIT", "NO_EXTRACTABLE_TEXT",
+                         "ENCRYPTED_PDF_UNSUPPORTED", "MALFORMED_PDF", "INVALID_UTF8", "BINARY_TEXT_UNSUPPORTED",
+                         "UNSUPPORTED_SOURCE_TYPE", "PDF_STREAM_LIMIT", "PARSER_TIME_LIMIT", "PARSER_RESOURCE_LIMIT",
+                         "SOURCE_CHECKSUM_MISMATCH", "INVALID_SOURCE_OWNER"}
+                code = str(error) if str(error) in known else "INVALID_SOURCE_INPUT"
             try:
                 jobs.fail(job, code, permanent)
             except Exception:
                 log("failure_record_deferred", job_id=str(job["job_id"]))
-            log("document_failed", job_id=str(job["job_id"]), code=code)
+            log("job_failed", kind=job["kind"], job_id=str(job["job_id"]), code=code)
         finally:
             finished.set()
             heartbeat.join(timeout=1)

@@ -56,7 +56,8 @@ public class JobMessaging {
                 var rows=db.queryForList("SELECT * FROM core.outbox WHERE published_at IS NULL ORDER BY created_at FOR UPDATE SKIP LOCKED LIMIT 1");
                 if(rows.isEmpty())return;var row=rows.getFirst();
                 try {
-                    producer.send(new ProducerRecord<>("caseflow.jobs.v1",row.get("tenant_id")+":"+row.get("case_id"),row.get("payload").toString())).get(20,TimeUnit.SECONDS);
+                    var payload=json.object(row.get("payload").toString());
+                    producer.send(new ProducerRecord<>("caseflow.jobs.v1",row.get("tenant_id")+":"+payload.get("aggregateId"),row.get("payload").toString())).get(20,TimeUnit.SECONDS);
                 } catch(Exception e) {throw new IllegalStateException("Broker acknowledgement unavailable",e);}
                 db.update("UPDATE core.outbox SET published_at=now() WHERE event_id=?",row.get("event_id"));
             });

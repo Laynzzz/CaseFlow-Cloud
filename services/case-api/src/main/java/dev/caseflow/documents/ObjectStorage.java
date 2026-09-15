@@ -47,7 +47,10 @@ public class ObjectStorage implements AutoCloseable {
     }
 
     public void put(String key, byte[] bytes, boolean immutable) {
-        var request = PutObjectRequest.builder().bucket(bucket).key(key).contentType(DOCX)
+        put(key,bytes,immutable,DOCX);
+    }
+    public void put(String key, byte[] bytes, boolean immutable, String mediaType) {
+        var request = PutObjectRequest.builder().bucket(bucket).key(key).contentType(mediaType)
             .checksumSHA256(java.util.Base64.getEncoder().encodeToString(HexFormat.of().parseHex(checksum(bytes))));
         if (immutable) request.ifNoneMatch("*");
         client.putObject(request.build(), RequestBody.fromBytes(bytes));

@@ -144,3 +144,18 @@ Supporting code: `services/worker/caseflow_worker/jobs.py`,
 Evidence: `services/worker/tests/test_parsing.py` (13 passing checks),
 `docs/adr/0003-r2-evidence.md`, `evals/README.md`. Upload wiring and AI calls are
 subsequent work; do not describe them as verified by these parser tests.
+# R2 source integration checkpoint (2026-09-14)
+
+- Why are policy jobs separate from cases? Policies belong to an organization and
+  can support multiple purchases. Nullable case IDs plus explicit source owners
+  model that relationship without fictitious cases. SQL checks and scoped event
+  validation prevent attaching a job to the wrong owner.
+- When is a policy usable? After immutable upload, successful bounded parsing and
+  transactional chunk selection, Java records indexing success; an administrator
+  explicitly publishes it. A failed parse cannot be published.
+- Why does attaching a quote change the draft version but not purchase values?
+  Evidence changes the input context. Incrementing the revision makes future
+  stale AI suggestions detectable while preserving human control of purchase data.
+
+Evidence: `tests/e2e/source-api.mjs`, `services/worker/tests/test_ingestion.py`,
+`db/migrations/V5__evidence_sources.sql`. AI quality is not measured by these tests.
