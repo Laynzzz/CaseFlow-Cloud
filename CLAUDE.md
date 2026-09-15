@@ -6,6 +6,15 @@ Delivery is three gated releases: R1 working SWE product (tenants, approvals, as
 
 ## This is a learn-while-build project
 
+Current user preference, 2026-09-14: implement the whole project first and teach
+afterward. Record architecture, responsibilities, important decisions, alternatives,
+trade-offs, failure handling, and verification in `docs/teaching-guide.md` while
+building. Keep progress updates brief; defer walkthroughs, exercises, and interview
+quizzes until requested. Teach structure and design before individual functions.
+Identify language, framework, runtime, and purpose before introducing a file.
+This overrides the timing of the teaching instructions below; preserve their
+substance in the written guide.
+
 The user is building this to learn, not only to ship. Treat every task as a teaching moment as well as an implementation task.
 
 - **Explain the tool before using it.** When you introduce a tool, library, or command for the first time (Flyway, Testcontainers, Spring Data JDBC, the transactional outbox, k6, a Terraform module, a Gradle task, pgvector, an embedding provider), say in a few sentences what it is, what problem it solves in this project, and what the alternatives would have been.

@@ -4,6 +4,22 @@ Read `plan.md` before starting work on a phase. Preserve the learn-while-build g
 
 ## Learn while building
 
+### Current user preference (2026-09-14): build first, teach afterward
+
+Implement the full project through the plan's release gates. During implementation,
+keep commentary to concise progress, important outcomes, and actual blockers.
+Do not interrupt work for lessons, code walkthroughs, exercises, or interview quizzes.
+This preference supersedes the timing of the teaching instructions below.
+
+Maintain `docs/teaching-guide.md` as a separate, cumulative guide for later lessons.
+Focus on the whole architecture, component responsibilities, request/job flows,
+important decisions, alternatives, trade-offs, failure handling, and evidence.
+For each component/file introduced in a lesson, identify its language, framework,
+where it runs, and purpose before showing code. Avoid function-by-function teaching
+unless requested. Keep planned, implemented, and verified behavior distinct.
+Update the guide and interview preparation as features land so later teaching
+reflects the actual project. Resume interactive lessons only when the user asks.
+
 This is a learning project as well as a product implementation. Help the user understand, explain, and independently work on the system. Shipping code alone does not satisfy the user's goal.
 
 - Start with the user-facing behavior and a concrete purchase-request example before introducing implementation details. Use plain language and define unfamiliar terms.
