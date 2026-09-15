@@ -2,7 +2,7 @@
 
 A purchase approval application: employees explain a purchase, two assigned
 reviewers decide in order, and the system records the decision and its history.
-The planned document worker will produce the approved Word document. The planned
+The document worker produces the approved Word document. The planned
 AI assistant will suggest quote fields and cite purchasing policies; people
 accept suggestions and make approval decisions.
 
@@ -12,27 +12,35 @@ Implemented: real OIDC sign-in, organizations and memberships, published two-ste
 workflows, purchase drafts, decimal totals, assignments, ordered approvals,
 rejection/cancellation, comments, audit, correction drafts, cursor pagination,
 optimistic concurrency, transactional command receipts and approval outbox.
-React provides requester, reviewer and administrator screens.
+React provides requester, reviewer and administrator screens. Administrators
+upload and publish validated DOCX templates; requests pin a template before
+submission. Java and Python exchange durable jobs/completions through Kafka.
+The worker renders into S3-compatible storage; authorized users download a
+checksum-verified document through a link that expires after 60 seconds.
 
 Verified against local PostgreSQL and Keycloak: tenant/resource access,
 deactivation, stale writes, duplicate commands, concurrent final approval,
 ordered decisions and cursor behavior. See [evidence](docs/evidence-index.md).
 
-**R1 is unfinished:** template uploads, asynchronous document execution,
-downloads, cloud deployment and full release gates remain. An approved purchase
-currently shows a queued document; there is no running document worker.
+**R1 is unfinished:** local document execution and download work, but cloud
+deployment, the complete browser journey and remaining acceptance checks are
+still open. Baseline database lease/concurrency tests and broker redeliveries
+pass; these are not the complete crash matrix.
 R2 AI and R3 reliability/portfolio gates are also unfinished. No production
 readiness, adoption or measured AI quality is claimed.
 
 ## Run locally (PowerShell)
 
-Prerequisites: Java 21, Node 22.12+ within Node 22, Docker Desktop Linux engine.
+Prerequisites: Java 21, Python 3.12, Node 22.12+ within Node 22, Docker Desktop Linux engine.
 Run from the repository root:
 
 ```powershell
 node scripts/init-local.mjs
 node scripts/generate-demo.mjs
-docker compose up -d --wait postgres keycloak
+docker compose up -d --wait postgres keycloak kafka object-store
+py -3.12 -m venv services/worker/.venv
+services/worker/.venv/Scripts/python.exe -m pip install -r services/worker/requirements.lock
+services/worker/.venv/Scripts/python.exe services/worker/tools/create_template.py
 . ./scripts/dev-env.ps1
 ./services/case-api/gradlew.bat -p services/case-api bootRun
 ```
@@ -51,6 +59,16 @@ node scripts/seed-demo.mjs
 npm --prefix apps/web ci --ignore-scripts
 npm --prefix apps/web run dev
 ```
+
+Run the worker in a third terminal:
+
+```powershell
+./scripts/run-worker.ps1
+```
+
+The worker's FastAPI endpoint at 127.0.0.1:8090/health is operational only;
+business requests always go to Java. Kafka uses 127.0.0.1:9092 and local S3
+uses 127.0.0.1:8333. Keep these development services on loopback.
 
 Seeding signs synthetic users in through authorization code + PKCE and creates
 Acme Studio, Northstar Workshop and Manager then Finance. It is safe to rerun.
@@ -75,6 +93,11 @@ npm --prefix apps/web run build
 node scripts/smoke.mjs
 node scripts/smoke.mjs http://127.0.0.1:5173
 node tests/e2e/purchase-api.mjs
+node tests/e2e/template-api.mjs
+node tests/e2e/document-api.mjs
+$env:PYTHONPATH = (Join-Path (Get-Location) 'services/worker')
+services/worker/.venv/Scripts/python.exe -m pytest services/worker/tests -q
+services/worker/.venv/Scripts/python.exe services/worker/tools/replay_document.py
 docker compose config --quiet
 ```
 
@@ -94,6 +117,7 @@ before replacing its artifact.
 | --- | --- | --- |
 | apps/web | TypeScript + React | Browser interface |
 | services/case-api | Java 21 + Spring Boot | Permissions, purchase rules and transactions |
+| services/worker | Python 3.12, docxtpl, psycopg, FastAPI | Durable document jobs, lease recovery and results |
 | db/migrations | SQL + Flyway | Schema, constraints and role privileges |
 | infrastructure/local | Docker, shell, Keycloak fixtures | Development services |
 | contracts/openapi | OpenAPI | Shared request/response definition |

@@ -19,9 +19,9 @@ The product manages authorization to buy, not payments, ordering, or delivery.
 | `apps/web` | TypeScript, React, Vite | Browser; Vite is a local development server/build tool | Screens and user interactions |
 | `services/case-api` | Java 21, Spring Boot, Spring Security, Spring Data JDBC | Backend server | Business rules, permissions, transactional state changes |
 | `db/migrations` | SQL, Flyway | Applied to PostgreSQL by the migration account | Ordered schema changes and explicit privileges |
-| `services/worker` (planned) | Python 3.12 | Background service | Documents, ingestion, AI, durable job execution |
-| Kafka (planned) | Message broker | Infrastructure | Carries work and completion events |
-| Object storage (planned) | S3-compatible service | Infrastructure | Immutable uploaded/generated files |
+| `services/worker` | Python 3.12 | Background service | Durable document execution; ingestion and AI still planned |
+| Kafka | Message broker | Infrastructure | Carries work and completion events |
+| Object storage | SeaweedFS locally, S3 planned in AWS | Infrastructure | Immutable uploaded/generated files |
 | Keycloak/OIDC | Identity provider and standard protocol | Separate identity service | Sign-in; the API still owns organization membership permissions |
 
 ## Historical foundation (September 11)
@@ -140,6 +140,75 @@ there is no need to memorize individual functions.
 - Require explicit acceptance of revision-matched AI suggestions.
 - Measure AI grounding and abstention on held-out synthetic examples, not only
   schema validity; synthetic results do not prove real-world usefulness.
+
+## Document generation checkpoint (later September 14 work)
+
+The local product now produces and downloads an approved Word file. Java owns
+template validation, published versions and permission checks. Final approval
+creates an immutable rendering snapshot and a durable outbox event in the same
+transaction. Kafka delivers IDs and hashes; Python reads the restricted input
+view, renders with docxtpl, writes an immutable object and records its result.
+The worker's completion outbox eventually lets Java update visible status and
+append the system audit. Neither message delivery nor storage success alone
+counts as completed business-state handling.
+
+### Choices, alternatives and failure cases
+
+- **Templates are deliberately restricted.** Administrators can use ten named
+  placeholders, with no loops, attribute access or arbitrary expressions.
+  Validate archive bounds, XML namespaces/attributes, external references and
+  placeholder syntax. Rendering also uses a Jinja sandbox, StrictUndefined and
+  XML escaping. This limits template flexibility and makes the supported surface
+  easier to reason about; it is not a claim that parsing untrusted files is free
+  from risk. Resource-limited worker containers remain to be added.
+- **Copy validated bytes, not a mutable reference.** Upload through an
+  authenticated API endpoint with a 10 MB bound, then finalize by checking the
+  exact bytes and copying them to a random immutable key. Finalization currently
+  holds a database lock during bounded storage I/O. That is simpler but can hold
+  a connection for up to the storage timeout; a staged validator would reduce
+  this cost. Failed transactions can leave unreferenced objects for later GC.
+- **A lease is temporary ownership.** A worker claims a job with a 30-second
+  lease, renews it every five seconds, and increases the fencing token each time
+  ownership is assigned. Completion checks attempt, owner, token and lease.
+  If a paused worker resumes after another took over, its file stays unselected.
+  Each attempt/token gets a different object key, so stale uploads cannot replace
+  the chosen file. Garbage collection of unselected files remains planned.
+- **Scheduling receipt differs from completion.** Inbox receipt and queued job
+  commit together before Kafka offset acknowledgement. Execution then happens
+  outside a transaction. Failure before offset commit repeats the event; durable
+  uniqueness avoids another logical job. A consumer retries the same failed
+  database record instead of committing a later offset past it.
+- **Bounded retries.** Automatic execution is limited to five claims with
+  exponential delay and jitter. A tenant administrator can retry a failed job;
+  its logical ID stays fixed and attempt increases. Successful jobs are terminal.
+  This avoids unbounded retries but leaves exhausted jobs needing attention.
+- **Separate schemas need explicit view access.** Worker may read immutable
+  core inputs; Java may read a result view. Neither may write the other's tables.
+  Integration exposed a missing schema USAGE grant despite SELECT on the view.
+  V4 fixes it; the worker-role tests also verify access to base tables is denied.
+- **Signed download links are short-lived bearer capabilities.** Permission is
+  checked before issuance. Links remain usable for 60 seconds even if membership
+  changes; an authenticated streaming proxy would enable checks on every fetch.
+- **One local broker and storage node.** SeaweedFS supplies the tested local S3
+  subset; AWS S3 is still the cloud target. Kafka has no local high availability.
+  Process restart can wait for consumer-group reassignment before delivery
+  resumes. These local tests do not establish AWS operation or scalability.
+
+### Evidence and reading map
+
+`tests/e2e/document-api.mjs` completes real approvals, waits for generation,
+verifies denied outsider download, checks SHA-256/size and parses the downloaded
+DOCX. Browser inspection also received a download event from the product button.
+Seven worker tests use separate disposable PostgreSQL databases to verify
+duplicate scheduling, competing claims, expired leases, stale fencing, retry
+attempts, role boundaries and XML-safe rendering. The broker probe repeats ten
+requests and ten completions and injects a delayed failure: one artifact and one
+success audit remain. This is baseline evidence, not the full plan crash matrix.
+
+Read `services/worker/caseflow_worker/jobs.py` (Python, durable scheduling and
+fencing) and `services/case-api/src/main/java/dev/caseflow/documents/CompletionHandler.java`
+(Java, visible result-state ownership). The component split matters more than
+memorizing the individual SQL statements. See the document evidence directory.
 
 ## Teaching sequence after the build
 

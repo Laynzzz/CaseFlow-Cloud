@@ -1,0 +1,3 @@
+PASS real approval -> Java outbox -> Kafka -> Python DOCX -> worker outbox -> Java completion
+PASS authenticated download authorization, SHA-256/size and parsed Word contents
+Observed statuses: QUEUED -> SUCCEEDED. Synthetic case: 6a616086-0f3a-423c-bbed-3b74421179da

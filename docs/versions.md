@@ -20,6 +20,12 @@ until their integration is introduced.
 | TanStack Query / React Router DOM | 5.102.8 / 7.18.3 | npm package lock and browser journey |
 | React Hook Form / Zod | 7.88.0 / 4.6.5 | npm package lock and draft UI |
 | Prettier | 3.9.6 | Registry version checked September 14; format check executed |
+| Kafka / SeaweedFS | 4.2.1 / 4.47 | Verified registry Linux amd64 digests in Compose; real pipeline |
+| AWS Java SDK | 2.54.18 | Maven metadata, Gradle lock and real local S3 operations |
+| Python | 3.12.10 local | Isolated worker venv and pytest |
+| docxtpl / python-docx | 0.20.2 / 1.2.0 | PyPI, worker requirements.lock and rendered DOCX |
+| psycopg / confluent-kafka | 3.3.5 / 2.15.1 | Locked wheels; PostgreSQL and Kafka checks |
+| boto3 / FastAPI / uvicorn | 1.43.94 / 0.141.1 / 0.53.0 | Exact requirements.lock; running worker and S3 checks |
 
 The first npm attempt with TypeScript 6.0.3 failed peer dependency resolution
 because openapi-typescript declares `^5.x`. Adjusted to 5.9.3 without bypassing

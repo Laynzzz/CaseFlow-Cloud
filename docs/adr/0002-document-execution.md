@@ -1,6 +1,7 @@
 # ADR 0002: document execution and local object storage
 
-Status: accepted design; implementation/verification in progress, September 14.
+Status: implemented locally with baseline verification, September 14.
+Cloud and full release gates remain open.
 
 ## Decision
 
@@ -36,9 +37,17 @@ stay short and work can recover after a process restart. At-least-once delivery
 can repeat events, object writes and execution. Stable IDs, receipts and fencing
 protect business effects; they do not create exactly-once transport.
 
-R1 still requires real template upload/download, duplicate scheduling, lease
-recovery, stale-worker rejection, completion replay and cloud smoke evidence.
-No completion gate is claimed by adding these containers.
+Local template upload/download, duplicate scheduling, lease recovery,
+stale-worker rejection and completion replay now have targeted evidence in
+`docs/evidence/2026-09-14-documents`. R1 still requires cloud smoke and remaining
+browser, operational and resilience acceptance checks.
+
+Compatibility finding: the Java SDK's default chunked upload intermittently
+failed SeaweedFS payload checksum validation at a chunk boundary. The adapter
+now disables chunked encoding and supplies an explicit whole-file SHA-256 header.
+Uploads are already bounded to 10 MB in memory. The resulting local upload,
+validation, immutable copy and download checks pass. AWS compatibility still
+requires its own cloud smoke run.
 
 Sources checked during selection: [Apache Kafka Docker](https://kafka.apache.org/42/getting-started/docker/),
 [SeaweedFS quick start](https://github.com/seaweedfs/seaweedfs),

@@ -1,0 +1,77 @@
+- link "Skip to content":
+  - /url: "#workspace"
+- complementary:
+  - link "CaseFlowCloud":
+    - /url: /
+  - text: Organization
+  - combobox "Organization":
+    - option "Select organization" [disabled]
+    - option "Acme Studio" [selected]
+  - navigation "Main navigation":
+    - link "Purchase requests":
+      - /url: /
+    - link "My account":
+      - /url: /account
+  - strong: finance
+  - generic: approver
+  - button "Sign out"
+- main:
+  - link "← Purchase requests":
+    - /url: /
+  - paragraph: Synthetic Equipment Supply
+  - heading "Video editing laptop" [level=1]
+  - generic: approved
+  - heading "Purchase details" [level=2]
+  - term: Total
+  - definition: USD 4200.00
+  - term: Cost center
+  - definition: CREATIVE-01
+  - term: Business justification
+  - definition: Edit training videos
+  - table:
+    - rowgroup:
+      - row "Item Quantity Unit price":
+        - columnheader "Item"
+        - columnheader "Quantity"
+        - columnheader "Unit price"
+    - rowgroup:
+      - row "Laptop 1 4200.00":
+        - cell "Laptop"
+        - cell "1"
+        - cell "4200.00"
+  - paragraph: Saved version 5 · 9/14/2026, 9:32:15 PM
+  - heading "Approval steps" [level=2]
+  - generic: "01"
+  - heading "First review" [level=3]
+  - paragraph: manager
+  - generic: approved
+  - generic: "02"
+  - heading "Final review" [level=3]
+  - paragraph: finance
+  - generic: approved
+  - heading "Approved document" [level=2]
+  - paragraph: The purchase is approved. Document processing has a separate status.
+  - generic: succeeded
+  - paragraph: Generation attempt 1 · 37 KB
+  - button "Download Word document"
+  - paragraph: Download links expire after 60 seconds. Previously issued links remain usable until they expire.
+  - heading "Discussion and audit history" [level=2]
+  - text: Add a comment
+  - textbox "Add a comment"
+  - button "Post comment" [disabled]
+  - list:
+    - strong: document succeeded
+    - time: 9/14/2026, 9:42:47 PM
+    - strong: case approve
+    - time: 9/14/2026, 9:32:15 PM
+    - strong: case approve
+    - time: 9/14/2026, 9:32:15 PM
+    - strong: case started
+    - time: 9/14/2026, 9:32:15 PM
+    - strong: assignments changed
+    - time: 9/14/2026, 9:32:15 PM
+    - strong: draft updated
+    - time: 9/14/2026, 9:32:15 PM
+    - strong: draft created
+    - time: 9/14/2026, 9:32:15 PM
+  - generic: Development build · Synthetic demonstration data

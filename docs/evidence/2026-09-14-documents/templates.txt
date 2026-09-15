@@ -1,0 +1,2 @@
+PASS upload authorization, declared size, validation, checksum, replay, closed upload and stale publication
+PASS malformed DOCX rejected and unpublished templates hidden from requesters

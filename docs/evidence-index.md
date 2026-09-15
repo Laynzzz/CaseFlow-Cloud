@@ -1,6 +1,40 @@
 # Evidence index
 
-## 2026-09-14: purchase approval checkpoint
+## 2026-09-14: local approved-document checkpoint
+
+Revisions: templates `4e484a6`, worker `b371906`, completion/download API
+`3603851`, browser `a1630ae`, validator hardening `14ec8f8`. PostgreSQL 18.6,
+Kafka 4.2.1, SeaweedFS 4.47, Python 3.12.10; other versions below. Synthetic data.
+
+| Claim | Check | Evidence |
+| --- | --- | --- |
+| Real asynchronous document pipeline and authorized download | `node tests/e2e/document-api.mjs`; validates SHA-256, size and parsed DOCX text | [Pipeline output](evidence/2026-09-14-documents/pipeline.txt) |
+| Scheduling/fencing, retry and schema permissions | Seven pytest checks in disposable PostgreSQL databases, all pass | [JUnit report](evidence/2026-09-14-documents/worker-tests.xml) |
+| Broker redelivery and delayed failure do not duplicate final effects | Ten request redeliveries, ten completion redeliveries, one late failure | [Replay output](evidence/2026-09-14-documents/replay.txt) |
+| Product download button works | In-app browser on an assigned approved case; received browser download event | [Observed page](evidence/2026-09-14-purchases/browser-document.txt) |
+| Restricted DOCX validation and template publication | Four Java validator tests plus live template-api script | Sources in Java documents tests and tests/e2e/template-api.mjs |
+
+The final template API run is also captured in
+[template output](evidence/2026-09-14-documents/templates.txt).
+
+The first completion attempt failed because API role lacked USAGE on worker
+schema. V4 fixes this while preserving base-table restrictions; pending completion
+then applied. Restarting the worker caused a temporary consumer-group reassignment
+delay; a newly approved queued job subsequently completed. This is an observed
+restart, not an exhaustive fault-injection matrix. A Vite transform briefly cached
+an empty file during formatting; restarting the development server restored it.
+The Java SDK's default chunked transfer also exposed a SeaweedFS payload-checksum
+failure at a chunk boundary. Disabling chunked encoding and sending an explicit
+whole-file SHA-256 checksum resolved the upload check. The final template and
+pipeline outputs reflect this adapter correction; AWS remains unverified.
+
+Unfinished: complete admin-to-download browser regression, full crash matrix,
+resource-limited containers, unselected-object garbage collection, operational
+reconciliation, full traces/metrics, cloud, AI and performance gates. R1 is not
+complete until its remaining acceptance criteria pass. Legacy purchases approved
+before template pinning have no renderable snapshot and are identified in the UI.
+
+## 2026-09-14: earlier purchase approval checkpoint
 
 Backend revision `91dd4a6`; browser revision `2e35f6d`. Windows, Java 21,
 PostgreSQL 18.6, Keycloak 26.7.3, Node 22.20.0. Real local database and OIDC;

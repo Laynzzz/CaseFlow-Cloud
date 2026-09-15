@@ -43,12 +43,36 @@ state and assignment permission predicates applied before LIMIT.
 
 Envelope: eventId, eventType, schemaVersion=1, timestamp, tenantId, aggregateId,
 aggregateType=case, aggregateSequence, jobId, attempt, correlationId, causationId,
-traceparent (optional), and input reference/hash. Kafka key is tenantId:caseId.
+traceContext (currently empty; propagation remains planned), and input reference/hash. Kafka key is tenantId:caseId.
 Do not include raw quote/policy text. An event ID is deduplicated at each consumer.
 Scheduling receipt and queued job commit before Kafka offset. Leases use monotonic
 fencing tokens. Attempt-specific object keys prevent overwrites. Final result,
 completion outbox and successful state commit together. Java alone updates case
 and visible job state, checking tenant, job, attempt and prior success.
+
+## Implemented document API
+
+Templates: GET/POST /templates, PUT /templates/{id}/content (octet-stream),
+POST /templates/{id}/finalize and /publish. Mutations require tenant ADMIN;
+content upload is bounded at 10 MB, finalization/publication require a command
+key and expectedVersion. Published versions are visible to tenant members.
+Purchases include templateId, which must reference a published same-tenant
+template before start. V3 adds immutable job input records and worker tables;
+V4 enables the API's result-view schema access.
+
+GET /cases/{id}/documents and /jobs/{id} require current case access.
+POST /cases/{id}/documents/{jobId}/download-url returns a 60-second signed URL
+only after both core success and a selected worker artifact are present.
+Previously issued URLs remain valid until expiry. POST /jobs/{id}/retry requires
+ADMIN, command key and expectedAttempt; only FAILED may retry, preserving job ID.
+
+Worker completion types are document.running, document.retry_wait,
+document.succeeded and document.failed, with status, attempt and fence. Request
+topic is caseflow.jobs.v1; completion topic is caseflow.completions.v1. Invalid
+envelopes/references produce a redacted pointer/hash in caseflow.deadletters.v1;
+unknown future completions are recorded as quarantined. Full operator replay and
+reconciliation are not implemented yet. Five automatic claims bound execution;
+two local execution slots and at most two unexpired leases per tenant.
 
 ## Verification design
 
