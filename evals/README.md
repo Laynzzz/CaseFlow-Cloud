@@ -85,7 +85,7 @@ Each JSONL record contains dataset `id`, `extraction` and `review` job responses
 actual retrieved source/chunk IDs to this dataset's annotated passage IDs. The
 live runner must retain the mapping and raw source/job provenance. Do not fill
 these fields with reference answers. The live runner writes this format; embedding
-comparison remains unfinished. This scorer is an offline diagnostic tool.
+comparison is recorded when explicitly enabled. This scorer is an offline diagnostic tool.
 
 Missing/failed cases stay in field and abstention denominators. A failed job does
 not receive credit for a reference null. Decimal formatting is normalized, while
@@ -133,3 +133,11 @@ source/model/prompt/schema hashes, timing, tokens, retries, estimated cost and
 dated prices. No inferred zero cost when usage is unavailable. Live runs require
 an explicit budget and provider configuration. Mock CI checks validate plumbing
 and permissions; they cannot satisfy quality gates or user-outcome claims.
+
+Supplementary retrieval probes use nine policy passages per query, including
+eight distractors. They are development diagnostics outside the frozen 60/60
+split. Score them with `python evals/score_retrieval_challenges.py --directory
+RUN_DIRECTORY --output NEW_REPORT.json`. The scorer verifies dataset/prediction
+hashes and uses predeclared policy IDs from the fixture, never answers supplied
+by the prediction record. Missing cases remain in denominators. These three
+author-defined examples cannot establish general semantic quality.
