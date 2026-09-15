@@ -33,5 +33,5 @@ if __name__=='__main__':
     parser.add_argument('--output',type=Path,required=True)
     args=parser.parse_args()
     report=score_challenges(args.directory)
-    with args.output.open('x',encoding='utf-8') as output:output.write(json.dumps(report,indent=2)+'\n')
+    with args.output.open('x',encoding='utf-8',newline='\n') as output:output.write(json.dumps(report,indent=2)+'\n')
     print(json.dumps({key:report[key] for key in ('caseCount','recallAt5','knownEmbeddingCostUsd','missingComparisonIds')},indent=2))

@@ -179,7 +179,7 @@ def main():
                   datasetSha256=manifest["files"][args.split+".jsonl"]["sha256"],
                   predictionsSha256=hashlib.sha256(args.predictions.read_bytes()).hexdigest())
     args.output.parent.mkdir(parents=True,exist_ok=True)
-    with args.output.open("x",encoding="utf-8") as output:
+    with args.output.open("x",encoding="utf-8",newline="\n") as output:
         output.write(json.dumps(report,indent=2)+"\n")
     print(f"Wrote {args.output}. This diagnostic report does not mark R2 complete.")
 

@@ -3,3 +3,5 @@
 gradlew text eol=lf
 *.bat text eol=crlf
 *.jar binary
+*.json text eol=lf
+*.jsonl text eol=lf

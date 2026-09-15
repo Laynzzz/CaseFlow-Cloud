@@ -25,6 +25,6 @@ if __name__ == "__main__":
     report=dict(jobIds=sorted(str(id) for id in ids),calls=rows,
                 accountedUsd=str(sum(row["actual_usd"] if row["actual_usd"] is not None else row["reserved_usd"] for row in rows)),
                 scope="Selected synthetic job IDs only; unknown usage retains its reservation")
-    with args.output.open("x",encoding="utf-8") as output:
+    with args.output.open("x",encoding="utf-8",newline="\n") as output:
         output.write(json.dumps(report,default=str,indent=2)+"\n")
     print(f"Exported {len(rows)} calls for {len(ids)} synthetic jobs. No credentials or HTTP headers included.")

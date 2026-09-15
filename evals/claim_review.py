@@ -67,5 +67,5 @@ if __name__=='__main__':
     parser.add_argument('--output',type=Path,required=True)
     args=parser.parse_args()
     result=grade_packet(review_packet(args.directory),json.loads(args.review.read_text(encoding='utf-8')))
-    with args.output.open('x',encoding='utf-8') as output:output.write(json.dumps(result,indent=2)+'\n')
+    with args.output.open('x',encoding='utf-8',newline='\n') as output:output.write(json.dumps(result,indent=2)+'\n')
     print(json.dumps({key:result[key] for key in ('claimSupport','unsupportedClaims','reviewedOutputs','releaseGatePassed')},indent=2))

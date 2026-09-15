@@ -25,7 +25,7 @@ if __name__=='__main__':
              AND o.payload->>'status'='RUNNING') AS first_claim_at
             FROM core.job_requests j LEFT JOIN worker.jobs w USING (tenant_id,job_id)
             WHERE j.job_id=ANY(%s::uuid[]) ORDER BY j.created_at,j.job_id''',(list(ids),)).fetchall()
-    with args.output.open('x',encoding='utf-8') as output:
+    with args.output.open('x',encoding='utf-8',newline='\n') as output:
         output.write(json.dumps(dict(jobIds=sorted(str(id) for id in ids),jobs=rows,
             scope='Selected synthetic assistant jobs; database transaction timestamps, no purchase content.'),default=str,indent=2)+'\n')
     print(f'Exported timing rows for {len(rows)} synthetic jobs.')

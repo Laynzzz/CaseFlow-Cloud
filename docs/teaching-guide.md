@@ -538,3 +538,10 @@ indexed content remains immutable. No second storage format or server endpoint
 was introduced. The real browser check uploaded a USD 70 quote, extracted it,
 then accepted only the supplier name. The existing USD 4200 line items and total
 stayed unchanged, demonstrating explicit field selection and revision checks.
+
+Evidence hashes operate on bytes, not on visually identical JSON. Windows text
+writes originally used CRLF while Git stored LF, making the new timing report's
+call-file hashes differ after checkout. JSON/JSONL now use LF in Git attributes
+and Python exports explicitly write LF. Derived hashes were corrected and checked
+against committed Git bytes; the frozen datasets and prediction bytes did not
+change. This is an example of reproducibility extending beyond model parameters.
