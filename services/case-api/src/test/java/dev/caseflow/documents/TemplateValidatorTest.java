@@ -29,6 +29,8 @@ class TemplateValidatorTest {
     @Test void rejectsExternalRelationshipsAndSplitTokens() {
         assertThrows(Problem.class,()->validator.validate(docx("{{ vendor }}","<Relationships><Relationship TargetMode=\"External\" Target=\"https://example.invalid\"/></Relationships>")));
         assertThrows(Problem.class,()->validator.validate(docx("<r>{{ ven</r><r>dor }}</r>","<Relationships/>")));
+        assertThrows(Problem.class,()->validator.validate(docx("{{ vendor }}","<r:Relationships xmlns:r=\"urn:test\"><r:Relationship TargetMode=\"External\"/></r:Relationships>")));
+        assertThrows(Problem.class,()->validator.validate(docx("<r descr=\"{{ vendor.__class__ }}\">Text</r>","<Relationships/>")));
     }
     @Test void rejectsInvalidArchivesAndEntityDefinitions() {
         assertThrows(Problem.class,()->validator.validate("not a zip".getBytes(StandardCharsets.UTF_8)));

@@ -39,6 +39,7 @@ public class TemplateValidator {
 
     private void validateXml(byte[] bytes,String name) throws Exception {
         var factory=DocumentBuilderFactory.newInstance();
+        factory.setNamespaceAware(true);
         factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl",true);
         factory.setFeature("http://xml.org/sax/features/external-general-entities",false);
         factory.setFeature("http://xml.org/sax/features/external-parameter-entities",false);
@@ -46,22 +47,31 @@ public class TemplateValidator {
         factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_SCHEMA,"");
         factory.setXIncludeAware(false); factory.setExpandEntityReferences(false);
         var document=factory.newDocumentBuilder().parse(new ByteArrayInputStream(bytes));
-        var relationships=document.getElementsByTagName("Relationship");
+        var relationships=document.getElementsByTagNameNS("*","Relationship");
         for(int i=0;i<relationships.getLength();i++) {
             var relation=(org.w3c.dom.Element)relationships.item(i);
             Problem.require(!"External".equalsIgnoreCase(relation.getAttribute("TargetMode")),"External template relationships are unsupported");
         }
         String raw=new String(bytes,StandardCharsets.UTF_8);
-        Problem.require(!raw.contains("macroEnabled") && !raw.contains("altChunk"),"Unsupported Word content");
+        var contentTypes=document.getElementsByTagNameNS("*","Override");
+        for(int i=0;i<contentTypes.getLength();i++) {
+            var type=(org.w3c.dom.Element)contentTypes.item(i);
+            Problem.require(!type.getAttribute("ContentType").contains("macroEnabled"),"Macros are unsupported");
+        }
+        Problem.require(document.getElementsByTagNameNS("*","altChunk").getLength()==0,"Unsupported Word content");
         if (name.startsWith("word/")) {
             String text=document.getDocumentElement().getTextContent();
-            Problem.require(!text.contains("{%") && !text.contains("{#"),"Template statements are unsupported");
-            var matcher=PLACEHOLDER.matcher(text);
-            while(matcher.find()) Problem.require(FIELDS.contains(matcher.group(1)),"Unknown template placeholder");
-            String remainder=matcher.replaceAll("");
-            Problem.require(!remainder.contains("{{") && !remainder.contains("}}"),"Use plain supported placeholders only");
+            validateExpressions(text);
+            validateExpressions(raw);
             // Docxtpl requires a placeholder within one run. Reject markup-split tokens.
             Problem.require(PLACEHOLDER.matcher(raw).results().count()==PLACEHOLDER.matcher(text).results().count(),"Keep each placeholder in a single Word text run");
         }
+    }
+    private void validateExpressions(String text) {
+        Problem.require(!text.contains("{%") && !text.contains("{#"),"Template statements are unsupported");
+        var matcher=PLACEHOLDER.matcher(text);
+        while(matcher.find()) Problem.require(FIELDS.contains(matcher.group(1)),"Unknown template placeholder");
+        String remainder=matcher.replaceAll("");
+        Problem.require(!remainder.contains("{{") && !remainder.contains("}}"),"Use plain supported placeholders only");
     }
 }
