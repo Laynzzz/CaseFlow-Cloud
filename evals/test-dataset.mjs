@@ -18,3 +18,10 @@ test('held-out run refuses absent, partial or stale human reference review',()=>
   review.files['heldout.jsonl'].sha256='wrong';
   assert.throws(()=>requireAnnotationReview(manifest,review),/exact frozen/);
 });
+
+test('AI reference review cannot masquerade as human verification',()=>{
+  const review={status:'verified',datasetVersion:manifest.version,reviewer:'Codex AI assistant',
+    reviewedAt:'2026-09-15',method:'ai-reference-review-v1',files:structuredClone(manifest.files)};
+  for(const file of Object.values(review.files))file.reviewedCount=file.count;
+  assert.throws(()=>requireAnnotationReview(manifest,review),/human reference review/);
+});
