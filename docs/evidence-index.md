@@ -16,7 +16,7 @@ suggestion acceptance. Live calls remain disabled; no AI quality is claimed.
 | Existing approval-to-DOCX still works | Real document regression after R2 migrations | [Observed API checks](evidence/2026-09-15-r2/api-checks.txt) |
 
 Browser checks observed policy source text, historical policy search and the
-disabled-live-AI manual fallback on the running React app. Upload file-picker and
+[disabled-live-AI manual fallback](evidence/2026-09-15-r2/browser-fallback.txt) on the running React app. Upload file-picker and
 positive model-to-acceptance browser regression still need verification. A Vite
 transform cached an empty new module during formatting; restarting this project's
 development server restored it without changing product code.

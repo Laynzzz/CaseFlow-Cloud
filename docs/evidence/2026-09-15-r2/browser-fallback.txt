@@ -1,0 +1,109 @@
+- link "Skip to content":
+  - /url: "#workspace"
+- complementary:
+  - link "CaseFlowCloud":
+    - /url: /
+  - text: Organization
+  - combobox "Organization":
+    - option "Select organization" [disabled]
+    - option "Acme Studio" [selected]
+  - navigation "Main navigation":
+    - link "Purchase requests":
+      - /url: /
+    - link "New request":
+      - /url: /new
+    - link "Administration":
+      - /url: /admin
+    - link "My account":
+      - /url: /account
+  - strong: admin
+  - generic: admin · requester
+  - button "Sign out"
+- main [active]:
+  - link "← Purchase requests":
+    - /url: /
+  - paragraph: Synthetic quote vendor
+  - heading "Equipment" [level=1]
+  - generic: active
+  - heading "Purchase details" [level=2]
+  - term: Total
+  - definition: USD 4200.00
+  - term: Cost center
+  - definition: OPS-TEST
+  - term: Business justification
+  - definition: Synthetic R2 check
+  - table:
+    - rowgroup:
+      - row "Item Quantity Unit price":
+        - columnheader "Item"
+        - columnheader "Quantity"
+        - columnheader "Unit price"
+    - rowgroup:
+      - row "Equipment 2 2100.00":
+        - cell "Equipment"
+        - cell "2"
+        - cell "2100.00"
+  - paragraph: Saved version 5 · 9/15/2026, 2:40:19 AM
+  - heading "Approval steps" [level=2]
+  - generic: "01"
+  - heading "First review" [level=3]
+  - text: Reviewer for step 1
+  - combobox "Reviewer for step 1":
+    - option "Select reviewer"
+    - option "finance"
+    - option "manager" [selected]
+  - generic: "02"
+  - heading "Final review" [level=3]
+  - text: Reviewer for step 2
+  - combobox "Reviewer for step 2":
+    - option "Select reviewer"
+    - option "finance" [selected]
+    - option "manager"
+  - button "Save reviewers"
+  - heading "Policies for this purchase" [level=2]
+  - paragraph: These policy versions stay fixed for this purchase, even if an administrator later deactivates them.
+  - strong: Synthetic equipment policy
+  - paragraph: Pinned version 2
+  - generic: deactivated
+  - button "Read policy"
+  - text: Search policy text
+  - textbox "Search policy text":
+    - /placeholder: "Example: cost center"
+  - button "Find passages"
+  - paragraph: Keyword search returns up to five matching passages. This is source text, not an AI interpretation.
+  - heading "Vendor quotes" [level=2]
+  - paragraph: Attach the quote that supports this purchase. Your saved purchase details stay under your control.
+  - button "Check source status"
+  - strong: Synthetic quote
+  - paragraph: 1 KB · version 1
+  - generic: indexed
+  - button "View source text"
+  - heading "AI review assistant" [level=2]
+  - paragraph: Experimental assistance. Check each suggestion against its source. You choose what to save; people make every approval decision.
+  - status: Live AI testing is not configured. You can enter purchase details manually and read or search the policies above.
+  - button "Create policy review" [disabled]
+  - button "Check AI status"
+  - heading "Discussion and audit history" [level=2]
+  - text: Add a comment
+  - textbox "Add a comment"
+  - button "Post comment" [disabled]
+  - list:
+    - strong: case started
+    - time: 9/15/2026, 2:40:19 AM
+    - strong: assignments changed
+    - time: 9/15/2026, 2:40:19 AM
+    - strong: draft updated
+    - time: 9/15/2026, 2:40:19 AM
+    - strong: policies refreshed
+    - time: 9/15/2026, 2:40:18 AM
+    - strong: ingestion succeeded
+    - time: 9/15/2026, 2:40:18 AM
+    - strong: ingestion running
+    - time: 9/15/2026, 2:40:18 AM
+    - strong: source finalized
+    - time: 9/15/2026, 2:40:17 AM
+    - strong: source upload created
+    - time: 9/15/2026, 2:40:17 AM
+    - strong: draft created
+    - time: 9/15/2026, 2:40:17 AM
+  - generic: Development build · Synthetic demonstration data
