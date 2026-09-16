@@ -7,6 +7,23 @@ from scoring import FIELDS, load_dataset, normalize, outcome, score
 from score_run import score_run
 
 
+def supplied_inputs(row):
+    """Use content identities, not fresh tenant/source UUIDs, across runs."""
+    extraction = outcome(row, 'extraction') or {}
+    source = extraction.get('sourceSha256')
+    quote_hash = row.get('quote', {}).get('sha256')
+    if source and quote_hash and source != quote_hash:
+        raise ValueError('Supplied inputs changed: extraction source differs from saved quote')
+    policies = row.get('policySources')
+    policy_identity = None
+    if isinstance(policies, list) and all(
+        policy.get('passageId') and policy.get('source', {}).get('sha256') for policy in policies
+    ):
+        policy_identity = sorted((policy['passageId'], policy['source']['sha256']) for policy in policies)
+    return dict(extractionSource=source or quote_hash,
+                manualPurchase=row.get('manualPurchase'), policySources=policy_identity)
+
+
 def compare(baseline, repeat, plan_path):
     # Validate each run's selection and hashes before pairing their results.
     reports = [score_run(path) for path in (baseline, repeat)]
@@ -18,7 +35,7 @@ def compare(baseline, repeat, plan_path):
     ids = plan['selectedIds']
     if reports[1]['selectedIds'] != ids or not set(ids).issubset(reports[0]['selectedIds']):
         raise ValueError('Repeat differs from the declared subset')
-    records = [{row['id']: row for row in map(json.loads, (path/'predictions.jsonl').read_text().splitlines())}
+    records = [{row['id']: row for row in map(json.loads, (path/'predictions.jsonl').read_text(encoding='utf-8').splitlines())}
                for path in (baseline, repeat)]
     manifest,splits=load_dataset(version=plan['datasetVersion'])
     cases=[case for case in splits[reports[0]['split']] if case['id'] in ids]
@@ -27,6 +44,13 @@ def compare(baseline, repeat, plan_path):
     changed = []; comparisons = []
     for case_id in ids:
         pair = [rows.get(case_id, {}) for rows in records]
+        inputs = [supplied_inputs(row) for row in pair]
+        unverified = []
+        for key in inputs[0]:
+            if any(item[key] is None for item in inputs):
+                unverified.append(key)
+            elif inputs[0][key] != inputs[1][key]:
+                raise ValueError(f'Supplied inputs changed: {case_id} {key}')
         for kind in ('extraction', 'review'):
             for row in pair:
                 result = outcome(row, kind)
@@ -46,6 +70,8 @@ def compare(baseline, repeat, plan_path):
             if values[0] != values[1]:fields.append(field)
         reviews = [outcome(row, 'review') for row in pair]
         comparison = dict(id=case_id, changedExtractionFields=fields,
+                          inputComparability='unverified' if unverified else 'verified',
+                          unverifiedInputs=unverified,
                           extractionStatuses=[row.get('extraction', {}).get('status', 'MISSING') for row in pair],
                           reviewStatuses=[row.get('review', {}).get('status', 'MISSING') for row in pair])
         if all(reviews):
@@ -68,6 +94,7 @@ def compare(baseline, repeat, plan_path):
                 abstentionsChanged=sum(row['abstentionChanged'] is True for row in comparisons),
                 releaseGatePassed=False,
                 limitations=['One repeat of ten cases from one family; not an estimate of all-model variability.',
+                             'Missing input provenance is marked unverified; such differences cannot establish model variability.',
                              'Text differences are not automatically factual errors; citation IDs differ by tenant and are not compared.',
                              'Both runs share a local worker; timings are not a controlled performance comparison.'])
 
