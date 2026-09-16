@@ -8,8 +8,10 @@ evidence index. Planned behavior is not proof of working behavior.
 ## Product and scope
 
 A requester submits a purchase with a vendor quote. Assigned people review it in
-order. Final approval queues an immutable Word document. AI will suggest quote
+order. Final approval queues an immutable Word document. AI suggests quote
 fields and cited policy findings; people accept suggestions and make decisions.
+Its quality remains experimental. Start with [the current architecture map](architecture.md)
+for a short overview; the dated sections below retain the implementation history.
 The product manages authorization to buy, not payments, ordering, or delivery.
 
 ## Component map
@@ -19,7 +21,7 @@ The product manages authorization to buy, not payments, ordering, or delivery.
 | `apps/web` | TypeScript, React, Vite | Browser; Vite is a local development server/build tool | Screens and user interactions |
 | `services/case-api` | Java 21, Spring Boot, Spring Security, Spring Data JDBC | Backend server | Business rules, permissions, transactional state changes |
 | `db/migrations` | SQL, Flyway | Applied to PostgreSQL by the migration account | Ordered schema changes and explicit privileges |
-| `services/worker` | Python 3.12 | Background service | Durable document execution; ingestion and AI still planned |
+| `services/worker` | Python 3.12 | Background service | Durable document execution, ingestion and AI jobs |
 | Kafka | Message broker | Infrastructure | Carries work and completion events |
 | Object storage | SeaweedFS locally, S3 planned in AWS | Infrastructure | Immutable uploaded/generated files |
 | Keycloak/OIDC | Identity provider and standard protocol | Separate identity service | Sign-in; the API still owns organization membership permissions |
