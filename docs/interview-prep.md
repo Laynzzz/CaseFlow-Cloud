@@ -354,3 +354,23 @@ experimental, with no independent human validation or real-user outcome claim.
 Evidence: docs/evidence/2026-09-15-r2/heldout-summary.md; evals/claim_review.py;
 evals/compare_repeated_run.py; browser-file-and-fallback.json. The fresh evaluation
 suite has 41 Python tests; tests establish scorer behavior, not model accuracy.
+
+## Review quality and ordinary code (2026-09-16)
+
+- **Which AI errors can ordinary code prevent?** The application knows whether
+  the saved description is empty and whether zero was supplied. Review schema v5
+  permits only actually missing field names, and post-validation rejects a false
+  report. It cannot prove whether a policy sentence supports a new obligation.
+  Follow-up: constrain and validate objective facts; evaluate semantic claims.
+- **Why keep separate prompt versions?** A review-instruction change should not
+  silently alter quote extraction. Each task records the actual prompt hash and
+  version, and repetition checks validate the two task versions separately.
+  Follow-up: valid JSON and reproducible configuration do not make output deterministic.
+- **Did the prompt fix establish general accuracy?** No. The initial ten-case
+  development results improved, but these examples are already part of development.
+  The old held-out baseline remains intact, and broader/fresh evidence is required.
+  Follow-up: test assertions outside the scored summary too; one missing-field
+  list was wrong despite supported summary/finding text.
+
+Evidence and trade-offs: [review-quality notes](r2-review-quality.md),
+[architecture overview](architecture.md), and their linked code and raw runs.
