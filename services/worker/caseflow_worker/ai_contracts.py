@@ -5,6 +5,8 @@ from pydantic import BaseModel, ConfigDict, Field
 from typing import Annotated
 
 SCHEMA_VERSION = "purchase-assistant-v4"
+REVIEW_SCHEMA_VERSION = "purchase-review-v5"
+PURCHASE_FIELDS = ('vendor', 'description', 'currency', 'total', 'costCenter', 'justification', 'lineItems')
 
 
 class StrictModel(BaseModel):
@@ -108,7 +110,14 @@ def validate_extraction(result: Extraction, chunks):
     return result
 
 
-def validate_review(result: Review, chunks):
+def missing_purchase_fields(purchase):
+    """Empty data is observable; no inference about policy requirements or validity."""
+    return [field for field in PURCHASE_FIELDS if purchase.get(field) is None
+            or purchase.get(field) == []
+            or isinstance(purchase.get(field), str) and not purchase[field].strip()]
+
+
+def validate_review(result: Review, chunks, purchase):
     validate_citations(result.citations, chunks)
     for finding in result.policy_findings:
         validate_citations(finding.citations, chunks)
@@ -116,4 +125,6 @@ def validate_review(result: Review, chunks):
         raise ValueError("EXPECTED_ABSTENTION")
     if result.policy_findings and not result.citations:
         raise ValueError("UNSOURCED_REVIEW")
+    if not set(result.missing_information).issubset(missing_purchase_fields(purchase)):
+        raise ValueError('INVALID_MISSING_INFORMATION')
     return result

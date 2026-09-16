@@ -45,8 +45,24 @@ def test_foreign_or_fabricated_citations_rejected():
 
 def test_no_policy_evidence_requires_abstention():
     result=Review(summary="No policy evidence is available.",missing_information=[],policy_findings=[],citations=[],insufficient_evidence=True)
-    assert validate_review(result,{})
+    assert validate_review(result,{},{})
     result.insufficient_evidence=False
-    with pytest.raises(ValueError,match="EXPECTED_ABSTENTION"):validate_review(result,{})
+    with pytest.raises(ValueError,match="EXPECTED_ABSTENTION"):validate_review(result,{},{})
     with pytest.raises(ValidationError):
         Review.model_validate(dict(summary="Approve",missing_information=[],policy_findings=[],citations=[],insufficient_evidence=True,approve=True))
+
+
+@pytest.mark.parametrize('field',['description','total','currency','unknownField'])
+def test_review_cannot_report_provided_or_unknown_fields_missing(field):
+    facts=dict(description='Equipment kit',total='0.00',currency='USD',vendor='',lineItems=[])
+    result=Review(summary='No policy evidence.',missing_information=[field],
+                  policy_findings=[],citations=[],insufficient_evidence=True)
+    with pytest.raises(ValueError,match='INVALID_MISSING_INFORMATION'):
+        validate_review(result,{},facts)
+
+
+def test_review_missing_fields_include_only_absent_or_empty_values():
+    facts=dict(description='Equipment kit',total=0,currency='USD',vendor='',lineItems=[],justification=None)
+    result=Review(summary='No policy evidence.',missing_information=['vendor','lineItems','justification','costCenter'],
+                  policy_findings=[],citations=[],insufficient_evidence=True)
+    assert validate_review(result,{},facts) is result

@@ -6,7 +6,8 @@ import time
 import re
 from .provider_transport import BoundedProvider,safe_error_code
 from . import ai_budget
-from .ai_contracts import Extraction, Review, SCHEMA_VERSION, validate_extraction, validate_review
+from .ai_contracts import (Extraction, Review, SCHEMA_VERSION, REVIEW_SCHEMA_VERSION,
+                           missing_purchase_fields, validate_extraction, validate_review)
 
 PROMPT_VERSION = "purchase-assistant-2026-09-15-v5"
 REVIEW_PROMPT_VERSION = "purchase-review-2026-09-16-v6"
@@ -75,6 +76,13 @@ def request(job, kind, facts, chunks, authorize, client=None):
                    evidence=[dict(chunkId=k,**v) for k,v in chunks.items()])
     user_text=json.dumps(payload,ensure_ascii=True,sort_keys=True,separators=(",",":"))
     schema_json=schema.model_json_schema()
+    if kind=="REVIEW":
+        missing = missing_purchase_fields(facts)
+        missing_schema = schema_json['properties']['missing_information']
+        if missing:
+            missing_schema['items']['enum'] = missing
+        else:
+            missing_schema['maxItems'] = 0
     if chunks:
         # Constrain citation IDs to this request's authorized evidence, before post-validation.
         schema_json["$defs"]["Citation"]["properties"]["chunkId"]["enum"]=list(chunks)
@@ -123,7 +131,8 @@ def request(job, kind, facts, chunks, authorize, client=None):
         raise ValueError("AI_USAGE_UNAVAILABLE")
     if input_tokens>ai_budget.MAX_INPUT_TOKENS or output_tokens>ai_budget.MAX_OUTPUT_TOKENS:
         raise ValueError("AI_TOKEN_LIMIT")
-    provenance=dict(model=response.model,promptVersion=prompt_version,schemaVersion=SCHEMA_VERSION,
+    provenance=dict(model=response.model,promptVersion=prompt_version,
+                    schemaVersion=REVIEW_SCHEMA_VERSION if kind=="REVIEW" else SCHEMA_VERSION,
                     promptHash=hashlib.sha256((system+user_text).encode()).hexdigest(),
                     schemaHash=hashlib.sha256(json.dumps(schema_json,sort_keys=True).encode()).hexdigest())
     raw=response.output_text
@@ -131,7 +140,8 @@ def request(job, kind, facts, chunks, authorize, client=None):
                   truncated=len(raw)>24000)
     try:
         result=schema.model_validate_json(response.output_text)
-        (validate_extraction if kind=="EXTRACTION" else validate_review)(result,chunks)
+        if kind=="EXTRACTION":validate_extraction(result,chunks)
+        else:validate_review(result,chunks,facts)
     except Exception as error:
         detail=str(error)
         code=detail if re.fullmatch(r"[A-Z_]{1,80}",detail) else "AI_SCHEMA_INVALID"

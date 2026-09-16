@@ -77,6 +77,32 @@ def test_empty_policy_evidence_requires_abstention_in_provider_schema(event,isol
     assert json.loads(client.arguments["input"][1]["content"])["purchase"]=={"description":"Synthetic equipment"}
 
 
+def test_false_missing_field_is_rejected_and_recorded(event,isolated_database):
+    jobs.schedule(event);job=jobs.claim(uuid4());enable(isolated_database,1)
+    client=FakeProvider(json.dumps(dict(summary='Equipment kit.',missing_information=['description'],
+        policy_findings=[],citations=[],insufficient_evidence=True)))
+    with pytest.raises(ValueError,match='INVALID_AI_OUTPUT'):
+        ai_provider.request(job,'REVIEW',dict(description='Equipment kit',total='0.00'),{},lambda:None,client)
+    allowed=client.arguments['text']['format']['schema']['properties']['missing_information']['items']['enum']
+    assert 'description' not in allowed and 'total' not in allowed and 'costCenter' in allowed
+    from caseflow_worker.settings import database
+    with database() as db:
+        row=db.execute('SELECT error_code,response_evidence FROM worker.ai_calls').fetchone()
+    assert row['error_code']=='INVALID_MISSING_INFORMATION'
+    assert row['response_evidence']['schemaVersion']=='purchase-review-v5'
+
+
+def test_complete_purchase_schema_forbids_missing_fields(event,isolated_database):
+    jobs.schedule(event);job=jobs.claim(uuid4());enable(isolated_database,1)
+    facts=dict(description='Gift',vendor='Synthetic',total='0.00',currency='USD',costCenter='OPS',
+               justification='Trial',lineItems=[dict(description='Gift',quantity='1',unitPrice='0.00')])
+    client=FakeProvider(json.dumps(dict(summary='No policy evidence.',missing_information=[],
+        policy_findings=[],citations=[],insufficient_evidence=True)))
+    ai_provider.request(job,'REVIEW',facts,{},lambda:None,client)
+    schema=client.arguments['text']['format']['schema']['properties']['missing_information']
+    assert schema['maxItems']==0 and 'enum' not in schema['items']
+
+
 def test_timeout_has_no_hidden_transport_retry(event,isolated_database):
     jobs.schedule(event);job=jobs.claim(uuid4());enable(isolated_database,1)
     client=FakeProvider("",fail=True)
