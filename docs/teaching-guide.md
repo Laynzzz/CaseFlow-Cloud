@@ -610,3 +610,36 @@ verification, not a user pilot, OS-dialog mouse test, or production outage.
 See docs/evidence/2026-09-15-r2/heldout-summary.md for commands, counts, costs,
 limitations, and remaining work. Preserve frozen results and review provenance;
 never lower targets or relabel old held-out data to hide an evaluation miss.
+
+## Narrow an AI task and validate observable facts (2026-09-16)
+
+A review can correctly quote a cost-center rule and still invent requirements in
+its summary. The v5 development failures showed that asking for missing purchase
+information did not sufficiently separate observations from policy obligations.
+Review prompt v6 now states that boundary explicitly; extraction instructions
+remain unchanged. This is prompt guidance, not proof that every sentence is true.
+
+One prompt-only development response still listed the already populated
+description as missing. That does not need an AI judge: the saved purchase
+provides a direct answer. Review schema v5 supplies the allowed empty-field names
+to the provider, and the worker rejects any false report after generation. A
+recorded zero remains present. The rejected response and its cost are retained;
+the system does not silently edit it into an apparently valid model result.
+
+This is an implementation choice within the planned pipeline, not a new agent
+framework or service. The trade-off is less flexible interpretation of "missing"
+and possible failed reviews, in exchange for a checkable list. It does not decide
+which fields policy requires or force the model to mention every empty field.
+The manual editor remains the fallback.
+
+Versions are specific to each task. Hashes cover the instructions and dynamic
+schema actually sent, and input admission includes their size. Repeat evaluation
+accepts separate extraction/review versions while rejecting an unexpected change.
+Different tenant-specific citation IDs are expected across synthetic runs, so
+raw prompt/schema hashes alone cannot be used to declare configuration drift.
+
+See [the quality evidence and commands](r2-review-quality.md), the Python
+[provider adapter](../services/worker/caseflow_worker/ai_provider.py), and
+[validation contracts](../services/worker/caseflow_worker/ai_contracts.py).
+Unit tests check application behavior; graded development output measures the
+model on those examples. Neither substitutes for a fresh held-out assessment.

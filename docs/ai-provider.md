@@ -1,5 +1,11 @@
 # R2 provider and budget contract
 
+Current review changes, 2026-09-16: [review-quality notes](r2-review-quality.md)
+describe prompt v6 and review schema v5, task-specific version/hash recording,
+and rejection of false missing-field reports. Extraction retains prompt v5 and
+schema v4. The dated sections below retain the earlier implementation history;
+current acceptance status is maintained in [the R2 map](r2-status.md).
+
 Implementation status, 2026-09-15: typed extraction/review validation, a single
 OpenAI transport adapter, and a PostgreSQL spend ledger are connected to durable
 application jobs and selected-field acceptance screens. Synthetic transport and
