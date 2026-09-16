@@ -1,0 +1,36 @@
+{
+  "declaredAt": "2026-09-16T06:06:07.977236+00:00",
+  "codeRevision": "2cb3494e54078677e652e690fd89cf7d039eee37",
+  "datasetVersion": "synthetic-v1",
+  "split": "development",
+  "selectedIds": [
+    "equipment-001",
+    "equipment-002",
+    "equipment-003",
+    "equipment-004",
+    "equipment-005",
+    "equipment-006",
+    "equipment-007",
+    "equipment-008",
+    "equipment-009",
+    "equipment-010"
+  ],
+  "selection": "First ten frozen development cases; all five categories in one family.",
+  "extractionPromptVersion": "purchase-assistant-2026-09-15-v5",
+  "reviewPromptVersion": "purchase-review-2026-09-16-v6",
+  "model": "gpt-4.1-mini-2025-04-14",
+  "compareRetrieval": false,
+  "baseline": "docs/evidence/2026-09-15-r2/development-v5-full",
+  "budget": "Existing shared USD 10 lifetime ledger; no new allowance. Current accounted USD 0.358652.",
+  "claimRubric": "ai-semantic-claims-2026-09-15-v1",
+  "humanVerified": false,
+  "releaseGatePassed": false,
+  "limitations": [
+    "Development diagnostic, not a fresh held-out test.",
+    "One family only; extraction sampling is unchanged but may vary.",
+    "Both successful summaries and findings require actual AI claim review; no auto-labeling."
+  ],
+  "extractionSchemaVersion": "purchase-assistant-v4",
+  "reviewSchemaVersion": "purchase-review-v5",
+  "purpose": "Verify the same ten development cases after adding source-derived missing-field schema constraints and post-validation. Preserve earlier prompt-only run separately."
+}
