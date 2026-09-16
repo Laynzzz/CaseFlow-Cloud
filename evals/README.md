@@ -208,3 +208,7 @@ both runs. Different tenant-specific citation IDs are excluded from text compari
 Missing/failed results retain their denominators and separate statuses. Wording
 changes are not automatically errors; one repeated family cannot establish global
 model variability. The actual declaration is in the R2 evidence folder.
+Plans may specify `extractionPromptVersion` and `reviewPromptVersion` separately;
+the legacy `promptVersion` remains the fallback for either task. Every successful
+result must match its declared version, even when the two tasks use different
+instructions.

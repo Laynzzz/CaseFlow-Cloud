@@ -52,9 +52,12 @@ def compare(baseline, repeat, plan_path):
             elif inputs[0][key] != inputs[1][key]:
                 raise ValueError(f'Supplied inputs changed: {case_id} {key}')
         for kind in ('extraction', 'review'):
+            expected_prompt = plan.get(kind+'PromptVersion', plan.get('promptVersion'))
+            if not isinstance(expected_prompt, str) or not expected_prompt:
+                raise ValueError('Plan must declare a prompt version for each task')
             for row in pair:
                 result = outcome(row, kind)
-                if result and result.get('promptVersion') != plan['promptVersion']:
+                if result and result.get('promptVersion') != expected_prompt:
                     raise ValueError('Prompt changed between repetitions')
             successful = [outcome(row, kind) for row in pair]
             if all(successful) and any(successful[0].get(key) != successful[1].get(key)

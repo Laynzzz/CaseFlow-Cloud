@@ -89,3 +89,18 @@ def test_reads_non_ascii_predictions_as_utf8(tmp_path):
     rows[0]['review']['result']['output']['summary']='采购说明 — café'
     write(baseline,rows);write(repeat,rows[:1])
     assert compare(baseline,repeat,plan)['summariesChanged']==0
+
+
+def test_task_specific_prompt_versions_allow_frozen_repeat_and_reject_drift(tmp_path):
+    baseline,repeat,plan,rows,write=fixture(tmp_path)
+    declared=json.loads(plan.read_text(encoding='utf-8'))
+    declared['extractionPromptVersion']=declared.pop('promptVersion')
+    declared['reviewPromptVersion']='review-v2'
+    plan.write_text(json.dumps(declared),encoding='utf-8')
+    for row in rows:row['review']['result']['promptVersion']='review-v2'
+    write(baseline,rows);write(repeat,rows[:1])
+    assert compare(baseline,repeat,plan)['summariesChanged']==0
+    rows[0]['review']['result']['promptVersion']='review-v3'
+    write(repeat,rows[:1])
+    with pytest.raises(ValueError,match='Prompt changed'):
+        compare(baseline,repeat,plan)
