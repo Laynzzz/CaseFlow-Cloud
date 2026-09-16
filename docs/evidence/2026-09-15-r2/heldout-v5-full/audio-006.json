@@ -1,0 +1,103 @@
+{
+  "id": "audio-006",
+  "startedAt": "2026-09-16T03:37:56.620Z",
+  "sourceMap": {
+    "20de1a22-c314-4ae9-8804-9d1cb47bc170": "audio-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "audio-p1",
+      "source": {
+        "id": "20de1a22-c314-4ae9-8804-9d1cb47bc170",
+        "kind": "POLICY",
+        "name": "Synthetic audio-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 67,
+        "sha256": "7c688e1502798bf62d8f70fe55466b62e270f5cc3be4f674ea0709ae3d600296",
+        "jobId": "4f769a4a-19fc-4602-a0f4-09640ecaec1d",
+        "failureCode": null
+      },
+      "chunks": {
+        "items": [
+          {
+            "id": "6b3d5dfa-fd2c-5a2a-9b85-42bcd2d2ac68",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 67,
+            "text": "Before an audio request is approved, finance needs its cost center.",
+            "sha256": "7c688e1502798bf62d8f70fe55466b62e270f5cc3be4f674ea0709ae3d600296"
+          }
+        ],
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "source": {
+          "id": "20de1a22-c314-4ae9-8804-9d1cb47bc170",
+          "kind": "POLICY",
+          "name": "Synthetic audio-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 67,
+          "sha256": "7c688e1502798bf62d8f70fe55466b62e270f5cc3be4f674ea0709ae3d600296",
+          "jobId": "4f769a4a-19fc-4602-a0f4-09640ecaec1d",
+          "failureCode": null
+        }
+      }
+    }
+  ],
+  "tenantId": "84173e3f-c47e-48a0-80bb-ae07bd971175",
+  "caseId": "c891da3a-ac05-4863-92cd-0349e7844776",
+  "quote": {
+    "id": "90b54553-5734-4584-88f3-9867fb16aeeb",
+    "kind": "QUOTE",
+    "name": "Synthetic audio-006 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "c891da3a-ac05-4863-92cd-0349e7844776",
+    "mediaType": "text/plain",
+    "byteSize": 180,
+    "sha256": "71b1546804e974a8e390c93604c0d0d029a7b6b59c1036f56d5d2629623fa0d6",
+    "jobId": "448d8ee1-6ef7-4700-ac43-76e7c947d79b",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "20de1a22-c314-4ae9-8804-9d1cb47bc170",
+        "name": "Synthetic audio-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Audio kit",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "7f422082-983d-425a-876e-0bee444bbeda",
+    "kind": "EXTRACTION",
+    "status": "FAILED",
+    "failureCode": "AI_PROVIDER_UNAVAILABLE",
+    "revision": 2,
+    "stale": false,
+    "result": null
+  },
+  "retrievedPassageIds": [],
+  "finishedAt": "2026-09-16T03:38:11.490Z"
+}

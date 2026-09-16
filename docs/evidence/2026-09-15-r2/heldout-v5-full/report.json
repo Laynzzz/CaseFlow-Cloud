@@ -1,0 +1,2354 @@
+{
+  "caseCount": 60,
+  "recordedCaseCount": 6,
+  "missingCaseIds": [
+    "audio-007",
+    "audio-008",
+    "audio-009",
+    "audio-010",
+    "display-001",
+    "display-002",
+    "display-003",
+    "display-004",
+    "display-005",
+    "display-006",
+    "display-007",
+    "display-008",
+    "display-009",
+    "display-010",
+    "lab-001",
+    "lab-002",
+    "lab-003",
+    "lab-004",
+    "lab-005",
+    "lab-006",
+    "lab-007",
+    "lab-008",
+    "lab-009",
+    "lab-010",
+    "safety-001",
+    "safety-002",
+    "safety-003",
+    "safety-004",
+    "safety-005",
+    "safety-006",
+    "safety-007",
+    "safety-008",
+    "safety-009",
+    "safety-010",
+    "shipping-001",
+    "shipping-002",
+    "shipping-003",
+    "shipping-004",
+    "shipping-005",
+    "shipping-006",
+    "shipping-007",
+    "shipping-008",
+    "shipping-009",
+    "shipping-010",
+    "tools-001",
+    "tools-002",
+    "tools-003",
+    "tools-004",
+    "tools-005",
+    "tools-006",
+    "tools-007",
+    "tools-008",
+    "tools-009",
+    "tools-010"
+  ],
+  "extractionMismatches": [
+    {
+      "id": "audio-005",
+      "field": "vendor",
+      "expected": "Synthetic Audio Works 5",
+      "proposed": "Synthetic Audio Works",
+      "proposalPresent": true
+    },
+    {
+      "id": "audio-006",
+      "field": "vendor",
+      "expected": "Synthetic Audio Works 6",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "audio-006",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "audio-006",
+      "field": "total",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "audio-006",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Audio kit",
+          "quantity": "6",
+          "unitPrice": "325.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "audio-007",
+      "field": "vendor",
+      "expected": "Synthetic Audio Works 7",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "audio-007",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "audio-007",
+      "field": "total",
+      "expected": "2275.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "audio-007",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Audio kit",
+          "quantity": "7",
+          "unitPrice": "325.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "audio-008",
+      "field": "vendor",
+      "expected": "Synthetic Audio Works 8",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "audio-008",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "audio-008",
+      "field": "total",
+      "expected": "2600.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "audio-008",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Audio kit",
+          "quantity": "8",
+          "unitPrice": "325.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "audio-009",
+      "field": "vendor",
+      "expected": "Synthetic Audio Works 9",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "audio-009",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "audio-009",
+      "field": "total",
+      "expected": "2925.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "audio-009",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Audio kit",
+          "quantity": "9",
+          "unitPrice": "325.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "audio-010",
+      "field": "vendor",
+      "expected": "Synthetic Audio Works 10",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "audio-010",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "audio-010",
+      "field": "total",
+      "expected": "3250.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "audio-010",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Audio kit",
+          "quantity": "10",
+          "unitPrice": "325.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-001",
+      "field": "vendor",
+      "expected": "Synthetic Tools Works 1",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-001",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-001",
+      "field": "total",
+      "expected": "350.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-001",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Tools kit",
+          "quantity": "1",
+          "unitPrice": "350.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-002",
+      "field": "vendor",
+      "expected": "Synthetic Tools Works 2",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-002",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-002",
+      "field": "total",
+      "expected": "700.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-002",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Tools kit",
+          "quantity": "2",
+          "unitPrice": "350.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-003",
+      "field": "vendor",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-003",
+      "field": "currency",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-003",
+      "field": "total",
+      "expected": "1050.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-003",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Tools kit",
+          "quantity": "3",
+          "unitPrice": "350.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-004",
+      "field": "vendor",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-004",
+      "field": "currency",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-004",
+      "field": "total",
+      "expected": "1400.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-004",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Tools kit",
+          "quantity": "4",
+          "unitPrice": "350.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-005",
+      "field": "vendor",
+      "expected": "Synthetic Tools Works 5",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-005",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-005",
+      "field": "total",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-005",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Tools kit",
+          "quantity": "5",
+          "unitPrice": "350.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-006",
+      "field": "vendor",
+      "expected": "Synthetic Tools Works 6",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-006",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-006",
+      "field": "total",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-006",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Tools kit",
+          "quantity": "6",
+          "unitPrice": "350.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-007",
+      "field": "vendor",
+      "expected": "Synthetic Tools Works 7",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-007",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-007",
+      "field": "total",
+      "expected": "2450.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-007",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Tools kit",
+          "quantity": "7",
+          "unitPrice": "350.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-008",
+      "field": "vendor",
+      "expected": "Synthetic Tools Works 8",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-008",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-008",
+      "field": "total",
+      "expected": "2800.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-008",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Tools kit",
+          "quantity": "8",
+          "unitPrice": "350.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-009",
+      "field": "vendor",
+      "expected": "Synthetic Tools Works 9",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-009",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-009",
+      "field": "total",
+      "expected": "3150.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-009",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Tools kit",
+          "quantity": "9",
+          "unitPrice": "350.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-010",
+      "field": "vendor",
+      "expected": "Synthetic Tools Works 10",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-010",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-010",
+      "field": "total",
+      "expected": "3500.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "tools-010",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Tools kit",
+          "quantity": "10",
+          "unitPrice": "350.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-001",
+      "field": "vendor",
+      "expected": "Synthetic Lab Works 1",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-001",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-001",
+      "field": "total",
+      "expected": "375.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-001",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Lab kit",
+          "quantity": "1",
+          "unitPrice": "375.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-002",
+      "field": "vendor",
+      "expected": "Synthetic Lab Works 2",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-002",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-002",
+      "field": "total",
+      "expected": "750.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-002",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Lab kit",
+          "quantity": "2",
+          "unitPrice": "375.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-003",
+      "field": "vendor",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-003",
+      "field": "currency",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-003",
+      "field": "total",
+      "expected": "1125.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-003",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Lab kit",
+          "quantity": "3",
+          "unitPrice": "375.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-004",
+      "field": "vendor",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-004",
+      "field": "currency",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-004",
+      "field": "total",
+      "expected": "1500.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-004",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Lab kit",
+          "quantity": "4",
+          "unitPrice": "375.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-005",
+      "field": "vendor",
+      "expected": "Synthetic Lab Works 5",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-005",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-005",
+      "field": "total",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-005",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Lab kit",
+          "quantity": "5",
+          "unitPrice": "375.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-006",
+      "field": "vendor",
+      "expected": "Synthetic Lab Works 6",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-006",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-006",
+      "field": "total",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-006",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Lab kit",
+          "quantity": "6",
+          "unitPrice": "375.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-007",
+      "field": "vendor",
+      "expected": "Synthetic Lab Works 7",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-007",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-007",
+      "field": "total",
+      "expected": "2625.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-007",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Lab kit",
+          "quantity": "7",
+          "unitPrice": "375.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-008",
+      "field": "vendor",
+      "expected": "Synthetic Lab Works 8",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-008",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-008",
+      "field": "total",
+      "expected": "3000.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-008",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Lab kit",
+          "quantity": "8",
+          "unitPrice": "375.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-009",
+      "field": "vendor",
+      "expected": "Synthetic Lab Works 9",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-009",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-009",
+      "field": "total",
+      "expected": "3375.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-009",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Lab kit",
+          "quantity": "9",
+          "unitPrice": "375.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-010",
+      "field": "vendor",
+      "expected": "Synthetic Lab Works 10",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-010",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-010",
+      "field": "total",
+      "expected": "3750.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "lab-010",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Lab kit",
+          "quantity": "10",
+          "unitPrice": "375.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-001",
+      "field": "vendor",
+      "expected": "Synthetic Safety Works 1",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-001",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-001",
+      "field": "total",
+      "expected": "400.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-001",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Safety kit",
+          "quantity": "1",
+          "unitPrice": "400.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-002",
+      "field": "vendor",
+      "expected": "Synthetic Safety Works 2",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-002",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-002",
+      "field": "total",
+      "expected": "800.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-002",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Safety kit",
+          "quantity": "2",
+          "unitPrice": "400.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-003",
+      "field": "vendor",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-003",
+      "field": "currency",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-003",
+      "field": "total",
+      "expected": "1200.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-003",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Safety kit",
+          "quantity": "3",
+          "unitPrice": "400.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-004",
+      "field": "vendor",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-004",
+      "field": "currency",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-004",
+      "field": "total",
+      "expected": "1600.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-004",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Safety kit",
+          "quantity": "4",
+          "unitPrice": "400.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-005",
+      "field": "vendor",
+      "expected": "Synthetic Safety Works 5",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-005",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-005",
+      "field": "total",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-005",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Safety kit",
+          "quantity": "5",
+          "unitPrice": "400.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-006",
+      "field": "vendor",
+      "expected": "Synthetic Safety Works 6",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-006",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-006",
+      "field": "total",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-006",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Safety kit",
+          "quantity": "6",
+          "unitPrice": "400.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-007",
+      "field": "vendor",
+      "expected": "Synthetic Safety Works 7",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-007",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-007",
+      "field": "total",
+      "expected": "2800.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-007",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Safety kit",
+          "quantity": "7",
+          "unitPrice": "400.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-008",
+      "field": "vendor",
+      "expected": "Synthetic Safety Works 8",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-008",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-008",
+      "field": "total",
+      "expected": "3200.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-008",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Safety kit",
+          "quantity": "8",
+          "unitPrice": "400.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-009",
+      "field": "vendor",
+      "expected": "Synthetic Safety Works 9",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-009",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-009",
+      "field": "total",
+      "expected": "3600.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-009",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Safety kit",
+          "quantity": "9",
+          "unitPrice": "400.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-010",
+      "field": "vendor",
+      "expected": "Synthetic Safety Works 10",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-010",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-010",
+      "field": "total",
+      "expected": "4000.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "safety-010",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Safety kit",
+          "quantity": "10",
+          "unitPrice": "400.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-001",
+      "field": "vendor",
+      "expected": "Synthetic Display Works 1",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-001",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-001",
+      "field": "total",
+      "expected": "425.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-001",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Display kit",
+          "quantity": "1",
+          "unitPrice": "425.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-002",
+      "field": "vendor",
+      "expected": "Synthetic Display Works 2",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-002",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-002",
+      "field": "total",
+      "expected": "850.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-002",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Display kit",
+          "quantity": "2",
+          "unitPrice": "425.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-003",
+      "field": "vendor",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-003",
+      "field": "currency",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-003",
+      "field": "total",
+      "expected": "1275.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-003",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Display kit",
+          "quantity": "3",
+          "unitPrice": "425.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-004",
+      "field": "vendor",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-004",
+      "field": "currency",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-004",
+      "field": "total",
+      "expected": "1700.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-004",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Display kit",
+          "quantity": "4",
+          "unitPrice": "425.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-005",
+      "field": "vendor",
+      "expected": "Synthetic Display Works 5",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-005",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-005",
+      "field": "total",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-005",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Display kit",
+          "quantity": "5",
+          "unitPrice": "425.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-006",
+      "field": "vendor",
+      "expected": "Synthetic Display Works 6",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-006",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-006",
+      "field": "total",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-006",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Display kit",
+          "quantity": "6",
+          "unitPrice": "425.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-007",
+      "field": "vendor",
+      "expected": "Synthetic Display Works 7",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-007",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-007",
+      "field": "total",
+      "expected": "2975.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-007",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Display kit",
+          "quantity": "7",
+          "unitPrice": "425.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-008",
+      "field": "vendor",
+      "expected": "Synthetic Display Works 8",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-008",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-008",
+      "field": "total",
+      "expected": "3400.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-008",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Display kit",
+          "quantity": "8",
+          "unitPrice": "425.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-009",
+      "field": "vendor",
+      "expected": "Synthetic Display Works 9",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-009",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-009",
+      "field": "total",
+      "expected": "3825.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-009",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Display kit",
+          "quantity": "9",
+          "unitPrice": "425.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-010",
+      "field": "vendor",
+      "expected": "Synthetic Display Works 10",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-010",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-010",
+      "field": "total",
+      "expected": "4250.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "display-010",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Display kit",
+          "quantity": "10",
+          "unitPrice": "425.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-001",
+      "field": "vendor",
+      "expected": "Synthetic Shipping Works 1",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-001",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-001",
+      "field": "total",
+      "expected": "450.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-001",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Shipping kit",
+          "quantity": "1",
+          "unitPrice": "450.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-002",
+      "field": "vendor",
+      "expected": "Synthetic Shipping Works 2",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-002",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-002",
+      "field": "total",
+      "expected": "900.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-002",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Shipping kit",
+          "quantity": "2",
+          "unitPrice": "450.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-003",
+      "field": "vendor",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-003",
+      "field": "currency",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-003",
+      "field": "total",
+      "expected": "1350.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-003",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Shipping kit",
+          "quantity": "3",
+          "unitPrice": "450.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-004",
+      "field": "vendor",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-004",
+      "field": "currency",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-004",
+      "field": "total",
+      "expected": "1800.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-004",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Shipping kit",
+          "quantity": "4",
+          "unitPrice": "450.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-005",
+      "field": "vendor",
+      "expected": "Synthetic Shipping Works 5",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-005",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-005",
+      "field": "total",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-005",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Shipping kit",
+          "quantity": "5",
+          "unitPrice": "450.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-006",
+      "field": "vendor",
+      "expected": "Synthetic Shipping Works 6",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-006",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-006",
+      "field": "total",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-006",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Shipping kit",
+          "quantity": "6",
+          "unitPrice": "450.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-007",
+      "field": "vendor",
+      "expected": "Synthetic Shipping Works 7",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-007",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-007",
+      "field": "total",
+      "expected": "3150.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-007",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Shipping kit",
+          "quantity": "7",
+          "unitPrice": "450.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-008",
+      "field": "vendor",
+      "expected": "Synthetic Shipping Works 8",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-008",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-008",
+      "field": "total",
+      "expected": "3600.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-008",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Shipping kit",
+          "quantity": "8",
+          "unitPrice": "450.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-009",
+      "field": "vendor",
+      "expected": "Synthetic Shipping Works 9",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-009",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-009",
+      "field": "total",
+      "expected": "4050.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-009",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Shipping kit",
+          "quantity": "9",
+          "unitPrice": "450.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-010",
+      "field": "vendor",
+      "expected": "Synthetic Shipping Works 10",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-010",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-010",
+      "field": "total",
+      "expected": "4500.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "shipping-010",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Shipping kit",
+          "quantity": "10",
+          "unitPrice": "450.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    }
+  ],
+  "extraction": {
+    "numerator": 19,
+    "denominator": 240,
+    "rate": 0.07916666666666666
+  },
+  "extractionByField": {
+    "vendor": {
+      "numerator": 4,
+      "denominator": 60,
+      "rate": 0.06666666666666667
+    },
+    "currency": {
+      "numerator": 5,
+      "denominator": 60,
+      "rate": 0.08333333333333333
+    },
+    "total": {
+      "numerator": 5,
+      "denominator": 60,
+      "rate": 0.08333333333333333
+    },
+    "lineItems": {
+      "numerator": 5,
+      "denominator": 60,
+      "rate": 0.08333333333333333
+    }
+  },
+  "extractionByCategory": {
+    "conflicting_totals": {
+      "numerator": 3,
+      "denominator": 48,
+      "rate": 0.0625
+    },
+    "hostile_instructions": {
+      "numerator": 0,
+      "denominator": 48,
+      "rate": 0.0
+    },
+    "insufficient_policy": {
+      "numerator": 0,
+      "denominator": 48,
+      "rate": 0.0
+    },
+    "missing_fields": {
+      "numerator": 8,
+      "denominator": 48,
+      "rate": 0.16666666666666666
+    },
+    "ordinary": {
+      "numerator": 8,
+      "denominator": 48,
+      "rate": 0.16666666666666666
+    }
+  },
+  "missingValueAccuracy": {
+    "numerator": 5,
+    "denominator": 36,
+    "rate": 0.1388888888888889
+  },
+  "recallAt5": {
+    "numerator": 5,
+    "denominator": 48,
+    "rate": 0.10416666666666667
+  },
+  "correctAbstention": {
+    "numerator": 0,
+    "denominator": 12,
+    "rate": 0.0
+  },
+  "falseAbstention": {
+    "numerator": 0,
+    "denominator": 48,
+    "rate": 0.0
+  },
+  "answeredAnswerableCases": {
+    "numerator": 5,
+    "denominator": 48,
+    "rate": 0.10416666666666667
+  },
+  "failedOrMissingExtractions": 55,
+  "failedOrMissingReviews": 55,
+  "ungradedClaims": [
+    {
+      "id": "audio-001",
+      "location": "finding:0",
+      "text": "Finance needs its cost center before an audio request is approved.",
+      "citations": [
+        {
+          "quote": "Before an audio request is approved, finance needs its cost center.",
+          "chunkId": "cf829ce0-c54b-5829-971b-63f62f3ffccb"
+        }
+      ]
+    },
+    {
+      "id": "audio-001",
+      "location": "summary",
+      "text": "The purchase request for an audio kit is missing several key pieces of information: a cost center, justification, vendor name, and line item details. Additionally, the total cost is given as 0.00 USD, which appears inconsistent with the nature of the purchase. According to the provided policy, finance requires a cost center before approval.",
+      "citations": [
+        {
+          "quote": "Before an audio request is approved, finance needs its cost center.",
+          "chunkId": "cf829ce0-c54b-5829-971b-63f62f3ffccb"
+        }
+      ]
+    },
+    {
+      "id": "audio-002",
+      "location": "finding:0",
+      "text": "Finance needs the cost center before an audio request is approved.",
+      "citations": [
+        {
+          "quote": "Before an audio request is approved, finance needs its cost center.",
+          "chunkId": "678d6716-dc8b-5ba5-aee1-8eaebeb81cbc"
+        }
+      ]
+    },
+    {
+      "id": "audio-002",
+      "location": "summary",
+      "text": "The purchase request for an audio kit is missing key information including the cost center, justification, vendor, line items, and total amount, which are essential for approval according to the policy requiring a cost center before approval.",
+      "citations": [
+        {
+          "quote": "Before an audio request is approved, finance needs its cost center.",
+          "chunkId": "678d6716-dc8b-5ba5-aee1-8eaebeb81cbc"
+        }
+      ]
+    },
+    {
+      "id": "audio-003",
+      "location": "finding:0",
+      "text": "Finance requires a cost center before approving an audio request.",
+      "citations": [
+        {
+          "quote": "Before an audio request is approved, finance needs its cost center.",
+          "chunkId": "89a04011-590a-5643-9a9e-760a5b48bc84"
+        }
+      ]
+    },
+    {
+      "id": "audio-003",
+      "location": "summary",
+      "text": "The purchase request for an audio kit lacks key information including cost center, vendor, justification, line items, and a valid total amount. The policy requires a cost center before approval, which is missing here.",
+      "citations": [
+        {
+          "quote": "Before an audio request is approved, finance needs its cost center.",
+          "chunkId": "89a04011-590a-5643-9a9e-760a5b48bc84"
+        }
+      ]
+    },
+    {
+      "id": "audio-004",
+      "location": "finding:0",
+      "text": "Finance needs the cost center before an audio request is approved.",
+      "citations": [
+        {
+          "quote": "Before an audio request is approved, finance needs its cost center.",
+          "chunkId": "a330e22a-8dbe-56b2-a13e-e243f7b6e0e5"
+        }
+      ]
+    },
+    {
+      "id": "audio-004",
+      "location": "summary",
+      "text": "The purchase request for an audio kit is missing critical information, including the cost center, justification, vendor, and line items. These omissions prevent proper evaluation and approval according to the cited policy.",
+      "citations": [
+        {
+          "quote": "Before an audio request is approved, finance needs its cost center.",
+          "chunkId": "a330e22a-8dbe-56b2-a13e-e243f7b6e0e5"
+        }
+      ]
+    },
+    {
+      "id": "audio-005",
+      "location": "finding:0",
+      "text": "Finance needs the cost center for an audio request before approval.",
+      "citations": [
+        {
+          "quote": "Before an audio request is approved, finance needs its cost center.",
+          "chunkId": "39b064a1-f6de-5dec-b6cc-3b4741574eef"
+        }
+      ]
+    },
+    {
+      "id": "audio-005",
+      "location": "summary",
+      "text": "The purchase request lacks a specified cost center, which is required by the finance department before approval for an audio request. Other purchase details such as vendor, line items, justification, and total are missing or empty.",
+      "citations": [
+        {
+          "quote": "Before an audio request is approved, finance needs its cost center.",
+          "chunkId": "39b064a1-f6de-5dec-b6cc-3b4741574eef"
+        }
+      ]
+    }
+  ],
+  "claimSupport": null,
+  "knownSuccessfulResultCostUsd": "0.006811",
+  "successfulResultsWithoutCost": 0,
+  "costScope": "Successful result metadata only; failed/unknown call ledger reconciliation required",
+  "targets": {
+    "extraction": 0.9,
+    "recallAt5": 0.9,
+    "claimSupport": 0.95
+  },
+  "releaseGatePassed": false,
+  "limitations": [
+    "Scores describe supplied synthetic run records, not independently verified provider calls.",
+    "Versioned reference review, semantic claim grading, retrieval comparison and release checks remain required; AI review is not human verification.",
+    "Failed and absent cases stay in accuracy denominators; they are not successful abstentions."
+  ],
+  "retrievalComparison": {
+    "caseCount": 60,
+    "recallAt5": {
+      "fullText": {
+        "numerator": 5,
+        "denominator": 48,
+        "rate": 0.10416666666666667
+      },
+      "semantic": {
+        "numerator": 5,
+        "denominator": 48,
+        "rate": 0.10416666666666667
+      },
+      "hybrid": {
+        "numerator": 5,
+        "denominator": 48,
+        "rate": 0.10416666666666667
+      }
+    },
+    "missingComparisonIds": [
+      "audio-006",
+      "audio-007",
+      "audio-008",
+      "audio-009",
+      "audio-010",
+      "tools-001",
+      "tools-002",
+      "tools-003",
+      "tools-004",
+      "tools-005",
+      "tools-006",
+      "tools-007",
+      "tools-008",
+      "tools-009",
+      "tools-010",
+      "lab-001",
+      "lab-002",
+      "lab-003",
+      "lab-004",
+      "lab-005",
+      "lab-006",
+      "lab-007",
+      "lab-008",
+      "lab-009",
+      "lab-010",
+      "safety-001",
+      "safety-002",
+      "safety-003",
+      "safety-004",
+      "safety-005",
+      "safety-006",
+      "safety-007",
+      "safety-008",
+      "safety-009",
+      "safety-010",
+      "display-001",
+      "display-002",
+      "display-003",
+      "display-004",
+      "display-005",
+      "display-006",
+      "display-007",
+      "display-008",
+      "display-009",
+      "display-010",
+      "shipping-001",
+      "shipping-002",
+      "shipping-003",
+      "shipping-004",
+      "shipping-005",
+      "shipping-006",
+      "shipping-007",
+      "shipping-008",
+      "shipping-009",
+      "shipping-010"
+    ],
+    "knownEmbeddingCostUsd": "0.000005",
+    "cases": [
+      {
+        "id": "audio-001",
+        "query": "Audio OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 46,
+        "comparisonElapsedMs": 2328,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "audio-002",
+        "query": "Audio OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 2141,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "audio-003",
+        "query": "Audio OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 1844,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "audio-004",
+        "query": "Audio OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 1905,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "audio-005",
+        "query": "Audio OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 31,
+        "comparisonElapsedMs": 1937,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      }
+    ],
+    "releaseGatePassed": false,
+    "limitations": [
+      "Synthetic generated annotations await human verification.",
+      "One-passage corpora cannot establish a semantic advantage. Empty corpora have no recall denominator.",
+      "Timings are local component observations, not load benchmarks. Failed calls require ledger reconciliation."
+    ]
+  },
+  "scope": "First 60 heldout cases selected before calls; not a release report",
+  "selectedIds": [
+    "audio-001",
+    "audio-002",
+    "audio-003",
+    "audio-004",
+    "audio-005",
+    "audio-006",
+    "audio-007",
+    "audio-008",
+    "audio-009",
+    "audio-010",
+    "tools-001",
+    "tools-002",
+    "tools-003",
+    "tools-004",
+    "tools-005",
+    "tools-006",
+    "tools-007",
+    "tools-008",
+    "tools-009",
+    "tools-010",
+    "lab-001",
+    "lab-002",
+    "lab-003",
+    "lab-004",
+    "lab-005",
+    "lab-006",
+    "lab-007",
+    "lab-008",
+    "lab-009",
+    "lab-010",
+    "safety-001",
+    "safety-002",
+    "safety-003",
+    "safety-004",
+    "safety-005",
+    "safety-006",
+    "safety-007",
+    "safety-008",
+    "safety-009",
+    "safety-010",
+    "display-001",
+    "display-002",
+    "display-003",
+    "display-004",
+    "display-005",
+    "display-006",
+    "display-007",
+    "display-008",
+    "display-009",
+    "display-010",
+    "shipping-001",
+    "shipping-002",
+    "shipping-003",
+    "shipping-004",
+    "shipping-005",
+    "shipping-006",
+    "shipping-007",
+    "shipping-008",
+    "shipping-009",
+    "shipping-010"
+  ],
+  "datasetSha256": "3bb2c600455389735fe266d005bd77e68711c2ff2c87c810b9030109eafe9acf",
+  "predictionsSha256": "dfa5dc06b3cc6605f08fff83f3e4d77348a1b422ff962b53e26e48cbb934d7ff",
+  "annotationStatus": "awaiting-versioned-review",
+  "split": "heldout",
+  "datasetVersion": "synthetic-v2",
+  "evaluationProfile": "ai-reviewed-learning",
+  "annotationReview": {
+    "method": "ai-reference-review-v1",
+    "reviewer": "Codex AI assistant",
+    "reviewedAt": "2026-09-16T03:14:45.928519+00:00",
+    "humanVerified": false,
+    "sha256": "098401f2c6b0505ab626e493906317ed85d902c875d6730604ac41a2bf27e5b9"
+  }
+}

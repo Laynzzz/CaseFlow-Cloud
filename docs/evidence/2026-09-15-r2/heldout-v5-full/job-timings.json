@@ -1,0 +1,139 @@
+{
+  "jobIds": [
+    "077693ea-40c1-4777-8410-5589aa768341",
+    "0b45ed4e-ec65-4f2b-bad8-cbc34eebbe88",
+    "1055f9ea-1fcd-4464-a215-a10b798b4c33",
+    "10a35e7d-19cd-4939-a9f7-fed4aad59d3e",
+    "139511e0-157c-4001-a81c-a623001ff126",
+    "4af999e1-9961-409c-9c83-14f851891acd",
+    "4e53083a-ad6c-486a-89a0-1b6577384a9d",
+    "7392a88f-63f2-42af-a4cf-1f82057433da",
+    "7f422082-983d-425a-876e-0bee444bbeda",
+    "8d4c890d-2719-4c80-a45f-3f047621611c",
+    "f2787dcf-2324-4558-a258-5edf1bdc856b"
+  ],
+  "jobs": [
+    {
+      "job_id": "4e53083a-ad6c-486a-89a0-1b6577384a9d",
+      "kind": "EXTRACTION",
+      "status": "SUCCEEDED",
+      "attempt": 1,
+      "requested_at": "2026-09-16 03:36:30.344779+00:00",
+      "completed_at": "2026-09-16 03:36:37.414659+00:00",
+      "scheduled_at": "2026-09-16 03:36:30.501333+00:00",
+      "executions": 1,
+      "first_claim_at": "2026-09-16 03:36:30.669876+00:00"
+    },
+    {
+      "job_id": "139511e0-157c-4001-a81c-a623001ff126",
+      "kind": "REVIEW",
+      "status": "SUCCEEDED",
+      "attempt": 1,
+      "requested_at": "2026-09-16 03:36:37.581988+00:00",
+      "completed_at": "2026-09-16 03:36:44.533548+00:00",
+      "scheduled_at": "2026-09-16 03:36:38.002461+00:00",
+      "executions": 1,
+      "first_claim_at": "2026-09-16 03:36:38.349799+00:00"
+    },
+    {
+      "job_id": "7392a88f-63f2-42af-a4cf-1f82057433da",
+      "kind": "EXTRACTION",
+      "status": "SUCCEEDED",
+      "attempt": 1,
+      "requested_at": "2026-09-16 03:36:48.601062+00:00",
+      "completed_at": "2026-09-16 03:36:54.506281+00:00",
+      "scheduled_at": "2026-09-16 03:36:49.083698+00:00",
+      "executions": 1,
+      "first_claim_at": "2026-09-16 03:36:49.269180+00:00"
+    },
+    {
+      "job_id": "10a35e7d-19cd-4939-a9f7-fed4aad59d3e",
+      "kind": "REVIEW",
+      "status": "SUCCEEDED",
+      "attempt": 1,
+      "requested_at": "2026-09-16 03:36:55.028909+00:00",
+      "completed_at": "2026-09-16 03:37:02.901736+00:00",
+      "scheduled_at": "2026-09-16 03:36:55.509455+00:00",
+      "executions": 1,
+      "first_claim_at": "2026-09-16 03:36:55.851853+00:00"
+    },
+    {
+      "job_id": "077693ea-40c1-4777-8410-5589aa768341",
+      "kind": "EXTRACTION",
+      "status": "SUCCEEDED",
+      "attempt": 1,
+      "requested_at": "2026-09-16 03:37:06.500253+00:00",
+      "completed_at": "2026-09-16 03:37:13.872518+00:00",
+      "scheduled_at": "2026-09-16 03:37:06.747490+00:00",
+      "executions": 1,
+      "first_claim_at": "2026-09-16 03:37:07.041338+00:00"
+    },
+    {
+      "job_id": "f2787dcf-2324-4558-a258-5edf1bdc856b",
+      "kind": "REVIEW",
+      "status": "SUCCEEDED",
+      "attempt": 1,
+      "requested_at": "2026-09-16 03:37:14.186171+00:00",
+      "completed_at": "2026-09-16 03:37:21.581338+00:00",
+      "scheduled_at": "2026-09-16 03:37:14.623904+00:00",
+      "executions": 1,
+      "first_claim_at": "2026-09-16 03:37:14.776311+00:00"
+    },
+    {
+      "job_id": "1055f9ea-1fcd-4464-a215-a10b798b4c33",
+      "kind": "EXTRACTION",
+      "status": "SUCCEEDED",
+      "attempt": 1,
+      "requested_at": "2026-09-16 03:37:25.597091+00:00",
+      "completed_at": "2026-09-16 03:37:30.545853+00:00",
+      "scheduled_at": "2026-09-16 03:37:25.837613+00:00",
+      "executions": 1,
+      "first_claim_at": "2026-09-16 03:37:25.866086+00:00"
+    },
+    {
+      "job_id": "8d4c890d-2719-4c80-a45f-3f047621611c",
+      "kind": "REVIEW",
+      "status": "SUCCEEDED",
+      "attempt": 1,
+      "requested_at": "2026-09-16 03:37:31.234276+00:00",
+      "completed_at": "2026-09-16 03:37:38.279472+00:00",
+      "scheduled_at": "2026-09-16 03:37:31.695671+00:00",
+      "executions": 1,
+      "first_claim_at": "2026-09-16 03:37:31.928471+00:00"
+    },
+    {
+      "job_id": "4af999e1-9961-409c-9c83-14f851891acd",
+      "kind": "EXTRACTION",
+      "status": "SUCCEEDED",
+      "attempt": 1,
+      "requested_at": "2026-09-16 03:37:41.458740+00:00",
+      "completed_at": "2026-09-16 03:37:47.691277+00:00",
+      "scheduled_at": "2026-09-16 03:37:41.762963+00:00",
+      "executions": 1,
+      "first_claim_at": "2026-09-16 03:37:42.309144+00:00"
+    },
+    {
+      "job_id": "0b45ed4e-ec65-4f2b-bad8-cbc34eebbe88",
+      "kind": "REVIEW",
+      "status": "SUCCEEDED",
+      "attempt": 1,
+      "requested_at": "2026-09-16 03:37:47.894314+00:00",
+      "completed_at": "2026-09-16 03:37:56.551433+00:00",
+      "scheduled_at": "2026-09-16 03:37:48.120328+00:00",
+      "executions": 1,
+      "first_claim_at": "2026-09-16 03:37:48.391438+00:00"
+    },
+    {
+      "job_id": "7f422082-983d-425a-876e-0bee444bbeda",
+      "kind": "EXTRACTION",
+      "status": "FAILED",
+      "attempt": 1,
+      "requested_at": "2026-09-16 03:38:00.152179+00:00",
+      "completed_at": "2026-09-16 03:38:11.069888+00:00",
+      "scheduled_at": "2026-09-16 03:38:00.469668+00:00",
+      "executions": 1,
+      "first_claim_at": "2026-09-16 03:38:00.565652+00:00"
+    }
+  ],
+  "scope": "Selected synthetic assistant jobs; database transaction timestamps, no purchase content."
+}

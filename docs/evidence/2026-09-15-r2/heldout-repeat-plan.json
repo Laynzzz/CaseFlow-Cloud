@@ -1,0 +1,21 @@
+{
+  "recordedAt": "2026-09-16T03:45:33.489665+00:00",
+  "datasetVersion": "synthetic-v2",
+  "promptVersion": "purchase-assistant-2026-09-15-v5",
+  "selectedIds": [
+    "audio-001",
+    "audio-002",
+    "audio-003",
+    "audio-004",
+    "audio-005",
+    "audio-006",
+    "audio-007",
+    "audio-008",
+    "audio-009",
+    "audio-010"
+  ],
+  "selection": "First 10 frozen held-out rows; one full audio family spanning all five categories",
+  "additionalRuns": 1,
+  "baseline": "heldout-v5-retry",
+  "note": "No prompt/model/retrieval change. New tenants/jobs avoid cached results. Repeated subset is narrow and not the whole split; compare actual outputs, field accuracy, abstention and failures. Preserve initial interrupted run separately."
+}
