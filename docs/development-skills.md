@@ -16,3 +16,15 @@ The installer reported all four as installed and a second inventory confirmed
 them. Existing browser, OpenAI documentation and document skills remain available.
 No application dependency, cloud resource or paid service was added. Skills are
 selected when their actual task applies; installation alone does not run reviews.
+
+
+## User-requested additions
+
+Installed frontend-design from anthropics/skills at
+`34040c9c568585f6929bedeaad110ad08f079624`, and all 14 skills from
+obra/superpowers at `b36e0829c6d0140e93cfef2ca599b1b07d4a7797`.
+Frontend design informs future interface work. Superpowers supplies planning,
+implementation, debugging, review and verification workflows. All installations
+contain SKILL.md and become automatically discoverable on the next user turn.
+Existing user instructions to act independently and teach afterward take priority
+over optional workflow pauses; no application or model dependency was added.
