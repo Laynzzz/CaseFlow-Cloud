@@ -240,13 +240,13 @@ Start with final validated responses and polling, not streaming. No orchestratio
 
 Create evals before prompt optimization. Initial target: 120 synthetic cases, 60 development and 60 held-out. Split by policy/template family to reduce near-duplicate leakage. Include missing facts, conflicting quotes, insufficient policy evidence and malicious instructions. Add separate tenant/access-revocation tests.
 
-Manually verify reference fields/passages/expected abstentions. Version annotations and rubric. If tuning uses held-out examples, retire them into development and create a new test version. Do not describe synthetic results as real-world validation.
+Verify reference fields/passages/expected abstentions. Following user delegation on 2026-09-15, ADR 0006 permits explicitly labeled AI review and claim grading for the experimental learning-project evaluation; independent human verification remains a separate, stronger evidence tier. AI work must never be labeled human-reviewed. Version annotations and rubric. If tuning uses held-out examples, retire them into development and create a new test version. Do not describe synthetic results as real-world validation.
 
 | Measure | Method |
 | --- | --- |
 | Extraction | Normalized exact match by field, denominators and missing-value accuracy |
 | Retrieval | Recall@5 against annotated relevant passages |
-| Grounding | Claim-level citation support and unsupported claims with manual rubric |
+| Grounding | Claim-level citation support and unsupported claims with a versioned rubric and explicit AI/human reviewer provenance (ADR 0006) |
 | Abstention | Correct/false abstention on answerable and unanswerable cases |
 | Output validity | Schema/citation checks for all displayed results; surface failures |
 | Isolation | No unauthorized passages/results in the named test suite |

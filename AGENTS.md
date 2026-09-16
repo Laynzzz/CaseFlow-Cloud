@@ -4,6 +4,11 @@ Read `plan.md` before starting work on a phase. Preserve the learn-while-build g
 
 ## Learn while building
 
+The user delegated reference-review and routine engineering decisions on
+2026-09-15. Follow ADR 0006 for explicitly labeled AI evaluation review; do not
+ask the user to repeat that authorization or to fill the reference-review form.
+Keep the USD 10 shared AI budget and actual release evidence requirements.
+
 ### Current user preference (2026-09-14): build first, teach afterward
 
 Implement the full project through the plan's release gates. During implementation,
