@@ -197,3 +197,14 @@ API completion. Provider intervals include transport and child startup, not just
 inference. Negative wall-clock intervals are explicitly listed and excluded, never
 changed to zero. Local sequential observations are not load benchmarks or evidence
 of user time savings.
+
+
+## Fixed-subset variability
+
+`compare_repeated_run.py --baseline RUN --repeat REPEAT --plan PLAN_JSON --output NEW_JSON`
+validates both run hashes and the declared subset, then compares normalized field
+values and review wording/abstentions. It reports accuracy for the same subset in
+both runs. Different tenant-specific citation IDs are excluded from text comparisons.
+Missing/failed results retain their denominators and separate statuses. Wording
+changes are not automatically errors; one repeated family cannot establish global
+model variability. The actual declaration is in the R2 evidence folder.
