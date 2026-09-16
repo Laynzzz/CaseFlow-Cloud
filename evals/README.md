@@ -173,6 +173,20 @@ synthetic fixtures and cannot be used as human evidence. The scorer checks recor
 completeness; it cannot verify the truth of the human's judgment or establish R2
 completion by itself.
 
+ADR 0006 also permits explicitly labeled AI claim grading for this learning-project
+evaluation. Use
+`python evals/claim_review.py --directory RUN_DIRECTORY --evaluation-profile ai-reviewed-learning --review AI_REVIEW.json --output NEW_REPORT.json`.
+The review must declare `method: ai-claim-review-v1`, `profile: ai-reviewed-learning`,
+`humanVerified: false`, an actual reviewer identifier and review date, and grades for
+every inventoried output. The default remains `human-reviewed` with method
+`human-claim-review-v1`; legacy human review files remain accepted. Method, profile,
+human provenance, run hashes, output text hashes and complete coverage are bound
+together, so an AI artifact cannot pass as human-reviewed. Both report types keep
+their provenance, counts and failures and leave `releaseGatePassed` false. AI grading
+is experimental evidence that may share errors with the evaluated system, while the
+validator checks structural completeness rather than semantic truth. Citations alone
+never establish claim support.
+
 Local operational observations can be reproduced with
 `python services/worker/tools/export_job_timings.py --records RUN_DIRECTORY/predictions.jsonl --output RUN_DIRECTORY/job-timings.json`
 after loading the development environment, followed by
