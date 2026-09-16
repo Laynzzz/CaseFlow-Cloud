@@ -12,8 +12,14 @@ MISSING = object()
 FIELDS = ("vendor", "currency", "total", "lineItems")
 
 
-def load_dataset(root=ROOT):
+def load_dataset(root=ROOT, version=None):
+    if version not in (None, 'synthetic-v1', 'synthetic-v2'):
+        raise ValueError('Unknown frozen dataset version')
+    if version == 'synthetic-v2':
+        root = root / 'datasets' / version
     manifest = json.loads((root / "manifest.json").read_text(encoding="utf-8"))
+    if version is not None and manifest['version'] != version:
+        raise ValueError('Dataset version does not match its manifest')
     splits = {}
     ids = set()
     for split in ("development", "heldout"):
@@ -153,18 +159,19 @@ def score(cases, records, targets):
                 costScope="Successful result metadata only; failed/unknown call ledger reconciliation required",
                 targets=targets, releaseGatePassed=False,
                 limitations=["Scores describe supplied synthetic run records, not independently verified provider calls.",
-                             "Manual annotation verification, semantic claim grading, retrieval comparison and release checks remain required.",
+                             "Versioned reference review, semantic claim grading, retrieval comparison and release checks remain required; AI review is not human verification.",
                              "Failed and absent cases stay in accuracy denominators; they are not successful abstentions."])
 
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--validate-dataset",action="store_true")
+    parser.add_argument('--dataset-version',choices=['synthetic-v1','synthetic-v2'],default='synthetic-v1')
     parser.add_argument("--split",choices=["development","heldout"],default="development")
     parser.add_argument("--predictions",type=Path)
     parser.add_argument("--output",type=Path)
     args=parser.parse_args()
-    manifest,splits=load_dataset()
+    manifest,splits=load_dataset(version=args.dataset_version)
     if args.validate_dataset:
         print(json.dumps(dict(version=manifest["version"],counts={s:len(v) for s,v in splits.items()},
                               annotationStatus=manifest["annotationStatus"],qualityMeasured=False),indent=2))

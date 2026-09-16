@@ -26,3 +26,24 @@ def test_changed_policy_is_flagged_for_review():
     case['policyPassages'][0]['text']='Equipment purchases do not require a cost center.'
     codes={i['code'] for i in audit_case(case)['issues']}
     assert 'POLICY_REQUIRES_NEW_SEMANTIC_REVIEW' in codes and 'POLICY_REFERENCE_MISMATCH' in codes
+
+
+def test_v2_changes_only_eight_policy_passages_preserving_reference_answers():
+    old_manifest,old=load_dataset()
+    new_manifest,new=load_dataset(version='synthetic-v2')
+    assert old_manifest['targets']==new_manifest['targets']
+    assert old['development']==new['development']
+    changed=[]
+    for before,after in zip(old['heldout'],new['heldout'],strict=True):
+        if before==after:continue
+        changed.append(before['id'])
+        original=copy.deepcopy(before)
+        original['policyPassages'][0]['text']='Laboratory purchase requests must include a cost center before approval.'
+        assert original==after
+    assert changed==new_manifest['changedCaseIds']
+    assert len(changed)==8
+    report=audit_dataset('synthetic-v2')
+    assert report['status']=='ai-reviewed'
+    assert report['summary']['issueCounts']=={}
+    assert report['summary']['matchingFieldChecks']==480
+    assert report['humanVerified'] is False and report['releaseGatePassed'] is False

@@ -32,8 +32,9 @@ cited review and explicit selected-field acceptance work locally. Provider calls
 share the user-authorized USD 10 lifetime ledger and have enforced deadlines.
 The full 60-case development rerun matched 225/240 fields (93.75%), retrieved
 48/48 expected passages and correctly abstained in 12/12 insufficient-evidence
-cases. Vendor match remains only 48/60. These generated references await human
-verification; cited-claim support is ungraded and held-out testing has not run.
+cases. Vendor match remains only 48/60. A delegated AI reference audit is complete
+for corrected dataset v2; no independent human verification is claimed.
+Cited-claim support is ungraded and held-out testing has not run.
 The embedding/hybrid comparison and raw failures are preserved in
 [the evidence index](docs/evidence-index.md); see the [R2 map](docs/r2-status.md)
 for remaining gates. R3 has not started. No production readiness, adoption or

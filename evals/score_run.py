@@ -8,8 +8,12 @@ from retrieval_scoring import compare_scores
 
 
 def score_run(directory):
-    manifest,splits=load_dataset()
     run=json.loads((directory/"run.json").read_text(encoding="utf-8"))
+    manifest,splits=load_dataset(version=run['datasetVersion'])
+    if run.get('annotationReview'):
+        review_raw=(directory/'annotation-review.json').read_bytes()
+        if hashlib.sha256(review_raw).hexdigest()!=run['annotationReview']['sha256']:
+            raise ValueError('Annotation review checksum changed')
     raw=(directory/"predictions.jsonl").read_bytes()
     split=run["split"]
     selected=run["selectedIds"]
@@ -25,7 +29,9 @@ def score_run(directory):
     if run.get('compareRetrieval'):report['retrievalComparison']=compare_scores(splits[split][:len(selected)],records)
     report.update(scope=f"First {len(selected)} {split} cases selected before calls; not a release report",
                   selectedIds=selected,datasetSha256=run["datasetSha256"],predictionsSha256=digest,
-                  annotationStatus=manifest["annotationStatus"],split=split,datasetVersion=manifest["version"])
+                  annotationStatus=manifest["annotationStatus"],split=split,datasetVersion=manifest["version"],
+                  evaluationProfile=run.get('evaluationProfile','unreviewed'),
+                  annotationReview=run.get('annotationReview'))
     return report
 
 

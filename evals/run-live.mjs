@@ -8,10 +8,15 @@ import {client,signIn} from '../tests/e2e/oidc-session.mjs';
 import {uploadIndexedSource,waitAssistantJob} from '../tests/e2e/ai-workflow.mjs';
 import {loadFrozenDataset,requireAnnotationReview} from './dataset.mjs';
 
-const {values}=parseArgs({options:{live:{type:'boolean'},'validate-only':{type:'boolean'},'compare-retrieval':{type:'boolean'},split:{type:'string',default:'development'},limit:{type:'string'},output:{type:'string'},'annotation-review':{type:'string'}}});
+const {values}=parseArgs({options:{live:{type:'boolean'},'validate-only':{type:'boolean'},'compare-retrieval':{type:'boolean'},split:{type:'string',default:'development'},limit:{type:'string'},output:{type:'string'},'annotation-review':{type:'string'},'dataset-version':{type:'string',default:'synthetic-v1'},'evaluation-profile':{type:'string',default:'human-reviewed'}}});
 const root=fileURLToPath(new URL('.',import.meta.url));
-const {manifest,splits}=loadFrozenDataset(root);
+const {manifest,splits}=loadFrozenDataset(root,values['dataset-version']);
+const profile=values['evaluation-profile'];
+if(!['human-reviewed','ai-reviewed-learning'].includes(profile)) throw new Error('Unknown evaluation profile');
+const reviewBytes=values['annotation-review'] ? readFileSync(values['annotation-review']) : null;
+const annotationReview=reviewBytes ? JSON.parse(reviewBytes.toString('utf8')) : null;
 if(!['development','heldout'].includes(values.split)) throw new Error('Split must be development or heldout');
+if(values.split==='heldout' || annotationReview) requireAnnotationReview(manifest,annotationReview,profile,splits);
 const limit=values.limit===undefined ? splits[values.split].length : Number(values.limit);
 if(!Number.isInteger(limit)||limit<1||limit>splits[values.split].length) throw new Error('Limit must be a positive count within this split');
 const cases=splits[values.split].slice(0,limit);
@@ -20,18 +25,19 @@ if(values['validate-only']) {
   process.exit(0);
 }
 if(!values.live||!values.output) throw new Error('Requires --live, --output NEW_DIRECTORY and an approved shared AI budget');
-if(values.split==='heldout') {
-  requireAnnotationReview(manifest,values['annotation-review'] ? JSON.parse(readFileSync(values['annotation-review'],'utf8')) : null);
-}
 const directory=resolve(values.output);
 if(existsSync(directory)) throw new Error('Output directory already exists; use a new directory to preserve prior evidence');
 mkdirSync(directory,{recursive:true});
 const metadata={startedAt:new Date().toISOString(),datasetVersion:manifest.version,split:values.split,
+  evaluationProfile:annotationReview?profile:'unreviewed',annotationReview:annotationReview?{method:annotationReview.method,reviewer:annotationReview.reviewer,
+    reviewedAt:annotationReview.reviewedAt,humanVerified:annotationReview.method==='human-reference-review',
+    sha256:createHash('sha256').update(reviewBytes).digest('hex')}:null,
   compareRetrieval:Boolean(values['compare-retrieval']),
   datasetSha256:manifest.files[values.split+'.jsonl'].sha256,selectedIds:cases.map(c=>c.id),
   transport:'real-oidc-api-kafka-worker',selection:'first N in frozen file order',releaseGatePassed:false,
   note:'Synthetic diagnostic run. Reference and claim review required; failed calls need ledger reconciliation.'};
 writeFileSync(join(directory,'run.json'),JSON.stringify(metadata,null,2)+'\n',{flag:'wx'});
+if(reviewBytes) writeFileSync(join(directory,'annotation-review.json'),reviewBytes,{flag:'wx'});
 writeFileSync(join(directory,'predictions.jsonl'),'',{flag:'wx'});
 let stopped=false;
 for(const item of cases) {

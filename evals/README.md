@@ -1,8 +1,22 @@
 # R2 synthetic evaluation protocol v1
 
-Status: split and provisional gates fixed before prompt work; generated references
-still require human verification. The live runner is implemented; provider HTTP
-429 blocks successful live results. No model or retrieval quality has been measured.
+Status: development runs and source audits are recorded. Under user-delegated
+ADR 0006, corrected synthetic-v2 has an AI reference review of all 120 cases.
+Historical v1 files and reports remain unchanged. Held-out results and claim
+support are still pending. AI-reviewed results remain experimental.
+
+Preflight the complete review with zero provider calls:
+
+```powershell
+node evals/run-live.mjs --validate-only --split heldout --dataset-version synthetic-v2 --evaluation-profile ai-reviewed-learning --annotation-review docs/evidence/2026-09-15-r2/ai-reference-review-v2/audit.json
+```
+
+For an authorized live run, replace `--validate-only` with `--live`, add
+`--compare-retrieval` and `--output NEW_DIRECTORY`. The shared USD 10 cap applies.
+Each run saves the review artifact and checksum; scoring loads the declared
+version and checks prediction/review hashes. Original root files are v1; v2 lives
+in `datasets/synthetic-v2`. `version_references.py` reproduces v2 in a checkout
+without that directory and refuses overwrites. Only eight policy passages change.
 
 ## Live runner
 
@@ -42,13 +56,16 @@ diagnostic run; review sees the same manual facts across cases. The separate
 defaults from provider input. Retrieval stores query and an explicit ranked chunk
 array because PostgreSQL JSONB object key order cannot represent search rank.
 
-Held-out execution requires `--annotation-review PATH`. The JSON must record
+Held-out execution requires `--annotation-review PATH`. The default human profile requires
 `status: verified`, `method: human-reference-review`, the `datasetVersion`, actual
 `reviewer`, `reviewedAt`, and `files` entries for both JSONL files with the frozen
 `sha256` and `reviewedCount` equal to all rows. This file must describe real human
 review; filling its fields is not a substitute for reviewing the references.
-No such review has yet been recorded. Automated guard tests use synthetic review
-fixtures only. The runner and scorer never mark the release complete.
+No human review has been recorded. The explicit `ai-reviewed-learning` profile
+accepts method `ai-reference-review-v1`, status `ai-reviewed`, the matching
+profile, `humanVerified: false`, and exact per-case checksums with no unresolved
+issues. Both profiles require all rows and frozen file hashes. AI review cannot
+pass the human profile. Neither runner nor scorer marks the release complete.
 
 Create a human review packet with
 `services/worker/.venv/Scripts/python.exe evals/build-review-page.py --output NEW_HTML`.
@@ -96,8 +113,9 @@ supported. Reports preserve the input/dataset hashes and refuse to overwrite an
 existing output. Known successful-result cost is a subtotal, not total billing;
 failed/unknown calls still require ledger reconciliation.
 
-`releaseGatePassed` remains false in these diagnostic reports. Human reference
-verification, claim grading and the remaining R2 checks require separate evidence.
+`releaseGatePassed` remains false in these diagnostic reports. Reference review,
+claim grading and remaining R2 checks require separate evidence and explicit
+AI/human reviewer provenance. Independent human verification is not recorded.
 
 `python evals/build_dataset.py` creates 120 synthetic cases: 60 development and 60
 held out, with disjoint quote/policy families. Checked-in JSONL files and SHA-256
@@ -116,7 +134,7 @@ the corrected manifest. Programmatic consistency checks are not manual review.
 The runner must refuse a release report while annotation review is incomplete.
 
 Frozen provisional gates from plan.md: extraction normalized field exact match
-at least 90%; retrieval Recall@5 at least 90%; manually judged cited-claim support
+at least 90%; retrieval Recall@5 at least 90%; rubric-judged cited-claim support
 at least 95%. Report numerator/denominator, missing-value accuracy, per-category
 failures, false and correct abstention, schema/citation failures, and uncertainty.
 

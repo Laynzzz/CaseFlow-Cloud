@@ -556,3 +556,21 @@ checkboxes, change the held-out prompt, or relabel AI work as independent human
 verification. Source clarity matters: a benchmark can mark a reasonable answer
 wrong when its question or policy is ambiguous. Proposed source corrections must
 be versioned so older reported results keep their original meaning.
+
+
+## Accepted delegation and versioned reference corrections
+
+Under ADR 0006 the assistant may perform reference review for the learning
+project. AI review is an explicit evidence tier, not independent human validation.
+The corrected v2 snapshot changes eight policy sentences while keeping v1 bytes
+and historical runs reproducible. Python audits source meaning and consistency;
+Node validates review coverage and case/file hashes before live execution.
+An explicit profile prevents an AI artifact passing the human-review path.
+These hashes detect accidental drift, not dishonesty by a reviewer.
+
+The numerical targets and product prompt remain unchanged. Removing the user's
+manual grading bottleneck does not make the evaluation independent or demonstrate
+production quality. Reference correctness, prediction accuracy and supported
+claims are three different questions. See ADR 0006, evals/dataset.mjs and the
+v2 audit summary. Four official curated skills were installed as development
+helpers; docs/development-skills.md records their purposes and source revision.

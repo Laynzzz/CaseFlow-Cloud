@@ -1,0 +1,48 @@
+{
+  "version": "synthetic-v2",
+  "annotationStatus": "awaiting-versioned-review",
+  "targets": {
+    "extraction": 0.9,
+    "recallAt5": 0.9,
+    "claimSupport": 0.95
+  },
+  "files": {
+    "development.jsonl": {
+      "count": 60,
+      "sha256": "fec73306673b441cea651c7ad498d8645af6351e4450f13bd5213c5dbd93086a",
+      "families": [
+        "equipment",
+        "lighting",
+        "network",
+        "printing",
+        "seating",
+        "storage"
+      ]
+    },
+    "heldout.jsonl": {
+      "count": 60,
+      "sha256": "3bb2c600455389735fe266d005bd77e68711c2ff2c87c810b9030109eafe9acf",
+      "families": [
+        "audio",
+        "display",
+        "lab",
+        "safety",
+        "shipping",
+        "tools"
+      ]
+    }
+  },
+  "parentVersion": "synthetic-v1",
+  "changedCaseIds": [
+    "lab-001",
+    "lab-002",
+    "lab-003",
+    "lab-004",
+    "lab-005",
+    "lab-006",
+    "lab-009",
+    "lab-010"
+  ],
+  "correction": "Clarify laboratory cost-center requirement; no reference answers or quote facts change.",
+  "decision": "docs/adr/0006-ai-assisted-evaluation-review.md"
+}

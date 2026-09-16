@@ -1,5 +1,17 @@
 # Evidence index
 
+## 2026-09-15: delegated review accepted for experimental evaluation
+
+[ADR 0006](adr/0006-ai-assisted-evaluation-review.md) records the user's delegation.
+[Corrected v2 audit](evidence/2026-09-15-r2/ai-reference-review-v2/audit.json) covers
+all 120 cases, with 480 matching field checks and no outstanding discrepancies.
+[Summary and commands](evidence/2026-09-15-r2/ai-reference-review-v2/summary.md)
+explain the eight policy corrections. Tests preserve v1 and reject incomplete,
+stale or human-mislabeled AI reviews. These are reference checks, not predictions.
+No human verification, claim-support score, held-out result or R2 completion is
+claimed by this audit. [Installed development skills](development-skills.md)
+record the official source revision and intended uses.
+
 ## 2026-09-15: user-delegated AI reference review
 
 The [AI audit summary](evidence/2026-09-15-r2/ai-reference-review/summary.md) and
@@ -8,7 +20,8 @@ The [AI audit summary](evidence/2026-09-15-r2/ai-reference-review/summary.md) an
 policy-wording clarification. This is not a model-accuracy score or human
 verification. Frozen sources and product prompts remain unchanged. The checker
 is confined to `evals/audit_references.py`; a Node guard rejects its provenance
-as a substitute for the current human-review gate.
+as a substitute for human verification. ADR 0006 later authorizes a separate
+AI-reviewed learning profile; the original audit remains historical evidence.
 
 ## 2026-09-15: full development evaluation and bounded provider transport
 

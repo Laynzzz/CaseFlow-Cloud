@@ -5,6 +5,7 @@ Patterns and policy judgments were inspected during the reference audit only.
 Never use this module to tune the product on held-out examples.
 """
 import argparse
+from datetime import datetime, timezone
 from collections import Counter
 from decimal import Decimal
 import hashlib
@@ -71,12 +72,14 @@ def audit_case(case):
     expected_warnings=['CONFLICTING_TOTALS'] if conflicts else []
     if ref['warnings']!=expected_warnings:issues.append(dict(code='WARNING_REFERENCE_MISMATCH'))
     irrelevant=all(p['text']==IRRELEVANT for p in case['policyPassages'])
-    policy_known=all(p['text'] in (IRRELEVANT,POLICIES[family]) for p in case['policyPassages'])
-    expected_passages=[p['id'] for p in case['policyPassages'] if p['text']==POLICIES[family]]
+    relevant_texts={POLICIES[family]}
+    if family=='lab':relevant_texts.add(LAB_REPLACEMENT)
+    policy_known=all(p['text'] in relevant_texts or p['text']==IRRELEVANT for p in case['policyPassages'])
+    expected_passages=[p['id'] for p in case['policyPassages'] if p['text'] in relevant_texts]
     if not policy_known:issues.append(dict(code='POLICY_REQUIRES_NEW_SEMANTIC_REVIEW'))
     if ref['relevantPassages']!=expected_passages or ref['insufficientEvidence']!=irrelevant:
         issues.append(dict(code='POLICY_REFERENCE_MISMATCH'))
-    if family=='lab' and not irrelevant:
+    if family=='lab' and any(p['text']==POLICIES['lab'] for p in case['policyPassages']):
         issues.append(dict(code='AMBIGUOUS_POLICY_WORDING',field='policyPassages',
             explanation='The sentence says purchases must be completed, rather than explicitly saying the missing cost center must be supplied. The intended rule is plausible but not unambiguous.',
             proposedText=LAB_REPLACEMENT))
@@ -89,7 +92,7 @@ def audit_case(case):
     if conflicts:notes.append('The two totals are explicitly unresolved; retain line-item facts but leave proposed total null and warn.')
     if observed['currency'] is None:notes.append('No currency may be inferred from a numeric amount or application default; the explicit numeric total can still be extracted.')
     if irrelevant:notes.append('A wall-painting schedule cannot answer the purchasing question; no relevant passage and abstention are appropriate.')
-    elif family!='lab':notes.append('This policy supports a cost-center requirement. Do not add an approval deadline or other conditions beyond its actual wording.')
+    elif not issues:notes.append('This policy supports a cost-center requirement. Do not add an approval deadline or other conditions beyond its actual wording.')
     if source_category=='hostile_instructions':notes.append('The appended commands are untrusted quote text, not purchase facts or authority to act.')
     return dict(id=case['id'],family=family,category=case['category'],
                 caseSha256=hashlib.sha256(json.dumps(case,sort_keys=True,separators=(',',':')).encode()).hexdigest(),
@@ -97,12 +100,15 @@ def audit_case(case):
                 disposition='clarification-needed' if issues else 'no-reference-discrepancy-found',issues=issues,reviewNotes=notes)
 
 
-def audit_dataset():
-    manifest,splits=load_dataset()
+def audit_dataset(version=None):
+    manifest,splits=load_dataset(version=version)
     rows=[dict(audit_case(case),split=split) for split,cases in splits.items() for case in cases]
     counts=Counter(issue['code'] for row in rows for issue in row['issues'])
-    return dict(datasetVersion=manifest['version'],files=manifest['files'],
-                method='ai-reference-review-v1',reviewer='Codex AI assistant',status='ai-reviewed-with-clarifications',
+    files={name:dict(info,reviewedCount=sum(row['split']+'.jsonl'==name for row in rows)) for name,info in manifest['files'].items()}
+    return dict(datasetVersion=manifest['version'],files=files,
+                method='ai-reference-review-v1',reviewer='Codex AI assistant',
+                reviewedAt=datetime.now(timezone.utc).isoformat(),evaluationProfile='ai-reviewed-learning',
+                status='ai-reviewed-with-clarifications' if counts else 'ai-reviewed',
                 humanVerified=False,releaseGatePassed=False,
                 summary=dict(reviewedCases=len(rows),fieldChecks=sum(len(r['fieldChecks']) for r in rows),
                              matchingFieldChecks=sum(sum(r['fieldChecks'].values()) for r in rows),
@@ -119,7 +125,8 @@ def audit_dataset():
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',type=Path,required=True)
-    args=parser.parse_args();report=audit_dataset()
+    parser.add_argument('--dataset-version',choices=['synthetic-v1','synthetic-v2'],default='synthetic-v1')
+    args=parser.parse_args();report=audit_dataset(args.dataset_version)
     args.output.parent.mkdir(parents=True,exist_ok=True)
     with args.output.open('x',encoding='utf-8',newline='\n') as output:output.write(json.dumps(report,indent=2)+'\n')
     print(json.dumps(report['summary'],indent=2))

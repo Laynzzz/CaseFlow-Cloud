@@ -302,3 +302,28 @@ outputs, ledger rows and tests.
 Evidence: ADRs 0004/0005, worker retrieval and provider transport tests. Live
 development measurements are diagnostics; human review and held-out gates remain
 open. No production usage or retrieval-quality guarantee is claimed.
+
+
+## Delegated reference review checkpoint (2026-09-15)
+
+This supersedes the earlier pending-user-review status. Under ADR 0006, all 120
+v2 cases have AI reference review with no unresolved issues. Independent human
+review, held-out model results and claim support are still unmeasured.
+
+- **Why version a wording correction?** Eight laboratory policies were ambiguous.
+  A separate v2 snapshot clarifies the cost-center requirement without changing
+  quote facts or expected answers. Historical v1 runs retain their original inputs.
+  Follow-up: if held-out outputs guide prompt tuning, retire those families rather
+  than continuing to advertise them as held out.
+- **Does 480/480 mean perfect extraction?** No. These are source/reference checks
+  by an AI-assisted audit, not product predictions. The latest development model
+  score remains 225/240. Follow-up: AI reviewers can share model errors, so later
+  independent human grading provides stronger evidence.
+- **How do you prevent review provenance from getting lost?** Live runs require
+  an explicit AI profile and complete resolved judgments with case/file hashes.
+  They copy the review artifact and its checksum. The human profile rejects AI
+  artifacts. Follow-up: checksums ensure consistent bytes, not truthful judgment.
+
+Evidence: docs/adr/0006-ai-assisted-evaluation-review.md,
+evals/test-dataset.mjs, evals/test_audit_references.py, and
+docs/evidence/2026-09-15-r2/ai-reference-review-v2/summary.md.

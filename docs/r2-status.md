@@ -8,12 +8,12 @@ another confirmation unless an actual unresolved problem prevents the transition
 | --- | --- | --- | --- |
 | Attach a vendor quote | PDF/TXT or pasted text, immutable bytes, bounded parsing, text preview | Real API/storage/worker checks and browser pasted-TXT upload; compressed-stream and memory limits | Native file-picker selection remains unverified; broader browser regression |
 | Publish purchasing policies | Indexed publication, deactivation, immutable case pins; edit pasted text before upload | Real API/SQL invariants and browser source text/search | Broader history/browser regressions |
-| Find policy evidence | Authorized full-text baseline plus opt-in semantic/hybrid comparison | All methods 48/48 in simple dev corpora; three distractor probes: text 0/3, semantic 3/3, hybrid 0/3 | Human-verified held-out comparison; larger and more realistic corpora |
+| Find policy evidence | Authorized full-text baseline plus opt-in semantic/hybrid comparison | All methods 48/48 in simple dev corpora; three distractor probes: text 0/3, semantic 3/3, hybrid 0/3 | AI-reviewed held-out comparison (ADR 0006); larger and more realistic corpora |
 | Suggest purchase details | Live provider, strict schema, citations, arithmetic, durable jobs | Full dev rerun 225/240 fields; browser extraction and acceptance | Vendor accuracy remains 48/60; held-out evaluation |
 | Accept selected suggestions | Current-versus-proposed UI, matching-revision acceptance | SQL and API replay tests; browser vendor-only acceptance preserves unselected items/total | Broader browser regression |
-| Generate a cited review | Fixed facts/evidence pipeline, abstention and citation checks | Real dev jobs; correct abstention 12/12, false abstention 0/48 | Human claim-support grading and held-out results |
+| Generate a cited review | Fixed facts/evidence pipeline, abstention and citation checks | Real dev jobs; correct abstention 12/12, false abstention 0/48 | Explicitly labeled claim-support grading and held-out results |
 | Control AI spend | Shared lifetime/tenant-day ceilings, unknown reservations, bounded provider child | Real generation/embedding calls, revoked/stale cache writes, timeout termination, credential exclusion | Cloud-host validation and broader failure matrix |
-| Demonstrate quality | Frozen 60/60 split, scorers, reference and claim review forms, timing/cost exporters | Two complete 60-case development runs, raw outputs/failures, 58 worker and 17 eval checks | Reference verification, held-out results/repeats, claim grades and manual-versus-assisted outcome measurements |
+| Demonstrate quality | Frozen 60/60 split, scorers, reference and claim review forms, timing/cost exporters | Two complete 60-case development runs, raw outputs/failures, 58 worker checks; versioned AI review of all 120 references | Held-out results/repeats, claim grades and manual-versus-assisted outcome measurements |
 
 The user resolved provider billing, and the live extraction/acceptance/review
 journey now passes. Initial failures remain in evidence: HTTP 429, a malformed
@@ -26,7 +26,7 @@ The user configured the ignored local key and approved USD 10 total on 2026-09-1
 The worker was restarted to load it. Both the global lifetime and tenant/day caps
 are USD 10; repeated tests share the global cap. Credentials are never included
 in evidence. Successful model responses establish compatibility, not held-out
-quality; human reference review and the remaining release gates are still open.
+quality; independent human validation and remaining release gates are still open.
 
 Latest evidence: `development-v5-full` records all 60 development cases under
 prompt v5/schema v4 with the bounded provider transport. It improves the prior
@@ -40,13 +40,15 @@ the vendor and generated a review for the new revision. It did not silently chan
 the existing purchase total. Native file-picker automation exposed no controllable
 dialog, so that particular interaction is still unverified.
 
-Current human gate: complete `reference-review.html` and return the exported
-review file. The held-out runner refuses absent, partial or stale review files.
-At the user's request, an AI reference audit has now checked all 120 cases:
-480/480 source-derived field checks match, and eight laboratory cases have a
-policy-wording ambiguity. See `evidence/2026-09-15-r2/ai-reference-review/summary.md`.
-It is explicitly not human verification; no review checkboxes or frozen source
-files were changed. The proposed wording correction needs a versioned dataset.
+Reference review is handled by the assistant under user delegation and ADR 0006;
+no manual form completion is needed from the user. The v1 audit found eight
+ambiguous laboratory policies. Corrected v2 preserves every quote and reference
+answer and clarifies only those policies. Its AI audit records 120/120 cases
+without identified discrepancies and 480/480 matching source-derived field
+checks. This is reference consistency, not model accuracy or human verification.
+The held-out runner accepts it only with the explicit `ai-reviewed-learning`
+profile and rejects absent, partial, stale or unresolved reviews. Preflight passes
+with zero provider calls. Historical v1 stays intact.
 The separate claim-review form inventories 108 finding/summary outputs from the
 latest run, initially ungraded; the reviewer must split compound claims and give
 reasons. Do not grade the output as supported merely because a citation exists.
