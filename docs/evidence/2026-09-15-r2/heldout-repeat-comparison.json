@@ -1,0 +1,238 @@
+{
+  "datasetVersion": "synthetic-v2",
+  "selectedIds": [
+    "audio-001",
+    "audio-002",
+    "audio-003",
+    "audio-004",
+    "audio-005",
+    "audio-006",
+    "audio-007",
+    "audio-008",
+    "audio-009",
+    "audio-010"
+  ],
+  "baselineSubsetExtraction": {
+    "numerator": 35,
+    "denominator": 40,
+    "rate": 0.875
+  },
+  "repeatSubsetExtraction": {
+    "numerator": 37,
+    "denominator": 40,
+    "rate": 0.925
+  },
+  "planSha256": "ddb869d8b3858b7b2952660e9c4afb2c5dc399b1c68fcc5271bed3d6047a2ea7",
+  "predictionHashes": [
+    "ea929daeaedd7f3257185b9538f378dc6367f34a07a34f2ea933502b459a43c1",
+    "e09792ac536633454075fceca5e2d8fa5de3d100b2bfe8df44c9a22ce8c2d3dc"
+  ],
+  "changedExtractionFields": [
+    {
+      "id": "audio-006",
+      "field": "vendor"
+    },
+    {
+      "id": "audio-007",
+      "field": "vendor"
+    },
+    {
+      "id": "audio-008",
+      "field": "vendor"
+    },
+    {
+      "id": "audio-010",
+      "field": "vendor"
+    }
+  ],
+  "comparisons": [
+    {
+      "id": "audio-001",
+      "changedExtractionFields": [],
+      "inputComparability": "verified",
+      "unverifiedInputs": [],
+      "extractionStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "reviewStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "summaryTextChanged": true,
+      "findingTextsChanged": true,
+      "abstentionChanged": false
+    },
+    {
+      "id": "audio-002",
+      "changedExtractionFields": [],
+      "inputComparability": "verified",
+      "unverifiedInputs": [],
+      "extractionStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "reviewStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "summaryTextChanged": true,
+      "findingTextsChanged": true,
+      "abstentionChanged": false
+    },
+    {
+      "id": "audio-003",
+      "changedExtractionFields": [],
+      "inputComparability": "verified",
+      "unverifiedInputs": [],
+      "extractionStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "reviewStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "summaryTextChanged": true,
+      "findingTextsChanged": true,
+      "abstentionChanged": false
+    },
+    {
+      "id": "audio-004",
+      "changedExtractionFields": [],
+      "inputComparability": "verified",
+      "unverifiedInputs": [],
+      "extractionStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "reviewStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "summaryTextChanged": true,
+      "findingTextsChanged": true,
+      "abstentionChanged": false
+    },
+    {
+      "id": "audio-005",
+      "changedExtractionFields": [],
+      "inputComparability": "verified",
+      "unverifiedInputs": [],
+      "extractionStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "reviewStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "summaryTextChanged": true,
+      "findingTextsChanged": true,
+      "abstentionChanged": false
+    },
+    {
+      "id": "audio-006",
+      "changedExtractionFields": [
+        "vendor"
+      ],
+      "inputComparability": "verified",
+      "unverifiedInputs": [],
+      "extractionStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "reviewStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "summaryTextChanged": true,
+      "findingTextsChanged": true,
+      "abstentionChanged": false
+    },
+    {
+      "id": "audio-007",
+      "changedExtractionFields": [
+        "vendor"
+      ],
+      "inputComparability": "verified",
+      "unverifiedInputs": [],
+      "extractionStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "reviewStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "summaryTextChanged": true,
+      "findingTextsChanged": false,
+      "abstentionChanged": false
+    },
+    {
+      "id": "audio-008",
+      "changedExtractionFields": [
+        "vendor"
+      ],
+      "inputComparability": "verified",
+      "unverifiedInputs": [],
+      "extractionStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "reviewStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "summaryTextChanged": true,
+      "findingTextsChanged": false,
+      "abstentionChanged": false
+    },
+    {
+      "id": "audio-009",
+      "changedExtractionFields": [],
+      "inputComparability": "verified",
+      "unverifiedInputs": [],
+      "extractionStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "reviewStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "summaryTextChanged": true,
+      "findingTextsChanged": true,
+      "abstentionChanged": false
+    },
+    {
+      "id": "audio-010",
+      "changedExtractionFields": [
+        "vendor"
+      ],
+      "inputComparability": "verified",
+      "unverifiedInputs": [],
+      "extractionStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "reviewStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "summaryTextChanged": true,
+      "findingTextsChanged": true,
+      "abstentionChanged": false
+    }
+  ],
+  "summariesChanged": 10,
+  "findingsChanged": 8,
+  "abstentionsChanged": 0,
+  "releaseGatePassed": false,
+  "limitations": [
+    "One repeat of ten cases from one family; not an estimate of all-model variability.",
+    "Missing input provenance is marked unverified; such differences cannot establish model variability.",
+    "Text differences are not automatically factual errors; citation IDs differ by tenant and are not compared.",
+    "Both runs share a local worker; timings are not a controlled performance comparison."
+  ]
+}

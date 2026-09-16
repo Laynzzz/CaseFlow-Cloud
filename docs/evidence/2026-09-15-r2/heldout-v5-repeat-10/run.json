@@ -1,0 +1,34 @@
+{
+  "startedAt": "2026-09-16T03:49:02.403Z",
+  "datasetVersion": "synthetic-v2",
+  "split": "heldout",
+  "evaluationProfile": "ai-reviewed-learning",
+  "annotationReview": {
+    "method": "ai-reference-review-v1",
+    "reviewer": "Codex AI assistant",
+    "reviewedAt": "2026-09-16T03:14:45.928519+00:00",
+    "humanVerified": false,
+    "sha256": "098401f2c6b0505ab626e493906317ed85d902c875d6730604ac41a2bf27e5b9"
+  },
+  "compareRetrieval": true,
+  "datasetSha256": "3bb2c600455389735fe266d005bd77e68711c2ff2c87c810b9030109eafe9acf",
+  "selectedIds": [
+    "audio-001",
+    "audio-002",
+    "audio-003",
+    "audio-004",
+    "audio-005",
+    "audio-006",
+    "audio-007",
+    "audio-008",
+    "audio-009",
+    "audio-010"
+  ],
+  "transport": "real-oidc-api-kafka-worker",
+  "selection": "first N in frozen file order",
+  "releaseGatePassed": false,
+  "note": "Synthetic diagnostic run. Reference and claim review required; failed calls need ledger reconciliation.",
+  "finishedAt": "2026-09-16T03:51:52.745Z",
+  "stoppedEarly": false,
+  "predictionsSha256": "e09792ac536633454075fceca5e2d8fa5de3d100b2bfe8df44c9a22ce8c2d3dc"
+}

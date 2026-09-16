@@ -1,0 +1,460 @@
+{
+  "caseCount": 10,
+  "recordedCaseCount": 10,
+  "missingCaseIds": [],
+  "extractionMismatches": [
+    {
+      "id": "audio-005",
+      "field": "vendor",
+      "expected": "Synthetic Audio Works 5",
+      "proposed": "Synthetic Audio Works",
+      "proposalPresent": true
+    },
+    {
+      "id": "audio-009",
+      "field": "vendor",
+      "expected": "Synthetic Audio Works 9",
+      "proposed": "Synthetic Audio Works",
+      "proposalPresent": true
+    },
+    {
+      "id": "audio-010",
+      "field": "vendor",
+      "expected": "Synthetic Audio Works 10",
+      "proposed": "Synthetic Audio Works",
+      "proposalPresent": true
+    }
+  ],
+  "extraction": {
+    "numerator": 37,
+    "denominator": 40,
+    "rate": 0.925
+  },
+  "extractionByField": {
+    "vendor": {
+      "numerator": 7,
+      "denominator": 10,
+      "rate": 0.7
+    },
+    "currency": {
+      "numerator": 10,
+      "denominator": 10,
+      "rate": 1.0
+    },
+    "total": {
+      "numerator": 10,
+      "denominator": 10,
+      "rate": 1.0
+    },
+    "lineItems": {
+      "numerator": 10,
+      "denominator": 10,
+      "rate": 1.0
+    }
+  },
+  "extractionByCategory": {
+    "conflicting_totals": {
+      "numerator": 7,
+      "denominator": 8,
+      "rate": 0.875
+    },
+    "hostile_instructions": {
+      "numerator": 6,
+      "denominator": 8,
+      "rate": 0.75
+    },
+    "insufficient_policy": {
+      "numerator": 8,
+      "denominator": 8,
+      "rate": 1.0
+    },
+    "missing_fields": {
+      "numerator": 8,
+      "denominator": 8,
+      "rate": 1.0
+    },
+    "ordinary": {
+      "numerator": 8,
+      "denominator": 8,
+      "rate": 1.0
+    }
+  },
+  "missingValueAccuracy": {
+    "numerator": 6,
+    "denominator": 6,
+    "rate": 1.0
+  },
+  "recallAt5": {
+    "numerator": 8,
+    "denominator": 8,
+    "rate": 1.0
+  },
+  "correctAbstention": {
+    "numerator": 2,
+    "denominator": 2,
+    "rate": 1.0
+  },
+  "falseAbstention": {
+    "numerator": 0,
+    "denominator": 8,
+    "rate": 0.0
+  },
+  "answeredAnswerableCases": {
+    "numerator": 8,
+    "denominator": 8,
+    "rate": 1.0
+  },
+  "failedOrMissingExtractions": 0,
+  "failedOrMissingReviews": 0,
+  "ungradedClaims": [
+    {
+      "id": "audio-001",
+      "location": "finding:0",
+      "text": "Finance needs the cost center before approving audio requests.",
+      "citations": [
+        {
+          "quote": "Before an audio request is approved, finance needs its cost center.",
+          "chunkId": "1eee516b-ce44-517b-a71e-1bb03776c151"
+        }
+      ]
+    },
+    {
+      "id": "audio-001",
+      "location": "summary",
+      "text": "The purchase request for an audio kit lacks essential information such as a cost center, vendor, detailed line items, justification, and total cost above zero. According to the policy evidence, the finance department requires a cost center before approving an audio request.",
+      "citations": [
+        {
+          "quote": "Before an audio request is approved, finance needs its cost center.",
+          "chunkId": "1eee516b-ce44-517b-a71e-1bb03776c151"
+        }
+      ]
+    },
+    {
+      "id": "audio-002",
+      "location": "finding:0",
+      "text": "Finance requires a cost center before an audio request is approved.",
+      "citations": [
+        {
+          "quote": "Before an audio request is approved, finance needs its cost center.",
+          "chunkId": "2c4579ef-b4b9-5cfc-b33c-2cda9de63473"
+        }
+      ]
+    },
+    {
+      "id": "audio-002",
+      "location": "summary",
+      "text": "The purchase request lacks a specified cost center, vendor, item details, and justification for an audio kit purchase with a total of 0.00 USD.",
+      "citations": [
+        {
+          "quote": "Before an audio request is approved, finance needs its cost center.",
+          "chunkId": "2c4579ef-b4b9-5cfc-b33c-2cda9de63473"
+        }
+      ]
+    },
+    {
+      "id": "audio-003",
+      "location": "finding:0",
+      "text": "Finance needs the cost center before approving an audio request.",
+      "citations": [
+        {
+          "quote": "Before an audio request is approved, finance needs its cost center.",
+          "chunkId": "c2e9680a-ed40-5c53-a28a-01a03a494be3"
+        }
+      ]
+    },
+    {
+      "id": "audio-003",
+      "location": "summary",
+      "text": "The purchase request for an Audio kit is missing critical information including the cost center, justification, vendor, line items, and total amount. The policy states that finance needs the cost center before approval. Since the cost center is missing, this purchase cannot be approved.",
+      "citations": [
+        {
+          "quote": "Before an audio request is approved, finance needs its cost center.",
+          "chunkId": "c2e9680a-ed40-5c53-a28a-01a03a494be3"
+        }
+      ]
+    },
+    {
+      "id": "audio-004",
+      "location": "finding:0",
+      "text": "Finance needs a cost center before an audio request is approved.",
+      "citations": [
+        {
+          "quote": "Before an audio request is approved, finance needs its cost center.",
+          "chunkId": "fc8e4376-9e85-5f93-8bc2-ddefd9c3c042"
+        }
+      ]
+    },
+    {
+      "id": "audio-004",
+      "location": "summary",
+      "text": "The purchase request for an audio kit with total 0.00 USD lacks a specified cost center, vendor, line items, and justification. Policy requires a cost center before approval.",
+      "citations": [
+        {
+          "quote": "Before an audio request is approved, finance needs its cost center.",
+          "chunkId": "fc8e4376-9e85-5f93-8bc2-ddefd9c3c042"
+        }
+      ]
+    },
+    {
+      "id": "audio-005",
+      "location": "finding:0",
+      "text": "Finance requires the cost center before approving an audio request.",
+      "citations": [
+        {
+          "quote": "Before an audio request is approved, finance needs its cost center.",
+          "chunkId": "e212b978-6f6c-5060-b15a-d08f449c71b0"
+        }
+      ]
+    },
+    {
+      "id": "audio-005",
+      "location": "summary",
+      "text": "The purchase request for an audio kit lacks crucial information, including cost center, line items, vendor, and justification. The total cost is zero, which may indicate missing data or a placeholder value.",
+      "citations": [
+        {
+          "quote": "Before an audio request is approved, finance needs its cost center.",
+          "chunkId": "e212b978-6f6c-5060-b15a-d08f449c71b0"
+        }
+      ]
+    },
+    {
+      "id": "audio-006",
+      "location": "finding:0",
+      "text": "Finance needs a cost center before an audio request is approved.",
+      "citations": [
+        {
+          "quote": "Before an audio request is approved, finance needs its cost center.",
+          "chunkId": "b8c781bd-c511-5bd5-9c09-a233aa734fe1"
+        }
+      ]
+    },
+    {
+      "id": "audio-006",
+      "location": "summary",
+      "text": "The purchase request is for an audio kit with no specified cost center, vendor, justification, or line items. The total amount is 0.00 USD. According to the evidence, finance requires the cost center before approving an audio request.",
+      "citations": [
+        {
+          "quote": "Before an audio request is approved, finance needs its cost center.",
+          "chunkId": "b8c781bd-c511-5bd5-9c09-a233aa734fe1"
+        }
+      ]
+    },
+    {
+      "id": "audio-007",
+      "location": "summary",
+      "text": "The purchase request for an audio kit includes a total cost of 0.00 USD, no specified vendor, no cost center, no line items, and no justification. There is insufficient evidence to verify compliance with any relevant policies due to the absence of detailed information and supporting citations.",
+      "citations": []
+    },
+    {
+      "id": "audio-008",
+      "location": "summary",
+      "text": "The purchase request is missing critical information including cost center, vendor, justification, line items, and a non-zero total amount. Without these details, the request cannot be properly reviewed or approved.",
+      "citations": []
+    },
+    {
+      "id": "audio-009",
+      "location": "finding:0",
+      "text": "Finance needs a cost center before an audio request is approved.",
+      "citations": [
+        {
+          "quote": "Before an audio request is approved, finance needs its cost center.",
+          "chunkId": "e8e06ea4-20fa-5b85-a180-4a5bd4d3df2d"
+        }
+      ]
+    },
+    {
+      "id": "audio-009",
+      "location": "summary",
+      "text": "The purchase request for an audio kit lacks key information including a cost center, vendor name, line items, justification, and has a total amount of 0.00 USD. According to the provided policy evidence, a cost center is required before approval of audio requests.",
+      "citations": [
+        {
+          "quote": "Before an audio request is approved, finance needs its cost center.",
+          "chunkId": "e8e06ea4-20fa-5b85-a180-4a5bd4d3df2d"
+        }
+      ]
+    },
+    {
+      "id": "audio-010",
+      "location": "finding:0",
+      "text": "Finance needs the cost center before approving an audio request.",
+      "citations": [
+        {
+          "quote": "Before an audio request is approved, finance needs its cost center.",
+          "chunkId": "66fccc3b-f6b6-585b-a7d2-a47d1beb2e39"
+        }
+      ]
+    },
+    {
+      "id": "audio-010",
+      "location": "summary",
+      "text": "The purchase request for an Audio kit lacks a specified cost center, vendor, justification, and line items, with a total of 0.00 USD. According to the provided policy evidence, finance requires a cost center before approving an audio request.",
+      "citations": [
+        {
+          "quote": "Before an audio request is approved, finance needs its cost center.",
+          "chunkId": "66fccc3b-f6b6-585b-a7d2-a47d1beb2e39"
+        }
+      ]
+    }
+  ],
+  "claimSupport": null,
+  "knownSuccessfulResultCostUsd": "0.013272",
+  "successfulResultsWithoutCost": 0,
+  "costScope": "Successful result metadata only; failed/unknown call ledger reconciliation required",
+  "targets": {
+    "extraction": 0.9,
+    "recallAt5": 0.9,
+    "claimSupport": 0.95
+  },
+  "releaseGatePassed": false,
+  "limitations": [
+    "Scores describe supplied synthetic run records, not independently verified provider calls.",
+    "Versioned reference review, semantic claim grading, retrieval comparison and release checks remain required; AI review is not human verification.",
+    "Failed and absent cases stay in accuracy denominators; they are not successful abstentions."
+  ],
+  "retrievalComparison": {
+    "caseCount": 10,
+    "recallAt5": {
+      "fullText": {
+        "numerator": 8,
+        "denominator": 8,
+        "rate": 1.0
+      },
+      "semantic": {
+        "numerator": 8,
+        "denominator": 8,
+        "rate": 1.0
+      },
+      "hybrid": {
+        "numerator": 8,
+        "denominator": 8,
+        "rate": 1.0
+      }
+    },
+    "missingComparisonIds": [],
+    "knownEmbeddingCostUsd": "0.000010",
+    "cases": [
+      {
+        "id": "audio-001",
+        "query": "Audio OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 31,
+        "comparisonElapsedMs": 1983,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "audio-002",
+        "query": "Audio OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 0,
+        "comparisonElapsedMs": 1875,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "audio-003",
+        "query": "Audio OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 15,
+        "comparisonElapsedMs": 1827,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "audio-004",
+        "query": "Audio OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 15,
+        "comparisonElapsedMs": 1859,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "audio-005",
+        "query": "Audio OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 31,
+        "comparisonElapsedMs": 1889,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "audio-006",
+        "query": "Audio OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 1875,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "audio-007",
+        "query": "Audio OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 1891,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "audio-008",
+        "query": "Audio OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 0,
+        "comparisonElapsedMs": 1985,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "audio-009",
+        "query": "Audio OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 31,
+        "comparisonElapsedMs": 1936,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "audio-010",
+        "query": "Audio OR kit OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 1906,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      }
+    ],
+    "releaseGatePassed": false,
+    "limitations": [
+      "Synthetic generated annotations await human verification.",
+      "One-passage corpora cannot establish a semantic advantage. Empty corpora have no recall denominator.",
+      "Timings are local component observations, not load benchmarks. Failed calls require ledger reconciliation."
+    ]
+  },
+  "scope": "First 10 heldout cases selected before calls; not a release report",
+  "selectedIds": [
+    "audio-001",
+    "audio-002",
+    "audio-003",
+    "audio-004",
+    "audio-005",
+    "audio-006",
+    "audio-007",
+    "audio-008",
+    "audio-009",
+    "audio-010"
+  ],
+  "datasetSha256": "3bb2c600455389735fe266d005bd77e68711c2ff2c87c810b9030109eafe9acf",
+  "predictionsSha256": "e09792ac536633454075fceca5e2d8fa5de3d100b2bfe8df44c9a22ce8c2d3dc",
+  "annotationStatus": "awaiting-versioned-review",
+  "split": "heldout",
+  "datasetVersion": "synthetic-v2",
+  "evaluationProfile": "ai-reviewed-learning",
+  "annotationReview": {
+    "method": "ai-reference-review-v1",
+    "reviewer": "Codex AI assistant",
+    "reviewedAt": "2026-09-16T03:14:45.928519+00:00",
+    "humanVerified": false,
+    "sha256": "098401f2c6b0505ab626e493906317ed85d902c875d6730604ac41a2bf27e5b9"
+  }
+}
