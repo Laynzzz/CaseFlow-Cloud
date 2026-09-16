@@ -1,0 +1,25 @@
+{
+  "observedAt": "2026-09-16T03:51:24.937110+00:00",
+  "tool": "Playwright CLI, isolated Chromium session caseflow-r2",
+  "caseId": "7eaf4ee1-49b2-4f4a-9f3e-798e90695497",
+  "synthetic": true,
+  "checks": [
+    {
+      "name": "Native HTML file input and browser file chooser",
+      "outcome": "PASS",
+      "detail": "Clicked PDF or TXT file, observed chooser, selected fixtures/quotes/browser-upload.txt, uploaded and indexed. Source preview showed original vendor, desk lamp 2 x35, USD70 and page offsets."
+    },
+    {
+      "name": "Manual fallback on AI endpoint 503",
+      "outcome": "PASS",
+      "detail": "Browser-only interception of **/assistant returned synthetic503. UI displayed error. Edited cost center from BROWSER-01 to BROWSER-MANUAL-02, saved version2; total stayedUSD70.00. Removed route and reloaded; edit persisted and errors cleared."
+    }
+  ],
+  "limitations": [
+    "AI unavailability was simulated only in this browser; no real provider outage was induced.",
+    "Playwright handles the browser file-chooser event; this does not exercise clicking through the Windows OS dialog.",
+    "Manual draft editing and upload checked; not a complete approval-to-DOCX browser test or human usability study."
+  ],
+  "screenshot": "output/playwright/r2-manual-fallback.png",
+  "providerCalls": 0
+}
