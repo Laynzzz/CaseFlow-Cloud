@@ -1,0 +1,101 @@
+{
+  "startedAt": "2026-09-16T06:25:33.317Z",
+  "method": "automated-live-api-check",
+  "humanVerified": false,
+  "scope": "Complete synthetic purchase; schema maxItems=0; no claim-quality or user-outcome score",
+  "checks": [
+    "Complete purchase returned no missing fields; relevant cited finding; purchase unchanged"
+  ],
+  "tenantId": "6521c0a2-534e-49ad-a386-ba7f707a06ec",
+  "caseId": "e942c7bd-2c28-4cf6-8c33-4545360a680c",
+  "policy": {
+    "id": "c0a53ee0-67a2-4d2d-a11d-bcfb3b927748",
+    "kind": "POLICY",
+    "name": "Synthetic complete-purchase policy",
+    "state": "PUBLISHED",
+    "version": 2,
+    "caseId": null,
+    "mediaType": "text/plain",
+    "byteSize": 58,
+    "sha256": "d23d7939ddf5c48a4275d8f563f49f8ae3f762a9157cafae9d4edef837f5d8d4",
+    "jobId": "19307a00-5fcf-4fa8-85e8-55749a173b44",
+    "failureCode": null
+  },
+  "manualPurchase": {
+    "total": "4200.00",
+    "vendor": "Synthetic Equipment Ltd",
+    "currency": "USD",
+    "lineItems": [
+      {
+        "quantity": "2",
+        "unitPrice": "2100.00",
+        "description": "Equipment"
+      }
+    ],
+    "costCenter": "OPS",
+    "description": "Equipment purchase",
+    "justification": "Replace synthetic equipment"
+  },
+  "review": {
+    "jobId": "99ade6e9-ee2f-43a4-9196-a0feb18df183",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 1,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "00865f2c-c969-4cd8-ac9f-de39ad60e87d",
+      "output": {
+        "summary": "The purchase is for equipment with a quantity of 2 and a total amount of 4200.00 USD from vendor Synthetic Equipment Ltd. The cost center 'OPS' is provided. According to policy, equipment purchases require a cost center before approval.",
+        "citations": [
+          {
+            "quote": "Equipment purchases require a cost center before approval.",
+            "chunkId": "2b93d74a-1b4e-5c24-9abd-7662ce86a6c1"
+          }
+        ],
+        "policy_findings": [
+          {
+            "claim": "Equipment purchases require a cost center before approval.",
+            "citations": [
+              {
+                "quote": "Equipment purchases require a cost center before approval.",
+                "chunkId": "2b93d74a-1b4e-5c24-9abd-7662ce86a6c1"
+              }
+            ]
+          }
+        ],
+        "missing_information": [],
+        "insufficient_evidence": false
+      },
+      "evidence": {
+        "2b93d74a-1b4e-5c24-9abd-7662ce86a6c1": {
+          "page": 1,
+          "text": "Equipment purchases require a cost center before approval.",
+          "start": 0,
+          "sourceId": "c0a53ee0-67a2-4d2d-a11d-bcfb3b927748"
+        }
+      },
+      "revision": 1,
+      "sourceId": null,
+      "elapsedMs": 4609,
+      "promptHash": "5d40edbb152754c5b99489f868b6596e97ba4a14dd32f4e13ac2298bcdbf1bf4",
+      "schemaHash": "473c36f77c81a631d0b84de7281e27346e6da727312973c8b91ddbcf9446a363",
+      "inputTokens": 1050,
+      "outputTokens": 178,
+      "sourceSha256": null,
+      "promptVersion": "purchase-review-2026-09-16-v6",
+      "schemaVersion": "purchase-review-v5",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Equipment OR purchase OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000705",
+      "retrievedChunkIds": [
+        "2b93d74a-1b4e-5c24-9abd-7662ce86a6c1"
+      ],
+      "retrievalElapsedMs": 15
+    }
+  },
+  "finishedAt": "2026-09-16T06:25:41.907Z"
+}

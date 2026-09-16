@@ -1,0 +1,37 @@
+{
+  "jobIds": [
+    "99ade6e9-ee2f-43a4-9196-a0feb18df183"
+  ],
+  "calls": [
+    {
+      "id": "00865f2c-c969-4cd8-ac9f-de39ad60e87d",
+      "tenant_id": "6521c0a2-534e-49ad-a386-ba7f707a06ec",
+      "job_id": "99ade6e9-ee2f-43a4-9196-a0feb18df183",
+      "attempt": 1,
+      "fence": 1,
+      "purpose": "review",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "pricing_version": "openai-standard-2026-09-15",
+      "reserved_usd": "0.019661",
+      "actual_usd": "0.000705",
+      "input_tokens": 1050,
+      "output_tokens": 178,
+      "state": "SETTLED",
+      "error_code": null,
+      "elapsed_ms": 4609,
+      "created_at": "2026-09-16 06:25:35.922689+00:00",
+      "response_evidence": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "rawOutput": "{\"summary\":\"The purchase is for equipment with a quantity of 2 and a total amount of 4200.00 USD from vendor Synthetic Equipment Ltd. The cost center 'OPS' is provided. According to policy, equipment purchases require a cost center before approval.\",\"missing_information\":[],\"policy_findings\":[{\"claim\":\"Equipment purchases require a cost center before approval.\",\"citations\":[{\"chunkId\":\"2b93d74a-1b4e-5c24-9abd-7662ce86a6c1\",\"quote\":\"Equipment purchases require a cost center before approval.\"}]}],\"citations\":[{\"chunkId\":\"2b93d74a-1b4e-5c24-9abd-7662ce86a6c1\",\"quote\":\"Equipment purchases require a cost center before approval.\"}],\"insufficient_evidence\":false}",
+        "truncated": false,
+        "promptHash": "5d40edbb152754c5b99489f868b6596e97ba4a14dd32f4e13ac2298bcdbf1bf4",
+        "schemaHash": "473c36f77c81a631d0b84de7281e27346e6da727312973c8b91ddbcf9446a363",
+        "promptVersion": "purchase-review-2026-09-16-v6",
+        "schemaVersion": "purchase-review-v5",
+        "rawOutputSha256": "d1fdfa60af9254e8a9eb9efb361fa491c63e9b89a0866fa4d7dbdf0f3efa671e"
+      }
+    }
+  ],
+  "accountedUsd": "0.000705",
+  "scope": "Selected synthetic job IDs only; unknown usage retains its reservation"
+}

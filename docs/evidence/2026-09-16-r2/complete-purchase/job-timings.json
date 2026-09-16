@@ -1,0 +1,19 @@
+{
+  "jobIds": [
+    "99ade6e9-ee2f-43a4-9196-a0feb18df183"
+  ],
+  "jobs": [
+    {
+      "job_id": "99ade6e9-ee2f-43a4-9196-a0feb18df183",
+      "kind": "REVIEW",
+      "status": "SUCCEEDED",
+      "attempt": 1,
+      "requested_at": "2026-09-16 06:25:35.084787+00:00",
+      "completed_at": "2026-09-16 06:25:41.580052+00:00",
+      "scheduled_at": "2026-09-16 06:25:35.629487+00:00",
+      "executions": 1,
+      "first_claim_at": "2026-09-16 06:25:35.832873+00:00"
+    }
+  ],
+  "scope": "Selected synthetic assistant jobs; database transaction timestamps, no purchase content."
+}
