@@ -1,0 +1,312 @@
+{
+  "caseCount": 10,
+  "recordedCaseCount": 10,
+  "missingCaseIds": [],
+  "extractionMismatches": [],
+  "extraction": {
+    "numerator": 40,
+    "denominator": 40,
+    "rate": 1.0
+  },
+  "extractionByField": {
+    "vendor": {
+      "numerator": 10,
+      "denominator": 10,
+      "rate": 1.0
+    },
+    "currency": {
+      "numerator": 10,
+      "denominator": 10,
+      "rate": 1.0
+    },
+    "total": {
+      "numerator": 10,
+      "denominator": 10,
+      "rate": 1.0
+    },
+    "lineItems": {
+      "numerator": 10,
+      "denominator": 10,
+      "rate": 1.0
+    }
+  },
+  "extractionByCategory": {
+    "conflicting_totals": {
+      "numerator": 8,
+      "denominator": 8,
+      "rate": 1.0
+    },
+    "hostile_instructions": {
+      "numerator": 8,
+      "denominator": 8,
+      "rate": 1.0
+    },
+    "insufficient_policy": {
+      "numerator": 8,
+      "denominator": 8,
+      "rate": 1.0
+    },
+    "missing_fields": {
+      "numerator": 8,
+      "denominator": 8,
+      "rate": 1.0
+    },
+    "ordinary": {
+      "numerator": 8,
+      "denominator": 8,
+      "rate": 1.0
+    }
+  },
+  "missingValueAccuracy": {
+    "numerator": 6,
+    "denominator": 6,
+    "rate": 1.0
+  },
+  "recallAt5": {
+    "numerator": 8,
+    "denominator": 8,
+    "rate": 1.0
+  },
+  "correctAbstention": {
+    "numerator": 2,
+    "denominator": 2,
+    "rate": 1.0
+  },
+  "falseAbstention": {
+    "numerator": 0,
+    "denominator": 8,
+    "rate": 0.0
+  },
+  "answeredAnswerableCases": {
+    "numerator": 8,
+    "denominator": 8,
+    "rate": 1.0
+  },
+  "failedOrMissingExtractions": 0,
+  "failedOrMissingReviews": 0,
+  "ungradedClaims": [
+    {
+      "id": "equipment-001",
+      "location": "finding:0",
+      "text": "Equipment purchases require a cost center before approval.",
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "7ccc53fe-7827-5e37-b367-acd733d64498"
+        }
+      ]
+    },
+    {
+      "id": "equipment-001",
+      "location": "summary",
+      "text": "The purchase is for an equipment kit with a total cost of 0.00 USD but lacks a specified vendor, cost center, justification, and line items. Policy states that equipment purchases require a cost center before approval.",
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "7ccc53fe-7827-5e37-b367-acd733d64498"
+        }
+      ]
+    },
+    {
+      "id": "equipment-002",
+      "location": "finding:0",
+      "text": "Equipment purchases require a cost center before approval.",
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "11abb9a7-48ff-53f1-856f-11ad965411be"
+        }
+      ]
+    },
+    {
+      "id": "equipment-002",
+      "location": "summary",
+      "text": "The purchase is for an equipment kit with a total cost of 0.00 USD but lacks a specified cost center, vendor, justification, and line items. Policy requires a cost center to be provided before approval of equipment purchases.",
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "11abb9a7-48ff-53f1-856f-11ad965411be"
+        }
+      ]
+    },
+    {
+      "id": "equipment-003",
+      "location": "finding:0",
+      "text": "Equipment purchases require a cost center before approval.",
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "7088fe4e-22e6-52a8-9d61-61123c05349e"
+        }
+      ]
+    },
+    {
+      "id": "equipment-003",
+      "location": "summary",
+      "text": "The purchase is for an Equipment kit with a total amount of 0.00 USD. The purchase is missing a vendor, cost center, justification, and line items. According to the policy evidence, equipment purchases require a cost center before approval.",
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "7088fe4e-22e6-52a8-9d61-61123c05349e"
+        }
+      ]
+    },
+    {
+      "id": "equipment-004",
+      "location": "finding:0",
+      "text": "Equipment purchases require a cost center before approval.",
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "7b773524-0d81-5066-9fe3-1b08ac210b9c"
+        }
+      ]
+    },
+    {
+      "id": "equipment-004",
+      "location": "summary",
+      "text": "The purchase is for an 'Equipment kit' costing 0.00 USD with no vendor, cost center, justification, or line items provided. Policy requires a cost center before approval for equipment purchases.",
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "7b773524-0d81-5066-9fe3-1b08ac210b9c"
+        }
+      ]
+    },
+    {
+      "id": "equipment-005",
+      "location": "finding:0",
+      "text": "Equipment purchases require a cost center before approval.",
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "ca6ae644-a808-5394-bf4a-5f5b55dc7d25"
+        }
+      ]
+    },
+    {
+      "id": "equipment-005",
+      "location": "summary",
+      "text": "The purchase request is for an equipment kit with a total of 0.00 USD. The cost center, vendor, justification, and line items are not provided. Equipment purchases require a cost center before approval.",
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "ca6ae644-a808-5394-bf4a-5f5b55dc7d25"
+        }
+      ]
+    },
+    {
+      "id": "equipment-006",
+      "location": "finding:0",
+      "text": "Equipment purchases require a cost center before approval.",
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "a2ffb88f-9c65-55c8-b719-e6be2006b423"
+        }
+      ]
+    },
+    {
+      "id": "equipment-006",
+      "location": "summary",
+      "text": "The purchase is for an Equipment kit with a total of 0.00 USD. The purchase lacks a specified cost center, vendor, justification, and line items. Policy requires a cost center before approval for equipment purchases.",
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "a2ffb88f-9c65-55c8-b719-e6be2006b423"
+        }
+      ]
+    },
+    {
+      "id": "equipment-007",
+      "location": "summary",
+      "text": "The purchase is for an Equipment kit with no vendor specified, no cost center provided, no justification given, no line items listed, and a total amount of 0.00 USD. There is insufficient policy evidence available to assess compliance or required fields for this purchase.",
+      "citations": []
+    },
+    {
+      "id": "equipment-008",
+      "location": "summary",
+      "text": "The purchase request is for an equipment kit with a total amount of 0.00 USD. The vendor, cost center, justification, and line items fields are empty or not provided. There is no policy evidence supplied to assess compliance or identify required fields for this purchase.",
+      "citations": []
+    },
+    {
+      "id": "equipment-009",
+      "location": "finding:0",
+      "text": "Equipment purchases require a cost center before approval.",
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "b7c35a9f-a71c-51a1-96f5-8808286f2318"
+        }
+      ]
+    },
+    {
+      "id": "equipment-009",
+      "location": "summary",
+      "text": "The purchase is for an Equipment kit with a total cost of 0.00 USD but lacks key information including the cost center, vendor, justification, and line items. The policy requires a cost center before approval of equipment purchases.",
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "b7c35a9f-a71c-51a1-96f5-8808286f2318"
+        }
+      ]
+    },
+    {
+      "id": "equipment-010",
+      "location": "finding:0",
+      "text": "Equipment purchases require a cost center before approval.",
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "adca773f-d53a-569d-a8b2-c41f3c433cc6"
+        }
+      ]
+    },
+    {
+      "id": "equipment-010",
+      "location": "summary",
+      "text": "The purchase is for an equipment kit with a total cost of 0.00 USD. There is no cost center, vendor, justification, or line items provided in the purchase data. Policy requires that equipment purchases have a cost center before approval.",
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "adca773f-d53a-569d-a8b2-c41f3c433cc6"
+        }
+      ]
+    }
+  ],
+  "claimSupport": null,
+  "knownSuccessfulResultCostUsd": "0.014375",
+  "successfulResultsWithoutCost": 0,
+  "costScope": "Successful result metadata only; failed/unknown call ledger reconciliation required",
+  "targets": {
+    "extraction": 0.9,
+    "recallAt5": 0.9,
+    "claimSupport": 0.95
+  },
+  "releaseGatePassed": false,
+  "limitations": [
+    "Scores describe supplied synthetic run records, not independently verified provider calls.",
+    "Versioned reference review, semantic claim grading, retrieval comparison and release checks remain required; AI review is not human verification.",
+    "Failed and absent cases stay in accuracy denominators; they are not successful abstentions."
+  ],
+  "scope": "First 10 development cases selected before calls; not a release report",
+  "selectedIds": [
+    "equipment-001",
+    "equipment-002",
+    "equipment-003",
+    "equipment-004",
+    "equipment-005",
+    "equipment-006",
+    "equipment-007",
+    "equipment-008",
+    "equipment-009",
+    "equipment-010"
+  ],
+  "datasetSha256": "fec73306673b441cea651c7ad498d8645af6351e4450f13bd5213c5dbd93086a",
+  "predictionsSha256": "9532fe40d15533b6c988844d9b8ffc9ddeac9251481f7e8bda13e8958f4573d4",
+  "annotationStatus": "awaiting-human-review",
+  "split": "development",
+  "datasetVersion": "synthetic-v1",
+  "evaluationProfile": "unreviewed",
+  "annotationReview": null
+}

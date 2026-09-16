@@ -1,0 +1,513 @@
+{
+  "claimSupport": {
+    "numerator": 78,
+    "denominator": 78,
+    "rate": 1.0
+  },
+  "unsupportedClaims": 0,
+  "nonFactualSegments": 1,
+  "reviewedOutputs": 18,
+  "reviewer": "Codex AI assistant",
+  "reviewedAt": "2026-09-16T06:12:43.302890+00:00",
+  "method": "ai-claim-review-v1",
+  "profile": "ai-reviewed-learning",
+  "humanVerified": false,
+  "datasetSha256": "fec73306673b441cea651c7ad498d8645af6351e4450f13bd5213c5dbd93086a",
+  "predictionsSha256": "9532fe40d15533b6c988844d9b8ffc9ddeac9251481f7e8bda13e8958f4573d4",
+  "failedOrMissingReviews": 0,
+  "grades": [
+    {
+      "key": "equipment-001/finding:0",
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited policy passage states this equipment-specific cost-center requirement and before-approval timing verbatim; it applies to the Equipment kit purchase."
+        }
+      ]
+    },
+    {
+      "key": "equipment-001/summary",
+      "segments": [
+        {
+          "text": "The purchase is for an Equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Equipment kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is supplied data, not a missing total."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited policy passage states this equipment-specific cost-center requirement and before-approval timing verbatim; it applies to the Equipment kit purchase."
+        }
+      ]
+    },
+    {
+      "key": "equipment-002/finding:0",
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited policy passage states this equipment-specific cost-center requirement and before-approval timing verbatim; it applies to the Equipment kit purchase."
+        }
+      ]
+    },
+    {
+      "key": "equipment-002/summary",
+      "segments": [
+        {
+          "text": "The purchase is for an Equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Equipment kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is supplied data, not a missing total."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited policy passage states this equipment-specific cost-center requirement and before-approval timing verbatim; it applies to the Equipment kit purchase."
+        }
+      ]
+    },
+    {
+      "key": "equipment-003/finding:0",
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited policy passage states this equipment-specific cost-center requirement and before-approval timing verbatim; it applies to the Equipment kit purchase."
+        }
+      ]
+    },
+    {
+      "key": "equipment-003/summary",
+      "segments": [
+        {
+          "text": "The purchase is for an Equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Equipment kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is supplied data, not a missing total."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited policy passage states this equipment-specific cost-center requirement and before-approval timing verbatim; it applies to the Equipment kit purchase."
+        }
+      ]
+    },
+    {
+      "key": "equipment-004/finding:0",
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited policy passage states this equipment-specific cost-center requirement and before-approval timing verbatim; it applies to the Equipment kit purchase."
+        }
+      ]
+    },
+    {
+      "key": "equipment-004/summary",
+      "segments": [
+        {
+          "text": "The purchase is for an Equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Equipment kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is supplied data, not a missing total."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited policy passage states this equipment-specific cost-center requirement and before-approval timing verbatim; it applies to the Equipment kit purchase."
+        }
+      ]
+    },
+    {
+      "key": "equipment-005/finding:0",
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited policy passage states this equipment-specific cost-center requirement and before-approval timing verbatim; it applies to the Equipment kit purchase."
+        }
+      ]
+    },
+    {
+      "key": "equipment-005/summary",
+      "segments": [
+        {
+          "text": "The purchase is for an Equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Equipment kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is supplied data, not a missing total."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited policy passage states this equipment-specific cost-center requirement and before-approval timing verbatim; it applies to the Equipment kit purchase."
+        }
+      ]
+    },
+    {
+      "key": "equipment-006/finding:0",
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited policy passage states this equipment-specific cost-center requirement and before-approval timing verbatim; it applies to the Equipment kit purchase."
+        }
+      ]
+    },
+    {
+      "key": "equipment-006/summary",
+      "segments": [
+        {
+          "text": "The purchase is for an Equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Equipment kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is supplied data, not a missing total."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited policy passage states this equipment-specific cost-center requirement and before-approval timing verbatim; it applies to the Equipment kit purchase."
+        }
+      ]
+    },
+    {
+      "key": "equipment-007/summary",
+      "segments": [
+        {
+          "text": "The purchase is for an Equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Equipment kit."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is supplied data, not a missing total."
+        },
+        {
+          "text": "Available policy evidence is insufficient to assess compliance or required fields for this purchase.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved review evidence is empty and there are no citations. This describes the inability to determine policy compliance or requirements; it does not invent an approval prohibition."
+        }
+      ]
+    },
+    {
+      "key": "equipment-008/summary",
+      "segments": [
+        {
+          "text": "The purchase is for an Equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Equipment kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is supplied data, not a missing total."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "No policy evidence is supplied to assess compliance or identify required fields for this purchase.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved review evidence is empty and there are no citations. This is a scoped statement about the actual supplied evidence and its epistemic limitation."
+        }
+      ]
+    },
+    {
+      "key": "equipment-009/finding:0",
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited policy passage states this equipment-specific cost-center requirement and before-approval timing verbatim; it applies to the Equipment kit purchase."
+        }
+      ]
+    },
+    {
+      "key": "equipment-009/summary",
+      "segments": [
+        {
+          "text": "The purchase is for an Equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Equipment kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is supplied data, not a missing total."
+        },
+        {
+          "text": "The absent information is key.",
+          "verdict": "NOT_A_FACT",
+          "rationale": "Key expresses qualitative salience here, without asserting that each absent field is required by policy. The actual missing-field facts are graded separately."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited policy passage states this equipment-specific cost-center requirement and before-approval timing verbatim; it applies to the Equipment kit purchase."
+        }
+      ]
+    },
+    {
+      "key": "equipment-010/finding:0",
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited policy passage states this equipment-specific cost-center requirement and before-approval timing verbatim; it applies to the Equipment kit purchase."
+        }
+      ]
+    },
+    {
+      "key": "equipment-010/summary",
+      "segments": [
+        {
+          "text": "The purchase is for an Equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Equipment kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is supplied data, not a missing total."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited policy passage states this equipment-specific cost-center requirement and before-approval timing verbatim; it applies to the Equipment kit purchase."
+        }
+      ]
+    }
+  ],
+  "provisionalClaimTargetMet": true,
+  "releaseGatePassed": false,
+  "limitations": [
+    "Judgments come from the declared AI reviewer; this code checks completeness, not truth.",
+    "Compound-claim coverage is confirmed by the reviewer, not inferred by the scorer.",
+    "Missing/failed reviews are reported separately and must not disappear from the release decision.",
+    "Reference verification and other R2 gates remain separate."
+  ]
+}
