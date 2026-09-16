@@ -1,0 +1,2813 @@
+{
+  "claimSupport": {
+    "numerator": 377,
+    "denominator": 437,
+    "rate": 0.8627002288329519
+  },
+  "unsupportedClaims": 60,
+  "nonFactualSegments": 12,
+  "reviewedOutputs": 108,
+  "reviewer": "Codex AI assistant",
+  "reviewedAt": "2026-09-16T03:47:49.277379+00:00",
+  "method": "ai-claim-review-v1",
+  "profile": "ai-reviewed-learning",
+  "humanVerified": false,
+  "datasetSha256": "fec73306673b441cea651c7ad498d8645af6351e4450f13bd5213c5dbd93086a",
+  "predictionsSha256": "2c90cf0c08e46abaf0e719852d018a0e2700548712b9ead02cc62ca9e085e18a",
+  "failedOrMissingReviews": 0,
+  "grades": [
+    {
+      "key": "equipment-001/finding:0",
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires a cost center before equipment purchase approval. Actual cited text: Equipment purchases require a cost center before approval."
+        }
+      ]
+    },
+    {
+      "key": "equipment-001/summary",
+      "segments": [
+        {
+          "text": "The request is for a Equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Equipment kit'."
+        },
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Equipment purchases require a cost center before approval."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The total is zero.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        }
+      ]
+    },
+    {
+      "key": "equipment-002/finding:0",
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires a cost center before equipment purchase approval. Actual cited text: Equipment purchases require a cost center before approval."
+        }
+      ]
+    },
+    {
+      "key": "equipment-002/summary",
+      "segments": [
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Equipment purchases require a cost center before approval."
+        }
+      ]
+    },
+    {
+      "key": "equipment-003/finding:0",
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires a cost center before equipment purchase approval. Actual cited text: Equipment purchases require a cost center before approval."
+        }
+      ]
+    },
+    {
+      "key": "equipment-003/summary",
+      "segments": [
+        {
+          "text": "The request is for a Equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Equipment kit'."
+        },
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "A cost center is required for this equipment purchase.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Equipment purchases require a cost center before approval."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "No non-zero total amount is supplied.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00. This narrowly describes the value, without treating zero as absent, invalid, or disallowed."
+        }
+      ]
+    },
+    {
+      "key": "equipment-004/finding:0",
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires a cost center before equipment purchase approval. Actual cited text: Equipment purchases require a cost center before approval."
+        }
+      ]
+    },
+    {
+      "key": "equipment-004/summary",
+      "segments": [
+        {
+          "text": "The request is for a Equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Equipment kit'."
+        },
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Equipment purchases require a cost center before approval."
+        }
+      ]
+    },
+    {
+      "key": "equipment-005/finding:0",
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires a cost center before equipment purchase approval. Actual cited text: Equipment purchases require a cost center before approval."
+        }
+      ]
+    },
+    {
+      "key": "equipment-005/summary",
+      "segments": [
+        {
+          "text": "The request is for a Equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Equipment kit'."
+        },
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The total is zero USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD."
+        },
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Equipment purchases require a cost center before approval."
+        },
+        {
+          "text": "The request contains incomplete information.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied purchase has empty fields. Where policy is cited, the required costCenter is empty. This narrow observation does not establish extra policy requirements or that zero is invalid."
+        }
+      ]
+    },
+    {
+      "key": "equipment-006/finding:0",
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires a cost center before equipment purchase approval. Actual cited text: Equipment purchases require a cost center before approval."
+        }
+      ]
+    },
+    {
+      "key": "equipment-006/summary",
+      "segments": [
+        {
+          "text": "The request is for a Equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Equipment kit'."
+        },
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "A cost center is required for this equipment purchase.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Equipment purchases require a cost center before approval."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The total is zero.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD."
+        },
+        {
+          "text": "The zero total conflicts with the presence and description of this purchase request.",
+          "verdict": "UNSUPPORTED",
+          "rationale": "The supplied total is explicitly 0.00. A purchase description is not a competing price, and the cited cost-center rule supplies no positive-price requirement."
+        },
+        {
+          "text": "That conflict makes the total ambiguous.",
+          "verdict": "UNSUPPORTED",
+          "rationale": "No competing amount is supplied in manualPurchase or the cited passage. Zero alone does not establish ambiguity."
+        }
+      ]
+    },
+    {
+      "key": "equipment-007/summary",
+      "segments": [
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request needs a cost center (asserted necessary/essential/required information).",
+          "verdict": "UNSUPPORTED",
+          "rationale": "No policy evidence is supplied. Empty fields or a zero value do not establish this additional requirement."
+        },
+        {
+          "text": "The request needs vendor information (asserted necessary/essential/required information).",
+          "verdict": "UNSUPPORTED",
+          "rationale": "No policy evidence is supplied. Empty fields or a zero value do not establish this additional requirement."
+        },
+        {
+          "text": "The request needs justification (asserted necessary/essential/required information).",
+          "verdict": "UNSUPPORTED",
+          "rationale": "No policy evidence is supplied. Empty fields or a zero value do not establish this additional requirement."
+        },
+        {
+          "text": "The request needs line items (asserted necessary/essential/required information).",
+          "verdict": "UNSUPPORTED",
+          "rationale": "No policy evidence is supplied. Empty fields or a zero value do not establish this additional requirement."
+        },
+        {
+          "text": "There is insufficient information to verify policy compliance.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved evidence object and citations are empty, so the applicable policy cannot be established. This is an epistemic abstention only, not an approval prohibition or proof that the listed fields are required."
+        },
+        {
+          "text": "The request cannot be evaluated thoroughly for completeness, adequacy, or validity.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied purchase has empty vendor, justification, costCenter, and lineItems, and no policy evidence is supplied. The statement is treated narrowly as an inability to establish adequacy, not a factual finding of invalidity or a ban on approval."
+        },
+        {
+          "text": "The request lacks a valid total amount.",
+          "verdict": "UNSUPPORTED",
+          "rationale": "manualPurchase.total is 0.00. With no policy evidence, neither invalidity nor absence of this stated value is established."
+        }
+      ]
+    },
+    {
+      "key": "equipment-008/summary",
+      "segments": [
+        {
+          "text": "The request is for a Equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Equipment kit'."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The total is zero USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        }
+      ]
+    },
+    {
+      "key": "equipment-009/finding:0",
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires a cost center before equipment purchase approval. Actual cited text: Equipment purchases require a cost center before approval."
+        }
+      ]
+    },
+    {
+      "key": "equipment-009/summary",
+      "segments": [
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "A cost center is required for this equipment purchase.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Equipment purchases require a cost center before approval."
+        }
+      ]
+    },
+    {
+      "key": "equipment-010/finding:0",
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires a cost center before equipment purchase approval. Actual cited text: Equipment purchases require a cost center before approval."
+        }
+      ]
+    },
+    {
+      "key": "equipment-010/summary",
+      "segments": [
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The description provides no item details beyond the generic kit label.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Equipment kit' and lineItems is empty. This reads description details/completeness as lack of specifics, not absence of the description or a policy violation."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The total is zero.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Equipment purchases require a cost center before approval."
+        }
+      ]
+    },
+    {
+      "key": "seating-001/finding:0",
+      "segments": [
+        {
+          "text": "Seating requests must include a cost center for finance review.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires a cost center for finance review of seating requests. Actual cited text: Seating requests must include a cost center for finance review."
+        }
+      ]
+    },
+    {
+      "key": "seating-001/summary",
+      "segments": [
+        {
+          "text": "The request is for a Seating kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Seating kit'."
+        },
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "Seating requests require a cost center for finance review.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Seating requests must include a cost center for finance review."
+        },
+        {
+          "text": "The request needs justification (asserted necessary/essential/required information).",
+          "verdict": "UNSUPPORTED",
+          "rationale": "The cited passage says only: Seating requests must include a cost center for finance review. Empty fields or a zero value do not establish this additional requirement."
+        },
+        {
+          "text": "The request needs vendor information (asserted necessary/essential/required information).",
+          "verdict": "UNSUPPORTED",
+          "rationale": "The cited passage says only: Seating requests must include a cost center for finance review. Empty fields or a zero value do not establish this additional requirement."
+        },
+        {
+          "text": "The request needs line items (asserted necessary/essential/required information).",
+          "verdict": "UNSUPPORTED",
+          "rationale": "The cited passage says only: Seating requests must include a cost center for finance review. Empty fields or a zero value do not establish this additional requirement."
+        },
+        {
+          "text": "The request needs total amount details (asserted necessary/essential/required information).",
+          "verdict": "UNSUPPORTED",
+          "rationale": "The cited passage says only: Seating requests must include a cost center for finance review. Empty fields or a zero value do not establish this additional requirement."
+        },
+        {
+          "text": "The request lacks total amount details.",
+          "verdict": "UNSUPPORTED",
+          "rationale": "The supplied purchase states total=0.00 and currency=USD. No missing total component is specified; zero is not an absent total."
+        }
+      ]
+    },
+    {
+      "key": "seating-002/finding:0",
+      "segments": [
+        {
+          "text": "Seating requests must include a cost center for finance review.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires a cost center for finance review of seating requests. Actual cited text: Seating requests must include a cost center for finance review."
+        }
+      ]
+    },
+    {
+      "key": "seating-002/summary",
+      "segments": [
+        {
+          "text": "The request is for a Seating kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Seating kit'."
+        },
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "Seating requests require a cost center for finance review.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Seating requests must include a cost center for finance review."
+        }
+      ]
+    },
+    {
+      "key": "seating-003/finding:0",
+      "segments": [
+        {
+          "text": "Seating requests must include a cost center for finance review.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires a cost center for finance review of seating requests. Actual cited text: Seating requests must include a cost center for finance review."
+        }
+      ]
+    },
+    {
+      "key": "seating-003/summary",
+      "segments": [
+        {
+          "text": "The request is for a Seating kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Seating kit'."
+        },
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "Seating requests require a cost center for finance review.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Seating requests must include a cost center for finance review."
+        },
+        {
+          "text": "The request needs vendor information (asserted necessary/essential/required information).",
+          "verdict": "UNSUPPORTED",
+          "rationale": "The cited passage says only: Seating requests must include a cost center for finance review. Empty fields or a zero value do not establish this additional requirement."
+        },
+        {
+          "text": "The request needs line items (asserted necessary/essential/required information).",
+          "verdict": "UNSUPPORTED",
+          "rationale": "The cited passage says only: Seating requests must include a cost center for finance review. Empty fields or a zero value do not establish this additional requirement."
+        },
+        {
+          "text": "The request needs justification (asserted necessary/essential/required information).",
+          "verdict": "UNSUPPORTED",
+          "rationale": "The cited passage says only: Seating requests must include a cost center for finance review. Empty fields or a zero value do not establish this additional requirement."
+        },
+        {
+          "text": "The total is zero.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD."
+        },
+        {
+          "text": "The zero total may indicate missing pricing information.",
+          "verdict": "UNSUPPORTED",
+          "rationale": "The supplied 0.00 value is not evidence of missing pricing; the cited rule addresses only a cost center for finance review. The hedge does not supply evidence for this diagnosis."
+        },
+        {
+          "text": "The zero total may indicate an incomplete request.",
+          "verdict": "UNSUPPORTED",
+          "rationale": "A missing cost center does establish incompleteness for finance review, but the asserted inference from zero itself has no support in the purchase or cited rule."
+        }
+      ]
+    },
+    {
+      "key": "seating-004/finding:0",
+      "segments": [
+        {
+          "text": "Seating requests must include a cost center for finance review.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires a cost center for finance review of seating requests. Actual cited text: Seating requests must include a cost center for finance review."
+        }
+      ]
+    },
+    {
+      "key": "seating-004/summary",
+      "segments": [
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "Seating requests require a cost center for finance review.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Seating requests must include a cost center for finance review."
+        }
+      ]
+    },
+    {
+      "key": "seating-005/finding:0",
+      "segments": [
+        {
+          "text": "Seating requests must include a cost center for finance review.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires a cost center for finance review of seating requests. Actual cited text: Seating requests must include a cost center for finance review."
+        }
+      ]
+    },
+    {
+      "key": "seating-005/summary",
+      "segments": [
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "Seating requests require a cost center for finance review.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Seating requests must include a cost center for finance review."
+        }
+      ]
+    },
+    {
+      "key": "seating-006/finding:0",
+      "segments": [
+        {
+          "text": "Seating requests must include a cost center for finance review.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires a cost center for finance review of seating requests. Actual cited text: Seating requests must include a cost center for finance review."
+        }
+      ]
+    },
+    {
+      "key": "seating-006/summary",
+      "segments": [
+        {
+          "text": "The request is for a Seating kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Seating kit'."
+        },
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The total is zero USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD."
+        },
+        {
+          "text": "Seating requests require a cost center for finance review.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Seating requests must include a cost center for finance review."
+        },
+        {
+          "text": "The request contains incomplete information.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied purchase has empty fields. Where policy is cited, the required costCenter is empty. This narrow observation does not establish extra policy requirements or that zero is invalid."
+        }
+      ]
+    },
+    {
+      "key": "seating-007/summary",
+      "segments": [
+        {
+          "text": "The request is for a Seating kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Seating kit'."
+        },
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The listed information is described as critical.",
+          "verdict": "NOT_A_FACT",
+          "rationale": "Critical is a qualitative salience judgment here, not an independently specified policy requirement. Explicit required/essential/necessary statements are graded separately as factual requirements."
+        },
+        {
+          "text": "There is insufficient information to verify policy compliance.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved evidence object and citations are empty, so the applicable policy cannot be established. This is an epistemic abstention only, not an approval prohibition or proof that the listed fields are required."
+        },
+        {
+          "text": "The request lacks the total amount.",
+          "verdict": "UNSUPPORTED",
+          "rationale": "manualPurchase.total is present as 0.00 USD."
+        },
+        {
+          "text": "The missing elements prevent approval.",
+          "verdict": "UNSUPPORTED",
+          "rationale": "No policy evidence or citations are supplied for this output; inability to establish compliance does not establish an approval prohibition."
+        }
+      ]
+    },
+    {
+      "key": "seating-008/summary",
+      "segments": [
+        {
+          "text": "The request is for a Seating kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Seating kit'."
+        },
+        {
+          "text": "The total is zero USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD."
+        },
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "There is insufficient information to verify policy compliance.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved evidence object and citations are empty, so the applicable policy cannot be established. This is an epistemic abstention only, not an approval prohibition or proof that the listed fields are required."
+        }
+      ]
+    },
+    {
+      "key": "seating-009/finding:0",
+      "segments": [
+        {
+          "text": "Seating requests must include a cost center for finance review.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires a cost center for finance review of seating requests. Actual cited text: Seating requests must include a cost center for finance review."
+        }
+      ]
+    },
+    {
+      "key": "seating-009/summary",
+      "segments": [
+        {
+          "text": "The request is for a Seating kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Seating kit'."
+        },
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The listed information is described as critical.",
+          "verdict": "NOT_A_FACT",
+          "rationale": "Critical is a qualitative salience judgment here, not an independently specified policy requirement. Explicit required/essential/necessary statements are graded separately as factual requirements."
+        },
+        {
+          "text": "Seating requests require a cost center for finance review.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Seating requests must include a cost center for finance review."
+        },
+        {
+          "text": "The request is missing its total amount.",
+          "verdict": "UNSUPPORTED",
+          "rationale": "The supplied purchase records 0.00 USD, not an absent total."
+        }
+      ]
+    },
+    {
+      "key": "seating-010/finding:0",
+      "segments": [
+        {
+          "text": "Seating requests must include a cost center for finance review.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires a cost center for finance review of seating requests. Actual cited text: Seating requests must include a cost center for finance review."
+        }
+      ]
+    },
+    {
+      "key": "seating-010/summary",
+      "segments": [
+        {
+          "text": "The request is for a Seating kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Seating kit'."
+        },
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "Seating requests require a cost center for finance review.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Seating requests must include a cost center for finance review."
+        }
+      ]
+    },
+    {
+      "key": "network-001/finding:0",
+      "segments": [
+        {
+          "text": "Network procurement cannot proceed without a cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly bars proceeding with network procurement without a cost center. Actual cited text: Network procurement cannot proceed without a cost center."
+        }
+      ]
+    },
+    {
+      "key": "network-001/summary",
+      "segments": [
+        {
+          "text": "The request is for a Network kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Network kit'."
+        },
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The listed information is described as critical.",
+          "verdict": "NOT_A_FACT",
+          "rationale": "Critical is a qualitative salience judgment here, not an independently specified policy requirement. Explicit required/essential/necessary statements are graded separately as factual requirements."
+        },
+        {
+          "text": "The total is zero USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD."
+        },
+        {
+          "text": "The zero total indicates that no cost details have been provided.",
+          "verdict": "UNSUPPORTED",
+          "rationale": "A total of 0.00 USD is itself supplied cost information. No cited pricing rule makes zero equivalent to missing information."
+        }
+      ]
+    },
+    {
+      "key": "network-002/finding:0",
+      "segments": [
+        {
+          "text": "Network procurement cannot proceed without a cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly bars proceeding with network procurement without a cost center. Actual cited text: Network procurement cannot proceed without a cost center."
+        }
+      ]
+    },
+    {
+      "key": "network-002/summary",
+      "segments": [
+        {
+          "text": "The request is for a Network kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Network kit'."
+        },
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "A cost center is required for this network purchase.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Network procurement cannot proceed without a cost center."
+        },
+        {
+          "text": "The total is zero USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        }
+      ]
+    },
+    {
+      "key": "network-003/finding:0",
+      "segments": [
+        {
+          "text": "Network procurement cannot proceed without a cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly bars proceeding with network procurement without a cost center. Actual cited text: Network procurement cannot proceed without a cost center."
+        }
+      ]
+    },
+    {
+      "key": "network-003/summary",
+      "segments": [
+        {
+          "text": "The request is for a Network kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Network kit'."
+        },
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The total is zero.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD."
+        },
+        {
+          "text": "A cost center is required for this network purchase.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Network procurement cannot proceed without a cost center."
+        }
+      ]
+    },
+    {
+      "key": "network-004/finding:0",
+      "segments": [
+        {
+          "text": "Network procurement cannot proceed without a cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly bars proceeding with network procurement without a cost center. Actual cited text: Network procurement cannot proceed without a cost center."
+        }
+      ]
+    },
+    {
+      "key": "network-004/summary",
+      "segments": [
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The listed information is described as critical.",
+          "verdict": "NOT_A_FACT",
+          "rationale": "Critical is a qualitative salience judgment here, not an independently specified policy requirement. Explicit required/essential/necessary statements are graded separately as factual requirements."
+        },
+        {
+          "text": "Network procurement cannot proceed without a cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Network procurement cannot proceed without a cost center."
+        },
+        {
+          "text": "The request needs vendor information (asserted necessary/essential/required information).",
+          "verdict": "UNSUPPORTED",
+          "rationale": "The cited passage says only: Network procurement cannot proceed without a cost center. Empty fields or a zero value do not establish this additional requirement."
+        },
+        {
+          "text": "The request needs line items (asserted necessary/essential/required information).",
+          "verdict": "UNSUPPORTED",
+          "rationale": "The cited passage says only: Network procurement cannot proceed without a cost center. Empty fields or a zero value do not establish this additional requirement."
+        },
+        {
+          "text": "The request needs justification (asserted necessary/essential/required information).",
+          "verdict": "UNSUPPORTED",
+          "rationale": "The cited passage says only: Network procurement cannot proceed without a cost center. Empty fields or a zero value do not establish this additional requirement."
+        }
+      ]
+    },
+    {
+      "key": "network-005/finding:0",
+      "segments": [
+        {
+          "text": "Network procurement cannot proceed without a cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly bars proceeding with network procurement without a cost center. Actual cited text: Network procurement cannot proceed without a cost center."
+        }
+      ]
+    },
+    {
+      "key": "network-005/summary",
+      "segments": [
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The description provides no item details beyond the generic kit label.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Network kit' and lineItems is empty. This reads description details/completeness as lack of specifics, not absence of the description or a policy violation."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "A cost center is required for this network purchase.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Network procurement cannot proceed without a cost center."
+        },
+        {
+          "text": "The request lacks a total amount.",
+          "verdict": "UNSUPPORTED",
+          "rationale": "The supplied total is explicitly 0.00 USD."
+        }
+      ]
+    },
+    {
+      "key": "network-006/finding:0",
+      "segments": [
+        {
+          "text": "Network procurement cannot proceed without a cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly bars proceeding with network procurement without a cost center. Actual cited text: Network procurement cannot proceed without a cost center."
+        }
+      ]
+    },
+    {
+      "key": "network-006/summary",
+      "segments": [
+        {
+          "text": "The request is for a Network kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Network kit'."
+        },
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "No non-zero total amount is supplied.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00. This narrowly describes the value, without treating zero as absent, invalid, or disallowed."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "Network procurement cannot proceed without a cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Network procurement cannot proceed without a cost center."
+        }
+      ]
+    },
+    {
+      "key": "network-007/summary",
+      "segments": [
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The total is zero.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD."
+        },
+        {
+          "text": "There is insufficient information to verify policy compliance.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved evidence object and citations are empty, so the applicable policy cannot be established. This is an epistemic abstention only, not an approval prohibition or proof that the listed fields are required."
+        },
+        {
+          "text": "The missing elements prevent approval.",
+          "verdict": "UNSUPPORTED",
+          "rationale": "There are no cited policies in this output. The absence of evidence permits abstention, not an invented approval barrier."
+        }
+      ]
+    },
+    {
+      "key": "network-008/summary",
+      "segments": [
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "No non-zero total amount is supplied.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00. This narrowly describes the value, without treating zero as absent, invalid, or disallowed."
+        },
+        {
+          "text": "The request needs a cost center (asserted necessary/essential/required information).",
+          "verdict": "UNSUPPORTED",
+          "rationale": "No policy evidence is supplied. Empty fields or a zero value do not establish this additional requirement."
+        },
+        {
+          "text": "The request needs vendor information (asserted necessary/essential/required information).",
+          "verdict": "UNSUPPORTED",
+          "rationale": "No policy evidence is supplied. Empty fields or a zero value do not establish this additional requirement."
+        },
+        {
+          "text": "The request needs justification (asserted necessary/essential/required information).",
+          "verdict": "UNSUPPORTED",
+          "rationale": "No policy evidence is supplied. Empty fields or a zero value do not establish this additional requirement."
+        },
+        {
+          "text": "The request needs line items (asserted necessary/essential/required information).",
+          "verdict": "UNSUPPORTED",
+          "rationale": "No policy evidence is supplied. Empty fields or a zero value do not establish this additional requirement."
+        },
+        {
+          "text": "The request needs a non-zero total (asserted necessary/essential/required information).",
+          "verdict": "UNSUPPORTED",
+          "rationale": "No policy evidence is supplied. Empty fields or a zero value do not establish this additional requirement."
+        },
+        {
+          "text": "The request is incomplete for approval.",
+          "verdict": "UNSUPPORTED",
+          "rationale": "No cited policy establishes approval prerequisites for this request."
+        },
+        {
+          "text": "The request is incomplete for processing.",
+          "verdict": "UNSUPPORTED",
+          "rationale": "No supplied rule says that these fields or a nonzero total are processing prerequisites."
+        }
+      ]
+    },
+    {
+      "key": "network-009/finding:0",
+      "segments": [
+        {
+          "text": "Network procurement cannot proceed without a cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly bars proceeding with network procurement without a cost center. Actual cited text: Network procurement cannot proceed without a cost center."
+        }
+      ]
+    },
+    {
+      "key": "network-009/summary",
+      "segments": [
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The description provides no item details beyond the generic kit label.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Network kit' and lineItems is empty. This reads description details/completeness as lack of specifics, not absence of the description or a policy violation."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The total is zero.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD."
+        },
+        {
+          "text": "The request is for a Network kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Network kit'."
+        },
+        {
+          "text": "The zero total may not be correct for a network kit purchase.",
+          "verdict": "UNSUPPORTED",
+          "rationale": "No competing amount or nonzero-price rule is supplied. The tentative wording still diagnoses a possible defect from unsupported assumptions about pricing."
+        }
+      ]
+    },
+    {
+      "key": "network-010/finding:0",
+      "segments": [
+        {
+          "text": "Network procurement cannot proceed without a cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly bars proceeding with network procurement without a cost center. Actual cited text: Network procurement cannot proceed without a cost center."
+        }
+      ]
+    },
+    {
+      "key": "network-010/summary",
+      "segments": [
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "Network procurement cannot proceed without a cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Network procurement cannot proceed without a cost center."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The absence of line items, vendor information, and justification makes the request incomplete for procurement processing.",
+          "verdict": "UNSUPPORTED",
+          "rationale": "The cited rule prohibits proceeding without a cost center. It does not make the three additional fields processing prerequisites. This grades the explicit causal claim; the separate cost-center barrier is supported."
+        }
+      ]
+    },
+    {
+      "key": "printing-001/finding:0",
+      "segments": [
+        {
+          "text": "Printing expenditure must identify the requesting cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires identifying the requesting cost center for printing expenditure. Actual cited text: Printing expenditure must identify the requesting cost center."
+        }
+      ]
+    },
+    {
+      "key": "printing-001/summary",
+      "segments": [
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "A cost center is required for this printing purchase.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Printing expenditure must identify the requesting cost center."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "Missing justification, line items, and vendor information makes the request incomplete for approval.",
+          "verdict": "UNSUPPORTED",
+          "rationale": "The cited printing passage requires identification of the requesting cost center only. It specifies neither these other approval prerequisites nor an approval deadline."
+        }
+      ]
+    },
+    {
+      "key": "printing-002/finding:0",
+      "segments": [
+        {
+          "text": "Printing expenditure must identify the requesting cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires identifying the requesting cost center for printing expenditure. Actual cited text: Printing expenditure must identify the requesting cost center."
+        }
+      ]
+    },
+    {
+      "key": "printing-002/summary",
+      "segments": [
+        {
+          "text": "The request is for a Printing kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Printing kit'."
+        },
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "A cost center is required for this printing purchase.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Printing expenditure must identify the requesting cost center."
+        }
+      ]
+    },
+    {
+      "key": "printing-003/finding:0",
+      "segments": [
+        {
+          "text": "Printing expenditure must identify the requesting cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires identifying the requesting cost center for printing expenditure. Actual cited text: Printing expenditure must identify the requesting cost center."
+        }
+      ]
+    },
+    {
+      "key": "printing-003/summary",
+      "segments": [
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The description provides no item details beyond the generic kit label.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Printing kit' and lineItems is empty. This reads description details/completeness as lack of specifics, not absence of the description or a policy violation."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The listed information is described as critical.",
+          "verdict": "NOT_A_FACT",
+          "rationale": "Critical is a qualitative salience judgment here, not an independently specified policy requirement. Explicit required/essential/necessary statements are graded separately as factual requirements."
+        },
+        {
+          "text": "A cost center is required for this printing purchase.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Printing expenditure must identify the requesting cost center."
+        },
+        {
+          "text": "The request lacks its total cost.",
+          "verdict": "UNSUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 USD; the value is present."
+        }
+      ]
+    },
+    {
+      "key": "printing-004/finding:0",
+      "segments": [
+        {
+          "text": "Printing expenditure must identify the requesting cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires identifying the requesting cost center for printing expenditure. Actual cited text: Printing expenditure must identify the requesting cost center."
+        }
+      ]
+    },
+    {
+      "key": "printing-004/summary",
+      "segments": [
+        {
+          "text": "The request is for a Printing kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Printing kit'."
+        },
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The total is zero.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD."
+        },
+        {
+          "text": "A cost center is required for this printing purchase.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Printing expenditure must identify the requesting cost center."
+        },
+        {
+          "text": "The listed information is described as critical.",
+          "verdict": "NOT_A_FACT",
+          "rationale": "Critical is a qualitative salience judgment here, not an independently specified policy requirement. Explicit required/essential/necessary statements are graded separately as factual requirements."
+        }
+      ]
+    },
+    {
+      "key": "printing-005/finding:0",
+      "segments": [
+        {
+          "text": "Printing expenditure must identify the requesting cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires identifying the requesting cost center for printing expenditure. Actual cited text: Printing expenditure must identify the requesting cost center."
+        }
+      ]
+    },
+    {
+      "key": "printing-005/summary",
+      "segments": [
+        {
+          "text": "The request is for a Printing kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Printing kit'."
+        },
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "A cost center is required for this printing purchase.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Printing expenditure must identify the requesting cost center."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The total is zero USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD."
+        }
+      ]
+    },
+    {
+      "key": "printing-006/finding:0",
+      "segments": [
+        {
+          "text": "Printing expenditure must identify the requesting cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires identifying the requesting cost center for printing expenditure. Actual cited text: Printing expenditure must identify the requesting cost center."
+        }
+      ]
+    },
+    {
+      "key": "printing-006/summary",
+      "segments": [
+        {
+          "text": "The request is for a Printing kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Printing kit'."
+        },
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "A cost center is required for this printing purchase.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Printing expenditure must identify the requesting cost center."
+        }
+      ]
+    },
+    {
+      "key": "printing-007/summary",
+      "segments": [
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request is for a Printing kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Printing kit'."
+        },
+        {
+          "text": "The request needs a cost center (asserted necessary/essential/required information).",
+          "verdict": "UNSUPPORTED",
+          "rationale": "No policy evidence is supplied. Empty fields or a zero value do not establish this additional requirement."
+        },
+        {
+          "text": "The request needs vendor information (asserted necessary/essential/required information).",
+          "verdict": "UNSUPPORTED",
+          "rationale": "No policy evidence is supplied. Empty fields or a zero value do not establish this additional requirement."
+        },
+        {
+          "text": "The request needs justification (asserted necessary/essential/required information).",
+          "verdict": "UNSUPPORTED",
+          "rationale": "No policy evidence is supplied. Empty fields or a zero value do not establish this additional requirement."
+        },
+        {
+          "text": "The request needs line items (asserted necessary/essential/required information).",
+          "verdict": "UNSUPPORTED",
+          "rationale": "No policy evidence is supplied. Empty fields or a zero value do not establish this additional requirement."
+        },
+        {
+          "text": "There is insufficient information to verify policy compliance.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved evidence object and citations are empty, so the applicable policy cannot be established. This is an epistemic abstention only, not an approval prohibition or proof that the listed fields are required."
+        },
+        {
+          "text": "No policy evidence is supplied.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved evidence object and citations are both empty."
+        },
+        {
+          "text": "The request lacks a valid total amount.",
+          "verdict": "UNSUPPORTED",
+          "rationale": "A recorded total of 0.00 USD is present. No evidence defines it as invalid."
+        }
+      ]
+    },
+    {
+      "key": "printing-008/summary",
+      "segments": [
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The total is zero.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD."
+        },
+        {
+          "text": "The request needs a cost center (asserted necessary/essential/required information).",
+          "verdict": "UNSUPPORTED",
+          "rationale": "No policy evidence is supplied. Empty fields or a zero value do not establish this additional requirement."
+        },
+        {
+          "text": "The request needs vendor information (asserted necessary/essential/required information).",
+          "verdict": "UNSUPPORTED",
+          "rationale": "No policy evidence is supplied. Empty fields or a zero value do not establish this additional requirement."
+        },
+        {
+          "text": "The request needs line items (asserted necessary/essential/required information).",
+          "verdict": "UNSUPPORTED",
+          "rationale": "No policy evidence is supplied. Empty fields or a zero value do not establish this additional requirement."
+        },
+        {
+          "text": "The request needs justification (asserted necessary/essential/required information).",
+          "verdict": "UNSUPPORTED",
+          "rationale": "No policy evidence is supplied. Empty fields or a zero value do not establish this additional requirement."
+        },
+        {
+          "text": "The request cannot be evaluated thoroughly for completeness, adequacy, or validity.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied purchase has empty vendor, justification, costCenter, and lineItems, and no policy evidence is supplied. The statement is treated narrowly as an inability to establish adequacy, not a factual finding of invalidity or a ban on approval."
+        },
+        {
+          "text": "There is insufficient information to verify policy compliance.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved evidence object and citations are empty, so the applicable policy cannot be established. This is an epistemic abstention only, not an approval prohibition or proof that the listed fields are required."
+        }
+      ]
+    },
+    {
+      "key": "printing-009/finding:0",
+      "segments": [
+        {
+          "text": "Printing expenditure must identify the requesting cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires identifying the requesting cost center for printing expenditure. Actual cited text: Printing expenditure must identify the requesting cost center."
+        }
+      ]
+    },
+    {
+      "key": "printing-009/summary",
+      "segments": [
+        {
+          "text": "The request is for a Printing kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Printing kit'."
+        },
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "A cost center is required for this printing purchase.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Printing expenditure must identify the requesting cost center."
+        }
+      ]
+    },
+    {
+      "key": "printing-010/finding:0",
+      "segments": [
+        {
+          "text": "Printing expenditure must identify the requesting cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires identifying the requesting cost center for printing expenditure. Actual cited text: Printing expenditure must identify the requesting cost center."
+        }
+      ]
+    },
+    {
+      "key": "printing-010/summary",
+      "segments": [
+        {
+          "text": "The request is for a Printing kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Printing kit'."
+        },
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "A cost center is required for this printing purchase.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Printing expenditure must identify the requesting cost center."
+        }
+      ]
+    },
+    {
+      "key": "lighting-001/finding:0",
+      "segments": [
+        {
+          "text": "Lighting orders require the department cost center to be recorded.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires recording the department cost center for lighting orders. Actual cited text: Lighting orders require the department cost center to be recorded."
+        }
+      ]
+    },
+    {
+      "key": "lighting-001/summary",
+      "segments": [
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "A department cost center is required for this lighting purchase.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Lighting orders require the department cost center to be recorded."
+        }
+      ]
+    },
+    {
+      "key": "lighting-002/finding:0",
+      "segments": [
+        {
+          "text": "Lighting orders require the department cost center to be recorded.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires recording the department cost center for lighting orders. Actual cited text: Lighting orders require the department cost center to be recorded."
+        }
+      ]
+    },
+    {
+      "key": "lighting-002/summary",
+      "segments": [
+        {
+          "text": "The request is for a Lighting kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Lighting kit'."
+        },
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "A department cost center is required for this lighting purchase.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Lighting orders require the department cost center to be recorded."
+        },
+        {
+          "text": "The request needs vendor information (asserted necessary/essential/required information).",
+          "verdict": "UNSUPPORTED",
+          "rationale": "The cited passage says only: Lighting orders require the department cost center to be recorded. Empty fields or a zero value do not establish this additional requirement."
+        },
+        {
+          "text": "The total is zero USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request is incomplete for approval because no line items or justification accompany its zero total.",
+          "verdict": "UNSUPPORTED",
+          "rationale": "The cited lighting rule only requires recording a department cost center. It does not establish approval prerequisites for line items, justification, or a positive price."
+        }
+      ]
+    },
+    {
+      "key": "lighting-003/finding:0",
+      "segments": [
+        {
+          "text": "Lighting orders require the department cost center to be recorded.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires recording the department cost center for lighting orders. Actual cited text: Lighting orders require the department cost center to be recorded."
+        }
+      ]
+    },
+    {
+      "key": "lighting-003/summary",
+      "segments": [
+        {
+          "text": "The request is for a Lighting kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Lighting kit'."
+        },
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "A department cost center is required for this lighting purchase.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Lighting orders require the department cost center to be recorded."
+        },
+        {
+          "text": "The request needs vendor information (asserted necessary/essential/required information).",
+          "verdict": "UNSUPPORTED",
+          "rationale": "The cited passage says only: Lighting orders require the department cost center to be recorded. Empty fields or a zero value do not establish this additional requirement."
+        },
+        {
+          "text": "The request needs justification (asserted necessary/essential/required information).",
+          "verdict": "UNSUPPORTED",
+          "rationale": "The cited passage says only: Lighting orders require the department cost center to be recorded. Empty fields or a zero value do not establish this additional requirement."
+        },
+        {
+          "text": "The request needs line items (asserted necessary/essential/required information).",
+          "verdict": "UNSUPPORTED",
+          "rationale": "The cited passage says only: Lighting orders require the department cost center to be recorded. Empty fields or a zero value do not establish this additional requirement."
+        },
+        {
+          "text": "The request needs total amount details (asserted necessary/essential/required information).",
+          "verdict": "UNSUPPORTED",
+          "rationale": "The cited passage says only: Lighting orders require the department cost center to be recorded. Empty fields or a zero value do not establish this additional requirement."
+        },
+        {
+          "text": "The request lacks its total cost.",
+          "verdict": "UNSUPPORTED",
+          "rationale": "The supplied total is explicitly 0.00 USD."
+        }
+      ]
+    },
+    {
+      "key": "lighting-004/finding:0",
+      "segments": [
+        {
+          "text": "Lighting orders require the department cost center to be recorded.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires recording the department cost center for lighting orders. Actual cited text: Lighting orders require the department cost center to be recorded."
+        }
+      ]
+    },
+    {
+      "key": "lighting-004/summary",
+      "segments": [
+        {
+          "text": "The request is for a Lighting kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Lighting kit'."
+        },
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "A department cost center is required for this lighting purchase.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Lighting orders require the department cost center to be recorded."
+        },
+        {
+          "text": "The listed information is described as critical.",
+          "verdict": "NOT_A_FACT",
+          "rationale": "Critical is a qualitative salience judgment here, not an independently specified policy requirement. Explicit required/essential/necessary statements are graded separately as factual requirements."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The total is zero.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD."
+        },
+        {
+          "text": "The zero total appears incomplete or incorrect.",
+          "verdict": "UNSUPPORTED",
+          "rationale": "No competing price or positive-total rule is supplied. The cited cost-center requirement does not support diagnosing the stated zero total as defective."
+        }
+      ]
+    },
+    {
+      "key": "lighting-005/finding:0",
+      "segments": [
+        {
+          "text": "Lighting orders require the department cost center to be recorded.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires recording the department cost center for lighting orders. Actual cited text: Lighting orders require the department cost center to be recorded."
+        }
+      ]
+    },
+    {
+      "key": "lighting-005/summary",
+      "segments": [
+        {
+          "text": "The request is for a Lighting kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Lighting kit'."
+        },
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "A department cost center is required for this lighting purchase.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Lighting orders require the department cost center to be recorded."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The total is zero.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD."
+        },
+        {
+          "text": "The zero total may be incomplete or incorrect.",
+          "verdict": "UNSUPPORTED",
+          "rationale": "The saved purchase provides a definite 0.00 USD total. There is no cited pricing constraint or contradiction to support even the tentative defect diagnosis."
+        }
+      ]
+    },
+    {
+      "key": "lighting-006/finding:0",
+      "segments": [
+        {
+          "text": "Lighting orders require the department cost center to be recorded.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires recording the department cost center for lighting orders. Actual cited text: Lighting orders require the department cost center to be recorded."
+        }
+      ]
+    },
+    {
+      "key": "lighting-006/summary",
+      "segments": [
+        {
+          "text": "The request is for a Lighting kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Lighting kit'."
+        },
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "A department cost center is required for this lighting purchase.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Lighting orders require the department cost center to be recorded."
+        }
+      ]
+    },
+    {
+      "key": "lighting-007/summary",
+      "segments": [
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The description provides no item details beyond the generic kit label.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Lighting kit' and lineItems is empty. This reads description details/completeness as lack of specifics, not absence of the description or a policy violation."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The total is zero.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD."
+        },
+        {
+          "text": "The listed information is described as critical.",
+          "verdict": "NOT_A_FACT",
+          "rationale": "Critical is a qualitative salience judgment here, not an independently specified policy requirement. Explicit required/essential/necessary statements are graded separately as factual requirements."
+        },
+        {
+          "text": "No policy evidence is supplied.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved evidence object and citations are both empty."
+        },
+        {
+          "text": "There is insufficient information to verify policy compliance.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved evidence object and citations are empty, so the applicable policy cannot be established. This is an epistemic abstention only, not an approval prohibition or proof that the listed fields are required."
+        },
+        {
+          "text": "The request cannot be evaluated thoroughly for completeness, adequacy, or validity.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied purchase has empty vendor, justification, costCenter, and lineItems, and no policy evidence is supplied. The statement is treated narrowly as an inability to establish adequacy, not a factual finding of invalidity or a ban on approval."
+        }
+      ]
+    },
+    {
+      "key": "lighting-008/summary",
+      "segments": [
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "No item quantities are supplied.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is empty."
+        },
+        {
+          "text": "No item unit prices are supplied.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is empty."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "No non-zero total amount is supplied.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00. This narrowly describes the value, without treating zero as absent, invalid, or disallowed."
+        },
+        {
+          "text": "The listed information is described as critical.",
+          "verdict": "NOT_A_FACT",
+          "rationale": "Critical is a qualitative salience judgment here, not an independently specified policy requirement. Explicit required/essential/necessary statements are graded separately as factual requirements."
+        },
+        {
+          "text": "No policy evidence is supplied.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved evidence object and citations are both empty."
+        },
+        {
+          "text": "There is insufficient information to verify policy compliance.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved evidence object and citations are empty, so the applicable policy cannot be established. This is an epistemic abstention only, not an approval prohibition or proof that the listed fields are required."
+        }
+      ]
+    },
+    {
+      "key": "lighting-009/finding:0",
+      "segments": [
+        {
+          "text": "Lighting orders require the department cost center to be recorded.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires recording the department cost center for lighting orders. Actual cited text: Lighting orders require the department cost center to be recorded."
+        }
+      ]
+    },
+    {
+      "key": "lighting-009/summary",
+      "segments": [
+        {
+          "text": "The request is for a Lighting kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Lighting kit'."
+        },
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "A department cost center is required for this lighting purchase.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Lighting orders require the department cost center to be recorded."
+        }
+      ]
+    },
+    {
+      "key": "lighting-010/finding:0",
+      "segments": [
+        {
+          "text": "The lighting order requires the department cost center to be recorded.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires recording the department cost center for lighting orders. Actual cited text: Lighting orders require the department cost center to be recorded."
+        }
+      ]
+    },
+    {
+      "key": "lighting-010/summary",
+      "segments": [
+        {
+          "text": "The request is for a Lighting kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Lighting kit'."
+        },
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "A department cost center is required for this lighting purchase.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Lighting orders require the department cost center to be recorded."
+        },
+        {
+          "text": "The listed information is described as critical.",
+          "verdict": "NOT_A_FACT",
+          "rationale": "Critical is a qualitative salience judgment here, not an independently specified policy requirement. Explicit required/essential/necessary statements are graded separately as factual requirements."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "No proper total amount is provided.",
+          "verdict": "UNSUPPORTED",
+          "rationale": "manualPurchase provides total=0.00 and currency=USD. Neither purchase nor cited passage defines that amount as improper."
+        },
+        {
+          "text": "The additional missing information makes the request incomplete for review.",
+          "verdict": "UNSUPPORTED",
+          "rationale": "The lighting passage says to record a department cost center, but does not define review prerequisites or require line items, justification, vendor information, or a positive total."
+        },
+        {
+          "text": "The additional missing information makes the request incomplete for approval.",
+          "verdict": "UNSUPPORTED",
+          "rationale": "The cited rule does not add an approval deadline or the additional prerequisites asserted here."
+        }
+      ]
+    },
+    {
+      "key": "storage-001/finding:0",
+      "segments": [
+        {
+          "text": "Storage procurement requires a valid cost center on every request.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires a valid cost center on every storage procurement request. Actual cited text: Storage procurement requires a valid cost center on every request."
+        }
+      ]
+    },
+    {
+      "key": "storage-001/summary",
+      "segments": [
+        {
+          "text": "The request is for a Storage kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Storage kit'."
+        },
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "A valid cost center is required for this storage purchase.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Storage procurement requires a valid cost center on every request."
+        }
+      ]
+    },
+    {
+      "key": "storage-002/finding:0",
+      "segments": [
+        {
+          "text": "Storage procurement requires a valid cost center on every request.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires a valid cost center on every storage procurement request. Actual cited text: Storage procurement requires a valid cost center on every request."
+        }
+      ]
+    },
+    {
+      "key": "storage-002/summary",
+      "segments": [
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "A valid cost center is required for this storage purchase.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Storage procurement requires a valid cost center on every request."
+        }
+      ]
+    },
+    {
+      "key": "storage-003/finding:0",
+      "segments": [
+        {
+          "text": "Storage procurement requires a valid cost center on every request.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires a valid cost center on every storage procurement request. Actual cited text: Storage procurement requires a valid cost center on every request."
+        }
+      ]
+    },
+    {
+      "key": "storage-003/summary",
+      "segments": [
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request is for a Storage kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Storage kit'."
+        },
+        {
+          "text": "The request lacks a total amount.",
+          "verdict": "UNSUPPORTED",
+          "rationale": "The supplied purchase explicitly records total=0.00 USD."
+        }
+      ]
+    },
+    {
+      "key": "storage-004/finding:0",
+      "segments": [
+        {
+          "text": "Storage procurement requires a valid cost center on every request.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires a valid cost center on every storage procurement request. Actual cited text: Storage procurement requires a valid cost center on every request."
+        }
+      ]
+    },
+    {
+      "key": "storage-004/summary",
+      "segments": [
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The description provides no item details beyond the generic kit label.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Storage kit' and lineItems is empty. This reads description details/completeness as lack of specifics, not absence of the description or a policy violation."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The total is zero.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD."
+        },
+        {
+          "text": "The request is for a Storage kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Storage kit'."
+        },
+        {
+          "text": "A zero total despite the description indicates missing cost information.",
+          "verdict": "UNSUPPORTED",
+          "rationale": "The description Storage kit is not a price. No competing amount or rule makes the supplied zero total missing."
+        }
+      ]
+    },
+    {
+      "key": "storage-005/finding:0",
+      "segments": [
+        {
+          "text": "Storage procurement requires a valid cost center on every request.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires a valid cost center on every storage procurement request. Actual cited text: Storage procurement requires a valid cost center on every request."
+        }
+      ]
+    },
+    {
+      "key": "storage-005/summary",
+      "segments": [
+        {
+          "text": "The request is for a Storage kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Storage kit'."
+        },
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "A valid cost center is required for this storage purchase.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Storage procurement requires a valid cost center on every request."
+        },
+        {
+          "text": "The total is zero.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request contains incomplete information.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied purchase has empty fields. Where policy is cited, the required costCenter is empty. This narrow observation does not establish extra policy requirements or that zero is invalid."
+        }
+      ]
+    },
+    {
+      "key": "storage-006/finding:0",
+      "segments": [
+        {
+          "text": "Storage procurement requires a valid cost center on every request.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires a valid cost center on every storage procurement request. Actual cited text: Storage procurement requires a valid cost center on every request."
+        }
+      ]
+    },
+    {
+      "key": "storage-006/summary",
+      "segments": [
+        {
+          "text": "The request is for a Storage kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Storage kit'."
+        },
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "A valid cost center is required for this storage purchase.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Storage procurement requires a valid cost center on every request."
+        }
+      ]
+    },
+    {
+      "key": "storage-007/summary",
+      "segments": [
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The total is zero.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD."
+        },
+        {
+          "text": "The listed information is described as critical.",
+          "verdict": "NOT_A_FACT",
+          "rationale": "Critical is a qualitative salience judgment here, not an independently specified policy requirement. Explicit required/essential/necessary statements are graded separately as factual requirements."
+        },
+        {
+          "text": "No policy evidence is supplied.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved evidence object and citations are both empty."
+        },
+        {
+          "text": "There is insufficient information to verify policy compliance.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved evidence object and citations are empty, so the applicable policy cannot be established. This is an epistemic abstention only, not an approval prohibition or proof that the listed fields are required."
+        },
+        {
+          "text": "The request cannot be evaluated thoroughly for completeness, adequacy, or validity.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied purchase has empty vendor, justification, costCenter, and lineItems, and no policy evidence is supplied. The statement is treated narrowly as an inability to establish adequacy, not a factual finding of invalidity or a ban on approval."
+        }
+      ]
+    },
+    {
+      "key": "storage-008/summary",
+      "segments": [
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "No non-zero total amount is supplied.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00. This narrowly describes the value, without treating zero as absent, invalid, or disallowed."
+        },
+        {
+          "text": "The listed information is described as critical.",
+          "verdict": "NOT_A_FACT",
+          "rationale": "Critical is a qualitative salience judgment here, not an independently specified policy requirement. Explicit required/essential/necessary statements are graded separately as factual requirements."
+        },
+        {
+          "text": "The request contains incomplete information.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied purchase has empty fields. Where policy is cited, the required costCenter is empty. This narrow observation does not establish extra policy requirements or that zero is invalid."
+        },
+        {
+          "text": "There is insufficient information to verify policy compliance.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved evidence object and citations are empty, so the applicable policy cannot be established. This is an epistemic abstention only, not an approval prohibition or proof that the listed fields are required."
+        }
+      ]
+    },
+    {
+      "key": "storage-009/finding:0",
+      "segments": [
+        {
+          "text": "Storage procurement requires a valid cost center on every request.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires a valid cost center on every storage procurement request. Actual cited text: Storage procurement requires a valid cost center on every request."
+        }
+      ]
+    },
+    {
+      "key": "storage-009/summary",
+      "segments": [
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "A valid cost center is required for this storage purchase.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Storage procurement requires a valid cost center on every request."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The total is zero USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD."
+        }
+      ]
+    },
+    {
+      "key": "storage-010/finding:0",
+      "segments": [
+        {
+          "text": "Storage procurement requires a valid cost center on every request.",
+          "verdict": "SUPPORTED",
+          "rationale": "The passage explicitly requires a valid cost center on every storage procurement request. Actual cited text: Storage procurement requires a valid cost center on every request."
+        }
+      ]
+    },
+    {
+      "key": "storage-010/summary",
+      "segments": [
+        {
+          "text": "The request is for a Storage kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Storage kit'."
+        },
+        {
+          "text": "The request has no supplied cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "A valid cost center is required for this storage purchase.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage says: Storage procurement requires a valid cost center on every request."
+        },
+        {
+          "text": "The request has no supplied line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is []. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The request has no supplied justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is ''. This is a purchase fact, not an assertion that the field is required."
+        },
+        {
+          "text": "The total is zero.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD."
+        },
+        {
+          "text": "The request has no supplied vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is ''. This is a purchase fact, not an assertion that the field is required."
+        }
+      ]
+    }
+  ],
+  "provisionalClaimTargetMet": false,
+  "releaseGatePassed": false,
+  "limitations": [
+    "Judgments come from the declared AI reviewer; this code checks completeness, not truth.",
+    "Compound-claim coverage is confirmed by the reviewer, not inferred by the scorer.",
+    "Missing/failed reviews are reported separately and must not disappear from the release decision.",
+    "Reference verification and other R2 gates remain separate."
+  ]
+}
