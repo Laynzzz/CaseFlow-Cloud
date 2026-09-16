@@ -1,0 +1,60 @@
+{
+  "predictionsSha256": "d51267b3cec0fe974476ef93fb0c285e3596d60cdc0b99144b02d66abfd982fd",
+  "callsSha256": "5b8007475888e3e58c1c4f761eda37bedc22a56bdd3c8e6bdae3e3cb2f571ce1",
+  "jobTimingsSha256": "e86fba0fb696614dab331325d501da9bc604a33a229a7754bc965aa9fb71ba4d",
+  "exportedTimingRows": 20,
+  "invalidJobIntervals": [],
+  "requestedJobCount": 20,
+  "recordedCallCount": 20,
+  "states": {
+    "SETTLED": 20
+  },
+  "jobsWithoutCalls": [],
+  "jobsWithMultipleCallAttempts": 0,
+  "knownEstimatedUsd": "0.014247",
+  "unsettledReservedUsd": "0",
+  "accountedUsd": "0.014247",
+  "providerElapsedMsByPurpose": {
+    "extraction": {
+      "count": 10,
+      "p50": 4327,
+      "p95": 6359
+    },
+    "review": {
+      "count": 10,
+      "p50": 3829,
+      "p95": 6077
+    }
+  },
+  "callsWithoutElapsed": 0,
+  "scenarioElapsedMs": {
+    "count": 10,
+    "p50": 14829,
+    "p95": 55477
+  },
+  "queueDelayMs": {
+    "count": 20,
+    "p50": 579,
+    "p95": 835
+  },
+  "jobEndToEndMs": {
+    "count": 20,
+    "p50": 5633,
+    "p95": 7059
+  },
+  "releaseGatePassed": false,
+  "definitions": {
+    "quantile": "Nearest rank, ceil(q*N), without interpolation.",
+    "providerElapsedMs": "Parent-observed admission/transport interval; includes child startup when enabled, not server-only inference.",
+    "scenarioElapsedMs": "Runner-observed setup, sign-in, uploads, indexing and both assistant jobs; not user completion time.",
+    "queueDelayMs": "API request transaction to first RUNNING worker outbox transaction; includes messaging/scheduling. Null if not exported. Invalid intervals excluded and listed.",
+    "jobEndToEndMs": "API request transaction to terminal API job update; includes worker processing and completion delivery. Invalid intervals excluded and listed.",
+    "accountedUsd": "Dated local pricing estimate plus full unknown reservations; not a provider invoice."
+  },
+  "limitations": [
+    "Sequential local synthetic run, not a controlled load benchmark.",
+    "Host sleep, startup, polling and other concurrent work can affect observations.",
+    "Wall-clock timestamps are not monotonic; negative intervals are preserved as anomalies, never clamped to zero.",
+    "Failed and unknown costs remain accounted; no user time-saving claim."
+  ]
+}

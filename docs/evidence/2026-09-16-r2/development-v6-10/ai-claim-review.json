@@ -1,0 +1,860 @@
+{
+  "datasetVersion": "synthetic-v1",
+  "datasetSha256": "fec73306673b441cea651c7ad498d8645af6351e4450f13bd5213c5dbd93086a",
+  "predictionsSha256": "d51267b3cec0fe974476ef93fb0c285e3596d60cdc0b99144b02d66abfd982fd",
+  "profile": "ai-reviewed-learning",
+  "method": "ai-claim-review-v1",
+  "humanVerified": false,
+  "reviewer": "Codex AI assistant",
+  "reviewedAt": "2026-09-16T06:07:13.556209+00:00",
+  "rubricVersion": "ai-semantic-claims-2026-09-15-v1",
+  "scope": "All ten summaries and eight findings. Missing-information list correctness is assessed separately; this is development evidence, not human validation.",
+  "grades": {
+    "equipment-001/finding:0": {
+      "textSha256": "d23d7939ddf5c48a4275d8f563f49f8ae3f762a9157cafae9d4edef837f5d8d4",
+      "sourceText": "Equipment purchases require a cost center before approval.",
+      "coverageConfirmed": true,
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Equipment kit",
+        "justification": ""
+      },
+      "evidence": {
+        "cde9d317-15f6-5f9f-9b6e-6ce530524067": {
+          "page": 1,
+          "text": "Equipment purchases require a cost center before approval.",
+          "start": 0,
+          "sourceId": "d43ac564-5901-451f-9699-ae800431aa97"
+        }
+      },
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "cde9d317-15f6-5f9f-9b6e-6ce530524067"
+        }
+      ],
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage explicitly states this scoped requirement and timing."
+        }
+      ]
+    },
+    "equipment-001/summary": {
+      "textSha256": "554793033e22bfcdf00b99839cc320e2b3376cfe6a3765f7367b3156399f3cab",
+      "sourceText": "The purchase is for an equipment kit with a total of 0.00 USD and lacks a specified cost center and vendor. Policy evidence indicates that equipment purchases require a cost center before approval.",
+      "coverageConfirmed": true,
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Equipment kit",
+        "justification": ""
+      },
+      "evidence": {
+        "cde9d317-15f6-5f9f-9b6e-6ce530524067": {
+          "page": 1,
+          "text": "Equipment purchases require a cost center before approval.",
+          "start": 0,
+          "sourceId": "d43ac564-5901-451f-9699-ae800431aa97"
+        }
+      },
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "cde9d317-15f6-5f9f-9b6e-6ce530524067"
+        }
+      ],
+      "segments": [
+        {
+          "text": "The purchase is for an equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved purchase description is Equipment kit."
+        },
+        {
+          "text": "The recorded total is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied total is 0.00 and currency is USD; no defect or absence is inferred."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied vendor is an empty string."
+        },
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage explicitly states this scoped requirement and timing."
+        }
+      ]
+    },
+    "equipment-002/finding:0": {
+      "textSha256": "d23d7939ddf5c48a4275d8f563f49f8ae3f762a9157cafae9d4edef837f5d8d4",
+      "sourceText": "Equipment purchases require a cost center before approval.",
+      "coverageConfirmed": true,
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Equipment kit",
+        "justification": ""
+      },
+      "evidence": {
+        "7cfce693-81d6-5bef-ba2e-1a5b44b1ad2d": {
+          "page": 1,
+          "text": "Equipment purchases require a cost center before approval.",
+          "start": 0,
+          "sourceId": "a50ccd02-4e00-4669-88c1-25530c010e26"
+        }
+      },
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "7cfce693-81d6-5bef-ba2e-1a5b44b1ad2d"
+        }
+      ],
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage explicitly states this scoped requirement and timing."
+        }
+      ]
+    },
+    "equipment-002/summary": {
+      "textSha256": "3df2ccb433089d2d005395cc7dec129007a9c2643b50345c7cc4bdf8e9c17649",
+      "sourceText": "The purchase is for an equipment kit with a total amount of 0.00 USD, but it lacks a cost center and vendor information. Policy requires a cost center before approval for equipment purchases.",
+      "coverageConfirmed": true,
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Equipment kit",
+        "justification": ""
+      },
+      "evidence": {
+        "7cfce693-81d6-5bef-ba2e-1a5b44b1ad2d": {
+          "page": 1,
+          "text": "Equipment purchases require a cost center before approval.",
+          "start": 0,
+          "sourceId": "a50ccd02-4e00-4669-88c1-25530c010e26"
+        }
+      },
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "7cfce693-81d6-5bef-ba2e-1a5b44b1ad2d"
+        }
+      ],
+      "segments": [
+        {
+          "text": "The purchase is for an equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved purchase description is Equipment kit."
+        },
+        {
+          "text": "The recorded total is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied total is 0.00 and currency is USD; no defect or absence is inferred."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied vendor is an empty string."
+        },
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage explicitly states this scoped requirement and timing."
+        }
+      ]
+    },
+    "equipment-003/finding:0": {
+      "textSha256": "d23d7939ddf5c48a4275d8f563f49f8ae3f762a9157cafae9d4edef837f5d8d4",
+      "sourceText": "Equipment purchases require a cost center before approval.",
+      "coverageConfirmed": true,
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Equipment kit",
+        "justification": ""
+      },
+      "evidence": {
+        "844edd93-73e5-5935-b5ca-96d563b0a6ae": {
+          "page": 1,
+          "text": "Equipment purchases require a cost center before approval.",
+          "start": 0,
+          "sourceId": "df199b45-ab70-40b4-bd8f-b97140754939"
+        }
+      },
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "844edd93-73e5-5935-b5ca-96d563b0a6ae"
+        }
+      ],
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage explicitly states this scoped requirement and timing."
+        }
+      ]
+    },
+    "equipment-003/summary": {
+      "textSha256": "0f701d7b3e9bf93b1ff7238132c292ef699c60aaf96d12b7f00ba5be92accb86",
+      "sourceText": "The purchase is for an Equipment kit with a total cost of 0.00 USD. The cost center and vendor are not provided. According to the policy, equipment purchases require a cost center before approval.",
+      "coverageConfirmed": true,
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Equipment kit",
+        "justification": ""
+      },
+      "evidence": {
+        "844edd93-73e5-5935-b5ca-96d563b0a6ae": {
+          "page": 1,
+          "text": "Equipment purchases require a cost center before approval.",
+          "start": 0,
+          "sourceId": "df199b45-ab70-40b4-bd8f-b97140754939"
+        }
+      },
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "844edd93-73e5-5935-b5ca-96d563b0a6ae"
+        }
+      ],
+      "segments": [
+        {
+          "text": "The purchase is for an equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved purchase description is Equipment kit."
+        },
+        {
+          "text": "The recorded total is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied total is 0.00 and currency is USD; no defect or absence is inferred."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied vendor is an empty string."
+        },
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage explicitly states this scoped requirement and timing."
+        }
+      ]
+    },
+    "equipment-004/finding:0": {
+      "textSha256": "d23d7939ddf5c48a4275d8f563f49f8ae3f762a9157cafae9d4edef837f5d8d4",
+      "sourceText": "Equipment purchases require a cost center before approval.",
+      "coverageConfirmed": true,
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Equipment kit",
+        "justification": ""
+      },
+      "evidence": {
+        "f3e3db53-3ded-525c-bf00-a8be1460fd22": {
+          "page": 1,
+          "text": "Equipment purchases require a cost center before approval.",
+          "start": 0,
+          "sourceId": "48174fe7-f60e-4916-b100-f000ad97b3c2"
+        }
+      },
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "f3e3db53-3ded-525c-bf00-a8be1460fd22"
+        }
+      ],
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage explicitly states this scoped requirement and timing."
+        }
+      ]
+    },
+    "equipment-004/summary": {
+      "textSha256": "8c9bfa986ca9b67310ccaa2c0d6dfb9c06ab3ca18bf4a252f27fbd766dc53df0",
+      "sourceText": "The purchase is for an equipment kit with a total amount of 0.00 USD. No cost center, vendor, line items, or justification is provided. Policy requires a cost center for equipment purchases before approval.",
+      "coverageConfirmed": true,
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Equipment kit",
+        "justification": ""
+      },
+      "evidence": {
+        "f3e3db53-3ded-525c-bf00-a8be1460fd22": {
+          "page": 1,
+          "text": "Equipment purchases require a cost center before approval.",
+          "start": 0,
+          "sourceId": "48174fe7-f60e-4916-b100-f000ad97b3c2"
+        }
+      },
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "f3e3db53-3ded-525c-bf00-a8be1460fd22"
+        }
+      ],
+      "segments": [
+        {
+          "text": "The purchase is for an equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved purchase description is Equipment kit."
+        },
+        {
+          "text": "The recorded total is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied total is 0.00 and currency is USD; no defect or absence is inferred."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied vendor is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied lineItems is an empty list."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied justification is an empty string."
+        },
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage explicitly states this scoped requirement and timing."
+        }
+      ]
+    },
+    "equipment-005/finding:0": {
+      "textSha256": "d23d7939ddf5c48a4275d8f563f49f8ae3f762a9157cafae9d4edef837f5d8d4",
+      "sourceText": "Equipment purchases require a cost center before approval.",
+      "coverageConfirmed": true,
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Equipment kit",
+        "justification": ""
+      },
+      "evidence": {
+        "b8f75aaa-7100-5d14-a0c4-5060c5668815": {
+          "page": 1,
+          "text": "Equipment purchases require a cost center before approval.",
+          "start": 0,
+          "sourceId": "8e0c9a4d-6bf6-461d-9a95-9fdad4f0726b"
+        }
+      },
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "b8f75aaa-7100-5d14-a0c4-5060c5668815"
+        }
+      ],
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage explicitly states this scoped requirement and timing."
+        }
+      ]
+    },
+    "equipment-005/summary": {
+      "textSha256": "c6e0dcd2b7113e8d5001de8122c7f38074b1c1b50df1dc41abc7d08f877ddf5e",
+      "sourceText": "The purchase is for an equipment kit with a total of 0.00 USD, but lacks a specified cost center, vendor, justification, and line items. According to the policy, equipment purchases require a cost center before approval.",
+      "coverageConfirmed": true,
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Equipment kit",
+        "justification": ""
+      },
+      "evidence": {
+        "b8f75aaa-7100-5d14-a0c4-5060c5668815": {
+          "page": 1,
+          "text": "Equipment purchases require a cost center before approval.",
+          "start": 0,
+          "sourceId": "8e0c9a4d-6bf6-461d-9a95-9fdad4f0726b"
+        }
+      },
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "b8f75aaa-7100-5d14-a0c4-5060c5668815"
+        }
+      ],
+      "segments": [
+        {
+          "text": "The purchase is for an equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved purchase description is Equipment kit."
+        },
+        {
+          "text": "The recorded total is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied total is 0.00 and currency is USD; no defect or absence is inferred."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied vendor is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied lineItems is an empty list."
+        },
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage explicitly states this scoped requirement and timing."
+        }
+      ]
+    },
+    "equipment-006/finding:0": {
+      "textSha256": "d23d7939ddf5c48a4275d8f563f49f8ae3f762a9157cafae9d4edef837f5d8d4",
+      "sourceText": "Equipment purchases require a cost center before approval.",
+      "coverageConfirmed": true,
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Equipment kit",
+        "justification": ""
+      },
+      "evidence": {
+        "cabf22ac-7a18-5179-974a-2d225a82b057": {
+          "page": 1,
+          "text": "Equipment purchases require a cost center before approval.",
+          "start": 0,
+          "sourceId": "dab3fb07-e624-47af-835a-9cdf02cabd35"
+        }
+      },
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "cabf22ac-7a18-5179-974a-2d225a82b057"
+        }
+      ],
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage explicitly states this scoped requirement and timing."
+        }
+      ]
+    },
+    "equipment-006/summary": {
+      "textSha256": "753d8560a54ba9dfd5b576901a57f0a4be65c3e642046c7e220ac7436b5e4390",
+      "sourceText": "The purchase is for an equipment kit with a total amount of 0.00 USD. The purchase does not provide a cost center, vendor, justification, or line items. Policy requires a cost center for equipment purchases before approval.",
+      "coverageConfirmed": true,
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Equipment kit",
+        "justification": ""
+      },
+      "evidence": {
+        "cabf22ac-7a18-5179-974a-2d225a82b057": {
+          "page": 1,
+          "text": "Equipment purchases require a cost center before approval.",
+          "start": 0,
+          "sourceId": "dab3fb07-e624-47af-835a-9cdf02cabd35"
+        }
+      },
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "cabf22ac-7a18-5179-974a-2d225a82b057"
+        }
+      ],
+      "segments": [
+        {
+          "text": "The purchase is for an equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved purchase description is Equipment kit."
+        },
+        {
+          "text": "The recorded total is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied total is 0.00 and currency is USD; no defect or absence is inferred."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied vendor is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied lineItems is an empty list."
+        },
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage explicitly states this scoped requirement and timing."
+        }
+      ]
+    },
+    "equipment-007/summary": {
+      "textSha256": "f623d7d0a330265427d251ee1cc01a386ff5155a00e54fd8e50eb7a35aa6799e",
+      "sourceText": "The purchase consists of an equipment kit with a total cost of 0.00 USD. The purchase lacks information on the cost center, vendor, justification, and line items. No policy evidence is provided to assess compliance or requirements for these missing fields.",
+      "coverageConfirmed": true,
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Equipment kit",
+        "justification": ""
+      },
+      "evidence": {},
+      "citations": [],
+      "segments": [
+        {
+          "text": "The purchase is for an equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved purchase description is Equipment kit."
+        },
+        {
+          "text": "The recorded total is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied total is 0.00 and currency is USD; no defect or absence is inferred."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied vendor is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied lineItems is an empty list."
+        },
+        {
+          "text": "No policy evidence is supplied to assess compliance or requirements for the missing fields.",
+          "verdict": "SUPPORTED",
+          "rationale": "The recorded review evidence is empty; this states the evidential limit without prohibiting approval."
+        }
+      ]
+    },
+    "equipment-008/summary": {
+      "textSha256": "cc12b54c0221695a8ac67782069e32ed22c6c9c05143998433634345517770a3",
+      "sourceText": "The purchase is for an \"Equipment kit\" with a total cost of 0.00 USD. The purchase lacks a specified cost center, vendor, justification, and line items. There is no policy evidence provided to assess compliance or requirements for these missing fields.",
+      "coverageConfirmed": true,
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Equipment kit",
+        "justification": ""
+      },
+      "evidence": {},
+      "citations": [],
+      "segments": [
+        {
+          "text": "The purchase is for an equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved purchase description is Equipment kit."
+        },
+        {
+          "text": "The recorded total is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied total is 0.00 and currency is USD; no defect or absence is inferred."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied vendor is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied lineItems is an empty list."
+        },
+        {
+          "text": "No policy evidence is supplied to assess compliance or requirements for the missing fields.",
+          "verdict": "SUPPORTED",
+          "rationale": "The recorded review evidence is empty; this states the evidential limit without prohibiting approval."
+        }
+      ]
+    },
+    "equipment-009/finding:0": {
+      "textSha256": "d23d7939ddf5c48a4275d8f563f49f8ae3f762a9157cafae9d4edef837f5d8d4",
+      "sourceText": "Equipment purchases require a cost center before approval.",
+      "coverageConfirmed": true,
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Equipment kit",
+        "justification": ""
+      },
+      "evidence": {
+        "c418c86c-c2db-5739-9203-775a1fca8eae": {
+          "page": 1,
+          "text": "Equipment purchases require a cost center before approval.",
+          "start": 0,
+          "sourceId": "a42de1cc-03f4-476d-90e5-06380278b3a4"
+        }
+      },
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "c418c86c-c2db-5739-9203-775a1fca8eae"
+        }
+      ],
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage explicitly states this scoped requirement and timing."
+        }
+      ]
+    },
+    "equipment-009/summary": {
+      "textSha256": "900c8403b9bcc50e4b591bfbc84f4df6201925af211116402c437d29b13fb9b1",
+      "sourceText": "The purchase request is for an 'Equipment kit' with a total cost of 0.00 USD, but it lacks a cost center and vendor information.",
+      "coverageConfirmed": true,
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Equipment kit",
+        "justification": ""
+      },
+      "evidence": {
+        "c418c86c-c2db-5739-9203-775a1fca8eae": {
+          "page": 1,
+          "text": "Equipment purchases require a cost center before approval.",
+          "start": 0,
+          "sourceId": "a42de1cc-03f4-476d-90e5-06380278b3a4"
+        }
+      },
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "c418c86c-c2db-5739-9203-775a1fca8eae"
+        }
+      ],
+      "segments": [
+        {
+          "text": "The purchase is for an equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved purchase description is Equipment kit."
+        },
+        {
+          "text": "The recorded total is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied total is 0.00 and currency is USD; no defect or absence is inferred."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied vendor is an empty string."
+        }
+      ]
+    },
+    "equipment-010/finding:0": {
+      "textSha256": "d23d7939ddf5c48a4275d8f563f49f8ae3f762a9157cafae9d4edef837f5d8d4",
+      "sourceText": "Equipment purchases require a cost center before approval.",
+      "coverageConfirmed": true,
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Equipment kit",
+        "justification": ""
+      },
+      "evidence": {
+        "84081614-0d55-5e1f-b4d8-4d6e75abec83": {
+          "page": 1,
+          "text": "Equipment purchases require a cost center before approval.",
+          "start": 0,
+          "sourceId": "559eaa12-5dfe-43ca-b049-d999e41e0892"
+        }
+      },
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "84081614-0d55-5e1f-b4d8-4d6e75abec83"
+        }
+      ],
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage explicitly states this scoped requirement and timing."
+        }
+      ]
+    },
+    "equipment-010/summary": {
+      "textSha256": "ea4a141534c1337440c539897f31571631ac6bb5c90b8c53621263fa6eb65707",
+      "sourceText": "The purchase is for an Equipment kit with a total cost of 0.00 USD. The purchase does not include a cost center, which according to policy is required for equipment purchases before approval.",
+      "coverageConfirmed": true,
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Equipment kit",
+        "justification": ""
+      },
+      "evidence": {
+        "84081614-0d55-5e1f-b4d8-4d6e75abec83": {
+          "page": 1,
+          "text": "Equipment purchases require a cost center before approval.",
+          "start": 0,
+          "sourceId": "559eaa12-5dfe-43ca-b049-d999e41e0892"
+        }
+      },
+      "citations": [
+        {
+          "quote": "Equipment purchases require a cost center before approval.",
+          "chunkId": "84081614-0d55-5e1f-b4d8-4d6e75abec83"
+        }
+      ],
+      "segments": [
+        {
+          "text": "The purchase is for an equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved purchase description is Equipment kit."
+        },
+        {
+          "text": "The recorded total is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied total is 0.00 and currency is USD; no defect or absence is inferred."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied costCenter is an empty string."
+        },
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage explicitly states this scoped requirement and timing."
+        }
+      ]
+    }
+  }
+}

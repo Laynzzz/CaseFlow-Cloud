@@ -1,0 +1,448 @@
+{
+  "claimSupport": {
+    "numerator": 66,
+    "denominator": 66,
+    "rate": 1.0
+  },
+  "unsupportedClaims": 0,
+  "nonFactualSegments": 0,
+  "reviewedOutputs": 18,
+  "reviewer": "Codex AI assistant",
+  "reviewedAt": "2026-09-16T06:07:13.556209+00:00",
+  "method": "ai-claim-review-v1",
+  "profile": "ai-reviewed-learning",
+  "humanVerified": false,
+  "datasetSha256": "fec73306673b441cea651c7ad498d8645af6351e4450f13bd5213c5dbd93086a",
+  "predictionsSha256": "d51267b3cec0fe974476ef93fb0c285e3596d60cdc0b99144b02d66abfd982fd",
+  "failedOrMissingReviews": 0,
+  "grades": [
+    {
+      "key": "equipment-001/finding:0",
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage explicitly states this scoped requirement and timing."
+        }
+      ]
+    },
+    {
+      "key": "equipment-001/summary",
+      "segments": [
+        {
+          "text": "The purchase is for an equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved purchase description is Equipment kit."
+        },
+        {
+          "text": "The recorded total is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied total is 0.00 and currency is USD; no defect or absence is inferred."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied vendor is an empty string."
+        },
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage explicitly states this scoped requirement and timing."
+        }
+      ]
+    },
+    {
+      "key": "equipment-002/finding:0",
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage explicitly states this scoped requirement and timing."
+        }
+      ]
+    },
+    {
+      "key": "equipment-002/summary",
+      "segments": [
+        {
+          "text": "The purchase is for an equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved purchase description is Equipment kit."
+        },
+        {
+          "text": "The recorded total is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied total is 0.00 and currency is USD; no defect or absence is inferred."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied vendor is an empty string."
+        },
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage explicitly states this scoped requirement and timing."
+        }
+      ]
+    },
+    {
+      "key": "equipment-003/finding:0",
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage explicitly states this scoped requirement and timing."
+        }
+      ]
+    },
+    {
+      "key": "equipment-003/summary",
+      "segments": [
+        {
+          "text": "The purchase is for an equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved purchase description is Equipment kit."
+        },
+        {
+          "text": "The recorded total is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied total is 0.00 and currency is USD; no defect or absence is inferred."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied vendor is an empty string."
+        },
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage explicitly states this scoped requirement and timing."
+        }
+      ]
+    },
+    {
+      "key": "equipment-004/finding:0",
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage explicitly states this scoped requirement and timing."
+        }
+      ]
+    },
+    {
+      "key": "equipment-004/summary",
+      "segments": [
+        {
+          "text": "The purchase is for an equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved purchase description is Equipment kit."
+        },
+        {
+          "text": "The recorded total is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied total is 0.00 and currency is USD; no defect or absence is inferred."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied vendor is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied lineItems is an empty list."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied justification is an empty string."
+        },
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage explicitly states this scoped requirement and timing."
+        }
+      ]
+    },
+    {
+      "key": "equipment-005/finding:0",
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage explicitly states this scoped requirement and timing."
+        }
+      ]
+    },
+    {
+      "key": "equipment-005/summary",
+      "segments": [
+        {
+          "text": "The purchase is for an equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved purchase description is Equipment kit."
+        },
+        {
+          "text": "The recorded total is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied total is 0.00 and currency is USD; no defect or absence is inferred."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied vendor is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied lineItems is an empty list."
+        },
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage explicitly states this scoped requirement and timing."
+        }
+      ]
+    },
+    {
+      "key": "equipment-006/finding:0",
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage explicitly states this scoped requirement and timing."
+        }
+      ]
+    },
+    {
+      "key": "equipment-006/summary",
+      "segments": [
+        {
+          "text": "The purchase is for an equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved purchase description is Equipment kit."
+        },
+        {
+          "text": "The recorded total is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied total is 0.00 and currency is USD; no defect or absence is inferred."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied vendor is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied lineItems is an empty list."
+        },
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage explicitly states this scoped requirement and timing."
+        }
+      ]
+    },
+    {
+      "key": "equipment-007/summary",
+      "segments": [
+        {
+          "text": "The purchase is for an equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved purchase description is Equipment kit."
+        },
+        {
+          "text": "The recorded total is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied total is 0.00 and currency is USD; no defect or absence is inferred."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied vendor is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied lineItems is an empty list."
+        },
+        {
+          "text": "No policy evidence is supplied to assess compliance or requirements for the missing fields.",
+          "verdict": "SUPPORTED",
+          "rationale": "The recorded review evidence is empty; this states the evidential limit without prohibiting approval."
+        }
+      ]
+    },
+    {
+      "key": "equipment-008/summary",
+      "segments": [
+        {
+          "text": "The purchase is for an equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved purchase description is Equipment kit."
+        },
+        {
+          "text": "The recorded total is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied total is 0.00 and currency is USD; no defect or absence is inferred."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied vendor is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied lineItems is an empty list."
+        },
+        {
+          "text": "No policy evidence is supplied to assess compliance or requirements for the missing fields.",
+          "verdict": "SUPPORTED",
+          "rationale": "The recorded review evidence is empty; this states the evidential limit without prohibiting approval."
+        }
+      ]
+    },
+    {
+      "key": "equipment-009/finding:0",
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage explicitly states this scoped requirement and timing."
+        }
+      ]
+    },
+    {
+      "key": "equipment-009/summary",
+      "segments": [
+        {
+          "text": "The purchase is for an equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved purchase description is Equipment kit."
+        },
+        {
+          "text": "The recorded total is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied total is 0.00 and currency is USD; no defect or absence is inferred."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied vendor is an empty string."
+        }
+      ]
+    },
+    {
+      "key": "equipment-010/finding:0",
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage explicitly states this scoped requirement and timing."
+        }
+      ]
+    },
+    {
+      "key": "equipment-010/summary",
+      "segments": [
+        {
+          "text": "The purchase is for an equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved purchase description is Equipment kit."
+        },
+        {
+          "text": "The recorded total is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied total is 0.00 and currency is USD; no defect or absence is inferred."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "The supplied costCenter is an empty string."
+        },
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage explicitly states this scoped requirement and timing."
+        }
+      ]
+    }
+  ],
+  "provisionalClaimTargetMet": true,
+  "releaseGatePassed": false,
+  "limitations": [
+    "Judgments come from the declared AI reviewer; this code checks completeness, not truth.",
+    "Compound-claim coverage is confirmed by the reviewer, not inferred by the scorer.",
+    "Missing/failed reviews are reported separately and must not disappear from the release decision.",
+    "Reference verification and other R2 gates remain separate."
+  ]
+}
