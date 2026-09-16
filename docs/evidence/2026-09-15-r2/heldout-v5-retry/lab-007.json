@@ -1,0 +1,258 @@
+{
+  "id": "lab-007",
+  "startedAt": "2026-09-16T03:48:47.585Z",
+  "sourceMap": {
+    "2a0c667a-7d23-43ee-bcc8-29957b8b1908": "lab-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "lab-p1",
+      "source": {
+        "id": "2a0c667a-7d23-43ee-bcc8-29957b8b1908",
+        "kind": "POLICY",
+        "name": "Synthetic lab-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 42,
+        "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+        "jobId": "8b48187d-1c73-42b9-b173-f1623b3f9998",
+        "failureCode": null
+      },
+      "chunks": {
+        "items": [
+          {
+            "id": "912d970f-7d7f-5c49-9c80-38c4cd151360",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 42,
+            "text": "Office walls are painted every five years.",
+            "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1"
+          }
+        ],
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "source": {
+          "id": "2a0c667a-7d23-43ee-bcc8-29957b8b1908",
+          "kind": "POLICY",
+          "name": "Synthetic lab-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 42,
+          "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+          "jobId": "8b48187d-1c73-42b9-b173-f1623b3f9998",
+          "failureCode": null
+        }
+      }
+    }
+  ],
+  "tenantId": "ba9ca4eb-cdd4-4f9e-ba4a-7ad471695d7b",
+  "caseId": "0284e0b1-c7b9-4a58-9b79-8c1243c24db8",
+  "quote": {
+    "id": "afae5c17-6175-4bc6-8316-7aef74e4bc27",
+    "kind": "QUOTE",
+    "name": "Synthetic lab-007 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "0284e0b1-c7b9-4a58-9b79-8c1243c24db8",
+    "mediaType": "text/plain",
+    "byteSize": 99,
+    "sha256": "f2ffffcb1671040761056645c0882898e6b9c1294bbc89112a1dc4a23bdc1633",
+    "jobId": "02822979-944c-4ef2-be52-d755ef532a97",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "2a0c667a-7d23-43ee-bcc8-29957b8b1908",
+        "name": "Synthetic lab-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Lab kit",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "6d9d26bf-43b7-43b0-9cdd-8ab51266905d",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "310a3880-ba50-4598-9b17-d1c6459ec896",
+      "output": {
+        "total": {
+          "value": "2625.00",
+          "citations": [
+            {
+              "quote": "Final amount 2625.00 (USD)",
+              "chunkId": "eb334690-72a8-5065-86cc-4448ce97c526"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Business Synthetic Lab Works 7",
+          "citations": [
+            {
+              "quote": "Business Synthetic Lab Works 7",
+              "chunkId": "eb334690-72a8-5065-86cc-4448ce97c526"
+            }
+          ]
+        },
+        "currency": {
+          "value": "USD",
+          "citations": [
+            {
+              "quote": "Final amount 2625.00 (USD)",
+              "chunkId": "eb334690-72a8-5065-86cc-4448ce97c526"
+            }
+          ]
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "7",
+              "unitPrice": "375.00",
+              "description": "Lab kit"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "Goods Lab kit\n7 @ 375.00",
+              "chunkId": "eb334690-72a8-5065-86cc-4448ce97c526"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "eb334690-72a8-5065-86cc-4448ce97c526": {
+          "page": 1,
+          "text": "Lab supply offer\nBusiness Synthetic Lab Works 7\nGoods Lab kit\n7 @ 375.00\nFinal amount 2625.00 (USD)",
+          "start": 0,
+          "sourceId": "afae5c17-6175-4bc6-8316-7aef74e4bc27"
+        }
+      },
+      "revision": 2,
+      "sourceId": "afae5c17-6175-4bc6-8316-7aef74e4bc27",
+      "elapsedMs": 4500,
+      "promptHash": "cacab952361239a411f16f64d3227e3fdd9bd14f0e2b4174f588b280d5de46ae",
+      "schemaHash": "bc544d19b04f23315f5f7025e24df68f819f9e200bd574bfa111acda50a96bb5",
+      "inputTokens": 978,
+      "outputTokens": 222,
+      "sourceSha256": "f2ffffcb1671040761056645c0882898e6b9c1294bbc89112a1dc4a23bdc1633",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000747",
+      "retrievedChunkIds": [
+        "eb334690-72a8-5065-86cc-4448ce97c526"
+      ],
+      "retrievalElapsedMs": 15
+    }
+  },
+  "review": {
+    "jobId": "55ae038d-fc65-4327-bc27-cb90717555dc",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "75fec861-6f1e-49e1-8528-c6a40de35b6a",
+      "output": {
+        "summary": "The purchase request is missing critical details including cost center, vendor, justification, line items, and the purchase total is zero. There is insufficient evidence to determine if this request complies with policy due to the lack of detailed information.",
+        "citations": [],
+        "policy_findings": [],
+        "missing_information": [
+          "cost center",
+          "vendor",
+          "justification",
+          "line items",
+          "total"
+        ],
+        "insufficient_evidence": true
+      },
+      "evidence": {},
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 9641,
+      "promptHash": "3973d6007c66a172833772063ef5b4d0e8fea658c55a73c7f9708a2260299535",
+      "schemaHash": "b98285198169ab64911aaa5187c252cb985a6388455f7bf370f85e8bcff2acf5",
+      "inputTokens": 631,
+      "outputTokens": 82,
+      "sourceSha256": null,
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Lab OR kit OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000384",
+      "retrievedChunkIds": [],
+      "retrievalElapsedMs": 16,
+      "retrievalComparison": {
+        "model": "text-embedding-3-small",
+        "query": "Lab OR kit OR purchase OR cost OR center OR justification",
+        "corpus": [
+          {
+            "cosine": 0.10154363469325067,
+            "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+            "chunkId": "912d970f-7d7f-5c49-9c80-38c4cd151360",
+            "sourceId": "2a0c667a-7d23-43ee-bcc8-29957b8b1908"
+          }
+        ],
+        "method": "exact-cosine-rrf60-v1",
+        "elapsedMs": 2797,
+        "dimensions": 256,
+        "corpusCount": 1,
+        "cachedChunks": 0,
+        "hybridChunkIds": [
+          "912d970f-7d7f-5c49-9c80-38c4cd151360"
+        ],
+        "providerCalled": true,
+        "embeddingCallId": "244921fb-80dc-4db9-a212-737d70a18e96",
+        "baselineChunkIds": [],
+        "embeddingCostUsd": "0.000001",
+        "embeddingVersion": "openai-small-256-v1",
+        "semanticChunkIds": [
+          "912d970f-7d7f-5c49-9c80-38c4cd151360"
+        ]
+      }
+    }
+  },
+  "retrievedPassageIds": [],
+  "retrievalComparisons": {
+    "fullText": [],
+    "semantic": [
+      "lab-p1"
+    ],
+    "hybrid": [
+      "lab-p1"
+    ]
+  },
+  "finishedAt": "2026-09-16T03:49:10.931Z"
+}

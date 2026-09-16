@@ -1,0 +1,252 @@
+{
+  "id": "shipping-007",
+  "startedAt": "2026-09-16T03:57:09.214Z",
+  "sourceMap": {
+    "8d201a2e-853d-41d7-82e3-4cd4c99c8699": "shipping-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "shipping-p1",
+      "source": {
+        "id": "8d201a2e-853d-41d7-82e3-4cd4c99c8699",
+        "kind": "POLICY",
+        "name": "Synthetic shipping-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 42,
+        "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+        "jobId": "7463b182-1bc8-4d0c-93fd-ec1e114dfa0d",
+        "failureCode": null
+      },
+      "chunks": {
+        "items": [
+          {
+            "id": "235ed28c-7b28-5b96-ab8a-62c0a57ce3eb",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 42,
+            "text": "Office walls are painted every five years.",
+            "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1"
+          }
+        ],
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "source": {
+          "id": "8d201a2e-853d-41d7-82e3-4cd4c99c8699",
+          "kind": "POLICY",
+          "name": "Synthetic shipping-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 42,
+          "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+          "jobId": "7463b182-1bc8-4d0c-93fd-ec1e114dfa0d",
+          "failureCode": null
+        }
+      }
+    }
+  ],
+  "tenantId": "f338f5dc-2ff5-44f4-a39b-9909f503d9b6",
+  "caseId": "aafb76b1-e556-41c5-8dbc-66ce047d6639",
+  "quote": {
+    "id": "3ef612e7-b55d-40ac-a308-29593e338823",
+    "kind": "QUOTE",
+    "name": "Synthetic shipping-007 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "aafb76b1-e556-41c5-8dbc-66ce047d6639",
+    "mediaType": "text/plain",
+    "byteSize": 134,
+    "sha256": "3e29d387d1e44b6ab9fcd534b626e34f4cb9eee6b7ac1545c255f66cb1cd48a2",
+    "jobId": "022c3f65-b5ed-4447-a10c-20ad1e307d4f",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "8d201a2e-853d-41d7-82e3-4cd4c99c8699",
+        "name": "Synthetic shipping-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Shipping kit",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "a8c84e5b-ea44-4049-b8a4-31b779419761",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "f9370f31-9bde-4e4b-8a60-45b7ed263bd4",
+      "output": {
+        "total": {
+          "value": "3150.00",
+          "citations": [
+            {
+              "quote": "Payment amount: USD 3150.00",
+              "chunkId": "54258d05-52af-5981-bee8-365983589856"
+            }
+          ]
+        },
+        "vendor": {
+          "value": null,
+          "citations": []
+        },
+        "currency": {
+          "value": "USD",
+          "citations": [
+            {
+              "quote": "Payment amount: USD 3150.00",
+              "chunkId": "54258d05-52af-5981-bee8-365983589856"
+            }
+          ]
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "7",
+              "unitPrice": "450.00",
+              "description": "Shipping kit"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "Merchandise: Shipping kit\nOrder size: 7\nPrice per piece: 450.00",
+              "chunkId": "54258d05-52af-5981-bee8-365983589856"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "54258d05-52af-5981-bee8-365983589856": {
+          "page": 1,
+          "text": "Offer summary [Synthetic Shipping Works 7]\nMerchandise: Shipping kit\nOrder size: 7\nPrice per piece: 450.00\nPayment amount: USD 3150.00",
+          "start": 0,
+          "sourceId": "3ef612e7-b55d-40ac-a308-29593e338823"
+        }
+      },
+      "revision": 2,
+      "sourceId": "3ef612e7-b55d-40ac-a308-29593e338823",
+      "elapsedMs": 4266,
+      "promptHash": "ade6a1bbd9a488b732a52ef79f006c6bd39c29b5e728e0503bfe042690838aa3",
+      "schemaHash": "532499d8add99d0d88ea11c6932e85c2fa5cf37975214a8f6151012c5da2e3b1",
+      "inputTokens": 978,
+      "outputTokens": 187,
+      "sourceSha256": "3e29d387d1e44b6ab9fcd534b626e34f4cb9eee6b7ac1545c255f66cb1cd48a2",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000691",
+      "retrievedChunkIds": [
+        "54258d05-52af-5981-bee8-365983589856"
+      ],
+      "retrievalElapsedMs": 16
+    }
+  },
+  "review": {
+    "jobId": "cdbc7a45-090c-4c40-80bc-e60c8ed61814",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "1f040f17-c2fb-4fc1-98b8-7618bcc6a283",
+      "output": {
+        "summary": "The purchase request is for a shipping kit with a total cost of 0.00 USD. However, key information such as the cost center, vendor name, line items, and justification for the purchase is missing.",
+        "citations": [],
+        "policy_findings": [],
+        "missing_information": [
+          "Cost center is missing",
+          "Vendor name is missing",
+          "Line items are missing",
+          "Justification is missing"
+        ],
+        "insufficient_evidence": true
+      },
+      "evidence": {},
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 2891,
+      "promptHash": "88827b234fc4a87af1f336cc75b190617d43a5131d0cae6fc3dc8e4429cb7bfa",
+      "schemaHash": "b98285198169ab64911aaa5187c252cb985a6388455f7bf370f85e8bcff2acf5",
+      "inputTokens": 631,
+      "outputTokens": 87,
+      "sourceSha256": null,
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Shipping OR kit OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000392",
+      "retrievedChunkIds": [],
+      "retrievalElapsedMs": 16,
+      "retrievalComparison": {
+        "model": "text-embedding-3-small",
+        "query": "Shipping OR kit OR purchase OR cost OR center OR justification",
+        "corpus": [
+          {
+            "cosine": 0.07123557481981374,
+            "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+            "chunkId": "235ed28c-7b28-5b96-ab8a-62c0a57ce3eb",
+            "sourceId": "8d201a2e-853d-41d7-82e3-4cd4c99c8699"
+          }
+        ],
+        "method": "exact-cosine-rrf60-v1",
+        "elapsedMs": 2875,
+        "dimensions": 256,
+        "corpusCount": 1,
+        "cachedChunks": 0,
+        "hybridChunkIds": [
+          "235ed28c-7b28-5b96-ab8a-62c0a57ce3eb"
+        ],
+        "providerCalled": true,
+        "embeddingCallId": "2817f34b-2c4e-4af5-84ac-fef3545af94a",
+        "baselineChunkIds": [],
+        "embeddingCostUsd": "0.000001",
+        "embeddingVersion": "openai-small-256-v1",
+        "semanticChunkIds": [
+          "235ed28c-7b28-5b96-ab8a-62c0a57ce3eb"
+        ]
+      }
+    }
+  },
+  "retrievedPassageIds": [],
+  "retrievalComparisons": {
+    "fullText": [],
+    "semantic": [
+      "shipping-p1"
+    ],
+    "hybrid": [
+      "shipping-p1"
+    ]
+  },
+  "finishedAt": "2026-09-16T03:57:25.656Z"
+}

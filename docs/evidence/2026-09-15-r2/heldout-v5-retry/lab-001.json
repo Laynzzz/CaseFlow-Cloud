@@ -1,0 +1,284 @@
+{
+  "id": "lab-001",
+  "startedAt": "2026-09-16T03:47:07.654Z",
+  "sourceMap": {
+    "7f776f3c-5479-44b1-96b9-fe830c673b28": "lab-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "lab-p1",
+      "source": {
+        "id": "7f776f3c-5479-44b1-96b9-fe830c673b28",
+        "kind": "POLICY",
+        "name": "Synthetic lab-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 72,
+        "sha256": "e7a23d6cbfe8c2357e5d8acd684d5995a6683dc62b5f491715ab958e55eab5cf",
+        "jobId": "da363426-f15b-497b-82cc-f2278dfe6b81",
+        "failureCode": null
+      },
+      "chunks": {
+        "items": [
+          {
+            "id": "49d95af7-b978-5355-aa2f-49ac735767df",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 72,
+            "text": "Laboratory purchase requests must include a cost center before approval.",
+            "sha256": "e7a23d6cbfe8c2357e5d8acd684d5995a6683dc62b5f491715ab958e55eab5cf"
+          }
+        ],
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "source": {
+          "id": "7f776f3c-5479-44b1-96b9-fe830c673b28",
+          "kind": "POLICY",
+          "name": "Synthetic lab-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 72,
+          "sha256": "e7a23d6cbfe8c2357e5d8acd684d5995a6683dc62b5f491715ab958e55eab5cf",
+          "jobId": "da363426-f15b-497b-82cc-f2278dfe6b81",
+          "failureCode": null
+        }
+      }
+    }
+  ],
+  "tenantId": "90f84b32-13f2-40af-a85d-9b5013acabb9",
+  "caseId": "4b7d18c3-c84f-42c5-8cb8-9e24261ef5eb",
+  "quote": {
+    "id": "d979c8d9-fb1d-497c-bc12-b53f5baaf837",
+    "kind": "QUOTE",
+    "name": "Synthetic lab-001 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "4b7d18c3-c84f-42c5-8cb8-9e24261ef5eb",
+    "mediaType": "text/plain",
+    "byteSize": 98,
+    "sha256": "fbe72ae7151939d4bdda6abb91610c9d6ce34e80004779f06ba9c0337f2ab3f2",
+    "jobId": "887636bd-00ba-41ba-8037-cbc4c7f6d0e3",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "7f776f3c-5479-44b1-96b9-fe830c673b28",
+        "name": "Synthetic lab-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Lab kit",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "815822b2-fd60-483c-9516-baa92e91ce67",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "9aa125a5-de4a-44fd-9625-76a066642592",
+      "output": {
+        "total": {
+          "value": "375.00",
+          "citations": [
+            {
+              "quote": "Final amount 375.00 (USD)",
+              "chunkId": "c0bcb842-15f1-5e15-935d-6ef0111d03b3"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Synthetic Lab Works 1",
+          "citations": [
+            {
+              "quote": "Business Synthetic Lab Works 1",
+              "chunkId": "c0bcb842-15f1-5e15-935d-6ef0111d03b3"
+            }
+          ]
+        },
+        "currency": {
+          "value": "USD",
+          "citations": [
+            {
+              "quote": "Final amount 375.00 (USD)",
+              "chunkId": "c0bcb842-15f1-5e15-935d-6ef0111d03b3"
+            }
+          ]
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "1",
+              "unitPrice": "375.00",
+              "description": "Lab kit"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "Goods Lab kit\n1 @ 375.00",
+              "chunkId": "c0bcb842-15f1-5e15-935d-6ef0111d03b3"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "c0bcb842-15f1-5e15-935d-6ef0111d03b3": {
+          "page": 1,
+          "text": "Lab supply offer\nBusiness Synthetic Lab Works 1\nGoods Lab kit\n1 @ 375.00\nFinal amount 375.00 (USD)",
+          "start": 0,
+          "sourceId": "d979c8d9-fb1d-497c-bc12-b53f5baaf837"
+        }
+      },
+      "revision": 2,
+      "sourceId": "d979c8d9-fb1d-497c-bc12-b53f5baaf837",
+      "elapsedMs": 4282,
+      "promptHash": "32b32cff0b7d7b45337b7196ba7a1b5bd00f3e08f782d173ed9964a066ce38a7",
+      "schemaHash": "d63243a7ed7ee6cdcf50a94f33cdc2a1e4035d2eb0754cd3bbbd3cc3e6842385",
+      "inputTokens": 986,
+      "outputTokens": 238,
+      "sourceSha256": "fbe72ae7151939d4bdda6abb91610c9d6ce34e80004779f06ba9c0337f2ab3f2",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000776",
+      "retrievedChunkIds": [
+        "c0bcb842-15f1-5e15-935d-6ef0111d03b3"
+      ],
+      "retrievalElapsedMs": 30
+    }
+  },
+  "review": {
+    "jobId": "042cd535-0fd4-414b-9f9c-3a38437c4cac",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "b28aa432-9bb2-4eb0-812f-e63c374c01a2",
+      "output": {
+        "summary": "The purchase request for a lab kit does not include a cost center, which is required for laboratory purchase requests before approval.",
+        "citations": [
+          {
+            "quote": "Laboratory purchase requests must include a cost center before approval.",
+            "chunkId": "49d95af7-b978-5355-aa2f-49ac735767df"
+          }
+        ],
+        "policy_findings": [
+          {
+            "claim": "Laboratory purchase requests must include a cost center before approval.",
+            "citations": [
+              {
+                "quote": "Laboratory purchase requests must include a cost center before approval.",
+                "chunkId": "49d95af7-b978-5355-aa2f-49ac735767df"
+              }
+            ]
+          }
+        ],
+        "missing_information": [
+          "costCenter"
+        ],
+        "insufficient_evidence": false
+      },
+      "evidence": {
+        "49d95af7-b978-5355-aa2f-49ac735767df": {
+          "page": 1,
+          "text": "Laboratory purchase requests must include a cost center before approval.",
+          "start": 0,
+          "sourceId": "7f776f3c-5479-44b1-96b9-fe830c673b28"
+        }
+      },
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 3500,
+      "promptHash": "680e536661f34b5e90008ff5be20d1a36fe859560b1a1b81a737f614450c1b02",
+      "schemaHash": "4343b2309b8f1a70f716fb62ffb7d97492abf91c6eb12743bb9cdb8825f9b4ce",
+      "inputTokens": 722,
+      "outputTokens": 148,
+      "sourceSha256": null,
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Lab OR kit OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000526",
+      "retrievedChunkIds": [
+        "49d95af7-b978-5355-aa2f-49ac735767df"
+      ],
+      "retrievalElapsedMs": 16,
+      "retrievalComparison": {
+        "model": "text-embedding-3-small",
+        "query": "Lab OR kit OR purchase OR cost OR center OR justification",
+        "corpus": [
+          {
+            "cosine": 0.655904805530927,
+            "sha256": "e7a23d6cbfe8c2357e5d8acd684d5995a6683dc62b5f491715ab958e55eab5cf",
+            "chunkId": "49d95af7-b978-5355-aa2f-49ac735767df",
+            "sourceId": "7f776f3c-5479-44b1-96b9-fe830c673b28"
+          }
+        ],
+        "method": "exact-cosine-rrf60-v1",
+        "elapsedMs": 1906,
+        "dimensions": 256,
+        "corpusCount": 1,
+        "cachedChunks": 0,
+        "hybridChunkIds": [
+          "49d95af7-b978-5355-aa2f-49ac735767df"
+        ],
+        "providerCalled": true,
+        "embeddingCallId": "9e6b3a2c-b775-474c-9e01-20186574cf45",
+        "baselineChunkIds": [
+          "49d95af7-b978-5355-aa2f-49ac735767df"
+        ],
+        "embeddingCostUsd": "0.000001",
+        "embeddingVersion": "openai-small-256-v1",
+        "semanticChunkIds": [
+          "49d95af7-b978-5355-aa2f-49ac735767df"
+        ]
+      }
+    }
+  },
+  "retrievedPassageIds": [
+    "lab-p1"
+  ],
+  "retrievalComparisons": {
+    "fullText": [
+      "lab-p1"
+    ],
+    "semantic": [
+      "lab-p1"
+    ],
+    "hybrid": [
+      "lab-p1"
+    ]
+  },
+  "finishedAt": "2026-09-16T03:47:24.064Z"
+}

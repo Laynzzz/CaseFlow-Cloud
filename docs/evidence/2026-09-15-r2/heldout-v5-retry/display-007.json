@@ -1,0 +1,258 @@
+{
+  "id": "display-007",
+  "startedAt": "2026-09-16T03:54:26.145Z",
+  "sourceMap": {
+    "7c168060-7e07-4955-a01e-89d259672b5f": "display-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "display-p1",
+      "source": {
+        "id": "7c168060-7e07-4955-a01e-89d259672b5f",
+        "kind": "POLICY",
+        "name": "Synthetic display-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 42,
+        "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+        "jobId": "ecf7b19e-625a-4f44-90f3-9b06f345dd2e",
+        "failureCode": null
+      },
+      "chunks": {
+        "items": [
+          {
+            "id": "aafbe51c-f4a5-509f-ab1c-2e80515b389b",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 42,
+            "text": "Office walls are painted every five years.",
+            "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1"
+          }
+        ],
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "source": {
+          "id": "7c168060-7e07-4955-a01e-89d259672b5f",
+          "kind": "POLICY",
+          "name": "Synthetic display-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 42,
+          "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+          "jobId": "ecf7b19e-625a-4f44-90f3-9b06f345dd2e",
+          "failureCode": null
+        }
+      }
+    }
+  ],
+  "tenantId": "709f6b2e-520d-4625-96a0-b329bb23f97b",
+  "caseId": "089cb997-3602-4fb6-b875-30d4305b78a7",
+  "quote": {
+    "id": "a733e4ea-bb3d-4df6-9eac-258b916ec682",
+    "kind": "QUOTE",
+    "name": "Synthetic display-007 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "089cb997-3602-4fb6-b875-30d4305b78a7",
+    "mediaType": "text/plain",
+    "byteSize": 132,
+    "sha256": "1867705f6120fd5b4691ef3b87b318c9c4f00516d21ee381bef85faf362ab4a8",
+    "jobId": "df68f313-c8e3-4634-b4a4-d5f59b422357",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "7c168060-7e07-4955-a01e-89d259672b5f",
+        "name": "Synthetic display-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Display kit",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "18ce634b-5832-4da3-986d-b223f7803194",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "aa1b0e6f-8d25-4dad-826f-fcc19c8cadcd",
+      "output": {
+        "total": {
+          "value": "2975.00",
+          "citations": [
+            {
+              "quote": "Balance requested: 2975.00 USD",
+              "chunkId": "4b215dcc-2501-5fdb-9d79-42ab0af13814"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Synthetic Display Works 7",
+          "citations": [
+            {
+              "quote": "Estimate issuer: Synthetic Display Works 7",
+              "chunkId": "4b215dcc-2501-5fdb-9d79-42ab0af13814"
+            }
+          ]
+        },
+        "currency": {
+          "value": "USD",
+          "citations": [
+            {
+              "quote": "Balance requested: 2975.00 USD",
+              "chunkId": "4b215dcc-2501-5fdb-9d79-42ab0af13814"
+            }
+          ]
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "7",
+              "unitPrice": "425.00",
+              "description": "Display kit"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "Display kit / 7 / 425.00",
+              "chunkId": "4b215dcc-2501-5fdb-9d79-42ab0af13814"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "4b215dcc-2501-5fdb-9d79-42ab0af13814": {
+          "page": 1,
+          "text": "Estimate issuer: Synthetic Display Works 7\nDescription / units / unit charge\nDisplay kit / 7 / 425.00\nBalance requested: 2975.00 USD",
+          "start": 0,
+          "sourceId": "a733e4ea-bb3d-4df6-9eac-258b916ec682"
+        }
+      },
+      "revision": 2,
+      "sourceId": "a733e4ea-bb3d-4df6-9eac-258b916ec682",
+      "elapsedMs": 4170,
+      "promptHash": "c0f799ea9effed66729a8fc237286a487da368f26dc849a8acf3be6b28a2165d",
+      "schemaHash": "9687fe0123a08bca820f59ad300ac887e3c59a997caef40e299c772a86ef31c6",
+      "inputTokens": 985,
+      "outputTokens": 229,
+      "sourceSha256": "1867705f6120fd5b4691ef3b87b318c9c4f00516d21ee381bef85faf362ab4a8",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000761",
+      "retrievedChunkIds": [
+        "4b215dcc-2501-5fdb-9d79-42ab0af13814"
+      ],
+      "retrievalElapsedMs": 0
+    }
+  },
+  "review": {
+    "jobId": "b1695a06-c9f4-4513-82a9-b76a446cfa72",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "3a381cb3-42b8-4331-b365-a6319d46acbf",
+      "output": {
+        "summary": "The purchase request for a 'Display kit' lacks all critical information including cost center, justification, vendor, line items, and total amount is zero.",
+        "citations": [],
+        "policy_findings": [],
+        "missing_information": [
+          "Cost center",
+          "Justification",
+          "Vendor",
+          "Line items",
+          "Total amount"
+        ],
+        "insufficient_evidence": true
+      },
+      "evidence": {},
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 2811,
+      "promptHash": "b67ebaf30f08e7aa46bb5dee2b3c9421671acede616e6804fc7a62526050913b",
+      "schemaHash": "b98285198169ab64911aaa5187c252cb985a6388455f7bf370f85e8bcff2acf5",
+      "inputTokens": 631,
+      "outputTokens": 68,
+      "sourceSha256": null,
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Display OR kit OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000362",
+      "retrievedChunkIds": [],
+      "retrievalElapsedMs": 16,
+      "retrievalComparison": {
+        "model": "text-embedding-3-small",
+        "query": "Display OR kit OR purchase OR cost OR center OR justification",
+        "corpus": [
+          {
+            "cosine": 0.11450914460491636,
+            "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+            "chunkId": "aafbe51c-f4a5-509f-ab1c-2e80515b389b",
+            "sourceId": "7c168060-7e07-4955-a01e-89d259672b5f"
+          }
+        ],
+        "method": "exact-cosine-rrf60-v1",
+        "elapsedMs": 1967,
+        "dimensions": 256,
+        "corpusCount": 1,
+        "cachedChunks": 0,
+        "hybridChunkIds": [
+          "aafbe51c-f4a5-509f-ab1c-2e80515b389b"
+        ],
+        "providerCalled": true,
+        "embeddingCallId": "b0ebb8b1-327b-4bc5-abdf-045e84bced91",
+        "baselineChunkIds": [],
+        "embeddingCostUsd": "0.000001",
+        "embeddingVersion": "openai-small-256-v1",
+        "semanticChunkIds": [
+          "aafbe51c-f4a5-509f-ab1c-2e80515b389b"
+        ]
+      }
+    }
+  },
+  "retrievedPassageIds": [],
+  "retrievalComparisons": {
+    "fullText": [],
+    "semantic": [
+      "display-p1"
+    ],
+    "hybrid": [
+      "display-p1"
+    ]
+  },
+  "finishedAt": "2026-09-16T03:54:40.955Z"
+}

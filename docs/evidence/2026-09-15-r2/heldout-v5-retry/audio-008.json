@@ -1,0 +1,258 @@
+{
+  "id": "audio-008",
+  "startedAt": "2026-09-16T03:43:21.895Z",
+  "sourceMap": {
+    "64fa377f-a4e4-4628-b7c7-5f4a247117a0": "audio-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "audio-p1",
+      "source": {
+        "id": "64fa377f-a4e4-4628-b7c7-5f4a247117a0",
+        "kind": "POLICY",
+        "name": "Synthetic audio-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 42,
+        "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+        "jobId": "47e8c1f1-e8dd-40df-b0ec-737f3de058d4",
+        "failureCode": null
+      },
+      "chunks": {
+        "items": [
+          {
+            "id": "7195b782-1a37-5659-999a-2814c4496080",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 42,
+            "text": "Office walls are painted every five years.",
+            "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1"
+          }
+        ],
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "source": {
+          "id": "64fa377f-a4e4-4628-b7c7-5f4a247117a0",
+          "kind": "POLICY",
+          "name": "Synthetic audio-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 42,
+          "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+          "jobId": "47e8c1f1-e8dd-40df-b0ec-737f3de058d4",
+          "failureCode": null
+        }
+      }
+    }
+  ],
+  "tenantId": "8cd3da09-d7c2-4db7-9f21-c7834d9d0d85",
+  "caseId": "a838fe53-7e71-42c8-8c94-c6187987666b",
+  "quote": {
+    "id": "0ca15f55-a367-4d51-a021-a8292cec4b16",
+    "kind": "QUOTE",
+    "name": "Synthetic audio-008 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "a838fe53-7e71-42c8-8c94-c6187987666b",
+    "mediaType": "text/plain",
+    "byteSize": 114,
+    "sha256": "7c14f03e447947062685adf1c74f45ca45771198cb12e6a56228aac106aa7a49",
+    "jobId": "3f4c8cb5-71f9-488d-be72-660e1ee24f34",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "64fa377f-a4e4-4628-b7c7-5f4a247117a0",
+        "name": "Synthetic audio-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Audio kit",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "73103fc2-c8fc-45b1-a989-8a24c207a77b",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "2ac1f320-3a9c-4ddb-831f-318046e10e56",
+      "output": {
+        "total": {
+          "value": "2600.00",
+          "citations": [
+            {
+              "quote": "Settlement: USD 2600.00",
+              "chunkId": "5b2c6d76-216c-5a92-8db6-6693b75b23eb"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Synthetic Audio Works",
+          "citations": [
+            {
+              "quote": "Commercial offer by Synthetic Audio Works",
+              "chunkId": "5b2c6d76-216c-5a92-8db6-6693b75b23eb"
+            }
+          ]
+        },
+        "currency": {
+          "value": "USD",
+          "citations": [
+            {
+              "quote": "Settlement: USD 2600.00",
+              "chunkId": "5b2c6d76-216c-5a92-8db6-6693b75b23eb"
+            }
+          ]
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "8",
+              "unitPrice": "325.00",
+              "description": "Audio kit"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "8 pieces of Audio kit, priced 325.00 per piece",
+              "chunkId": "5b2c6d76-216c-5a92-8db6-6693b75b23eb"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "5b2c6d76-216c-5a92-8db6-6693b75b23eb": {
+          "page": 1,
+          "text": "Commercial offer by Synthetic Audio Works 8\n8 pieces of Audio kit, priced 325.00 per piece\nSettlement: USD 2600.00",
+          "start": 0,
+          "sourceId": "0ca15f55-a367-4d51-a021-a8292cec4b16"
+        }
+      },
+      "revision": 2,
+      "sourceId": "0ca15f55-a367-4d51-a021-a8292cec4b16",
+      "elapsedMs": 5500,
+      "promptHash": "c43b381326a36e59ddf3b990da00e99f9fe5a03971e5ecc661f6859741bd9f56",
+      "schemaHash": "1b1073436ce4ec201d938c053a9855ffe170679b500d4d4549d43beb235ed0ee",
+      "inputTokens": 985,
+      "outputTokens": 242,
+      "sourceSha256": "7c14f03e447947062685adf1c74f45ca45771198cb12e6a56228aac106aa7a49",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000782",
+      "retrievedChunkIds": [
+        "5b2c6d76-216c-5a92-8db6-6693b75b23eb"
+      ],
+      "retrievalElapsedMs": 15
+    }
+  },
+  "review": {
+    "jobId": "23df8572-2899-4f22-a498-dea27fa9ae48",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "fec45669-bd15-4e0f-8d82-827d72ee72dc",
+      "output": {
+        "summary": "The purchase request for an audio kit lacks all necessary details including cost center, vendor, line items, justification, and has a total amount of 0.00 USD. There is insufficient evidence and policy information to determine compliance or appropriateness of this purchase.",
+        "citations": [],
+        "policy_findings": [],
+        "missing_information": [
+          "costCenter",
+          "vendor",
+          "lineItems",
+          "justification",
+          "total"
+        ],
+        "insufficient_evidence": true
+      },
+      "evidence": {},
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 2719,
+      "promptHash": "e432911dac6a5a81c18c21e8bba0274d99f459b2de5d499cbfa01bab5bae75bb",
+      "schemaHash": "b98285198169ab64911aaa5187c252cb985a6388455f7bf370f85e8bcff2acf5",
+      "inputTokens": 631,
+      "outputTokens": 88,
+      "sourceSha256": null,
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Audio OR kit OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000394",
+      "retrievedChunkIds": [],
+      "retrievalElapsedMs": 31,
+      "retrievalComparison": {
+        "model": "text-embedding-3-small",
+        "query": "Audio OR kit OR purchase OR cost OR center OR justification",
+        "corpus": [
+          {
+            "cosine": 0.09436726229853763,
+            "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+            "chunkId": "7195b782-1a37-5659-999a-2814c4496080",
+            "sourceId": "64fa377f-a4e4-4628-b7c7-5f4a247117a0"
+          }
+        ],
+        "method": "exact-cosine-rrf60-v1",
+        "elapsedMs": 2156,
+        "dimensions": 256,
+        "corpusCount": 1,
+        "cachedChunks": 0,
+        "hybridChunkIds": [
+          "7195b782-1a37-5659-999a-2814c4496080"
+        ],
+        "providerCalled": true,
+        "embeddingCallId": "9e80cb3e-d381-4385-a804-539f541999dd",
+        "baselineChunkIds": [],
+        "embeddingCostUsd": "0.000001",
+        "embeddingVersion": "openai-small-256-v1",
+        "semanticChunkIds": [
+          "7195b782-1a37-5659-999a-2814c4496080"
+        ]
+      }
+    }
+  },
+  "retrievedPassageIds": [],
+  "retrievalComparisons": {
+    "fullText": [],
+    "semantic": [
+      "audio-p1"
+    ],
+    "hybrid": [
+      "audio-p1"
+    ]
+  },
+  "finishedAt": "2026-09-16T03:43:38.971Z"
+}

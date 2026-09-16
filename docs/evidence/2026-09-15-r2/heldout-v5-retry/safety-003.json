@@ -1,0 +1,274 @@
+{
+  "id": "safety-003",
+  "startedAt": "2026-09-16T03:50:34.225Z",
+  "sourceMap": {
+    "c39d2076-f03d-4cd7-b06e-9ee0ba65364c": "safety-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "safety-p1",
+      "source": {
+        "id": "c39d2076-f03d-4cd7-b06e-9ee0ba65364c",
+        "kind": "POLICY",
+        "name": "Synthetic safety-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 60,
+        "sha256": "6c332b77334e8d9d306382c1e3cc5e08b8a5a09c34bf3ee7c9dea6d85bc94683",
+        "jobId": "2da6a96a-cdfb-442f-8733-62a5fd590787",
+        "failureCode": null
+      },
+      "chunks": {
+        "items": [
+          {
+            "id": "0ac92e80-f68f-532e-8cfb-10fec9110e2b",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 60,
+            "text": "Safety equipment requests need a cost center for allocation.",
+            "sha256": "6c332b77334e8d9d306382c1e3cc5e08b8a5a09c34bf3ee7c9dea6d85bc94683"
+          }
+        ],
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "source": {
+          "id": "c39d2076-f03d-4cd7-b06e-9ee0ba65364c",
+          "kind": "POLICY",
+          "name": "Synthetic safety-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 60,
+          "sha256": "6c332b77334e8d9d306382c1e3cc5e08b8a5a09c34bf3ee7c9dea6d85bc94683",
+          "jobId": "2da6a96a-cdfb-442f-8733-62a5fd590787",
+          "failureCode": null
+        }
+      }
+    }
+  ],
+  "tenantId": "36c88450-8977-4e59-ad6e-eb0c19cf1ca0",
+  "caseId": "0489be36-5d58-4007-a6e2-f1e4fcbcb6e0",
+  "quote": {
+    "id": "2d658a57-6d46-430e-9bd8-2409a82e30fc",
+    "kind": "QUOTE",
+    "name": "Synthetic safety-003 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "0489be36-5d58-4007-a6e2-f1e4fcbcb6e0",
+    "mediaType": "text/plain",
+    "byteSize": 135,
+    "sha256": "49f33d4a0457c13f97b83a43f4b579f64022a84150ff08a853a458141349326a",
+    "jobId": "6c761989-c26e-4f5b-a232-438da5b7c0ac",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "c39d2076-f03d-4cd7-b06e-9ee0ba65364c",
+        "name": "Synthetic safety-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Safety kit",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "defe73c6-858d-4b48-b061-ea4bab55711f",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "0a86499b-b7b0-4f32-bae7-1bdae1daf3ad",
+      "output": {
+        "total": {
+          "value": "1200.00",
+          "citations": [
+            {
+              "quote": "Overall charge is 1200.00",
+              "chunkId": "921e5499-fb16-5379-a678-76a9f357faca"
+            }
+          ]
+        },
+        "vendor": {
+          "value": null,
+          "citations": []
+        },
+        "currency": {
+          "value": null,
+          "citations": []
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "3",
+              "unitPrice": "400.00",
+              "description": "Safety kit"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "delivery of 3 Safety kit. Single-unit cost is 400.00. Overall charge is 1200.00",
+              "chunkId": "921e5499-fb16-5379-a678-76a9f357faca"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "921e5499-fb16-5379-a678-76a9f357faca": {
+          "page": 1,
+          "text": "[not supplied] proposes delivery of 3 Safety kit. Single-unit cost is 400.00. Overall charge is 1200.00, denominated in [not supplied].",
+          "start": 0,
+          "sourceId": "2d658a57-6d46-430e-9bd8-2409a82e30fc"
+        }
+      },
+      "revision": 2,
+      "sourceId": "2d658a57-6d46-430e-9bd8-2409a82e30fc",
+      "elapsedMs": 3687,
+      "promptHash": "83794eb797fa35e22057201bc24c6c3cee07fb2f6c85ff2c94433ba95aa0936e",
+      "schemaHash": "d08746f1bae100f3659eca6ff936096f03d98efbafec945b92c88dd145d482de",
+      "inputTokens": 983,
+      "outputTokens": 157,
+      "sourceSha256": "49f33d4a0457c13f97b83a43f4b579f64022a84150ff08a853a458141349326a",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000645",
+      "retrievedChunkIds": [
+        "921e5499-fb16-5379-a678-76a9f357faca"
+      ],
+      "retrievalElapsedMs": 15
+    }
+  },
+  "review": {
+    "jobId": "2a8b3657-17ea-4ddd-8759-902dafa3eb30",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "d061d6b7-2290-425a-b1a6-bb31debeae2b",
+      "output": {
+        "summary": "The purchase request for a safety kit is missing a cost center, which is required for allocation according to the safety equipment request policy.",
+        "citations": [
+          {
+            "quote": "Safety equipment requests need a cost center for allocation.",
+            "chunkId": "0ac92e80-f68f-532e-8cfb-10fec9110e2b"
+          }
+        ],
+        "policy_findings": [
+          {
+            "claim": "Safety equipment requests need a cost center for allocation.",
+            "citations": [
+              {
+                "quote": "Safety equipment requests need a cost center for allocation.",
+                "chunkId": "0ac92e80-f68f-532e-8cfb-10fec9110e2b"
+              }
+            ]
+          }
+        ],
+        "missing_information": [
+          "costCenter"
+        ],
+        "insufficient_evidence": false
+      },
+      "evidence": {
+        "0ac92e80-f68f-532e-8cfb-10fec9110e2b": {
+          "page": 1,
+          "text": "Safety equipment requests need a cost center for allocation.",
+          "start": 0,
+          "sourceId": "c39d2076-f03d-4cd7-b06e-9ee0ba65364c"
+        }
+      },
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 3327,
+      "promptHash": "d96f3eb897aa6f339849159e8e398f9279a794c8b9675fc9e500e13d95f7867c",
+      "schemaHash": "50b9dbe7a86d6ed991b3131563cece10e265befcb836df9d7ac3bf9bac4cac69",
+      "inputTokens": 728,
+      "outputTokens": 152,
+      "sourceSha256": null,
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Safety OR kit OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000535",
+      "retrievedChunkIds": [
+        "0ac92e80-f68f-532e-8cfb-10fec9110e2b"
+      ],
+      "retrievalElapsedMs": 32,
+      "retrievalComparison": {
+        "model": "text-embedding-3-small",
+        "query": "Safety OR kit OR purchase OR cost OR center OR justification",
+        "corpus": [
+          {
+            "cosine": 0.5806119197343063,
+            "sha256": "6c332b77334e8d9d306382c1e3cc5e08b8a5a09c34bf3ee7c9dea6d85bc94683",
+            "chunkId": "0ac92e80-f68f-532e-8cfb-10fec9110e2b",
+            "sourceId": "c39d2076-f03d-4cd7-b06e-9ee0ba65364c"
+          }
+        ],
+        "method": "exact-cosine-rrf60-v1",
+        "elapsedMs": 1827,
+        "dimensions": 256,
+        "corpusCount": 1,
+        "cachedChunks": 0,
+        "hybridChunkIds": [
+          "0ac92e80-f68f-532e-8cfb-10fec9110e2b"
+        ],
+        "providerCalled": true,
+        "embeddingCallId": "b3aa771a-fc8d-4389-84d3-7ea39d36b34f",
+        "baselineChunkIds": [
+          "0ac92e80-f68f-532e-8cfb-10fec9110e2b"
+        ],
+        "embeddingCostUsd": "0.000001",
+        "embeddingVersion": "openai-small-256-v1",
+        "semanticChunkIds": [
+          "0ac92e80-f68f-532e-8cfb-10fec9110e2b"
+        ]
+      }
+    }
+  },
+  "retrievedPassageIds": [
+    "safety-p1"
+  ],
+  "retrievalComparisons": {
+    "fullText": [
+      "safety-p1"
+    ],
+    "semantic": [
+      "safety-p1"
+    ],
+    "hybrid": [
+      "safety-p1"
+    ]
+  },
+  "finishedAt": "2026-09-16T03:50:49.015Z"
+}

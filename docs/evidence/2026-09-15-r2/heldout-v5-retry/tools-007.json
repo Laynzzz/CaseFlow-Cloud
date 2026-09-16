@@ -1,0 +1,258 @@
+{
+  "id": "tools-007",
+  "startedAt": "2026-09-16T03:46:03.608Z",
+  "sourceMap": {
+    "3f321085-823d-45e2-8755-e8ce0af60fd6": "tools-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "tools-p1",
+      "source": {
+        "id": "3f321085-823d-45e2-8755-e8ce0af60fd6",
+        "kind": "POLICY",
+        "name": "Synthetic tools-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 42,
+        "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+        "jobId": "ed2fdcd8-5272-4c1c-8c3f-99f33e24157b",
+        "failureCode": null
+      },
+      "chunks": {
+        "items": [
+          {
+            "id": "ac952e50-1e53-5347-bdd5-9aef78d81a33",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 42,
+            "text": "Office walls are painted every five years.",
+            "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1"
+          }
+        ],
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "source": {
+          "id": "3f321085-823d-45e2-8755-e8ce0af60fd6",
+          "kind": "POLICY",
+          "name": "Synthetic tools-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 42,
+          "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+          "jobId": "ed2fdcd8-5272-4c1c-8c3f-99f33e24157b",
+          "failureCode": null
+        }
+      }
+    }
+  ],
+  "tenantId": "321dbc39-76df-4201-99b3-7fb830fafb05",
+  "caseId": "1483d41e-b521-4973-b7d3-f23e88881fbd",
+  "quote": {
+    "id": "db212ac8-baa9-4db7-9977-7fdbbbcf9864",
+    "kind": "QUOTE",
+    "name": "Synthetic tools-007 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "1483d41e-b521-4973-b7d3-f23e88881fbd",
+    "mediaType": "text/plain",
+    "byteSize": 117,
+    "sha256": "a18ea8ba589ec7c711119c2b8619eabf041b377702322c47d2adfd467eed91b7",
+    "jobId": "12f959e4-e9c0-4028-8518-ca4e87629497",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "3f321085-823d-45e2-8755-e8ce0af60fd6",
+        "name": "Synthetic tools-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Tools kit",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "133ac568-5dd4-4ca1-8446-4ee940a6b24b",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "7382a6c0-20da-41d0-ba99-90a5cae75261",
+      "output": {
+        "total": {
+          "value": "2450.00",
+          "citations": [
+            {
+              "quote": "sum 2450.00",
+              "chunkId": "728c4b5d-1b50-51e9-9d88-17db3e04b21f"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Synthetic Tools Works 7",
+          "citations": [
+            {
+              "quote": "Prepared by Synthetic Tools Works 7",
+              "chunkId": "728c4b5d-1b50-51e9-9d88-17db3e04b21f"
+            }
+          ]
+        },
+        "currency": {
+          "value": "USD",
+          "citations": [
+            {
+              "quote": "denomination USD",
+              "chunkId": "728c4b5d-1b50-51e9-9d88-17db3e04b21f"
+            }
+          ]
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "7",
+              "unitPrice": "350.00",
+              "description": "Tools kit"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "Purchase estimate: Tools kit\nPrepared by Synthetic Tools Works 7\nRate 350.00; volume 7; sum 2450.00; denomination USD",
+              "chunkId": "728c4b5d-1b50-51e9-9d88-17db3e04b21f"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "728c4b5d-1b50-51e9-9d88-17db3e04b21f": {
+          "page": 1,
+          "text": "Purchase estimate: Tools kit\nPrepared by Synthetic Tools Works 7\nRate 350.00; volume 7; sum 2450.00; denomination USD",
+          "start": 0,
+          "sourceId": "db212ac8-baa9-4db7-9977-7fdbbbcf9864"
+        }
+      },
+      "revision": 2,
+      "sourceId": "db212ac8-baa9-4db7-9977-7fdbbbcf9864",
+      "elapsedMs": 4092,
+      "promptHash": "b33c661c7b931c8940317c13cd813ddcddddf2b7423cf20d13e1821ffa5d7bd5",
+      "schemaHash": "b7cebb9ab2c67becd72a68a63e1dc05dd66f52ce063d5e614638dcd12bb8cc08",
+      "inputTokens": 991,
+      "outputTokens": 262,
+      "sourceSha256": "a18ea8ba589ec7c711119c2b8619eabf041b377702322c47d2adfd467eed91b7",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000816",
+      "retrievedChunkIds": [
+        "728c4b5d-1b50-51e9-9d88-17db3e04b21f"
+      ],
+      "retrievalElapsedMs": 46
+    }
+  },
+  "review": {
+    "jobId": "5766bebc-bd0c-4c5d-9d96-fe0aa08c2299",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "29a59a52-20ed-4f65-b159-63acc4651507",
+      "output": {
+        "summary": "The purchase request lacks essential information, such as cost center, vendor, line items, total amount beyond zero, and justification. Without these details, the request is incomplete and cannot be properly evaluated or approved.",
+        "citations": [],
+        "policy_findings": [],
+        "missing_information": [
+          "costCenter",
+          "vendor",
+          "lineItems",
+          "justification",
+          "total"
+        ],
+        "insufficient_evidence": true
+      },
+      "evidence": {},
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 2765,
+      "promptHash": "14cce71bbe0c047c6f7de5b53752746cd714e2b2713e7dbbfe63e699f1a7eb17",
+      "schemaHash": "b98285198169ab64911aaa5187c252cb985a6388455f7bf370f85e8bcff2acf5",
+      "inputTokens": 631,
+      "outputTokens": 78,
+      "sourceSha256": null,
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Tools OR kit OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000378",
+      "retrievedChunkIds": [],
+      "retrievalElapsedMs": 15,
+      "retrievalComparison": {
+        "model": "text-embedding-3-small",
+        "query": "Tools OR kit OR purchase OR cost OR center OR justification",
+        "corpus": [
+          {
+            "cosine": 0.08884972406533428,
+            "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+            "chunkId": "ac952e50-1e53-5347-bdd5-9aef78d81a33",
+            "sourceId": "3f321085-823d-45e2-8755-e8ce0af60fd6"
+          }
+        ],
+        "method": "exact-cosine-rrf60-v1",
+        "elapsedMs": 1952,
+        "dimensions": 256,
+        "corpusCount": 1,
+        "cachedChunks": 0,
+        "hybridChunkIds": [
+          "ac952e50-1e53-5347-bdd5-9aef78d81a33"
+        ],
+        "providerCalled": true,
+        "embeddingCallId": "b7788c5a-b46b-4122-a0bc-9ffe8fbd398b",
+        "baselineChunkIds": [],
+        "embeddingCostUsd": "0.000001",
+        "embeddingVersion": "openai-small-256-v1",
+        "semanticChunkIds": [
+          "ac952e50-1e53-5347-bdd5-9aef78d81a33"
+        ]
+      }
+    }
+  },
+  "retrievedPassageIds": [],
+  "retrievalComparisons": {
+    "fullText": [],
+    "semantic": [
+      "tools-p1"
+    ],
+    "hybrid": [
+      "tools-p1"
+    ]
+  },
+  "finishedAt": "2026-09-16T03:46:20.837Z"
+}

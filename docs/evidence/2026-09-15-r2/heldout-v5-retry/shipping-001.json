@@ -1,0 +1,287 @@
+{
+  "id": "shipping-001",
+  "startedAt": "2026-09-16T03:55:27.975Z",
+  "sourceMap": {
+    "d9573ca0-9f54-4f59-8990-66f0232e843d": "shipping-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "shipping-p1",
+      "source": {
+        "id": "d9573ca0-9f54-4f59-8990-66f0232e843d",
+        "kind": "POLICY",
+        "name": "Synthetic shipping-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 74,
+        "sha256": "e2c2f8140b49a77a6ece6c685d681dd3a5acb616ed904beddd8b8cb7b0e4a7f2",
+        "jobId": "44bfabc1-a525-458f-9667-8d548ce6cde5",
+        "failureCode": null
+      },
+      "chunks": {
+        "items": [
+          {
+            "id": "ae431222-44fe-5e3e-9824-f80b6bf5550d",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 74,
+            "text": "Shipping supplies must be charged to a stated cost center before approval.",
+            "sha256": "e2c2f8140b49a77a6ece6c685d681dd3a5acb616ed904beddd8b8cb7b0e4a7f2"
+          }
+        ],
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "source": {
+          "id": "d9573ca0-9f54-4f59-8990-66f0232e843d",
+          "kind": "POLICY",
+          "name": "Synthetic shipping-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 74,
+          "sha256": "e2c2f8140b49a77a6ece6c685d681dd3a5acb616ed904beddd8b8cb7b0e4a7f2",
+          "jobId": "44bfabc1-a525-458f-9667-8d548ce6cde5",
+          "failureCode": null
+        }
+      }
+    }
+  ],
+  "tenantId": "5129b3a7-470f-437e-b6b2-0f556d825000",
+  "caseId": "b5fd3ebb-41fe-42f1-a147-900cccae2d17",
+  "quote": {
+    "id": "1e7f254d-aa7d-419b-bfca-dd9532aa4c15",
+    "kind": "QUOTE",
+    "name": "Synthetic shipping-001 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "b5fd3ebb-41fe-42f1-a147-900cccae2d17",
+    "mediaType": "text/plain",
+    "byteSize": 133,
+    "sha256": "3e72fca6dd1b5a4c485a6ae03759a69e78948fd608fafe8fb1217a7f7e048ea9",
+    "jobId": "32cb1f9e-feaa-4467-a87e-b75ad25836e5",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "d9573ca0-9f54-4f59-8990-66f0232e843d",
+        "name": "Synthetic shipping-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Shipping kit",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "6133bfb2-07f4-4df2-a6c4-7401e77f6a41",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "2371aaa4-a29a-4a23-8bbb-b1f9efe70d33",
+      "output": {
+        "total": {
+          "value": "450.00",
+          "citations": [
+            {
+              "quote": "Payment amount: USD 450.00",
+              "chunkId": "b9310002-0cd6-55e5-83f2-110b8ffe2edd"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Synthetic Shipping Works 1",
+          "citations": [
+            {
+              "quote": "[Synthetic Shipping Works 1]",
+              "chunkId": "b9310002-0cd6-55e5-83f2-110b8ffe2edd"
+            }
+          ]
+        },
+        "currency": {
+          "value": "USD",
+          "citations": [
+            {
+              "quote": "Payment amount: USD 450.00",
+              "chunkId": "b9310002-0cd6-55e5-83f2-110b8ffe2edd"
+            }
+          ]
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "1",
+              "unitPrice": "450.00",
+              "description": "Shipping kit"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "Merchandise: Shipping kit\nOrder size: 1\nPrice per piece: 450.00",
+              "chunkId": "b9310002-0cd6-55e5-83f2-110b8ffe2edd"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "b9310002-0cd6-55e5-83f2-110b8ffe2edd": {
+          "page": 1,
+          "text": "Offer summary [Synthetic Shipping Works 1]\nMerchandise: Shipping kit\nOrder size: 1\nPrice per piece: 450.00\nPayment amount: USD 450.00",
+          "start": 0,
+          "sourceId": "1e7f254d-aa7d-419b-bfca-dd9532aa4c15"
+        }
+      },
+      "revision": 2,
+      "sourceId": "1e7f254d-aa7d-419b-bfca-dd9532aa4c15",
+      "elapsedMs": 4967,
+      "promptHash": "1d036c44dec942629d1c21eb0a35d211e4102f725cdaa0b4843efd5dee60b335",
+      "schemaHash": "fbd4c39ad3d87c616196b2f6629e731cbef8821d7237bccef7fa3271d92a63e9",
+      "inputTokens": 990,
+      "outputTokens": 241,
+      "sourceSha256": "3e72fca6dd1b5a4c485a6ae03759a69e78948fd608fafe8fb1217a7f7e048ea9",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000782",
+      "retrievedChunkIds": [
+        "b9310002-0cd6-55e5-83f2-110b8ffe2edd"
+      ],
+      "retrievalElapsedMs": 16
+    }
+  },
+  "review": {
+    "jobId": "491eeb66-1af0-49dc-8b44-4bcfa7a31db6",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "a0a06904-fcde-4f82-94bb-f3fc74d02820",
+      "output": {
+        "summary": "The purchase request lacks a stated cost center, which is required according to the policy.",
+        "citations": [
+          {
+            "quote": "Shipping supplies must be charged to a stated cost center before approval.",
+            "chunkId": "ae431222-44fe-5e3e-9824-f80b6bf5550d"
+          }
+        ],
+        "policy_findings": [
+          {
+            "claim": "Shipping supplies must be charged to a stated cost center before approval.",
+            "citations": [
+              {
+                "quote": "Shipping supplies must be charged to a stated cost center before approval.",
+                "chunkId": "ae431222-44fe-5e3e-9824-f80b6bf5550d"
+              }
+            ]
+          }
+        ],
+        "missing_information": [
+          "costCenter",
+          "justification",
+          "vendor",
+          "lineItems"
+        ],
+        "insufficient_evidence": false
+      },
+      "evidence": {
+        "ae431222-44fe-5e3e-9824-f80b6bf5550d": {
+          "page": 1,
+          "text": "Shipping supplies must be charged to a stated cost center before approval.",
+          "start": 0,
+          "sourceId": "d9573ca0-9f54-4f59-8990-66f0232e843d"
+        }
+      },
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 4343,
+      "promptHash": "bf9353d3c42c99538e979bcd7f4e0828e4ad7f896cb2e5f58754501b73b51dad",
+      "schemaHash": "bd1c16a82a291267d32c337dfd386b26ab97a12faa15c76110015a9336844450",
+      "inputTokens": 730,
+      "outputTokens": 158,
+      "sourceSha256": null,
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Shipping OR kit OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000545",
+      "retrievedChunkIds": [
+        "ae431222-44fe-5e3e-9824-f80b6bf5550d"
+      ],
+      "retrievalElapsedMs": 31,
+      "retrievalComparison": {
+        "model": "text-embedding-3-small",
+        "query": "Shipping OR kit OR purchase OR cost OR center OR justification",
+        "corpus": [
+          {
+            "cosine": 0.5180003082528323,
+            "sha256": "e2c2f8140b49a77a6ece6c685d681dd3a5acb616ed904beddd8b8cb7b0e4a7f2",
+            "chunkId": "ae431222-44fe-5e3e-9824-f80b6bf5550d",
+            "sourceId": "d9573ca0-9f54-4f59-8990-66f0232e843d"
+          }
+        ],
+        "method": "exact-cosine-rrf60-v1",
+        "elapsedMs": 2186,
+        "dimensions": 256,
+        "corpusCount": 1,
+        "cachedChunks": 0,
+        "hybridChunkIds": [
+          "ae431222-44fe-5e3e-9824-f80b6bf5550d"
+        ],
+        "providerCalled": true,
+        "embeddingCallId": "9f87fd3a-f444-495c-9ab2-880def971ca0",
+        "baselineChunkIds": [
+          "ae431222-44fe-5e3e-9824-f80b6bf5550d"
+        ],
+        "embeddingCostUsd": "0.000001",
+        "embeddingVersion": "openai-small-256-v1",
+        "semanticChunkIds": [
+          "ae431222-44fe-5e3e-9824-f80b6bf5550d"
+        ]
+      }
+    }
+  },
+  "retrievedPassageIds": [
+    "shipping-p1"
+  ],
+  "retrievalComparisons": {
+    "fullText": [
+      "shipping-p1"
+    ],
+    "semantic": [
+      "shipping-p1"
+    ],
+    "hybrid": [
+      "shipping-p1"
+    ]
+  },
+  "finishedAt": "2026-09-16T03:55:46.617Z"
+}

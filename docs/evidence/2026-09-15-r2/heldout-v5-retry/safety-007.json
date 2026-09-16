@@ -1,0 +1,258 @@
+{
+  "id": "safety-007",
+  "startedAt": "2026-09-16T03:51:41.835Z",
+  "sourceMap": {
+    "12920c81-f42e-4e8b-9f61-80c2e0a2dd01": "safety-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "safety-p1",
+      "source": {
+        "id": "12920c81-f42e-4e8b-9f61-80c2e0a2dd01",
+        "kind": "POLICY",
+        "name": "Synthetic safety-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 42,
+        "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+        "jobId": "e7a19f0b-a577-4f96-a7c5-b98fe1cd0140",
+        "failureCode": null
+      },
+      "chunks": {
+        "items": [
+          {
+            "id": "9ae6349a-7a97-552a-babb-54ac4c9b0ec8",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 42,
+            "text": "Office walls are painted every five years.",
+            "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1"
+          }
+        ],
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "source": {
+          "id": "12920c81-f42e-4e8b-9f61-80c2e0a2dd01",
+          "kind": "POLICY",
+          "name": "Synthetic safety-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 42,
+          "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+          "jobId": "e7a19f0b-a577-4f96-a7c5-b98fe1cd0140",
+          "failureCode": null
+        }
+      }
+    }
+  ],
+  "tenantId": "a96511a5-6897-4cbe-89a6-fc4d805a7608",
+  "caseId": "5d0d92b4-292b-4fe0-887b-8ecb7a187a07",
+  "quote": {
+    "id": "e5f8a43c-5515-4d5f-b5d5-7e7db8999b10",
+    "kind": "QUOTE",
+    "name": "Synthetic safety-007 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "5d0d92b4-292b-4fe0-887b-8ecb7a187a07",
+    "mediaType": "text/plain",
+    "byteSize": 134,
+    "sha256": "2f006cb4ac10d0d850155f8346338943f744cd2097657f6227aceec78be8ca95",
+    "jobId": "7d5f6687-af0e-41d9-8ba6-07d9c59aba2b",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "12920c81-f42e-4e8b-9f61-80c2e0a2dd01",
+        "name": "Synthetic safety-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Safety kit",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "5c63e20b-73ae-4a1f-9062-1c451b29cf89",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "2d2c8aa2-9669-4cb5-982f-cd44276c1f74",
+      "output": {
+        "total": {
+          "value": "2800.00",
+          "citations": [
+            {
+              "quote": "Overall charge is 2800.00",
+              "chunkId": "99bc08e8-78b8-58a4-9a96-ae001f17b1c6"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Synthetic Safety Works 7",
+          "citations": [
+            {
+              "quote": "Synthetic Safety Works 7 proposes delivery",
+              "chunkId": "99bc08e8-78b8-58a4-9a96-ae001f17b1c6"
+            }
+          ]
+        },
+        "currency": {
+          "value": "USD",
+          "citations": [
+            {
+              "quote": "denominated in USD",
+              "chunkId": "99bc08e8-78b8-58a4-9a96-ae001f17b1c6"
+            }
+          ]
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "7",
+              "unitPrice": "400.00",
+              "description": "Safety kit"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "delivery of 7 Safety kit. Single-unit cost is 400.00. Overall charge is 2800.00",
+              "chunkId": "99bc08e8-78b8-58a4-9a96-ae001f17b1c6"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "99bc08e8-78b8-58a4-9a96-ae001f17b1c6": {
+          "page": 1,
+          "text": "Synthetic Safety Works 7 proposes delivery of 7 Safety kit. Single-unit cost is 400.00. Overall charge is 2800.00, denominated in USD.",
+          "start": 0,
+          "sourceId": "e5f8a43c-5515-4d5f-b5d5-7e7db8999b10"
+        }
+      },
+      "revision": 2,
+      "sourceId": "e5f8a43c-5515-4d5f-b5d5-7e7db8999b10",
+      "elapsedMs": 4062,
+      "promptHash": "39e7ae8d619c3b4341f9230de36489ec8ac92580ba4a2bb083acb43e1116e316",
+      "schemaHash": "f4debbaae174896937a54d07324399ad786afb6ea0d4b3e79ea0e2d8d8202093",
+      "inputTokens": 998,
+      "outputTokens": 252,
+      "sourceSha256": "2f006cb4ac10d0d850155f8346338943f744cd2097657f6227aceec78be8ca95",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000803",
+      "retrievedChunkIds": [
+        "99bc08e8-78b8-58a4-9a96-ae001f17b1c6"
+      ],
+      "retrievalElapsedMs": 31
+    }
+  },
+  "review": {
+    "jobId": "e1d0757b-e4c0-44c4-b27e-189c22b9a908",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "bb858581-9a8f-49c7-a6af-1bf6f8ceea0b",
+      "output": {
+        "summary": "The purchase request is for a Safety kit with no line items, no vendor, no cost center, no justification, and a total of 0.00 USD. There is insufficient information to evaluate compliance with purchasing policies or determine appropriateness.",
+        "citations": [],
+        "policy_findings": [],
+        "missing_information": [
+          "vendor",
+          "costCenter",
+          "justification",
+          "lineItems",
+          "total amount that corresponds to line items"
+        ],
+        "insufficient_evidence": true
+      },
+      "evidence": {},
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 2920,
+      "promptHash": "62333f13d7bb4fa6658a38088dd6bbbf79e0f90356649c647633e86c0e7cf086",
+      "schemaHash": "b98285198169ab64911aaa5187c252cb985a6388455f7bf370f85e8bcff2acf5",
+      "inputTokens": 631,
+      "outputTokens": 91,
+      "sourceSha256": null,
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Safety OR kit OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000398",
+      "retrievedChunkIds": [],
+      "retrievalElapsedMs": 16,
+      "retrievalComparison": {
+        "model": "text-embedding-3-small",
+        "query": "Safety OR kit OR purchase OR cost OR center OR justification",
+        "corpus": [
+          {
+            "cosine": 0.1239912272715586,
+            "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+            "chunkId": "9ae6349a-7a97-552a-babb-54ac4c9b0ec8",
+            "sourceId": "12920c81-f42e-4e8b-9f61-80c2e0a2dd01"
+          }
+        ],
+        "method": "exact-cosine-rrf60-v1",
+        "elapsedMs": 2016,
+        "dimensions": 256,
+        "corpusCount": 1,
+        "cachedChunks": 0,
+        "hybridChunkIds": [
+          "9ae6349a-7a97-552a-babb-54ac4c9b0ec8"
+        ],
+        "providerCalled": true,
+        "embeddingCallId": "ca78f0e6-c67d-4368-ad26-8c8b47f4eb1d",
+        "baselineChunkIds": [],
+        "embeddingCostUsd": "0.000001",
+        "embeddingVersion": "openai-small-256-v1",
+        "semanticChunkIds": [
+          "9ae6349a-7a97-552a-babb-54ac4c9b0ec8"
+        ]
+      }
+    }
+  },
+  "retrievedPassageIds": [],
+  "retrievalComparisons": {
+    "fullText": [],
+    "semantic": [
+      "safety-p1"
+    ],
+    "hybrid": [
+      "safety-p1"
+    ]
+  },
+  "finishedAt": "2026-09-16T03:51:57.390Z"
+}

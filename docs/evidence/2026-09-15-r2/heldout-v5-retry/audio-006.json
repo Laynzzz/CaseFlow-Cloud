@@ -1,0 +1,294 @@
+{
+  "id": "audio-006",
+  "startedAt": "2026-09-16T03:42:49.980Z",
+  "sourceMap": {
+    "9b9f427c-ede1-43b2-968d-ae2514d777e1": "audio-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "audio-p1",
+      "source": {
+        "id": "9b9f427c-ede1-43b2-968d-ae2514d777e1",
+        "kind": "POLICY",
+        "name": "Synthetic audio-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 67,
+        "sha256": "7c688e1502798bf62d8f70fe55466b62e270f5cc3be4f674ea0709ae3d600296",
+        "jobId": "a3db00ab-1bf5-48bd-a574-ccc5a489301f",
+        "failureCode": null
+      },
+      "chunks": {
+        "items": [
+          {
+            "id": "dc2af3d5-826b-51db-9776-7b627f17ee82",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 67,
+            "text": "Before an audio request is approved, finance needs its cost center.",
+            "sha256": "7c688e1502798bf62d8f70fe55466b62e270f5cc3be4f674ea0709ae3d600296"
+          }
+        ],
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "source": {
+          "id": "9b9f427c-ede1-43b2-968d-ae2514d777e1",
+          "kind": "POLICY",
+          "name": "Synthetic audio-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 67,
+          "sha256": "7c688e1502798bf62d8f70fe55466b62e270f5cc3be4f674ea0709ae3d600296",
+          "jobId": "a3db00ab-1bf5-48bd-a574-ccc5a489301f",
+          "failureCode": null
+        }
+      }
+    }
+  ],
+  "tenantId": "ddef1f26-6531-4ee2-9d24-1371762a58a7",
+  "caseId": "8f4b4cf1-29a1-4f64-bb96-b48cfd836d56",
+  "quote": {
+    "id": "410b4b67-7b90-4a4f-884b-97ed33e53f3b",
+    "kind": "QUOTE",
+    "name": "Synthetic audio-006 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "8f4b4cf1-29a1-4f64-bb96-b48cfd836d56",
+    "mediaType": "text/plain",
+    "byteSize": 180,
+    "sha256": "71b1546804e974a8e390c93604c0d0d029a7b6b59c1036f56d5d2629623fa0d6",
+    "jobId": "db64f75c-d5aa-4e7d-abe4-77a93cc1eb8f",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "9b9f427c-ede1-43b2-968d-ae2514d777e1",
+        "name": "Synthetic audio-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Audio kit",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "c87dd9b6-a17a-4020-9e21-4fe02e6f50e7",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "fe7990d5-3aa5-4686-b661-7fdbc76b4641",
+      "output": {
+        "total": {
+          "value": null,
+          "citations": [
+            {
+              "quote": "Settlement: USD 1950.00",
+              "chunkId": "eac763ad-6706-5818-8aed-f6d6b9ded7da"
+            },
+            {
+              "quote": "Unresolved correction: total 1987.00. Neither total is confirmed.",
+              "chunkId": "eac763ad-6706-5818-8aed-f6d6b9ded7da"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Synthetic Audio Works",
+          "citations": [
+            {
+              "quote": "Commercial offer by Synthetic Audio Works",
+              "chunkId": "eac763ad-6706-5818-8aed-f6d6b9ded7da"
+            }
+          ]
+        },
+        "currency": {
+          "value": "USD",
+          "citations": [
+            {
+              "quote": "Settlement: USD 1950.00",
+              "chunkId": "eac763ad-6706-5818-8aed-f6d6b9ded7da"
+            }
+          ]
+        },
+        "warnings": [
+          "Conflicting totals: 1950.00 and 1987.00; neither total is confirmed."
+        ],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "6",
+              "unitPrice": "325.00",
+              "description": "Audio kit"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "6 pieces of Audio kit, priced 325.00 per piece",
+              "chunkId": "eac763ad-6706-5818-8aed-f6d6b9ded7da"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "eac763ad-6706-5818-8aed-f6d6b9ded7da": {
+          "page": 1,
+          "text": "Commercial offer by Synthetic Audio Works 6\n6 pieces of Audio kit, priced 325.00 per piece\nSettlement: USD 1950.00\nUnresolved correction: total 1987.00. Neither total is confirmed.",
+          "start": 0,
+          "sourceId": "410b4b67-7b90-4a4f-884b-97ed33e53f3b"
+        }
+      },
+      "revision": 2,
+      "sourceId": "410b4b67-7b90-4a4f-884b-97ed33e53f3b",
+      "elapsedMs": 4266,
+      "promptHash": "4b1c650447767be16d2680251dcfb8fb0177c214a153fde7b6284a89f8102fcc",
+      "schemaHash": "cf4cceda9a9ba7f792c21f3c38d6b9546565950f85fb451fff6f442f9fda2e1e",
+      "inputTokens": 1000,
+      "outputTokens": 290,
+      "sourceSha256": "71b1546804e974a8e390c93604c0d0d029a7b6b59c1036f56d5d2629623fa0d6",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000864",
+      "retrievedChunkIds": [
+        "eac763ad-6706-5818-8aed-f6d6b9ded7da"
+      ],
+      "retrievalElapsedMs": 0
+    }
+  },
+  "review": {
+    "jobId": "91c2dbe9-d465-4f31-b7bb-dc88c585e9e0",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "6afe15fd-8ed0-45df-b236-8fb6e0f92151",
+      "output": {
+        "summary": "The purchase request for an audio kit is missing several key details including cost center, vendor information, justification, line items, and the total amount is zero.",
+        "citations": [
+          {
+            "quote": "Before an audio request is approved, finance needs its cost center.",
+            "chunkId": "dc2af3d5-826b-51db-9776-7b627f17ee82"
+          }
+        ],
+        "policy_findings": [
+          {
+            "claim": "Finance requires the cost center before approving an audio request.",
+            "citations": [
+              {
+                "quote": "Before an audio request is approved, finance needs its cost center.",
+                "chunkId": "dc2af3d5-826b-51db-9776-7b627f17ee82"
+              }
+            ]
+          }
+        ],
+        "missing_information": [
+          "costCenter",
+          "vendor",
+          "justification",
+          "lineItems",
+          "total"
+        ],
+        "insufficient_evidence": false
+      },
+      "evidence": {
+        "dc2af3d5-826b-51db-9776-7b627f17ee82": {
+          "page": 1,
+          "text": "Before an audio request is approved, finance needs its cost center.",
+          "start": 0,
+          "sourceId": "9b9f427c-ede1-43b2-968d-ae2514d777e1"
+        }
+      },
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 3890,
+      "promptHash": "8a02cb231dcf6153adc3fc58c984f3acbdfdd2457eee3f8b99986401587fbc3c",
+      "schemaHash": "57b7becdf968fbd6934f0bf4f3af9a7c11515f381def744b7e02aeb3e258fffc",
+      "inputTokens": 731,
+      "outputTokens": 174,
+      "sourceSha256": null,
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Audio OR kit OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000571",
+      "retrievedChunkIds": [
+        "dc2af3d5-826b-51db-9776-7b627f17ee82"
+      ],
+      "retrievalElapsedMs": 30,
+      "retrievalComparison": {
+        "model": "text-embedding-3-small",
+        "query": "Audio OR kit OR purchase OR cost OR center OR justification",
+        "corpus": [
+          {
+            "cosine": 0.5512121894932455,
+            "sha256": "7c688e1502798bf62d8f70fe55466b62e270f5cc3be4f674ea0709ae3d600296",
+            "chunkId": "dc2af3d5-826b-51db-9776-7b627f17ee82",
+            "sourceId": "9b9f427c-ede1-43b2-968d-ae2514d777e1"
+          }
+        ],
+        "method": "exact-cosine-rrf60-v1",
+        "elapsedMs": 1983,
+        "dimensions": 256,
+        "corpusCount": 1,
+        "cachedChunks": 0,
+        "hybridChunkIds": [
+          "dc2af3d5-826b-51db-9776-7b627f17ee82"
+        ],
+        "providerCalled": true,
+        "embeddingCallId": "8f3f5315-32f4-4da5-8903-8eb3bb7cd627",
+        "baselineChunkIds": [
+          "dc2af3d5-826b-51db-9776-7b627f17ee82"
+        ],
+        "embeddingCostUsd": "0.000001",
+        "embeddingVersion": "openai-small-256-v1",
+        "semanticChunkIds": [
+          "dc2af3d5-826b-51db-9776-7b627f17ee82"
+        ]
+      }
+    }
+  },
+  "retrievedPassageIds": [
+    "audio-p1"
+  ],
+  "retrievalComparisons": {
+    "fullText": [
+      "audio-p1"
+    ],
+    "semantic": [
+      "audio-p1"
+    ],
+    "hybrid": [
+      "audio-p1"
+    ]
+  },
+  "finishedAt": "2026-09-16T03:43:06.350Z"
+}

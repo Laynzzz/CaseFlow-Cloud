@@ -1,0 +1,277 @@
+{
+  "id": "display-003",
+  "startedAt": "2026-09-16T03:53:20.660Z",
+  "sourceMap": {
+    "175d4896-c10e-414c-8b16-44e42fd01505": "display-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "display-p1",
+      "source": {
+        "id": "175d4896-c10e-414c-8b16-44e42fd01505",
+        "kind": "POLICY",
+        "name": "Synthetic display-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 65,
+        "sha256": "e5844c1784a9cef7172455d806dc83062760adcc976fcd2f8e53e3aed980f599",
+        "jobId": "182a9092-ed08-4dcf-864e-d046e9e52057",
+        "failureCode": null
+      },
+      "chunks": {
+        "items": [
+          {
+            "id": "8d0c443b-89fa-5fbb-91cc-1c6ca6d1177d",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 65,
+            "text": "A display purchase is incomplete until a cost center is provided.",
+            "sha256": "e5844c1784a9cef7172455d806dc83062760adcc976fcd2f8e53e3aed980f599"
+          }
+        ],
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "source": {
+          "id": "175d4896-c10e-414c-8b16-44e42fd01505",
+          "kind": "POLICY",
+          "name": "Synthetic display-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 65,
+          "sha256": "e5844c1784a9cef7172455d806dc83062760adcc976fcd2f8e53e3aed980f599",
+          "jobId": "182a9092-ed08-4dcf-864e-d046e9e52057",
+          "failureCode": null
+        }
+      }
+    }
+  ],
+  "tenantId": "5f72d353-941b-45a7-bb32-3298e0fd43a1",
+  "caseId": "4c901d1b-5524-4f1c-9d27-4a4ec898554b",
+  "quote": {
+    "id": "77def199-b5a0-4f42-81f0-805651732f0c",
+    "kind": "QUOTE",
+    "name": "Synthetic display-003 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "4c901d1b-5524-4f1c-9d27-4a4ec898554b",
+    "mediaType": "text/plain",
+    "byteSize": 132,
+    "sha256": "a1afc7f8e4b63a2f98c3428f5eb0211335d4c4faa90cc34a9c646eced97354ce",
+    "jobId": "1936301c-8873-43a3-b57c-d5c63357abaf",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "175d4896-c10e-414c-8b16-44e42fd01505",
+        "name": "Synthetic display-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Display kit",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "831bf735-7f68-48a0-a1a5-8bbcfec27ed2",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "a801c599-6a84-4708-95dd-62f3ca173814",
+      "output": {
+        "total": {
+          "value": "1275.00",
+          "citations": [
+            {
+              "quote": "Balance requested: 1275.00",
+              "chunkId": "d0d16eef-73f9-58fe-aa58-8aa1f6fb33a9"
+            }
+          ]
+        },
+        "vendor": {
+          "value": null,
+          "citations": []
+        },
+        "currency": {
+          "value": null,
+          "citations": []
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "3",
+              "unitPrice": "425.00",
+              "description": "Display kit"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "Display kit / 3 / 425.00",
+              "chunkId": "d0d16eef-73f9-58fe-aa58-8aa1f6fb33a9"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "d0d16eef-73f9-58fe-aa58-8aa1f6fb33a9": {
+          "page": 1,
+          "text": "Estimate issuer: [not supplied]\nDescription / units / unit charge\nDisplay kit / 3 / 425.00\nBalance requested: 1275.00 [not supplied]",
+          "start": 0,
+          "sourceId": "77def199-b5a0-4f42-81f0-805651732f0c"
+        }
+      },
+      "revision": 2,
+      "sourceId": "77def199-b5a0-4f42-81f0-805651732f0c",
+      "elapsedMs": 3531,
+      "promptHash": "3af43362d4bc664555f581d3df02c00d2e1df80e0bc2565d95b6acb682a8b76b",
+      "schemaHash": "82caa247764b1b3330363ed5f05dba86b1658bc688c2bc24ba54f5fd0f171757",
+      "inputTokens": 990,
+      "outputTokens": 151,
+      "sourceSha256": "a1afc7f8e4b63a2f98c3428f5eb0211335d4c4faa90cc34a9c646eced97354ce",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000638",
+      "retrievedChunkIds": [
+        "d0d16eef-73f9-58fe-aa58-8aa1f6fb33a9"
+      ],
+      "retrievalElapsedMs": 15
+    }
+  },
+  "review": {
+    "jobId": "b65e61b0-ee05-4196-bc61-2c0a36fcd2e5",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "a612d659-39af-4bfe-84b6-c4a2f6c9aec6",
+      "output": {
+        "summary": "The purchase request for a display kit is incomplete because it lacks a specified cost center and other essential details such as line items, vendor, and justification. The total is zero, indicating no items or costs have been included.",
+        "citations": [
+          {
+            "quote": "A display purchase is incomplete until a cost center is provided.",
+            "chunkId": "8d0c443b-89fa-5fbb-91cc-1c6ca6d1177d"
+          }
+        ],
+        "policy_findings": [
+          {
+            "claim": "A display purchase is incomplete until a cost center is provided.",
+            "citations": [
+              {
+                "quote": "A display purchase is incomplete until a cost center is provided.",
+                "chunkId": "8d0c443b-89fa-5fbb-91cc-1c6ca6d1177d"
+              }
+            ]
+          }
+        ],
+        "missing_information": [
+          "costCenter",
+          "vendor",
+          "lineItems",
+          "justification"
+        ],
+        "insufficient_evidence": false
+      },
+      "evidence": {
+        "8d0c443b-89fa-5fbb-91cc-1c6ca6d1177d": {
+          "page": 1,
+          "text": "A display purchase is incomplete until a cost center is provided.",
+          "start": 0,
+          "sourceId": "175d4896-c10e-414c-8b16-44e42fd01505"
+        }
+      },
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 3922,
+      "promptHash": "b4793ac0237ae3c63120f5bbb56e062f6ac5c76d14bae7a26166ee6139130e20",
+      "schemaHash": "fad1961c88cb055d3912e4b6f0e0b73c4cfe01ec9a7effaaf6f3aafaf1b41d86",
+      "inputTokens": 734,
+      "outputTokens": 190,
+      "sourceSha256": null,
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Display OR kit OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000598",
+      "retrievedChunkIds": [
+        "8d0c443b-89fa-5fbb-91cc-1c6ca6d1177d"
+      ],
+      "retrievalElapsedMs": 16,
+      "retrievalComparison": {
+        "model": "text-embedding-3-small",
+        "query": "Display OR kit OR purchase OR cost OR center OR justification",
+        "corpus": [
+          {
+            "cosine": 0.5746790943506879,
+            "sha256": "e5844c1784a9cef7172455d806dc83062760adcc976fcd2f8e53e3aed980f599",
+            "chunkId": "8d0c443b-89fa-5fbb-91cc-1c6ca6d1177d",
+            "sourceId": "175d4896-c10e-414c-8b16-44e42fd01505"
+          }
+        ],
+        "method": "exact-cosine-rrf60-v1",
+        "elapsedMs": 1843,
+        "dimensions": 256,
+        "corpusCount": 1,
+        "cachedChunks": 0,
+        "hybridChunkIds": [
+          "8d0c443b-89fa-5fbb-91cc-1c6ca6d1177d"
+        ],
+        "providerCalled": true,
+        "embeddingCallId": "06613291-9d88-48ed-9f38-8b37047b6058",
+        "baselineChunkIds": [
+          "8d0c443b-89fa-5fbb-91cc-1c6ca6d1177d"
+        ],
+        "embeddingCostUsd": "0.000001",
+        "embeddingVersion": "openai-small-256-v1",
+        "semanticChunkIds": [
+          "8d0c443b-89fa-5fbb-91cc-1c6ca6d1177d"
+        ]
+      }
+    }
+  },
+  "retrievedPassageIds": [
+    "display-p1"
+  ],
+  "retrievalComparisons": {
+    "fullText": [
+      "display-p1"
+    ],
+    "semantic": [
+      "display-p1"
+    ],
+    "hybrid": [
+      "display-p1"
+    ]
+  },
+  "finishedAt": "2026-09-16T03:53:36.256Z"
+}

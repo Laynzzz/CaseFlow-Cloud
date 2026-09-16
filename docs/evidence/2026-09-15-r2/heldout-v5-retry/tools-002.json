@@ -1,0 +1,288 @@
+{
+  "id": "tools-002",
+  "startedAt": "2026-09-16T03:44:27.165Z",
+  "sourceMap": {
+    "ff8e4309-2d6b-44b3-a0aa-7e2c3294fc8b": "tools-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "tools-p1",
+      "source": {
+        "id": "ff8e4309-2d6b-44b3-a0aa-7e2c3294fc8b",
+        "kind": "POLICY",
+        "name": "Synthetic tools-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 64,
+        "sha256": "77fbedebab9a3b64eafe19481032da94593d576d676498830328a6a1c4dd8afd",
+        "jobId": "9ed01b8e-30c2-41cd-866a-47aaf5b8bbf7",
+        "failureCode": null
+      },
+      "chunks": {
+        "items": [
+          {
+            "id": "8a011bbe-34e2-5008-a6dc-b5a79e06d5ba",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 64,
+            "text": "Tool expenditure requires the requester to supply a cost center.",
+            "sha256": "77fbedebab9a3b64eafe19481032da94593d576d676498830328a6a1c4dd8afd"
+          }
+        ],
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "source": {
+          "id": "ff8e4309-2d6b-44b3-a0aa-7e2c3294fc8b",
+          "kind": "POLICY",
+          "name": "Synthetic tools-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 64,
+          "sha256": "77fbedebab9a3b64eafe19481032da94593d576d676498830328a6a1c4dd8afd",
+          "jobId": "9ed01b8e-30c2-41cd-866a-47aaf5b8bbf7",
+          "failureCode": null
+        }
+      }
+    }
+  ],
+  "tenantId": "53000d0b-f1ae-4567-aa81-3ae135da71ee",
+  "caseId": "8d5570af-2f18-4aad-a2eb-7d32c0ef0970",
+  "quote": {
+    "id": "e76f30b2-dafc-49cb-ba20-1cb110b61b4a",
+    "kind": "QUOTE",
+    "name": "Synthetic tools-002 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "8d5570af-2f18-4aad-a2eb-7d32c0ef0970",
+    "mediaType": "text/plain",
+    "byteSize": 116,
+    "sha256": "58864a3ec16542c72fb7be71f81c69bf44abbbed9dbf1446ae02a728df001ae6",
+    "jobId": "e48af452-d98c-415d-acb4-63fc74fb4d75",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "ff8e4309-2d6b-44b3-a0aa-7e2c3294fc8b",
+        "name": "Synthetic tools-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Tools kit",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "d0352b62-3df3-4a35-8d1c-146600268c9e",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "41790e27-05dd-4c3e-9b22-df777cf12768",
+      "output": {
+        "total": {
+          "value": "700.00",
+          "citations": [
+            {
+              "quote": "sum 700.00",
+              "chunkId": "bb1b4432-6da1-5ca1-98af-4fcf238348d0"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Synthetic Tools Works 2",
+          "citations": [
+            {
+              "quote": "Prepared by Synthetic Tools Works 2",
+              "chunkId": "bb1b4432-6da1-5ca1-98af-4fcf238348d0"
+            }
+          ]
+        },
+        "currency": {
+          "value": "USD",
+          "citations": [
+            {
+              "quote": "denomination USD",
+              "chunkId": "bb1b4432-6da1-5ca1-98af-4fcf238348d0"
+            }
+          ]
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "2",
+              "unitPrice": "350.00",
+              "description": "Tools kit"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "Rate 350.00; volume 2; sum 700.00",
+              "chunkId": "bb1b4432-6da1-5ca1-98af-4fcf238348d0"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "bb1b4432-6da1-5ca1-98af-4fcf238348d0": {
+          "page": 1,
+          "text": "Purchase estimate: Tools kit\nPrepared by Synthetic Tools Works 2\nRate 350.00; volume 2; sum 700.00; denomination USD",
+          "start": 0,
+          "sourceId": "e76f30b2-dafc-49cb-ba20-1cb110b61b4a"
+        }
+      },
+      "revision": 2,
+      "sourceId": "e76f30b2-dafc-49cb-ba20-1cb110b61b4a",
+      "elapsedMs": 4186,
+      "promptHash": "e552a6e4f811cefd4f4567c424d4eaa10ab53c94bde7c44e210c9ec4d8f5f521",
+      "schemaHash": "9b8640aaf5612690c09766f60e8c8b7f0661e0f3f827c743dccb96273227af18",
+      "inputTokens": 985,
+      "outputTokens": 230,
+      "sourceSha256": "58864a3ec16542c72fb7be71f81c69bf44abbbed9dbf1446ae02a728df001ae6",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000762",
+      "retrievedChunkIds": [
+        "bb1b4432-6da1-5ca1-98af-4fcf238348d0"
+      ],
+      "retrievalElapsedMs": 16
+    }
+  },
+  "review": {
+    "jobId": "aba1018a-874b-4249-9051-bebd0d32e372",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "3fd1e148-39da-4f41-b374-d15068e1fbe9",
+      "output": {
+        "summary": "The purchase request for a tools kit lacks a specified cost center, which is required according to the policy evidence.",
+        "citations": [
+          {
+            "quote": "Tool expenditure requires the requester to supply a cost center.",
+            "chunkId": "8a011bbe-34e2-5008-a6dc-b5a79e06d5ba"
+          }
+        ],
+        "policy_findings": [
+          {
+            "claim": "Tool expenditure requires the requester to supply a cost center.",
+            "citations": [
+              {
+                "quote": "Tool expenditure requires the requester to supply a cost center.",
+                "chunkId": "8a011bbe-34e2-5008-a6dc-b5a79e06d5ba"
+              }
+            ]
+          }
+        ],
+        "missing_information": [
+          "costCenter",
+          "description",
+          "justification",
+          "lineItems",
+          "vendor"
+        ],
+        "insufficient_evidence": false
+      },
+      "evidence": {
+        "8a011bbe-34e2-5008-a6dc-b5a79e06d5ba": {
+          "page": 1,
+          "text": "Tool expenditure requires the requester to supply a cost center.",
+          "start": 0,
+          "sourceId": "ff8e4309-2d6b-44b3-a0aa-7e2c3294fc8b"
+        }
+      },
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 3782,
+      "promptHash": "8754652ed3353ad2bff565a2a87687f0b3c43046e323fa5a477abf09cd481cc4",
+      "schemaHash": "bc33acf9c72097f0be35df1743b9c6ba09267e58290c323a17e2e8f8e960fc1f",
+      "inputTokens": 733,
+      "outputTokens": 161,
+      "sourceSha256": null,
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Tools OR kit OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000551",
+      "retrievedChunkIds": [
+        "8a011bbe-34e2-5008-a6dc-b5a79e06d5ba"
+      ],
+      "retrievalElapsedMs": 0,
+      "retrievalComparison": {
+        "model": "text-embedding-3-small",
+        "query": "Tools OR kit OR purchase OR cost OR center OR justification",
+        "corpus": [
+          {
+            "cosine": 0.5135012100045142,
+            "sha256": "77fbedebab9a3b64eafe19481032da94593d576d676498830328a6a1c4dd8afd",
+            "chunkId": "8a011bbe-34e2-5008-a6dc-b5a79e06d5ba",
+            "sourceId": "ff8e4309-2d6b-44b3-a0aa-7e2c3294fc8b"
+          }
+        ],
+        "method": "exact-cosine-rrf60-v1",
+        "elapsedMs": 2061,
+        "dimensions": 256,
+        "corpusCount": 1,
+        "cachedChunks": 0,
+        "hybridChunkIds": [
+          "8a011bbe-34e2-5008-a6dc-b5a79e06d5ba"
+        ],
+        "providerCalled": true,
+        "embeddingCallId": "dc857e9e-be00-4a62-a1f3-bffa5dd96749",
+        "baselineChunkIds": [
+          "8a011bbe-34e2-5008-a6dc-b5a79e06d5ba"
+        ],
+        "embeddingCostUsd": "0.000001",
+        "embeddingVersion": "openai-small-256-v1",
+        "semanticChunkIds": [
+          "8a011bbe-34e2-5008-a6dc-b5a79e06d5ba"
+        ]
+      }
+    }
+  },
+  "retrievedPassageIds": [
+    "tools-p1"
+  ],
+  "retrievalComparisons": {
+    "fullText": [
+      "tools-p1"
+    ],
+    "semantic": [
+      "tools-p1"
+    ],
+    "hybrid": [
+      "tools-p1"
+    ]
+  },
+  "finishedAt": "2026-09-16T03:44:43.457Z"
+}
