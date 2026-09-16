@@ -574,3 +574,37 @@ production quality. Reference correctness, prediction accuracy and supported
 claims are three different questions. See ADR 0006, evals/dataset.mjs and the
 v2 audit summary. Four official curated skills were installed as development
 helpers; docs/development-skills.md records their purposes and source revision.
+
+
+## Held-out evidence reveals the limits (2026-09-16)
+
+For a purchase request with blank supplier/items and recorded zero total, the
+assistant sometimes correctly cites the cost-center rule but then invents extra
+requirements in its summary. The saved draft and the quote are different inputs:
+extracted proposals are not automatically accepted. A zero draft total therefore
+cannot be silently replaced with the quote total or declared invalid by a policy
+that only mentions cost centers.
+
+Full held-out extraction was 221/240, while AI-reviewed factual support was 360/412
+(87.38%), below 95%. All 48 dedicated finding texts were supported; unsupported
+claims were in summaries. Strict JSON and valid citation identifiers protect the
+response structure but do not guarantee the full narrative is supported. Two
+reviews also marked evidence insufficient despite providing supported findings.
+These are separate quality dimensions, not interchangeable success flags.
+
+Python claim-review tooling binds every output and reviewer type to exact hashes.
+The repeated-run comparator scores the same ten cases in both runs: 35/40 → 37/40,
+with four vendor changes. It excludes tenant-specific citation IDs from wording
+comparison, verifies source content and purchase inputs, and keeps missing jobs
+in their denominator. Missing input provenance is explicitly unverified. A text difference need
+not change truth; the comparison does not claim to grade semantics.
+
+The browser test used a real file-input chooser event and synthetic TXT upload,
+then simulated only the assistant endpoint returning 503. A manual cost-center
+change persisted at version 2 with its USD 70 total unchanged. Provider failure
+does not disable the ordinary purchase editor. This was automated browser
+verification, not a user pilot, OS-dialog mouse test, or production outage.
+
+See docs/evidence/2026-09-15-r2/heldout-summary.md for commands, counts, costs,
+limitations, and remaining work. Preserve frozen results and review provenance;
+never lower targets or relabel old held-out data to hide an evaluation miss.

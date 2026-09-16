@@ -1,59 +1,46 @@
-# R2 implementation map — 2026-09-15
+# R2 implementation map — 2026-09-16
 
-Release status: **in progress / experimental**. R1 cloud gates also remain open.
-User direction: after R2 passes its gates, continue directly into R3 without
-another confirmation unless an actual unresolved problem prevents the transition.
+Release status: **in progress / experimental**. The full held-out evaluation and
+AI claim review are recorded; the 95% claim-support target is missed. R1 cloud
+gates remain open. R3 has not started: the user's automatic continuation remains
+conditional on resolving R2's actual problems and acceptance gates.
 
-| Product step | Implemented | Verified so far | Remaining |
-| --- | --- | --- | --- |
-| Attach a vendor quote | PDF/TXT or pasted text, immutable bytes, bounded parsing, text preview | Real API/storage/worker checks and browser pasted-TXT upload; compressed-stream and memory limits | Native file-picker selection remains unverified; broader browser regression |
-| Publish purchasing policies | Indexed publication, deactivation, immutable case pins; edit pasted text before upload | Real API/SQL invariants and browser source text/search | Broader history/browser regressions |
-| Find policy evidence | Authorized full-text baseline plus opt-in semantic/hybrid comparison | All methods 48/48 in simple dev corpora; three distractor probes: text 0/3, semantic 3/3, hybrid 0/3 | AI-reviewed held-out comparison (ADR 0006); larger and more realistic corpora |
-| Suggest purchase details | Live provider, strict schema, citations, arithmetic, durable jobs | Full dev rerun 225/240 fields; browser extraction and acceptance | Vendor accuracy remains 48/60; held-out evaluation |
-| Accept selected suggestions | Current-versus-proposed UI, matching-revision acceptance | SQL and API replay tests; browser vendor-only acceptance preserves unselected items/total | Broader browser regression |
-| Generate a cited review | Fixed facts/evidence pipeline, abstention and citation checks | Real dev jobs; correct abstention 12/12, false abstention 0/48 | Explicitly labeled claim-support grading and held-out results |
-| Control AI spend | Shared lifetime/tenant-day ceilings, unknown reservations, bounded provider child | Real generation/embedding calls, revoked/stale cache writes, timeout termination, credential exclusion | Cloud-host validation and broader failure matrix |
-| Demonstrate quality | Frozen 60/60 split, scorers, reference and claim review forms, timing/cost exporters | Two complete 60-case development runs, raw outputs/failures, 58 worker checks; versioned AI review of all 120 references | Held-out results/repeats, claim grades and manual-versus-assisted outcome measurements |
+| Product step | Implemented and verified | Remaining |
+| --- | --- | --- |
+| Attach quote | PDF/TXT and pasted text, immutable bytes, bounded parser, preview; browser chooser upload reached indexed status | Broader browser/accessibility acceptance; actual OS dialog clicking not tested |
+| Policy evidence | Indexed publication, immutable pins, access checks; text/semantic/hybrid Recall@5 each 48/48 held-out | Larger distractor corpora; no semantic advantage established by one-passage cases |
+| Suggest fields | Live structured extraction, citations, arithmetic; held-out 221/240 including rejected output | Vendor 44/60; lab-005 invalid citation rejected; numerical aggregate hides errors |
+| Accept suggestions | Selected fields and matching draft revision; real API and browser vendor-only acceptance | Broader browser regression |
+| Cited review | All 60 held-out review jobs succeeded; correct abstention 12/12 | Claim support 360/412 (87.38%) misses 95%; false abstention 2/48 |
+| Manual fallback | Browser edit saved through simulated assistant 503 and persisted after reload | Controlled manual/extraction-only/grounded task-outcome comparison |
+| Spend and failures | Shared USD 10 lifetime ceiling; full ledger, rejected-output cost, unknown reservations | More precise child-failure diagnostics and cloud-host validation |
+| Evaluation | Versioned 120-case reference audit, full 60-case held-out run, one 10-case repeat, all 108 outputs graded in both dev and held-out | Independent human review and broader outcome evidence remain unmeasured |
 
-The user resolved provider billing, and the live extraction/acceptance/review
-journey now passes. Initial failures remain in evidence: HTTP 429, a malformed
-decimal total, and a malformed citation ID. Output constraints were tightened
-using development cases only. The ledger retains USD 0.039322 for the two earlier
-unknown calls in addition to reported usage from subsequent calls. Manual purchase
-entry and policy search remain available when the provider fails.
+Full evidence: [held-out summary](evidence/2026-09-15-r2/heldout-summary.md).
+Reference review is handled under ADR 0006; no user form completion is needed.
+AI review is an experimental evidence tier, not human validation. The corrected
+v2 dataset retains v1 history and only clarifies eight policy sentences.
 
-The user configured the ignored local key and approved USD 10 total on 2026-09-15.
-The worker was restarted to load it. Both the global lifetime and tenant/day caps
-are USD 10; repeated tests share the global cap. Credentials are never included
-in evidence. Successful model responses establish compatibility, not held-out
-quality; independent human validation and remaining release gates are still open.
+The first held-out attempt stopped after five completed cases on a provider
+subprocess error. Its underlying cause is not established. The unchanged full
+rerun preserved that attempt separately and completed all cases, with one
+extraction rejected for an invalid citation. Nothing was removed from accuracy
+denominators. Prompt v5 and retrieval settings stayed frozen.
 
-Latest evidence: `development-v5-full` records all 60 development cases under
-prompt v5/schema v4 with the bounded provider transport. It improves the prior
-full-run extraction score from 207/240 to 225/240. Twelve vendor and three item
-errors remain. All 120 assistant jobs completed, with 180 settled provider calls
-and estimated run cost USD 0.077731. Total lifetime accounted cost is USD 0.241278,
-including USD 0.039322 reserved for unknown earlier calls, under the USD 10 cap.
+The ten-case repeat changed four vendor predictions: same-subset field accuracy
+35/40 → 37/40. Summary wording changed in 10 cases and finding wording in 8 cases;
+wording variation alone is not error. This covers one family, not global variance.
 
-The source-entry browser flow uploaded a new quote, extracted it, accepted only
-the vendor and generated a review for the new revision. It did not silently change
-the existing purchase total. Native file-picker automation exposed no controllable
-dialog, so that particular interaction is still unverified.
+Shared lifetime budget accounting is USD 0.358652 of USD 10, including USD 0.058983
+reserved for three unknown calls. The full held-out rerun cost an estimated
+USD 0.077615; its repeat USD 0.013282. No fresh allowance was introduced.
 
-Reference review is handled by the assistant under user delegation and ADR 0006;
-no manual form completion is needed from the user. The v1 audit found eight
-ambiguous laboratory policies. Corrected v2 preserves every quote and reference
-answer and clarifies only those policies. Its AI audit records 120/120 cases
-without identified discrepancies and 480/480 matching source-derived field
-checks. This is reference consistency, not model accuracy or human verification.
-The held-out runner accepts it only with the explicit `ai-reviewed-learning`
-profile and rejects absent, partial, stale or unresolved reviews. Preflight passes
-with zero provider calls. Historical v1 stays intact.
-The separate claim-review form inventories 108 finding/summary outputs from the
-latest run, initially ungraded; the reviewer must split compound claims and give
-reasons. Do not grade the output as supported merely because a citation exists.
-R3 remains pending until the R2 acceptance evidence is complete.
+The next quality work must use development evidence, preserve the reported
+baseline, and avoid presenting reused held-out outputs as a new unseen test.
+If held-out examples influence tuning, retire their families into development
+and freeze a new test version. Unsupported summary requirements and diagnoses of
+zero totals are recorded failures, not reasons to lower the target.
 
-Implementation notes and interview material are maintained in
-`docs/teaching-guide.md` and `docs/interview-prep.md`. Claims and observed outputs
-are linked from `docs/evidence-index.md`.
+Architecture, decisions and measured limitations are maintained in
+`docs/teaching-guide.md` and `docs/interview-prep.md`. Installed frontend-design
+and Superpowers skills are documented in `docs/development-skills.md`.

@@ -30,14 +30,17 @@ pass; these are not the complete crash matrix.
 text, bounded parsing, publication, pinned policy retrieval, live AI extraction,
 cited review and explicit selected-field acceptance work locally. Provider calls
 share the user-authorized USD 10 lifetime ledger and have enforced deadlines.
-The full 60-case development rerun matched 225/240 fields (93.75%), retrieved
-48/48 expected passages and correctly abstained in 12/12 insufficient-evidence
-cases. Vendor match remains only 48/60. A delegated AI reference audit is complete
-for corrected dataset v2; no independent human verification is claimed.
-Cited-claim support is ungraded and held-out testing has not run.
-The embedding/hybrid comparison and raw failures are preserved in
-[the evidence index](docs/evidence-index.md); see the [R2 map](docs/r2-status.md)
-for remaining gates. R3 has not started. No production readiness, adoption or
+The full 60-case held-out run matched 221/240 fields (92.08%), retrieved
+48/48 expected passages and abstained on 12/12 insufficient-evidence cases.
+Vendor match was only 44/60, one extraction was rejected, and two answerable
+reviews falsely abstained. AI claim grading found 360/412 supported assertions
+(87.38%), below the 95% target. AI reference and claim reviews are explicitly
+labeled; no independent human verification is claimed. Browser file upload and
+manual editing during a simulated AI failure passed.
+See the [held-out report](docs/evidence/2026-09-15-r2/heldout-summary.md),
+[evidence index](docs/evidence-index.md), and [R2 map](docs/r2-status.md).
+R2 remains unfinished because claim quality and other acceptance evidence are
+still incomplete. R3 has not started. No production readiness, adoption or
 real-world AI-quality guarantee is claimed.
 
 ## Run locally (PowerShell)

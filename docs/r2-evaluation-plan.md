@@ -53,3 +53,14 @@ bound to exact output hashes. Grade both development and held-out as AI reviews.
 Report counts and limitations. Update teaching/interview notes and release map.
 Review the evaluation-tooling diff; fix material findings and verify before commit.
 R3 proceeds only after applicable R2 gates; missed targets remain explicit.
+
+## Recorded outcome — 2026-09-16
+
+All three evaluation tasks are complete. The full run, interrupted attempt,
+fixed ten-case repeat, development and held-out claim judgments, and browser
+upload/manual fallback checks are retained. Final tooling review findings were
+fixed; 41 Python and four Node evaluation checks pass. See
+[the assessment](evidence/2026-09-15-r2/heldout-summary.md).
+
+This completes the evaluation batch, not R2: held-out claim support is 87.38%,
+below 95%, and other acceptance gates remain open. R3 has not started.

@@ -1,5 +1,20 @@
 # Evidence index
 
+## 2026-09-15–16: full held-out results and AI claim review
+
+[Complete assessment](evidence/2026-09-15-r2/heldout-summary.md): 221/240 fields,
+48/48 retrieval, 12/12 correct abstention, 2/48 false abstention, and 360/412
+supported factual claims. The 87.38% claim score misses 95%; R2 stays experimental.
+[Full raw run](evidence/2026-09-15-r2/heldout-v5-retry/run.json),
+[claim judgments](evidence/2026-09-15-r2/heldout-v5-retry/ai-claim-review.json),
+[operations](evidence/2026-09-15-r2/heldout-v5-retry/operations.json),
+[fixed-subset repeat](evidence/2026-09-15-r2/heldout-repeat-comparison.json),
+[interrupted attempt](evidence/2026-09-15-r2/heldout-v5-full/failure-notes.md), and
+[budget snapshot](evidence/2026-09-15-r2/heldout-budget.json) retain all evidence.
+[Browser checks](evidence/2026-09-15-r2/browser-file-and-fallback.json) verify
+file-chooser upload and manual persistence during a simulated AI 503.
+No independent human review, user-time improvement or release completion is claimed.
+
 ## 2026-09-15: delegated review accepted for experimental evaluation
 
 [ADR 0006](adr/0006-ai-assisted-evaluation-review.md) records the user's delegation.

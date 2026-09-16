@@ -327,3 +327,30 @@ review, held-out model results and claim support are still unmeasured.
 Evidence: docs/adr/0006-ai-assisted-evaluation-review.md,
 evals/test-dataset.mjs, evals/test_audit_references.py, and
 docs/evidence/2026-09-15-r2/ai-reference-review-v2/summary.md.
+
+
+## Held-out evaluation checkpoint (2026-09-16)
+
+Supersedes earlier pending-evaluation notes. All 60 held-out cases were run and
+all 108 review outputs received explicitly labeled AI grading. Field accuracy was
+221/240 (92.08%); factual support 360/412 (87.38%) missed the 95% target. R2 remains
+experimental, with no independent human validation or real-user outcome claim.
+
+- **Why is a valid citation insufficient?** The 48 policy findings were supported,
+  but summaries added unsupported requirements and diagnoses of zero totals.
+  Citation validation proves that a passage exists and can be quoted; semantic
+  evaluation checks whether each actual assertion follows. Follow-up: separate
+  supplied purchase facts from policy requirements and never infer extra rules.
+- **Why retain failed attempts?** The first run stopped on a child-process error.
+  Its unknown charge reservation remains in the shared ledger, and its missing
+  cases remain failures. The complete rerun is separate. Follow-up: a retry's
+  success does not identify the first error's underlying cause or erase its cost.
+- **Is the model repeatable?** One fixed ten-case repeat changed four vendor
+  fields and accuracy 35/40 → 37/40, with unchanged abstention decisions. This
+  narrow one-family repeat demonstrates observed variation, not a general rate.
+  Follow-up: freeze configuration and compare the same denominator; different
+  wording alone is not proof of changed factual support.
+
+Evidence: docs/evidence/2026-09-15-r2/heldout-summary.md; evals/claim_review.py;
+evals/compare_repeated_run.py; browser-file-and-fallback.json. The fresh evaluation
+suite has 41 Python tests; tests establish scorer behavior, not model accuracy.
