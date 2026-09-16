@@ -43,6 +43,13 @@ R2 remains unfinished because claim quality and other acceptance evidence are
 still incomplete. R3 has not started. No production readiness, adoption or
 real-world AI-quality guarantee is claimed.
 
+Current development work improves review instructions and rejects false
+missing-field reports. Its full 60-case development assessment scored 459/460
+supported factual claims (99.78%), with one unsupported claim remaining; this
+does not replace the earlier held-out baseline. See
+[the new assessment](docs/evidence/2026-09-16-r2/summary.md) and the
+[plain-language architecture map](docs/architecture.md).
+
 ## Run locally (PowerShell)
 
 Prerequisites: Java 21, Python 3.12, Node 22.12+ within Node 22, Docker Desktop Linux engine.

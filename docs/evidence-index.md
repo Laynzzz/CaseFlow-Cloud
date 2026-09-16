@@ -1,5 +1,20 @@
 # Evidence index
 
+## 2026-09-16: review prompt and missing-field validation
+
+[Full development assessment](evidence/2026-09-16-r2/summary.md): 459/460 supported
+claims (99.78%), one unsupported attribution, no false missing-field reports among
+240 entries, and 217/240 extraction fields including two rejected outputs. All
+60 reviews completed. The previous held-out baseline is unchanged.
+
+[Raw run](evidence/2026-09-16-r2/development-v6-full/run.json),
+[claim judgments](evidence/2026-09-16-r2/development-v6-full/ai-claim-review.json),
+[comparison](evidence/2026-09-16-r2/development-comparison.json),
+[complete purchase check](evidence/2026-09-16-r2/complete-purchase/journey.json),
+and [shared budget](evidence/2026-09-16-r2/budget.json) retain the underlying evidence.
+67 worker tests and 42 evaluation tests passed. Explicit AI grading and development
+scope remain limitations; R2/R3 completion is not claimed.
+
 ## 2026-09-15–16: full held-out results and AI claim review
 
 [Complete assessment](evidence/2026-09-15-r2/heldout-summary.md): 221/240 fields,

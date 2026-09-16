@@ -366,8 +366,9 @@ suite has 41 Python tests; tests establish scorer behavior, not model accuracy.
   silently alter quote extraction. Each task records the actual prompt hash and
   version, and repetition checks validate the two task versions separately.
   Follow-up: valid JSON and reproducible configuration do not make output deterministic.
-- **Did the prompt fix establish general accuracy?** No. The initial ten-case
-  development results improved, but these examples are already part of development.
+- **Did the prompt fix establish general accuracy?** No. The full sixty-case
+  development result improved from 377/437 to 459/460 supported claims, but these
+  examples are already part of development. One unsupported claim remains.
   The old held-out baseline remains intact, and broader/fresh evidence is required.
   Follow-up: test assertions outside the scored summary too; one missing-field
   list was wrong despite supported summary/finding text.

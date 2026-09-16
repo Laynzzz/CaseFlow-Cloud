@@ -72,6 +72,13 @@ Its raw results and final assessment are recorded separately. These development
 examples are not a new unseen test. No previous held-out score is overwritten,
 and no new held-out improvement or R2 release pass follows from the subset scores.
 
+The completed full run scored **459/460 supported factual claims (99.78%)**, with
+one unsupported policy attribution, no false missing-field reports in 240 entries,
+and all 60 reviews completed. Extraction scored 217/240, including two rejected
+outputs. See [the full assessment](evidence/2026-09-16-r2/summary.md) for the
+unchanged baseline, costs and limitations. A separate complete USD 4,200 purchase
+also returned no missing fields through the live API without changing the draft.
+
 ## Reproduce
 
 Read [ai_provider.py](../services/worker/caseflow_worker/ai_provider.py), a Python

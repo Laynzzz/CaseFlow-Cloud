@@ -11,6 +11,12 @@ code rejecting false missing-field reports. Extraction remains on v5. See
 [the quality work](r2-review-quality.md) for separate development evidence;
 development improvements do not replace the held-out baseline.
 
+The completed v6 development run has 459/460 supported claims (99.78%), zero
+false missing-field reports across 240 entries, and 217/240 extraction fields
+(90.42%), including two rejected extractions. All 60 reviews completed. A separate
+fully populated USD 4,200 purchase returned no missing fields and stayed unchanged.
+[Current development assessment](evidence/2026-09-16-r2/summary.md).
+
 | Product step | Implemented and verified | Remaining |
 | --- | --- | --- |
 | Attach quote | PDF/TXT and pasted text, immutable bytes, bounded parser, preview; browser chooser upload reached indexed status | Broader browser/accessibility acceptance; actual OS dialog clicking not tested |
@@ -40,6 +46,10 @@ wording variation alone is not error. This covers one family, not global varianc
 Shared lifetime budget accounting is USD 0.358652 of USD 10, including USD 0.058983
 reserved for three unknown calls. The full held-out rerun cost an estimated
 USD 0.077615; its repeat USD 0.013282. No fresh allowance was introduced.
+
+That is the earlier held-out budget snapshot. After the v6 development checks,
+current shared accounting is USD 0.473763 of USD 10, including the same unknown
+reservations. The additional checks did not reset or expand the allowance.
 
 The next quality work must use development evidence, preserve the reported
 baseline, and avoid presenting reused held-out outputs as a new unseen test.
