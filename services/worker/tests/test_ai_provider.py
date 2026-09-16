@@ -1,6 +1,7 @@
 from types import SimpleNamespace
 from uuid import uuid4
 import json
+import hashlib
 import pytest
 from caseflow_worker import ai_provider, ai_budget, jobs
 from test_ai_contracts import extraction, CHUNKS
@@ -18,6 +19,29 @@ class FakeProvider:
         if self.fail:raise TimeoutError("synthetic timeout")
         return SimpleNamespace(status="completed",output_text=self.output,model=ai_budget.MODEL,
                                usage=SimpleNamespace(input_tokens=1000,output_tokens=100))
+
+
+@pytest.mark.parametrize('kind,version',[
+    ('EXTRACTION','purchase-assistant-2026-09-15-v5'),
+    ('REVIEW','purchase-review-2026-09-16-v6'),
+])
+def test_task_specific_prompt_provenance_matches_actual_request(kind,version,event,isolated_database):
+    jobs.schedule(event);job=jobs.claim(uuid4());enable(isolated_database,1)
+    facts={'description':'Synthetic equipment','total':'0.00','vendor':''}
+    output=extraction().model_dump_json() if kind=='EXTRACTION' else json.dumps(dict(
+        summary='The supplied total is 0.00.',missing_information=['vendor'],
+        policy_findings=[],citations=[],insufficient_evidence=True))
+    client=FakeProvider(output)
+    result=ai_provider.request(job,kind,facts,CHUNKS,lambda:None,client)
+    sent=client.arguments['input']
+    assert result['promptVersion']==version
+    assert result['promptHash']==hashlib.sha256((sent[0]['content']+sent[1]['content']).encode()).hexdigest()
+    assert json.loads(sent[1]['content'])['purchase']==({} if kind=='EXTRACTION' else facts)
+    if kind=='EXTRACTION':assert sent[0]['content']==ai_provider.SYSTEM
+    from caseflow_worker.settings import database
+    with database() as db:
+        stored=db.execute('SELECT response_evidence FROM worker.ai_calls').fetchone()['response_evidence']
+    assert stored['promptVersion']==version and stored['promptHash']==result['promptHash']
 
 
 def test_provider_schema_validation_and_provenance(event,isolated_database):
