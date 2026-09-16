@@ -1,0 +1,220 @@
+{
+  "id": "seating-008",
+  "startedAt": "2026-09-16T06:14:27.484Z",
+  "sourceMap": {
+    "81e43f74-0264-4ace-acd3-6690f6279eb7": "seating-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "seating-p1",
+      "source": {
+        "id": "81e43f74-0264-4ace-acd3-6690f6279eb7",
+        "kind": "POLICY",
+        "name": "Synthetic seating-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 42,
+        "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+        "jobId": "b9a0c29c-54b4-4e1f-bde4-760df8ea2aa5",
+        "failureCode": null
+      },
+      "chunks": {
+        "items": [
+          {
+            "id": "a3f197d1-80e7-533c-9b60-b294a8fdb1f4",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 42,
+            "text": "Office walls are painted every five years.",
+            "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1"
+          }
+        ],
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "source": {
+          "id": "81e43f74-0264-4ace-acd3-6690f6279eb7",
+          "kind": "POLICY",
+          "name": "Synthetic seating-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 42,
+          "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+          "jobId": "b9a0c29c-54b4-4e1f-bde4-760df8ea2aa5",
+          "failureCode": null
+        }
+      }
+    }
+  ],
+  "tenantId": "2dde62bb-c54c-4eb1-9868-06649ed43f18",
+  "caseId": "3ee9f766-3f07-407d-b456-b8b6083b4686",
+  "quote": {
+    "id": "ace19ac3-3431-42ac-9052-8b540c15c52c",
+    "kind": "QUOTE",
+    "name": "Synthetic seating-008 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "3ee9f766-3f07-407d-b456-b8b6083b4686",
+    "mediaType": "text/plain",
+    "byteSize": 100,
+    "sha256": "dc08cbb770c7d63910f0c6fe09987d00c942ea5c579d0de97eca05e8e5e54050",
+    "jobId": "77e7c576-9773-40c1-8d64-d7e54c8258e6",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "81e43f74-0264-4ace-acd3-6690f6279eb7",
+        "name": "Synthetic seating-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Seating kit",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "152fa7e5-d563-4482-86f5-22306dff1ed2",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "a307ff9e-55fd-4b21-b4d2-7be2e760ef61",
+      "output": {
+        "total": {
+          "value": "1600.00",
+          "citations": [
+            {
+              "quote": "Amount payable: 1600.00 USD.",
+              "chunkId": "27013d14-d8d2-55e0-aef4-97a3713a9cfa"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Synthetic Seating Works 8",
+          "citations": [
+            {
+              "quote": "Supplier Synthetic Seating Works 8",
+              "chunkId": "27013d14-d8d2-55e0-aef4-97a3713a9cfa"
+            }
+          ]
+        },
+        "currency": {
+          "value": "USD",
+          "citations": [
+            {
+              "quote": "Amount payable: 1600.00 USD.",
+              "chunkId": "27013d14-d8d2-55e0-aef4-97a3713a9cfa"
+            }
+          ]
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "8",
+              "unitPrice": "200.00",
+              "description": "Seating kit"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "Synthetic Seating Works 8 offers 8 Seating kit at 200.00 each.",
+              "chunkId": "27013d14-d8d2-55e0-aef4-97a3713a9cfa"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "27013d14-d8d2-55e0-aef4-97a3713a9cfa": {
+          "page": 1,
+          "text": "Supplier Synthetic Seating Works 8 offers 8 Seating kit at 200.00 each. Amount payable: 1600.00 USD.",
+          "start": 0,
+          "sourceId": "ace19ac3-3431-42ac-9052-8b540c15c52c"
+        }
+      },
+      "revision": 2,
+      "sourceId": "ace19ac3-3431-42ac-9052-8b540c15c52c",
+      "elapsedMs": 6265,
+      "promptHash": "9251643173f5b6147b71748581066756e55fa4adfe7b9772b2cf0b83ea0429bb",
+      "schemaHash": "72a2f9f277ecb68c3f538cc2f4c3890926ccff144af7d493d9309ca2ee10abab",
+      "inputTokens": 980,
+      "outputTokens": 245,
+      "sourceSha256": "dc08cbb770c7d63910f0c6fe09987d00c942ea5c579d0de97eca05e8e5e54050",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000784",
+      "retrievedChunkIds": [
+        "27013d14-d8d2-55e0-aef4-97a3713a9cfa"
+      ],
+      "retrievalElapsedMs": 16
+    }
+  },
+  "review": {
+    "jobId": "8800b096-3920-4e43-be6f-7fffe49929e7",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "47d43ce2-6519-497c-94a7-cf5b190f549c",
+      "output": {
+        "summary": "The purchase request is for a seating kit with a total cost of 0.00 USD. The purchase lacks vendor information, cost center, justification, and line items details. There is no policy evidence available to assess compliance.",
+        "citations": [],
+        "policy_findings": [],
+        "missing_information": [
+          "vendor",
+          "costCenter",
+          "justification",
+          "lineItems"
+        ],
+        "insufficient_evidence": true
+      },
+      "evidence": {},
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 3655,
+      "promptHash": "346a893e4d4e274d0fab4d745b4e8aff2e71cebf40e72cb598d49d0f9d3cb134",
+      "schemaHash": "43c27d82595881e9bbea698af054455bd8782f858ec5547502ad3f984a973610",
+      "inputTokens": 931,
+      "outputTokens": 80,
+      "sourceSha256": null,
+      "promptVersion": "purchase-review-2026-09-16-v6",
+      "schemaVersion": "purchase-review-v5",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Seating OR kit OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000501",
+      "retrievedChunkIds": [],
+      "retrievalElapsedMs": 30
+    }
+  },
+  "retrievedPassageIds": [],
+  "finishedAt": "2026-09-16T06:14:43.853Z"
+}

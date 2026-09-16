@@ -1,0 +1,220 @@
+{
+  "id": "printing-008",
+  "startedAt": "2026-09-16T06:20:02.925Z",
+  "sourceMap": {
+    "9858d932-1f7f-4d21-ad72-255b5a9e1ff2": "printing-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "printing-p1",
+      "source": {
+        "id": "9858d932-1f7f-4d21-ad72-255b5a9e1ff2",
+        "kind": "POLICY",
+        "name": "Synthetic printing-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 42,
+        "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+        "jobId": "3eec82eb-90fb-4ed7-8b55-760d23a584da",
+        "failureCode": null
+      },
+      "chunks": {
+        "items": [
+          {
+            "id": "f33cb8fe-7161-59eb-becc-2075b5ec0c99",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 42,
+            "text": "Office walls are painted every five years.",
+            "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1"
+          }
+        ],
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "source": {
+          "id": "9858d932-1f7f-4d21-ad72-255b5a9e1ff2",
+          "kind": "POLICY",
+          "name": "Synthetic printing-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 42,
+          "sha256": "ef45ef49d045a0fc2a981e72589a7383588f4a1897bbb76550cca54145c17be1",
+          "jobId": "3eec82eb-90fb-4ed7-8b55-760d23a584da",
+          "failureCode": null
+        }
+      }
+    }
+  ],
+  "tenantId": "5106a523-58d2-418c-9a8e-3930259e7f5d",
+  "caseId": "192f9409-e9ec-4730-b215-63df8f3e0fd8",
+  "quote": {
+    "id": "7d9ba5c8-f901-4117-8b1d-c7d679f00b8c",
+    "kind": "QUOTE",
+    "name": "Synthetic printing-008 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "192f9409-e9ec-4730-b215-63df8f3e0fd8",
+    "mediaType": "text/plain",
+    "byteSize": 103,
+    "sha256": "fbde24329771fb9e4a019e47b9b1f3f8933edd2db43138bb406baed629244b28",
+    "jobId": "af87e259-2f44-44bf-b8ca-ffc53ffc111b",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "9858d932-1f7f-4d21-ad72-255b5a9e1ff2",
+        "name": "Synthetic printing-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Printing kit",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "dc1b3686-f416-41bb-9818-49f2b2ad09ad",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "425717c7-de52-4d20-afe4-70bba7f74c0b",
+      "output": {
+        "total": {
+          "value": "2000.00",
+          "citations": [
+            {
+              "quote": "total due 2000.00",
+              "chunkId": "809c321e-770e-5e09-bd0c-1ae6ef1d402d"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Synthetic Printing Works",
+          "citations": [
+            {
+              "quote": "From Synthetic Printing Works",
+              "chunkId": "809c321e-770e-5e09-bd0c-1ae6ef1d402d"
+            }
+          ]
+        },
+        "currency": {
+          "value": "USD",
+          "citations": [
+            {
+              "quote": "Quote currency USD",
+              "chunkId": "809c321e-770e-5e09-bd0c-1ae6ef1d402d"
+            }
+          ]
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "8",
+              "unitPrice": "250.00",
+              "description": "Printing kit"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "Printing kit, 8 units x 250.00",
+              "chunkId": "809c321e-770e-5e09-bd0c-1ae6ef1d402d"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "809c321e-770e-5e09-bd0c-1ae6ef1d402d": {
+          "page": 1,
+          "text": "From Synthetic Printing Works 8: Printing kit, 8 units x 250.00. Quote currency USD; total due 2000.00.",
+          "start": 0,
+          "sourceId": "7d9ba5c8-f901-4117-8b1d-c7d679f00b8c"
+        }
+      },
+      "revision": 2,
+      "sourceId": "7d9ba5c8-f901-4117-8b1d-c7d679f00b8c",
+      "elapsedMs": 5562,
+      "promptHash": "0d612188dfe4eeaf8e69e85b21e27a7843dbb564acb9967b8eb9afb6a62c53d3",
+      "schemaHash": "2e2c4e730ec300dfd1149f523d610abe62c4c7a794c15f742c18443ef03361cd",
+      "inputTokens": 987,
+      "outputTokens": 224,
+      "sourceSha256": "fbde24329771fb9e4a019e47b9b1f3f8933edd2db43138bb406baed629244b28",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000754",
+      "retrievedChunkIds": [
+        "809c321e-770e-5e09-bd0c-1ae6ef1d402d"
+      ],
+      "retrievalElapsedMs": 30
+    }
+  },
+  "review": {
+    "jobId": "35a96179-0f76-47ea-9781-7961c6bc442a",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "758fee22-0a97-4aa6-a09c-69a1483998a9",
+      "output": {
+        "summary": "The purchase is a printing kit with a total amount of 0.00 USD. The cost center, justification, vendor, and line items are not provided. There is no policy evidence to assess compliance with any procurement requirements.",
+        "citations": [],
+        "policy_findings": [],
+        "missing_information": [
+          "vendor",
+          "costCenter",
+          "justification",
+          "lineItems"
+        ],
+        "insufficient_evidence": true
+      },
+      "evidence": {},
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 3157,
+      "promptHash": "40bea8dba8c8d879f6761d4757747c0fdf35443384b12e1899c68721ca8c5c3b",
+      "schemaHash": "43c27d82595881e9bbea698af054455bd8782f858ec5547502ad3f984a973610",
+      "inputTokens": 930,
+      "outputTokens": 80,
+      "sourceSha256": null,
+      "promptVersion": "purchase-review-2026-09-16-v6",
+      "schemaVersion": "purchase-review-v5",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Printing OR kit OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000500",
+      "retrievedChunkIds": [],
+      "retrievalElapsedMs": 32
+    }
+  },
+  "retrievedPassageIds": [],
+  "finishedAt": "2026-09-16T06:20:17.926Z"
+}

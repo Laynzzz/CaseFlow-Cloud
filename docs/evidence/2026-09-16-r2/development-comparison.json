@@ -1,0 +1,48 @@
+{
+  "scope": "Same 60 synthetic-v1 development cases; AI semantic review, not a new held-out test.",
+  "inputPairsVerified": 60,
+  "runs": [
+    {
+      "directory": "docs/evidence/2026-09-15-r2/development-v5-full",
+      "predictionsSha256": "2c90cf0c08e46abaf0e719852d018a0e2700548712b9ead02cc62ca9e085e18a",
+      "claimReviewSha256": "feea8fe1778798fe1f93311b54a5134234629632bbd43caf26962c2c36a481d4",
+      "extraction": {
+        "numerator": 225,
+        "denominator": 240,
+        "rate": 0.9375
+      },
+      "claimSupport": {
+        "numerator": 377,
+        "denominator": 437,
+        "rate": 0.8627002288329519
+      },
+      "unsupportedClaims": 60,
+      "reviewedOutputs": 108
+    },
+    {
+      "directory": "docs/evidence/2026-09-16-r2/development-v6-full",
+      "predictionsSha256": "f648102634222da6effc26b9e9eac260eb989654dac7d9b7cdf473443e9c55a7",
+      "claimReviewSha256": "71828c2f8ffb5c95aecff460729bec712944ba37a6328af6780ba988fc6fe4aa",
+      "extraction": {
+        "numerator": 217,
+        "denominator": 240,
+        "rate": 0.9041666666666667
+      },
+      "claimSupport": {
+        "numerator": 459,
+        "denominator": 460,
+        "rate": 0.9978260869565218
+      },
+      "unsupportedClaims": 1,
+      "reviewedOutputs": 108
+    }
+  ],
+  "releaseGatePassed": false,
+  "humanVerified": false,
+  "limitations": [
+    "Different assertions yield different factual denominators.",
+    "One before/after observation on correlated synthetic development examples does not establish general causal improvement.",
+    "Extraction instructions are unchanged; sampling differs and invalid results remain in denominators.",
+    "Old run recorded optional embedding comparisons; new run did not. Actual review evidence text, purchase and generation model match."
+  ]
+}

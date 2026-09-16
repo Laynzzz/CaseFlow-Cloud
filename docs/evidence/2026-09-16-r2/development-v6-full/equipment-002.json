@@ -1,0 +1,246 @@
+{
+  "id": "equipment-002",
+  "startedAt": "2026-09-16T06:10:21.157Z",
+  "sourceMap": {
+    "be180e7e-508c-4c30-8348-caaed6da0624": "equipment-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "equipment-p1",
+      "source": {
+        "id": "be180e7e-508c-4c30-8348-caaed6da0624",
+        "kind": "POLICY",
+        "name": "Synthetic equipment-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 58,
+        "sha256": "d23d7939ddf5c48a4275d8f563f49f8ae3f762a9157cafae9d4edef837f5d8d4",
+        "jobId": "7d1ac923-4e70-472d-8aa9-ed44788f6d3c",
+        "failureCode": null
+      },
+      "chunks": {
+        "items": [
+          {
+            "id": "eca7a14d-4a1b-59d7-b6e9-f780da584cb3",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 58,
+            "text": "Equipment purchases require a cost center before approval.",
+            "sha256": "d23d7939ddf5c48a4275d8f563f49f8ae3f762a9157cafae9d4edef837f5d8d4"
+          }
+        ],
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "source": {
+          "id": "be180e7e-508c-4c30-8348-caaed6da0624",
+          "kind": "POLICY",
+          "name": "Synthetic equipment-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 58,
+          "sha256": "d23d7939ddf5c48a4275d8f563f49f8ae3f762a9157cafae9d4edef837f5d8d4",
+          "jobId": "7d1ac923-4e70-472d-8aa9-ed44788f6d3c",
+          "failureCode": null
+        }
+      }
+    }
+  ],
+  "tenantId": "3443411e-25a7-4ded-8cb0-d31f8a840889",
+  "caseId": "ed232061-25ef-4add-8c6d-63e201dc9d8f",
+  "quote": {
+    "id": "038ad9e9-efc5-44ad-9a54-642b5aaa855f",
+    "kind": "QUOTE",
+    "name": "Synthetic equipment-002 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "ed232061-25ef-4add-8c6d-63e201dc9d8f",
+    "mediaType": "text/plain",
+    "byteSize": 114,
+    "sha256": "dd06bf905a035c5470a7fac475c59cc2fd1cc394122a5179414d5acf67885303",
+    "jobId": "e8067f6f-990c-4b88-a6a9-855cb1eb410e",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "be180e7e-508c-4c30-8348-caaed6da0624",
+        "name": "Synthetic equipment-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Equipment kit",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "21efedde-c0a4-4aa8-bbf8-b0a5872c46f7",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "200a528b-e2dd-45ea-9371-b6c2bcd1d061",
+      "output": {
+        "total": {
+          "value": "350.00",
+          "citations": [
+            {
+              "quote": "Total: 350.00",
+              "chunkId": "53f20789-8a0c-5ac1-a0e1-7d9639d715c5"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Synthetic Equipment Works 2",
+          "citations": [
+            {
+              "quote": "Vendor: Synthetic Equipment Works 2",
+              "chunkId": "53f20789-8a0c-5ac1-a0e1-7d9639d715c5"
+            }
+          ]
+        },
+        "currency": {
+          "value": "USD",
+          "citations": [
+            {
+              "quote": "Currency: USD",
+              "chunkId": "53f20789-8a0c-5ac1-a0e1-7d9639d715c5"
+            }
+          ]
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "2",
+              "unitPrice": "175.00",
+              "description": "Equipment kit"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "Item: Equipment kit\nQuantity: 2\nUnit price: 175.00",
+              "chunkId": "53f20789-8a0c-5ac1-a0e1-7d9639d715c5"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "53f20789-8a0c-5ac1-a0e1-7d9639d715c5": {
+          "page": 1,
+          "text": "Vendor: Synthetic Equipment Works 2\nItem: Equipment kit\nQuantity: 2\nUnit price: 175.00\nCurrency: USD\nTotal: 350.00",
+          "start": 0,
+          "sourceId": "038ad9e9-efc5-44ad-9a54-642b5aaa855f"
+        }
+      },
+      "revision": 2,
+      "sourceId": "038ad9e9-efc5-44ad-9a54-642b5aaa855f",
+      "elapsedMs": 5592,
+      "promptHash": "1eed839057661058f5c4f366a864db3b4055984cbe5aa6887b884737abe20450",
+      "schemaHash": "5aac913e1f558f2fe36dabdb9ae935bd1c2be5a0688931072b20cbcd4928b097",
+      "inputTokens": 993,
+      "outputTokens": 241,
+      "sourceSha256": "dd06bf905a035c5470a7fac475c59cc2fd1cc394122a5179414d5acf67885303",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000783",
+      "retrievedChunkIds": [
+        "53f20789-8a0c-5ac1-a0e1-7d9639d715c5"
+      ],
+      "retrievalElapsedMs": 30
+    }
+  },
+  "review": {
+    "jobId": "52c8ff8c-d2f7-4754-b527-780f85bc2882",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "c8b5cb4e-3ef0-4c02-bec1-d1fe1ee0e7d2",
+      "output": {
+        "summary": "The purchase request is for an 'Equipment kit' with a total amount of 0.00 USD. The purchase request lacks a cost center, vendor information, justification, and line items. According to the policy evidence, 'Equipment purchases require a cost center before approval.'",
+        "citations": [
+          {
+            "quote": "Equipment purchases require a cost center before approval.",
+            "chunkId": "eca7a14d-4a1b-59d7-b6e9-f780da584cb3"
+          }
+        ],
+        "policy_findings": [
+          {
+            "claim": "Equipment purchases require a cost center before approval.",
+            "citations": [
+              {
+                "quote": "Equipment purchases require a cost center before approval.",
+                "chunkId": "eca7a14d-4a1b-59d7-b6e9-f780da584cb3"
+              }
+            ]
+          }
+        ],
+        "missing_information": [
+          "vendor",
+          "costCenter",
+          "justification",
+          "lineItems"
+        ],
+        "insufficient_evidence": false
+      },
+      "evidence": {
+        "eca7a14d-4a1b-59d7-b6e9-f780da584cb3": {
+          "page": 1,
+          "text": "Equipment purchases require a cost center before approval.",
+          "start": 0,
+          "sourceId": "be180e7e-508c-4c30-8348-caaed6da0624"
+        }
+      },
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 3672,
+      "promptHash": "7e94fd457cf7f7483209956168417881ea63494fc78095c2e8046ca2b5259f9b",
+      "schemaHash": "4e847dc7b906853f10bf36acc5dac135c99b415e01c49375c22a65c232d6064a",
+      "inputTokens": 1027,
+      "outputTokens": 188,
+      "sourceSha256": null,
+      "promptVersion": "purchase-review-2026-09-16-v6",
+      "schemaVersion": "purchase-review-v5",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Equipment OR kit OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000712",
+      "retrievedChunkIds": [
+        "eca7a14d-4a1b-59d7-b6e9-f780da584cb3"
+      ],
+      "retrievalElapsedMs": 0
+    }
+  },
+  "retrievedPassageIds": [
+    "equipment-p1"
+  ],
+  "finishedAt": "2026-09-16T06:10:36.751Z"
+}

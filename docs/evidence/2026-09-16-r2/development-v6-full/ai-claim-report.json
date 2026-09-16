@@ -1,0 +1,2868 @@
+{
+  "claimSupport": {
+    "numerator": 459,
+    "denominator": 460,
+    "rate": 0.9978260869565218
+  },
+  "unsupportedClaims": 1,
+  "nonFactualSegments": 0,
+  "reviewedOutputs": 108,
+  "reviewer": "Codex AI assistant",
+  "reviewedAt": "2026-09-16T06:27:51.903034+00:00",
+  "method": "ai-claim-review-v1",
+  "profile": "ai-reviewed-learning",
+  "humanVerified": false,
+  "datasetSha256": "fec73306673b441cea651c7ad498d8645af6351e4450f13bd5213c5dbd93086a",
+  "predictionsSha256": "f648102634222da6effc26b9e9eac260eb989654dac7d9b7cdf473443e9c55a7",
+  "failedOrMissingReviews": 0,
+  "grades": [
+    {
+      "key": "equipment-001/finding:0",
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim, including its scope and timing or purpose, and the manual purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "equipment-001/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Equipment kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is supplied data; no invalidity or missing-total assertion is made."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim, including its scope and timing or purpose, and the manual purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "equipment-002/finding:0",
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim, including its scope and timing or purpose, and the manual purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "equipment-002/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Equipment kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is supplied data; no invalidity or missing-total assertion is made."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim, including its scope and timing or purpose, and the manual purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "equipment-003/finding:0",
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim, including its scope and timing or purpose, and the manual purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "equipment-003/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Equipment kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is supplied data; no invalidity or missing-total assertion is made."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim, including its scope and timing or purpose, and the manual purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "equipment-004/finding:0",
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim, including its scope and timing or purpose, and the manual purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "equipment-004/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Equipment kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is supplied data; no invalidity or missing-total assertion is made."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim, including its scope and timing or purpose, and the manual purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "equipment-005/finding:0",
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim, including its scope and timing or purpose, and the manual purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "equipment-005/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Equipment kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is supplied data; no invalidity or missing-total assertion is made."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim, including its scope and timing or purpose, and the manual purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "equipment-006/finding:0",
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim, including its scope and timing or purpose, and the manual purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "equipment-006/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Equipment kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is supplied data; no invalidity or missing-total assertion is made."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim, including its scope and timing or purpose, and the manual purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "equipment-007/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Equipment kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is supplied data; no invalidity or missing-total assertion is made."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "No supplied policy evidence allows assessment of compliance or requirements for the missing fields.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved review evidence and citations are empty. This is an epistemic limitation, not an unsupported prohibition."
+        }
+      ]
+    },
+    {
+      "key": "equipment-008/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Equipment kit."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is supplied data; no invalidity or missing-total assertion is made."
+        },
+        {
+          "text": "No supplied policy evidence allows assessment of compliance or requirements for the missing fields.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved review evidence and citations are empty. This is an epistemic limitation, not an unsupported prohibition."
+        }
+      ]
+    },
+    {
+      "key": "equipment-009/finding:0",
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim, including its scope and timing or purpose, and the manual purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "equipment-009/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Equipment kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is supplied data; no invalidity or missing-total assertion is made."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim, including its scope and timing or purpose, and the manual purchase has the matching kit description."
+        },
+        {
+          "text": "The missing cost center is a finding relevant to compliance.",
+          "verdict": "SUPPORTED",
+          "rationale": "This applies the cited equipment cost-center requirement to the actual empty costCenter. It asserts a compliance concern without inventing requirements for other fields."
+        }
+      ]
+    },
+    {
+      "key": "equipment-010/finding:0",
+      "segments": [
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim, including its scope and timing or purpose, and the manual purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "equipment-010/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a equipment kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Equipment kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is supplied data; no invalidity or missing-total assertion is made."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "Equipment purchases require a cost center before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim, including its scope and timing or purpose, and the manual purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "seating-001/finding:0",
+      "segments": [
+        {
+          "text": "Seating requests must include a cost center for finance review.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim, including its scope and timing or purpose, and the manual purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "seating-001/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a seating kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Seating kit."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "Seating requests must include a cost center for finance review.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim, including its scope and timing or purpose, and the manual purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "seating-002/finding:0",
+      "segments": [
+        {
+          "text": "Seating requests must include a cost center for finance review.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim, including its scope and timing or purpose, and the manual purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "seating-002/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a seating kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Seating kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is supplied data; no invalidity or missing-total assertion is made."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "Seating requests must include a cost center for finance review.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim, including its scope and timing or purpose, and the manual purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "seating-003/finding:0",
+      "segments": [
+        {
+          "text": "Seating requests must include a cost center for finance review.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim, including its scope and timing or purpose, and the manual purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "seating-003/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a seating kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Seating kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is supplied data; no invalidity or missing-total assertion is made."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Seating requests must include a cost center for finance review.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim, including its scope and timing or purpose, and the manual purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "seating-004/finding:0",
+      "segments": [
+        {
+          "text": "Seating requests must include a cost center for finance review.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim, including its scope and timing or purpose, and the manual purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "seating-004/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a seating kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Seating kit."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Seating requests must include a cost center for finance review.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim, including its scope and timing or purpose, and the manual purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "seating-005/finding:0",
+      "segments": [
+        {
+          "text": "Seating requests must include a cost center for finance review.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim, including its scope and timing or purpose, and the manual purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "seating-005/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a seating kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Seating kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is supplied data; no invalidity or missing-total assertion is made."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "According to policy, justification is relevant information for finance review.",
+          "verdict": "UNSUPPORTED",
+          "rationale": "The cited seating policy mentions only a cost center for finance review and says nothing about justification. This is an attribution to policy, not an ungrounded qualitative adjective. The later correct admission of no policy evidence does not erase the earlier factual attribution."
+        },
+        {
+          "text": "Seating requests must include a cost center for finance review.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim, including its scope and timing or purpose, and the manual purchase has the matching kit description."
+        },
+        {
+          "text": "Without a cost center, the purchase does not comply with this policy requirement.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual costCenter is empty, while the cited seating rule requires it for finance review. This narrow diagnosis applies that specific rule; it does not create a general approval prohibition."
+        },
+        {
+          "text": "There is no supplied policy evidence regarding justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "The entire saved policy evidence consists of the one cost-center requirement and contains no justification provision."
+        }
+      ]
+    },
+    {
+      "key": "seating-006/finding:0",
+      "segments": [
+        {
+          "text": "Seating requests must include a cost center for finance review.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim, including its scope and timing or purpose, and the manual purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "seating-006/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a seating kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Seating kit."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is supplied data; no invalidity or missing-total assertion is made."
+        },
+        {
+          "text": "Seating requests must include a cost center for finance review.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim, including its scope and timing or purpose, and the manual purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "seating-007/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a seating kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Seating kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is supplied data; no invalidity or missing-total assertion is made."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "No supplied policy evidence allows assessment of compliance or requirements for the missing fields.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved review evidence and citations are empty. This is an epistemic limitation, not an unsupported prohibition."
+        }
+      ]
+    },
+    {
+      "key": "seating-008/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a seating kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Seating kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data, not a missing or necessarily invalid amount."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "No supplied policy evidence permits assessment of compliance or the requirements for missing fields.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved review evidence and citations are empty. This is a narrow epistemic limitation and adds no purchase prohibition or field requirement."
+        }
+      ]
+    },
+    {
+      "key": "seating-009/finding:0",
+      "segments": [
+        {
+          "text": "Seating requests must include a cost center for finance review.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited policy states this scoped rule verbatim, including its finance-review purpose or prohibition on proceeding. The purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "seating-009/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a seating kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Seating kit."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data, not a missing or necessarily invalid amount."
+        },
+        {
+          "text": "Seating requests must include a cost center for finance review.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited policy states this scoped rule verbatim, including its finance-review purpose or prohibition on proceeding. The purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "seating-010/finding:0",
+      "segments": [
+        {
+          "text": "Seating requests must include a cost center for finance review.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited policy states this scoped rule verbatim, including its finance-review purpose or prohibition on proceeding. The purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "seating-010/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a seating kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Seating kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data, not a missing or necessarily invalid amount."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Seating requests must include a cost center for finance review.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited policy states this scoped rule verbatim, including its finance-review purpose or prohibition on proceeding. The purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "network-001/finding:0",
+      "segments": [
+        {
+          "text": "Network procurement cannot proceed without a cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited policy states this scoped rule verbatim, including its finance-review purpose or prohibition on proceeding. The purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "network-001/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a network kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Network kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data, not a missing or necessarily invalid amount."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Network procurement cannot proceed without a cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited policy states this scoped rule verbatim, including its finance-review purpose or prohibition on proceeding. The purchase has the matching kit description."
+        },
+        {
+          "text": "The missing cost center is a policy compliance issue.",
+          "verdict": "SUPPORTED",
+          "rationale": "The cited network policy prohibits proceeding without a cost center and the actual costCenter is empty. This diagnosis applies the stated rule to the purchase."
+        }
+      ]
+    },
+    {
+      "key": "network-002/finding:0",
+      "segments": [
+        {
+          "text": "Network procurement cannot proceed without a cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited policy states this scoped rule verbatim, including its finance-review purpose or prohibition on proceeding. The purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "network-002/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a network kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Network kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data, not a missing or necessarily invalid amount."
+        },
+        {
+          "text": "Network procurement cannot proceed without a cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited policy states this scoped rule verbatim, including its finance-review purpose or prohibition on proceeding. The purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "network-003/finding:0",
+      "segments": [
+        {
+          "text": "Network procurement cannot proceed without a cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited policy states this scoped rule verbatim, including its finance-review purpose or prohibition on proceeding. The purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "network-003/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a network kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Network kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data, not a missing or necessarily invalid amount."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Network procurement cannot proceed without a cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited policy states this scoped rule verbatim, including its finance-review purpose or prohibition on proceeding. The purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "network-004/finding:0",
+      "segments": [
+        {
+          "text": "Network procurement cannot proceed without a cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited policy states this scoped rule verbatim, including its finance-review purpose or prohibition on proceeding. The purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "network-004/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a network kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Network kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data, not a missing or necessarily invalid amount."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Network procurement cannot proceed without a cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited policy states this scoped rule verbatim, including its finance-review purpose or prohibition on proceeding. The purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "network-005/finding:0",
+      "segments": [
+        {
+          "text": "Network procurement cannot proceed without a cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited policy states this scoped rule verbatim, including its finance-review purpose or prohibition on proceeding. The purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "network-005/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a network kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Network kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data, not a missing or necessarily invalid amount."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Network procurement cannot proceed without a cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited policy states this scoped rule verbatim, including its finance-review purpose or prohibition on proceeding. The purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "network-006/finding:0",
+      "segments": [
+        {
+          "text": "Network procurement cannot proceed without a cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited policy states this scoped rule verbatim, including its finance-review purpose or prohibition on proceeding. The purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "network-006/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a network kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Network kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data, not a missing or necessarily invalid amount."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Network procurement cannot proceed without a cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited policy states this scoped rule verbatim, including its finance-review purpose or prohibition on proceeding. The purchase has the matching kit description."
+        }
+      ]
+    },
+    {
+      "key": "network-007/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a network kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Network kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data, not a missing or necessarily invalid amount."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "No supplied policy evidence permits assessment of compliance or the requirements for missing fields.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved review evidence and citations are empty. This is a narrow epistemic limitation and adds no purchase prohibition or field requirement."
+        }
+      ]
+    },
+    {
+      "key": "network-008/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a network kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Network kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data, not a missing or necessarily invalid amount."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "No supplied policy evidence permits assessment of compliance or the requirements for missing fields.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved review evidence and citations are empty. This is a narrow epistemic limitation and adds no purchase prohibition or field requirement."
+        }
+      ]
+    },
+    {
+      "key": "network-009/finding:0",
+      "segments": [
+        {
+          "text": "Network procurement cannot proceed without a cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this rule verbatim and its scope matches the purchase description. The printing summaries add no unstated approval timing; the plural expenditures paraphrase in printing-003 preserves the same requirement."
+        }
+      ]
+    },
+    {
+      "key": "network-009/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a network kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Network kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is supplied data and the output does not claim invalidity or missing total."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. Repeated statements of the same missing field within an output count once."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Network procurement cannot proceed without a cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this rule verbatim and its scope matches the purchase description. The printing summaries add no unstated approval timing; the plural expenditures paraphrase in printing-003 preserves the same requirement."
+        }
+      ]
+    },
+    {
+      "key": "network-010/finding:0",
+      "segments": [
+        {
+          "text": "Network procurement cannot proceed without a cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this rule verbatim and its scope matches the purchase description. The printing summaries add no unstated approval timing; the plural expenditures paraphrase in printing-003 preserves the same requirement."
+        }
+      ]
+    },
+    {
+      "key": "network-010/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a network kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Network kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is supplied data and the output does not claim invalidity or missing total."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. Repeated statements of the same missing field within an output count once."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Network procurement cannot proceed without a cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this rule verbatim and its scope matches the purchase description. The printing summaries add no unstated approval timing; the plural expenditures paraphrase in printing-003 preserves the same requirement."
+        }
+      ]
+    },
+    {
+      "key": "printing-001/finding:0",
+      "segments": [
+        {
+          "text": "Printing expenditure must identify the requesting cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this rule verbatim and its scope matches the purchase description. The printing summaries add no unstated approval timing; the plural expenditures paraphrase in printing-003 preserves the same requirement."
+        }
+      ]
+    },
+    {
+      "key": "printing-001/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a printing kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Printing kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is supplied data and the output does not claim invalidity or missing total."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. Repeated statements of the same missing field within an output count once."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Printing expenditure must identify the requesting cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this rule verbatim and its scope matches the purchase description. The printing summaries add no unstated approval timing; the plural expenditures paraphrase in printing-003 preserves the same requirement."
+        }
+      ]
+    },
+    {
+      "key": "printing-002/finding:0",
+      "segments": [
+        {
+          "text": "Printing expenditure must identify the requesting cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this rule verbatim and its scope matches the purchase description. The printing summaries add no unstated approval timing; the plural expenditures paraphrase in printing-003 preserves the same requirement."
+        }
+      ]
+    },
+    {
+      "key": "printing-002/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a printing kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Printing kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is supplied data and the output does not claim invalidity or missing total."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. Repeated statements of the same missing field within an output count once."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Printing expenditure must identify the requesting cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this rule verbatim and its scope matches the purchase description. The printing summaries add no unstated approval timing; the plural expenditures paraphrase in printing-003 preserves the same requirement."
+        }
+      ]
+    },
+    {
+      "key": "printing-003/finding:0",
+      "segments": [
+        {
+          "text": "Printing expenditure must identify the requesting cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this rule verbatim and its scope matches the purchase description. The printing summaries add no unstated approval timing; the plural expenditures paraphrase in printing-003 preserves the same requirement."
+        }
+      ]
+    },
+    {
+      "key": "printing-003/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a printing kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Printing kit."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. Repeated statements of the same missing field within an output count once."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is supplied data and the output does not claim invalidity or missing total."
+        },
+        {
+          "text": "Printing expenditure must identify the requesting cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this rule verbatim and its scope matches the purchase description. The printing summaries add no unstated approval timing; the plural expenditures paraphrase in printing-003 preserves the same requirement."
+        }
+      ]
+    },
+    {
+      "key": "printing-004/finding:0",
+      "segments": [
+        {
+          "text": "Printing expenditure must identify the requesting cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this rule verbatim and its scope matches the purchase description. The printing summaries add no unstated approval timing; the plural expenditures paraphrase in printing-003 preserves the same requirement."
+        }
+      ]
+    },
+    {
+      "key": "printing-004/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a printing kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Printing kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is supplied data and the output does not claim invalidity or missing total."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. Repeated statements of the same missing field within an output count once."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "Printing expenditure must identify the requesting cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this rule verbatim and its scope matches the purchase description. The printing summaries add no unstated approval timing; the plural expenditures paraphrase in printing-003 preserves the same requirement."
+        }
+      ]
+    },
+    {
+      "key": "printing-005/finding:0",
+      "segments": [
+        {
+          "text": "Printing expenditure must identify the requesting cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this rule verbatim and its scope matches the purchase description. The printing summaries add no unstated approval timing; the plural expenditures paraphrase in printing-003 preserves the same requirement."
+        }
+      ]
+    },
+    {
+      "key": "printing-005/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a printing kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Printing kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is supplied data and the output does not claim invalidity or missing total."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. Repeated statements of the same missing field within an output count once."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Printing expenditure must identify the requesting cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this rule verbatim and its scope matches the purchase description. The printing summaries add no unstated approval timing; the plural expenditures paraphrase in printing-003 preserves the same requirement."
+        }
+      ]
+    },
+    {
+      "key": "printing-006/finding:0",
+      "segments": [
+        {
+          "text": "Printing expenditure must identify the requesting cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this rule verbatim and its scope matches the purchase description. The printing summaries add no unstated approval timing; the plural expenditures paraphrase in printing-003 preserves the same requirement."
+        }
+      ]
+    },
+    {
+      "key": "printing-006/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a printing kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Printing kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is supplied data and the output does not claim invalidity or missing total."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. Repeated statements of the same missing field within an output count once."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Printing expenditure must identify the requesting cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this rule verbatim and its scope matches the purchase description. The printing summaries add no unstated approval timing; the plural expenditures paraphrase in printing-003 preserves the same requirement."
+        }
+      ]
+    },
+    {
+      "key": "printing-007/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a printing kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Printing kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is supplied data and the output does not claim invalidity or missing total."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. Repeated statements of the same missing field within an output count once."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "There is no supplied policy evidence to assess procurement compliance.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved review evidence and citations are empty. This expresses a limitation of assessment, not a prohibition or an invented procurement requirement."
+        }
+      ]
+    },
+    {
+      "key": "printing-008/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a printing kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Printing kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is supplied data and the output does not claim invalidity or missing total."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. Repeated statements of the same missing field within an output count once."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "There is no supplied policy evidence to assess procurement compliance.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved review evidence and citations are empty. This expresses a limitation of assessment, not a prohibition or an invented procurement requirement."
+        }
+      ]
+    },
+    {
+      "key": "printing-009/finding:0",
+      "segments": [
+        {
+          "text": "Printing expenditure must identify the requesting cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim for the matching purchase family. The summary paraphrase adds no approval deadline or other field requirement. Repeated quotation counts once; any inline chunk ID is citation metadata bound to this same passage."
+        }
+      ]
+    },
+    {
+      "key": "printing-009/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a printing kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Printing kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. The output treats this as supplied data, not a missing or invalid amount."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. Department cost center in the lighting summaries refers to this same absent value under the cited rule."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Printing expenditure must identify the requesting cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim for the matching purchase family. The summary paraphrase adds no approval deadline or other field requirement. Repeated quotation counts once; any inline chunk ID is citation metadata bound to this same passage."
+        }
+      ]
+    },
+    {
+      "key": "printing-010/finding:0",
+      "segments": [
+        {
+          "text": "Printing expenditure must identify the requesting cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim for the matching purchase family. The summary paraphrase adds no approval deadline or other field requirement. Repeated quotation counts once; any inline chunk ID is citation metadata bound to this same passage."
+        }
+      ]
+    },
+    {
+      "key": "printing-010/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a printing kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Printing kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. The output treats this as supplied data, not a missing or invalid amount."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. Department cost center in the lighting summaries refers to this same absent value under the cited rule."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Printing expenditure must identify the requesting cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim for the matching purchase family. The summary paraphrase adds no approval deadline or other field requirement. Repeated quotation counts once; any inline chunk ID is citation metadata bound to this same passage."
+        }
+      ]
+    },
+    {
+      "key": "lighting-001/finding:0",
+      "segments": [
+        {
+          "text": "Lighting orders require the department cost center to be recorded.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim for the matching purchase family. The summary paraphrase adds no approval deadline or other field requirement. Repeated quotation counts once; any inline chunk ID is citation metadata bound to this same passage."
+        }
+      ]
+    },
+    {
+      "key": "lighting-001/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a lighting kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Lighting kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. The output treats this as supplied data, not a missing or invalid amount."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. Department cost center in the lighting summaries refers to this same absent value under the cited rule."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Lighting orders require the department cost center to be recorded.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim for the matching purchase family. The summary paraphrase adds no approval deadline or other field requirement. Repeated quotation counts once; any inline chunk ID is citation metadata bound to this same passage."
+        }
+      ]
+    },
+    {
+      "key": "lighting-002/finding:0",
+      "segments": [
+        {
+          "text": "Lighting orders require the department cost center to be recorded.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim for the matching purchase family. The summary paraphrase adds no approval deadline or other field requirement. Repeated quotation counts once; any inline chunk ID is citation metadata bound to this same passage."
+        }
+      ]
+    },
+    {
+      "key": "lighting-002/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a lighting kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Lighting kit."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. Department cost center in the lighting summaries refers to this same absent value under the cited rule."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. The output treats this as supplied data, not a missing or invalid amount."
+        },
+        {
+          "text": "Lighting orders require the department cost center to be recorded.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim for the matching purchase family. The summary paraphrase adds no approval deadline or other field requirement. Repeated quotation counts once; any inline chunk ID is citation metadata bound to this same passage."
+        }
+      ]
+    },
+    {
+      "key": "lighting-003/finding:0",
+      "segments": [
+        {
+          "text": "Lighting orders require the department cost center to be recorded.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim for the matching purchase family. The summary paraphrase adds no approval deadline or other field requirement. Repeated quotation counts once; any inline chunk ID is citation metadata bound to this same passage."
+        }
+      ]
+    },
+    {
+      "key": "lighting-003/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a lighting kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Lighting kit."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. Department cost center in the lighting summaries refers to this same absent value under the cited rule."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Lighting orders require the department cost center to be recorded.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim for the matching purchase family. The summary paraphrase adds no approval deadline or other field requirement. Repeated quotation counts once; any inline chunk ID is citation metadata bound to this same passage."
+        }
+      ]
+    },
+    {
+      "key": "lighting-004/finding:0",
+      "segments": [
+        {
+          "text": "Lighting orders require the department cost center to be recorded.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim for the matching purchase family. The summary paraphrase adds no approval deadline or other field requirement. Repeated quotation counts once; any inline chunk ID is citation metadata bound to this same passage."
+        }
+      ]
+    },
+    {
+      "key": "lighting-004/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a lighting kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Lighting kit."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. Department cost center in the lighting summaries refers to this same absent value under the cited rule."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "Lighting orders require the department cost center to be recorded.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim for the matching purchase family. The summary paraphrase adds no approval deadline or other field requirement. Repeated quotation counts once; any inline chunk ID is citation metadata bound to this same passage."
+        }
+      ]
+    },
+    {
+      "key": "lighting-005/finding:0",
+      "segments": [
+        {
+          "text": "Lighting orders require the department cost center to be recorded.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim for the matching purchase family. The summary paraphrase adds no approval deadline or other field requirement. Repeated quotation counts once; any inline chunk ID is citation metadata bound to this same passage."
+        }
+      ]
+    },
+    {
+      "key": "lighting-005/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a lighting kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Lighting kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. The output treats this as supplied data, not a missing or invalid amount."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. Department cost center in the lighting summaries refers to this same absent value under the cited rule."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Lighting orders require the department cost center to be recorded.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim for the matching purchase family. The summary paraphrase adds no approval deadline or other field requirement. Repeated quotation counts once; any inline chunk ID is citation metadata bound to this same passage."
+        }
+      ]
+    },
+    {
+      "key": "lighting-006/finding:0",
+      "segments": [
+        {
+          "text": "Lighting orders require the department cost center to be recorded.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim for the matching purchase family. The summary paraphrase adds no approval deadline or other field requirement. Repeated quotation counts once; any inline chunk ID is citation metadata bound to this same passage."
+        }
+      ]
+    },
+    {
+      "key": "lighting-006/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a lighting kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Lighting kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. The output treats this as supplied data, not a missing or invalid amount."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. Department cost center in the lighting summaries refers to this same absent value under the cited rule."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Lighting orders require the department cost center to be recorded.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim for the matching purchase family. The summary paraphrase adds no approval deadline or other field requirement. Repeated quotation counts once; any inline chunk ID is citation metadata bound to this same passage."
+        }
+      ]
+    },
+    {
+      "key": "lighting-007/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a lighting kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Lighting kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. The output treats this as supplied data, not a missing or invalid amount."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. Department cost center in the lighting summaries refers to this same absent value under the cited rule."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "No applicable policy evidence or citations are supplied to assess compliance.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved review evidence and citations are empty. This is a limitation of policy assessment, not a conclusion that the purchase cannot proceed."
+        }
+      ]
+    },
+    {
+      "key": "lighting-008/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a lighting kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Lighting kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. The output treats this as supplied data, not a missing or invalid amount."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. Department cost center in the lighting summaries refers to this same absent value under the cited rule."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "No applicable policy evidence or citations are supplied to assess compliance.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved review evidence and citations are empty. This is a limitation of policy assessment, not a conclusion that the purchase cannot proceed."
+        }
+      ]
+    },
+    {
+      "key": "lighting-009/finding:0",
+      "segments": [
+        {
+          "text": "Lighting orders require the department cost center to be recorded.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim for the matching purchase family. The summary paraphrase adds no approval deadline or other field requirement. Repeated quotation counts once; any inline chunk ID is citation metadata bound to this same passage."
+        }
+      ]
+    },
+    {
+      "key": "lighting-009/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a lighting kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Lighting kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. The output treats this as supplied data, not a missing or invalid amount."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. Department cost center in the lighting summaries refers to this same absent value under the cited rule."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Lighting orders require the department cost center to be recorded.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this requirement verbatim for the matching purchase family. The summary paraphrase adds no approval deadline or other field requirement. Repeated quotation counts once; any inline chunk ID is citation metadata bound to this same passage."
+        }
+      ]
+    },
+    {
+      "key": "lighting-010/finding:0",
+      "segments": [
+        {
+          "text": "Lighting orders require the department cost center to be recorded.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this scoped requirement verbatim and applies to the purchase family. Summary paraphrases preserve its meaning without adding other requirements. Repeated quotations count once; inline chunk IDs are citation metadata."
+        }
+      ]
+    },
+    {
+      "key": "lighting-010/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a lighting kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Lighting kit."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. In lighting-010, the final coordinated phrase states a total cost of 0.00 USD; the preceding no modifies the absent fields, not the explicitly supplied numeric amount."
+        },
+        {
+          "text": "Lighting orders require the department cost center to be recorded.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this scoped requirement verbatim and applies to the purchase family. Summary paraphrases preserve its meaning without adding other requirements. Repeated quotations count once; inline chunk IDs are citation metadata."
+        }
+      ]
+    },
+    {
+      "key": "storage-001/finding:0",
+      "segments": [
+        {
+          "text": "Storage procurement requires a valid cost center on every request.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this scoped requirement verbatim and applies to the purchase family. Summary paraphrases preserve its meaning without adding other requirements. Repeated quotations count once; inline chunk IDs are citation metadata."
+        }
+      ]
+    },
+    {
+      "key": "storage-001/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a storage kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Storage kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. In lighting-010, the final coordinated phrase states a total cost of 0.00 USD; the preceding no modifies the absent fields, not the explicitly supplied numeric amount."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Storage procurement requires a valid cost center on every request.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this scoped requirement verbatim and applies to the purchase family. Summary paraphrases preserve its meaning without adding other requirements. Repeated quotations count once; inline chunk IDs are citation metadata."
+        }
+      ]
+    },
+    {
+      "key": "storage-002/finding:0",
+      "segments": [
+        {
+          "text": "Storage procurement requires a valid cost center on every request.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this scoped requirement verbatim and applies to the purchase family. Summary paraphrases preserve its meaning without adding other requirements. Repeated quotations count once; inline chunk IDs are citation metadata."
+        }
+      ]
+    },
+    {
+      "key": "storage-002/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a storage kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Storage kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. In lighting-010, the final coordinated phrase states a total cost of 0.00 USD; the preceding no modifies the absent fields, not the explicitly supplied numeric amount."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Storage procurement requires a valid cost center on every request.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this scoped requirement verbatim and applies to the purchase family. Summary paraphrases preserve its meaning without adding other requirements. Repeated quotations count once; inline chunk IDs are citation metadata."
+        }
+      ]
+    },
+    {
+      "key": "storage-003/finding:0",
+      "segments": [
+        {
+          "text": "Storage procurement requires a valid cost center on every request.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this scoped requirement verbatim and applies to the purchase family. Summary paraphrases preserve its meaning without adding other requirements. Repeated quotations count once; inline chunk IDs are citation metadata."
+        }
+      ]
+    },
+    {
+      "key": "storage-003/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a storage kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Storage kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. In lighting-010, the final coordinated phrase states a total cost of 0.00 USD; the preceding no modifies the absent fields, not the explicitly supplied numeric amount."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Storage procurement requires a valid cost center on every request.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this scoped requirement verbatim and applies to the purchase family. Summary paraphrases preserve its meaning without adding other requirements. Repeated quotations count once; inline chunk IDs are citation metadata."
+        }
+      ]
+    },
+    {
+      "key": "storage-004/finding:0",
+      "segments": [
+        {
+          "text": "Storage procurement requires a valid cost center on every request.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this scoped requirement verbatim and applies to the purchase family. Summary paraphrases preserve its meaning without adding other requirements. Repeated quotations count once; inline chunk IDs are citation metadata."
+        }
+      ]
+    },
+    {
+      "key": "storage-004/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a storage kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Storage kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. In lighting-010, the final coordinated phrase states a total cost of 0.00 USD; the preceding no modifies the absent fields, not the explicitly supplied numeric amount."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Storage procurement requires a valid cost center on every request.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this scoped requirement verbatim and applies to the purchase family. Summary paraphrases preserve its meaning without adding other requirements. Repeated quotations count once; inline chunk IDs are citation metadata."
+        }
+      ]
+    },
+    {
+      "key": "storage-005/finding:0",
+      "segments": [
+        {
+          "text": "Storage procurement requires a valid cost center on every request.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this scoped requirement verbatim and applies to the purchase family. Summary paraphrases preserve its meaning without adding other requirements. Repeated quotations count once; inline chunk IDs are citation metadata."
+        }
+      ]
+    },
+    {
+      "key": "storage-005/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a storage kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Storage kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. In lighting-010, the final coordinated phrase states a total cost of 0.00 USD; the preceding no modifies the absent fields, not the explicitly supplied numeric amount."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Storage procurement requires a valid cost center on every request.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this scoped requirement verbatim and applies to the purchase family. Summary paraphrases preserve its meaning without adding other requirements. Repeated quotations count once; inline chunk IDs are citation metadata."
+        }
+      ]
+    },
+    {
+      "key": "storage-006/finding:0",
+      "segments": [
+        {
+          "text": "Storage procurement requires a valid cost center on every request.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this scoped requirement verbatim and applies to the purchase family. Summary paraphrases preserve its meaning without adding other requirements. Repeated quotations count once; inline chunk IDs are citation metadata."
+        }
+      ]
+    },
+    {
+      "key": "storage-006/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a storage kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Storage kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. In lighting-010, the final coordinated phrase states a total cost of 0.00 USD; the preceding no modifies the absent fields, not the explicitly supplied numeric amount."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Storage procurement requires a valid cost center on every request.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this scoped requirement verbatim and applies to the purchase family. Summary paraphrases preserve its meaning without adding other requirements. Repeated quotations count once; inline chunk IDs are citation metadata."
+        }
+      ]
+    },
+    {
+      "key": "storage-007/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a storage kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Storage kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. In lighting-010, the final coordinated phrase states a total cost of 0.00 USD; the preceding no modifies the absent fields, not the explicitly supplied numeric amount."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "No supplied policy evidence allows assessment of compliance or requirements for the missing fields.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved review evidence and citations are empty. This is an epistemic limitation, not an unsupported prohibition or field requirement."
+        }
+      ]
+    },
+    {
+      "key": "storage-008/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a storage kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Storage kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. In lighting-010, the final coordinated phrase states a total cost of 0.00 USD; the preceding no modifies the absent fields, not the explicitly supplied numeric amount."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "No supplied policy evidence allows assessment of compliance or requirements for the missing fields.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved review evidence and citations are empty. This is an epistemic limitation, not an unsupported prohibition or field requirement."
+        }
+      ]
+    },
+    {
+      "key": "storage-009/finding:0",
+      "segments": [
+        {
+          "text": "Storage procurement requires a valid cost center on every request.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this scoped requirement verbatim and applies to the purchase family. Summary paraphrases preserve its meaning without adding other requirements. Repeated quotations count once; inline chunk IDs are citation metadata."
+        }
+      ]
+    },
+    {
+      "key": "storage-009/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a storage kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Storage kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. In lighting-010, the final coordinated phrase states a total cost of 0.00 USD; the preceding no modifies the absent fields, not the explicitly supplied numeric amount."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "Storage procurement requires a valid cost center on every request.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this scoped requirement verbatim and applies to the purchase family. Summary paraphrases preserve its meaning without adding other requirements. Repeated quotations count once; inline chunk IDs are citation metadata."
+        }
+      ]
+    },
+    {
+      "key": "storage-010/finding:0",
+      "segments": [
+        {
+          "text": "Storage procurement requires a valid cost center on every request.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this scoped requirement verbatim and applies to the purchase family. Summary paraphrases preserve its meaning without adding other requirements. Repeated quotations count once; inline chunk IDs are citation metadata."
+        }
+      ]
+    },
+    {
+      "key": "storage-010/summary",
+      "segments": [
+        {
+          "text": "The purchase is for a storage kit.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Storage kit."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. In lighting-010, the final coordinated phrase states a total cost of 0.00 USD; the preceding no modifies the absent fields, not the explicitly supplied numeric amount."
+        },
+        {
+          "text": "The purchase is missing a valid cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string, so no cost center of any validity is supplied. The policy explicitly requires a valid cost center; this is not a diagnosis of a supplied identifier as invalid."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Storage procurement requires a valid cost center on every request.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage states this scoped requirement verbatim and applies to the purchase family. Summary paraphrases preserve its meaning without adding other requirements. Repeated quotations count once; inline chunk IDs are citation metadata."
+        }
+      ]
+    }
+  ],
+  "provisionalClaimTargetMet": true,
+  "releaseGatePassed": false,
+  "limitations": [
+    "Judgments come from the declared AI reviewer; this code checks completeness, not truth.",
+    "Compound-claim coverage is confirmed by the reviewer, not inferred by the scorer.",
+    "Missing/failed reviews are reported separately and must not disappear from the release decision.",
+    "Reference verification and other R2 gates remain separate."
+  ]
+}

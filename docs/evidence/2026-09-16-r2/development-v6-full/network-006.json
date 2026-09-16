@@ -1,0 +1,248 @@
+{
+  "id": "network-006",
+  "startedAt": "2026-09-16T06:16:32.202Z",
+  "sourceMap": {
+    "237ce9cf-7ee7-4260-8ec2-c02cac964805": "network-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "network-p1",
+      "source": {
+        "id": "237ce9cf-7ee7-4260-8ec2-c02cac964805",
+        "kind": "POLICY",
+        "name": "Synthetic network-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 57,
+        "sha256": "f5f48a29c28752827fc3e208ee14b3ce78676bd415942409945866d96b1d5a2b",
+        "jobId": "99accac2-4170-4736-b777-389c8a9cd8a2",
+        "failureCode": null
+      },
+      "chunks": {
+        "items": [
+          {
+            "id": "d122da0b-dbcb-5923-9440-75ebbec729ee",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 57,
+            "text": "Network procurement cannot proceed without a cost center.",
+            "sha256": "f5f48a29c28752827fc3e208ee14b3ce78676bd415942409945866d96b1d5a2b"
+          }
+        ],
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "source": {
+          "id": "237ce9cf-7ee7-4260-8ec2-c02cac964805",
+          "kind": "POLICY",
+          "name": "Synthetic network-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 57,
+          "sha256": "f5f48a29c28752827fc3e208ee14b3ce78676bd415942409945866d96b1d5a2b",
+          "jobId": "99accac2-4170-4736-b777-389c8a9cd8a2",
+          "failureCode": null
+        }
+      }
+    }
+  ],
+  "tenantId": "b912e9e1-3aed-441a-bcfa-e0cc0e0bcacd",
+  "caseId": "d71c5b05-a937-4183-b7d6-87c9749367db",
+  "quote": {
+    "id": "15e7b817-b0f9-4884-afa8-5506f5d3fdff",
+    "kind": "QUOTE",
+    "name": "Synthetic network-006 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "d71c5b05-a937-4183-b7d6-87c9749367db",
+    "mediaType": "text/plain",
+    "byteSize": 164,
+    "sha256": "4ce7c7522302b01a77d2e81d6f21fd78d19b229929b435c4d52ac1a23b992e1d",
+    "jobId": "9951c052-7d82-4f17-befe-74b96863646e",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "237ce9cf-7ee7-4260-8ec2-c02cac964805",
+        "name": "Synthetic network-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Network kit",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "cab813f7-2b72-4e6b-923c-226a868f5f82",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "36164337-ff29-4e93-8800-6198d621bf41",
+      "output": {
+        "total": {
+          "value": null,
+          "citations": [
+            {
+              "quote": "Grand total (USD): 1350.00\nUnresolved correction: total 1387.00. Neither total is confirmed.",
+              "chunkId": "ac0da8ae-ddfa-5932-950c-bab709e09fd2"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Synthetic Network Works 6",
+          "citations": [
+            {
+              "quote": "QUOTATION\nSynthetic Network Works 6",
+              "chunkId": "ac0da8ae-ddfa-5932-950c-bab709e09fd2"
+            }
+          ]
+        },
+        "currency": {
+          "value": "USD",
+          "citations": [
+            {
+              "quote": "Grand total (USD): 1350.00",
+              "chunkId": "ac0da8ae-ddfa-5932-950c-bab709e09fd2"
+            }
+          ]
+        },
+        "warnings": [
+          "Conflicting totals: 1350.00 and 1387.00; neither confirmed."
+        ],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "6",
+              "unitPrice": "225.00",
+              "description": "Network kit"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "Network kit | count 6 | each 225.00",
+              "chunkId": "ac0da8ae-ddfa-5932-950c-bab709e09fd2"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "ac0da8ae-ddfa-5932-950c-bab709e09fd2": {
+          "page": 1,
+          "text": "QUOTATION\nSynthetic Network Works 6\nNetwork kit | count 6 | each 225.00\nGrand total (USD): 1350.00\nUnresolved correction: total 1387.00. Neither total is confirmed.",
+          "start": 0,
+          "sourceId": "15e7b817-b0f9-4884-afa8-5506f5d3fdff"
+        }
+      },
+      "revision": 2,
+      "sourceId": "15e7b817-b0f9-4884-afa8-5506f5d3fdff",
+      "elapsedMs": 5125,
+      "promptHash": "027fed9396900dd2b1c4ac0b9db6eb3a4510ace6880b896cd038dcdb0f2b5840",
+      "schemaHash": "8aca18be86a7f2c535b8fe6ec5306a5dfa32ee4cde84dce875a4d9b9cd6e4544",
+      "inputTokens": 996,
+      "outputTokens": 260,
+      "sourceSha256": "4ce7c7522302b01a77d2e81d6f21fd78d19b229929b435c4d52ac1a23b992e1d",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000815",
+      "retrievedChunkIds": [
+        "ac0da8ae-ddfa-5932-950c-bab709e09fd2"
+      ],
+      "retrievalElapsedMs": 0
+    }
+  },
+  "review": {
+    "jobId": "69d31e73-7012-4a12-a219-300a72307ca1",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "6653fef9-24fc-4609-bcf1-0bf62a79f203",
+      "output": {
+        "summary": "The purchase request is for a 'Network kit' with a total cost of 0.00 USD. The cost center, vendor, justification, and line items are not provided. According to the policy, network procurement cannot proceed without a cost center.",
+        "citations": [
+          {
+            "quote": "Network procurement cannot proceed without a cost center.",
+            "chunkId": "d122da0b-dbcb-5923-9440-75ebbec729ee"
+          }
+        ],
+        "policy_findings": [
+          {
+            "claim": "Network procurement cannot proceed without a cost center.",
+            "citations": [
+              {
+                "quote": "Network procurement cannot proceed without a cost center.",
+                "chunkId": "d122da0b-dbcb-5923-9440-75ebbec729ee"
+              }
+            ]
+          }
+        ],
+        "missing_information": [
+          "vendor",
+          "costCenter",
+          "justification",
+          "lineItems"
+        ],
+        "insufficient_evidence": false
+      },
+      "evidence": {
+        "d122da0b-dbcb-5923-9440-75ebbec729ee": {
+          "page": 1,
+          "text": "Network procurement cannot proceed without a cost center.",
+          "start": 0,
+          "sourceId": "237ce9cf-7ee7-4260-8ec2-c02cac964805"
+        }
+      },
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 4265,
+      "promptHash": "3b72a56c70d879aa181800e830eb6a15d6592561d34dfd0b4bedaeb490fbc582",
+      "schemaHash": "9f191bb3fe8500611daa491e58e6ff4a29427319cac747ac8c8a06de19d0494a",
+      "inputTokens": 1015,
+      "outputTokens": 173,
+      "sourceSha256": null,
+      "promptVersion": "purchase-review-2026-09-16-v6",
+      "schemaVersion": "purchase-review-v5",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Network OR kit OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000683",
+      "retrievedChunkIds": [
+        "d122da0b-dbcb-5923-9440-75ebbec729ee"
+      ],
+      "retrievalElapsedMs": 15
+    }
+  },
+  "retrievedPassageIds": [
+    "network-p1"
+  ],
+  "finishedAt": "2026-09-16T06:16:48.540Z"
+}

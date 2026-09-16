@@ -1,0 +1,246 @@
+{
+  "id": "printing-001",
+  "startedAt": "2026-09-16T06:17:57.924Z",
+  "sourceMap": {
+    "e502172c-1108-4ade-88cc-8d4629643a35": "printing-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "printing-p1",
+      "source": {
+        "id": "e502172c-1108-4ade-88cc-8d4629643a35",
+        "kind": "POLICY",
+        "name": "Synthetic printing-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 62,
+        "sha256": "5058792a0586bc2cb58e5a2bf519f9e92bc0db878e9444e11102716a7909c9a0",
+        "jobId": "0c19860e-45ae-413a-8284-c5cfaf52037a",
+        "failureCode": null
+      },
+      "chunks": {
+        "items": [
+          {
+            "id": "e2f6747c-9112-5dc2-ba13-297eea589e75",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 62,
+            "text": "Printing expenditure must identify the requesting cost center.",
+            "sha256": "5058792a0586bc2cb58e5a2bf519f9e92bc0db878e9444e11102716a7909c9a0"
+          }
+        ],
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "source": {
+          "id": "e502172c-1108-4ade-88cc-8d4629643a35",
+          "kind": "POLICY",
+          "name": "Synthetic printing-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 62,
+          "sha256": "5058792a0586bc2cb58e5a2bf519f9e92bc0db878e9444e11102716a7909c9a0",
+          "jobId": "0c19860e-45ae-413a-8284-c5cfaf52037a",
+          "failureCode": null
+        }
+      }
+    }
+  ],
+  "tenantId": "ac02b622-6cf3-4a42-8aa8-6c5e51ebaac2",
+  "caseId": "c836216b-4ffc-4e76-b3be-419089f46a46",
+  "quote": {
+    "id": "7a19d0bf-9a9d-4959-b4ce-9622fcbc8527",
+    "kind": "QUOTE",
+    "name": "Synthetic printing-001 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "c836216b-4ffc-4e76-b3be-419089f46a46",
+    "mediaType": "text/plain",
+    "byteSize": 102,
+    "sha256": "424601718528a45c8d3134e6f6fdd923130528197a647e47258d833d0237e29c",
+    "jobId": "8d043ef8-cb73-40ea-9bdc-e023f4d32ef1",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "e502172c-1108-4ade-88cc-8d4629643a35",
+        "name": "Synthetic printing-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Printing kit",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "a7735448-f0c1-4e9b-adaf-56fca9a99d3d",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "13870cb6-7bfc-4e02-8f1d-4e5d54c755a2",
+      "output": {
+        "total": {
+          "value": "250.00",
+          "citations": [
+            {
+              "quote": "total due 250.00",
+              "chunkId": "672abdac-55c5-5bf1-b617-21f875df7682"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Synthetic Printing Works 1",
+          "citations": [
+            {
+              "quote": "From Synthetic Printing Works 1",
+              "chunkId": "672abdac-55c5-5bf1-b617-21f875df7682"
+            }
+          ]
+        },
+        "currency": {
+          "value": "USD",
+          "citations": [
+            {
+              "quote": "Quote currency USD",
+              "chunkId": "672abdac-55c5-5bf1-b617-21f875df7682"
+            }
+          ]
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "1",
+              "unitPrice": "250.00",
+              "description": "Printing kit"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "Printing kit, 1 units x 250.00",
+              "chunkId": "672abdac-55c5-5bf1-b617-21f875df7682"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "672abdac-55c5-5bf1-b617-21f875df7682": {
+          "page": 1,
+          "text": "From Synthetic Printing Works 1: Printing kit, 1 units x 250.00. Quote currency USD; total due 250.00.",
+          "start": 0,
+          "sourceId": "7a19d0bf-9a9d-4959-b4ce-9622fcbc8527"
+        }
+      },
+      "revision": 2,
+      "sourceId": "7a19d0bf-9a9d-4959-b4ce-9622fcbc8527",
+      "elapsedMs": 4297,
+      "promptHash": "1aa7ff8316a5f400ad21d3c0d3ea7e9e915ec7df9719f25490256b4399590842",
+      "schemaHash": "a1f0948488a013929a5df4884f99cdafb407f5e1bc84f7dbd69885c0d153cf8c",
+      "inputTokens": 976,
+      "outputTokens": 210,
+      "sourceSha256": "424601718528a45c8d3134e6f6fdd923130528197a647e47258d833d0237e29c",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000727",
+      "retrievedChunkIds": [
+        "672abdac-55c5-5bf1-b617-21f875df7682"
+      ],
+      "retrievalElapsedMs": 32
+    }
+  },
+  "review": {
+    "jobId": "809d62de-b328-46cc-9c61-6171f08b5cac",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "ebe4c301-c810-4808-8645-3e9712b8ebfa",
+      "output": {
+        "summary": "The purchase is for a printing kit with a total cost of 0.00 USD. The purchase lacks a specified cost center and justification, and no vendor or line items are provided. Policy evidence states that printing expenditure must identify the requesting cost center.",
+        "citations": [
+          {
+            "quote": "Printing expenditure must identify the requesting cost center.",
+            "chunkId": "e2f6747c-9112-5dc2-ba13-297eea589e75"
+          }
+        ],
+        "policy_findings": [
+          {
+            "claim": "Printing expenditure must identify the requesting cost center.",
+            "citations": [
+              {
+                "quote": "Printing expenditure must identify the requesting cost center.",
+                "chunkId": "e2f6747c-9112-5dc2-ba13-297eea589e75"
+              }
+            ]
+          }
+        ],
+        "missing_information": [
+          "vendor",
+          "costCenter",
+          "justification",
+          "lineItems"
+        ],
+        "insufficient_evidence": false
+      },
+      "evidence": {
+        "e2f6747c-9112-5dc2-ba13-297eea589e75": {
+          "page": 1,
+          "text": "Printing expenditure must identify the requesting cost center.",
+          "start": 0,
+          "sourceId": "e502172c-1108-4ade-88cc-8d4629643a35"
+        }
+      },
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 4140,
+      "promptHash": "8aa634c0a9a0c2f827045d8757325c1298b5ee20d9dbb6c8e54b345d9e413f31",
+      "schemaHash": "b6ff7c5f2c7232e86f7fab39f9af70c7f43a4d45df41ec518d0099d4e1a9696c",
+      "inputTokens": 1022,
+      "outputTokens": 179,
+      "sourceSha256": null,
+      "promptVersion": "purchase-review-2026-09-16-v6",
+      "schemaVersion": "purchase-review-v5",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Printing OR kit OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000696",
+      "retrievedChunkIds": [
+        "e2f6747c-9112-5dc2-ba13-297eea589e75"
+      ],
+      "retrievalElapsedMs": 15
+    }
+  },
+  "retrievedPassageIds": [
+    "printing-p1"
+  ],
+  "finishedAt": "2026-09-16T06:18:11.956Z"
+}
