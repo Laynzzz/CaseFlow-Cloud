@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "annotationReviewContract": true,
+  "exactCarriedForwardCases": 120,
+  "newSourceFields": 240,
+  "newArithmeticChecks": 60,
+  "newPolicyReviews": 60,
+  "newPolicyAbstentions": 12,
+  "newConflictingTotals": 12,
+  "discrepancies": 0,
+  "paidProviderCalls": 0
+}
