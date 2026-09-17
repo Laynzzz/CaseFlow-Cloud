@@ -1,0 +1,182 @@
+[
+  {
+    "at": "2026-09-17T12:31:05.433873+00:00",
+    "command": [
+      "docker",
+      "volume",
+      "inspect",
+      "--format",
+      "{{json .}}",
+      "bf8d9bc4f52a577e42c0b2cc1bdc4f058235b520c53fc8ab416b07a6f464d398"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"CreatedAt\":\"2026-09-17T12:26:44Z\",\"Driver\":\"local\",\"Labels\":{\"com.docker.volume.anonymous\":\"\"},\"Mountpoint\":\"/var/lib/docker/volumes/bf8d9bc4f52a577e42c0b2cc1bdc4f058235b520c53fc8ab416b07a6f464d398/_data\",\"Name\":\"bf8d9bc4f52a577e42c0b2cc1bdc4f058235b520c53fc8ab416b07a6f464d398\",\"Options\":null,\"Scope\":\"local\"}\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:31:05.578304+00:00",
+    "command": [
+      "docker",
+      "ps",
+      "-aq",
+      "--filter",
+      "volume=bf8d9bc4f52a577e42c0b2cc1bdc4f058235b520c53fc8ab416b07a6f464d398"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "provenance": "output\\r3-dependency-restart\\recovery-20260917-01\\events.json",
+    "owned_project": "caseflow-r3-restart-98782e2f3dbb477881803f2583abfca3",
+    "container_id": "e58dc6ee59b847acef8f30cd5a6b2f228ccf7c75eb31a56cd4855f619b8b5b5a",
+    "anonymous_volume": "bf8d9bc4f52a577e42c0b2cc1bdc4f058235b520c53fc8ab416b07a6f464d398"
+  },
+  {
+    "at": "2026-09-17T12:31:05.719034+00:00",
+    "command": [
+      "docker",
+      "volume",
+      "rm",
+      "bf8d9bc4f52a577e42c0b2cc1bdc4f058235b520c53fc8ab416b07a6f464d398"
+    ],
+    "exit_code": 0,
+    "stdout": "bf8d9bc4f52a577e42c0b2cc1bdc4f058235b520c53fc8ab416b07a6f464d398\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:31:05.857418+00:00",
+    "command": [
+      "docker",
+      "volume",
+      "inspect",
+      "--format",
+      "{{json .}}",
+      "85d103a7c9be792705e1cc304c1cd4db6070c36396d21cedccec8e31953aecff"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"CreatedAt\":\"2026-09-17T12:26:44Z\",\"Driver\":\"local\",\"Labels\":{\"com.docker.volume.anonymous\":\"\"},\"Mountpoint\":\"/var/lib/docker/volumes/85d103a7c9be792705e1cc304c1cd4db6070c36396d21cedccec8e31953aecff/_data\",\"Name\":\"85d103a7c9be792705e1cc304c1cd4db6070c36396d21cedccec8e31953aecff\",\"Options\":null,\"Scope\":\"local\"}\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:31:06.000127+00:00",
+    "command": [
+      "docker",
+      "ps",
+      "-aq",
+      "--filter",
+      "volume=85d103a7c9be792705e1cc304c1cd4db6070c36396d21cedccec8e31953aecff"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "provenance": "output\\r3-dependency-restart\\recovery-20260917-01\\events.json",
+    "owned_project": "caseflow-r3-restart-98782e2f3dbb477881803f2583abfca3",
+    "container_id": "e58dc6ee59b847acef8f30cd5a6b2f228ccf7c75eb31a56cd4855f619b8b5b5a",
+    "anonymous_volume": "85d103a7c9be792705e1cc304c1cd4db6070c36396d21cedccec8e31953aecff"
+  },
+  {
+    "at": "2026-09-17T12:31:06.140890+00:00",
+    "command": [
+      "docker",
+      "volume",
+      "rm",
+      "85d103a7c9be792705e1cc304c1cd4db6070c36396d21cedccec8e31953aecff"
+    ],
+    "exit_code": 0,
+    "stdout": "85d103a7c9be792705e1cc304c1cd4db6070c36396d21cedccec8e31953aecff\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:31:06.285259+00:00",
+    "command": [
+      "docker",
+      "volume",
+      "inspect",
+      "--format",
+      "{{json .}}",
+      "57f71ebf237b13d741b05e3ba6b399c36e8db51948e27c6ab62dc83a41690719"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"CreatedAt\":\"2026-09-17T12:27:13Z\",\"Driver\":\"local\",\"Labels\":{\"com.docker.volume.anonymous\":\"\"},\"Mountpoint\":\"/var/lib/docker/volumes/57f71ebf237b13d741b05e3ba6b399c36e8db51948e27c6ab62dc83a41690719/_data\",\"Name\":\"57f71ebf237b13d741b05e3ba6b399c36e8db51948e27c6ab62dc83a41690719\",\"Options\":null,\"Scope\":\"local\"}\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:31:06.423817+00:00",
+    "command": [
+      "docker",
+      "ps",
+      "-aq",
+      "--filter",
+      "volume=57f71ebf237b13d741b05e3ba6b399c36e8db51948e27c6ab62dc83a41690719"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "provenance": "output\\r3-dependency-restart\\recovery-20260917-02\\events.json",
+    "owned_project": "caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1",
+    "container_id": "9e0f2a7ec82badc232a745034b32899beaace7df829f9b6e4ead397ec1c461bf",
+    "anonymous_volume": "57f71ebf237b13d741b05e3ba6b399c36e8db51948e27c6ab62dc83a41690719"
+  },
+  {
+    "at": "2026-09-17T12:31:06.560948+00:00",
+    "command": [
+      "docker",
+      "volume",
+      "rm",
+      "57f71ebf237b13d741b05e3ba6b399c36e8db51948e27c6ab62dc83a41690719"
+    ],
+    "exit_code": 0,
+    "stdout": "57f71ebf237b13d741b05e3ba6b399c36e8db51948e27c6ab62dc83a41690719\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:31:06.700490+00:00",
+    "command": [
+      "docker",
+      "volume",
+      "inspect",
+      "--format",
+      "{{json .}}",
+      "d409a05d19768dc99c7da452c24605dde7bc3eeb436efefc7538549902640783"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"CreatedAt\":\"2026-09-17T12:27:13Z\",\"Driver\":\"local\",\"Labels\":{\"com.docker.volume.anonymous\":\"\"},\"Mountpoint\":\"/var/lib/docker/volumes/d409a05d19768dc99c7da452c24605dde7bc3eeb436efefc7538549902640783/_data\",\"Name\":\"d409a05d19768dc99c7da452c24605dde7bc3eeb436efefc7538549902640783\",\"Options\":null,\"Scope\":\"local\"}\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:31:06.848812+00:00",
+    "command": [
+      "docker",
+      "ps",
+      "-aq",
+      "--filter",
+      "volume=d409a05d19768dc99c7da452c24605dde7bc3eeb436efefc7538549902640783"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "provenance": "output\\r3-dependency-restart\\recovery-20260917-02\\events.json",
+    "owned_project": "caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1",
+    "container_id": "9e0f2a7ec82badc232a745034b32899beaace7df829f9b6e4ead397ec1c461bf",
+    "anonymous_volume": "d409a05d19768dc99c7da452c24605dde7bc3eeb436efefc7538549902640783"
+  },
+  {
+    "at": "2026-09-17T12:31:06.996297+00:00",
+    "command": [
+      "docker",
+      "volume",
+      "rm",
+      "d409a05d19768dc99c7da452c24605dde7bc3eeb436efefc7538549902640783"
+    ],
+    "exit_code": 0,
+    "stdout": "d409a05d19768dc99c7da452c24605dde7bc3eeb436efefc7538549902640783\n",
+    "stderr": ""
+  }
+]

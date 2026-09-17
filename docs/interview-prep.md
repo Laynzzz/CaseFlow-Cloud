@@ -527,3 +527,54 @@ Evidence scope and current results: [recovery matrix](recovery-matrix.md) and
 Full regression suites passed 102 Python and 29 Java tests without failures or
 skips. These counts include controls and existing regressions, not 131 crash
 scenarios; the map counts thirteen distinct business-boundary process crashes.
+
+## R3 storage timeout checkpoint
+
+**Does a timeout mean the document upload failed?** No. The server may have
+stored the bytes before its response was lost. Our test endpoint writes a real
+DOCX to local S3, withholds acknowledgement, and records that the write finished
+before the SDK's read timeout. The worker leaves the artifact unselected and
+retries after backoff using a new immutable key.
+Follow-up: this can leave an orphan object; production garbage collection is
+still separate work.
+
+**What prevents the original execution from replacing the recovered result?**
+The new execution owns a higher fencing token. Finalization is conditional on
+current ownership, attempt and lease; old finalization and a delayed failure
+are rejected. The timeout tests verify both objects' checksums and the selected
+DOCX's contents after retry.
+Follow-up: a fence protects selection in PostgreSQL; immutable keys separately
+protect the stored bytes from overwrites.
+
+Evidence: [two socket-timeout integration cases](evidence/2026-09-17-r3/dependencies/storage.md).
+The full worker suite now passes 104 tests. The test uses a shortened SDK
+timeout and controlled response stalls; do not describe this as a production S3
+outage or a measured recovery-time guarantee.
+
+## R3 dependency restart checkpoint
+
+**What happens when Kafka is unavailable?** A real failed publish leaves the
+worker's outbox row unpublished. The same runtime keeps retrying. Our isolated
+broker test stops and restarts the same persisted container, then verifies one
+broker record with the original event ID and one published outbox row.
+Follow-up: the test covers a pending publish with a single broker, not broker
+high availability or all ambiguous-send duplicate cases; those require the
+separate acknowledgement-gap evidence.
+
+**How do you prove a database restart did not lose a scheduled job?** The test
+interrupts the real SQL transaction before commit. The Kafka offset stays
+uncommitted; after restart, an independent connection sees no partial job or
+inbox. The same consumer retries, producing one job and receipt. Another
+delivery advances the offset without creating another business record.
+Follow-up: this tests the Python connection/retry path. Do not generalize it to
+Java pool reconnection or cloud failover without separate evidence.
+
+**How do you avoid breaking the demo during failure tests?** A separate Compose
+project owns distinct ports, containers, volumes and network. Destructive
+commands validate exact names and project labels, and evidence records what
+was stopped/restarted/removed. Negative controls omit the stop and must fail
+the unavailable-operation assertions.
+Follow-up: test cleanup needs the same care as production operations; image
+declared anonymous volumes and failure-path worker shutdown can otherwise leak.
+
+Evidence and limitations: [dependency batch](evidence/2026-09-17-r3/dependencies/summary.md).

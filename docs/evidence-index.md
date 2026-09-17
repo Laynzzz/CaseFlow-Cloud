@@ -1,5 +1,16 @@
 # Evidence index
 
+## September 17 UTC: dependency restarts and storage timeouts
+
+[Dependency batch](evidence/2026-09-17-r3/dependencies/summary.md) verifies actual
+Kafka/PostgreSQL restarts on disposable Docker services and two real SDK socket
+timeouts. Pending publication and interrupted scheduling recover in the same
+worker; storage retry selects one valid DOCX without selecting an unconfirmed
+upload. Full worker suite: 104 passed; independent opt-in resilience suite:
+11 passed, zero skips/failures/errors. Failed setup and omitted-stop controls
+are retained. Final owned-resource cleanup is verified; an earlier failed
+setup's unattributable anonymous-volume residue is explicitly documented.
+
 ## September 17 UTC: actual Kafka publish and offset crash boundaries
 
 [Kafka process results](evidence/2026-09-17-r3/kafka-boundaries/summary.md)

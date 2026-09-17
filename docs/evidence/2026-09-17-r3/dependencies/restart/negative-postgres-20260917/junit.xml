@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="24.430" timestamp="2026-09-17T08:29:46.466205-04:00" hostname="local-test-host"><testcase classname="tests.resilience.test_dependency_restart" name="test_postgres_restart_rolls_back_scheduling_and_same_consumer_replays" time="23.969"><failure message="AssertionError: no actual failed database commit observed">fixture = {'stack': &lt;restart_probe.Dependencies object at 0x00000243F4761940&gt;, 'event': Envelope(eventId=UUID('dbd452f1-3023-44a...'caseflow_restart_d497467a14af4f92aa554d7786e274a9', 'group': 'caseflow_restart_c85f163384bc4d90b864fd92ae04795d', ...}
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x00000243F4762330&gt;
+record_testsuite_property = &lt;bound method LogXML.add_global_property of &lt;_pytest.junitxml.LogXML object at 0x00000243F0976300&gt;&gt;
+
+    def test_postgres_restart_rolls_back_scheduling_and_same_consumer_replays(fixture, monkeypatch, record_testsuite_property):
+        stack = fixture["stack"]
+        prepared, release_commit, permit_recovery = (threading.Event() for _ in range(3))
+        first = True
+        real_database = jobs.database
+        @contextmanager
+        def transaction_boundary():
+            nonlocal first
+            pause = first
+            first = False
+            if not pause:
+                assert permit_recovery.wait(45), "recovery observation deadline"
+            with real_database() as db:
+                yield db
+                if pause:
+                    # SQL really ran, but neither inbox nor job is committed yet.
+                    prepared.set()
+                    assert release_commit.wait(30), "database stop coordination deadline"
+        monkeypatch.setattr(jobs, "database", transaction_boundary)
+        offset = send(fixture)
+        worker = runtime.Runtime()
+        server = None
+        try:
+            with running(worker, worker.consume, release=lambda: (release_commit.set(), permit_recovery.set())) as thread:
+                assert prepared.wait(20), "production scheduling did not reach transaction boundary"
+                assert committed(fixture) &lt; offset + 1
+                server = stack.stop("postgres")
+                release_commit.set()
+&gt;               until(lambda: any(row["event"] == "scheduling_retry" and row.get("error_type") in
+                                  {"OperationalError", "AdminShutdown"} for row in fixture["logs"]),
+                      timeout=10, message="no actual failed database commit observed")
+
+tests\resilience\test_dependency_restart.py:211:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+check = &lt;function test_postgres_restart_rolls_back_scheduling_and_same_consumer_replays.&lt;locals&gt;.&lt;lambda&gt; at 0x00000243F478AD40&gt;
+timeout = 10, message = 'no actual failed database commit observed'
+
+    def until(check, timeout=35, message="condition not reached"):
+        deadline = time.monotonic() + timeout
+        while time.monotonic() &lt; deadline:
+            result = check()
+            if result:
+                return result
+            time.sleep(0.1)
+&gt;       raise AssertionError(message)
+E       AssertionError: no actual failed database commit observed
+
+tests\resilience\restart_probe.py:46: AssertionError</failure></testcase></testsuite></testsuites>

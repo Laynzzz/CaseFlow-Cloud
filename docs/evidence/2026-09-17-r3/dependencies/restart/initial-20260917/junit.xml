@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="2" failures="0" skipped="0" tests="2" time="125.284" timestamp="2026-09-17T08:24:11.128559-04:00" hostname="local-test-host"><testcase classname="tests.resilience.test_dependency_restart" name="test_kafka_restart_retains_pending_outbox_and_same_runtime_recovers" time="124.785"><error message="failed on setup with &quot;RuntimeError: restart command failed: docker (see evidence)&quot;">@pytest.fixture(scope="module")
+    def dependencies():
+        stack = Dependencies()
+        try:
+&gt;           stack.open()
+
+tests\resilience\test_dependency_restart.py:36:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\resilience\restart_probe.py:120: in open
+    self.command(self.compose + ["up", "--detach", "--wait", "--wait-timeout", "120"], timeout=150)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;restart_probe.Dependencies object at 0x0000018C2B041700&gt;
+args = ['docker', 'compose', '--project-name', 'caseflow-r3-restart-69ddae8d0bd348329ec73dd7aac777b2', '--file', 'F:\\Me\\Project\\caseflow-cloud\\tests\\resilience\\compose.restart.yaml', ...]
+timeout = 150
+
+    def command(self, args, timeout=40):
+        started = utc()
+        result = subprocess.run(args, cwd=ROOT, capture_output=True, text=True, timeout=timeout)
+        # Commands only contain paths, resource IDs and safe inspection templates.
+        self.record("command", command=args, started_at=started, exit_code=result.returncode,
+                    stdout=result.stdout, stderr=result.stderr)
+        if result.returncode:
+&gt;           raise RuntimeError(f"restart command failed: {args[0]} (see evidence)")
+E           RuntimeError: restart command failed: docker (see evidence)
+
+tests\resilience\restart_probe.py:76: RuntimeError</error></testcase><testcase classname="tests.resilience.test_dependency_restart" name="test_postgres_restart_rolls_back_scheduling_and_same_consumer_replays" time="0.000"><error message="failed on setup with &quot;RuntimeError: restart command failed: docker (see evidence)&quot;">@pytest.fixture(scope="module")
+    def dependencies():
+        stack = Dependencies()
+        try:
+&gt;           stack.open()
+
+tests\resilience\test_dependency_restart.py:36:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\resilience\restart_probe.py:120: in open
+    self.command(self.compose + ["up", "--detach", "--wait", "--wait-timeout", "120"], timeout=150)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;restart_probe.Dependencies object at 0x0000018C2B041700&gt;
+args = ['docker', 'compose', '--project-name', 'caseflow-r3-restart-69ddae8d0bd348329ec73dd7aac777b2', '--file', 'F:\\Me\\Project\\caseflow-cloud\\tests\\resilience\\compose.restart.yaml', ...]
+timeout = 150
+
+    def command(self, args, timeout=40):
+        started = utc()
+        result = subprocess.run(args, cwd=ROOT, capture_output=True, text=True, timeout=timeout)
+        # Commands only contain paths, resource IDs and safe inspection templates.
+        self.record("command", command=args, started_at=started, exit_code=result.returncode,
+                    stdout=result.stdout, stderr=result.stderr)
+        if result.returncode:
+&gt;           raise RuntimeError(f"restart command failed: {args[0]} (see evidence)")
+E           RuntimeError: restart command failed: docker (see evidence)
+
+tests\resilience\restart_probe.py:76: RuntimeError</error></testcase></testsuite></testsuites>

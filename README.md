@@ -48,7 +48,7 @@ R3 reliability and operations are now in progress; see the
 [remaining-work map](docs/r3-status.md). Actual process-crash scenarios
 and 10,000 broker redeliveries now pass locally; the full recovery matrix,
 performance, operations and cloud gates remain open. See the
-[latest recorded scope and results](docs/evidence/2026-09-17-r3/kafka-boundaries/summary.md).
+[latest recorded scope and results](docs/evidence/2026-09-17-r3/dependencies/summary.md).
 
 ## Run locally (PowerShell)
 
@@ -138,6 +138,22 @@ See the [boundary-by-boundary recovery map](docs/recovery-matrix.md).
 Replay needs the API,
 worker and broker running plus the fixture created by `document-api.mjs`; its
 default sends 20 duplicates and one late failure, recording a new output file.
+
+The separate dependency-restart suite creates disposable Docker services on
+loopback ports 55432 and 19092, then stops/restarts only those services. Keep
+those ports free and run one restart suite at a time. It uses the pinned images
+and local database credentials, and removes only its own containers/volumes:
+
+```powershell
+. ./scripts/dev-env.ps1
+$env:CASEFLOW_RESTART_TESTS = '1'
+$env:CASEFLOW_RESTART_RUN_ID = 'run-' + [guid]::NewGuid().ToString('N')
+services/worker/.venv/Scripts/python.exe -m pytest tests/resilience/test_restart_guards.py tests/resilience/test_dependency_restart.py -q
+```
+
+Without the opt-in flag, the two restart cases are skipped; that is not recovery
+evidence. Each run reserves a new evidence directory under
+`output/r3-dependency-restart`. Existing run IDs are rejected to preserve results.
 
 Stop host services with Ctrl+C, then docker compose stop. This preserves volumes.
 Never overwrite a JAR while a process is running from it; stop that API instance

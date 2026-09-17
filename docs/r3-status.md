@@ -15,7 +15,7 @@ work. Performance and cloud claims need reproducible measurements.
 | --- | --- | --- |
 | Recovery transactions | [13 actual business-boundary process-crash scenarios](recovery-matrix.md), including real Kafka publish/offset gaps, upload/result selection and Java completion; earlier deterministic checks retained | Dependency restarts, dead-letter crash windows, full-service recovery and operational reconciliation |
 | Broker redelivery | [10,000 injected duplicates plus one late failure](evidence/2026-09-17-r3/summary.md); both consumers caught up, one artifact and success audit, no added execution | This bounded duplicate gate passes; distinct active jobs and sustained arrivals remain separate load work |
-| Dependency recovery | Local dependency startup/recovery recorded during R2 | Controlled broker/database restarts and object-store timeouts during active work |
+| Dependency recovery | [Actual isolated broker/database restarts and two storage timeout cases](evidence/2026-09-17-r3/dependencies/summary.md); same worker recovers durable state | Java connection-pool/full-deployment recovery, longer outages and sustained workloads |
 | Query optimization | Tenant/permission predicates and cursor implementation | Skewed synthetic tenants, baseline query plans, one controlled change, identical-workload rerun and trade-offs |
 | Sustained load | Functional journey and AI latency records | Workload/environment declaration, sustained mixed arrivals, errors/dropped work, backlog and saturation |
 | Operations | Structured worker logs and health endpoints | Correlated exported traces, bounded-cardinality metrics, reconciliation, alerts and runbooks with diagnosed failure |
@@ -64,6 +64,22 @@ Full regression suites passed 102 Python and 29 Java tests without failures/skip
 These are component subprocesses, not full deployment or broker/database
 restarts. See the [boundary-by-boundary matrix](recovery-matrix.md) for coverage
 and remaining work. No model calls, AI ledger changes or paid resources.
+
+## Fourth recovery batch: dependencies
+
+[Dependency evidence](evidence/2026-09-17-r3/dependencies/summary.md) adds real
+Kafka/PostgreSQL stops and restarts on disposable services, plus socket timeouts
+before template reading and after a successful object write. The same worker
+recovers pending publication/interrupted scheduling; storage retry selects one
+valid document and leaves the unconfirmed upload unselected. Full worker tests:
+104 passed. The independent opt-in resilience suite: 11 passed, including two
+restart scenarios and nine harness guards. Failed setup and negative controls
+remain published, including the earlier anonymous-volume cleanup limitation.
+
+These results do not implement reconciliation, production orphan collection,
+monitoring, query optimization, sustained load or cloud release. Those remain
+the next major workstreams; the detailed matrix still identifies narrower
+dead-letter and Java/full-service recovery gaps.
 
 ## Limits carried from R2
 

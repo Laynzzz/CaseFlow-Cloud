@@ -833,3 +833,68 @@ normal exit, commit offsets early or omit persistence, and check that the
 corresponding assertions reject those conditions. The
 [recovery matrix](recovery-matrix.md) separates these proofs from active
 dependency restarts, dead-letter crash windows and sustained load still to do.
+
+## R3: a timeout does not tell us whether a file was stored
+
+A purchase document upload can finish at the storage server while its response
+never reaches the worker. The worker cannot infer from a timeout that no file
+exists. It must leave the result unselected and retry using a new immutable key.
+The old file may require later cleanup; it must not be overwritten or silently
+selected by a stale execution.
+
+`services/worker/tests/storage_timeout_probe.py` is Python test infrastructure
+using the standard HTTP server and Boto3, the project's S3 client. It runs on an
+ephemeral loopback port and withholds responses to actual SDK requests. One
+case stalls a template read. Another forwards real document bytes to the local
+S3-compatible store and withholds confirmation only after that store accepts
+them. This tests the ambiguous outcome of an upload, with explicit timestamp
+ordering and an actual SDK socket timeout.
+
+The production worker records these dependency failures as retryable, clears
+the current lease and waits for the existing exponential backoff. The tests
+wait for that real database deadline; they do not move the clock. A second
+execution obtains a higher fence, renders a valid DOCX and selects one result.
+They check the selected bytes, unchanged orphan bytes and rejection of the old
+owner. Marking the timeout permanent deliberately fails the tests.
+
+The controlled SDK uses a one-second timeout and one total attempt to exercise
+the application retry quickly. This proves the named failure/recovery behavior,
+not production timeout latency or all SDK retry combinations. Production
+garbage collection is still open. See the [storage report](evidence/2026-09-17-r3/dependencies/storage.md).
+
+## R3: dependency restarts differ from worker crashes
+
+When the broker is down, a worker can remain alive but fail to send an outbox
+event. When PostgreSQL stops during a transaction, the worker can lose its
+connection before commit. The retry loop must survive both conditions and
+continue from durable state when the dependency returns.
+
+`tests/resilience/compose.restart.yaml` is Docker Compose configuration for
+isolated test services. It uses the project's pinned database/broker images on
+separate loopback ports, with disposable volumes and an unpredictable project
+name. `restart_probe.py` is Python test infrastructure that checks exact Docker
+project labels and resource names before stopping or removing anything. This
+costs extra local startup time, but allows real dependency failures while the
+user's demo stays available. It also avoids letting a prefix match authorize
+destruction of unrelated resources.
+
+`test_dependency_restart.py` is a Python pytest integration suite. The Kafka
+case requires a real publication error while the broker is stopped; the same
+worker then publishes its still-pending event after restart. The PostgreSQL
+case interrupts a real scheduling commit, observes rollback and an uncommitted
+Kafka offset, then lets the same consumer retry and deduplicate another
+delivery. Unchanged container/data-mount identities and a changed server start
+timestamp establish that the persisted service actually restarted.
+
+Two debugging decisions matter for later interviews. First, Kafka advertises
+addresses to clients after bootstrap, so the health check inside its container
+must use the internal listener rather than the host's mapped port. Second,
+Docker can return unchanged mounts in a different order; compare their actual
+identities in canonical order, not their array positions. Neither fix changes
+the production application. The [dependency report](evidence/2026-09-17-r3/dependencies/summary.md)
+preserves failed runs and the verified scope.
+
+These tests cover selected worker loops on a single local broker/database.
+They do not establish Java connection-pool recovery, cloud failover, sustained
+capacity, or a universal time-to-recovery guarantee. Reconciliation, orphan
+cleanup and full operational monitoring remain separate work.

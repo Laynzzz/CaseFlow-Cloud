@@ -1,0 +1,680 @@
+[
+  {
+    "at": "2026-09-17T12:27:13.477385+00:00",
+    "event": "command",
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "started_at": "2026-09-17T12:27:13.453106+00:00",
+    "exit_code": 0,
+    "stdout": "cf6555bdb091928e254e81b398f25bea93a940ad\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:13.620920+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "version",
+      "--format",
+      "{{.Server.Version}}"
+    ],
+    "started_at": "2026-09-17T12:27:13.477888+00:00",
+    "exit_code": 0,
+    "stdout": "29.0.1\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:18.995973+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "compose",
+      "--project-name",
+      "caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1",
+      "--file",
+      "F:\\Me\\Project\\caseflow-cloud\\tests\\resilience\\compose.restart.yaml",
+      "up",
+      "--detach",
+      "--wait",
+      "--wait-timeout",
+      "120"
+    ],
+    "started_at": "2026-09-17T12:27:13.626071+00:00",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": " Network caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_default  Creating\n Network caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_default  Created\n Volume caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_kafka-data  Creating\n Volume caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_kafka-data  Created\n Volume caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_postgres-data  Creating\n Volume caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_postgres-data  Created\n Container caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-postgres-1  Creating\n Container caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-kafka-1  Creating\n Container caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-kafka-1  Created\n Container caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-postgres-1  Created\n Container caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-kafka-1  Starting\n Container caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-postgres-1  Starting\n Container caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-postgres-1  Started\n Container caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-kafka-1  Started\n Container caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-kafka-1  Waiting\n Container caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-postgres-1  Waiting\n Container caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-postgres-1  Healthy\n Container caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-kafka-1  Healthy\n"
+  },
+  {
+    "at": "2026-09-17T12:27:19.137988+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{\"name\":{{json .Name}},\"id\":{{json .Id}},\"labels\":{{json .Config.Labels}},\"state\":{{json .State}},\"image\":{{json .Image}},\"mounts\":{{json .Mounts}}}",
+      "caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-postgres-1"
+    ],
+    "started_at": "2026-09-17T12:27:18.996483+00:00",
+    "exit_code": 0,
+    "stdout": "{\"name\":\"/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-postgres-1\",\"id\":\"24e0f51941ef6987db74e03d768ea1509587b341a026326633b9003fabc71e6b\",\"labels\":{\"com.docker.compose.config-hash\":\"f5b6cc9cb07bbe56288190d001bf10b0f11c90fcaac4f984738f4fa50af2ec37\",\"com.docker.compose.container-number\":\"1\",\"com.docker.compose.depends_on\":\"\",\"com.docker.compose.image\":\"sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af\",\"com.docker.compose.oneoff\":\"False\",\"com.docker.compose.project\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1\",\"com.docker.compose.project.config_files\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\\\\compose.restart.yaml\",\"com.docker.compose.project.working_dir\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\",\"com.docker.compose.service\":\"postgres\",\"com.docker.compose.version\":\"2.40.3\"},\"state\":{\"Dead\":false,\"Error\":\"\",\"ExitCode\":0,\"FinishedAt\":\"0001-01-01T00:00:00Z\",\"Health\":{\"FailingStreak\":0,\"Log\":[{\"End\":\"2026-09-17T12:27:16.263190067Z\",\"ExitCode\":0,\"Output\":\"/var/run/postgresql:5432 - accepting connections\\n\",\"Start\":\"2026-09-17T12:27:16.211919025Z\"},{\"End\":\"2026-09-17T12:27:18.305387784Z\",\"ExitCode\":0,\"Output\":\"/var/run/postgresql:5432 - accepting connections\\n\",\"Start\":\"2026-09-17T12:27:18.263868651Z\"}],\"Status\":\"healthy\"},\"OOMKilled\":false,\"Paused\":false,\"Pid\":1653242,\"Restarting\":false,\"Running\":true,\"StartedAt\":\"2026-09-17T12:27:13.968789933Z\",\"Status\":\"running\"},\"image\":\"sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af\",\"mounts\":[{\"Destination\":\"/docker-entrypoint-initdb.d/01-roles.sh\",\"Mode\":\"ro\",\"Propagation\":\"rprivate\",\"RW\":false,\"Source\":\"/run/desktop/mnt/host/f/Me/Project/caseflow-cloud/infrastructure/local/init-db.sh\",\"Type\":\"bind\"},{\"Destination\":\"/var/lib/postgresql\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_postgres-data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_postgres-data/_data\",\"Type\":\"volume\"}]}\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:19.280579+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{\"name\":{{json .Name}},\"id\":{{json .Id}},\"labels\":{{json .Config.Labels}},\"state\":{{json .State}},\"image\":{{json .Image}},\"mounts\":{{json .Mounts}}}",
+      "caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-kafka-1"
+    ],
+    "started_at": "2026-09-17T12:27:19.138501+00:00",
+    "exit_code": 0,
+    "stdout": "{\"name\":\"/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-kafka-1\",\"id\":\"9e0f2a7ec82badc232a745034b32899beaace7df829f9b6e4ead397ec1c461bf\",\"labels\":{\"com.docker.compose.config-hash\":\"1f26268ec7b9623388c38861b78b309d607fdb37f76b28b4fe68420ab658ac91\",\"com.docker.compose.container-number\":\"1\",\"com.docker.compose.depends_on\":\"\",\"com.docker.compose.image\":\"sha256:2d2f77837385f202b1947fc3ed62421de344f0ced47dde360ca5afdad11b51fa\",\"com.docker.compose.oneoff\":\"False\",\"com.docker.compose.project\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1\",\"com.docker.compose.project.config_files\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\\\\compose.restart.yaml\",\"com.docker.compose.project.working_dir\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\",\"com.docker.compose.service\":\"kafka\",\"com.docker.compose.version\":\"2.40.3\",\"org.label-schema.build-date\":\"2026-05-13\",\"org.label-schema.description\":\"Apache Kafka\",\"org.label-schema.name\":\"kafka\",\"org.label-schema.vcs-url\":\"https://github.com/apache/kafka\",\"org.opencontainers.image.authors\":\"Apache Kafka\"},\"state\":{\"Dead\":false,\"Error\":\"\",\"ExitCode\":0,\"FinishedAt\":\"0001-01-01T00:00:00Z\",\"Health\":{\"FailingStreak\":0,\"Log\":[{\"End\":\"2026-09-17T12:27:18.49706555Z\",\"ExitCode\":0,\"Output\":\"\",\"Start\":\"2026-09-17T12:27:17.301763051Z\"}],\"Status\":\"healthy\"},\"OOMKilled\":false,\"Paused\":false,\"Pid\":1653223,\"Restarting\":false,\"Running\":true,\"StartedAt\":\"2026-09-17T12:27:13.96071505Z\",\"Status\":\"running\"},\"image\":\"sha256:2d2f77837385f202b1947fc3ed62421de344f0ced47dde360ca5afdad11b51fa\",\"mounts\":[{\"Destination\":\"/var/lib/kafka/data\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_kafka-data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_kafka-data/_data\",\"Type\":\"volume\"},{\"Destination\":\"/etc/kafka/secrets\",\"Driver\":\"local\",\"Mode\":\"\",\"Name\":\"57f71ebf237b13d741b05e3ba6b399c36e8db51948e27c6ab62dc83a41690719\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/57f71ebf237b13d741b05e3ba6b399c36e8db51948e27c6ab62dc83a41690719/_data\",\"Type\":\"volume\"},{\"Destination\":\"/mnt/shared/config\",\"Driver\":\"local\",\"Mode\":\"\",\"Name\":\"d409a05d19768dc99c7da452c24605dde7bc3eeb436efefc7538549902640783\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/d409a05d19768dc99c7da452c24605dde7bc3eeb436efefc7538549902640783/_data\",\"Type\":\"volume\"}]}\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:19.434023+00:00",
+    "event": "fixture",
+    "database": "caseflow_test_145b1776ed7c4577a73bc236c1b0d8a0",
+    "topic": "caseflow_restart_858fde9e551a4045a862430253e17c1f",
+    "group": "caseflow_restart_f27b2ed104cd4803a7ff0959aada5c92",
+    "job_id": "9862393d-f846-4d6e-bc32-b4be26a376ca"
+  },
+  {
+    "at": "2026-09-17T12:27:19.617930+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{\"name\":{{json .Name}},\"id\":{{json .Id}},\"labels\":{{json .Config.Labels}},\"state\":{{json .State}},\"image\":{{json .Image}},\"mounts\":{{json .Mounts}}}",
+      "caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-kafka-1"
+    ],
+    "started_at": "2026-09-17T12:27:19.478514+00:00",
+    "exit_code": 0,
+    "stdout": "{\"name\":\"/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-kafka-1\",\"id\":\"9e0f2a7ec82badc232a745034b32899beaace7df829f9b6e4ead397ec1c461bf\",\"labels\":{\"com.docker.compose.config-hash\":\"1f26268ec7b9623388c38861b78b309d607fdb37f76b28b4fe68420ab658ac91\",\"com.docker.compose.container-number\":\"1\",\"com.docker.compose.depends_on\":\"\",\"com.docker.compose.image\":\"sha256:2d2f77837385f202b1947fc3ed62421de344f0ced47dde360ca5afdad11b51fa\",\"com.docker.compose.oneoff\":\"False\",\"com.docker.compose.project\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1\",\"com.docker.compose.project.config_files\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\\\\compose.restart.yaml\",\"com.docker.compose.project.working_dir\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\",\"com.docker.compose.service\":\"kafka\",\"com.docker.compose.version\":\"2.40.3\",\"org.label-schema.build-date\":\"2026-05-13\",\"org.label-schema.description\":\"Apache Kafka\",\"org.label-schema.name\":\"kafka\",\"org.label-schema.vcs-url\":\"https://github.com/apache/kafka\",\"org.opencontainers.image.authors\":\"Apache Kafka\"},\"state\":{\"Dead\":false,\"Error\":\"\",\"ExitCode\":0,\"FinishedAt\":\"0001-01-01T00:00:00Z\",\"Health\":{\"FailingStreak\":0,\"Log\":[{\"End\":\"2026-09-17T12:27:18.49706555Z\",\"ExitCode\":0,\"Output\":\"\",\"Start\":\"2026-09-17T12:27:17.301763051Z\"}],\"Status\":\"healthy\"},\"OOMKilled\":false,\"Paused\":false,\"Pid\":1653223,\"Restarting\":false,\"Running\":true,\"StartedAt\":\"2026-09-17T12:27:13.96071505Z\",\"Status\":\"running\"},\"image\":\"sha256:2d2f77837385f202b1947fc3ed62421de344f0ced47dde360ca5afdad11b51fa\",\"mounts\":[{\"Destination\":\"/var/lib/kafka/data\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_kafka-data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_kafka-data/_data\",\"Type\":\"volume\"},{\"Destination\":\"/etc/kafka/secrets\",\"Driver\":\"local\",\"Mode\":\"\",\"Name\":\"57f71ebf237b13d741b05e3ba6b399c36e8db51948e27c6ab62dc83a41690719\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/57f71ebf237b13d741b05e3ba6b399c36e8db51948e27c6ab62dc83a41690719/_data\",\"Type\":\"volume\"},{\"Destination\":\"/mnt/shared/config\",\"Driver\":\"local\",\"Mode\":\"\",\"Name\":\"d409a05d19768dc99c7da452c24605dde7bc3eeb436efefc7538549902640783\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/d409a05d19768dc99c7da452c24605dde7bc3eeb436efefc7538549902640783/_data\",\"Type\":\"volume\"}]}\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:20.997995+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "stop",
+      "--time",
+      "1",
+      "9e0f2a7ec82badc232a745034b32899beaace7df829f9b6e4ead397ec1c461bf"
+    ],
+    "started_at": "2026-09-17T12:27:19.618443+00:00",
+    "exit_code": 0,
+    "stdout": "Flag --time has been deprecated, use --timeout instead\n9e0f2a7ec82badc232a745034b32899beaace7df829f9b6e4ead397ec1c461bf\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:21.139744+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{\"name\":{{json .Name}},\"id\":{{json .Id}},\"labels\":{{json .Config.Labels}},\"state\":{{json .State}},\"image\":{{json .Image}},\"mounts\":{{json .Mounts}}}",
+      "caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-kafka-1"
+    ],
+    "started_at": "2026-09-17T12:27:20.997995+00:00",
+    "exit_code": 0,
+    "stdout": "{\"name\":\"/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-kafka-1\",\"id\":\"9e0f2a7ec82badc232a745034b32899beaace7df829f9b6e4ead397ec1c461bf\",\"labels\":{\"com.docker.compose.config-hash\":\"1f26268ec7b9623388c38861b78b309d607fdb37f76b28b4fe68420ab658ac91\",\"com.docker.compose.container-number\":\"1\",\"com.docker.compose.depends_on\":\"\",\"com.docker.compose.image\":\"sha256:2d2f77837385f202b1947fc3ed62421de344f0ced47dde360ca5afdad11b51fa\",\"com.docker.compose.oneoff\":\"False\",\"com.docker.compose.project\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1\",\"com.docker.compose.project.config_files\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\\\\compose.restart.yaml\",\"com.docker.compose.project.working_dir\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\",\"com.docker.compose.service\":\"kafka\",\"com.docker.compose.version\":\"2.40.3\",\"org.label-schema.build-date\":\"2026-05-13\",\"org.label-schema.description\":\"Apache Kafka\",\"org.label-schema.name\":\"kafka\",\"org.label-schema.vcs-url\":\"https://github.com/apache/kafka\",\"org.opencontainers.image.authors\":\"Apache Kafka\"},\"state\":{\"Dead\":false,\"Error\":\"\",\"ExitCode\":143,\"FinishedAt\":\"2026-09-17T12:27:20.356439224Z\",\"Health\":{\"FailingStreak\":0,\"Log\":[{\"End\":\"2026-09-17T12:27:18.49706555Z\",\"ExitCode\":0,\"Output\":\"\",\"Start\":\"2026-09-17T12:27:17.301763051Z\"}],\"Status\":\"unhealthy\"},\"OOMKilled\":false,\"Paused\":false,\"Pid\":0,\"Restarting\":false,\"Running\":false,\"StartedAt\":\"2026-09-17T12:27:13.96071505Z\",\"Status\":\"exited\"},\"image\":\"sha256:2d2f77837385f202b1947fc3ed62421de344f0ced47dde360ca5afdad11b51fa\",\"mounts\":[{\"Destination\":\"/var/lib/kafka/data\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_kafka-data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_kafka-data/_data\",\"Type\":\"volume\"},{\"Destination\":\"/etc/kafka/secrets\",\"Driver\":\"local\",\"Mode\":\"\",\"Name\":\"57f71ebf237b13d741b05e3ba6b399c36e8db51948e27c6ab62dc83a41690719\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/57f71ebf237b13d741b05e3ba6b399c36e8db51948e27c6ab62dc83a41690719/_data\",\"Type\":\"volume\"},{\"Destination\":\"/mnt/shared/config\",\"Driver\":\"local\",\"Mode\":\"\",\"Name\":\"d409a05d19768dc99c7da452c24605dde7bc3eeb436efefc7538549902640783\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/d409a05d19768dc99c7da452c24605dde7bc3eeb436efefc7538549902640783/_data\",\"Type\":\"volume\"}]}\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:36.622978+00:00",
+    "event": "worker_log",
+    "worker_event": "completion_publish_retry",
+    "error_type": "KafkaException"
+  },
+  {
+    "at": "2026-09-17T12:27:36.693537+00:00",
+    "event": "kafka_failure_pending_outbox",
+    "state": {
+      "jobs": [
+        {
+          "job_id": "9862393d-f846-4d6e-bc32-b4be26a376ca",
+          "status": "RUNNING"
+        }
+      ],
+      "inbox": [
+        {
+          "event_id": "a3648d1f-9299-470b-a751-77217ed6ed4d"
+        }
+      ],
+      "outbox": [
+        {
+          "event_id": "a3a2b170-1b76-40e3-9586-c4448b5387c5",
+          "published_at": null
+        }
+      ]
+    },
+    "runtime_owner": "8458e20e-c714-4beb-b49e-58f4175744da"
+  },
+  {
+    "at": "2026-09-17T12:27:36.837072+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{\"name\":{{json .Name}},\"id\":{{json .Id}},\"labels\":{{json .Config.Labels}},\"state\":{{json .State}},\"image\":{{json .Image}},\"mounts\":{{json .Mounts}}}",
+      "caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-kafka-1"
+    ],
+    "started_at": "2026-09-17T12:27:36.694050+00:00",
+    "exit_code": 0,
+    "stdout": "{\"name\":\"/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-kafka-1\",\"id\":\"9e0f2a7ec82badc232a745034b32899beaace7df829f9b6e4ead397ec1c461bf\",\"labels\":{\"com.docker.compose.config-hash\":\"1f26268ec7b9623388c38861b78b309d607fdb37f76b28b4fe68420ab658ac91\",\"com.docker.compose.container-number\":\"1\",\"com.docker.compose.depends_on\":\"\",\"com.docker.compose.image\":\"sha256:2d2f77837385f202b1947fc3ed62421de344f0ced47dde360ca5afdad11b51fa\",\"com.docker.compose.oneoff\":\"False\",\"com.docker.compose.project\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1\",\"com.docker.compose.project.config_files\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\\\\compose.restart.yaml\",\"com.docker.compose.project.working_dir\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\",\"com.docker.compose.service\":\"kafka\",\"com.docker.compose.version\":\"2.40.3\",\"org.label-schema.build-date\":\"2026-05-13\",\"org.label-schema.description\":\"Apache Kafka\",\"org.label-schema.name\":\"kafka\",\"org.label-schema.vcs-url\":\"https://github.com/apache/kafka\",\"org.opencontainers.image.authors\":\"Apache Kafka\"},\"state\":{\"Dead\":false,\"Error\":\"\",\"ExitCode\":143,\"FinishedAt\":\"2026-09-17T12:27:20.356439224Z\",\"Health\":{\"FailingStreak\":0,\"Log\":[{\"End\":\"2026-09-17T12:27:18.49706555Z\",\"ExitCode\":0,\"Output\":\"\",\"Start\":\"2026-09-17T12:27:17.301763051Z\"}],\"Status\":\"unhealthy\"},\"OOMKilled\":false,\"Paused\":false,\"Pid\":0,\"Restarting\":false,\"Running\":false,\"StartedAt\":\"2026-09-17T12:27:13.96071505Z\",\"Status\":\"exited\"},\"image\":\"sha256:2d2f77837385f202b1947fc3ed62421de344f0ced47dde360ca5afdad11b51fa\",\"mounts\":[{\"Destination\":\"/var/lib/kafka/data\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_kafka-data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_kafka-data/_data\",\"Type\":\"volume\"},{\"Destination\":\"/etc/kafka/secrets\",\"Driver\":\"local\",\"Mode\":\"\",\"Name\":\"57f71ebf237b13d741b05e3ba6b399c36e8db51948e27c6ab62dc83a41690719\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/57f71ebf237b13d741b05e3ba6b399c36e8db51948e27c6ab62dc83a41690719/_data\",\"Type\":\"volume\"},{\"Destination\":\"/mnt/shared/config\",\"Driver\":\"local\",\"Mode\":\"\",\"Name\":\"d409a05d19768dc99c7da452c24605dde7bc3eeb436efefc7538549902640783\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/d409a05d19768dc99c7da452c24605dde7bc3eeb436efefc7538549902640783/_data\",\"Type\":\"volume\"}]}\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:37.233778+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "start",
+      "9e0f2a7ec82badc232a745034b32899beaace7df829f9b6e4ead397ec1c461bf"
+    ],
+    "started_at": "2026-09-17T12:27:36.837072+00:00",
+    "exit_code": 0,
+    "stdout": "9e0f2a7ec82badc232a745034b32899beaace7df829f9b6e4ead397ec1c461bf\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:37.374984+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{\"name\":{{json .Name}},\"id\":{{json .Id}},\"labels\":{{json .Config.Labels}},\"state\":{{json .State}},\"image\":{{json .Image}},\"mounts\":{{json .Mounts}}}",
+      "caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-kafka-1"
+    ],
+    "started_at": "2026-09-17T12:27:37.234290+00:00",
+    "exit_code": 0,
+    "stdout": "{\"name\":\"/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-kafka-1\",\"id\":\"9e0f2a7ec82badc232a745034b32899beaace7df829f9b6e4ead397ec1c461bf\",\"labels\":{\"com.docker.compose.config-hash\":\"1f26268ec7b9623388c38861b78b309d607fdb37f76b28b4fe68420ab658ac91\",\"com.docker.compose.container-number\":\"1\",\"com.docker.compose.depends_on\":\"\",\"com.docker.compose.image\":\"sha256:2d2f77837385f202b1947fc3ed62421de344f0ced47dde360ca5afdad11b51fa\",\"com.docker.compose.oneoff\":\"False\",\"com.docker.compose.project\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1\",\"com.docker.compose.project.config_files\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\\\\compose.restart.yaml\",\"com.docker.compose.project.working_dir\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\",\"com.docker.compose.service\":\"kafka\",\"com.docker.compose.version\":\"2.40.3\",\"org.label-schema.build-date\":\"2026-05-13\",\"org.label-schema.description\":\"Apache Kafka\",\"org.label-schema.name\":\"kafka\",\"org.label-schema.vcs-url\":\"https://github.com/apache/kafka\",\"org.opencontainers.image.authors\":\"Apache Kafka\"},\"state\":{\"Dead\":false,\"Error\":\"\",\"ExitCode\":0,\"FinishedAt\":\"2026-09-17T12:27:20.356439224Z\",\"Health\":{\"FailingStreak\":0,\"Log\":[{\"End\":\"2026-09-17T12:27:18.49706555Z\",\"ExitCode\":0,\"Output\":\"\",\"Start\":\"2026-09-17T12:27:17.301763051Z\"}],\"Status\":\"starting\"},\"OOMKilled\":false,\"Paused\":false,\"Pid\":1655985,\"Restarting\":false,\"Running\":true,\"StartedAt\":\"2026-09-17T12:27:36.916742204Z\",\"Status\":\"running\"},\"image\":\"sha256:2d2f77837385f202b1947fc3ed62421de344f0ced47dde360ca5afdad11b51fa\",\"mounts\":[{\"Destination\":\"/var/lib/kafka/data\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_kafka-data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_kafka-data/_data\",\"Type\":\"volume\"},{\"Destination\":\"/etc/kafka/secrets\",\"Driver\":\"local\",\"Mode\":\"\",\"Name\":\"57f71ebf237b13d741b05e3ba6b399c36e8db51948e27c6ab62dc83a41690719\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/57f71ebf237b13d741b05e3ba6b399c36e8db51948e27c6ab62dc83a41690719/_data\",\"Type\":\"volume\"},{\"Destination\":\"/mnt/shared/config\",\"Driver\":\"local\",\"Mode\":\"\",\"Name\":\"d409a05d19768dc99c7da452c24605dde7bc3eeb436efefc7538549902640783\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/d409a05d19768dc99c7da452c24605dde7bc3eeb436efefc7538549902640783/_data\",\"Type\":\"volume\"}]}\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:38.520572+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{\"name\":{{json .Name}},\"id\":{{json .Id}},\"labels\":{{json .Config.Labels}},\"state\":{{json .State}},\"image\":{{json .Image}},\"mounts\":{{json .Mounts}}}",
+      "caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-kafka-1"
+    ],
+    "started_at": "2026-09-17T12:27:38.375913+00:00",
+    "exit_code": 0,
+    "stdout": "{\"name\":\"/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-kafka-1\",\"id\":\"9e0f2a7ec82badc232a745034b32899beaace7df829f9b6e4ead397ec1c461bf\",\"labels\":{\"com.docker.compose.config-hash\":\"1f26268ec7b9623388c38861b78b309d607fdb37f76b28b4fe68420ab658ac91\",\"com.docker.compose.container-number\":\"1\",\"com.docker.compose.depends_on\":\"\",\"com.docker.compose.image\":\"sha256:2d2f77837385f202b1947fc3ed62421de344f0ced47dde360ca5afdad11b51fa\",\"com.docker.compose.oneoff\":\"False\",\"com.docker.compose.project\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1\",\"com.docker.compose.project.config_files\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\\\\compose.restart.yaml\",\"com.docker.compose.project.working_dir\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\",\"com.docker.compose.service\":\"kafka\",\"com.docker.compose.version\":\"2.40.3\",\"org.label-schema.build-date\":\"2026-05-13\",\"org.label-schema.description\":\"Apache Kafka\",\"org.label-schema.name\":\"kafka\",\"org.label-schema.vcs-url\":\"https://github.com/apache/kafka\",\"org.opencontainers.image.authors\":\"Apache Kafka\"},\"state\":{\"Dead\":false,\"Error\":\"\",\"ExitCode\":0,\"FinishedAt\":\"2026-09-17T12:27:20.356439224Z\",\"Health\":{\"FailingStreak\":0,\"Log\":[{\"End\":\"2026-09-17T12:27:18.49706555Z\",\"ExitCode\":0,\"Output\":\"\",\"Start\":\"2026-09-17T12:27:17.301763051Z\"}],\"Status\":\"starting\"},\"OOMKilled\":false,\"Paused\":false,\"Pid\":1655985,\"Restarting\":false,\"Running\":true,\"StartedAt\":\"2026-09-17T12:27:36.916742204Z\",\"Status\":\"running\"},\"image\":\"sha256:2d2f77837385f202b1947fc3ed62421de344f0ced47dde360ca5afdad11b51fa\",\"mounts\":[{\"Destination\":\"/var/lib/kafka/data\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_kafka-data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_kafka-data/_data\",\"Type\":\"volume\"},{\"Destination\":\"/etc/kafka/secrets\",\"Driver\":\"local\",\"Mode\":\"\",\"Name\":\"57f71ebf237b13d741b05e3ba6b399c36e8db51948e27c6ab62dc83a41690719\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/57f71ebf237b13d741b05e3ba6b399c36e8db51948e27c6ab62dc83a41690719/_data\",\"Type\":\"volume\"},{\"Destination\":\"/mnt/shared/config\",\"Driver\":\"local\",\"Mode\":\"\",\"Name\":\"d409a05d19768dc99c7da452c24605dde7bc3eeb436efefc7538549902640783\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/d409a05d19768dc99c7da452c24605dde7bc3eeb436efefc7538549902640783/_data\",\"Type\":\"volume\"}]}\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:39.663498+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{\"name\":{{json .Name}},\"id\":{{json .Id}},\"labels\":{{json .Config.Labels}},\"state\":{{json .State}},\"image\":{{json .Image}},\"mounts\":{{json .Mounts}}}",
+      "caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-kafka-1"
+    ],
+    "started_at": "2026-09-17T12:27:39.522348+00:00",
+    "exit_code": 0,
+    "stdout": "{\"name\":\"/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-kafka-1\",\"id\":\"9e0f2a7ec82badc232a745034b32899beaace7df829f9b6e4ead397ec1c461bf\",\"labels\":{\"com.docker.compose.config-hash\":\"1f26268ec7b9623388c38861b78b309d607fdb37f76b28b4fe68420ab658ac91\",\"com.docker.compose.container-number\":\"1\",\"com.docker.compose.depends_on\":\"\",\"com.docker.compose.image\":\"sha256:2d2f77837385f202b1947fc3ed62421de344f0ced47dde360ca5afdad11b51fa\",\"com.docker.compose.oneoff\":\"False\",\"com.docker.compose.project\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1\",\"com.docker.compose.project.config_files\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\\\\compose.restart.yaml\",\"com.docker.compose.project.working_dir\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\",\"com.docker.compose.service\":\"kafka\",\"com.docker.compose.version\":\"2.40.3\",\"org.label-schema.build-date\":\"2026-05-13\",\"org.label-schema.description\":\"Apache Kafka\",\"org.label-schema.name\":\"kafka\",\"org.label-schema.vcs-url\":\"https://github.com/apache/kafka\",\"org.opencontainers.image.authors\":\"Apache Kafka\"},\"state\":{\"Dead\":false,\"Error\":\"\",\"ExitCode\":0,\"FinishedAt\":\"2026-09-17T12:27:20.356439224Z\",\"Health\":{\"FailingStreak\":0,\"Log\":[{\"End\":\"2026-09-17T12:27:18.49706555Z\",\"ExitCode\":0,\"Output\":\"\",\"Start\":\"2026-09-17T12:27:17.301763051Z\"}],\"Status\":\"starting\"},\"OOMKilled\":false,\"Paused\":false,\"Pid\":1655985,\"Restarting\":false,\"Running\":true,\"StartedAt\":\"2026-09-17T12:27:36.916742204Z\",\"Status\":\"running\"},\"image\":\"sha256:2d2f77837385f202b1947fc3ed62421de344f0ced47dde360ca5afdad11b51fa\",\"mounts\":[{\"Destination\":\"/mnt/shared/config\",\"Driver\":\"local\",\"Mode\":\"\",\"Name\":\"d409a05d19768dc99c7da452c24605dde7bc3eeb436efefc7538549902640783\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/d409a05d19768dc99c7da452c24605dde7bc3eeb436efefc7538549902640783/_data\",\"Type\":\"volume\"},{\"Destination\":\"/var/lib/kafka/data\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_kafka-data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_kafka-data/_data\",\"Type\":\"volume\"},{\"Destination\":\"/etc/kafka/secrets\",\"Driver\":\"local\",\"Mode\":\"\",\"Name\":\"57f71ebf237b13d741b05e3ba6b399c36e8db51948e27c6ab62dc83a41690719\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/57f71ebf237b13d741b05e3ba6b399c36e8db51948e27c6ab62dc83a41690719/_data\",\"Type\":\"volume\"}]}\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:40.810091+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{\"name\":{{json .Name}},\"id\":{{json .Id}},\"labels\":{{json .Config.Labels}},\"state\":{{json .State}},\"image\":{{json .Image}},\"mounts\":{{json .Mounts}}}",
+      "caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-kafka-1"
+    ],
+    "started_at": "2026-09-17T12:27:40.664789+00:00",
+    "exit_code": 0,
+    "stdout": "{\"name\":\"/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-kafka-1\",\"id\":\"9e0f2a7ec82badc232a745034b32899beaace7df829f9b6e4ead397ec1c461bf\",\"labels\":{\"com.docker.compose.config-hash\":\"1f26268ec7b9623388c38861b78b309d607fdb37f76b28b4fe68420ab658ac91\",\"com.docker.compose.container-number\":\"1\",\"com.docker.compose.depends_on\":\"\",\"com.docker.compose.image\":\"sha256:2d2f77837385f202b1947fc3ed62421de344f0ced47dde360ca5afdad11b51fa\",\"com.docker.compose.oneoff\":\"False\",\"com.docker.compose.project\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1\",\"com.docker.compose.project.config_files\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\\\\compose.restart.yaml\",\"com.docker.compose.project.working_dir\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\",\"com.docker.compose.service\":\"kafka\",\"com.docker.compose.version\":\"2.40.3\",\"org.label-schema.build-date\":\"2026-05-13\",\"org.label-schema.description\":\"Apache Kafka\",\"org.label-schema.name\":\"kafka\",\"org.label-schema.vcs-url\":\"https://github.com/apache/kafka\",\"org.opencontainers.image.authors\":\"Apache Kafka\"},\"state\":{\"Dead\":false,\"Error\":\"\",\"ExitCode\":0,\"FinishedAt\":\"2026-09-17T12:27:20.356439224Z\",\"Health\":{\"FailingStreak\":0,\"Log\":[{\"End\":\"2026-09-17T12:27:18.49706555Z\",\"ExitCode\":0,\"Output\":\"\",\"Start\":\"2026-09-17T12:27:17.301763051Z\"}],\"Status\":\"starting\"},\"OOMKilled\":false,\"Paused\":false,\"Pid\":1655985,\"Restarting\":false,\"Running\":true,\"StartedAt\":\"2026-09-17T12:27:36.916742204Z\",\"Status\":\"running\"},\"image\":\"sha256:2d2f77837385f202b1947fc3ed62421de344f0ced47dde360ca5afdad11b51fa\",\"mounts\":[{\"Destination\":\"/etc/kafka/secrets\",\"Driver\":\"local\",\"Mode\":\"\",\"Name\":\"57f71ebf237b13d741b05e3ba6b399c36e8db51948e27c6ab62dc83a41690719\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/57f71ebf237b13d741b05e3ba6b399c36e8db51948e27c6ab62dc83a41690719/_data\",\"Type\":\"volume\"},{\"Destination\":\"/mnt/shared/config\",\"Driver\":\"local\",\"Mode\":\"\",\"Name\":\"d409a05d19768dc99c7da452c24605dde7bc3eeb436efefc7538549902640783\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/d409a05d19768dc99c7da452c24605dde7bc3eeb436efefc7538549902640783/_data\",\"Type\":\"volume\"},{\"Destination\":\"/var/lib/kafka/data\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_kafka-data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_kafka-data/_data\",\"Type\":\"volume\"}]}\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:41.950631+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{\"name\":{{json .Name}},\"id\":{{json .Id}},\"labels\":{{json .Config.Labels}},\"state\":{{json .State}},\"image\":{{json .Image}},\"mounts\":{{json .Mounts}}}",
+      "caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-kafka-1"
+    ],
+    "started_at": "2026-09-17T12:27:41.811385+00:00",
+    "exit_code": 0,
+    "stdout": "{\"name\":\"/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-kafka-1\",\"id\":\"9e0f2a7ec82badc232a745034b32899beaace7df829f9b6e4ead397ec1c461bf\",\"labels\":{\"com.docker.compose.config-hash\":\"1f26268ec7b9623388c38861b78b309d607fdb37f76b28b4fe68420ab658ac91\",\"com.docker.compose.container-number\":\"1\",\"com.docker.compose.depends_on\":\"\",\"com.docker.compose.image\":\"sha256:2d2f77837385f202b1947fc3ed62421de344f0ced47dde360ca5afdad11b51fa\",\"com.docker.compose.oneoff\":\"False\",\"com.docker.compose.project\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1\",\"com.docker.compose.project.config_files\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\\\\compose.restart.yaml\",\"com.docker.compose.project.working_dir\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\",\"com.docker.compose.service\":\"kafka\",\"com.docker.compose.version\":\"2.40.3\",\"org.label-schema.build-date\":\"2026-05-13\",\"org.label-schema.description\":\"Apache Kafka\",\"org.label-schema.name\":\"kafka\",\"org.label-schema.vcs-url\":\"https://github.com/apache/kafka\",\"org.opencontainers.image.authors\":\"Apache Kafka\"},\"state\":{\"Dead\":false,\"Error\":\"\",\"ExitCode\":0,\"FinishedAt\":\"2026-09-17T12:27:20.356439224Z\",\"Health\":{\"FailingStreak\":0,\"Log\":[{\"End\":\"2026-09-17T12:27:18.49706555Z\",\"ExitCode\":0,\"Output\":\"\",\"Start\":\"2026-09-17T12:27:17.301763051Z\"},{\"End\":\"2026-09-17T12:27:41.389805838Z\",\"ExitCode\":0,\"Output\":\"\",\"Start\":\"2026-09-17T12:27:40.146035879Z\"}],\"Status\":\"healthy\"},\"OOMKilled\":false,\"Paused\":false,\"Pid\":1655985,\"Restarting\":false,\"Running\":true,\"StartedAt\":\"2026-09-17T12:27:36.916742204Z\",\"Status\":\"running\"},\"image\":\"sha256:2d2f77837385f202b1947fc3ed62421de344f0ced47dde360ca5afdad11b51fa\",\"mounts\":[{\"Destination\":\"/var/lib/kafka/data\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_kafka-data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_kafka-data/_data\",\"Type\":\"volume\"},{\"Destination\":\"/etc/kafka/secrets\",\"Driver\":\"local\",\"Mode\":\"\",\"Name\":\"57f71ebf237b13d741b05e3ba6b399c36e8db51948e27c6ab62dc83a41690719\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/57f71ebf237b13d741b05e3ba6b399c36e8db51948e27c6ab62dc83a41690719/_data\",\"Type\":\"volume\"},{\"Destination\":\"/mnt/shared/config\",\"Driver\":\"local\",\"Mode\":\"\",\"Name\":\"d409a05d19768dc99c7da452c24605dde7bc3eeb436efefc7538549902640783\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/d409a05d19768dc99c7da452c24605dde7bc3eeb436efefc7538549902640783/_data\",\"Type\":\"volume\"}]}\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:42.092842+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{\"name\":{{json .Name}},\"id\":{{json .Id}},\"labels\":{{json .Config.Labels}},\"state\":{{json .State}},\"image\":{{json .Image}},\"mounts\":{{json .Mounts}}}",
+      "caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-kafka-1"
+    ],
+    "started_at": "2026-09-17T12:27:41.950631+00:00",
+    "exit_code": 0,
+    "stdout": "{\"name\":\"/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-kafka-1\",\"id\":\"9e0f2a7ec82badc232a745034b32899beaace7df829f9b6e4ead397ec1c461bf\",\"labels\":{\"com.docker.compose.config-hash\":\"1f26268ec7b9623388c38861b78b309d607fdb37f76b28b4fe68420ab658ac91\",\"com.docker.compose.container-number\":\"1\",\"com.docker.compose.depends_on\":\"\",\"com.docker.compose.image\":\"sha256:2d2f77837385f202b1947fc3ed62421de344f0ced47dde360ca5afdad11b51fa\",\"com.docker.compose.oneoff\":\"False\",\"com.docker.compose.project\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1\",\"com.docker.compose.project.config_files\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\\\\compose.restart.yaml\",\"com.docker.compose.project.working_dir\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\",\"com.docker.compose.service\":\"kafka\",\"com.docker.compose.version\":\"2.40.3\",\"org.label-schema.build-date\":\"2026-05-13\",\"org.label-schema.description\":\"Apache Kafka\",\"org.label-schema.name\":\"kafka\",\"org.label-schema.vcs-url\":\"https://github.com/apache/kafka\",\"org.opencontainers.image.authors\":\"Apache Kafka\"},\"state\":{\"Dead\":false,\"Error\":\"\",\"ExitCode\":0,\"FinishedAt\":\"2026-09-17T12:27:20.356439224Z\",\"Health\":{\"FailingStreak\":0,\"Log\":[{\"End\":\"2026-09-17T12:27:18.49706555Z\",\"ExitCode\":0,\"Output\":\"\",\"Start\":\"2026-09-17T12:27:17.301763051Z\"},{\"End\":\"2026-09-17T12:27:41.389805838Z\",\"ExitCode\":0,\"Output\":\"\",\"Start\":\"2026-09-17T12:27:40.146035879Z\"}],\"Status\":\"healthy\"},\"OOMKilled\":false,\"Paused\":false,\"Pid\":1655985,\"Restarting\":false,\"Running\":true,\"StartedAt\":\"2026-09-17T12:27:36.916742204Z\",\"Status\":\"running\"},\"image\":\"sha256:2d2f77837385f202b1947fc3ed62421de344f0ced47dde360ca5afdad11b51fa\",\"mounts\":[{\"Destination\":\"/var/lib/kafka/data\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_kafka-data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_kafka-data/_data\",\"Type\":\"volume\"},{\"Destination\":\"/etc/kafka/secrets\",\"Driver\":\"local\",\"Mode\":\"\",\"Name\":\"57f71ebf237b13d741b05e3ba6b399c36e8db51948e27c6ab62dc83a41690719\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/57f71ebf237b13d741b05e3ba6b399c36e8db51948e27c6ab62dc83a41690719/_data\",\"Type\":\"volume\"},{\"Destination\":\"/mnt/shared/config\",\"Driver\":\"local\",\"Mode\":\"\",\"Name\":\"d409a05d19768dc99c7da452c24605dde7bc3eeb436efefc7538549902640783\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/d409a05d19768dc99c7da452c24605dde7bc3eeb436efefc7538549902640783/_data\",\"Type\":\"volume\"}]}\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:42.093357+00:00",
+    "event": "same_persisted_server_restarted",
+    "service": "kafka",
+    "container_id": "9e0f2a7ec82badc232a745034b32899beaace7df829f9b6e4ead397ec1c461bf",
+    "before_started_at": "2026-09-17T12:27:13.96071505Z",
+    "after_started_at": "2026-09-17T12:27:36.916742204Z"
+  },
+  {
+    "at": "2026-09-17T12:27:43.099025+00:00",
+    "event": "kafka_recovered",
+    "event_id": "a3a2b170-1b76-40e3-9586-c4448b5387c5",
+    "final": {
+      "jobs": [
+        {
+          "job_id": "9862393d-f846-4d6e-bc32-b4be26a376ca",
+          "status": "RUNNING"
+        }
+      ],
+      "inbox": [
+        {
+          "event_id": "a3648d1f-9299-470b-a751-77217ed6ed4d"
+        }
+      ],
+      "outbox": [
+        {
+          "event_id": "a3a2b170-1b76-40e3-9586-c4448b5387c5",
+          "published_at": "2026-09-17 12:27:37.165980+00:00"
+        }
+      ]
+    },
+    "runtime_owner": "8458e20e-c714-4beb-b49e-58f4175744da",
+    "broker_records": 1
+  },
+  {
+    "at": "2026-09-17T12:27:43.238211+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{\"name\":{{json .Name}},\"id\":{{json .Id}},\"labels\":{{json .Config.Labels}},\"state\":{{json .State}},\"image\":{{json .Image}},\"mounts\":{{json .Mounts}}}",
+      "caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-kafka-1"
+    ],
+    "started_at": "2026-09-17T12:27:43.102590+00:00",
+    "exit_code": 0,
+    "stdout": "{\"name\":\"/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-kafka-1\",\"id\":\"9e0f2a7ec82badc232a745034b32899beaace7df829f9b6e4ead397ec1c461bf\",\"labels\":{\"com.docker.compose.config-hash\":\"1f26268ec7b9623388c38861b78b309d607fdb37f76b28b4fe68420ab658ac91\",\"com.docker.compose.container-number\":\"1\",\"com.docker.compose.depends_on\":\"\",\"com.docker.compose.image\":\"sha256:2d2f77837385f202b1947fc3ed62421de344f0ced47dde360ca5afdad11b51fa\",\"com.docker.compose.oneoff\":\"False\",\"com.docker.compose.project\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1\",\"com.docker.compose.project.config_files\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\\\\compose.restart.yaml\",\"com.docker.compose.project.working_dir\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\",\"com.docker.compose.service\":\"kafka\",\"com.docker.compose.version\":\"2.40.3\",\"org.label-schema.build-date\":\"2026-05-13\",\"org.label-schema.description\":\"Apache Kafka\",\"org.label-schema.name\":\"kafka\",\"org.label-schema.vcs-url\":\"https://github.com/apache/kafka\",\"org.opencontainers.image.authors\":\"Apache Kafka\"},\"state\":{\"Dead\":false,\"Error\":\"\",\"ExitCode\":0,\"FinishedAt\":\"2026-09-17T12:27:20.356439224Z\",\"Health\":{\"FailingStreak\":0,\"Log\":[{\"End\":\"2026-09-17T12:27:18.49706555Z\",\"ExitCode\":0,\"Output\":\"\",\"Start\":\"2026-09-17T12:27:17.301763051Z\"},{\"End\":\"2026-09-17T12:27:41.389805838Z\",\"ExitCode\":0,\"Output\":\"\",\"Start\":\"2026-09-17T12:27:40.146035879Z\"}],\"Status\":\"healthy\"},\"OOMKilled\":false,\"Paused\":false,\"Pid\":1655985,\"Restarting\":false,\"Running\":true,\"StartedAt\":\"2026-09-17T12:27:36.916742204Z\",\"Status\":\"running\"},\"image\":\"sha256:2d2f77837385f202b1947fc3ed62421de344f0ced47dde360ca5afdad11b51fa\",\"mounts\":[{\"Destination\":\"/var/lib/kafka/data\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_kafka-data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_kafka-data/_data\",\"Type\":\"volume\"},{\"Destination\":\"/etc/kafka/secrets\",\"Driver\":\"local\",\"Mode\":\"\",\"Name\":\"57f71ebf237b13d741b05e3ba6b399c36e8db51948e27c6ab62dc83a41690719\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/57f71ebf237b13d741b05e3ba6b399c36e8db51948e27c6ab62dc83a41690719/_data\",\"Type\":\"volume\"},{\"Destination\":\"/mnt/shared/config\",\"Driver\":\"local\",\"Mode\":\"\",\"Name\":\"d409a05d19768dc99c7da452c24605dde7bc3eeb436efefc7538549902640783\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/d409a05d19768dc99c7da452c24605dde7bc3eeb436efefc7538549902640783/_data\",\"Type\":\"volume\"}]}\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:43.364982+00:00",
+    "event": "fixture",
+    "database": "caseflow_test_4aabe834167f48759db735f2a921cf20",
+    "topic": "caseflow_restart_0d97cdf621554cf8acf6a3775d6c0956",
+    "group": "caseflow_restart_4ff1f8fd3aea439a9a7b330a5dbf083c",
+    "job_id": "c26ee269-645d-41ca-bd24-87c159f621e6"
+  },
+  {
+    "at": "2026-09-17T12:27:43.814332+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{\"name\":{{json .Name}},\"id\":{{json .Id}},\"labels\":{{json .Config.Labels}},\"state\":{{json .State}},\"image\":{{json .Image}},\"mounts\":{{json .Mounts}}}",
+      "caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-postgres-1"
+    ],
+    "started_at": "2026-09-17T12:27:43.673277+00:00",
+    "exit_code": 0,
+    "stdout": "{\"name\":\"/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-postgres-1\",\"id\":\"24e0f51941ef6987db74e03d768ea1509587b341a026326633b9003fabc71e6b\",\"labels\":{\"com.docker.compose.config-hash\":\"f5b6cc9cb07bbe56288190d001bf10b0f11c90fcaac4f984738f4fa50af2ec37\",\"com.docker.compose.container-number\":\"1\",\"com.docker.compose.depends_on\":\"\",\"com.docker.compose.image\":\"sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af\",\"com.docker.compose.oneoff\":\"False\",\"com.docker.compose.project\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1\",\"com.docker.compose.project.config_files\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\\\\compose.restart.yaml\",\"com.docker.compose.project.working_dir\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\",\"com.docker.compose.service\":\"postgres\",\"com.docker.compose.version\":\"2.40.3\"},\"state\":{\"Dead\":false,\"Error\":\"\",\"ExitCode\":0,\"FinishedAt\":\"0001-01-01T00:00:00Z\",\"Health\":{\"FailingStreak\":0,\"Log\":[{\"End\":\"2026-09-17T12:27:34.698882949Z\",\"ExitCode\":0,\"Output\":\"/var/run/postgresql:5432 - accepting connections\\n\",\"Start\":\"2026-09-17T12:27:34.654911625Z\"},{\"End\":\"2026-09-17T12:27:36.742956643Z\",\"ExitCode\":0,\"Output\":\"/var/run/postgresql:5432 - accepting connections\\n\",\"Start\":\"2026-09-17T12:27:36.699869103Z\"},{\"End\":\"2026-09-17T12:27:38.788745417Z\",\"ExitCode\":0,\"Output\":\"/var/run/postgresql:5432 - accepting connections\\n\",\"Start\":\"2026-09-17T12:27:38.743515137Z\"},{\"End\":\"2026-09-17T12:27:40.834537253Z\",\"ExitCode\":0,\"Output\":\"/var/run/postgresql:5432 - accepting connections\\n\",\"Start\":\"2026-09-17T12:27:40.789487443Z\"},{\"End\":\"2026-09-17T12:27:42.877538244Z\",\"ExitCode\":0,\"Output\":\"/var/run/postgresql:5432 - accepting connections\\n\",\"Start\":\"2026-09-17T12:27:42.835404126Z\"}],\"Status\":\"healthy\"},\"OOMKilled\":false,\"Paused\":false,\"Pid\":1653242,\"Restarting\":false,\"Running\":true,\"StartedAt\":\"2026-09-17T12:27:13.968789933Z\",\"Status\":\"running\"},\"image\":\"sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af\",\"mounts\":[{\"Destination\":\"/docker-entrypoint-initdb.d/01-roles.sh\",\"Mode\":\"ro\",\"Propagation\":\"rprivate\",\"RW\":false,\"Source\":\"/run/desktop/mnt/host/f/Me/Project/caseflow-cloud/infrastructure/local/init-db.sh\",\"Type\":\"bind\"},{\"Destination\":\"/var/lib/postgresql\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_postgres-data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_postgres-data/_data\",\"Type\":\"volume\"}]}\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:44.844774+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "stop",
+      "--time",
+      "1",
+      "24e0f51941ef6987db74e03d768ea1509587b341a026326633b9003fabc71e6b"
+    ],
+    "started_at": "2026-09-17T12:27:43.814844+00:00",
+    "exit_code": 0,
+    "stdout": "Flag --time has been deprecated, use --timeout instead\n24e0f51941ef6987db74e03d768ea1509587b341a026326633b9003fabc71e6b\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:44.989960+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{\"name\":{{json .Name}},\"id\":{{json .Id}},\"labels\":{{json .Config.Labels}},\"state\":{{json .State}},\"image\":{{json .Image}},\"mounts\":{{json .Mounts}}}",
+      "caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-postgres-1"
+    ],
+    "started_at": "2026-09-17T12:27:44.845287+00:00",
+    "exit_code": 0,
+    "stdout": "{\"name\":\"/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-postgres-1\",\"id\":\"24e0f51941ef6987db74e03d768ea1509587b341a026326633b9003fabc71e6b\",\"labels\":{\"com.docker.compose.config-hash\":\"f5b6cc9cb07bbe56288190d001bf10b0f11c90fcaac4f984738f4fa50af2ec37\",\"com.docker.compose.container-number\":\"1\",\"com.docker.compose.depends_on\":\"\",\"com.docker.compose.image\":\"sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af\",\"com.docker.compose.oneoff\":\"False\",\"com.docker.compose.project\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1\",\"com.docker.compose.project.config_files\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\\\\compose.restart.yaml\",\"com.docker.compose.project.working_dir\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\",\"com.docker.compose.service\":\"postgres\",\"com.docker.compose.version\":\"2.40.3\"},\"state\":{\"Dead\":false,\"Error\":\"\",\"ExitCode\":0,\"FinishedAt\":\"2026-09-17T12:27:44.083514447Z\",\"Health\":{\"FailingStreak\":0,\"Log\":[{\"End\":\"2026-09-17T12:27:34.698882949Z\",\"ExitCode\":0,\"Output\":\"/var/run/postgresql:5432 - accepting connections\\n\",\"Start\":\"2026-09-17T12:27:34.654911625Z\"},{\"End\":\"2026-09-17T12:27:36.742956643Z\",\"ExitCode\":0,\"Output\":\"/var/run/postgresql:5432 - accepting connections\\n\",\"Start\":\"2026-09-17T12:27:36.699869103Z\"},{\"End\":\"2026-09-17T12:27:38.788745417Z\",\"ExitCode\":0,\"Output\":\"/var/run/postgresql:5432 - accepting connections\\n\",\"Start\":\"2026-09-17T12:27:38.743515137Z\"},{\"End\":\"2026-09-17T12:27:40.834537253Z\",\"ExitCode\":0,\"Output\":\"/var/run/postgresql:5432 - accepting connections\\n\",\"Start\":\"2026-09-17T12:27:40.789487443Z\"},{\"End\":\"2026-09-17T12:27:42.877538244Z\",\"ExitCode\":0,\"Output\":\"/var/run/postgresql:5432 - accepting connections\\n\",\"Start\":\"2026-09-17T12:27:42.835404126Z\"}],\"Status\":\"unhealthy\"},\"OOMKilled\":false,\"Paused\":false,\"Pid\":0,\"Restarting\":false,\"Running\":false,\"StartedAt\":\"2026-09-17T12:27:13.968789933Z\",\"Status\":\"exited\"},\"image\":\"sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af\",\"mounts\":[{\"Destination\":\"/var/lib/postgresql\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_postgres-data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_postgres-data/_data\",\"Type\":\"volume\"},{\"Destination\":\"/docker-entrypoint-initdb.d/01-roles.sh\",\"Mode\":\"ro\",\"Propagation\":\"rprivate\",\"RW\":false,\"Source\":\"/run/desktop/mnt/host/f/Me/Project/caseflow-cloud/infrastructure/local/init-db.sh\",\"Type\":\"bind\"}]}\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:44.992021+00:00",
+    "event": "worker_log",
+    "worker_event": "scheduling_retry",
+    "error_type": "OperationalError"
+  },
+  {
+    "at": "2026-09-17T12:27:45.298044+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{\"name\":{{json .Name}},\"id\":{{json .Id}},\"labels\":{{json .Config.Labels}},\"state\":{{json .State}},\"image\":{{json .Image}},\"mounts\":{{json .Mounts}}}",
+      "caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-postgres-1"
+    ],
+    "started_at": "2026-09-17T12:27:45.157032+00:00",
+    "exit_code": 0,
+    "stdout": "{\"name\":\"/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-postgres-1\",\"id\":\"24e0f51941ef6987db74e03d768ea1509587b341a026326633b9003fabc71e6b\",\"labels\":{\"com.docker.compose.config-hash\":\"f5b6cc9cb07bbe56288190d001bf10b0f11c90fcaac4f984738f4fa50af2ec37\",\"com.docker.compose.container-number\":\"1\",\"com.docker.compose.depends_on\":\"\",\"com.docker.compose.image\":\"sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af\",\"com.docker.compose.oneoff\":\"False\",\"com.docker.compose.project\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1\",\"com.docker.compose.project.config_files\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\\\\compose.restart.yaml\",\"com.docker.compose.project.working_dir\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\",\"com.docker.compose.service\":\"postgres\",\"com.docker.compose.version\":\"2.40.3\"},\"state\":{\"Dead\":false,\"Error\":\"\",\"ExitCode\":0,\"FinishedAt\":\"2026-09-17T12:27:44.083514447Z\",\"Health\":{\"FailingStreak\":0,\"Log\":[{\"End\":\"2026-09-17T12:27:34.698882949Z\",\"ExitCode\":0,\"Output\":\"/var/run/postgresql:5432 - accepting connections\\n\",\"Start\":\"2026-09-17T12:27:34.654911625Z\"},{\"End\":\"2026-09-17T12:27:36.742956643Z\",\"ExitCode\":0,\"Output\":\"/var/run/postgresql:5432 - accepting connections\\n\",\"Start\":\"2026-09-17T12:27:36.699869103Z\"},{\"End\":\"2026-09-17T12:27:38.788745417Z\",\"ExitCode\":0,\"Output\":\"/var/run/postgresql:5432 - accepting connections\\n\",\"Start\":\"2026-09-17T12:27:38.743515137Z\"},{\"End\":\"2026-09-17T12:27:40.834537253Z\",\"ExitCode\":0,\"Output\":\"/var/run/postgresql:5432 - accepting connections\\n\",\"Start\":\"2026-09-17T12:27:40.789487443Z\"},{\"End\":\"2026-09-17T12:27:42.877538244Z\",\"ExitCode\":0,\"Output\":\"/var/run/postgresql:5432 - accepting connections\\n\",\"Start\":\"2026-09-17T12:27:42.835404126Z\"}],\"Status\":\"unhealthy\"},\"OOMKilled\":false,\"Paused\":false,\"Pid\":0,\"Restarting\":false,\"Running\":false,\"StartedAt\":\"2026-09-17T12:27:13.968789933Z\",\"Status\":\"exited\"},\"image\":\"sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af\",\"mounts\":[{\"Destination\":\"/var/lib/postgresql\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_postgres-data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_postgres-data/_data\",\"Type\":\"volume\"},{\"Destination\":\"/docker-entrypoint-initdb.d/01-roles.sh\",\"Mode\":\"ro\",\"Propagation\":\"rprivate\",\"RW\":false,\"Source\":\"/run/desktop/mnt/host/f/Me/Project/caseflow-cloud/infrastructure/local/init-db.sh\",\"Type\":\"bind\"}]}\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:45.441062+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{\"name\":{{json .Name}},\"id\":{{json .Id}},\"labels\":{{json .Config.Labels}},\"state\":{{json .State}},\"image\":{{json .Image}},\"mounts\":{{json .Mounts}}}",
+      "caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-postgres-1"
+    ],
+    "started_at": "2026-09-17T12:27:45.302731+00:00",
+    "exit_code": 0,
+    "stdout": "{\"name\":\"/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-postgres-1\",\"id\":\"24e0f51941ef6987db74e03d768ea1509587b341a026326633b9003fabc71e6b\",\"labels\":{\"com.docker.compose.config-hash\":\"f5b6cc9cb07bbe56288190d001bf10b0f11c90fcaac4f984738f4fa50af2ec37\",\"com.docker.compose.container-number\":\"1\",\"com.docker.compose.depends_on\":\"\",\"com.docker.compose.image\":\"sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af\",\"com.docker.compose.oneoff\":\"False\",\"com.docker.compose.project\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1\",\"com.docker.compose.project.config_files\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\\\\compose.restart.yaml\",\"com.docker.compose.project.working_dir\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\",\"com.docker.compose.service\":\"postgres\",\"com.docker.compose.version\":\"2.40.3\"},\"state\":{\"Dead\":false,\"Error\":\"\",\"ExitCode\":0,\"FinishedAt\":\"2026-09-17T12:27:44.083514447Z\",\"Health\":{\"FailingStreak\":0,\"Log\":[{\"End\":\"2026-09-17T12:27:34.698882949Z\",\"ExitCode\":0,\"Output\":\"/var/run/postgresql:5432 - accepting connections\\n\",\"Start\":\"2026-09-17T12:27:34.654911625Z\"},{\"End\":\"2026-09-17T12:27:36.742956643Z\",\"ExitCode\":0,\"Output\":\"/var/run/postgresql:5432 - accepting connections\\n\",\"Start\":\"2026-09-17T12:27:36.699869103Z\"},{\"End\":\"2026-09-17T12:27:38.788745417Z\",\"ExitCode\":0,\"Output\":\"/var/run/postgresql:5432 - accepting connections\\n\",\"Start\":\"2026-09-17T12:27:38.743515137Z\"},{\"End\":\"2026-09-17T12:27:40.834537253Z\",\"ExitCode\":0,\"Output\":\"/var/run/postgresql:5432 - accepting connections\\n\",\"Start\":\"2026-09-17T12:27:40.789487443Z\"},{\"End\":\"2026-09-17T12:27:42.877538244Z\",\"ExitCode\":0,\"Output\":\"/var/run/postgresql:5432 - accepting connections\\n\",\"Start\":\"2026-09-17T12:27:42.835404126Z\"}],\"Status\":\"unhealthy\"},\"OOMKilled\":false,\"Paused\":false,\"Pid\":0,\"Restarting\":false,\"Running\":false,\"StartedAt\":\"2026-09-17T12:27:13.968789933Z\",\"Status\":\"exited\"},\"image\":\"sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af\",\"mounts\":[{\"Destination\":\"/docker-entrypoint-initdb.d/01-roles.sh\",\"Mode\":\"ro\",\"Propagation\":\"rprivate\",\"RW\":false,\"Source\":\"/run/desktop/mnt/host/f/Me/Project/caseflow-cloud/infrastructure/local/init-db.sh\",\"Type\":\"bind\"},{\"Destination\":\"/var/lib/postgresql\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_postgres-data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_postgres-data/_data\",\"Type\":\"volume\"}]}\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:45.579252+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{\"name\":{{json .Name}},\"id\":{{json .Id}},\"labels\":{{json .Config.Labels}},\"state\":{{json .State}},\"image\":{{json .Image}},\"mounts\":{{json .Mounts}}}",
+      "caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-postgres-1"
+    ],
+    "started_at": "2026-09-17T12:27:45.441573+00:00",
+    "exit_code": 0,
+    "stdout": "{\"name\":\"/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-postgres-1\",\"id\":\"24e0f51941ef6987db74e03d768ea1509587b341a026326633b9003fabc71e6b\",\"labels\":{\"com.docker.compose.config-hash\":\"f5b6cc9cb07bbe56288190d001bf10b0f11c90fcaac4f984738f4fa50af2ec37\",\"com.docker.compose.container-number\":\"1\",\"com.docker.compose.depends_on\":\"\",\"com.docker.compose.image\":\"sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af\",\"com.docker.compose.oneoff\":\"False\",\"com.docker.compose.project\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1\",\"com.docker.compose.project.config_files\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\\\\compose.restart.yaml\",\"com.docker.compose.project.working_dir\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\",\"com.docker.compose.service\":\"postgres\",\"com.docker.compose.version\":\"2.40.3\"},\"state\":{\"Dead\":false,\"Error\":\"\",\"ExitCode\":0,\"FinishedAt\":\"2026-09-17T12:27:44.083514447Z\",\"Health\":{\"FailingStreak\":0,\"Log\":[{\"End\":\"2026-09-17T12:27:34.698882949Z\",\"ExitCode\":0,\"Output\":\"/var/run/postgresql:5432 - accepting connections\\n\",\"Start\":\"2026-09-17T12:27:34.654911625Z\"},{\"End\":\"2026-09-17T12:27:36.742956643Z\",\"ExitCode\":0,\"Output\":\"/var/run/postgresql:5432 - accepting connections\\n\",\"Start\":\"2026-09-17T12:27:36.699869103Z\"},{\"End\":\"2026-09-17T12:27:38.788745417Z\",\"ExitCode\":0,\"Output\":\"/var/run/postgresql:5432 - accepting connections\\n\",\"Start\":\"2026-09-17T12:27:38.743515137Z\"},{\"End\":\"2026-09-17T12:27:40.834537253Z\",\"ExitCode\":0,\"Output\":\"/var/run/postgresql:5432 - accepting connections\\n\",\"Start\":\"2026-09-17T12:27:40.789487443Z\"},{\"End\":\"2026-09-17T12:27:42.877538244Z\",\"ExitCode\":0,\"Output\":\"/var/run/postgresql:5432 - accepting connections\\n\",\"Start\":\"2026-09-17T12:27:42.835404126Z\"}],\"Status\":\"unhealthy\"},\"OOMKilled\":false,\"Paused\":false,\"Pid\":0,\"Restarting\":false,\"Running\":false,\"StartedAt\":\"2026-09-17T12:27:13.968789933Z\",\"Status\":\"exited\"},\"image\":\"sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af\",\"mounts\":[{\"Destination\":\"/var/lib/postgresql\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_postgres-data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_postgres-data/_data\",\"Type\":\"volume\"},{\"Destination\":\"/docker-entrypoint-initdb.d/01-roles.sh\",\"Mode\":\"ro\",\"Propagation\":\"rprivate\",\"RW\":false,\"Source\":\"/run/desktop/mnt/host/f/Me/Project/caseflow-cloud/infrastructure/local/init-db.sh\",\"Type\":\"bind\"}]}\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:45.830759+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "ps",
+      "-aq",
+      "--filter",
+      "label=com.docker.compose.project=caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1"
+    ],
+    "started_at": "2026-09-17T12:27:45.681816+00:00",
+    "exit_code": 0,
+    "stdout": "24e0f51941ef\n9e0f2a7ec82b\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:45.972022+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{\"name\":{{json .Name}},\"labels\":{{json .Config.Labels}}}",
+      "24e0f51941ef"
+    ],
+    "started_at": "2026-09-17T12:27:45.831268+00:00",
+    "exit_code": 0,
+    "stdout": "{\"name\":\"/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-postgres-1\",\"labels\":{\"com.docker.compose.config-hash\":\"f5b6cc9cb07bbe56288190d001bf10b0f11c90fcaac4f984738f4fa50af2ec37\",\"com.docker.compose.container-number\":\"1\",\"com.docker.compose.depends_on\":\"\",\"com.docker.compose.image\":\"sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af\",\"com.docker.compose.oneoff\":\"False\",\"com.docker.compose.project\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1\",\"com.docker.compose.project.config_files\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\\\\compose.restart.yaml\",\"com.docker.compose.project.working_dir\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\",\"com.docker.compose.service\":\"postgres\",\"com.docker.compose.version\":\"2.40.3\"}}\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:46.120216+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "rm",
+      "--force",
+      "24e0f51941ef"
+    ],
+    "started_at": "2026-09-17T12:27:45.972532+00:00",
+    "exit_code": 0,
+    "stdout": "24e0f51941ef\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:46.263979+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{\"name\":{{json .Name}},\"labels\":{{json .Config.Labels}}}",
+      "9e0f2a7ec82b"
+    ],
+    "started_at": "2026-09-17T12:27:46.121239+00:00",
+    "exit_code": 0,
+    "stdout": "{\"name\":\"/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-kafka-1\",\"labels\":{\"com.docker.compose.config-hash\":\"1f26268ec7b9623388c38861b78b309d607fdb37f76b28b4fe68420ab658ac91\",\"com.docker.compose.container-number\":\"1\",\"com.docker.compose.depends_on\":\"\",\"com.docker.compose.image\":\"sha256:2d2f77837385f202b1947fc3ed62421de344f0ced47dde360ca5afdad11b51fa\",\"com.docker.compose.oneoff\":\"False\",\"com.docker.compose.project\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1\",\"com.docker.compose.project.config_files\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\\\\compose.restart.yaml\",\"com.docker.compose.project.working_dir\":\"F:\\\\Me\\\\Project\\\\caseflow-cloud\\\\tests\\\\resilience\",\"com.docker.compose.service\":\"kafka\",\"com.docker.compose.version\":\"2.40.3\",\"org.label-schema.build-date\":\"2026-05-13\",\"org.label-schema.description\":\"Apache Kafka\",\"org.label-schema.name\":\"kafka\",\"org.label-schema.vcs-url\":\"https://github.com/apache/kafka\",\"org.opencontainers.image.authors\":\"Apache Kafka\"}}\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:47.016349+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "rm",
+      "--force",
+      "9e0f2a7ec82b"
+    ],
+    "started_at": "2026-09-17T12:27:46.264491+00:00",
+    "exit_code": 0,
+    "stdout": "9e0f2a7ec82b\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:47.158405+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "ps",
+      "-aq",
+      "--filter",
+      "label=com.docker.compose.project=caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1"
+    ],
+    "started_at": "2026-09-17T12:27:47.017349+00:00",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:47.299237+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "volume",
+      "ls",
+      "-q",
+      "--filter",
+      "label=com.docker.compose.project=caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1"
+    ],
+    "started_at": "2026-09-17T12:27:47.159428+00:00",
+    "exit_code": 0,
+    "stdout": "caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_kafka-data\ncaseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_postgres-data\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:47.439572+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "volume",
+      "inspect",
+      "--format",
+      "{\"name\":{{json .Name}},\"labels\":{{json .Labels}}}",
+      "caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_kafka-data"
+    ],
+    "started_at": "2026-09-17T12:27:47.299747+00:00",
+    "exit_code": 0,
+    "stdout": "{\"name\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_kafka-data\",\"labels\":{\"com.docker.compose.config-hash\":\"d70a900ea43d9880342403f3e5036c0513efae4a937a0e2dba95ddc04b191671\",\"com.docker.compose.project\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1\",\"com.docker.compose.version\":\"2.40.3\",\"com.docker.compose.volume\":\"kafka-data\"}}\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:47.587303+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "volume",
+      "rm",
+      "caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_kafka-data"
+    ],
+    "started_at": "2026-09-17T12:27:47.440572+00:00",
+    "exit_code": 0,
+    "stdout": "caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_kafka-data\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:47.728276+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "volume",
+      "inspect",
+      "--format",
+      "{\"name\":{{json .Name}},\"labels\":{{json .Labels}}}",
+      "caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_postgres-data"
+    ],
+    "started_at": "2026-09-17T12:27:47.588326+00:00",
+    "exit_code": 0,
+    "stdout": "{\"name\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_postgres-data\",\"labels\":{\"com.docker.compose.config-hash\":\"7f5c083475019db9e98fb6ee9c0000b231b41deee55724a06895b43f66f3b8eb\",\"com.docker.compose.project\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1\",\"com.docker.compose.version\":\"2.40.3\",\"com.docker.compose.volume\":\"postgres-data\"}}\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:47.900514+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "volume",
+      "rm",
+      "caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_postgres-data"
+    ],
+    "started_at": "2026-09-17T12:27:47.728786+00:00",
+    "exit_code": 0,
+    "stdout": "caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_postgres-data\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:48.038867+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "volume",
+      "ls",
+      "-q",
+      "--filter",
+      "label=com.docker.compose.project=caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1"
+    ],
+    "started_at": "2026-09-17T12:27:47.901029+00:00",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:48.177529+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "network",
+      "ls",
+      "-q",
+      "--filter",
+      "label=com.docker.compose.project=caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1"
+    ],
+    "started_at": "2026-09-17T12:27:48.039892+00:00",
+    "exit_code": 0,
+    "stdout": "f3c0bf481e68\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:48.316702+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "network",
+      "inspect",
+      "--format",
+      "{\"name\":{{json .Name}},\"labels\":{{json .Labels}}}",
+      "f3c0bf481e68"
+    ],
+    "started_at": "2026-09-17T12:27:48.178039+00:00",
+    "exit_code": 0,
+    "stdout": "{\"name\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1_default\",\"labels\":{\"com.docker.compose.config-hash\":\"df9424356783f463888d583d6e968bd517d9b8a378f23cc505f28e7dc0770c57\",\"com.docker.compose.network\":\"default\",\"com.docker.compose.project\":\"caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1\",\"com.docker.compose.version\":\"2.40.3\"}}\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:49.028435+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "network",
+      "rm",
+      "f3c0bf481e68"
+    ],
+    "started_at": "2026-09-17T12:27:48.317209+00:00",
+    "exit_code": 0,
+    "stdout": "f3c0bf481e68\n",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:49.167662+00:00",
+    "event": "command",
+    "command": [
+      "docker",
+      "network",
+      "ls",
+      "-q",
+      "--filter",
+      "label=com.docker.compose.project=caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1"
+    ],
+    "started_at": "2026-09-17T12:27:49.029458+00:00",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "at": "2026-09-17T12:27:49.168684+00:00",
+    "event": "owned_resources_removed"
+  }
+]

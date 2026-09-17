@@ -1,0 +1,74 @@
+FF                                                                       [100%]
+================================== FAILURES ===================================
+_ test_storage_timeout_retries_without_selecting_partial_result[template-read] _
+
+uploaded_document = (Envelope(eventId=UUID('6251055d-99d8-41db-b548-bcfdcf6fa348'), eventType='document.requested', schemaVersion=1, times...7c239d42233fdd5722850252d923bc4e8a8f87243fd760df', traceContext={}), <botocore.client.S3 object at 0x00000274F70E7680>)
+boundary = 'template-read'
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000274F7393AA0>
+record_testsuite_property = <bound method LogXML.add_global_property of <_pytest.junitxml.LogXML object at 0x00000274F45A6240>>
+
+    @pytest.mark.parametrize('boundary', ['template-read', 'upload-response'])
+    def test_storage_timeout_retries_without_selecting_partial_result(uploaded_document, boundary,
+                                                                     monkeypatch, record_testsuite_property):
+        event, client = uploaded_document
+        jobs.schedule(event)
+        first = jobs.claim(uuid4())
+        worker = runtime.Runtime.__new__(runtime.Runtime)
+        original_storage = render.storage
+        started = time.monotonic()
+        with storage_timeout(client, event, boundary) as fault:
+            monkeypatch.setattr(render, 'storage', lambda: fault.client)
+            real_fail = jobs.fail
+            monkeypatch.setattr(jobs, 'fail', lambda job, code, permanent=False: real_fail(job, code, True))
+            worker.execute(first)
+            assert fault.received.is_set(), 'timeout endpoint must receive an actual request'
+            assert fault.timeouts == ['ReadTimeoutError'], 'must observe a network timeout, not a fake exception'
+            assert not fault.errors, fault.errors
+            failed = current_state()
+>           assert failed['job']['status'] == 'RETRY_WAIT'
+E           AssertionError: assert 'FAILED' == 'RETRY_WAIT'
+E
+E             - RETRY_WAIT
+E             + FAILED
+
+services\worker\tests\test_storage_timeout_recovery.py:45: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{"timestamp": "2026-09-17T12:22:27.374761+00:00", "service": "case-worker", "event": "job_failed", "kind": "DOCUMENT", "job_id": "96e5449f-e675-41b6-8a59-153969c196c5", "code": "DEPENDENCY_UNAVAILABLE"}
+_ test_storage_timeout_retries_without_selecting_partial_result[upload-response] _
+
+uploaded_document = (Envelope(eventId=UUID('a6d3b36b-9efa-4db6-8835-f7876e59b058'), eventType='document.requested', schemaVersion=1, times...b5a8bdc49dc74f0ea7f3ff62870224aa4fc480d5a76d6723', traceContext={}), <botocore.client.S3 object at 0x00000274F94C9250>)
+boundary = 'upload-response'
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000274F9402480>
+record_testsuite_property = <bound method LogXML.add_global_property of <_pytest.junitxml.LogXML object at 0x00000274F45A6240>>
+
+    @pytest.mark.parametrize('boundary', ['template-read', 'upload-response'])
+    def test_storage_timeout_retries_without_selecting_partial_result(uploaded_document, boundary,
+                                                                     monkeypatch, record_testsuite_property):
+        event, client = uploaded_document
+        jobs.schedule(event)
+        first = jobs.claim(uuid4())
+        worker = runtime.Runtime.__new__(runtime.Runtime)
+        original_storage = render.storage
+        started = time.monotonic()
+        with storage_timeout(client, event, boundary) as fault:
+            monkeypatch.setattr(render, 'storage', lambda: fault.client)
+            real_fail = jobs.fail
+            monkeypatch.setattr(jobs, 'fail', lambda job, code, permanent=False: real_fail(job, code, True))
+            worker.execute(first)
+            assert fault.received.is_set(), 'timeout endpoint must receive an actual request'
+            assert fault.timeouts == ['ReadTimeoutError'], 'must observe a network timeout, not a fake exception'
+            assert not fault.errors, fault.errors
+            failed = current_state()
+>           assert failed['job']['status'] == 'RETRY_WAIT'
+E           AssertionError: assert 'FAILED' == 'RETRY_WAIT'
+E
+E             - RETRY_WAIT
+E             + FAILED
+
+services\worker\tests\test_storage_timeout_recovery.py:45: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{"timestamp": "2026-09-17T12:22:29.775295+00:00", "service": "case-worker", "event": "job_failed", "kind": "DOCUMENT", "job_id": "5b993edf-078b-42f1-99d6-ea3cca855b3f", "code": "DEPENDENCY_UNAVAILABLE"}
+=========================== short test summary info ===========================
+FAILED services/worker/tests/test_storage_timeout_recovery.py::test_storage_timeout_retries_without_selecting_partial_result[template-read]
+FAILED services/worker/tests/test_storage_timeout_recovery.py::test_storage_timeout_retries_without_selecting_partial_result[upload-response]
+2 failed in 4.07s

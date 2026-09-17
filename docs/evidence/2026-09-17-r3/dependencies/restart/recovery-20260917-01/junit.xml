@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="2" failures="0" skipped="0" tests="11" time="10.688" timestamp="2026-09-17T08:26:43.184611-04:00" hostname="local-test-host"><testcase classname="tests.resilience.test_dependency_restart" name="test_kafka_restart_retains_pending_outbox_and_same_runtime_recovers" time="5.922"><error message="failed on setup with &quot;cimpl.KafkaException: KafkaError{code=_DESTROY,val=-197,str=&quot;Handle is terminating: Local: Broker handle destroyed for termination&quot;}&quot;">dependencies = &lt;restart_probe.Dependencies object at 0x00000198AD6124B0&gt;
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x00000198AD6130B0&gt;
+
+    @pytest.fixture
+    def fixture(dependencies, monkeypatch):
+        name = "caseflow_test_" + uuid4().hex
+        admin = dict(host="127.0.0.1", port=55432, user="caseflow_admin", dbname="caseflow",
+                     password=os.environ["DB_ADMIN_PASSWORD"], connect_timeout=5)
+        with psycopg.connect(**admin, autocommit=True) as db:
+            db.execute(sql.SQL("CREATE DATABASE {} OWNER caseflow_migrator").format(sql.Identifier(name)))
+        migrator = dict(admin, dbname=name, user="caseflow_migrator", password=os.environ["DB_MIGRATOR_PASSWORD"])
+        with psycopg.connect(**migrator) as db:
+            for path in sorted((ROOT / "db/migrations").glob("V*__*.sql"), key=lambda p: int(p.name.split("__")[0][1:])):
+                db.execute(path.read_text(encoding="utf-8"))
+            tenant, actor, case, job = [uuid4() for _ in range(4)]
+            db.execute("INSERT INTO core.identities(id,issuer,subject,display_name) VALUES (%s,%s,%s,'Synthetic restart')",
+                       (actor, "https://restart.synthetic.invalid", str(actor)))
+            db.execute("INSERT INTO core.tenants(id,name) VALUES (%s,'Synthetic restart')", (tenant,))
+            db.execute("INSERT INTO core.memberships(tenant_id,user_id,roles) VALUES (%s,%s,ARRAY['REQUESTER'])", (tenant, actor))
+            db.execute("INSERT INTO core.cases(tenant_id,id,owner_id,purchase) VALUES (%s,%s,%s,%s)", (tenant, case, actor, Jsonb({})))
+            db.execute("""INSERT INTO core.job_requests(tenant_id,job_id,case_id,kind,input,input_hash,requested_by)
+                        VALUES (%s,%s,%s,'DOCUMENT',%s,%s,%s)""", (tenant, job, case, Jsonb({"synthetic": True}), "a" * 64, actor))
+        for key, value in dict(DB_HOST="127.0.0.1", DB_PORT="55432", DB_NAME=name).items():
+            monkeypatch.setenv(key, value)
+        monkeypatch.setattr(runtime, "BROKER", BROKER)
+        topic, group = ("caseflow_restart_" + uuid4().hex for _ in range(2))
+        AdminClient({"bootstrap.servers": BROKER}).create_topics(
+&gt;           [NewTopic(topic, num_partitions=1, replication_factor=1)], request_timeout=10)[topic].result(12)
+                                                                                                  ^^^^^^^^^^
+
+tests\resilience\test_dependency_restart.py:66:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\tiany\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py:449: in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+C:\Users\tiany\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py:401: in __get_result
+    raise self._exception
+services\worker\.venv\Lib\site-packages\confluent_kafka\admin\__init__.py:136: in _make_topics_result
+    result = f.result()
+             ^^^^^^^^^^
+C:\Users\tiany\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py:449: in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = None
+
+    def __get_result(self):
+        if self._exception:
+            try:
+&gt;               raise self._exception
+E               cimpl.KafkaException: KafkaError{code=_DESTROY,val=-197,str="Handle is terminating: Local: Broker handle destroyed for termination"}
+
+C:\Users\tiany\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py:401: KafkaException</error></testcase><testcase classname="tests.resilience.test_dependency_restart" name="test_postgres_restart_rolls_back_scheduling_and_same_consumer_replays" time="4.195"><error message="failed on setup with &quot;cimpl.KafkaException: KafkaError{code=_DESTROY,val=-197,str=&quot;Handle is terminating: Local: Broker handle destroyed for termination&quot;}&quot;">dependencies = &lt;restart_probe.Dependencies object at 0x00000198AD6124B0&gt;
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x00000198AD611CD0&gt;
+
+    @pytest.fixture
+    def fixture(dependencies, monkeypatch):
+        name = "caseflow_test_" + uuid4().hex
+        admin = dict(host="127.0.0.1", port=55432, user="caseflow_admin", dbname="caseflow",
+                     password=os.environ["DB_ADMIN_PASSWORD"], connect_timeout=5)
+        with psycopg.connect(**admin, autocommit=True) as db:
+            db.execute(sql.SQL("CREATE DATABASE {} OWNER caseflow_migrator").format(sql.Identifier(name)))
+        migrator = dict(admin, dbname=name, user="caseflow_migrator", password=os.environ["DB_MIGRATOR_PASSWORD"])
+        with psycopg.connect(**migrator) as db:
+            for path in sorted((ROOT / "db/migrations").glob("V*__*.sql"), key=lambda p: int(p.name.split("__")[0][1:])):
+                db.execute(path.read_text(encoding="utf-8"))
+            tenant, actor, case, job = [uuid4() for _ in range(4)]
+            db.execute("INSERT INTO core.identities(id,issuer,subject,display_name) VALUES (%s,%s,%s,'Synthetic restart')",
+                       (actor, "https://restart.synthetic.invalid", str(actor)))
+            db.execute("INSERT INTO core.tenants(id,name) VALUES (%s,'Synthetic restart')", (tenant,))
+            db.execute("INSERT INTO core.memberships(tenant_id,user_id,roles) VALUES (%s,%s,ARRAY['REQUESTER'])", (tenant, actor))
+            db.execute("INSERT INTO core.cases(tenant_id,id,owner_id,purchase) VALUES (%s,%s,%s,%s)", (tenant, case, actor, Jsonb({})))
+            db.execute("""INSERT INTO core.job_requests(tenant_id,job_id,case_id,kind,input,input_hash,requested_by)
+                        VALUES (%s,%s,%s,'DOCUMENT',%s,%s,%s)""", (tenant, job, case, Jsonb({"synthetic": True}), "a" * 64, actor))
+        for key, value in dict(DB_HOST="127.0.0.1", DB_PORT="55432", DB_NAME=name).items():
+            monkeypatch.setenv(key, value)
+        monkeypatch.setattr(runtime, "BROKER", BROKER)
+        topic, group = ("caseflow_restart_" + uuid4().hex for _ in range(2))
+        AdminClient({"bootstrap.servers": BROKER}).create_topics(
+&gt;           [NewTopic(topic, num_partitions=1, replication_factor=1)], request_timeout=10)[topic].result(12)
+                                                                                                  ^^^^^^^^^^
+
+tests\resilience\test_dependency_restart.py:66:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\tiany\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py:449: in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+C:\Users\tiany\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py:401: in __get_result
+    raise self._exception
+services\worker\.venv\Lib\site-packages\confluent_kafka\admin\__init__.py:136: in _make_topics_result
+    result = f.result()
+             ^^^^^^^^^^
+C:\Users\tiany\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py:449: in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = None
+
+    def __get_result(self):
+        if self._exception:
+            try:
+&gt;               raise self._exception
+E               cimpl.KafkaException: KafkaError{code=_DESTROY,val=-197,str="Handle is terminating: Local: Broker handle destroyed for termination"}
+
+C:\Users\tiany\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py:401: KafkaException</error></testcase><testcase classname="tests.resilience.test_restart_guards" name="test_refuses_nonowned_resource[caseflow-local-caseflow-local-postgres-1-labels0-container]" time="0.001" /><testcase classname="tests.resilience.test_restart_guards" name="test_refuses_nonowned_resource[caseflow-r3-restart-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-caseflow-local-postgres-1-labels1-container]" time="0.001" /><testcase classname="tests.resilience.test_restart_guards" name="test_refuses_nonowned_resource[caseflow-r3-restart-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-caseflow-r3-restart-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-postgres-1-labels2-container]" time="0.000" /><testcase classname="tests.resilience.test_restart_guards" name="test_refuses_nonowned_resource[caseflow-r3-restart-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-caseflow-r3-restart-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa_postgres-data-labels3-volume]" time="0.000" /><testcase classname="tests.resilience.test_restart_guards" name="test_accepts_only_exact_owned_resource[-postgres-1-container-extra0]" time="0.000" /><testcase classname="tests.resilience.test_restart_guards" name="test_accepts_only_exact_owned_resource[-kafka-1-container-extra1]" time="0.000" /><testcase classname="tests.resilience.test_restart_guards" name="test_accepts_only_exact_owned_resource[_postgres-data-volume-extra2]" time="0.000" /><testcase classname="tests.resilience.test_restart_guards" name="test_accepts_only_exact_owned_resource[_kafka-data-volume-extra3]" time="0.000" /><testcase classname="tests.resilience.test_restart_guards" name="test_accepts_only_exact_owned_resource[_default-network-extra4]" time="0.000" /></testsuite></testsuites>

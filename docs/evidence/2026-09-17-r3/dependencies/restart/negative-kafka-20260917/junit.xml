@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="33.946" timestamp="2026-09-17T08:28:53.325225-04:00" hostname="local-test-host"><testcase classname="tests.resilience.test_dependency_restart" name="test_kafka_restart_retains_pending_outbox_and_same_runtime_recovers" time="33.460"><failure message="AssertionError: no real unavailable-broker publish failure observed">fixture = {'stack': &lt;restart_probe.Dependencies object at 0x00000264AA791C10&gt;, 'event': Envelope(eventId=UUID('4ede783d-52b4-4d8...'caseflow_restart_5e518bd0bb9f4422b70b6f46734e4e86', 'group': 'caseflow_restart_d79757d7619b41a08400bc23d6c94626', ...}
+record_testsuite_property = &lt;bound method LogXML.add_global_property of &lt;_pytest.junitxml.LogXML object at 0x00000264A7176120&gt;&gt;
+
+    def test_kafka_restart_retains_pending_outbox_and_same_runtime_recovers(fixture, record_testsuite_property):
+        stack = fixture["stack"]
+        assert jobs.schedule(fixture["event"])
+        assert jobs.claim(uuid4())
+        before = state()
+        assert len(before["outbox"]) == 1 and before["outbox"][0]["published_at"] is None
+        event_id = str(before["outbox"][0]["event_id"])
+        worker = runtime.Runtime()
+        server = stack.stop("kafka")
+        try:
+            with running(worker, worker.publish) as thread:
+&gt;               until(lambda: any(row.get("error_type") == "KafkaException" and row["event"] == "completion_publish_retry"
+                                  for row in fixture["logs"]), timeout=23, message="no real unavailable-broker publish failure observed")
+
+tests\resilience\test_dependency_restart.py:153:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+check = &lt;function test_kafka_restart_retains_pending_outbox_and_same_runtime_recovers.&lt;locals&gt;.&lt;lambda&gt; at 0x00000264AA7BACA0&gt;
+timeout = 23, message = 'no real unavailable-broker publish failure observed'
+
+    def until(check, timeout=35, message="condition not reached"):
+        deadline = time.monotonic() + timeout
+        while time.monotonic() &lt; deadline:
+            result = check()
+            if result:
+                return result
+            time.sleep(0.1)
+&gt;       raise AssertionError(message)
+E       AssertionError: no real unavailable-broker publish failure observed
+
+tests\resilience\restart_probe.py:46: AssertionError</failure></testcase></testsuite></testsuites>

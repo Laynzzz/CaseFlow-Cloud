@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="11" time="36.192" timestamp="2026-09-17T08:27:12.983563-04:00" hostname="local-test-host"><properties><property name="kafka_restart" value="{&quot;event_id&quot;: &quot;a3a2b170-1b76-40e3-9586-c4448b5387c5&quot;, &quot;final&quot;: {&quot;jobs&quot;: [{&quot;job_id&quot;: &quot;9862393d-f846-4d6e-bc32-b4be26a376ca&quot;, &quot;status&quot;: &quot;RUNNING&quot;}], &quot;inbox&quot;: [{&quot;event_id&quot;: &quot;a3648d1f-9299-470b-a751-77217ed6ed4d&quot;}], &quot;outbox&quot;: [{&quot;event_id&quot;: &quot;a3a2b170-1b76-40e3-9586-c4448b5387c5&quot;, &quot;published_at&quot;: &quot;2026-09-17 12:27:37.165980+00:00&quot;}]}, &quot;runtime_owner&quot;: &quot;8458e20e-c714-4beb-b49e-58f4175744da&quot;, &quot;broker_records&quot;: 1}" /></properties><testcase classname="tests.resilience.test_dependency_restart" name="test_kafka_restart_retains_pending_outbox_and_same_runtime_recovers" time="29.854" /><testcase classname="tests.resilience.test_dependency_restart" name="test_postgres_restart_rolls_back_scheduling_and_same_consumer_replays" time="5.827"><failure message="AssertionError">fixture = {'stack': &lt;restart_probe.Dependencies object at 0x0000028BF7CB2390&gt;, 'event': Envelope(eventId=UUID('e5f0bb12-6818-4ee...'caseflow_restart_0d97cdf621554cf8acf6a3775d6c0956', 'group': 'caseflow_restart_4ff1f8fd3aea439a9a7b330a5dbf083c', ...}
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x0000028BF7CB2EA0&gt;
+record_testsuite_property = &lt;bound method LogXML.add_global_property of &lt;_pytest.junitxml.LogXML object at 0x0000028BF4756360&gt;&gt;
+
+    def test_postgres_restart_rolls_back_scheduling_and_same_consumer_replays(fixture, monkeypatch, record_testsuite_property):
+        stack = fixture["stack"]
+        prepared, release_commit, permit_recovery = (threading.Event() for _ in range(3))
+        first = True
+        real_database = jobs.database
+        @contextmanager
+        def transaction_boundary():
+            nonlocal first
+            pause = first
+            first = False
+            if not pause:
+                assert permit_recovery.wait(45), "recovery observation deadline"
+            with real_database() as db:
+                yield db
+                if pause:
+                    # SQL really ran, but neither inbox nor job is committed yet.
+                    prepared.set()
+                    assert release_commit.wait(30), "database stop coordination deadline"
+        monkeypatch.setattr(jobs, "database", transaction_boundary)
+        offset = send(fixture)
+        worker = runtime.Runtime()
+        server = None
+        try:
+            with running(worker, worker.consume, release=lambda: (release_commit.set(), permit_recovery.set())) as thread:
+                assert prepared.wait(20), "production scheduling did not reach transaction boundary"
+                assert committed(fixture) &lt; offset + 1
+                server = stack.stop("postgres")
+                release_commit.set()
+                until(lambda: any(row["event"] == "scheduling_retry" and row.get("error_type") in
+                                  {"OperationalError", "AdminShutdown"} for row in fixture["logs"]),
+                      timeout=10, message="no actual failed database commit observed")
+                assert committed(fixture) &lt; offset + 1
+&gt;               stack.start("postgres", server)
+
+tests\resilience\test_dependency_restart.py:215:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;restart_probe.Dependencies object at 0x0000028BF7CB2390&gt;
+service = 'postgres'
+before = {'name': '/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-postgres-1', 'id': '24e0f51941ef6987db74e03d768ea15095...5cbd7e1af', ...}, 'state': {'Dead': False, 'Error': '', 'ExitCode': 0, 'FinishedAt': '0001-01-01T00:00:00Z', ...}, ...}
+
+    def start(self, service, before):
+        item = self.inspect(service)
+&gt;       assert item["id"] == before["id"] and item["mounts"] == before["mounts"]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError
+
+tests\resilience\restart_probe.py:103: AssertionError
+
+During handling of the above exception, another exception occurred:
+
+fixture = {'stack': &lt;restart_probe.Dependencies object at 0x0000028BF7CB2390&gt;, 'event': Envelope(eventId=UUID('e5f0bb12-6818-4ee...'caseflow_restart_0d97cdf621554cf8acf6a3775d6c0956', 'group': 'caseflow_restart_4ff1f8fd3aea439a9a7b330a5dbf083c', ...}
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x0000028BF7CB2EA0&gt;
+record_testsuite_property = &lt;bound method LogXML.add_global_property of &lt;_pytest.junitxml.LogXML object at 0x0000028BF4756360&gt;&gt;
+
+    def test_postgres_restart_rolls_back_scheduling_and_same_consumer_replays(fixture, monkeypatch, record_testsuite_property):
+        stack = fixture["stack"]
+        prepared, release_commit, permit_recovery = (threading.Event() for _ in range(3))
+        first = True
+        real_database = jobs.database
+        @contextmanager
+        def transaction_boundary():
+            nonlocal first
+            pause = first
+            first = False
+            if not pause:
+                assert permit_recovery.wait(45), "recovery observation deadline"
+            with real_database() as db:
+                yield db
+                if pause:
+                    # SQL really ran, but neither inbox nor job is committed yet.
+                    prepared.set()
+                    assert release_commit.wait(30), "database stop coordination deadline"
+        monkeypatch.setattr(jobs, "database", transaction_boundary)
+        offset = send(fixture)
+        worker = runtime.Runtime()
+        server = None
+        try:
+            with running(worker, worker.consume, release=lambda: (release_commit.set(), permit_recovery.set())) as thread:
+                assert prepared.wait(20), "production scheduling did not reach transaction boundary"
+                assert committed(fixture) &lt; offset + 1
+                server = stack.stop("postgres")
+                release_commit.set()
+                until(lambda: any(row["event"] == "scheduling_retry" and row.get("error_type") in
+                                  {"OperationalError", "AdminShutdown"} for row in fixture["logs"]),
+                      timeout=10, message="no actual failed database commit observed")
+                assert committed(fixture) &lt; offset + 1
+                stack.start("postgres", server)
+                rolled_back = state()
+                assert rolled_back == {"jobs": [], "inbox": [], "outbox": []}
+                stack.record("postgres_transaction_rolled_back", state=rolled_back, uncommitted_offset=committed(fixture))
+                permit_recovery.set()
+                until(lambda: committed(fixture) == offset + 1, timeout=20)
+                assert thread.is_alive()
+                recovered = state()
+                assert len(recovered["jobs"]) == len(recovered["inbox"]) == 1
+                assert recovered["jobs"][0]["status"] == "QUEUED"
+                duplicate_offset = send(fixture)
+                until(lambda: committed(fixture) == duplicate_offset + 1, timeout=20)
+                assert state() == recovered
+                evidence = dict(state=recovered, first_offset=offset, duplicate_offset=duplicate_offset,
+                                committed_offset=committed(fixture), runtime_owner=str(worker.owner))
+                stack.record("postgres_recovered_duplicate_deduplicated", **evidence)
+                record_testsuite_property("postgres_restart", json.dumps(evidence, default=str))
+        finally:
+            release_commit.set()
+            permit_recovery.set()
+            if server and not stack.inspect("postgres")["state"]["Running"]:
+&gt;               stack.start("postgres", server)
+
+tests\resilience\test_dependency_restart.py:236:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;restart_probe.Dependencies object at 0x0000028BF7CB2390&gt;
+service = 'postgres'
+before = {'name': '/caseflow-r3-restart-82089803441d4d1dadbc7073c60434e1-postgres-1', 'id': '24e0f51941ef6987db74e03d768ea15095...5cbd7e1af', ...}, 'state': {'Dead': False, 'Error': '', 'ExitCode': 0, 'FinishedAt': '0001-01-01T00:00:00Z', ...}, ...}
+
+    def start(self, service, before):
+        item = self.inspect(service)
+&gt;       assert item["id"] == before["id"] and item["mounts"] == before["mounts"]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError
+
+tests\resilience\restart_probe.py:103: AssertionError</failure></testcase><testcase classname="tests.resilience.test_restart_guards" name="test_refuses_nonowned_resource[caseflow-local-caseflow-local-postgres-1-labels0-container]" time="0.001" /><testcase classname="tests.resilience.test_restart_guards" name="test_refuses_nonowned_resource[caseflow-r3-restart-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-caseflow-local-postgres-1-labels1-container]" time="0.000" /><testcase classname="tests.resilience.test_restart_guards" name="test_refuses_nonowned_resource[caseflow-r3-restart-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-caseflow-r3-restart-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-postgres-1-labels2-container]" time="0.000" /><testcase classname="tests.resilience.test_restart_guards" name="test_refuses_nonowned_resource[caseflow-r3-restart-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-caseflow-r3-restart-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa_postgres-data-labels3-volume]" time="0.001" /><testcase classname="tests.resilience.test_restart_guards" name="test_accepts_only_exact_owned_resource[-postgres-1-container-extra0]" time="0.000" /><testcase classname="tests.resilience.test_restart_guards" name="test_accepts_only_exact_owned_resource[-kafka-1-container-extra1]" time="0.000" /><testcase classname="tests.resilience.test_restart_guards" name="test_accepts_only_exact_owned_resource[_postgres-data-volume-extra2]" time="0.000" /><testcase classname="tests.resilience.test_restart_guards" name="test_accepts_only_exact_owned_resource[_kafka-data-volume-extra3]" time="0.000" /><testcase classname="tests.resilience.test_restart_guards" name="test_accepts_only_exact_owned_resource[_default-network-extra4]" time="0.000" /></testsuite></testsuites>
