@@ -16,7 +16,7 @@ resource "aws_ebs_volume" "auxiliary" {
 }
 resource "aws_instance" "auxiliary" {
   ami                         = var.ami_id
-  instance_type               = "t3.large"
+  instance_type               = "m7i-flex.large"
   subnet_id                   = aws_subnet.public[0].id
   private_ip                  = "10.42.1.10"
   associate_public_ip_address = true

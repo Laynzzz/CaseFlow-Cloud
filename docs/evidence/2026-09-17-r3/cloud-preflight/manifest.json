@@ -1,0 +1,22 @@
+[
+  {
+    "file": "ec2-pricing.json",
+    "sha256": "fedad09edb43f10e5a878f4066ef7e8ad8506dc11f79a8cc3ab62b28b1ffbc48"
+  },
+  {
+    "file": "rds-pricing.json",
+    "sha256": "3ebc9c0931b87a8c4f1e38d855eb063a1f6927209a2ce3779d7718d6a02b5078"
+  },
+  {
+    "file": "read-only.json",
+    "sha256": "373e8b585f00968b3c1fcf5d15ebb3a2ad186428ffabba36b34e2c419478de0e"
+  },
+  {
+    "file": "summary.md",
+    "sha256": "d62cd6fe344a7e178e67559dd8468e34bd18d5db6dc0c3a2b722e3a7af7e21cf"
+  },
+  {
+    "file": "terraform-validation.txt",
+    "sha256": "631dab1d5b28dc07db49e1ef97d6a46795909cab3e520708d9d22301fb89193f"
+  }
+]

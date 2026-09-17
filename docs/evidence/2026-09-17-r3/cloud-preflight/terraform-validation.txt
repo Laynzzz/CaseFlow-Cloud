@@ -1,0 +1,12 @@
+Command: terraform -chdir=infrastructure/terraform/rehearsal fmt -check
+Command: terraform -chdir=infrastructure/terraform/rehearsal validate -no-color
+Success! The configuration is valid.
+
+Command: terraform -chdir=infrastructure/terraform/rehearsal test -no-color
+rehearsal.tftest.hcl... in progress
+  run "safe_rehearsal_defaults"... pass
+  run "invalid_sampling_is_rejected"... pass
+rehearsal.tftest.hcl... tearing down
+rehearsal.tftest.hcl... pass
+
+Success! 2 passed, 0 failed.

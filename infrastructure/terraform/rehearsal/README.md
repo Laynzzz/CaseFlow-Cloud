@@ -1,7 +1,9 @@
 # AWS rehearsal scaffold
 
-Implemented source; **offline validation only**. No AWS credentials were read,
-no account-backed plan was run, and no resource was created. Successful
+Implemented source; **offline validation plus read-only AWS preflight**. The
+limited `caseflow-rehearsal` profile is signed in as `caseflow-operator`; account
+plan, quotas, regional offerings and domain DNS were checked. No account-backed
+Terraform plan was run and no resource was created. Successful
 `validate` or mocked tests do not establish deployability, quotas, engine/AMI
 availability, permissions, health or cloud acceptance. See
 [ADR 0007](../../../docs/adr/0007-cloud-rehearsal-profile.md) and the
@@ -33,6 +35,22 @@ container writes it into an ephemeral shared volume; Java and Python use
 `verify-full` and mount it read-only. Update/review the bundle before CA rotation.
 
 ## Account and remote-state prerequisites
+
+Current onboarding uses AWS CLI 2.36.48 browser-based `aws login` with an IAM
+user, not an IAM Identity Center session. It has `ReadOnlyAccess`,
+`SignInLocalDevelopmentAccess` and `IAMUserChangePassword`; it cannot provision
+this stack. The user completed:
+
+```text
+aws login --profile caseflow-rehearsal --region us-east-1
+aws sts get-caller-identity --profile caseflow-rehearsal
+```
+
+Require the expected `user/caseflow-operator` identity, never a root session.
+Do not print/export cached credentials. SSO commands below are an alternative
+for an existing SSO environment, not an instruction to enable Organizations
+on this Free account. See [ADR 0008](../../../docs/adr/0008-free-plan-rehearsal-sizing.md)
+for the revised `db.t4g.micro` / `m7i-flex.large` instance selections.
 
 Before the account-backed phase, select the authorized AWS account/SSO role,
 region, explicit cloud spending/session limit and application/authentication

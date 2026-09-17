@@ -15,6 +15,10 @@ variables {
 run "safe_rehearsal_defaults" {
   command = plan
   assert {
+    condition     = aws_db_instance.main.instance_class == "db.t4g.micro" && aws_instance.auxiliary.instance_type == "m7i-flex.large"
+    error_message = "Default rehearsal sizes must match the reviewed Free-plan instance selection."
+  }
+  assert {
     condition     = alltrue([for service in aws_ecs_service.application : service.desired_count == 0])
     error_message = "Application tasks must remain stopped until role/secret/identity bootstrap succeeds."
   }

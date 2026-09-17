@@ -396,3 +396,12 @@ three-actor UI approval/download and a clean-source image build/deployment using
 the existing isolated database. [Claims map](claim-to-evidence.md) summarizes
 the supported statements and limits. Terraform is offline-validated; real AWS
 and hosted CI execution remain unclaimed.
+
+## R3 AWS account preflight
+
+[Read-only AWS discovery](evidence/2026-09-17-r3/cloud-preflight/summary.md)
+records the limited IAM session, active Free plan/credits, quotas, regional
+instance and image catalogs, DNS state and current list prices. Terraform sizes
+were adjusted under [ADR 0008](adr/0008-free-plan-rehearsal-sizing.md); two mocked
+tests and validation pass. No AWS resources were provisioned and the cloud
+release gate remains open.

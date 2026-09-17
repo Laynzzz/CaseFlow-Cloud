@@ -1,11 +1,15 @@
 # Short-lived AWS release rehearsal proposal
 
-Status: implemented Terraform scaffold and planning estimate, 2026-09-17; offline
-validation only. Nothing
-in this document has been provisioned or verified in AWS. `us-east-1` is the
-provisional pricing region; it is not an account or region selection made by
-the user. The USD 10 AI evaluation ledger is separate and is not AWS spending
-authorization.
+Status: implemented Terraform scaffold with live read-only account/region
+discovery, 2026-09-17. No resources have been provisioned. The user established
+a limited AWS session in `us-east-1`, has an active Free plan with USD 100 in
+credits, and registered `laynexia.com` through Porkbun. DNS delegation, deployment
+permissions and a separate cloud-usage allowance remain pending. The USD 10 AI
+evaluation ledger is separate and is not AWS spending authorization.
+
+[ADR 0008](adr/0008-free-plan-rehearsal-sizing.md) updates the initial instance
+sizes for the Free plan. [Read-only preflight evidence](evidence/2026-09-17-r3/cloud-preflight/summary.md)
+proves account state, catalog availability and quotas, not successful deployment.
 
 ## Concrete outcome
 
@@ -25,19 +29,20 @@ materially more expensive and provides little additional release evidence.
 - Two ECS/Fargate Linux x86 tasks, initially one Java API/web task and one Python
   worker task, each 0.5 vCPU/1 GiB. These are initial smoke sizes, not measured
   capacity claims. ECR repositories store immutable image digests.
-- One RDS PostgreSQL Single-AZ `db.t4g.small`, 20 GiB gp3, private subnets in two
+- One RDS PostgreSQL Single-AZ `db.t4g.micro`, 20 GiB gp3, private subnets in two
   availability zones, no public database endpoint. Preserve separate migrator,
-  Java and worker roles. Verify the exact available PostgreSQL 18 minor and
-  instance pairing with the regional RDS API before generating the apply plan;
-  local 18.6 availability does not prove identical RDS availability.
+  Java and worker roles. Regional discovery confirms PostgreSQL 18.6 with this
+  class and storage. The smaller database must pass the actual migration,
+  identity and approval smoke; regional orderability does not prove capacity.
 - S3 bucket with public access blocked, versioning, encryption and least-privilege
   task roles. Cloud storage endpoints are blank so SDK default credentials use
   task IAM roles; no static S3 keys are injected. Record the selected object
   version/checksum and execute real S3 upload/download compatibility smoke.
-- One HTTPS ALB serves the web/API host and an authentication host. ACM DNS
-  validation requires a domain the user controls. No management endpoint is
+- One HTTPS ALB serves `caseflow.laynexia.com` and `auth.laynexia.com`. ACM DNS
+  validation requires DNS control; the purchased domain currently uses Porkbun
+  nameservers, with no matching Route 53 zone yet. No management endpoint is
   included in public ALB routing. [ACM domain validation](https://docs.aws.amazon.com/acm/latest/userguide/domain-ownership-validation.html)
-- A short-lived single EC2 `t3.large` (2 vCPU/8 GiB) hosts the pinned Kafka
+- A short-lived single EC2 `m7i-flex.large` (2 vCPU/8 GiB) hosts the pinned Kafka
   broker, temporary Keycloak identity service, and small monitoring stack. Its
   30 GiB encrypted gp3 disk retains broker/monitoring state during image rollout.
   Kafka and identity share a failure domain and have no high availability;
@@ -76,18 +81,22 @@ the public AWS Price List (publication 2026-09-11) and preserved in
 | Component and assumed quantity | Rate used | 730-hour estimate |
 | --- | --- | ---: |
 | Two 0.5 vCPU/1 GiB Fargate tasks | $0.0404784/vCPU-hour + $0.004446/GiB-hour | $36.04 |
-| One `t3.large` Linux VM | $0.0835/hour | $60.96 |
-| RDS PostgreSQL `db.t4g.small` Single-AZ | $0.032/hour | $23.36 |
+| One `m7i-flex.large` Linux VM | $0.09576/hour | $69.90 |
+| RDS PostgreSQL `db.t4g.micro` Single-AZ | $0.016/hour | $11.68 |
 | RDS 20 GiB gp3 | $0.115/GiB-month | $2.30 |
 | ALB, assuming one LCU average | $0.0225/hour + $0.008/LCU-hour | $22.27 |
 | Five public IPv4 addresses: ALB minimum two, two tasks, VM | $0.005/address-hour | $18.25 |
 | VM 30 GiB data + 8 GiB root gp3 at baseline I/O | $0.08/GiB-month | $3.04 |
 | Seven runtime secrets + RDS-managed master secret | $0.40/secret-month | $3.20 |
 | ECR 2 GiB images | $0.10/GiB-month | $0.20 |
-| **Subtotal before variable logs/objects/requests/transfer** | | **$169.61** |
+| **Subtotal before DNS/variable logs/objects/requests/transfer** | | **$166.88** |
+
+The updated EC2 and RDS rates come from read-only AWS Price List queries; raw
+products are in the [preflight archive](evidence/2026-09-17-r3/cloud-preflight/summary.md).
+The previous RDS price archive records the superseded small-instance estimate.
 
 Rate sources: [Fargate](https://aws.amazon.com/fargate/pricing/),
-[EC2 T3 us-east-1 table](https://aws.amazon.com/ec2/instance-types/t3/),
+[EC2 regional Price List response](evidence/2026-09-17-r3/cloud-preflight/ec2-pricing.json),
 [RDS PostgreSQL](https://aws.amazon.com/rds/postgresql/pricing/),
 [ALB](https://aws.amazon.com/elasticloadbalancing/pricing/),
 [IPv4](https://aws.amazon.com/vpc/pricing/),
@@ -97,16 +106,22 @@ Rate sources: [Fargate](https://aws.amazon.com/fargate/pricing/),
 
 The compute/ALB/IPv4 portion is about $0.22/hour. Four running hours are about
 $0.88 before storage, logs, requests, minimum billing, transfer and setup time.
-A **$10 separately authorized AWS rehearsal budget** would provide practical
-headroom for a short session, but is a proposal only. If left running, plan for
+A **USD 10 allowance from the existing AWS credits**, for a supervised session
+targeting at most four running hours followed by teardown, would provide
+practical headroom. This remains a proposal, not authorization. Keep the Free
+plan; no paid-plan upgrade or out-of-pocket AWS charges are authorized. Credit
+metering can lag, so this is an operating allowance, not a hard metering cap.
+Include retained storage/DNS costs in the allowance and final inventory.
+If left running, plan for
 roughly $170–190/month at these small usage assumptions. Larger traces, downloads,
 RDS burst CPU credits, extra ALB capacity/addresses and retained snapshots can
 increase this. Cloud Map resource/discovery charges, Route 53 DNS queries and
 Secrets Manager API calls are additional to this subtotal. IAM roles/policies
 do not add a per-role line item here; calls to services they authorize can incur
-charges. The existing hosted-zone subscription is assumed already available;
-new DNS hosting and domain registration would be additional. Do not assume
-new-account promotional credits or a free domain.
+charges. A new Route 53 hosted zone is still needed and adds DNS hosting charges.
+Domain registration was purchased separately. The confirmed USD 100 credit
+balance is account-wide, not reserved for this project; credit eligibility and
+remaining balance must be checked during deployment.
 Budgets alerts are delayed monitoring, not a hard cap; teardown and inventory
 verification are the cost control.
 

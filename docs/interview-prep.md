@@ -776,6 +776,20 @@ S3/secret access. Retaining data after compute teardown still costs money.
 
 **What cloud experience can you honestly claim now?** Implemented Terraform,
 mocked safety checks, bootstrap redaction, configurable smoke and cost/runbook
-preparation. Actual AWS deployment and rollback remain pending account, domain
-and separate budget authorization. Do not present a local Docker rehearsal as
-a completed AWS deployment.
+preparation, plus live read-only account/region discovery. The account and domain
+are now available; actual AWS deployment and rollback remain pending deployment
+permissions, DNS delegation and separate credit-usage authorization. Do not
+present a local Docker rehearsal as a completed AWS deployment.
+
+**Why change server sizes after writing Terraform?** Account preflight revealed
+that the Free plan excludes the original sizes. We selected a supported 8 GiB
+host and a smaller supported PostgreSQL instance while preserving the service
+architecture. Follow-up: the database's reduced memory is an explicit capacity
+trade-off; mocked plans and catalog listings cannot prove the workflow runs.
+
+**Does USD 100 in credits mean every AWS service is free?** No. Plan eligibility,
+resource list prices, remaining account-wide credits and actual billing are
+different concerns. We recorded them separately and kept provisioning blocked
+until a bounded cloud allowance and deployment access are established.
+Evidence: [preflight](evidence/2026-09-17-r3/cloud-preflight/summary.md),
+[ADR 0008](adr/0008-free-plan-rehearsal-sizing.md).

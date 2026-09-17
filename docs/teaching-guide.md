@@ -1168,3 +1168,29 @@ Actual account permissions, AWS runtime behavior, cloud smoke, rollback and
 teardown are pending. Read [ADR 0007](adr/0007-cloud-rehearsal-profile.md),
 [deployment proposal](aws-deployment-proposal.md), and the
 [rehearsal runbook](../infrastructure/terraform/rehearsal/README.md) for trade-offs.
+
+### AWS onboarding: account access is separate from application sign-in
+
+AWS CLI is a command-line client running on the developer's Windows computer.
+Browser-based `aws login` obtains temporary credentials for an IAM identity.
+The project's Keycloak identities sign into CaseFlow; they do not authorize
+AWS infrastructure changes. Our AWS `caseflow-operator` user initially has
+read-only service access plus local sign-in and password-change permissions.
+The user's initial root session was replaced before account checks. IAM Identity
+Center is an alternative for an established organization; enabling Organizations
+on this Free account could change its plan, so it is not an onboarding shortcut.
+
+Read-only preflight verifies an active Free plan with USD 100 credit balance,
+regional PostgreSQL 18.6 options, instance offerings and CPU quotas. A credit
+balance does not make every instance type eligible. ADR 0008 changes the database
+to db.t4g.micro and the shared host to m7i-flex.large. The host retains 8 GiB;
+the smaller database has less memory and still needs actual runtime testing.
+We added a failing Terraform size guard before making the configuration change,
+then verified both mocked tests pass. None of this proves successful deployment.
+
+Purchasing laynexia.com reserves the name. Its DNS currently runs at Porkbun;
+the planned Route 53 hosted zone and nameserver delegation are separate steps.
+Cloud credits, the domain purchase and the hosted-AI budget are separate pools.
+No credit consumption or paid upgrade is authorized by a successful login.
+
+Evidence: [AWS preflight](evidence/2026-09-17-r3/cloud-preflight/summary.md).

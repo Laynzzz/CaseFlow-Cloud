@@ -1,0 +1,242 @@
+{
+  "capturedAt": "2026-09-17T23:15:48.0551744Z",
+  "cliVersion": "aws-cli/2.36.48 Python/3.14.6 Windows/11 exe/AMD64",
+  "profile": "caseflow-rehearsal",
+  "identityVerified": "IAM user caseflow-operator; account identifier omitted",
+  "region": "us-east-1",
+  "mutationsPerformed": false,
+  "dnsNameservers": [
+    "fortaleza.ns.porkbun.com",
+    "maceio.ns.porkbun.com",
+    "salvador.ns.porkbun.com",
+    "curitiba.ns.porkbun.com"
+  ],
+  "checks": [
+    {
+      "check": "attached-policies",
+      "arguments": [
+        "iam",
+        "list-attached-user-policies",
+        "--user-name",
+        "caseflow-operator",
+        "--query",
+        "AttachedPolicies[].PolicyName"
+      ],
+      "result": [
+        "ReadOnlyAccess",
+        "IAMUserChangePassword",
+        "SignInLocalDevelopmentAccess"
+      ]
+    },
+    {
+      "check": "account-plan",
+      "arguments": [
+        "freetier",
+        "get-account-plan-state",
+        "--query",
+        "{type:accountPlanType,status:accountPlanStatus,credits:accountPlanRemainingCredits,expires:accountPlanExpirationDate}"
+      ],
+      "result": {
+        "type": "FREE",
+        "status": "ACTIVE",
+        "credits": {
+          "amount": 100.0,
+          "unit": "USD"
+        },
+        "expires": "2027-03-17T18:46:40.724-04:00"
+      }
+    },
+    {
+      "check": "fargate-vcpu-quota",
+      "arguments": [
+        "service-quotas",
+        "get-service-quota",
+        "--service-code",
+        "fargate",
+        "--quota-code",
+        "L-3032A538",
+        "--query",
+        "Quota.{name:QuotaName,value:Value}"
+      ],
+      "result": {
+        "name": "Fargate On-Demand vCPU resource count",
+        "value": 6.0
+      }
+    },
+    {
+      "check": "ec2-vcpu-quota",
+      "arguments": [
+        "service-quotas",
+        "get-service-quota",
+        "--service-code",
+        "ec2",
+        "--quota-code",
+        "L-1216C47A",
+        "--query",
+        "Quota.{name:QuotaName,value:Value}"
+      ],
+      "result": {
+        "name": "Running On-Demand Standard (A, C, D, H, I, M, R, T, Z) instances",
+        "value": 5.0
+      }
+    },
+    {
+      "check": "free-plan-ec2-catalog",
+      "arguments": [
+        "ec2",
+        "describe-instance-types",
+        "--filters",
+        "Name=free-tier-eligible,Values=true",
+        "--query",
+        "InstanceTypes[].{type:InstanceType,memoryMiB:MemoryInfo.SizeInMiB,vcpus:VCpuInfo.DefaultVCpus,architecture:ProcessorInfo.SupportedArchitectures}"
+      ],
+      "result": [
+        {
+          "type": "t8i.micro",
+          "memoryMiB": 1024,
+          "vcpus": 2,
+          "architecture": [
+            "x86_64"
+          ]
+        },
+        {
+          "type": "c7i-flex.large",
+          "memoryMiB": 4096,
+          "vcpus": 2,
+          "architecture": [
+            "x86_64"
+          ]
+        },
+        {
+          "type": "t4g.small",
+          "memoryMiB": 2048,
+          "vcpus": 2,
+          "architecture": [
+            "arm64"
+          ]
+        },
+        {
+          "type": "t4g.micro",
+          "memoryMiB": 1024,
+          "vcpus": 2,
+          "architecture": [
+            "arm64"
+          ]
+        },
+        {
+          "type": "t3.micro",
+          "memoryMiB": 1024,
+          "vcpus": 2,
+          "architecture": [
+            "x86_64"
+          ]
+        },
+        {
+          "type": "t3.small",
+          "memoryMiB": 2048,
+          "vcpus": 2,
+          "architecture": [
+            "x86_64"
+          ]
+        },
+        {
+          "type": "m7i-flex.large",
+          "memoryMiB": 8192,
+          "vcpus": 2,
+          "architecture": [
+            "x86_64"
+          ]
+        },
+        {
+          "type": "t8i.small",
+          "memoryMiB": 2048,
+          "vcpus": 2,
+          "architecture": [
+            "x86_64"
+          ]
+        }
+      ]
+    },
+    {
+      "check": "ec2-offerings",
+      "arguments": [
+        "ec2",
+        "describe-instance-type-offerings",
+        "--location-type",
+        "availability-zone",
+        "--filters",
+        "Name=instance-type,Values=m7i-flex.large",
+        "--query",
+        "InstanceTypeOfferings[].Location"
+      ],
+      "result": [
+        "us-east-1f",
+        "us-east-1d",
+        "us-east-1b",
+        "us-east-1a",
+        "us-east-1c"
+      ]
+    },
+    {
+      "check": "rds-orderable",
+      "arguments": [
+        "rds",
+        "describe-orderable-db-instance-options",
+        "--engine",
+        "postgres",
+        "--engine-version",
+        "18.6",
+        "--db-instance-class",
+        "db.t4g.micro",
+        "--query",
+        "OrderableDBInstanceOptions[?StorageType==`gp3`].{engine:EngineVersion,class:DBInstanceClass,storage:StorageType,minStorage:MinStorageSize,zones:AvailabilityZones[].Name}"
+      ],
+      "result": {
+        "engine": "18.6",
+        "class": "db.t4g.micro",
+        "storage": "gp3",
+        "minStorage": 20,
+        "zones": [
+          "us-east-1a",
+          "us-east-1b",
+          "us-east-1c",
+          "us-east-1d",
+          "us-east-1f"
+        ]
+      }
+    },
+    {
+      "check": "ami",
+      "arguments": [
+        "ec2",
+        "describe-images",
+        "--image-ids",
+        "ami-0e34b50e714a297f1",
+        "--owners",
+        "amazon",
+        "--query",
+        "Images[].{id:ImageId,name:Name,architecture:Architecture,state:State}"
+      ],
+      "result": {
+        "id": "ami-0e34b50e714a297f1",
+        "name": "al2023-ami-2023.12.20260914.0-kernel-6.18-x86_64",
+        "architecture": "x86_64",
+        "state": "available"
+      }
+    },
+    {
+      "check": "dns-zone",
+      "arguments": [
+        "route53",
+        "list-hosted-zones-by-name",
+        "--dns-name",
+        "laynexia.com",
+        "--max-items",
+        "2",
+        "--query",
+        "HostedZones[].{name:Name,private:Config.PrivateZone}"
+      ],
+      "result": null
+    }
+  ]
+}
