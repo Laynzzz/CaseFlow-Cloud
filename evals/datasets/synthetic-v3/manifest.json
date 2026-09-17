@@ -1,0 +1,77 @@
+{
+  "version": "synthetic-v3",
+  "parentVersion": "synthetic-v2",
+  "annotationStatus": "awaiting-versioned-review",
+  "targets": {
+    "extraction": 0.9,
+    "recallAt5": 0.9,
+    "claimSupport": 0.95
+  },
+  "retirement": "All 120 v2 cases retired unchanged into development after tuning exposure.",
+  "parentFiles": {
+    "development.jsonl": {
+      "count": 60,
+      "sha256": "fec73306673b441cea651c7ad498d8645af6351e4450f13bd5213c5dbd93086a",
+      "families": [
+        "equipment",
+        "lighting",
+        "network",
+        "printing",
+        "seating",
+        "storage"
+      ]
+    },
+    "heldout.jsonl": {
+      "count": 60,
+      "sha256": "3bb2c600455389735fe266d005bd77e68711c2ff2c87c810b9030109eafe9acf",
+      "families": [
+        "audio",
+        "display",
+        "lab",
+        "safety",
+        "shipping",
+        "tools"
+      ]
+    }
+  },
+  "decision": "docs/adr/0006-ai-assisted-evaluation-review.md",
+  "frozenCandidate": {
+    "commit": "38fab84",
+    "extractionPrompt": "purchase-assistant-2026-09-15-v5",
+    "extractionSchema": "purchase-assistant-v4",
+    "reviewPrompt": "purchase-review-2026-09-16-v6",
+    "reviewSchema": "purchase-review-v5"
+  },
+  "files": {
+    "development.jsonl": {
+      "count": 120,
+      "sha256": "731f453164ba4eb437b89ea245780aefb60bacad12a00ec90c090d835307c318",
+      "families": [
+        "audio",
+        "display",
+        "equipment",
+        "lab",
+        "lighting",
+        "network",
+        "printing",
+        "safety",
+        "seating",
+        "shipping",
+        "storage",
+        "tools"
+      ]
+    },
+    "heldout.jsonl": {
+      "count": 60,
+      "sha256": "4897f4d248cac923945e0a6fa4d34a8a6a21bf4ce7809a4dc1803014cec1fe54",
+      "families": [
+        "calibration",
+        "filtration",
+        "mobility",
+        "packaging",
+        "signage",
+        "textiles"
+      ]
+    }
+  }
+}

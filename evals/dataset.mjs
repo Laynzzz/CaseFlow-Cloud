@@ -3,8 +3,8 @@ import {createHash} from 'node:crypto';
 import {join} from 'node:path';
 
 export function loadFrozenDataset(directory, version='synthetic-v1') {
-  if(!['synthetic-v1','synthetic-v2'].includes(version)) throw new Error('Unknown frozen dataset version');
-  if(version==='synthetic-v2') directory=join(directory,'datasets',version);
+  if(!['synthetic-v1','synthetic-v2','synthetic-v3'].includes(version)) throw new Error('Unknown frozen dataset version');
+  if(version!=='synthetic-v1') directory=join(directory,'datasets',version);
   const manifest=JSON.parse(readFileSync(join(directory,'manifest.json'),'utf8'));
   if(manifest.version!==version) throw new Error('Dataset version does not match its manifest');
   const splits={}, ids=new Set();

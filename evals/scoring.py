@@ -13,9 +13,9 @@ FIELDS = ("vendor", "currency", "total", "lineItems")
 
 
 def load_dataset(root=ROOT, version=None):
-    if version not in (None, 'synthetic-v1', 'synthetic-v2'):
+    if version not in (None, 'synthetic-v1', 'synthetic-v2', 'synthetic-v3'):
         raise ValueError('Unknown frozen dataset version')
-    if version == 'synthetic-v2':
+    if version in ('synthetic-v2', 'synthetic-v3'):
         root = root / 'datasets' / version
     manifest = json.loads((root / "manifest.json").read_text(encoding="utf-8"))
     if version is not None and manifest['version'] != version:
@@ -166,7 +166,7 @@ def score(cases, records, targets):
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--validate-dataset",action="store_true")
-    parser.add_argument('--dataset-version',choices=['synthetic-v1','synthetic-v2'],default='synthetic-v1')
+    parser.add_argument('--dataset-version',choices=['synthetic-v1','synthetic-v2','synthetic-v3'],default='synthetic-v1')
     parser.add_argument("--split",choices=["development","heldout"],default="development")
     parser.add_argument("--predictions",type=Path)
     parser.add_argument("--output",type=Path)
