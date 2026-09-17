@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<testsuites name="pytest tests">
+  <testsuite name="pytest" errors="0" failures="0" skipped="0" tests="6" time="1.147" timestamp="2026-09-16T23:17:34.122068-04:00" hostname="local-test-host">
+    <testcase classname="services.worker.tests.test_recovery" name="test_schedule_rolls_back_receipt_and_job_before_replay" time="0.278" />
+    <testcase classname="services.worker.tests.test_recovery" name="test_finish_rolls_back_result_status_and_event_before_replay" time="0.225" />
+    <testcase classname="services.worker.tests.test_recovery" name="test_consumer_retries_schedule_before_acknowledging_record" time="0.163" />
+    <testcase classname="services.worker.tests.test_recovery" name="test_consumer_retries_same_record_when_offset_commit_fails" time="0.161" />
+    <testcase classname="services.worker.tests.test_recovery" name="test_malformed_message_is_acknowledged_only_after_dead_letter_send" time="0.001" />
+    <testcase classname="services.worker.tests.test_recovery" name="test_publisher_repeats_same_event_after_ack_before_database_commit" time="0.194" />
+  </testsuite>
+</testsuites>

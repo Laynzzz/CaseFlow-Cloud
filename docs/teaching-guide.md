@@ -701,3 +701,45 @@ AI experimental. The manual approval/document product remains usable. See
 `docs/evidence/2026-09-16-r2/r2-acceptance.md` for the exact gate mapping and
 `heldout-v3-summary.md` in that directory for measured limits. R3 adds recovery
 and operational evidence; it must not silently relabel experimental AI as proven.
+
+## R3: why recovery has several boundaries
+
+Finance approval means the purchase is approved even if document generation
+temporarily fails. The application must preserve the document request, show its
+execution status separately, and eventually select one valid result. A retry
+must not create another approval or let an older failure replace success.
+
+The Python worker's `caseflow_worker/jobs.py` runs in the background worker and
+uses psycopg, a PostgreSQL client. Its transaction stores a consumed-event receipt
+and a durable job together. A receipt means the work is saved, not finished.
+`caseflow_worker/runtime.py` handles Kafka acknowledgements and execution. It
+commits the consumed offset only after scheduling or an acknowledged dead-letter
+record, and retries the current record when either boundary fails.
+
+Java's `CompletionHandler.java` runs inside the Spring Boot API. It checks the
+tenant, request attempt, worker ownership token and durable result before
+changing the visible status. Status, audit and the event receipt belong to one
+database transaction. Keeping Java responsible for that transaction preserves
+the business-data ownership boundary even though Python performed the work.
+
+The two publishers acknowledge Kafka before marking an outbox row published.
+A failure between those steps can send the same event again. This deliberately
+trades duplicate delivery for durable retry; consumer receipts and state checks
+must make repeated effects harmless. Broker producer idempotence alone does not
+make the SQL transaction and message send atomic.
+
+The first R3 test batch injects controlled exceptions around real database
+transactions and substitutes the Kafka transport. This makes exact boundaries
+repeatable without timing guesses. Its limitation is equally important: a fake
+acknowledgement is not a broker restart, and an exception is not a process kill.
+The [R3 map](r3-status.md) keeps those required evidence tiers separate. The
+existing small broker replay remains useful, but does not establish the planned
+10,000-redelivery or complete crash-matrix result.
+
+The recorded batch added six Python and five Java checks. Review strengthened
+two of them: dead-letter payloads must match the exact allowed fields, and the
+Java concurrency test must observe a database lock wait before releasing the
+first transaction. Merely starting two threads would allow a sequential run to
+pass. A privileged read-only test observer sees the lock state; the actual
+handler transactions retain their restricted API role. See
+[the commands and measured scope](evidence/2026-09-16-r3/recovery-contracts.md).

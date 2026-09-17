@@ -1,5 +1,16 @@
 # Evidence index
 
+## R3 first recovery batch: local database contracts
+
+[Recovery evidence](evidence/2026-09-16-r3/recovery-contracts.md) adds six Python
+and five Java tests for rollback/replay, offset acknowledgement ordering,
+publication duplication, stale/quarantined events and actual concurrent row-lock
+contention. Full suites passed 73 Python and 20 Java tests; focused reruns after
+review strengthened the dead-letter and contention assertions. Raw outputs,
+JUnit reports and negative-control observations are retained with their revisions.
+These deterministic exceptions and transport doubles do not complete the
+process-crash, 10,000-redelivery, load or cloud gates. See the [R3 map](r3-status.md).
+
 ## R2 acceptance: local experimental release
 
 [Decision and gate mapping](evidence/2026-09-16-r2/r2-acceptance.md): assisted/manual

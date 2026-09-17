@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.caseflow.cases.PurchaseTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-09-17T03:14:36.227Z" hostname="local-test-host" time="0.052">
+  <properties />
+  <testcase name="calculatesWithDecimalArithmetic()" classname="dev.caseflow.cases.PurchaseTest" time="0.028" />
+  <testcase name="permitsIncompleteDraftButPreventsSubmission()" classname="dev.caseflow.cases.PurchaseTest" time="0.006" />
+  <testcase name="rejectsFractionalPricesForZeroDecimalCurrency()" classname="dev.caseflow.cases.PurchaseTest" time="0.001" />
+  <testcase name="roundsEachLineToCurrencyMinorUnits()" classname="dev.caseflow.cases.PurchaseTest" time="0.001" />
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

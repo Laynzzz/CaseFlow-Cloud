@@ -44,7 +44,9 @@ No human time savings, production readiness or adoption is claimed.
 See [fresh results](docs/evidence/2026-09-16-r2/heldout-v3-summary.md),
 [browser evidence](docs/evidence/2026-09-16-r2/browser-journey/README.md),
 [R2 map](docs/r2-status.md), and [architecture](docs/architecture.md).
-R3 reliability and operations are the next implementation phase.
+R3 reliability and operations are now in progress; see the
+[remaining-work map](docs/r3-status.md). The first batch expands isolated
+database recovery checks before process-crash and larger broker tests.
 
 ## Run locally (PowerShell)
 

@@ -426,3 +426,39 @@ assisted/manual product plus actual evaluation. It explicitly leaves AI experime
 when provisional goals are missed. We document that limitation and preserve
 manual entry; R3 verifies recovery/operations without claiming the model was fixed.
 Evidence: `evidence/2026-09-16-r2/r2-acceptance.md` and `heldout-v3-summary.md`.
+
+## R3 recovery architecture checkpoint
+
+**What happens if finance approves a purchase and the document worker fails?**
+Approval stays recorded. Java commits the document request and outgoing event
+with the final approval. Python schedules durable work, leases execution and
+stores a result only if it still owns the current attempt and fencing token.
+The page can show a failed document job without reversing the purchase decision.
+Follow-up: bounded retries can exhaust; automatic retry is not a guarantee that
+every job eventually succeeds without operator action.
+
+**Why can the same completion event be sent twice?** Kafka may acknowledge a
+send just before the publisher loses its database transaction. The outbox row
+then remains pending and is sent again. Java checks its event receipt and the
+current job/result before committing visible status and audit together.
+Follow-up: this protects the selected business result, not exactly-once network
+delivery, rendering work or provider billing.
+
+**How do you know a recovery test proves enough?** Name its failure boundary,
+the real dependencies, the substituted dependencies and the durable assertions.
+An exception before database commit can prove rollback and replay behavior.
+A fake transport cannot prove Kafka broker recovery. Process termination,
+dependency restart and sustained redelivery need separate observed runs.
+Follow-up: forcing a lease expiry through SQL tests fencing, but it does not
+measure recovery time after a real process failure.
+
+Implementation: Python `services/worker/caseflow_worker/jobs.py` and `runtime.py`;
+Java `services/case-api/src/main/java/dev/caseflow/documents/CompletionHandler.java`.
+The [R3 map](r3-status.md) separates verified checks from remaining release gates.
+
+Evidence checkpoint: [11 new recovery tests](evidence/2026-09-16-r3/recovery-contracts.md)
+now exercise these boundaries. The duplicate-completion test observes the second
+transaction waiting on a PostgreSQL lock before allowing the first to commit.
+This establishes real contention for that pair, not scheduler fairness or
+high-volume broker behavior. Full suites passed 73 Python and 20 Java tests;
+focused final reruns cover the strengthened assertions.

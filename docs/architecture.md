@@ -90,7 +90,9 @@ corpora do not establish a general ranking advantage, so an additional vector
 database is not justified. See [retrieval decision](adr/0004-retrieval-comparison.md).
 
 Local implementation and synthetic checks are not cloud or production readiness.
-The claim-quality target, broader browser acceptance, outcome comparisons and
-cloud/operations gates are tracked separately. Read [the teaching guide](teaching-guide.md)
+R2's assisted/manual journey and evaluation are locally complete with explicitly
+experimental AI; extraction missed its quality target. Cloud and R3 recovery,
+performance and operations gates remain open in the [R3 map](r3-status.md).
+Read [the teaching guide](teaching-guide.md)
 for the evolving reasoning and [interview preparation](interview-prep.md) for
 answers grounded in actual evidence.
