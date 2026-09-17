@@ -1194,3 +1194,30 @@ Cloud credits, the domain purchase and the hosted-AI budget are separate pools.
 No credit consumption or paid upgrade is authorized by a successful login.
 
 Evidence: [AWS preflight](evidence/2026-09-17-r3/cloud-preflight/summary.md).
+
+### Owner setup versus deployment and runtime permissions
+
+The user approved USD 10 from existing AWS credits on September 17. The Free
+plan remains; cloud usage, domain registration and AI spending stay separate.
+
+`aws_access.py` is Python, using the standard library and AWS CLI, and runs once
+in the owner's AWS CloudShell. It checks the intended account/user, then creates
+three managed policies and attaches two to the existing operator when `--apply`
+is supplied. Without that flag it performs only read-only preflight. Terraform
+(HCL, run locally) adds the third policy as a permissions boundary on the five
+application roles. A boundary limits the maximum permissions a role can receive;
+its ordinary role policies still determine which subset it actually receives.
+
+Why not let the operator grant arbitrary IAM permissions? That could let it
+turn a deployment login into an account administrator. This bootstrap restricts
+role names, managed policy attachments and PassRole destinations, requires the
+boundary at creation, and does not let the operator change or remove it.
+Existing reserved roles without the boundary are rejected before any grants.
+The owner alone maintains the boundary policy.
+
+Deployment authority is still substantial: selected EC2/ALB/ACM/Cloud Map writes
+are region-wide, and DNS writes are account-wide. These limitations are explicit;
+this is not a production least-privilege certification. Static AWS validation
+and selected policy simulations passed, but actual deployment and its remaining
+permission dependencies are unverified. See [ADR 0009](adr/0009-deployment-access-bootstrap.md)
+and [access setup](../infrastructure/terraform/rehearsal/ACCESS.md).

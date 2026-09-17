@@ -1,0 +1,275 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CreateBoundedRoles",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateRole",
+        "iam:PutRolePermissionsBoundary"
+      ],
+      "Resource": [
+        "arn:aws:iam::123456789012:role/caseflow-rehearsal-execution",
+        "arn:aws:iam::123456789012:role/caseflow-rehearsal-api",
+        "arn:aws:iam::123456789012:role/caseflow-rehearsal-worker",
+        "arn:aws:iam::123456789012:role/caseflow-rehearsal-bootstrap",
+        "arn:aws:iam::123456789012:role/caseflow-rehearsal-auxiliary"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:PermissionsBoundary": "arn:aws:iam::123456789012:policy/caseflow-access-runtime-boundary"
+        }
+      }
+    },
+    {
+      "Sid": "ManageApplicationRoles",
+      "Effect": "Allow",
+      "Action": [
+        "iam:DeleteRole",
+        "iam:UpdateRole",
+        "iam:UpdateAssumeRolePolicy",
+        "iam:PutRolePolicy",
+        "iam:DeleteRolePolicy",
+        "iam:TagRole",
+        "iam:UntagRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::123456789012:role/caseflow-rehearsal-execution",
+        "arn:aws:iam::123456789012:role/caseflow-rehearsal-api",
+        "arn:aws:iam::123456789012:role/caseflow-rehearsal-worker",
+        "arn:aws:iam::123456789012:role/caseflow-rehearsal-bootstrap",
+        "arn:aws:iam::123456789012:role/caseflow-rehearsal-auxiliary"
+      ]
+    },
+    {
+      "Sid": "ManagedRuntimePolicies",
+      "Effect": "Allow",
+      "Action": [
+        "iam:AttachRolePolicy",
+        "iam:DetachRolePolicy"
+      ],
+      "Resource": [
+        "arn:aws:iam::123456789012:role/caseflow-rehearsal-execution",
+        "arn:aws:iam::123456789012:role/caseflow-rehearsal-api",
+        "arn:aws:iam::123456789012:role/caseflow-rehearsal-worker",
+        "arn:aws:iam::123456789012:role/caseflow-rehearsal-bootstrap",
+        "arn:aws:iam::123456789012:role/caseflow-rehearsal-auxiliary"
+      ],
+      "Condition": {
+        "ArnEquals": {
+          "iam:PolicyARN": [
+            "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy",
+            "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "PassApplicationRoles",
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::123456789012:role/caseflow-rehearsal-execution",
+        "arn:aws:iam::123456789012:role/caseflow-rehearsal-api",
+        "arn:aws:iam::123456789012:role/caseflow-rehearsal-worker",
+        "arn:aws:iam::123456789012:role/caseflow-rehearsal-bootstrap",
+        "arn:aws:iam::123456789012:role/caseflow-rehearsal-auxiliary"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": [
+            "ecs-tasks.amazonaws.com",
+            "ec2.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "InstanceProfile",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateInstanceProfile",
+        "iam:DeleteInstanceProfile",
+        "iam:AddRoleToInstanceProfile",
+        "iam:RemoveRoleFromInstanceProfile",
+        "iam:TagInstanceProfile",
+        "iam:UntagInstanceProfile"
+      ],
+      "Resource": [
+        "arn:aws:iam::123456789012:instance-profile/caseflow-rehearsal"
+      ]
+    },
+    {
+      "Sid": "AwsServiceRoles",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::123456789012:role/aws-service-role/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": [
+            "ecs.amazonaws.com",
+            "elasticloadbalancing.amazonaws.com",
+            "rds.amazonaws.com",
+            "servicediscovery.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "ProjectBuckets",
+      "Effect": "Allow",
+      "Action": [
+        "s3:CreateBucket",
+        "s3:DeleteBucket",
+        "s3:PutBucketPublicAccessBlock",
+        "s3:PutBucketVersioning",
+        "s3:PutEncryptionConfiguration",
+        "s3:PutBucketPolicy",
+        "s3:DeleteBucketPolicy",
+        "s3:PutBucketTagging",
+        "s3:GetBucketLocation",
+        "s3:ListBucket",
+        "s3:ListBucketVersions"
+      ],
+      "Resource": [
+        "arn:aws:s3:::caseflow-rehearsal-123456789012-us-east-1",
+        "arn:aws:s3:::caseflow-rehearsal-state-123456789012-us-east-1"
+      ]
+    },
+    {
+      "Sid": "ProjectObjectsAndState",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:GetObjectVersion",
+        "s3:PutObject",
+        "s3:DeleteObject",
+        "s3:DeleteObjectVersion"
+      ],
+      "Resource": [
+        "arn:aws:s3:::caseflow-rehearsal-123456789012-us-east-1/*",
+        "arn:aws:s3:::caseflow-rehearsal-state-123456789012-us-east-1/caseflow/rehearsal/*"
+      ]
+    },
+    {
+      "Sid": "ProjectSecretContainers",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:CreateSecret",
+        "secretsmanager:DeleteSecret",
+        "secretsmanager:RestoreSecret",
+        "secretsmanager:TagResource",
+        "secretsmanager:UntagResource",
+        "secretsmanager:UpdateSecret",
+        "secretsmanager:GetSecretValue"
+      ],
+      "Resource": [
+        "arn:aws:secretsmanager:us-east-1:123456789012:secret:caseflow-rehearsal/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1"
+        }
+      }
+    },
+    {
+      "Sid": "RdsManagedSecretCreation",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:CreateSecret",
+        "secretsmanager:TagResource"
+      ],
+      "Resource": [
+        "arn:aws:secretsmanager:us-east-1:123456789012:secret:rds!db-*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1"
+        }
+      }
+    },
+    {
+      "Sid": "DnsSetup",
+      "Effect": "Allow",
+      "Action": [
+        "route53:CreateHostedZone",
+        "route53:DeleteHostedZone",
+        "route53:ChangeTagsForResource",
+        "route53:ChangeResourceRecordSets",
+        "route53:AssociateVPCWithHostedZone",
+        "route53:DisassociateVPCFromHostedZone"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "OperateTaggedHost",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:SendCommand",
+        "ssm:StartSession"
+      ],
+      "Resource": [
+        "arn:aws:ec2:us-east-1:123456789012:instance/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "ssm:resourceTag/Project": "caseflow",
+          "aws:RequestedRegion": "us-east-1"
+        }
+      }
+    },
+    {
+      "Sid": "OperationDocuments",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:SendCommand",
+        "ssm:StartSession"
+      ],
+      "Resource": [
+        "arn:aws:ssm:us-east-1::document/AWS-RunShellScript",
+        "arn:aws:ssm:us-east-1::document/AWS-StartPortForwardingSession",
+        "arn:aws:ssm:us-east-1::document/AWS-StartPortForwardingSessionToRemoteHost"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1"
+        }
+      }
+    },
+    {
+      "Sid": "OperatorSessions",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:TerminateSession",
+        "ssm:ResumeSession"
+      ],
+      "Resource": [
+        "arn:aws:ssm:us-east-1:123456789012:session/${aws:username}-*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1"
+        }
+      }
+    },
+    {
+      "Sid": "NoPaidUpgradeOrOrganizations",
+      "Effect": "Deny",
+      "Action": [
+        "freetier:UpgradeAccountPlan",
+        "organizations:*"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}

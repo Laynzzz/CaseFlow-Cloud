@@ -405,3 +405,9 @@ instance and image catalogs, DNS state and current list prices. Terraform sizes
 were adjusted under [ADR 0008](adr/0008-free-plan-rehearsal-sizing.md); two mocked
 tests and validation pass. No AWS resources were provisioned and the cloud
 release gate remains open.
+
+[Access bootstrap validation](evidence/2026-09-17-r3/cloud-access/summary.md)
+records 14 combined Python checks, two Terraform tests, static AWS policy
+validation and 11 read-only permission simulations. The owner must still run
+the setup before deployment; policies have not been granted by the agent.
+[AWS credit allowance](aws-credit-ledger.md) records the separate USD 10 approval.

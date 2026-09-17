@@ -42,6 +42,16 @@ run "safe_rehearsal_defaults" {
     condition     = local.certificate_container.linuxParameters.capabilities.drop == ["ALL"]
     error_message = "Even the trusted certificate init process must drop Linux capabilities."
   }
+  assert {
+    condition = alltrue([for boundary in [
+      aws_iam_role.execution.permissions_boundary,
+      aws_iam_role.bootstrap.permissions_boundary,
+      aws_iam_role.auxiliary.permissions_boundary,
+      aws_iam_role.application["api"].permissions_boundary,
+      aws_iam_role.application["worker"].permissions_boundary
+    ] : boundary == "arn:aws:iam::123456789012:policy/caseflow-access-runtime-boundary"])
+    error_message = "Every application role must retain the owner-created permissions boundary."
+  }
 }
 
 run "invalid_sampling_is_rejected" {

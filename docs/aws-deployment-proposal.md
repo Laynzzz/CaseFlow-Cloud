@@ -4,8 +4,9 @@ Status: implemented Terraform scaffold with live read-only account/region
 discovery, 2026-09-17. No resources have been provisioned. The user established
 a limited AWS session in `us-east-1`, has an active Free plan with USD 100 in
 credits, and registered `laynexia.com` through Porkbun. DNS delegation, deployment
-permissions and a separate cloud-usage allowance remain pending. The USD 10 AI
-evaluation ledger is separate and is not AWS spending authorization.
+permissions remain pending. The user authorized USD 10 of existing AWS credits
+on 2026-09-17, with the account remaining on Free. The USD 10 AI evaluation
+ledger is separate from this cloud allowance.
 
 [ADR 0008](adr/0008-free-plan-rehearsal-sizing.md) updates the initial instance
 sizes for the Free plan. [Read-only preflight evidence](evidence/2026-09-17-r3/cloud-preflight/summary.md)
@@ -107,8 +108,8 @@ Rate sources: [Fargate](https://aws.amazon.com/fargate/pricing/),
 The compute/ALB/IPv4 portion is about $0.22/hour. Four running hours are about
 $0.88 before storage, logs, requests, minimum billing, transfer and setup time.
 A **USD 10 allowance from the existing AWS credits**, for a supervised session
-targeting at most four running hours followed by teardown, would provide
-practical headroom. This remains a proposal, not authorization. Keep the Free
+targeting at most four running hours followed by teardown, was authorized by
+the user on 2026-09-17. Keep the Free
 plan; no paid-plan upgrade or out-of-pocket AWS charges are authorized. Credit
 metering can lag, so this is an operating allowance, not a hard metering cap.
 Include retained storage/DNS costs in the allowance and final inventory.
@@ -167,4 +168,6 @@ and DNS control for the application/authentication hostnames (or a selected
 existing OIDC provider and its client configuration). Never paste access keys
 into chat. These prerequisites do not block local release testing or Terraform
 source preparation; they do block paid provisioning and a truthful cloud release
-claim.
+claim. The account, region, domain registration and USD 10 credit allowance
+are now established. The reviewed [one-time access setup](../infrastructure/terraform/rehearsal/ACCESS.md)
+is the next owner action; DNS delegation follows creation of its hosted zone.

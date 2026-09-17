@@ -1,9 +1,11 @@
 locals {
-  ecs_trust = jsonencode({ Version = "2012-10-17", Statement = [{ Effect = "Allow", Principal = { Service = "ecs-tasks.amazonaws.com" }, Action = "sts:AssumeRole" }] })
+  ecs_trust        = jsonencode({ Version = "2012-10-17", Statement = [{ Effect = "Allow", Principal = { Service = "ecs-tasks.amazonaws.com" }, Action = "sts:AssumeRole" }] })
+  runtime_boundary = "arn:aws:iam::${var.account_id}:policy/caseflow-access-runtime-boundary"
 }
 resource "aws_iam_role" "execution" {
-  name               = "${var.name}-execution"
-  assume_role_policy = local.ecs_trust
+  permissions_boundary = local.runtime_boundary
+  name                 = "${var.name}-execution"
+  assume_role_policy   = local.ecs_trust
 }
 resource "aws_iam_role_policy_attachment" "execution" {
   role       = aws_iam_role.execution.name
@@ -14,9 +16,10 @@ resource "aws_iam_role_policy" "execution_secrets" {
   policy = jsonencode({ Version = "2012-10-17", Statement = [{ Effect = "Allow", Action = ["secretsmanager:GetSecretValue"], Resource = [for key in ["api", "worker", "migrator"] : aws_secretsmanager_secret.runtime[key].arn] }] })
 }
 resource "aws_iam_role" "application" {
-  for_each           = toset(["api", "worker"])
-  name               = "${var.name}-${each.key}"
-  assume_role_policy = local.ecs_trust
+  permissions_boundary = local.runtime_boundary
+  for_each             = toset(["api", "worker"])
+  name                 = "${var.name}-${each.key}"
+  assume_role_policy   = local.ecs_trust
 }
 resource "aws_iam_role_policy" "objects" {
   for_each = aws_iam_role.application
@@ -26,8 +29,9 @@ resource "aws_iam_role_policy" "objects" {
   ] })
 }
 resource "aws_iam_role" "bootstrap" {
-  name               = "${var.name}-bootstrap"
-  assume_role_policy = local.ecs_trust
+  permissions_boundary = local.runtime_boundary
+  name                 = "${var.name}-bootstrap"
+  assume_role_policy   = local.ecs_trust
 }
 // Manual cleanup is constrained to document objects; selected-object protection
 // still comes from the cleanup command's locked database checks and If-Match.
@@ -47,8 +51,9 @@ resource "aws_iam_role_policy" "bootstrap" {
   ] })
 }
 resource "aws_iam_role" "auxiliary" {
-  name               = "${var.name}-auxiliary"
-  assume_role_policy = jsonencode({ Version = "2012-10-17", Statement = [{ Effect = "Allow", Principal = { Service = "ec2.amazonaws.com" }, Action = "sts:AssumeRole" }] })
+  permissions_boundary = local.runtime_boundary
+  name                 = "${var.name}-auxiliary"
+  assume_role_policy   = jsonencode({ Version = "2012-10-17", Statement = [{ Effect = "Allow", Principal = { Service = "ec2.amazonaws.com" }, Action = "sts:AssumeRole" }] })
 }
 resource "aws_iam_role_policy_attachment" "ssm" {
   role       = aws_iam_role.auxiliary.name

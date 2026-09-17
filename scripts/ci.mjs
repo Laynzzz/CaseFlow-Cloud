@@ -151,7 +151,7 @@ try {
     run('terraform-init','terraform',['-chdir=infrastructure/terraform/rehearsal','init','-backend=false','-input=false']);
     run('terraform-validate','terraform',['-chdir=infrastructure/terraform/rehearsal','validate','-no-color']);
     run('terraform-mock-tests','terraform',['-chdir=infrastructure/terraform/rehearsal','test','-no-color']);
-    run('terraform-bootstrap-test',python,['-m','pytest','infrastructure/terraform/rehearsal/test_bootstrap.py','-q','--tb=short']);
+    run('terraform-bootstrap-test',python,['-m','pytest','infrastructure/terraform/rehearsal/test_bootstrap.py','infrastructure/terraform/rehearsal/test_aws_access.py','-q','--tb=short']);
   } else if(command==='redact') {
     sanitizeArtifacts();console.log('CI text artifacts sanitized against loaded environment values.');
   } else throw new Error('Usage: node scripts/ci.mjs bootstrap|up|install|check|test [--broad]|images|scan|terraform|stop|redact [--env-file .env] [--output output/ci]');

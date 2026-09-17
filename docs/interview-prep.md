@@ -793,3 +793,18 @@ different concerns. We recorded them separately and kept provisioning blocked
 until a bounded cloud allowance and deployment access are established.
 Evidence: [preflight](evidence/2026-09-17-r3/cloud-preflight/summary.md),
 [ADR 0008](adr/0008-free-plan-rehearsal-sizing.md).
+
+**How did you separate deployment and runtime permissions?** A one-time owner
+bootstrap grants the operator selected infrastructure actions. Terraform gives
+the application roles narrower policies and an owner-controlled permissions
+boundary. The operator cannot edit that boundary or remove it. Follow-up:
+some deployment actions are regional/account-wide; stronger isolation would be
+needed in a shared production account.
+
+**What did permission testing catch before deployment?** Review found that
+preexisting unbounded role names could permit escalation, and that an EC2
+instance-size condition incorrectly blocked ancillary launch resources. Added
+preflight guards and separate launch statements address both. Offline tests,
+AWS policy validation and selected read-only simulations passed. Those checks
+do not prove a real deployment works. The USD 10 AWS-credit allowance is now
+approved; the owner grant and actual deployment remain pending.

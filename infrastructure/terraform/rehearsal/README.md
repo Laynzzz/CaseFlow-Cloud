@@ -36,6 +36,12 @@ container writes it into an ephemeral shared volume; Java and Python use
 
 ## Account and remote-state prerequisites
 
+The USD 10 AWS-credit allowance was approved on 2026-09-17. The next prerequisite
+is the owner's [one-time IAM bootstrap](ACCESS.md). Terraform now requires its
+`caseflow-access-runtime-boundary` managed policy on all five runtime roles.
+The boundary is owned outside the workload stack and cannot be edited by the
+operator. The account remains Free. Do not repeat the cloud-budget question.
+
 Current onboarding uses AWS CLI 2.36.48 browser-based `aws login` with an IAM
 user, not an IAM Identity Center session. It has `ReadOnlyAccess`,
 `SignInLocalDevelopmentAccess` and `IAMUserChangePassword`; it cannot provision

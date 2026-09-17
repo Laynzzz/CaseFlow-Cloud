@@ -60,6 +60,16 @@ Interview preparation is an ongoing part of building this project, not only a fi
   configured the ignored local API key. Keep the shared lifetime ledger ceiling
   at USD 10; this is not a fresh allowance per run or per tenant. Never print keys.
 
+- User authorized USD 10 from existing AWS credits on 2026-09-17 for the short
+  deployment/rollback rehearsal in us-east-1. Keep the AWS account on Free;
+  no Paid-plan upgrade or out-of-pocket AWS charges are authorized. This is
+  separate from the AI ledger and the purchased domain. Target at most four
+  running hours, then teardown with a retained-resource/cost inventory. Metering
+  can lag; inspect credit balance and estimates, and do not treat alerts as a cap.
+  AWS profile caseflow-rehearsal must use caseflow-operator, not root. The owner
+  performs the reviewed one-time IAM bootstrap; routine deployment uses the
+  operator. Do not ask again for the same USD 10 credit allowance.
+
 - User direction (2026-09-15): finish R2, verify its acceptance gates, and then
   continue directly into R3 without asking again if no unresolved problem blocks
   the transition. Report actual blockers and keep work that can proceed moving.

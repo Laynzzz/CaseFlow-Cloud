@@ -1,0 +1,301 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "NetworkAndDisk",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateVpc",
+        "ec2:DeleteVpc",
+        "ec2:ModifyVpcAttribute",
+        "ec2:CreateSubnet",
+        "ec2:DeleteSubnet",
+        "ec2:ModifySubnetAttribute",
+        "ec2:CreateInternetGateway",
+        "ec2:DeleteInternetGateway",
+        "ec2:AttachInternetGateway",
+        "ec2:DetachInternetGateway",
+        "ec2:CreateRouteTable",
+        "ec2:DeleteRouteTable",
+        "ec2:CreateRoute",
+        "ec2:ReplaceRoute",
+        "ec2:DeleteRoute",
+        "ec2:AssociateRouteTable",
+        "ec2:DisassociateRouteTable",
+        "ec2:ReplaceRouteTableAssociation",
+        "ec2:CreateSecurityGroup",
+        "ec2:DeleteSecurityGroup",
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:AuthorizeSecurityGroupEgress",
+        "ec2:RevokeSecurityGroupIngress",
+        "ec2:RevokeSecurityGroupEgress",
+        "ec2:ModifySecurityGroupRules",
+        "ec2:UpdateSecurityGroupRuleDescriptionsIngress",
+        "ec2:UpdateSecurityGroupRuleDescriptionsEgress",
+        "ec2:CreateVolume",
+        "ec2:DeleteVolume",
+        "ec2:AttachVolume",
+        "ec2:DetachVolume",
+        "ec2:ModifyVolume",
+        "ec2:CreateTags",
+        "ec2:DeleteTags",
+        "ec2:TerminateInstances",
+        "ec2:StopInstances",
+        "ec2:StartInstances",
+        "ec2:ModifyInstanceAttribute",
+        "ec2:ModifyInstanceMetadataOptions"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1"
+        }
+      }
+    },
+    {
+      "Sid": "LaunchReviewedInstanceSize",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:RunInstances"
+      ],
+      "Resource": [
+        "arn:aws:ec2:us-east-1:123456789012:instance/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1",
+          "ec2:InstanceType": "m7i-flex.large"
+        }
+      }
+    },
+    {
+      "Sid": "LaunchDependencies",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:RunInstances"
+      ],
+      "Resource": [
+        "arn:aws:ec2:us-east-1::image/ami-*",
+        "arn:aws:ec2:us-east-1:123456789012:subnet/*",
+        "arn:aws:ec2:us-east-1:123456789012:security-group/*",
+        "arn:aws:ec2:us-east-1:123456789012:network-interface/*",
+        "arn:aws:ec2:us-east-1:123456789012:volume/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1"
+        }
+      }
+    },
+    {
+      "Sid": "ApplicationContainers",
+      "Effect": "Allow",
+      "Action": [
+        "ecs:CreateCluster",
+        "ecs:DeleteCluster",
+        "ecs:UpdateCluster",
+        "ecs:CreateService",
+        "ecs:UpdateService",
+        "ecs:DeleteService",
+        "ecs:TagResource",
+        "ecs:UntagResource",
+        "ecs:RunTask",
+        "ecs:StopTask",
+        "ecs:DeregisterTaskDefinition"
+      ],
+      "Resource": [
+        "arn:aws:ecs:us-east-1:123456789012:cluster/caseflow-rehearsal",
+        "arn:aws:ecs:us-east-1:123456789012:service/caseflow-rehearsal/*",
+        "arn:aws:ecs:us-east-1:123456789012:task/caseflow-rehearsal/*",
+        "arn:aws:ecs:us-east-1:123456789012:task-definition/caseflow-rehearsal-*:*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1"
+        }
+      }
+    },
+    {
+      "Sid": "RegisterTaskDefinition",
+      "Effect": "Allow",
+      "Action": [
+        "ecs:RegisterTaskDefinition"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1"
+        }
+      }
+    },
+    {
+      "Sid": "Images",
+      "Effect": "Allow",
+      "Action": [
+        "ecr:CreateRepository",
+        "ecr:DeleteRepository",
+        "ecr:TagResource",
+        "ecr:UntagResource",
+        "ecr:PutImage",
+        "ecr:InitiateLayerUpload",
+        "ecr:UploadLayerPart",
+        "ecr:CompleteLayerUpload",
+        "ecr:BatchDeleteImage",
+        "ecr:PutImageScanningConfiguration",
+        "ecr:PutImageTagMutability"
+      ],
+      "Resource": [
+        "arn:aws:ecr:us-east-1:123456789012:repository/caseflow-rehearsal/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1"
+        }
+      }
+    },
+    {
+      "Sid": "EcrToken",
+      "Effect": "Allow",
+      "Action": [
+        "ecr:GetAuthorizationToken"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1"
+        }
+      }
+    },
+    {
+      "Sid": "Database",
+      "Effect": "Allow",
+      "Action": [
+        "rds:CreateDBInstance",
+        "rds:ModifyDBInstance",
+        "rds:DeleteDBInstance",
+        "rds:CreateDBSubnetGroup",
+        "rds:ModifyDBSubnetGroup",
+        "rds:DeleteDBSubnetGroup",
+        "rds:CreateDBParameterGroup",
+        "rds:ModifyDBParameterGroup",
+        "rds:DeleteDBParameterGroup",
+        "rds:AddTagsToResource",
+        "rds:RemoveTagsFromResource",
+        "rds:CreateDBSnapshot",
+        "rds:DeleteDBSnapshot"
+      ],
+      "Resource": [
+        "arn:aws:rds:us-east-1:123456789012:db:caseflow-rehearsal",
+        "arn:aws:rds:us-east-1:123456789012:subgrp:caseflow-rehearsal",
+        "arn:aws:rds:us-east-1:123456789012:pg:caseflow-rehearsal",
+        "arn:aws:rds:us-east-1:123456789012:snapshot:caseflow-rehearsal-*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1"
+        }
+      }
+    },
+    {
+      "Sid": "Edge",
+      "Effect": "Allow",
+      "Action": [
+        "elasticloadbalancing:CreateLoadBalancer",
+        "elasticloadbalancing:DeleteLoadBalancer",
+        "elasticloadbalancing:ModifyLoadBalancerAttributes",
+        "elasticloadbalancing:SetSecurityGroups",
+        "elasticloadbalancing:SetSubnets",
+        "elasticloadbalancing:CreateTargetGroup",
+        "elasticloadbalancing:DeleteTargetGroup",
+        "elasticloadbalancing:ModifyTargetGroup",
+        "elasticloadbalancing:ModifyTargetGroupAttributes",
+        "elasticloadbalancing:RegisterTargets",
+        "elasticloadbalancing:DeregisterTargets",
+        "elasticloadbalancing:CreateListener",
+        "elasticloadbalancing:DeleteListener",
+        "elasticloadbalancing:ModifyListener",
+        "elasticloadbalancing:CreateRule",
+        "elasticloadbalancing:ModifyRule",
+        "elasticloadbalancing:DeleteRule",
+        "elasticloadbalancing:AddTags",
+        "elasticloadbalancing:RemoveTags"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1"
+        }
+      }
+    },
+    {
+      "Sid": "Certificates",
+      "Effect": "Allow",
+      "Action": [
+        "acm:RequestCertificate",
+        "acm:DeleteCertificate",
+        "acm:AddTagsToCertificate",
+        "acm:RemoveTagsFromCertificate"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1"
+        }
+      }
+    },
+    {
+      "Sid": "Discovery",
+      "Effect": "Allow",
+      "Action": [
+        "servicediscovery:CreatePrivateDnsNamespace",
+        "servicediscovery:DeleteNamespace",
+        "servicediscovery:CreateService",
+        "servicediscovery:UpdateService",
+        "servicediscovery:DeleteService",
+        "servicediscovery:TagResource",
+        "servicediscovery:UntagResource"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1"
+        }
+      }
+    },
+    {
+      "Sid": "Logs",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:DeleteLogGroup",
+        "logs:PutRetentionPolicy",
+        "logs:DeleteRetentionPolicy",
+        "logs:TagResource",
+        "logs:UntagResource",
+        "logs:TagLogGroup",
+        "logs:UntagLogGroup"
+      ],
+      "Resource": [
+        "arn:aws:logs:us-east-1:123456789012:log-group:/caseflow/caseflow-rehearsal",
+        "arn:aws:logs:us-east-1:123456789012:log-group:/caseflow/caseflow-rehearsal:*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1"
+        }
+      }
+    }
+  ]
+}

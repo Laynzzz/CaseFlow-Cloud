@@ -1,0 +1,176 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "SecretsManagerEncryption",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt",
+        "kms:GenerateDataKey"
+      ],
+      "Resource": [
+        "arn:aws:kms:us-east-1:123456789012:key/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "kms:ViaService": "secretsmanager.us-east-1.amazonaws.com",
+          "kms:CallerAccount": "123456789012"
+        },
+        "ForAnyValue:StringEquals": {
+          "kms:ResourceAliases": [
+            "alias/aws/secretsmanager"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "Objects",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:GetObjectVersion",
+        "s3:PutObject",
+        "s3:DeleteObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::caseflow-rehearsal-123456789012-us-east-1/tenants/*"
+      ]
+    },
+    {
+      "Sid": "ListDocuments",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::caseflow-rehearsal-123456789012-us-east-1"
+      ],
+      "Condition": {
+        "StringLike": {
+          "s3:prefix": [
+            "tenants/*/documents/*"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "RuntimeSecrets",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:GetSecretValue",
+        "secretsmanager:PutSecretValue"
+      ],
+      "Resource": [
+        "arn:aws:secretsmanager:us-east-1:123456789012:secret:caseflow-rehearsal/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1"
+        }
+      }
+    },
+    {
+      "Sid": "RdsBootstrapSecret",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:GetSecretValue"
+      ],
+      "Resource": [
+        "arn:aws:secretsmanager:us-east-1:123456789012:secret:rds!db-*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1"
+        }
+      }
+    },
+    {
+      "Sid": "EcrToken",
+      "Effect": "Allow",
+      "Action": [
+        "ecr:GetAuthorizationToken"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1"
+        }
+      }
+    },
+    {
+      "Sid": "PullImages",
+      "Effect": "Allow",
+      "Action": [
+        "ecr:BatchCheckLayerAvailability",
+        "ecr:GetDownloadUrlForLayer",
+        "ecr:BatchGetImage"
+      ],
+      "Resource": [
+        "arn:aws:ecr:us-east-1:123456789012:repository/caseflow-rehearsal/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1"
+        }
+      }
+    },
+    {
+      "Sid": "RuntimeLogs",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Resource": [
+        "arn:aws:logs:us-east-1:123456789012:log-group:/caseflow/caseflow-rehearsal",
+        "arn:aws:logs:us-east-1:123456789012:log-group:/caseflow/caseflow-rehearsal:*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1"
+        }
+      }
+    },
+    {
+      "Sid": "ManagedNode",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:DescribeAssociation",
+        "ssm:GetDeployablePatchSnapshotForInstance",
+        "ssm:GetDocument",
+        "ssm:DescribeDocument",
+        "ssm:GetManifest",
+        "ssm:GetParameter",
+        "ssm:GetParameters",
+        "ssm:ListAssociations",
+        "ssm:ListInstanceAssociations",
+        "ssm:PutInventory",
+        "ssm:PutComplianceItems",
+        "ssm:PutConfigurePackageResult",
+        "ssm:UpdateAssociationStatus",
+        "ssm:UpdateInstanceAssociationStatus",
+        "ssm:UpdateInstanceInformation",
+        "ssmmessages:CreateControlChannel",
+        "ssmmessages:CreateDataChannel",
+        "ssmmessages:OpenControlChannel",
+        "ssmmessages:OpenDataChannel",
+        "ec2messages:AcknowledgeMessage",
+        "ec2messages:DeleteMessage",
+        "ec2messages:FailMessage",
+        "ec2messages:GetEndpoint",
+        "ec2messages:GetMessages",
+        "ec2messages:SendReply"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1"
+        }
+      }
+    }
+  ]
+}

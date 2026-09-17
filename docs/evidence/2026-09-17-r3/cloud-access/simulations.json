@@ -1,0 +1,316 @@
+[
+  {
+    "name": "role-without-boundary",
+    "expected": "implicitDeny",
+    "actions": [
+      "iam:CreateRole"
+    ],
+    "policyFiles": [
+      "policies/caseflow-access-infrastructure.json",
+      "policies/caseflow-access-identity-storage.json"
+    ],
+    "resources": [
+      "arn:aws:iam::123456789012:role/caseflow-rehearsal-api"
+    ],
+    "context": [
+      {
+        "ContextKeyName": "aws:RequestedRegion",
+        "ContextKeyValues": [
+          "us-east-1"
+        ],
+        "ContextKeyType": "string"
+      }
+    ],
+    "decisions": [
+      "implicitDeny"
+    ]
+  },
+  {
+    "name": "role-with-boundary",
+    "expected": "allowed",
+    "actions": [
+      "iam:CreateRole"
+    ],
+    "policyFiles": [
+      "policies/caseflow-access-infrastructure.json",
+      "policies/caseflow-access-identity-storage.json"
+    ],
+    "resources": [
+      "arn:aws:iam::123456789012:role/caseflow-rehearsal-api"
+    ],
+    "context": [
+      {
+        "ContextKeyName": "aws:RequestedRegion",
+        "ContextKeyValues": [
+          "us-east-1"
+        ],
+        "ContextKeyType": "string"
+      },
+      {
+        "ContextKeyName": "iam:PermissionsBoundary",
+        "ContextKeyValues": [
+          "arn:aws:iam::123456789012:policy/caseflow-access-runtime-boundary"
+        ],
+        "ContextKeyType": "string"
+      }
+    ],
+    "decisions": [
+      "allowed"
+    ]
+  },
+  {
+    "name": "unrelated-role",
+    "expected": "implicitDeny",
+    "actions": [
+      "iam:PutRolePolicy"
+    ],
+    "policyFiles": [
+      "policies/caseflow-access-infrastructure.json",
+      "policies/caseflow-access-identity-storage.json"
+    ],
+    "resources": [
+      "arn:aws:iam::123456789012:role/unrelated"
+    ],
+    "context": [
+      {
+        "ContextKeyName": "aws:RequestedRegion",
+        "ContextKeyValues": [
+          "us-east-1"
+        ],
+        "ContextKeyType": "string"
+      }
+    ],
+    "decisions": [
+      "implicitDeny"
+    ]
+  },
+  {
+    "name": "boundary-removal",
+    "expected": "implicitDeny",
+    "actions": [
+      "iam:DeleteRolePermissionsBoundary"
+    ],
+    "policyFiles": [
+      "policies/caseflow-access-infrastructure.json",
+      "policies/caseflow-access-identity-storage.json"
+    ],
+    "resources": [
+      "arn:aws:iam::123456789012:role/caseflow-rehearsal-api"
+    ],
+    "context": [
+      {
+        "ContextKeyName": "aws:RequestedRegion",
+        "ContextKeyValues": [
+          "us-east-1"
+        ],
+        "ContextKeyType": "string"
+      }
+    ],
+    "decisions": [
+      "implicitDeny"
+    ]
+  },
+  {
+    "name": "admin-policy-attachment",
+    "expected": "implicitDeny",
+    "actions": [
+      "iam:AttachRolePolicy"
+    ],
+    "policyFiles": [
+      "policies/caseflow-access-infrastructure.json",
+      "policies/caseflow-access-identity-storage.json"
+    ],
+    "resources": [
+      "arn:aws:iam::123456789012:role/caseflow-rehearsal-api"
+    ],
+    "context": [
+      {
+        "ContextKeyName": "aws:RequestedRegion",
+        "ContextKeyValues": [
+          "us-east-1"
+        ],
+        "ContextKeyType": "string"
+      },
+      {
+        "ContextKeyName": "iam:PolicyARN",
+        "ContextKeyValues": [
+          "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "ContextKeyType": "string"
+      }
+    ],
+    "decisions": [
+      "implicitDeny"
+    ]
+  },
+  {
+    "name": "paid-plan-upgrade",
+    "expected": "explicitDeny",
+    "actions": [
+      "freetier:UpgradeAccountPlan"
+    ],
+    "policyFiles": [
+      "policies/caseflow-access-infrastructure.json",
+      "policies/caseflow-access-identity-storage.json"
+    ],
+    "resources": [
+      "*"
+    ],
+    "context": [
+      {
+        "ContextKeyName": "aws:RequestedRegion",
+        "ContextKeyValues": [
+          "us-east-1"
+        ],
+        "ContextKeyType": "string"
+      }
+    ],
+    "decisions": [
+      "explicitDeny"
+    ]
+  },
+  {
+    "name": "allowed-instance",
+    "expected": "allowed",
+    "actions": [
+      "ec2:RunInstances"
+    ],
+    "policyFiles": [
+      "policies/caseflow-access-infrastructure.json",
+      "policies/caseflow-access-identity-storage.json"
+    ],
+    "resources": [
+      "arn:aws:ec2:us-east-1:123456789012:instance/i-0123456789abcdef0"
+    ],
+    "context": [
+      {
+        "ContextKeyName": "aws:RequestedRegion",
+        "ContextKeyValues": [
+          "us-east-1"
+        ],
+        "ContextKeyType": "string"
+      },
+      {
+        "ContextKeyName": "ec2:InstanceType",
+        "ContextKeyValues": [
+          "m7i-flex.large"
+        ],
+        "ContextKeyType": "string"
+      }
+    ],
+    "decisions": [
+      "allowed"
+    ]
+  },
+  {
+    "name": "oversized-instance",
+    "expected": "implicitDeny",
+    "actions": [
+      "ec2:RunInstances"
+    ],
+    "policyFiles": [
+      "policies/caseflow-access-infrastructure.json",
+      "policies/caseflow-access-identity-storage.json"
+    ],
+    "resources": [
+      "arn:aws:ec2:us-east-1:123456789012:instance/i-0123456789abcdef0"
+    ],
+    "context": [
+      {
+        "ContextKeyName": "aws:RequestedRegion",
+        "ContextKeyValues": [
+          "us-east-1"
+        ],
+        "ContextKeyType": "string"
+      },
+      {
+        "ContextKeyName": "ec2:InstanceType",
+        "ContextKeyValues": [
+          "m7i.24xlarge"
+        ],
+        "ContextKeyType": "string"
+      }
+    ],
+    "decisions": [
+      "implicitDeny"
+    ]
+  },
+  {
+    "name": "launch-subnet-dependency",
+    "expected": "allowed",
+    "actions": [
+      "ec2:RunInstances"
+    ],
+    "policyFiles": [
+      "policies/caseflow-access-infrastructure.json",
+      "policies/caseflow-access-identity-storage.json"
+    ],
+    "resources": [
+      "arn:aws:ec2:us-east-1:123456789012:subnet/subnet-0123456789abcdef0"
+    ],
+    "context": [
+      {
+        "ContextKeyName": "aws:RequestedRegion",
+        "ContextKeyValues": [
+          "us-east-1"
+        ],
+        "ContextKeyType": "string"
+      }
+    ],
+    "decisions": [
+      "allowed"
+    ]
+  },
+  {
+    "name": "state-object",
+    "expected": "allowed",
+    "actions": [
+      "s3:PutObject"
+    ],
+    "policyFiles": [
+      "policies/caseflow-access-infrastructure.json",
+      "policies/caseflow-access-identity-storage.json"
+    ],
+    "resources": [
+      "arn:aws:s3:::caseflow-rehearsal-state-123456789012-us-east-1/caseflow/rehearsal/terraform.tfstate"
+    ],
+    "context": [
+      {
+        "ContextKeyName": "aws:RequestedRegion",
+        "ContextKeyValues": [
+          "us-east-1"
+        ],
+        "ContextKeyType": "string"
+      }
+    ],
+    "decisions": [
+      "allowed"
+    ]
+  },
+  {
+    "name": "unrelated-bucket",
+    "expected": "implicitDeny",
+    "actions": [
+      "s3:PutObject"
+    ],
+    "policyFiles": [
+      "policies/caseflow-access-infrastructure.json",
+      "policies/caseflow-access-identity-storage.json"
+    ],
+    "resources": [
+      "arn:aws:s3:::unrelated-private-bucket/document"
+    ],
+    "context": [
+      {
+        "ContextKeyName": "aws:RequestedRegion",
+        "ContextKeyValues": [
+          "us-east-1"
+        ],
+        "ContextKeyType": "string"
+      }
+    ],
+    "decisions": [
+      "implicitDeny"
+    ]
+  }
+]
