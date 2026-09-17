@@ -1,6 +1,5 @@
 """Database-backed recovery contracts for worker transaction and Kafka boundaries."""
 from contextlib import contextmanager
-import json
 from uuid import uuid4
 
 import pytest
@@ -219,11 +218,14 @@ def test_malformed_message_is_acknowledged_only_after_dead_letter_send(monkeypat
 
     assert consumer.polls == 1
     assert consumer.commits == 1
-    assert len(sends) == 2
-    assert sends[1]["reason"] == "INVALID_REQUEST_ENVELOPE_OR_REFERENCE"
-    assert sends[1]["sha256"] == "1b8fe1b6ffac9bb2e3ab202be033860f21ed90b6650c449a93e7ed12f793568d"
-    assert body.decode() not in json.dumps(sends[1])
-    assert "secret" not in json.dumps(sends[1])
+    expected = {
+        "reason": "INVALID_REQUEST_ENVELOPE_OR_REFERENCE",
+        "sha256": "1b8fe1b6ffac9bb2e3ab202be033860f21ed90b6650c449a93e7ed12f793568d",
+        "topic": "caseflow.jobs.v1",
+        "partition": 0,
+        "offset": 7,
+    }
+    assert sends == [expected, expected]
 
 
 def test_publisher_repeats_same_event_after_ack_before_database_commit(event, monkeypatch):
