@@ -17,6 +17,14 @@ false missing-field reports across 240 entries, and 217/240 extraction fields
 fully populated USD 4,200 purchase returned no missing fields and stayed unchanged.
 [Current development assessment](evidence/2026-09-16-r2/summary.md).
 
+New acceptance evidence: the [full local assisted browser journey](evidence/2026-09-16-r2/browser-journey/README.md)
+reached a checksum-matched Word download after admin setup and two approvals.
+Focused keyboard, form-validation and narrow-screen checks passed. The
+[automated workflow comparison](evidence/2026-09-16-r2/workflow-comparison/README.md)
+saved correct drafts in 9/9 tasks, with no field corrections; it has no human
+participants and supports no user-time-saving claim. Fresh v3 held-out and
+repeat evaluation are in progress; earlier scores below remain historical.
+
 | Product step | Implemented and verified | Remaining |
 | --- | --- | --- |
 | Attach quote | PDF/TXT and pasted text, immutable bytes, bounded parser, preview; browser chooser upload reached indexed status | Broader browser/accessibility acceptance; actual OS dialog clicking not tested |

@@ -1,5 +1,26 @@
 # Evidence index
 
+## 2026-09-16 local / September 17 UTC: browser and workflow acceptance
+
+[Assisted browser-to-DOCX journey](evidence/2026-09-16-r2/browser-journey/README.md)
+verified admin configuration, uploaded quote, explicit field acceptance, cited
+missing-information review, manual completion, manager then finance approval,
+and the real downloaded document's bytes and content. Focused keyboard,
+validation and 390-pixel layout checks passed; this is not a full accessibility
+audit. The earlier simulated-AI-failure browser evidence remains separate.
+
+[Nine-task workflow comparison](evidence/2026-09-16-r2/workflow-comparison/README.md)
+recorded correct saved drafts in all three manual, three extraction-only and
+three grounded-review tasks. Nine calls cost USD 0.006996. Zero human
+participants; API-harness timings are not human completion times or time savings.
+
+[Restart diagnosis](evidence/2026-09-16-r2/local-restart.md) records the realm
+import failure and verified sign-in after the narrow Compose mount fix.
+[V3 reference audit](evidence/2026-09-16-r2/ai-reference-review-v3/summary.md)
+preserves 120 retired cases and checks 60 fresh held-out sources. The
+[new evaluation declaration](evidence/2026-09-16-r2/heldout-v3-plan.json)
+freezes the candidate, thresholds and repeat subset; a declaration is not a score.
+
 ## 2026-09-16: review prompt and missing-field validation
 
 [Full development assessment](evidence/2026-09-16-r2/summary.md): 459/460 supported

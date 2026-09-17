@@ -394,3 +394,15 @@ from admin setup through real model suggestions, explicit acceptance, sequential
 approvals and a checksum-matched download. Focused keyboard and narrow-screen
 checks passed. It is not a human usability study, full accessibility audit or
 cloud-readiness claim. Evidence: `evidence/2026-09-16-r2/browser-journey/README.md`.
+## Workflow comparison: claims and limits
+
+**Did AI make users faster?** We have not measured that. A nine-task automated
+API self-test completed three workflows successfully and recorded actual model
+waiting, corrections and failures. It cannot establish human reading/typing time,
+adoption or time savings. Evidence:
+`evidence/2026-09-16-r2/workflow-comparison/README.md`.
+
+**Why distinguish assisted completion from final-draft correctness?** A provider
+failure followed by manual entry could still produce a correct draft. Reporting
+only that outcome would hide a broken assistant. The harness records both; all
+nine tasks completed their assigned mode in this particular small run.

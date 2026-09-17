@@ -667,3 +667,17 @@ the original result becomes stale. This preserves both the original advice and
 the person's later correction rather than rewriting history. The trade-off is
 more visible versions and occasional retries on conflicts. The check exercised
 a real HTTP 409 when actions overlapped and confirmed no stale write occurred.
+## Comparing workflows without inventing user impact
+
+The JavaScript/Node runner `tests/e2e/workflow-comparison-live.mjs` calls the real
+Java API locally. It compares three identical synthetic tasks under manual entry,
+extraction-only, and extraction plus policy review, rotating their order. All
+nine saved correct drafts. It separates successful assistance from a correct
+draft obtained through fallback. Evidence and exact inputs are in
+`docs/evidence/2026-09-16-r2/workflow-comparison/README.md`.
+
+Its manual path already knows the answer. A 20 ms API save therefore cannot
+represent a person's reading and typing. The trade-off is reproducible integration
+evidence without the stronger usability evidence of an actual participant study.
+Model calls also add waiting even when they reduce the information a person must
+type. Human benefit remains unmeasured.
