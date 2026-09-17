@@ -1,0 +1,199 @@
+{
+  "sequence": 4,
+  "fixtureId": "archive-labels",
+  "mode": "extraction-only",
+  "startedAt": "2026-09-17T02:42:06.242Z",
+  "failures": [],
+  "correctedQuoteFields": [],
+  "humanVerified": false,
+  "releaseGatePassed": false,
+  "quoteSha256": "046613fad470deb6a8c2507198875a8019aa3e68c3d79e5ca3f31d70583c43f6",
+  "policySha256": "7e77366dea8407e2355982a9e8b286c416611ffbf48e369a50485afb87f6768a",
+  "completed": true,
+  "assignedWorkflowCompleted": true,
+  "tenantId": "d2995e64-7de3-429c-bd53-286d544b86d8",
+  "caseId": "a3c78329-edef-49dc-9cfe-160e4607ca79",
+  "initialPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "FIN-TEST",
+    "description": "Reusable archive label pack",
+    "justification": ""
+  },
+  "policy": {
+    "id": "08bd6930-3599-41db-b1e2-fad47e353380",
+    "kind": "POLICY",
+    "name": "Comparison archive-labels policy",
+    "state": "PUBLISHED",
+    "version": 2,
+    "caseId": null,
+    "mediaType": "text/plain",
+    "byteSize": 125,
+    "sha256": "7e77366dea8407e2355982a9e8b286c416611ffbf48e369a50485afb87f6768a",
+    "jobId": "40e42478-993c-4314-b106-543e28865dfe",
+    "failureCode": null
+  },
+  "quote": {
+    "id": "7a286a6b-3b0d-4320-bcfe-70e8478395ae",
+    "kind": "QUOTE",
+    "name": "Comparison archive-labels quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "a3c78329-edef-49dc-9cfe-160e4607ca79",
+    "mediaType": "text/plain",
+    "byteSize": 128,
+    "sha256": "046613fad470deb6a8c2507198875a8019aa3e68c3d79e5ca3f31d70583c43f6",
+    "jobId": "f4032a33-d61b-48f8-85d1-abe38f2d3084",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "08bd6930-3599-41db-b1e2-fad47e353380",
+        "name": "Comparison archive-labels policy",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "setupElapsedMs": 3962,
+  "taskStartedAt": "2026-09-17T02:42:10.205Z",
+  "initialVersion": 2,
+  "extraction": {
+    "jobId": "036db2ca-2dee-456b-a4a3-62b66b00d4b9",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "ec8a19f3-e8bb-46ae-b180-b3524b882cbb",
+      "output": {
+        "total": {
+          "value": "127.20",
+          "citations": [
+            {
+              "quote": "Total: 127.20",
+              "chunkId": "01dddd7c-cd47-5a7d-8938-5f9a906eb4d3"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Synthetic Pebble Label House",
+          "citations": [
+            {
+              "quote": "Vendor: Synthetic Pebble Label House",
+              "chunkId": "01dddd7c-cd47-5a7d-8938-5f9a906eb4d3"
+            }
+          ]
+        },
+        "currency": {
+          "value": "USD",
+          "citations": [
+            {
+              "quote": "Currency: USD",
+              "chunkId": "01dddd7c-cd47-5a7d-8938-5f9a906eb4d3"
+            }
+          ]
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "3",
+              "unitPrice": "42.40",
+              "description": "Reusable archive label pack"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "Item: Reusable archive label pack\nQuantity: 3\nUnit price: 42.40",
+              "chunkId": "01dddd7c-cd47-5a7d-8938-5f9a906eb4d3"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "01dddd7c-cd47-5a7d-8938-5f9a906eb4d3": {
+          "page": 1,
+          "text": "Vendor: Synthetic Pebble Label House\nItem: Reusable archive label pack\nQuantity: 3\nUnit price: 42.40\nCurrency: USD\nTotal: 127.20",
+          "start": 0,
+          "sourceId": "7a286a6b-3b0d-4320-bcfe-70e8478395ae"
+        }
+      },
+      "revision": 2,
+      "sourceId": "7a286a6b-3b0d-4320-bcfe-70e8478395ae",
+      "elapsedMs": 4235,
+      "promptHash": "dd9a10bfe4ce5856610ced9e857784f710dc16313f18427524577aa287ea2f0c",
+      "schemaHash": "219e62c49fdeadff676591ccedc38e8c822d475837a9c5d867d0ea0367baa718",
+      "inputTokens": 995,
+      "outputTokens": 242,
+      "sourceSha256": "046613fad470deb6a8c2507198875a8019aa3e68c3d79e5ca3f31d70583c43f6",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000786",
+      "retrievedChunkIds": [
+        "01dddd7c-cd47-5a7d-8938-5f9a906eb4d3"
+      ],
+      "retrievalElapsedMs": 14
+    }
+  },
+  "extractionDiscrepancies": [],
+  "acceptedFields": [
+    "vendor",
+    "currency",
+    "lineItems"
+  ],
+  "acceptance": {
+    "accepted": true,
+    "version": 3
+  },
+  "purchaseAfterAcceptance": {
+    "total": "127.20",
+    "vendor": "Synthetic Pebble Label House",
+    "currency": "USD",
+    "lineItems": [
+      {
+        "quantity": "3",
+        "unitPrice": "42.40",
+        "description": "Reusable archive label pack"
+      }
+    ],
+    "costCenter": "FIN-TEST",
+    "description": "Reusable archive label pack",
+    "justification": ""
+  },
+  "manualPolicyEntry": {
+    "field": "justification",
+    "before": "",
+    "after": "Label three synthetic archive shelves"
+  },
+  "finalPurchase": {
+    "total": "127.20",
+    "vendor": "Synthetic Pebble Label House",
+    "currency": "USD",
+    "lineItems": [
+      {
+        "quantity": "3",
+        "unitPrice": "42.40",
+        "description": "Reusable archive label pack"
+      }
+    ],
+    "costCenter": "FIN-TEST",
+    "description": "Reusable archive label pack",
+    "justification": "Label three synthetic archive shelves"
+  },
+  "finalVersion": 4,
+  "finalDifferences": [],
+  "finishedAt": "2026-09-17T02:42:16.407Z",
+  "taskElapsedMs": 6202,
+  "totalElapsedMs": 10164
+}

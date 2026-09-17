@@ -50,4 +50,8 @@ test('validation needs no credentials or network and live mode requires explicit
   assert.notEqual(refused.status, 0);
   assert.match(refused.stderr, /--output/);
   assert.doesNotMatch(refused.stderr, /Unexpected network access/);
+  const existing = run(['--live', '--output', fileURLToPath(new URL('.', import.meta.url))]);
+  assert.notEqual(existing.status, 0);
+  assert.match(existing.stderr, /Output directory already exists/);
+  assert.doesNotMatch(existing.stderr, /Unexpected network access/);
 });

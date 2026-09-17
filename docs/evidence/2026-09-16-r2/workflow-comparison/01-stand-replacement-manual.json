@@ -1,0 +1,90 @@
+{
+  "sequence": 1,
+  "fixtureId": "stand-replacement",
+  "mode": "manual",
+  "startedAt": "2026-09-17T02:41:37.254Z",
+  "failures": [],
+  "correctedQuoteFields": [],
+  "humanVerified": false,
+  "releaseGatePassed": false,
+  "quoteSha256": "e0d9f7c5e3168978a409089125a46b5e1662854a9dc22cc1a552a9d5d8d2a5e9",
+  "policySha256": "eb1904b7915a3c65db7ef57d412f4642fabf2ef059ef501c07edbe44b1e9cdc7",
+  "completed": true,
+  "assignedWorkflowCompleted": true,
+  "tenantId": "cacba73c-66ec-4ada-91de-d6f0872ed0a3",
+  "caseId": "32bbedcc-ede9-42e7-8010-6634651a83ea",
+  "initialPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Adjustable equipment stand",
+    "justification": "Replace two demonstration equipment stands"
+  },
+  "policy": {
+    "id": "0064db15-e942-4ae1-8398-61d122e95a07",
+    "kind": "POLICY",
+    "name": "Comparison stand-replacement policy",
+    "state": "PUBLISHED",
+    "version": 2,
+    "caseId": null,
+    "mediaType": "text/plain",
+    "byteSize": 93,
+    "sha256": "eb1904b7915a3c65db7ef57d412f4642fabf2ef059ef501c07edbe44b1e9cdc7",
+    "jobId": "1f54a227-547f-4f59-8481-8e44ca6d04d4",
+    "failureCode": null
+  },
+  "quote": {
+    "id": "f7547717-98b7-4601-8c73-51c968879d7d",
+    "kind": "QUOTE",
+    "name": "Comparison stand-replacement quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "32bbedcc-ede9-42e7-8010-6634651a83ea",
+    "mediaType": "text/plain",
+    "byteSize": 130,
+    "sha256": "e0d9f7c5e3168978a409089125a46b5e1662854a9dc22cc1a552a9d5d8d2a5e9",
+    "jobId": "dbc7d680-a1f1-4513-864f-55097ac34edb",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "0064db15-e942-4ae1-8398-61d122e95a07",
+        "name": "Comparison stand-replacement policy",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "setupElapsedMs": 3991,
+  "taskStartedAt": "2026-09-17T02:41:41.245Z",
+  "initialVersion": 2,
+  "manualEnteredFields": [
+    "vendor",
+    "costCenter",
+    "lineItems"
+  ],
+  "finalPurchase": {
+    "total": "374.50",
+    "vendor": "Synthetic Maple Stand Workshop",
+    "currency": "USD",
+    "lineItems": [
+      {
+        "quantity": "2",
+        "unitPrice": "187.25",
+        "description": "Adjustable equipment stand"
+      }
+    ],
+    "costCenter": "OPS-TEST",
+    "description": "Adjustable equipment stand",
+    "justification": "Replace two demonstration equipment stands"
+  },
+  "finalVersion": 3,
+  "finalDifferences": [],
+  "finishedAt": "2026-09-17T02:41:41.267Z",
+  "taskElapsedMs": 22,
+  "totalElapsedMs": 4013
+}

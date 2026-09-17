@@ -1,0 +1,285 @@
+{
+  "sequence": 5,
+  "fixtureId": "archive-labels",
+  "mode": "grounded-review",
+  "startedAt": "2026-09-17T02:42:16.409Z",
+  "failures": [],
+  "correctedQuoteFields": [],
+  "humanVerified": false,
+  "releaseGatePassed": false,
+  "quoteSha256": "046613fad470deb6a8c2507198875a8019aa3e68c3d79e5ca3f31d70583c43f6",
+  "policySha256": "7e77366dea8407e2355982a9e8b286c416611ffbf48e369a50485afb87f6768a",
+  "completed": true,
+  "assignedWorkflowCompleted": true,
+  "tenantId": "b745ad3c-1434-4072-b6b4-770f273bccdc",
+  "caseId": "12d90c3f-82d4-457a-a470-fb35120b4adf",
+  "initialPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "FIN-TEST",
+    "description": "Reusable archive label pack",
+    "justification": ""
+  },
+  "policy": {
+    "id": "3f7c61bc-f4b0-4c86-8a13-86d6733e85e0",
+    "kind": "POLICY",
+    "name": "Comparison archive-labels policy",
+    "state": "PUBLISHED",
+    "version": 2,
+    "caseId": null,
+    "mediaType": "text/plain",
+    "byteSize": 125,
+    "sha256": "7e77366dea8407e2355982a9e8b286c416611ffbf48e369a50485afb87f6768a",
+    "jobId": "ae17b6d0-059a-4d5e-a8b3-c0c98cf84376",
+    "failureCode": null
+  },
+  "quote": {
+    "id": "051c0d91-b294-4f02-bedf-ef0b0e00bbf9",
+    "kind": "QUOTE",
+    "name": "Comparison archive-labels quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "12d90c3f-82d4-457a-a470-fb35120b4adf",
+    "mediaType": "text/plain",
+    "byteSize": 128,
+    "sha256": "046613fad470deb6a8c2507198875a8019aa3e68c3d79e5ca3f31d70583c43f6",
+    "jobId": "131ddb7b-8ec4-47f7-ae85-766c19a191c4",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "3f7c61bc-f4b0-4c86-8a13-86d6733e85e0",
+        "name": "Comparison archive-labels policy",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "setupElapsedMs": 3230,
+  "taskStartedAt": "2026-09-17T02:42:19.639Z",
+  "initialVersion": 2,
+  "extraction": {
+    "jobId": "1d7ab911-fe57-4d0b-82f1-8064a1fa1d37",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "5ae986d1-f5ac-45a3-bb6c-5ba505311555",
+      "output": {
+        "total": {
+          "value": "127.20",
+          "citations": [
+            {
+              "quote": "Total: 127.20",
+              "chunkId": "d700163d-4f28-5a38-b985-4c171eb6ce5c"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Synthetic Pebble Label House",
+          "citations": [
+            {
+              "quote": "Vendor: Synthetic Pebble Label House",
+              "chunkId": "d700163d-4f28-5a38-b985-4c171eb6ce5c"
+            }
+          ]
+        },
+        "currency": {
+          "value": "USD",
+          "citations": [
+            {
+              "quote": "Currency: USD",
+              "chunkId": "d700163d-4f28-5a38-b985-4c171eb6ce5c"
+            }
+          ]
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "3",
+              "unitPrice": "42.40",
+              "description": "Reusable archive label pack"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "Item: Reusable archive label pack\nQuantity: 3\nUnit price: 42.40",
+              "chunkId": "d700163d-4f28-5a38-b985-4c171eb6ce5c"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "d700163d-4f28-5a38-b985-4c171eb6ce5c": {
+          "page": 1,
+          "text": "Vendor: Synthetic Pebble Label House\nItem: Reusable archive label pack\nQuantity: 3\nUnit price: 42.40\nCurrency: USD\nTotal: 127.20",
+          "start": 0,
+          "sourceId": "051c0d91-b294-4f02-bedf-ef0b0e00bbf9"
+        }
+      },
+      "revision": 2,
+      "sourceId": "051c0d91-b294-4f02-bedf-ef0b0e00bbf9",
+      "elapsedMs": 4313,
+      "promptHash": "392a164831634da129650a6150e1d8c03863bf0e3b1fc7db657607f393d04275",
+      "schemaHash": "2cad3ea1ce347a26ad7b6347a506433515eff7553fc9e7a9c6016317e98cef8d",
+      "inputTokens": 990,
+      "outputTokens": 234,
+      "sourceSha256": "046613fad470deb6a8c2507198875a8019aa3e68c3d79e5ca3f31d70583c43f6",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000771",
+      "retrievedChunkIds": [
+        "d700163d-4f28-5a38-b985-4c171eb6ce5c"
+      ],
+      "retrievalElapsedMs": 15
+    }
+  },
+  "extractionDiscrepancies": [],
+  "acceptedFields": [
+    "vendor",
+    "currency",
+    "lineItems"
+  ],
+  "acceptance": {
+    "accepted": true,
+    "version": 3
+  },
+  "purchaseAfterAcceptance": {
+    "total": "127.20",
+    "vendor": "Synthetic Pebble Label House",
+    "currency": "USD",
+    "lineItems": [
+      {
+        "quantity": "3",
+        "unitPrice": "42.40",
+        "description": "Reusable archive label pack"
+      }
+    ],
+    "costCenter": "FIN-TEST",
+    "description": "Reusable archive label pack",
+    "justification": ""
+  },
+  "purchaseBeforeReview": {
+    "total": "127.20",
+    "vendor": "Synthetic Pebble Label House",
+    "currency": "USD",
+    "lineItems": [
+      {
+        "quantity": "3",
+        "unitPrice": "42.40",
+        "description": "Reusable archive label pack"
+      }
+    ],
+    "costCenter": "FIN-TEST",
+    "description": "Reusable archive label pack",
+    "justification": ""
+  },
+  "review": {
+    "jobId": "5f375a6a-40fa-435f-89e3-919f7844b2b4",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 3,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "ab10b4ff-01bb-420f-89ae-f091bd02b418",
+      "output": {
+        "summary": "The purchase is for 3 units of a reusable archive label pack from Synthetic Pebble Label House, totaling 127.20 USD and charged to cost center FIN-TEST. The justification field is empty, which is necessary for approval according to the evidence that states every reusable archive label pack purchase request must include a justification describing its business need before approval.",
+        "citations": [
+          {
+            "quote": "Every reusable archive label pack purchase request must include a justification describing its business need before approval.",
+            "chunkId": "a7b64fd1-a75a-5cf3-8b99-4fdf8a417684"
+          }
+        ],
+        "policy_findings": [
+          {
+            "claim": "Every reusable archive label pack purchase request must include a justification describing its business need before approval.",
+            "citations": [
+              {
+                "quote": "Every reusable archive label pack purchase request must include a justification describing its business need before approval.",
+                "chunkId": "a7b64fd1-a75a-5cf3-8b99-4fdf8a417684"
+              }
+            ]
+          }
+        ],
+        "missing_information": [
+          "justification"
+        ],
+        "insufficient_evidence": false
+      },
+      "evidence": {
+        "a7b64fd1-a75a-5cf3-8b99-4fdf8a417684": {
+          "page": 1,
+          "text": "Every reusable archive label pack purchase request must include a justification describing its business need before approval.",
+          "start": 0,
+          "sourceId": "3f7c61bc-f4b0-4c86-8a13-86d6733e85e0"
+        }
+      },
+      "revision": 3,
+      "sourceId": null,
+      "elapsedMs": 4171,
+      "promptHash": "e4dc9eaf59ad6a1fdeb7f4aafd1d1c0ca77fb0253ec72d5fd1e624e6b9cdc0c6",
+      "schemaHash": "804db45ef89ff32e36a444f9af7a8f5808b05c7184c8cc6a03e18128e6e7707c",
+      "inputTokens": 1065,
+      "outputTokens": 224,
+      "sourceSha256": null,
+      "promptVersion": "purchase-review-2026-09-16-v6",
+      "schemaVersion": "purchase-review-v5",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Reusable OR archive OR label OR pack OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000785",
+      "retrievedChunkIds": [
+        "a7b64fd1-a75a-5cf3-8b99-4fdf8a417684"
+      ],
+      "retrievalElapsedMs": 14
+    }
+  },
+  "reviewInspection": {
+    "method": "automated-structural-inspection-not-semantic-claim-grading",
+    "expectedRequiredField": "justification",
+    "reportedRequiredField": true,
+    "findingCount": 1,
+    "insufficientEvidence": false,
+    "policyCited": true
+  },
+  "manualPolicyEntry": {
+    "field": "justification",
+    "before": "",
+    "after": "Label three synthetic archive shelves"
+  },
+  "finalPurchase": {
+    "total": "127.20",
+    "vendor": "Synthetic Pebble Label House",
+    "currency": "USD",
+    "lineItems": [
+      {
+        "quantity": "3",
+        "unitPrice": "42.40",
+        "description": "Reusable archive label pack"
+      }
+    ],
+    "costCenter": "FIN-TEST",
+    "description": "Reusable archive label pack",
+    "justification": "Label three synthetic archive shelves"
+  },
+  "finalVersion": 4,
+  "finalDifferences": [],
+  "finishedAt": "2026-09-17T02:42:31.281Z",
+  "taskElapsedMs": 11641,
+  "totalElapsedMs": 14872
+}

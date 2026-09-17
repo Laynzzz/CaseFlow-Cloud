@@ -1,0 +1,140 @@
+{
+  "version": "workflow-comparison-v1",
+  "fixtures": [
+    {
+      "id": "stand-replacement",
+      "requiredField": "costCenter",
+      "expectedPurchase": {
+        "vendor": "Synthetic Maple Stand Workshop",
+        "description": "Adjustable equipment stand",
+        "currency": "USD",
+        "costCenter": "OPS-TEST",
+        "justification": "Replace two demonstration equipment stands",
+        "lineItems": [
+          {
+            "description": "Adjustable equipment stand",
+            "quantity": "2",
+            "unitPrice": "187.25"
+          }
+        ],
+        "total": "374.50"
+      },
+      "initialPurchase": {
+        "vendor": "",
+        "description": "Adjustable equipment stand",
+        "currency": "USD",
+        "costCenter": "",
+        "justification": "Replace two demonstration equipment stands",
+        "lineItems": []
+      },
+      "quote": "Vendor: Synthetic Maple Stand Workshop\nItem: Adjustable equipment stand\nQuantity: 2\nUnit price: 187.25\nCurrency: USD\nTotal: 374.50",
+      "policy": "Every adjustable equipment stand purchase request must include a cost center before approval."
+    },
+    {
+      "id": "archive-labels",
+      "requiredField": "justification",
+      "expectedPurchase": {
+        "vendor": "Synthetic Pebble Label House",
+        "description": "Reusable archive label pack",
+        "currency": "USD",
+        "costCenter": "FIN-TEST",
+        "justification": "Label three synthetic archive shelves",
+        "lineItems": [
+          {
+            "description": "Reusable archive label pack",
+            "quantity": "3",
+            "unitPrice": "42.40"
+          }
+        ],
+        "total": "127.20"
+      },
+      "initialPurchase": {
+        "vendor": "",
+        "description": "Reusable archive label pack",
+        "currency": "USD",
+        "costCenter": "FIN-TEST",
+        "justification": "",
+        "lineItems": []
+      },
+      "quote": "Vendor: Synthetic Pebble Label House\nItem: Reusable archive label pack\nQuantity: 3\nUnit price: 42.40\nCurrency: USD\nTotal: 127.20",
+      "policy": "Every reusable archive label pack purchase request must include a justification describing its business need before approval."
+    },
+    {
+      "id": "workbench-kits",
+      "requiredField": "costCenter",
+      "expectedPurchase": {
+        "vendor": "Synthetic Birch Kit Studio",
+        "description": "Workbench organizer kit",
+        "currency": "USD",
+        "costCenter": "LAB-TEST",
+        "justification": "Equip four demonstration workbenches",
+        "lineItems": [
+          {
+            "description": "Workbench organizer kit",
+            "quantity": "4",
+            "unitPrice": "28.75"
+          }
+        ],
+        "total": "115.00"
+      },
+      "initialPurchase": {
+        "vendor": "",
+        "description": "Workbench organizer kit",
+        "currency": "USD",
+        "costCenter": "",
+        "justification": "Equip four demonstration workbenches",
+        "lineItems": []
+      },
+      "quote": "Vendor: Synthetic Birch Kit Studio\nItem: Workbench organizer kit\nQuantity: 4\nUnit price: 28.75\nCurrency: USD\nTotal: 115.00",
+      "policy": "Every workbench organizer kit purchase request must include a cost center before approval."
+    }
+  ],
+  "tasks": [
+    {
+      "fixtureId": "stand-replacement",
+      "mode": "manual"
+    },
+    {
+      "fixtureId": "stand-replacement",
+      "mode": "extraction-only"
+    },
+    {
+      "fixtureId": "stand-replacement",
+      "mode": "grounded-review"
+    },
+    {
+      "fixtureId": "archive-labels",
+      "mode": "extraction-only"
+    },
+    {
+      "fixtureId": "archive-labels",
+      "mode": "grounded-review"
+    },
+    {
+      "fixtureId": "archive-labels",
+      "mode": "manual"
+    },
+    {
+      "fixtureId": "workbench-kits",
+      "mode": "grounded-review"
+    },
+    {
+      "fixtureId": "workbench-kits",
+      "mode": "manual"
+    },
+    {
+      "fixtureId": "workbench-kits",
+      "mode": "extraction-only"
+    }
+  ],
+  "maximumIntendedModelCalls": 9,
+  "sharedLifetimeBudgetUsd": "10",
+  "humanParticipants": 0,
+  "method": "Agent-operated synthetic API self-test with predeclared correct purchases and rotated order",
+  "completionDefinition": "Final saved draft matches all predeclared purchase fields; approval and DOCX are outside this comparison",
+  "correctionDefinition": "Actual differing accepted quote fields manually replaced; planned policy-field entry is recorded separately",
+  "timingDefinition": "Harness/service wall time after tenant, draft, quote ingestion, policy publication and pinning; no human reading or typing time",
+  "concurrentWork": "Parent runs browser acceptance and held-out AI evaluation concurrently; timings are not isolated benchmarks",
+  "releaseGatePassed": false,
+  "humanVerified": false
+}

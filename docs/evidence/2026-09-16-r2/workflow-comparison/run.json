@@ -1,0 +1,160 @@
+{
+  "startedAt": "2026-09-17T02:41:37.140Z",
+  "method": "Agent-operated synthetic API self-test with predeclared correct purchases and rotated order",
+  "planSha256": "74b8a9058fac53a0fb996cf0c6d54469404f0f02deb143697cf0cfb2031c8dd2",
+  "codeRevision": "fab6875009e18f77d41f2bfaf784fc126c830aa2",
+  "runnerSha256": "98c756485571e3a2e0c735e4941638a20278f20f5a5d6adb21c6d8f7b1b5824c",
+  "nodeVersion": "v22.20.0",
+  "humanVerified": false,
+  "humanParticipants": 0,
+  "releaseGatePassed": false,
+  "concurrentWork": "Parent runs browser acceptance and held-out AI evaluation concurrently; timings are not isolated benchmarks",
+  "taskRecords": [
+    {
+      "file": "01-stand-replacement-manual.json",
+      "sha256": "e8a9bf1922f7531adaf9461bef36f05f5b92346a5d2d4fcef26ac0fc5235de3d",
+      "fixtureId": "stand-replacement",
+      "mode": "manual",
+      "completed": true,
+      "assignedWorkflowCompleted": true,
+      "taskElapsedMs": 22,
+      "correctedQuoteFieldCount": 0,
+      "failureCount": 0
+    },
+    {
+      "file": "02-stand-replacement-extraction-only.json",
+      "sha256": "57fee3ad67457021793de06398ac0cdf49827874b48a940a13b638fe64fb1f09",
+      "fixtureId": "stand-replacement",
+      "mode": "extraction-only",
+      "completed": true,
+      "assignedWorkflowCompleted": true,
+      "taskElapsedMs": 5426,
+      "correctedQuoteFieldCount": 0,
+      "failureCount": 0
+    },
+    {
+      "file": "03-stand-replacement-grounded-review.json",
+      "sha256": "4d1e161157b45ea9a579ea06093f37a4fb6d0e78cb7429cd740738e1263dc436",
+      "fixtureId": "stand-replacement",
+      "mode": "grounded-review",
+      "completed": true,
+      "assignedWorkflowCompleted": true,
+      "taskElapsedMs": 11557,
+      "correctedQuoteFieldCount": 0,
+      "failureCount": 0
+    },
+    {
+      "file": "04-archive-labels-extraction-only.json",
+      "sha256": "9a05b3205a72c98334cac19d8a668385ca607ceb65c79ae2f74df5fdc14cfbc5",
+      "fixtureId": "archive-labels",
+      "mode": "extraction-only",
+      "completed": true,
+      "assignedWorkflowCompleted": true,
+      "taskElapsedMs": 6202,
+      "correctedQuoteFieldCount": 0,
+      "failureCount": 0
+    },
+    {
+      "file": "05-archive-labels-grounded-review.json",
+      "sha256": "0c5dc7e73423b3e4a95aa6c9191ce2fe4b6f43c59f173dd713504650828c4297",
+      "fixtureId": "archive-labels",
+      "mode": "grounded-review",
+      "completed": true,
+      "assignedWorkflowCompleted": true,
+      "taskElapsedMs": 11641,
+      "correctedQuoteFieldCount": 0,
+      "failureCount": 0
+    },
+    {
+      "file": "06-archive-labels-manual.json",
+      "sha256": "fd9e5f350998fa595b14fe45c7ad501a03720f726287a34b6c0b5c69aee98a12",
+      "fixtureId": "archive-labels",
+      "mode": "manual",
+      "completed": true,
+      "assignedWorkflowCompleted": true,
+      "taskElapsedMs": 19,
+      "correctedQuoteFieldCount": 0,
+      "failureCount": 0
+    },
+    {
+      "file": "07-workbench-kits-grounded-review.json",
+      "sha256": "1d158e24ecacffd71a8e56b5dd3df4c33bfe453bfebf7fc678250f769c5ccea6",
+      "fixtureId": "workbench-kits",
+      "mode": "grounded-review",
+      "completed": true,
+      "assignedWorkflowCompleted": true,
+      "taskElapsedMs": 13139,
+      "correctedQuoteFieldCount": 0,
+      "failureCount": 0
+    },
+    {
+      "file": "08-workbench-kits-manual.json",
+      "sha256": "bda59368d17c5c61015c6b0112bd9871f72c28d86217ec341c6499249da7dd48",
+      "fixtureId": "workbench-kits",
+      "mode": "manual",
+      "completed": true,
+      "assignedWorkflowCompleted": true,
+      "taskElapsedMs": 20,
+      "correctedQuoteFieldCount": 0,
+      "failureCount": 0
+    },
+    {
+      "file": "09-workbench-kits-extraction-only.json",
+      "sha256": "4c43c013fc43fb1ba1455319d418f9696d9eabf6f13eed9cd147f7063249b891",
+      "fixtureId": "workbench-kits",
+      "mode": "extraction-only",
+      "completed": true,
+      "assignedWorkflowCompleted": true,
+      "taskElapsedMs": 7712,
+      "correctedQuoteFieldCount": 0,
+      "failureCount": 0
+    }
+  ],
+  "stoppedAI": false,
+  "finishedAt": "2026-09-17T02:43:07.359Z",
+  "summary": [
+    {
+      "mode": "manual",
+      "intendedTasks": 3,
+      "recordedTasks": 3,
+      "correctDrafts": 3,
+      "assignedWorkflowCompletions": 3,
+      "correctedQuoteFields": 0,
+      "taskElapsedMs": [
+        22,
+        19,
+        20
+      ],
+      "failureCount": 0
+    },
+    {
+      "mode": "extraction-only",
+      "intendedTasks": 3,
+      "recordedTasks": 3,
+      "correctDrafts": 3,
+      "assignedWorkflowCompletions": 3,
+      "correctedQuoteFields": 0,
+      "taskElapsedMs": [
+        5426,
+        6202,
+        7712
+      ],
+      "failureCount": 0
+    },
+    {
+      "mode": "grounded-review",
+      "intendedTasks": 3,
+      "recordedTasks": 3,
+      "correctDrafts": 3,
+      "assignedWorkflowCompletions": 3,
+      "correctedQuoteFields": 0,
+      "taskElapsedMs": [
+        11557,
+        11641,
+        13139
+      ],
+      "failureCount": 0
+    }
+  ],
+  "recordsSha256": "7528838823e9b35f6f7c87eb3435072f439a49b7b9e6d5dae54c7a18ee7e6bfa"
+}

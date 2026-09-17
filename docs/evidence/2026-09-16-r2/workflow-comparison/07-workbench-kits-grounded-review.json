@@ -1,0 +1,285 @@
+{
+  "sequence": 7,
+  "fixtureId": "workbench-kits",
+  "mode": "grounded-review",
+  "startedAt": "2026-09-17T02:42:35.278Z",
+  "failures": [],
+  "correctedQuoteFields": [],
+  "humanVerified": false,
+  "releaseGatePassed": false,
+  "quoteSha256": "4f5f7180368039e9135c0643e6b510f65c5aa9484b12e26211035d30005fec6a",
+  "policySha256": "2680ca50649d97f606bed0981af1b36c51e93f92dc259cf5a3acf7c30a8e54de",
+  "completed": true,
+  "assignedWorkflowCompleted": true,
+  "tenantId": "34e85f6d-feed-4259-b769-e1e2291fdb9b",
+  "caseId": "2f9c8585-430b-4180-b4e5-9e6dd627500e",
+  "initialPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Workbench organizer kit",
+    "justification": "Equip four demonstration workbenches"
+  },
+  "policy": {
+    "id": "999671af-feba-4d01-87d9-77f451311ade",
+    "kind": "POLICY",
+    "name": "Comparison workbench-kits policy",
+    "state": "PUBLISHED",
+    "version": 2,
+    "caseId": null,
+    "mediaType": "text/plain",
+    "byteSize": 90,
+    "sha256": "2680ca50649d97f606bed0981af1b36c51e93f92dc259cf5a3acf7c30a8e54de",
+    "jobId": "c2244ece-0244-4c4d-8b74-4b38e752033e",
+    "failureCode": null
+  },
+  "quote": {
+    "id": "10b75fd0-9ca4-4c65-a082-0b5604edddb2",
+    "kind": "QUOTE",
+    "name": "Comparison workbench-kits quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "2f9c8585-430b-4180-b4e5-9e6dd627500e",
+    "mediaType": "text/plain",
+    "byteSize": 122,
+    "sha256": "4f5f7180368039e9135c0643e6b510f65c5aa9484b12e26211035d30005fec6a",
+    "jobId": "df2ca59d-503f-4fb4-ab75-3822c6b701ab",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "999671af-feba-4d01-87d9-77f451311ade",
+        "name": "Comparison workbench-kits policy",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "setupElapsedMs": 3986,
+  "taskStartedAt": "2026-09-17T02:42:39.265Z",
+  "initialVersion": 2,
+  "extraction": {
+    "jobId": "9e614efb-91fe-4ffe-b796-2e044bba49a0",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "776afdfc-0647-48bd-8146-e16a2d4d4c4e",
+      "output": {
+        "total": {
+          "value": "115.00",
+          "citations": [
+            {
+              "quote": "Total: 115.00",
+              "chunkId": "40e11451-0a77-5e5b-981a-4334ca3ada35"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Synthetic Birch Kit Studio",
+          "citations": [
+            {
+              "quote": "Vendor: Synthetic Birch Kit Studio",
+              "chunkId": "40e11451-0a77-5e5b-981a-4334ca3ada35"
+            }
+          ]
+        },
+        "currency": {
+          "value": "USD",
+          "citations": [
+            {
+              "quote": "Currency: USD",
+              "chunkId": "40e11451-0a77-5e5b-981a-4334ca3ada35"
+            }
+          ]
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "4",
+              "unitPrice": "28.75",
+              "description": "Workbench organizer kit"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "Item: Workbench organizer kit\nQuantity: 4\nUnit price: 28.75",
+              "chunkId": "40e11451-0a77-5e5b-981a-4334ca3ada35"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "40e11451-0a77-5e5b-981a-4334ca3ada35": {
+          "page": 1,
+          "text": "Vendor: Synthetic Birch Kit Studio\nItem: Workbench organizer kit\nQuantity: 4\nUnit price: 28.75\nCurrency: USD\nTotal: 115.00",
+          "start": 0,
+          "sourceId": "10b75fd0-9ca4-4c65-a082-0b5604edddb2"
+        }
+      },
+      "revision": 2,
+      "sourceId": "10b75fd0-9ca4-4c65-a082-0b5604edddb2",
+      "elapsedMs": 4500,
+      "promptHash": "86dc29e7a585638c7291bff98be916736f3fca2dd0239a5dbcc3a4d4cae75b6e",
+      "schemaHash": "64325a66182888746b0daf254756a1261ba0716cc6a9029cd9be634bec426bce",
+      "inputTokens": 988,
+      "outputTokens": 230,
+      "sourceSha256": "4f5f7180368039e9135c0643e6b510f65c5aa9484b12e26211035d30005fec6a",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000764",
+      "retrievedChunkIds": [
+        "40e11451-0a77-5e5b-981a-4334ca3ada35"
+      ],
+      "retrievalElapsedMs": 16
+    }
+  },
+  "extractionDiscrepancies": [],
+  "acceptedFields": [
+    "vendor",
+    "currency",
+    "lineItems"
+  ],
+  "acceptance": {
+    "accepted": true,
+    "version": 3
+  },
+  "purchaseAfterAcceptance": {
+    "total": "115.00",
+    "vendor": "Synthetic Birch Kit Studio",
+    "currency": "USD",
+    "lineItems": [
+      {
+        "quantity": "4",
+        "unitPrice": "28.75",
+        "description": "Workbench organizer kit"
+      }
+    ],
+    "costCenter": "",
+    "description": "Workbench organizer kit",
+    "justification": "Equip four demonstration workbenches"
+  },
+  "purchaseBeforeReview": {
+    "total": "115.00",
+    "vendor": "Synthetic Birch Kit Studio",
+    "currency": "USD",
+    "lineItems": [
+      {
+        "quantity": "4",
+        "unitPrice": "28.75",
+        "description": "Workbench organizer kit"
+      }
+    ],
+    "costCenter": "",
+    "description": "Workbench organizer kit",
+    "justification": "Equip four demonstration workbenches"
+  },
+  "review": {
+    "jobId": "527a0a17-59dc-4de6-ba70-51ec786ffd43",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 3,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "7f3ab033-bf86-47a1-b089-d33f89b210e4",
+      "output": {
+        "summary": "The purchase request is for 4 workbench organizer kits at a unit price of 28.75 USD from Synthetic Birch Kit Studio, totaling 115.00 USD. The request includes a justification to equip four demonstration workbenches. Policy requires that every workbench organizer kit purchase request must include a cost center before approval.",
+        "citations": [
+          {
+            "quote": "Every workbench organizer kit purchase request must include a cost center before approval.",
+            "chunkId": "396f0bfc-9074-53a2-9018-67211beb9ef1"
+          }
+        ],
+        "policy_findings": [
+          {
+            "claim": "Every workbench organizer kit purchase request must include a cost center before approval.",
+            "citations": [
+              {
+                "quote": "Every workbench organizer kit purchase request must include a cost center before approval.",
+                "chunkId": "396f0bfc-9074-53a2-9018-67211beb9ef1"
+              }
+            ]
+          }
+        ],
+        "missing_information": [
+          "costCenter"
+        ],
+        "insufficient_evidence": false
+      },
+      "evidence": {
+        "396f0bfc-9074-53a2-9018-67211beb9ef1": {
+          "page": 1,
+          "text": "Every workbench organizer kit purchase request must include a cost center before approval.",
+          "start": 0,
+          "sourceId": "999671af-feba-4d01-87d9-77f451311ade"
+        }
+      },
+      "revision": 3,
+      "sourceId": null,
+      "elapsedMs": 5108,
+      "promptHash": "ab4ae309697bd254f2361c426da8b5e55e829d21a7314ca51176a9bbf800adfa",
+      "schemaHash": "a2a421acf1c7dae0a2333c069a32f7a0551eb45f441a5c8fcca19b6fa07e0ec8",
+      "inputTokens": 1048,
+      "outputTokens": 204,
+      "sourceSha256": null,
+      "promptVersion": "purchase-review-2026-09-16-v6",
+      "schemaVersion": "purchase-review-v5",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Workbench OR organizer OR kit OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000746",
+      "retrievedChunkIds": [
+        "396f0bfc-9074-53a2-9018-67211beb9ef1"
+      ],
+      "retrievalElapsedMs": 14
+    }
+  },
+  "reviewInspection": {
+    "method": "automated-structural-inspection-not-semantic-claim-grading",
+    "expectedRequiredField": "costCenter",
+    "reportedRequiredField": true,
+    "findingCount": 1,
+    "insufficientEvidence": false,
+    "policyCited": true
+  },
+  "manualPolicyEntry": {
+    "field": "costCenter",
+    "before": "",
+    "after": "LAB-TEST"
+  },
+  "finalPurchase": {
+    "total": "115.00",
+    "vendor": "Synthetic Birch Kit Studio",
+    "currency": "USD",
+    "lineItems": [
+      {
+        "quantity": "4",
+        "unitPrice": "28.75",
+        "description": "Workbench organizer kit"
+      }
+    ],
+    "costCenter": "LAB-TEST",
+    "description": "Workbench organizer kit",
+    "justification": "Equip four demonstration workbenches"
+  },
+  "finalVersion": 4,
+  "finalDifferences": [],
+  "finishedAt": "2026-09-17T02:42:52.404Z",
+  "taskElapsedMs": 13139,
+  "totalElapsedMs": 17126
+}

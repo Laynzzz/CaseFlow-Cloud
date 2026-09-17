@@ -1,0 +1,285 @@
+{
+  "sequence": 3,
+  "fixtureId": "stand-replacement",
+  "mode": "grounded-review",
+  "startedAt": "2026-09-17T02:41:51.444Z",
+  "failures": [],
+  "correctedQuoteFields": [],
+  "humanVerified": false,
+  "releaseGatePassed": false,
+  "quoteSha256": "e0d9f7c5e3168978a409089125a46b5e1662854a9dc22cc1a552a9d5d8d2a5e9",
+  "policySha256": "eb1904b7915a3c65db7ef57d412f4642fabf2ef059ef501c07edbe44b1e9cdc7",
+  "completed": true,
+  "assignedWorkflowCompleted": true,
+  "tenantId": "258ed897-2fb1-4aa9-8a1c-d21fd62aac18",
+  "caseId": "ef0d4e1f-69c2-4678-a946-f2e053b5dd51",
+  "initialPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Adjustable equipment stand",
+    "justification": "Replace two demonstration equipment stands"
+  },
+  "policy": {
+    "id": "dbe1936e-5349-4097-b3e2-847c45e7f043",
+    "kind": "POLICY",
+    "name": "Comparison stand-replacement policy",
+    "state": "PUBLISHED",
+    "version": 2,
+    "caseId": null,
+    "mediaType": "text/plain",
+    "byteSize": 93,
+    "sha256": "eb1904b7915a3c65db7ef57d412f4642fabf2ef059ef501c07edbe44b1e9cdc7",
+    "jobId": "4ade1770-c3c8-4cd6-a489-dd446900ca0c",
+    "failureCode": null
+  },
+  "quote": {
+    "id": "5fced47d-9478-4fdc-bafa-348814695d57",
+    "kind": "QUOTE",
+    "name": "Comparison stand-replacement quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "ef0d4e1f-69c2-4678-a946-f2e053b5dd51",
+    "mediaType": "text/plain",
+    "byteSize": 130,
+    "sha256": "e0d9f7c5e3168978a409089125a46b5e1662854a9dc22cc1a552a9d5d8d2a5e9",
+    "jobId": "f3a21b96-51cb-44f3-8f8f-c68427319b11",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "dbe1936e-5349-4097-b3e2-847c45e7f043",
+        "name": "Comparison stand-replacement policy",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "setupElapsedMs": 3240,
+  "taskStartedAt": "2026-09-17T02:41:54.684Z",
+  "initialVersion": 2,
+  "extraction": {
+    "jobId": "c088ba12-5cd5-425f-b695-ab0966d76508",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "76aea745-0f9b-4066-8c44-fa22451a1e8f",
+      "output": {
+        "total": {
+          "value": "374.50",
+          "citations": [
+            {
+              "quote": "Total: 374.50",
+              "chunkId": "d9c09f78-fef0-5050-b71c-2c1d7229b1fa"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Synthetic Maple Stand Workshop",
+          "citations": [
+            {
+              "quote": "Vendor: Synthetic Maple Stand Workshop",
+              "chunkId": "d9c09f78-fef0-5050-b71c-2c1d7229b1fa"
+            }
+          ]
+        },
+        "currency": {
+          "value": "USD",
+          "citations": [
+            {
+              "quote": "Currency: USD",
+              "chunkId": "d9c09f78-fef0-5050-b71c-2c1d7229b1fa"
+            }
+          ]
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "2",
+              "unitPrice": "187.25",
+              "description": "Adjustable equipment stand"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "Item: Adjustable equipment stand\nQuantity: 2\nUnit price: 187.25",
+              "chunkId": "d9c09f78-fef0-5050-b71c-2c1d7229b1fa"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "d9c09f78-fef0-5050-b71c-2c1d7229b1fa": {
+          "page": 1,
+          "text": "Vendor: Synthetic Maple Stand Workshop\nItem: Adjustable equipment stand\nQuantity: 2\nUnit price: 187.25\nCurrency: USD\nTotal: 374.50",
+          "start": 0,
+          "sourceId": "5fced47d-9478-4fdc-bafa-348814695d57"
+        }
+      },
+      "revision": 2,
+      "sourceId": "5fced47d-9478-4fdc-bafa-348814695d57",
+      "elapsedMs": 4641,
+      "promptHash": "05a48c8d08b29451b15baf5a0caab70dc204f406ead08a25cd9e5e8d0e772d6a",
+      "schemaHash": "07c1a3dd2be14510fa827e6fcba02b1d29d7dd4d542cc31ec7d716151f96a2e1",
+      "inputTokens": 988,
+      "outputTokens": 238,
+      "sourceSha256": "e0d9f7c5e3168978a409089125a46b5e1662854a9dc22cc1a552a9d5d8d2a5e9",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000776",
+      "retrievedChunkIds": [
+        "d9c09f78-fef0-5050-b71c-2c1d7229b1fa"
+      ],
+      "retrievalElapsedMs": 0
+    }
+  },
+  "extractionDiscrepancies": [],
+  "acceptedFields": [
+    "vendor",
+    "currency",
+    "lineItems"
+  ],
+  "acceptance": {
+    "accepted": true,
+    "version": 3
+  },
+  "purchaseAfterAcceptance": {
+    "total": "374.50",
+    "vendor": "Synthetic Maple Stand Workshop",
+    "currency": "USD",
+    "lineItems": [
+      {
+        "quantity": "2",
+        "unitPrice": "187.25",
+        "description": "Adjustable equipment stand"
+      }
+    ],
+    "costCenter": "",
+    "description": "Adjustable equipment stand",
+    "justification": "Replace two demonstration equipment stands"
+  },
+  "purchaseBeforeReview": {
+    "total": "374.50",
+    "vendor": "Synthetic Maple Stand Workshop",
+    "currency": "USD",
+    "lineItems": [
+      {
+        "quantity": "2",
+        "unitPrice": "187.25",
+        "description": "Adjustable equipment stand"
+      }
+    ],
+    "costCenter": "",
+    "description": "Adjustable equipment stand",
+    "justification": "Replace two demonstration equipment stands"
+  },
+  "review": {
+    "jobId": "b4e55fdf-2111-46f4-9bee-a0fc5c3ab864",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 3,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "3270592f-fd4d-432b-a9e8-7fe89095671d",
+      "output": {
+        "summary": "The purchase request is for two adjustable equipment stands from Synthetic Maple Stand Workshop at a total of 374.50 USD with the justification to replace two demonstration equipment stands. Policy requires every adjustable equipment stand purchase request to include a cost center before approval.",
+        "citations": [
+          {
+            "quote": "Every adjustable equipment stand purchase request must include a cost center before approval.",
+            "chunkId": "08ebf39f-507e-5386-8bea-8085626777d2"
+          }
+        ],
+        "policy_findings": [
+          {
+            "claim": "Every adjustable equipment stand purchase request must include a cost center before approval.",
+            "citations": [
+              {
+                "quote": "Every adjustable equipment stand purchase request must include a cost center before approval.",
+                "chunkId": "08ebf39f-507e-5386-8bea-8085626777d2"
+              }
+            ]
+          }
+        ],
+        "missing_information": [
+          "costCenter"
+        ],
+        "insufficient_evidence": false
+      },
+      "evidence": {
+        "08ebf39f-507e-5386-8bea-8085626777d2": {
+          "page": 1,
+          "text": "Every adjustable equipment stand purchase request must include a cost center before approval.",
+          "start": 0,
+          "sourceId": "dbe1936e-5349-4097-b3e2-847c45e7f043"
+        }
+      },
+      "revision": 3,
+      "sourceId": null,
+      "elapsedMs": 4061,
+      "promptHash": "b61234a7e9bd9d99407ef7544c4d104b6006fb4bf78c525dd625e10de3d70ff8",
+      "schemaHash": "740db5378bf105bb31a513cb6152265e3941a151f576b4fd937481886deb319e",
+      "inputTokens": 1050,
+      "outputTokens": 183,
+      "sourceSha256": null,
+      "promptVersion": "purchase-review-2026-09-16-v6",
+      "schemaVersion": "purchase-review-v5",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Adjustable OR equipment OR stand OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000713",
+      "retrievedChunkIds": [
+        "08ebf39f-507e-5386-8bea-8085626777d2"
+      ],
+      "retrievalElapsedMs": 31
+    }
+  },
+  "reviewInspection": {
+    "method": "automated-structural-inspection-not-semantic-claim-grading",
+    "expectedRequiredField": "costCenter",
+    "reportedRequiredField": true,
+    "findingCount": 1,
+    "insufficientEvidence": false,
+    "policyCited": true
+  },
+  "manualPolicyEntry": {
+    "field": "costCenter",
+    "before": "",
+    "after": "OPS-TEST"
+  },
+  "finalPurchase": {
+    "total": "374.50",
+    "vendor": "Synthetic Maple Stand Workshop",
+    "currency": "USD",
+    "lineItems": [
+      {
+        "quantity": "2",
+        "unitPrice": "187.25",
+        "description": "Adjustable equipment stand"
+      }
+    ],
+    "costCenter": "OPS-TEST",
+    "description": "Adjustable equipment stand",
+    "justification": "Replace two demonstration equipment stands"
+  },
+  "finalVersion": 4,
+  "finalDifferences": [],
+  "finishedAt": "2026-09-17T02:42:06.241Z",
+  "taskElapsedMs": 11557,
+  "totalElapsedMs": 14797
+}

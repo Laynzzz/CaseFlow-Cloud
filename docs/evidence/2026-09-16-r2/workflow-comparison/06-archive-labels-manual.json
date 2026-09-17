@@ -1,0 +1,90 @@
+{
+  "sequence": 6,
+  "fixtureId": "archive-labels",
+  "mode": "manual",
+  "startedAt": "2026-09-17T02:42:31.283Z",
+  "failures": [],
+  "correctedQuoteFields": [],
+  "humanVerified": false,
+  "releaseGatePassed": false,
+  "quoteSha256": "046613fad470deb6a8c2507198875a8019aa3e68c3d79e5ca3f31d70583c43f6",
+  "policySha256": "7e77366dea8407e2355982a9e8b286c416611ffbf48e369a50485afb87f6768a",
+  "completed": true,
+  "assignedWorkflowCompleted": true,
+  "tenantId": "e20ff7f4-b929-4fcc-a95a-ca4a85257b97",
+  "caseId": "da8bd13f-b6c9-4ea1-95bf-ebea8281dea6",
+  "initialPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "FIN-TEST",
+    "description": "Reusable archive label pack",
+    "justification": ""
+  },
+  "policy": {
+    "id": "41a2c24c-4aa2-4443-afb6-ba36452d909a",
+    "kind": "POLICY",
+    "name": "Comparison archive-labels policy",
+    "state": "PUBLISHED",
+    "version": 2,
+    "caseId": null,
+    "mediaType": "text/plain",
+    "byteSize": 125,
+    "sha256": "7e77366dea8407e2355982a9e8b286c416611ffbf48e369a50485afb87f6768a",
+    "jobId": "3d49b41a-ca58-42a9-8573-b49ccde06a1a",
+    "failureCode": null
+  },
+  "quote": {
+    "id": "f66a4025-3659-44b0-a410-7c436fa27d78",
+    "kind": "QUOTE",
+    "name": "Comparison archive-labels quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "da8bd13f-b6c9-4ea1-95bf-ebea8281dea6",
+    "mediaType": "text/plain",
+    "byteSize": 128,
+    "sha256": "046613fad470deb6a8c2507198875a8019aa3e68c3d79e5ca3f31d70583c43f6",
+    "jobId": "fd749510-e36f-41fb-8dc2-e8aeeb91444a",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "41a2c24c-4aa2-4443-afb6-ba36452d909a",
+        "name": "Comparison archive-labels policy",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "setupElapsedMs": 3974,
+  "taskStartedAt": "2026-09-17T02:42:35.257Z",
+  "initialVersion": 2,
+  "manualEnteredFields": [
+    "vendor",
+    "justification",
+    "lineItems"
+  ],
+  "finalPurchase": {
+    "total": "127.20",
+    "vendor": "Synthetic Pebble Label House",
+    "currency": "USD",
+    "lineItems": [
+      {
+        "quantity": "3",
+        "unitPrice": "42.40",
+        "description": "Reusable archive label pack"
+      }
+    ],
+    "costCenter": "FIN-TEST",
+    "description": "Reusable archive label pack",
+    "justification": "Label three synthetic archive shelves"
+  },
+  "finalVersion": 3,
+  "finalDifferences": [],
+  "finishedAt": "2026-09-17T02:42:35.276Z",
+  "taskElapsedMs": 19,
+  "totalElapsedMs": 3993
+}

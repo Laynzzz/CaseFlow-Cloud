@@ -1,0 +1,199 @@
+{
+  "sequence": 2,
+  "fixtureId": "stand-replacement",
+  "mode": "extraction-only",
+  "startedAt": "2026-09-17T02:41:41.270Z",
+  "failures": [],
+  "correctedQuoteFields": [],
+  "humanVerified": false,
+  "releaseGatePassed": false,
+  "quoteSha256": "e0d9f7c5e3168978a409089125a46b5e1662854a9dc22cc1a552a9d5d8d2a5e9",
+  "policySha256": "eb1904b7915a3c65db7ef57d412f4642fabf2ef059ef501c07edbe44b1e9cdc7",
+  "completed": true,
+  "assignedWorkflowCompleted": true,
+  "tenantId": "13cbd586-a936-4402-97c0-ede3ac35d4ef",
+  "caseId": "067f4c25-6e10-4c33-aa06-13e4beda54e1",
+  "initialPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Adjustable equipment stand",
+    "justification": "Replace two demonstration equipment stands"
+  },
+  "policy": {
+    "id": "79fdd809-844a-45c2-b04a-711d9ebff220",
+    "kind": "POLICY",
+    "name": "Comparison stand-replacement policy",
+    "state": "PUBLISHED",
+    "version": 2,
+    "caseId": null,
+    "mediaType": "text/plain",
+    "byteSize": 93,
+    "sha256": "eb1904b7915a3c65db7ef57d412f4642fabf2ef059ef501c07edbe44b1e9cdc7",
+    "jobId": "dfe62b81-9bef-4943-a754-67e4efb46bd1",
+    "failureCode": null
+  },
+  "quote": {
+    "id": "381ee10e-86cc-4ca8-83a4-dff1f8d8b269",
+    "kind": "QUOTE",
+    "name": "Comparison stand-replacement quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "067f4c25-6e10-4c33-aa06-13e4beda54e1",
+    "mediaType": "text/plain",
+    "byteSize": 130,
+    "sha256": "e0d9f7c5e3168978a409089125a46b5e1662854a9dc22cc1a552a9d5d8d2a5e9",
+    "jobId": "c7c5fe41-b83a-4e01-ab8b-b1640e493877",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "79fdd809-844a-45c2-b04a-711d9ebff220",
+        "name": "Comparison stand-replacement policy",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "setupElapsedMs": 4746,
+  "taskStartedAt": "2026-09-17T02:41:46.015Z",
+  "initialVersion": 2,
+  "extraction": {
+    "jobId": "fbfa80ac-0886-4f2b-b67d-a91e3387ce1b",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "4fe07912-0cc8-4b8a-b606-d0f13e6b9b03",
+      "output": {
+        "total": {
+          "value": "374.50",
+          "citations": [
+            {
+              "quote": "Total: 374.50",
+              "chunkId": "6ed1ca7c-264e-5c0d-901d-463955c43d4f"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Synthetic Maple Stand Workshop",
+          "citations": [
+            {
+              "quote": "Vendor: Synthetic Maple Stand Workshop",
+              "chunkId": "6ed1ca7c-264e-5c0d-901d-463955c43d4f"
+            }
+          ]
+        },
+        "currency": {
+          "value": "USD",
+          "citations": [
+            {
+              "quote": "Currency: USD",
+              "chunkId": "6ed1ca7c-264e-5c0d-901d-463955c43d4f"
+            }
+          ]
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "2",
+              "unitPrice": "187.25",
+              "description": "Adjustable equipment stand"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "Item: Adjustable equipment stand\nQuantity: 2\nUnit price: 187.25",
+              "chunkId": "6ed1ca7c-264e-5c0d-901d-463955c43d4f"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "6ed1ca7c-264e-5c0d-901d-463955c43d4f": {
+          "page": 1,
+          "text": "Vendor: Synthetic Maple Stand Workshop\nItem: Adjustable equipment stand\nQuantity: 2\nUnit price: 187.25\nCurrency: USD\nTotal: 374.50",
+          "start": 0,
+          "sourceId": "381ee10e-86cc-4ca8-83a4-dff1f8d8b269"
+        }
+      },
+      "revision": 2,
+      "sourceId": "381ee10e-86cc-4ca8-83a4-dff1f8d8b269",
+      "elapsedMs": 4389,
+      "promptHash": "8228553e04f312e384d7f071a2f3f5ec9cb589062f4d6cec4a37af8c897b6169",
+      "schemaHash": "cf815788c55e8c71bdf6bc73daa3d8efbe7808c936e63cc27a7ed00da49a5e55",
+      "inputTokens": 992,
+      "outputTokens": 239,
+      "sourceSha256": "e0d9f7c5e3168978a409089125a46b5e1662854a9dc22cc1a552a9d5d8d2a5e9",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000780",
+      "retrievedChunkIds": [
+        "6ed1ca7c-264e-5c0d-901d-463955c43d4f"
+      ],
+      "retrievalElapsedMs": 31
+    }
+  },
+  "extractionDiscrepancies": [],
+  "acceptedFields": [
+    "vendor",
+    "currency",
+    "lineItems"
+  ],
+  "acceptance": {
+    "accepted": true,
+    "version": 3
+  },
+  "purchaseAfterAcceptance": {
+    "total": "374.50",
+    "vendor": "Synthetic Maple Stand Workshop",
+    "currency": "USD",
+    "lineItems": [
+      {
+        "quantity": "2",
+        "unitPrice": "187.25",
+        "description": "Adjustable equipment stand"
+      }
+    ],
+    "costCenter": "",
+    "description": "Adjustable equipment stand",
+    "justification": "Replace two demonstration equipment stands"
+  },
+  "manualPolicyEntry": {
+    "field": "costCenter",
+    "before": "",
+    "after": "OPS-TEST"
+  },
+  "finalPurchase": {
+    "total": "374.50",
+    "vendor": "Synthetic Maple Stand Workshop",
+    "currency": "USD",
+    "lineItems": [
+      {
+        "quantity": "2",
+        "unitPrice": "187.25",
+        "description": "Adjustable equipment stand"
+      }
+    ],
+    "costCenter": "OPS-TEST",
+    "description": "Adjustable equipment stand",
+    "justification": "Replace two demonstration equipment stands"
+  },
+  "finalVersion": 4,
+  "finalDifferences": [],
+  "finishedAt": "2026-09-17T02:41:51.441Z",
+  "taskElapsedMs": 5426,
+  "totalElapsedMs": 10172
+}
