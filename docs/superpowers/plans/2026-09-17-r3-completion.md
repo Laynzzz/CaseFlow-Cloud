@@ -10,31 +10,31 @@ for the plan's AWS deployment gate.
 
 ## Ordered work and gates
 
-- [ ] Finish the four redacted dead-letter process-crash cases, preserving actual
+- [x] Finish the four redacted dead-letter process-crash cases, preserving actual
   source coordinates, broker acknowledgements and business-effect invariants.
-- [ ] Add bounded operational metrics and OpenTelemetry propagation through Java
+- [x] Add bounded operational metrics and OpenTelemetry propagation through Java
   outbox → Kafka → durable Python job → completion outbox → Java. Preserve all
   transaction/acknowledgement/fencing boundaries. Verify metadata-only telemetry,
   disconnected export, durable context and private management endpoints.
-- [ ] Package immutable Java/frontend and worker images in an isolated release
+- [x] Package immutable Java/frontend and worker images in an isolated release
   Compose project. Verify empty-schema startup, OIDC/PKCE, full manual approval,
   immutable DOCX download and another tenant's denial. No live AI calls required.
-- [ ] Provision local collector/trace/metric backends and dashboard/alerts. Export
+- [x] Provision local collector/trace/metric backends and dashboard/alerts. Export
   a correlated trace; diagnose one controlled failure and record restoration.
-- [ ] Run the bounded k6 workload after warmup; publish offered/completed/dropped
+- [x] Run the bounded k6 workload after warmup; publish offered/completed/dropped
   work, HTTP latency separately from job latency, backlog/drain and saturation.
   Record exact revision, images, workload, environment and limitations.
-- [ ] Exercise packaged-service recovery and prior-image rollback with compatible
+- [x] Exercise packaged-service recovery and prior-image rollback with compatible
   migrations; preserve failed runs and all relevant checksums.
-- [ ] Add repeatable CI gates, dependency/secret/container checks, declared critical
+- [x] Add repeatable CI gates, dependency/secret/container checks, declared critical
   module coverage and Terraform validation. Run locally where credentials permit;
   distinguish local validation from hosted CI evidence.
-- [ ] Prepare Terraform, networking/identity/messaging decisions, current AWS cost
+- [x] Prepare Terraform, networking/identity/messaging decisions, current AWS cost
   estimate and exact deploy/smoke/rollback/teardown instructions. Before provisioning,
   obtain account availability, region, identity prerequisites and cost authorization.
 - [ ] Execute cloud deployment/rollback/teardown only after prerequisites arrive.
   If blocked, finish all independent local work and report this gate as pending.
-- [ ] Verify a clean-checkout synthetic demo; update release statuses, teaching
+- [x] Verify a clean-checkout synthetic demo; update release statuses, teaching
   guide, interview preparation and claim-to-evidence map. Do not claim R3 complete
   until its required gates have actual evidence.
 

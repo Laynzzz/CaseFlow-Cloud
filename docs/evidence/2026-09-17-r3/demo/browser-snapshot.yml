@@ -1,0 +1,115 @@
+- generic [ref=f16e3]:
+  - link "Skip to content" [ref=f16e4] [cursor=pointer]:
+    - /url: "#workspace"
+  - complementary [ref=f16e5]:
+    - link "CaseFlowCloud" [ref=f16e6] [cursor=pointer]:
+      - /url: /
+    - generic [ref=f16e7]:
+      - text: Organization
+      - combobox "Organization" [ref=f16e8]:
+        - option "Select organization" [disabled]
+        - option "Load 2026-09-17T15-02-55-071Z A"
+        - option "Load 2026-09-17T15-02-55-071Z B"
+        - option "Load 2026-09-17T15-04-19-100Z A"
+        - option "Load 2026-09-17T15-04-19-100Z B"
+        - option "Release Acme Studio" [selected]
+    - navigation "Main navigation" [ref=f16e9]:
+      - link "Purchase requests" [ref=f16e10] [cursor=pointer]:
+        - /url: /
+      - link "My account" [ref=f16e11] [cursor=pointer]:
+        - /url: /account
+    - generic [ref=f16e12]:
+      - strong [ref=f16e13]: finance
+      - generic [ref=f16e14]: approver
+      - button "Sign out" [ref=f16e15] [cursor=pointer]
+  - main [ref=f16e16]:
+    - link "← Purchase requests" [ref=f16e131] [cursor=pointer]:
+      - /url: /
+    - generic [ref=f16e132]:
+      - generic [ref=f16e133]:
+        - paragraph [ref=f16e134]: Synthetic Browser Supplies
+        - heading "Browser proof laptop" [level=1] [ref=f16e135]
+      - generic [ref=f16e136]: approved
+    - generic [ref=f16e137]:
+      - generic [ref=f16e138]:
+        - heading "Purchase details" [level=2] [ref=f16e139]
+        - generic [ref=f16e140]:
+          - term [ref=f16e141]: Total
+          - definition [ref=f16e142]: USD 4200.00
+          - term [ref=f16e143]: Cost center
+          - definition [ref=f16e144]: TRAINING
+          - term [ref=f16e145]: Business justification
+          - definition [ref=f16e146]: Synthetic packaged browser journey
+        - table [ref=f16e148]:
+          - rowgroup [ref=f16e149]:
+            - row [ref=f16e150]:
+              - columnheader "Item" [ref=f16e151]
+              - columnheader "Quantity" [ref=f16e152]
+              - columnheader "Unit price" [ref=f16e153]
+          - rowgroup [ref=f16e154]:
+            - row [ref=f16e155]:
+              - cell "Training laptop" [ref=f16e156]
+              - cell "1" [ref=f16e157]
+              - cell "4200.00" [ref=f16e158]
+        - paragraph [ref=f16e159]: Saved version 4 · 9/17/2026, 12:02:43 PM
+      - generic [ref=f16e160]:
+        - heading "Approval steps" [level=2] [ref=f16e161]
+        - generic [ref=f16e162]:
+          - generic [ref=f16e163]: "01"
+          - generic [ref=f16e164]:
+            - heading "First review" [level=3] [ref=f16e165]
+            - paragraph [ref=f16e166]: manager
+            - generic [ref=f16e167]: approved
+        - generic [ref=f16e168]:
+          - generic [ref=f16e169]: "02"
+          - generic [ref=f16e170]:
+            - heading "Final review" [level=3] [ref=f16e171]
+            - paragraph [ref=f16e172]: finance
+            - generic [ref=f16e210]: approved
+    - generic [ref=f16e211]:
+      - heading "Approved document" [level=2] [ref=f16e212]
+      - paragraph [ref=f16e213]: The purchase is approved. Document processing has a separate status.
+      - generic [ref=f16e214]:
+        - generic [ref=f16e215]:
+          - generic [ref=f16e216]: succeeded
+          - paragraph [ref=f16e217]: Generation attempt 1 · 36 KB
+        - button "Download Word document" [ref=f16e224] [cursor=pointer]
+      - paragraph [ref=f16e218]: Download links expire after 60 seconds. Previously issued links remain usable until they expire.
+    - generic [ref=f16e176]:
+      - heading "Policies for this purchase" [level=2] [ref=f16e177]
+      - paragraph [ref=f16e178]: These are the selected policy versions. The requester can refresh them while the purchase is a draft; they become fixed when approval starts.
+      - paragraph [ref=f16e219]: No policies were published when this selection was made.
+    - generic [ref=f16e180]:
+      - heading "Vendor quotes" [level=2] [ref=f16e181]
+      - paragraph [ref=f16e182]: Attach the quote that supports this purchase. Your saved purchase details stay under your control.
+      - button "Check source status" [ref=f16e183] [cursor=pointer]
+      - paragraph [ref=f16e184]: No quotes attached yet.
+    - generic [ref=f16e185]:
+      - heading "AI review assistant" [level=2] [ref=f16e186]
+      - paragraph [ref=f16e187]: Experimental assistance. Check each suggestion against its source. You choose what to save; people make every approval decision.
+      - status [ref=f16e220]: Live AI testing is not configured. You can enter purchase details manually and read or search the policies above.
+      - button "Check AI status" [ref=f16e190] [cursor=pointer]
+    - generic [ref=f16e191]:
+      - heading "Discussion and audit history" [level=2] [ref=f16e192]
+      - generic [ref=f16e193]:
+        - generic [ref=f16e194]:
+          - text: Add a comment
+          - textbox "Add a comment" [ref=f16e195]
+        - button "Post comment" [disabled] [ref=f16e196]
+      - list [ref=f16e197]:
+        - listitem [ref=f16e221]:
+          - strong [ref=f16e222]: case approve
+          - time [ref=f16e223]: 9/17/2026, 12:02:43 PM
+        - listitem [ref=f16e198]:
+          - strong [ref=f16e199]: case approve
+          - time [ref=f16e200]: 9/17/2026, 12:00:12 PM
+        - listitem [ref=f16e201]:
+          - strong [ref=f16e202]: case started
+          - time [ref=f16e203]: 9/17/2026, 11:56:30 AM
+        - listitem [ref=f16e204]:
+          - strong [ref=f16e205]: assignments changed
+          - time [ref=f16e206]: 9/17/2026, 11:56:28 AM
+        - listitem [ref=f16e207]:
+          - strong [ref=f16e208]: draft created
+          - time [ref=f16e209]: 9/17/2026, 11:55:49 AM
+    - generic [ref=f16e45]: Development build · Synthetic demonstration data

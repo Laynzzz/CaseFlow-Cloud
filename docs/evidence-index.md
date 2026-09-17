@@ -383,3 +383,16 @@ maximum sustainable throughput, cloud capacity or AI performance.
 actual diagnostic alerts during PostgreSQL/Kafka outages, same-process recovery,
 collector privacy checks, prior-image rollback on additive V14 and preservation
 of four selected documents. This does not establish cloud rollback or disaster recovery.
+
+## R3 final local checks and demonstration
+
+[CI evidence](evidence/2026-09-17-r3/ci/summary.md) records local checks, 60 passing
+Java and 174 passing Python tests, declared branch coverage and scan outcomes.
+One separately opt-in Java benchmark skipped. Worker scans pass with 44 reviewed
+unfixed findings across eight CVEs, expiring October 1; raw findings are retained.
+
+[Browser and clean checkout](evidence/2026-09-17-r3/demo/summary.md) records real
+three-actor UI approval/download and a clean-source image build/deployment using
+the existing isolated database. [Claims map](claim-to-evidence.md) summarizes
+the supported statements and limits. Terraform is offline-validated; real AWS
+and hosted CI execution remain unclaimed.

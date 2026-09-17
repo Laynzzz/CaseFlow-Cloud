@@ -22,9 +22,8 @@ Verified against local PostgreSQL and Keycloak: tenant/resource access,
 deactivation, stale writes, duplicate commands, concurrent final approval,
 ordered decisions and cursor behavior. See [evidence](docs/evidence-index.md).
 
-**R1 remains unfinished:** the local admin-to-DOCX browser journey now passes,
-but cloud deployment/smoke and remaining delivery checks are open. Existing
-duplicate/lease tests are not the full recovery matrix.
+**R1's cloud gate remains unfinished:** local browser-to-DOCX, isolation,
+concurrency and recovery checks pass, but no AWS deployment is claimed.
 
 **R2 is locally complete as an experimental learning release.** Assisted and
 manual paths work, actual held-out results and three fixed-subset repetitions
@@ -45,10 +44,16 @@ See [fresh results](docs/evidence/2026-09-16-r2/heldout-v3-summary.md),
 [browser evidence](docs/evidence/2026-09-16-r2/browser-journey/README.md),
 [R2 map](docs/r2-status.md), and [architecture](docs/architecture.md).
 R3 reliability and operations are now in progress; see the
-[remaining-work map](docs/r3-status.md). Actual process-crash scenarios
-and 10,000 broker redeliveries now pass locally; the full recovery matrix,
-performance, operations and cloud gates remain open. See the
-[latest recorded scope and results](docs/evidence/2026-09-17-r3/dependencies/summary.md).
+[remaining-work map](docs/r3-status.md). Local crash/replay, mixed load, query
+optimization, monitoring, dependency recovery and compatible-image rollback have
+recorded evidence. A clean checkout builds and completes the manual demo. CI
+commands pass locally; worker image scans retain expiring reviewed OS findings.
+AWS deploy/smoke/rollback/teardown remains the release blocker. See the
+[claim-to-evidence map](docs/claim-to-evidence.md) and [AWS proposal](docs/aws-deployment-proposal.md).
+
+For the simplest demonstration using Node and Docker, follow the
+[packaged demo](docs/demo-scenario.md#packaged-manual-demo). The development
+commands below remain useful when editing the services directly.
 
 ## Run locally (PowerShell)
 

@@ -1,0 +1,9 @@
+{
+  "name": "telemetry-candidate",
+  "revision": "de03e248cf708fed102b1100648b6e12057e0660",
+  "dirty": true,
+  "sourceSha256": "5bb9ec613886acda097d597f4e62e771a033850eae6b240a6e41593466d42dc8",
+  "createdAt": "2026-09-17T15:00:24.689Z",
+  "api": "sha256:87a44e850c5453ed5600d633e39ecb65bb17470a04457618888fb39380b16c60",
+  "worker": "sha256:00b022975f90d6baeb85854253632bb4be867b2244a49dfc24ec066689c668c3"
+}

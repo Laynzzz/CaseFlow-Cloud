@@ -1134,3 +1134,37 @@ and worker OS patches removed fixable findings. Eight unfixed worker OS CVEs
 remain with 44 package entries, exact-version reasoning and an expiry; a fixed
 version, new finding or expiry fails the gate again. This is visible risk review,
 not a claim that scanners prove security. [Current evidence](evidence/2026-09-17-r3/ci/summary.md).
+
+## Prepared cloud architecture — not yet deployed
+
+The local application already performs the purchase flow. AWS would host that
+same flow outside the laptop and provide evidence for real rollout, identity,
+storage permissions, TLS and rollback. It is a delivery/operations requirement
+in the plan, not the AI engine or a prerequisite for learning the local product.
+
+Terraform files use HCL, an infrastructure configuration language running through
+the Terraform CLI. ECS runs the Java/frontend and Python containers, RDS hosts
+PostgreSQL, S3 stores documents, and ECR stores immutable images. ALB routes HTTPS
+application and sign-in traffic; ACM supplies domain-validated certificates.
+IAM roles grant machine permissions, while Secrets Manager supplies runtime
+database/identity credentials. Neither replaces the application's tenant/role
+checks. Cloud Map provides private names for monitoring the changing task IPs.
+
+The short rehearsal profile places Kafka, Keycloak and monitoring on one small
+VM to control setup cost; they share a failure domain and have no high availability.
+Public task IPs provide outbound access while security groups restrict inbound
+traffic; RDS stays private. This avoids a NAT gateway, at the cost of a deployment
+profile less isolated than private tasks plus controlled egress. Database TLS
+verifies the hostname and the checked public AWS CA bundle.
+
+Services initially have zero tasks. A one-off trusted Python bootstrap creates
+database roles and synthetic identity secrets, then health gates permit service
+startup. Secrets are fetched at runtime rather than stored as Terraform values.
+Images can roll back only across compatible schema changes; teardown explicitly
+handles retained data and its continuing cost. Budget alerts are not hard caps.
+
+Syntax, mocked plans, error redaction and configurable smoke have local evidence.
+Actual account permissions, AWS runtime behavior, cloud smoke, rollback and
+teardown are pending. Read [ADR 0007](adr/0007-cloud-rehearsal-profile.md),
+[deployment proposal](aws-deployment-proposal.md), and the
+[rehearsal runbook](../infrastructure/terraform/rehearsal/README.md) for trade-offs.

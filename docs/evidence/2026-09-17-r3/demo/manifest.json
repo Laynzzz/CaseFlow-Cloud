@@ -1,0 +1,93 @@
+{
+  "files": [
+    {
+      "path": "browser-desktop.png",
+      "source_sha256": "c2c7f4c63927b109510e7b064bf52724e9457afcf82100ac26b64d69cdfab530",
+      "archive_sha256": "c2c7f4c63927b109510e7b064bf52724e9457afcf82100ac26b64d69cdfab530"
+    },
+    {
+      "path": "browser-mobile.png",
+      "source_sha256": "1ade0e3186044563e7627dd2d93e3eea59c081a9fb3a648e96653f98775284a4",
+      "archive_sha256": "1ade0e3186044563e7627dd2d93e3eea59c081a9fb3a648e96653f98775284a4"
+    },
+    {
+      "path": "browser-snapshot.yml",
+      "source_sha256": "e7e903dd9c3bf92793ababae902ee28e3e77c3516a1f2aba7e46a934a8188859",
+      "archive_sha256": "1b23cff09742c60fe6bcbb2840f30987141a333924b9828818f76314a52ae0f7"
+    },
+    {
+      "path": "browser-purchase.docx",
+      "source_sha256": "cf8db37813867fc7c3c7394792a7baf07b0ea08f8c3aec10ebb550bee2e7d0ba",
+      "archive_sha256": "cf8db37813867fc7c3c7394792a7baf07b0ea08f8c3aec10ebb550bee2e7d0ba"
+    },
+    {
+      "path": "browser-release.json",
+      "source_sha256": "54f4340d70892bb59980ef9ea7e3cf1577bcb641832eccf4923db918c6765995",
+      "archive_sha256": "54f4340d70892bb59980ef9ea7e3cf1577bcb641832eccf4923db918c6765995"
+    },
+    {
+      "path": "clean-checkout-release.json",
+      "source_sha256": "a5effee859e2177dc4221bc726bd3e3509cc4f35d9e79c38892f942dbb070ae0",
+      "archive_sha256": "a5effee859e2177dc4221bc726bd3e3509cc4f35d9e79c38892f942dbb070ae0"
+    },
+    {
+      "path": "clean-checkout-build.txt.gz",
+      "source_sha256": "33a94e46838e99f79b2e6d6e9643f8d19d13cd344e1de16419a510192c556f3e",
+      "archive_sha256": "7778356eb7e8fca4688652fac45781c42bfbbb7eb9df947d6846074b318a022e"
+    },
+    {
+      "path": "clean-checkout-deploy.txt",
+      "source_sha256": "dbcfba2576decc6b29bda40a5d382e273adef3891c234eef4b5d90c8200dcc40",
+      "archive_sha256": "9a0ed23bb98776930fd1ebf54daec5e1ccb982939da1b74333f9f70a7950b968"
+    },
+    {
+      "path": "scans/container-api.json.gz",
+      "archive_sha256": "c24ec2bd85d324fb22a3520acfe7501be41f83882e9a8d599c7059f9cb01e914"
+    },
+    {
+      "path": "scans/container-review-api.json",
+      "archive_sha256": "5b7edaa3b69c24fb800fac8a1fdc7a8f85e31bda328cd8ee8443e659de48f18e"
+    },
+    {
+      "path": "scans/container-review-worker.json",
+      "archive_sha256": "98233da59fa6846744a34126cddbb7023077b0a4286c2dd9b631352dcda86c94"
+    },
+    {
+      "path": "scans/container-scan-api.txt",
+      "archive_sha256": "c334365d843a8939eba6e16b513bf90c0ac63f78e301b9375031d0efcb74ae03"
+    },
+    {
+      "path": "scans/container-scan-worker.txt",
+      "archive_sha256": "36426aec60854da705667ee0b8c4403fd3404e7071d941bd70d8cc73fc99ed93"
+    },
+    {
+      "path": "scans/container-worker.json.gz",
+      "archive_sha256": "02438e6a11b7c6b3d7acd027792a2869d7164a9c86e5ba4c7bf49164215fa253"
+    },
+    {
+      "path": "scans/dependencies.json.gz",
+      "archive_sha256": "42d8f96edd97325572a9271e22a5373c8f8189fc63e1078733295ecb91d5bb91"
+    },
+    {
+      "path": "scans/gitleaks-history.json",
+      "archive_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "scans/gitleaks-worktree.json",
+      "archive_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "scans/scan-summary.json",
+      "archive_sha256": "09999069373330016c22c361b04d368bbeaf0096779451a1a94ff24c5091324a"
+    }
+  ],
+  "browserCase": "ac177bbc-883f-4bbe-943f-dd6a787830b8",
+  "browserDownloadSha256": "cf8db37813867fc7c3c7394792a7baf07b0ea08f8c3aec10ebb550bee2e7d0ba",
+  "browserContentVerified": true,
+  "browserDownloadBytes": 36720,
+  "mobileViewportWidth": 390,
+  "observedMobilePageWidth": 390,
+  "cleanCheckout": "91f15c3a3da90a0f4ca765fd8e6e1d0da1d9ca67",
+  "cleanCheckoutReused": "Existing isolated release volumes and ignored synthetic credentials; build inputs came from a clean clone",
+  "scannerScriptSha256": "24f44bf6fe112ea39eeae2ca95844ca682bfd0886d962dd9378fb8c08c218de8"
+}

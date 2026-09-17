@@ -2,7 +2,7 @@
 import {spawnSync, execFileSync} from 'node:child_process';
 import {createHash, randomBytes} from 'node:crypto';
 import {copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync, readdirSync, unlinkSync} from 'node:fs';
-import {dirname, resolve, relative, sep} from 'node:path';
+import {basename, dirname, resolve, relative, sep} from 'node:path';
 import {fileURLToPath} from 'node:url';
 
 const root=resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -38,7 +38,7 @@ const save=(name,value)=>writeFileSync(resolve(output,name),JSON.stringify(value
 const sourceFiles=()=>capture('git',['ls-files','-z','--cached','--others','--exclude-standard']).split('\0').filter(Boolean)
   .filter(path=>!path.split('/').some(part=>['output','node_modules','.venv','build','.gradle','dist','generated','results','__pycache__','.pytest_cache'].includes(part))&&existsSync(resolve(root,path)));
 function snapshot() {
-  const target=resolve(output,'source-snapshot');mkdirSync(target,{recursive:true});
+  const target=resolve(output,`source-snapshot-${randomBytes(6).toString('hex')}`);mkdirSync(target,{recursive:true});
   const files=sourceFiles();
   for(const path of files) {const dest=resolve(target,path);if(!dest.startsWith(target+sep))throw new Error('Unsafe snapshot path');mkdirSync(dirname(dest),{recursive:true});copyFileSync(resolve(root,path),dest);}
   // Trivy's requirements.txt analyzer needs its documented filename; content is unchanged.
@@ -49,7 +49,7 @@ function snapshot() {
 }
 function sanitizeArtifacts() {
   function walk(directory) {for(const entry of readdirSync(directory,{withFileTypes:true})) {
-    if(['source-snapshot','scanner-cache'].includes(entry.name))continue;
+    if(entry.name.startsWith('source-snapshot')||entry.name==='scanner-cache')continue;
     const path=resolve(directory,entry.name);
     if(entry.isDirectory())walk(path);
     else if(/\.(xml|json|txt|html)$/.test(entry.name)) {const value=readFileSync(path,'utf8');const safe=redact(value);if(safe!==value)writeFileSync(path,safe);}
@@ -116,10 +116,11 @@ try {
   } else if(command==='scan') {
     const pins=JSON.parse(readFileSync(resolve(root,'tests/ci/tool-pins.json'),'utf8'));
     const source=snapshot(), cache=resolve(output,'scanner-cache');mkdirSync(cache,{recursive:true});
+    const scanSource=`/reports/${basename(source)}`;
     const mount=['--mount',`type=bind,source=${output},target=/reports`];
     const scanEnv=['--read-only','--security-opt','no-new-privileges:true','--cap-drop','ALL','--tmpfs','/tmp:rw,nosuid,noexec,size=256m'];
-    const leakConfig=['--config','/reports/source-snapshot/.gitleaks.toml'];
-    const secret=run('secret-worktree','docker',['run','--rm','--network','none',...scanEnv,...mount,pins.gitleaks.image,'dir','/reports/source-snapshot',...leakConfig,'--redact=100','--no-banner','--report-format','json','--report-path','/reports/gitleaks-worktree.json'],{allowFailure:true});
+    const leakConfig=['--config',`${scanSource}/.gitleaks.toml`];
+    const secret=run('secret-worktree','docker',['run','--rm','--network','none',...scanEnv,...mount,pins.gitleaks.image,'dir',scanSource,...leakConfig,'--redact=100','--no-banner','--report-format','json','--report-path','/reports/gitleaks-worktree.json'],{allowFailure:true});
     // A read-only Git object database preserves history coverage without mounting credentials.
     const history=run('secret-history','docker',['run','--rm','--network','none',...scanEnv,...mount,'--mount',`type=bind,source=${root}/.git,target=/history/.git,readonly`,pins.gitleaks.image,'git','/history',...leakConfig,'--redact=100','--no-banner','--report-format','json','--report-path','/reports/gitleaks-history.json'],{allowFailure:true});
     // The Java vulnerability database exceeds the bounded /tmp tmpfs. Keep its
@@ -127,7 +128,7 @@ try {
     mkdirSync(resolve(output,'scanner-tmp'),{recursive:true});
     const trivy=['run','--rm',...scanEnv,...mount,'--env','TMPDIR=/reports/scanner-tmp',pins.trivy.image];
     const common=['--cache-dir','/reports/scanner-cache','--scanners','vuln','--severity','HIGH,CRITICAL','--exit-code','1','--format','json','--timeout','10m'];
-    const dependencies=run('dependency-scan','docker',[...trivy,'fs',...common,'--output','/reports/dependencies.json','/reports/source-snapshot'],{allowFailure:true});
+    const dependencies=run('dependency-scan','docker',[...trivy,'fs',...common,'--output','/reports/dependencies.json',scanSource],{allowFailure:true});
     const imagesFile=resolve(root,option('--images',relative(root,resolve(output,'images.json'))));
     const manifest=JSON.parse(readFileSync(imagesFile,'utf8')); const statuses={};
     for(const service of ['api','worker']) {

@@ -1,0 +1,11 @@
+{
+  "secretWorktree": true,
+  "secretHistory": true,
+  "dependencies": true,
+  "containers": {
+    "api": true,
+    "worker": true
+  },
+  "policy": "HIGH/CRITICAL block unless an exact, unfixed worker OS HIGH finding has an unexpired documented review. Raw findings retained; not zero vulnerabilities.",
+  "dockerSocketMounted": false
+}

@@ -13,14 +13,15 @@ work. Performance and cloud claims need reproducible measurements.
 
 | Workstream | Current evidence | Required next evidence |
 | --- | --- | --- |
-| Recovery transactions | [13 actual business-boundary process-crash scenarios](recovery-matrix.md), including real Kafka publish/offset gaps, upload/result selection and Java completion; earlier deterministic checks retained | Dead-letter crash windows, full-service recovery and broader reconciliation/repair |
+| Recovery transactions | [17 actual business-boundary process-crash scenarios](recovery-matrix.md), including redacted dead letters, broker acknowledgements, upload/result selection and Java completion | Broader disaster recovery is not claimed |
 | Broker redelivery | [10,000 injected duplicates plus one late failure](evidence/2026-09-17-r3/summary.md); both consumers caught up, one artifact and success audit, no added execution | This bounded duplicate gate passes; distinct active jobs and sustained arrivals remain separate load work |
-| Dependency recovery | [Actual isolated broker/database restarts and two storage timeout cases](evidence/2026-09-17-r3/dependencies/summary.md); same worker recovers durable state | Java connection-pool/full-deployment recovery, longer outages and sustained workloads |
+| Dependency recovery | [Packaged PostgreSQL/Kafka outages](evidence/2026-09-17-r3/monitoring-recovery/summary.md): same API/worker processes recover, alerts resolve, selected artifacts verified | Cloud failure behavior remains unverified |
 | Query optimization | [Controlled V13 index comparison](query-performance.md): 100,000/200-case tenants, repeated before/after plans, identical results, permission/cursor/N+1 checks and storage cost | This bounded optimization passes; sparse permission distributions, write cost and representative workloads remain unmeasured |
-| Sustained load | Functional journey and AI latency records | Workload/environment declaration, sustained mixed arrivals, errors/dropped work, backlog and saturation |
-| Operations | Structured logs/health, [read-only reconciliation and guarded document cleanup](operations-runbook.md), [diagnosed legacy missing jobs](evidence/2026-09-17-r3/operations/summary.md) | Correlated exported traces, bounded-cardinality metrics, alerts, broader reconciliation and repair policies |
-| Cloud release | Planned AWS architecture; no deployed evidence | Account/region/identity/cost prerequisites, Terraform, actual deploy/smoke/rollback/teardown |
-| Portfolio | Local browser flow, synthetic AI evaluation and architecture/learning notes | Clean-checkout demo, final claim-to-evidence table and release limitations |
+| Sustained load | [Bounded mixed load](../tests/load/results/2026-09-17T15-04-19-100Z/analysis.md): 420 iterations, 84 documents, zero errors/drops and drained backlog | Maximum throughput and cloud capacity are not measured |
+| Operations | [Exported traces](evidence/2026-09-17-r3/telemetry/summary.md), fixed-label metrics, [alerts and compatible-image rollback](evidence/2026-09-17-r3/monitoring-recovery/summary.md), [reconciliation/cleanup](operations-runbook.md) | Actual AWS rollout/rollback is pending |
+| CI and scans | [Local gate evidence](evidence/2026-09-17-r3/ci/summary.md): critical coverage, 60 Java/174 Python passing tests, reviewed scans | Hosted CI has not run; 44 worker OS findings across 8 CVEs have exact-version reviews expiring October 1 |
+| Cloud release | [Terraform and runbook](../infrastructure/terraform/rehearsal/README.md) validated offline; [costed proposal](aws-deployment-proposal.md) ready | AWS account/SSO, region, DNS and separate cost authorization; actual deploy/smoke/rollback/teardown |
+| Portfolio | [Browser and clean checkout](evidence/2026-09-17-r3/demo/summary.md), [claim-to-evidence map](claim-to-evidence.md), architecture and learning notes | Cloud claims remain excluded; known UI and AI limitations recorded |
 
 ## First recovery batch
 

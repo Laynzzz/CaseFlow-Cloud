@@ -1,0 +1,9 @@
+{
+  "name": "clean-checkout-proof",
+  "revision": "91f15c3a3da90a0f4ca765fd8e6e1d0da1d9ca67",
+  "dirty": false,
+  "sourceSha256": "0e16be7381f4b5d4c0200301cb54c9e6f991a4323703d6b192a352839e1a56eb",
+  "createdAt": "2026-09-17T16:11:57.727Z",
+  "api": "sha256:26d7b6d7ce580eb4f1a3dc29b839a3df24a02f23943e2dfaa86fb4b1ee27ae21",
+  "worker": "sha256:3e1c95155f36b353c1a7d2ab3fc143e3a9c6bb5fa1a69d4d7d46102f22d36604"
+}

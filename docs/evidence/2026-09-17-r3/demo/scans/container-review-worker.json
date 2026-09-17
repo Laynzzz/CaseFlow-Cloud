@@ -1,0 +1,404 @@
+{
+  "image": "worker",
+  "review_date": "2026-09-17",
+  "accepted": [
+    {
+      "VulnerabilityID": "CVE-2026-76642",
+      "PkgName": "bsdutils",
+      "InstalledVersion": "1:2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Privileged mount post-hook path is unused. Worker is UID 10001 with all capabilities dropped, no-new-privileges, read-only root and no host mounts; no mount helper invoked.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78408",
+      "PkgName": "bsdutils",
+      "InstalledVersion": "1:2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Requires privileged nsenter --join-cgroup against attacker target; application never invokes nsenter, has no host PID namespace/cgroup write mount and no capabilities.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78409",
+      "PkgName": "bsdutils",
+      "InstalledVersion": "1:2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Requires fstab-authorized privileged mount of attacker-controlled subdirectory; no such application path or host mounts, and no mount capability.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78410",
+      "PkgName": "bsdutils",
+      "InstalledVersion": "1:2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Requires privileged restricted bind mount and attacker-modifiable fstab source; immutable root, no host mounts, no mount capability and no mount subprocess in application.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-54369",
+      "PkgName": "libacl1",
+      "InstalledVersion": "2.3.2-2+b1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Exploit requires privileged pathname ACL operations on attacker-controlled paths. Application has no ACL calls and runs UID 10001 without capabilities; trusted one-off bootstrap does not process uploaded paths.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-76642",
+      "PkgName": "libblkid1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Privileged mount post-hook path is unused. Worker is UID 10001 with all capabilities dropped, no-new-privileges, read-only root and no host mounts; no mount helper invoked.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78408",
+      "PkgName": "libblkid1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Requires privileged nsenter --join-cgroup against attacker target; application never invokes nsenter, has no host PID namespace/cgroup write mount and no capabilities.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78409",
+      "PkgName": "libblkid1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Requires fstab-authorized privileged mount of attacker-controlled subdirectory; no such application path or host mounts, and no mount capability.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78410",
+      "PkgName": "libblkid1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Requires privileged restricted bind mount and attacker-modifiable fstab source; immutable root, no host mounts, no mount capability and no mount subprocess in application.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-76642",
+      "PkgName": "liblastlog2-2",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Privileged mount post-hook path is unused. Worker is UID 10001 with all capabilities dropped, no-new-privileges, read-only root and no host mounts; no mount helper invoked.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78408",
+      "PkgName": "liblastlog2-2",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Requires privileged nsenter --join-cgroup against attacker target; application never invokes nsenter, has no host PID namespace/cgroup write mount and no capabilities.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78409",
+      "PkgName": "liblastlog2-2",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Requires fstab-authorized privileged mount of attacker-controlled subdirectory; no such application path or host mounts, and no mount capability.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78410",
+      "PkgName": "liblastlog2-2",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Requires privileged restricted bind mount and attacker-modifiable fstab source; immutable root, no host mounts, no mount capability and no mount subprocess in application.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-76642",
+      "PkgName": "libmount1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Privileged mount post-hook path is unused. Worker is UID 10001 with all capabilities dropped, no-new-privileges, read-only root and no host mounts; no mount helper invoked.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78408",
+      "PkgName": "libmount1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Requires privileged nsenter --join-cgroup against attacker target; application never invokes nsenter, has no host PID namespace/cgroup write mount and no capabilities.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78409",
+      "PkgName": "libmount1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Requires fstab-authorized privileged mount of attacker-controlled subdirectory; no such application path or host mounts, and no mount capability.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78410",
+      "PkgName": "libmount1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Requires privileged restricted bind mount and attacker-modifiable fstab source; immutable root, no host mounts, no mount capability and no mount subprocess in application.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2025-69720",
+      "PkgName": "libncursesw6",
+      "InstalledVersion": "6.5+20250216-2",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Overflow is in infocmp CLI; no application or parser subprocess invokes infocmp or accepts terminfo. Runtime is unprivileged. Reassess before adding terminal tooling.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-76642",
+      "PkgName": "libsmartcols1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Privileged mount post-hook path is unused. Worker is UID 10001 with all capabilities dropped, no-new-privileges, read-only root and no host mounts; no mount helper invoked.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78408",
+      "PkgName": "libsmartcols1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Requires privileged nsenter --join-cgroup against attacker target; application never invokes nsenter, has no host PID namespace/cgroup write mount and no capabilities.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78409",
+      "PkgName": "libsmartcols1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Requires fstab-authorized privileged mount of attacker-controlled subdirectory; no such application path or host mounts, and no mount capability.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78410",
+      "PkgName": "libsmartcols1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Requires privileged restricted bind mount and attacker-modifiable fstab source; immutable root, no host mounts, no mount capability and no mount subprocess in application.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-16742",
+      "PkgName": "libsystemd0",
+      "InstalledVersion": "257.13-1~deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Affected systemd-homed executable is absent from the image; container runs uvicorn, with no homed daemon or local-login service.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2025-69720",
+      "PkgName": "libtinfo6",
+      "InstalledVersion": "6.5+20250216-2",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Overflow is in infocmp CLI; no application or parser subprocess invokes infocmp or accepts terminfo. Runtime is unprivileged. Reassess before adding terminal tooling.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-16742",
+      "PkgName": "libudev1",
+      "InstalledVersion": "257.13-1~deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Affected systemd-homed executable is absent from the image; container runs uvicorn, with no homed daemon or local-login service.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-76642",
+      "PkgName": "libuuid1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Privileged mount post-hook path is unused. Worker is UID 10001 with all capabilities dropped, no-new-privileges, read-only root and no host mounts; no mount helper invoked.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78408",
+      "PkgName": "libuuid1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Requires privileged nsenter --join-cgroup against attacker target; application never invokes nsenter, has no host PID namespace/cgroup write mount and no capabilities.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78409",
+      "PkgName": "libuuid1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Requires fstab-authorized privileged mount of attacker-controlled subdirectory; no such application path or host mounts, and no mount capability.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78410",
+      "PkgName": "libuuid1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Requires privileged restricted bind mount and attacker-modifiable fstab source; immutable root, no host mounts, no mount capability and no mount subprocess in application.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-76642",
+      "PkgName": "login",
+      "InstalledVersion": "1:4.16.0-2+really2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Privileged mount post-hook path is unused. Worker is UID 10001 with all capabilities dropped, no-new-privileges, read-only root and no host mounts; no mount helper invoked.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78408",
+      "PkgName": "login",
+      "InstalledVersion": "1:4.16.0-2+really2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Requires privileged nsenter --join-cgroup against attacker target; application never invokes nsenter, has no host PID namespace/cgroup write mount and no capabilities.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78409",
+      "PkgName": "login",
+      "InstalledVersion": "1:4.16.0-2+really2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Requires fstab-authorized privileged mount of attacker-controlled subdirectory; no such application path or host mounts, and no mount capability.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78410",
+      "PkgName": "login",
+      "InstalledVersion": "1:4.16.0-2+really2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Requires privileged restricted bind mount and attacker-modifiable fstab source; immutable root, no host mounts, no mount capability and no mount subprocess in application.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-76642",
+      "PkgName": "mount",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Privileged mount post-hook path is unused. Worker is UID 10001 with all capabilities dropped, no-new-privileges, read-only root and no host mounts; no mount helper invoked.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78408",
+      "PkgName": "mount",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Requires privileged nsenter --join-cgroup against attacker target; application never invokes nsenter, has no host PID namespace/cgroup write mount and no capabilities.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78409",
+      "PkgName": "mount",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Requires fstab-authorized privileged mount of attacker-controlled subdirectory; no such application path or host mounts, and no mount capability.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78410",
+      "PkgName": "mount",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Requires privileged restricted bind mount and attacker-modifiable fstab source; immutable root, no host mounts, no mount capability and no mount subprocess in application.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2025-69720",
+      "PkgName": "ncurses-base",
+      "InstalledVersion": "6.5+20250216-2",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Overflow is in infocmp CLI; no application or parser subprocess invokes infocmp or accepts terminfo. Runtime is unprivileged. Reassess before adding terminal tooling.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2025-69720",
+      "PkgName": "ncurses-bin",
+      "InstalledVersion": "6.5+20250216-2",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Overflow is in infocmp CLI; no application or parser subprocess invokes infocmp or accepts terminfo. Runtime is unprivileged. Reassess before adding terminal tooling.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-9538",
+      "PkgName": "perl-base",
+      "InstalledVersion": "5.40.1-6+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Affected Perl Archive::Tar module is absent from the image. Application parses PDF/TXT in a bounded Python child; it does not invoke Perl or accept tar archives.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-76642",
+      "PkgName": "util-linux",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Privileged mount post-hook path is unused. Worker is UID 10001 with all capabilities dropped, no-new-privileges, read-only root and no host mounts; no mount helper invoked.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78408",
+      "PkgName": "util-linux",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Requires privileged nsenter --join-cgroup against attacker target; application never invokes nsenter, has no host PID namespace/cgroup write mount and no capabilities.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78409",
+      "PkgName": "util-linux",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Requires fstab-authorized privileged mount of attacker-controlled subdirectory; no such application path or host mounts, and no mount capability.",
+      "expires": "2026-10-01"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78410",
+      "PkgName": "util-linux",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "reason": "Requires privileged restricted bind mount and attacker-modifiable fstab source; immutable root, no host mounts, no mount capability and no mount subprocess in application.",
+      "expires": "2026-10-01"
+    }
+  ],
+  "blocking": [],
+  "passed_with_reviewed_exceptions": true
+}

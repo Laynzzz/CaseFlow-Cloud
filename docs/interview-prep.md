@@ -760,3 +760,22 @@ locally; no GitHub-hosted run is claimed. Similarly, Terraform validation and
 mocked plans do not establish that AWS deployment works.
 
 Evidence: [local checks and scans](evidence/2026-09-17-r3/ci/summary.md).
+
+## Cloud design checkpoint — planned runtime, verified source only
+
+**Why AWS if the application already works locally?** The plan requires cloud
+delivery evidence: run the purchase flow through public TLS/identity, managed
+database and object storage, then deploy and roll back actual images. AWS does
+not implement the AI behavior; it hosts the application and its dependencies.
+
+**What is the main cloud trade-off?** A short-lived single VM hosts broker,
+identity and monitoring to reduce rehearsal overhead. They share a failure
+domain; this is explicitly not broker HA or a production availability design.
+ECS runs the application separately, RDS is private, and runtime roles restrict
+S3/secret access. Retaining data after compute teardown still costs money.
+
+**What cloud experience can you honestly claim now?** Implemented Terraform,
+mocked safety checks, bootstrap redaction, configurable smoke and cost/runbook
+preparation. Actual AWS deployment and rollback remain pending account, domain
+and separate budget authorization. Do not present a local Docker rehearsal as
+a completed AWS deployment.
