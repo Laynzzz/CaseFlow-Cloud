@@ -17,3 +17,15 @@ infrastructure/local/generated/
 
 # Local browser automation session artifacts can contain authentication state.
 .playwright-cli/
+
+# Reproducible checkout defaults: local secrets, runtime state and raw captures.
+infrastructure/release/generated/
+infrastructure/terraform/**/.terraform/
+infrastructure/terraform/**/generated/
+*.tfstate
+*.tfstate.*
+*.tfplan
+terraform.tfvars
+*.auto.tfvars
+.superpowers/
+output/

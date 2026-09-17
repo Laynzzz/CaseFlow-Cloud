@@ -1,0 +1,8 @@
+{
+  "origin": "https://caseflow.example.com",
+  "issuer": "https://auth.caseflow.example.com/realms/caseflow",
+  "storageOrigin": "https://REPLACE-BUCKET.s3.us-east-1.amazonaws.com",
+  "runtimeImage": "sha256:REPLACE_WITH_LOCALLY_BUILT_WORKER_IMAGE_ID",
+  "envFile": ".env.cloud-smoke",
+  "stateDirectory": "infrastructure/release/generated/cloud-smoke"
+}

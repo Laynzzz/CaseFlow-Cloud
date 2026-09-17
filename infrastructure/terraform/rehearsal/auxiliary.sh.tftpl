@@ -1,0 +1,110 @@
+#!/bin/bash
+set -euo pipefail
+# AL2023 bootstrap. No secrets occur in EC2 user data or Terraform state.
+dnf install -y docker awscli2
+install -d /etc/docker
+printf '%s\n' '{"log-driver":"local","log-opts":{"max-size":"10m","max-file":"3"}}' > /etc/docker/daemon.json
+systemctl enable --now docker
+install -d -m 700 /opt/caseflow
+printf '%s' '${ca_base64}' | base64 -d > /opt/caseflow/rds-ca.pem
+chmod 644 /opt/caseflow/rds-ca.pem
+%{ for name, content in monitoring_files ~}
+install -d -m 755 "$(dirname '/opt/caseflow/${name}')"
+printf '%s' '${content}' | base64 -d > /opt/caseflow/${name}
+chmod 644 /opt/caseflow/${name}
+%{ endfor ~}
+cat > /opt/caseflow/start.sh <<'START'
+#!/bin/bash
+set -euo pipefail
+umask 077
+export AWS_DEFAULT_REGION='${region}'
+# Match the provisioned volume's serial; never guess an nvme index or format another disk.
+device=$(lsblk -dn -o PATH,SERIAL | awk '$2 == "${volume_serial}" { print $1 }')
+[ -n "$device" ] && [ -b "$device" ] || exit 1
+if ! blkid "$device" >/dev/null 2>&1; then mkfs.ext4 "$device"; fi
+install -d /srv/caseflow
+mountpoint -q /srv/caseflow || mount "$device" /srv/caseflow
+volume_uuid=$(blkid -s UUID -o value "$device")
+grep -q "UUID=$volume_uuid " /etc/fstab || printf 'UUID=%s /srv/caseflow ext4 defaults,x-systemd.device-timeout=120 0 2\n' "$volume_uuid" >> /etc/fstab
+install -d /etc/systemd/system/docker.service.d
+printf '[Unit]\nRequiresMountsFor=/srv/caseflow\n' > /etc/systemd/system/docker.service.d/caseflow-data.conf
+systemctl daemon-reload
+install -d -m 700 /run/caseflow
+aws secretsmanager get-secret-value --secret-id '${secrets["keycloak-realm"]}' --query SecretString --output text > /run/caseflow/realm.json
+db_password=$(aws secretsmanager get-secret-value --secret-id '${secrets["keycloak-db"]}' --query SecretString --output text)
+admin_password=$(aws secretsmanager get-secret-value --secret-id '${secrets["keycloak-admin"]}' --query SecretString --output text)
+printf 'KC_DB_PASSWORD=%s\nKC_BOOTSTRAP_ADMIN_PASSWORD=%s\n' "$db_password" "$admin_password" > /run/caseflow/keycloak.env
+unset db_password admin_password
+chmod 644 /run/caseflow/realm.json
+docker network inspect caseflow >/dev/null 2>&1 || docker network create caseflow
+mkdir -p /srv/caseflow/kafka /srv/caseflow/tempo /srv/caseflow/prometheus /srv/caseflow/grafana
+chown 1000:1000 /srv/caseflow/kafka
+chown 10001:10001 /srv/caseflow/tempo
+chown 65534:65534 /srv/caseflow/prometheus
+chown 472:472 /srv/caseflow/grafana
+if ! docker inspect kafka >/dev/null 2>&1; then
+  docker run -d --restart unless-stopped --name kafka --network caseflow -p 29092:29092 --memory 1g \
+    -v /srv/caseflow/kafka:/var/lib/kafka/data \
+    -e KAFKA_NODE_ID=1 -e KAFKA_PROCESS_ROLES=broker,controller \
+    -e KAFKA_LISTENERS=INTERNAL://:29092,CONTROLLER://:29093 \
+    -e KAFKA_ADVERTISED_LISTENERS=INTERNAL://${private_ip}:29092 \
+    -e KAFKA_LISTENER_SECURITY_PROTOCOL_MAP=INTERNAL:PLAINTEXT,CONTROLLER:PLAINTEXT \
+    -e KAFKA_INTER_BROKER_LISTENER_NAME=INTERNAL -e KAFKA_CONTROLLER_LISTENER_NAMES=CONTROLLER \
+    -e KAFKA_CONTROLLER_QUORUM_VOTERS=1@kafka:29093 -e KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1 \
+    -e KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR=1 -e KAFKA_TRANSACTION_STATE_LOG_MIN_ISR=1 \
+    -e KAFKA_LOG_DIRS=/var/lib/kafka/data -e KAFKA_NUM_PARTITIONS=3 -e KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS=0 \
+    -e 'KAFKA_HEAP_OPTS=-Xms256m -Xmx512m' \
+    -e CLUSTER_ID=4L6g3nShT-eMCtK--X86sy '${kafka_image}'
+fi
+if ! docker inspect keycloak >/dev/null 2>&1; then
+  docker run -d --restart unless-stopped --name keycloak --network caseflow -p 8080:8080 --memory 1536m \
+    --env-file /run/caseflow/keycloak.env -e KC_DB=postgres -e KC_DB_USERNAME=caseflow_keycloak \
+    -e 'KC_DB_URL=jdbc:postgresql://${database}:5432/keycloak?sslmode=verify-full&sslrootcert=/opt/keycloak/conf/rds-ca.pem' \
+    -e KC_BOOTSTRAP_ADMIN_USERNAME=rehearsal-admin -e KC_HOSTNAME='${auth_origin}' \
+    -e KC_HTTP_ENABLED=true -e KC_PROXY_HEADERS=xforwarded -e KC_HEALTH_ENABLED=true \
+    -v /run/caseflow/realm.json:/opt/keycloak/data/import/caseflow-realm.json:ro \
+    -v /opt/caseflow/rds-ca.pem:/opt/keycloak/conf/rds-ca.pem:ro \
+    '${keycloak_image}' start --import-realm
+fi
+if ! docker inspect tempo >/dev/null 2>&1; then
+  docker run -d --restart unless-stopped --name tempo --network caseflow -p 127.0.0.1:3200:3200 --memory 512m \
+    -v /opt/caseflow/tempo.yaml:/etc/tempo.yaml:ro -v /srv/caseflow/tempo:/var/tempo \
+    '${monitoring_images["tempo"]}' -config.file=/etc/tempo.yaml
+fi
+if ! docker inspect otel-collector >/dev/null 2>&1; then
+  docker run -d --restart unless-stopped --name otel-collector --network caseflow -p 4318:4318 --memory 256m \
+    -v /opt/caseflow/collector.yaml:/etc/collector.yaml:ro '${monitoring_images["otel-collector"]}' --config=/etc/collector.yaml
+fi
+if ! docker inspect prometheus >/dev/null 2>&1; then
+  docker run -d --restart unless-stopped --name prometheus --network caseflow -p 127.0.0.1:9090:9090 --memory 384m \
+    -v /opt/caseflow/prometheus.yaml:/etc/prometheus/prometheus.yaml:ro -v /opt/caseflow/alerts.yaml:/etc/prometheus/alerts.yaml:ro \
+    -v /srv/caseflow/prometheus:/prometheus '${monitoring_images["prometheus"]}' \
+    --config.file=/etc/prometheus/prometheus.yaml --storage.tsdb.path=/prometheus --storage.tsdb.retention.time=24h --storage.tsdb.retention.size=1GB
+fi
+if ! docker inspect grafana >/dev/null 2>&1; then
+  docker run -d --restart unless-stopped --name grafana --network caseflow -p 127.0.0.1:3000:3000 --memory 384m \
+    -v /opt/caseflow/grafana/provisioning:/etc/grafana/provisioning:ro -v /opt/caseflow/grafana/dashboards:/var/lib/grafana/dashboards:ro \
+    -v /srv/caseflow/grafana:/var/lib/grafana -e GF_AUTH_ANONYMOUS_ENABLED=true -e GF_AUTH_ANONYMOUS_ORG_ROLE=Viewer \
+    -e GF_AUTH_DISABLE_LOGIN_FORM=true -e GF_SECURITY_DISABLE_INITIAL_ADMIN_CREATION=true \
+    -e GF_USERS_ALLOW_SIGN_UP=false -e GF_ANALYTICS_REPORTING_ENABLED=false -e GF_PLUGINS_PREINSTALL_DISABLED=true \
+    '${monitoring_images["grafana"]}'
+fi
+echo 'Auxiliary services started; use private SSM access for health verification.'
+START
+chmod 700 /opt/caseflow/start.sh
+cat > /etc/systemd/system/caseflow-auxiliary.service <<'UNIT'
+[Unit]
+Description=CaseFlow isolated cloud rehearsal services
+After=docker.service network-online.target
+Requires=docker.service
+[Service]
+Type=oneshot
+ExecStart=/opt/caseflow/start.sh
+RemainAfterExit=yes
+Restart=on-failure
+RestartSec=20
+[Install]
+WantedBy=multi-user.target
+UNIT
+systemctl daemon-reload
+systemctl enable --now caseflow-auxiliary.service
