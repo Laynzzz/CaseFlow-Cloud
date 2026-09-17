@@ -5,6 +5,43 @@ from scoring import load_dataset
 from score_run import score_run
 
 
+def explicit_run(tmp_path, selected=None):
+    manifest,splits=load_dataset(version='synthetic-v3')
+    cases=[splits['heldout'][15],splits['heldout'][0]]
+    prediction=dict(id=cases[0]['id'],extraction=dict(status='SUCCEEDED',result=dict(
+        output={field:dict(value=cases[0]['reference'][field]) for field in ('vendor','currency','total','lineItems')})))
+    raw=(json.dumps(prediction)+'\n').encode()
+    (tmp_path/'predictions.jsonl').write_bytes(raw)
+    run=dict(split='heldout',selection='explicit IDs in requested order',
+        selectedIds=selected if selected is not None else [case['id'] for case in cases],
+        datasetVersion=manifest['version'],datasetSha256=manifest['files']['heldout.jsonl']['sha256'],
+        predictionsSha256=hashlib.sha256(raw).hexdigest())
+    (tmp_path/'run.json').write_text(json.dumps(run),encoding='utf-8')
+    return run,cases
+
+
+def test_explicit_subset_scores_selected_references_including_missing_cases(tmp_path):
+    run,cases=explicit_run(tmp_path)
+    result=score_run(tmp_path)
+    assert result['selectedIds']==run['selectedIds']
+    assert result['caseCount']==2 and result['recordedCaseCount']==1
+    assert result['extraction']['numerator']==4 and result['extraction']['denominator']==8
+    assert result['missingCaseIds']==[cases[1]['id']]
+    assert 'First' not in result['scope']
+    assert result['releaseGatePassed'] is False
+
+
+@pytest.mark.parametrize('selected',[[],['unknown'],['equipment-001'],['calibration-001','calibration-001'],[None],'calibration-001'])
+def test_explicit_subset_rejects_invalid_selection(tmp_path,selected):
+    explicit_run(tmp_path,selected)
+    with pytest.raises(ValueError,match='selection'):score_run(tmp_path)
+
+
+def test_explicit_subset_rejects_prediction_outside_selection(tmp_path):
+    explicit_run(tmp_path,['calibration-001'])
+    with pytest.raises(ValueError,match='Unknown or duplicate'):score_run(tmp_path)
+
+
 @pytest.mark.parametrize('version',['synthetic-v1','synthetic-v2'])
 def test_run_subset_keeps_missing_cases_and_refuses_changed_scope(tmp_path,version):
     manifest,splits=load_dataset(version=version)
