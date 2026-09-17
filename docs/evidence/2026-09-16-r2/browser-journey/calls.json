@@ -1,0 +1,66 @@
+{
+  "jobIds": [
+    "567c5d6e-fc45-4c11-a858-0f9eb5fe6f9d",
+    "638fc920-01b9-411a-8e28-0b316021ac70"
+  ],
+  "calls": [
+    {
+      "id": "d2067f58-dfc5-440a-a593-ba68e093bfd2",
+      "tenant_id": "69461d55-4af7-46b4-aac9-946d0807eac9",
+      "job_id": "638fc920-01b9-411a-8e28-0b316021ac70",
+      "attempt": 1,
+      "fence": 1,
+      "purpose": "extraction",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "pricing_version": "openai-standard-2026-09-15",
+      "reserved_usd": "0.019661",
+      "actual_usd": "0.000768",
+      "input_tokens": 987,
+      "output_tokens": 233,
+      "state": "SETTLED",
+      "error_code": null,
+      "elapsed_ms": 3968,
+      "created_at": "2026-09-17 02:38:34.678433+00:00",
+      "response_evidence": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "rawOutput": "{\"vendor\":{\"value\":\"Synthetic Browser Supplies 12\",\"citations\":[{\"chunkId\":\"7f852ea1-37eb-520a-8086-8da2cc7da6e7\",\"quote\":\"Vendor: Synthetic Browser Supplies 12\"}]},\"currency\":{\"value\":\"USD\",\"citations\":[{\"chunkId\":\"7f852ea1-37eb-520a-8086-8da2cc7da6e7\",\"quote\":\"Currency: USD\"}]},\"total\":{\"value\":\"70.00\",\"citations\":[{\"chunkId\":\"7f852ea1-37eb-520a-8086-8da2cc7da6e7\",\"quote\":\"Total: 70.00\"}]},\"lineItems\":{\"value\":[{\"description\":\"Desk lamp\",\"quantity\":\"2\",\"unitPrice\":\"35.00\"}],\"citations\":[{\"chunkId\":\"7f852ea1-37eb-520a-8086-8da2cc7da6e7\",\"quote\":\"Item: Desk lamp\\nQuantity: 2\\nUnit price: 35.00\"}]},\"warnings\":[]}",
+        "truncated": false,
+        "promptHash": "cd29307ced12b36cfc6031b8529878e36bd3622a23c0fd56371bbd76477fa348",
+        "schemaHash": "b197c1fa91af0292cdf728b3bf8459f9821d2b91888aca0671609394cdd46b3e",
+        "promptVersion": "purchase-assistant-2026-09-15-v5",
+        "schemaVersion": "purchase-assistant-v4",
+        "rawOutputSha256": "075da3b689781e8f4a2bd538185ca668d8774c85dbff97bf2be9524e3f27c2a4"
+      }
+    },
+    {
+      "id": "257836c6-7e6e-46d1-ad88-1253ac5d1dcd",
+      "tenant_id": "69461d55-4af7-46b4-aac9-946d0807eac9",
+      "job_id": "567c5d6e-fc45-4c11-a858-0f9eb5fe6f9d",
+      "attempt": 1,
+      "fence": 1,
+      "purpose": "review",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "pricing_version": "openai-standard-2026-09-15",
+      "reserved_usd": "0.019661",
+      "actual_usd": "0.000941",
+      "input_tokens": 1480,
+      "output_tokens": 218,
+      "state": "SETTLED",
+      "error_code": null,
+      "elapsed_ms": 4468,
+      "created_at": "2026-09-17 02:39:22.315451+00:00",
+      "response_evidence": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "rawOutput": "{\"summary\":\"The purchase is for a Browser R2 desk lamp with 2 units at a unit price of 35.00 USD, totaling 70.00 USD from vendor Synthetic Browser Supplies 12. Policy requires that desk lamp purchase requests include a cost center and a written business justification before approval, as well as managerial approval prior to finance approval.\",\"missing_information\":[\"costCenter\",\"justification\"],\"policy_findings\":[{\"claim\":\"Desk lamp purchase requests must include a cost center and a written business justification before approval.\",\"citations\":[{\"chunkId\":\"77cebe8e-2c66-5324-a5c0-82064efcde49\",\"quote\":\"Desk lamp purchase requests must include a cost center and a written business justification before approval.\"}]}],\"citations\":[{\"chunkId\":\"77cebe8e-2c66-5324-a5c0-82064efcde49\",\"quote\":\"Desk lamp purchase requests must include a cost center and a written business justification before approval.\"}],\"insufficient_evidence\":false}",
+        "truncated": false,
+        "promptHash": "1049190feb0db5f574c18d2cf7c0e9fe14c8aab57886d3de58a9a477948ab996",
+        "schemaHash": "5d25214cd19d6e478f60389741be07e0639362f2ce3946ae02d2b4759ade0747",
+        "promptVersion": "purchase-review-2026-09-16-v6",
+        "schemaVersion": "purchase-review-v5",
+        "rawOutputSha256": "ef2cac5f898377beda38307677bcd478515dcc3244f6e1e8ce683b4563dc3712"
+      }
+    }
+  ],
+  "accountedUsd": "0.001709",
+  "scope": "Selected synthetic job IDs only; unknown usage retains its reservation"
+}

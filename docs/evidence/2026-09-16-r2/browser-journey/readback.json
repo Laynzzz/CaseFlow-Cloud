@@ -1,0 +1,551 @@
+{
+  "observedAt": "2026-09-17T02:43:07.463Z",
+  "synthetic": true,
+  "method": "API readback after separate observed browser journey; not browser automation replay",
+  "tenantId": "69461d55-4af7-46b4-aac9-946d0807eac9",
+  "caseId": "6b775869-9ff2-4a8a-8959-a9fa2b4f7578",
+  "purchase": {
+    "id": "6b775869-9ff2-4a8a-8959-a9fa2b4f7578",
+    "ownerId": "088b4bc8-7421-4a12-b325-0ec7d3167bde",
+    "state": "APPROVED",
+    "purchase": {
+      "total": "70.00",
+      "vendor": "Synthetic Browser Supplies 12",
+      "currency": "USD",
+      "lineItems": [
+        {
+          "quantity": "2",
+          "unitPrice": "35.00",
+          "description": "Desk lamp"
+        }
+      ],
+      "costCenter": "OPS-BROWSER-R2",
+      "description": "Browser R2 desk lamp purchase",
+      "justification": "Replace two damaged desk lamps for the shared design workspace."
+    },
+    "workflowId": "e0ba14b7-4f2a-4ba7-8303-0a496a8ee3b3",
+    "templateId": "e2ab10bb-1822-4e31-a631-0d8e3831b968",
+    "originalCaseId": null,
+    "version": 8,
+    "createdAt": "2026-09-17T02:37:37.177399Z",
+    "updatedAt": "2026-09-17T02:41:47.988756Z",
+    "documentStatus": "SUCCEEDED",
+    "assignments": [
+      {
+        "step": 0,
+        "userId": "3d8d5f8e-bacd-4849-9532-e3a819e4825f",
+        "displayName": "manager",
+        "outcome": "APPROVED"
+      },
+      {
+        "step": 1,
+        "userId": "60fa9e3f-05e5-40bd-bfde-c19d9aee48ed",
+        "displayName": "finance",
+        "outcome": "APPROVED"
+      }
+    ]
+  },
+  "audit": {
+    "nextCursor": null,
+    "items": [
+      {
+        "id": "64ab024f-212f-4949-a5ba-c7c585ea1039",
+        "actorId": "60fa9e3f-05e5-40bd-bfde-c19d9aee48ed",
+        "eventType": "DOCUMENT_SUCCEEDED",
+        "details": {
+          "fence": 1,
+          "jobId": "9428937b-263a-4985-a25b-aaa4f02121d2",
+          "attempt": 1,
+          "actorType": "SYSTEM"
+        },
+        "createdAt": "2026-09-17T02:41:49.616946Z"
+      },
+      {
+        "id": "1fb4aea8-2a33-4a80-85dc-5489413acf76",
+        "actorId": "60fa9e3f-05e5-40bd-bfde-c19d9aee48ed",
+        "eventType": "CASE_APPROVE",
+        "details": {
+          "comment": ""
+        },
+        "createdAt": "2026-09-17T02:41:47.988756Z"
+      },
+      {
+        "id": "7ded3a37-d148-4671-a10f-00ae6bd03d5c",
+        "actorId": "3d8d5f8e-bacd-4849-9532-e3a819e4825f",
+        "eventType": "CASE_APPROVE",
+        "details": {
+          "comment": ""
+        },
+        "createdAt": "2026-09-17T02:41:19.253649Z"
+      },
+      {
+        "id": "d6556d16-4f1a-498a-ae40-4f42cb1ff9d0",
+        "actorId": "088b4bc8-7421-4a12-b325-0ec7d3167bde",
+        "eventType": "CASE_STARTED",
+        "details": {
+          "workflowId": "e0ba14b7-4f2a-4ba7-8303-0a496a8ee3b3"
+        },
+        "createdAt": "2026-09-17T02:40:05.478396Z"
+      },
+      {
+        "id": "2ccbbb9d-6631-43c0-9ad9-2464645f1ec3",
+        "actorId": "088b4bc8-7421-4a12-b325-0ec7d3167bde",
+        "eventType": "DRAFT_UPDATED",
+        "details": {
+          "previousVersion": 4
+        },
+        "createdAt": "2026-09-17T02:40:05.409257Z"
+      },
+      {
+        "id": "9306e184-eded-43e9-b64e-133af0eec5c3",
+        "actorId": "088b4bc8-7421-4a12-b325-0ec7d3167bde",
+        "eventType": "REVIEW_SUCCEEDED",
+        "details": {
+          "fence": 1,
+          "jobId": "567c5d6e-fc45-4c11-a858-0f9eb5fe6f9d",
+          "attempt": 1,
+          "actorType": "SYSTEM"
+        },
+        "createdAt": "2026-09-17T02:39:27.155766Z"
+      },
+      {
+        "id": "acad61f4-6048-4ae0-9dfa-e37eea120dd6",
+        "actorId": "088b4bc8-7421-4a12-b325-0ec7d3167bde",
+        "eventType": "REVIEW_RUNNING",
+        "details": {
+          "fence": 1,
+          "jobId": "567c5d6e-fc45-4c11-a858-0f9eb5fe6f9d",
+          "attempt": 1,
+          "actorType": "SYSTEM"
+        },
+        "createdAt": "2026-09-17T02:39:22.470783Z"
+      },
+      {
+        "id": "71b620d0-524f-43c1-80a4-9d697d1a4193",
+        "actorId": "088b4bc8-7421-4a12-b325-0ec7d3167bde",
+        "eventType": "AI_REVIEW_REQUESTED",
+        "details": {
+          "jobId": "567c5d6e-fc45-4c11-a858-0f9eb5fe6f9d",
+          "revision": 4
+        },
+        "createdAt": "2026-09-17T02:39:21.937469Z"
+      },
+      {
+        "id": "49869f06-c5dc-439b-9540-931cc688da41",
+        "actorId": "088b4bc8-7421-4a12-b325-0ec7d3167bde",
+        "eventType": "POLICIES_REFRESHED",
+        "details": {
+          "items": [
+            {
+              "id": "3f67a886-f84f-443d-ae1a-9b4dd551bb8a",
+              "name": "Browser R2 lamp policy",
+              "state": "PUBLISHED",
+              "version": 2
+            },
+            {
+              "id": "09e127f3-36bd-4282-9adb-b020bddfd5f4",
+              "name": "Synthetic live policy",
+              "state": "PUBLISHED",
+              "version": 2
+            },
+            {
+              "id": "0e4ccfc7-41c4-4e12-abc0-4388152ef6b0",
+              "name": "Synthetic live policy",
+              "state": "PUBLISHED",
+              "version": 2
+            },
+            {
+              "id": "8186421f-007d-4e0b-acab-2bb4d69e1118",
+              "name": "Synthetic live policy",
+              "state": "PUBLISHED",
+              "version": 2
+            },
+            {
+              "id": "c013da10-bc18-421f-97e2-35d9da3d1559",
+              "name": "Synthetic live policy",
+              "state": "PUBLISHED",
+              "version": 2
+            },
+            {
+              "id": "ff7caf74-c2ee-43f1-8d42-75b7b57e6e08",
+              "name": "Synthetic live policy",
+              "state": "PUBLISHED",
+              "version": 2
+            }
+          ],
+          "initialized": true
+        },
+        "createdAt": "2026-09-17T02:39:01.496916Z"
+      },
+      {
+        "id": "547f3dd7-18be-43d3-b027-65daa5949408",
+        "actorId": "088b4bc8-7421-4a12-b325-0ec7d3167bde",
+        "eventType": "AI_SUGGESTIONS_ACCEPTED",
+        "details": {
+          "jobId": "638fc920-01b9-411a-8e28-0b316021ac70",
+          "before": {
+            "total": "0.00",
+            "vendor": "",
+            "currency": "USD",
+            "lineItems": [
+              {
+                "quantity": "1",
+                "unitPrice": "0.00",
+                "description": ""
+              }
+            ],
+            "costCenter": "",
+            "description": "Browser R2 desk lamp purchase",
+            "justification": ""
+          },
+          "fields": [
+            "lineItems",
+            "vendor",
+            "currency"
+          ],
+          "accepted": {
+            "total": "70.00",
+            "vendor": "Synthetic Browser Supplies 12",
+            "currency": "USD",
+            "lineItems": [
+              {
+                "quantity": "2",
+                "unitPrice": "35.00",
+                "description": "Desk lamp"
+              }
+            ],
+            "costCenter": "",
+            "description": "Browser R2 desk lamp purchase",
+            "justification": ""
+          },
+          "suggested": {
+            "total": {
+              "value": "70.00",
+              "citations": [
+                {
+                  "quote": "Total: 70.00",
+                  "chunkId": "7f852ea1-37eb-520a-8086-8da2cc7da6e7"
+                }
+              ]
+            },
+            "vendor": {
+              "value": "Synthetic Browser Supplies 12",
+              "citations": [
+                {
+                  "quote": "Vendor: Synthetic Browser Supplies 12",
+                  "chunkId": "7f852ea1-37eb-520a-8086-8da2cc7da6e7"
+                }
+              ]
+            },
+            "currency": {
+              "value": "USD",
+              "citations": [
+                {
+                  "quote": "Currency: USD",
+                  "chunkId": "7f852ea1-37eb-520a-8086-8da2cc7da6e7"
+                }
+              ]
+            },
+            "warnings": [],
+            "lineItems": {
+              "value": [
+                {
+                  "quantity": "2",
+                  "unitPrice": "35.00",
+                  "description": "Desk lamp"
+                }
+              ],
+              "citations": [
+                {
+                  "quote": "Item: Desk lamp\nQuantity: 2\nUnit price: 35.00",
+                  "chunkId": "7f852ea1-37eb-520a-8086-8da2cc7da6e7"
+                }
+              ]
+            }
+          }
+        },
+        "createdAt": "2026-09-17T02:39:01.395103Z"
+      },
+      {
+        "id": "0710863b-cebb-4cab-8d19-0fa7595a7525",
+        "actorId": "088b4bc8-7421-4a12-b325-0ec7d3167bde",
+        "eventType": "EXTRACTION_SUCCEEDED",
+        "details": {
+          "fence": 1,
+          "jobId": "638fc920-01b9-411a-8e28-0b316021ac70",
+          "attempt": 1,
+          "actorType": "SYSTEM"
+        },
+        "createdAt": "2026-09-17T02:38:39.215279Z"
+      },
+      {
+        "id": "66b3d52a-c332-4e9f-97ca-ab8baf8f484f",
+        "actorId": "088b4bc8-7421-4a12-b325-0ec7d3167bde",
+        "eventType": "EXTRACTION_RUNNING",
+        "details": {
+          "fence": 1,
+          "jobId": "638fc920-01b9-411a-8e28-0b316021ac70",
+          "attempt": 1,
+          "actorType": "SYSTEM"
+        },
+        "createdAt": "2026-09-17T02:38:35.526184Z"
+      },
+      {
+        "id": "8764468b-15be-40ee-9428-9817de4c1835",
+        "actorId": "088b4bc8-7421-4a12-b325-0ec7d3167bde",
+        "eventType": "AI_EXTRACTION_REQUESTED",
+        "details": {
+          "jobId": "638fc920-01b9-411a-8e28-0b316021ac70",
+          "revision": 2
+        },
+        "createdAt": "2026-09-17T02:38:33.962916Z"
+      },
+      {
+        "id": "845e0dad-63e1-45da-8e04-d947bd706d4e",
+        "actorId": "088b4bc8-7421-4a12-b325-0ec7d3167bde",
+        "eventType": "INGESTION_SUCCEEDED",
+        "details": {
+          "fence": 1,
+          "jobId": "34feae3d-0e90-4f69-ac4f-1b758b067356",
+          "attempt": 1,
+          "actorType": "SYSTEM"
+        },
+        "createdAt": "2026-09-17T02:38:26.622610Z"
+      },
+      {
+        "id": "1791563e-13eb-45f3-8a35-72a4f13fec18",
+        "actorId": "088b4bc8-7421-4a12-b325-0ec7d3167bde",
+        "eventType": "SOURCE_FINALIZED",
+        "details": {
+          "jobId": "34feae3d-0e90-4f69-ac4f-1b758b067356",
+          "sha256": "caee49be23859b7cf9fde03ef744af33f57f53ae70540bf1233f55c2867c67de",
+          "sourceId": "ac56a751-d744-480f-9392-b166bc4a7c47"
+        },
+        "createdAt": "2026-09-17T02:38:25.462167Z"
+      },
+      {
+        "id": "76078741-4ddd-4732-81b9-58dcd83ed92f",
+        "actorId": "088b4bc8-7421-4a12-b325-0ec7d3167bde",
+        "eventType": "SOURCE_UPLOAD_CREATED",
+        "details": {
+          "kind": "QUOTE",
+          "sourceId": "ac56a751-d744-480f-9392-b166bc4a7c47"
+        },
+        "createdAt": "2026-09-17T02:38:25.424174Z"
+      },
+      {
+        "id": "d1c8cf4f-7e0c-4339-8e16-9e4eeac9872f",
+        "actorId": "088b4bc8-7421-4a12-b325-0ec7d3167bde",
+        "eventType": "ASSIGNMENTS_CHANGED",
+        "details": {
+          "approverIds": [
+            "3d8d5f8e-bacd-4849-9532-e3a819e4825f",
+            "60fa9e3f-05e5-40bd-bfde-c19d9aee48ed"
+          ]
+        },
+        "createdAt": "2026-09-17T02:37:59.395597Z"
+      },
+      {
+        "id": "0e97af11-9da1-4eb8-88bc-22acf54b0cd5",
+        "actorId": "088b4bc8-7421-4a12-b325-0ec7d3167bde",
+        "eventType": "DRAFT_CREATED",
+        "details": {},
+        "createdAt": "2026-09-17T02:37:37.177399Z"
+      }
+    ]
+  },
+  "extraction": {
+    "jobId": "638fc920-01b9-411a-8e28-0b316021ac70",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": true,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "d2067f58-dfc5-440a-a593-ba68e093bfd2",
+      "output": {
+        "total": {
+          "value": "70.00",
+          "citations": [
+            {
+              "quote": "Total: 70.00",
+              "chunkId": "7f852ea1-37eb-520a-8086-8da2cc7da6e7"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Synthetic Browser Supplies 12",
+          "citations": [
+            {
+              "quote": "Vendor: Synthetic Browser Supplies 12",
+              "chunkId": "7f852ea1-37eb-520a-8086-8da2cc7da6e7"
+            }
+          ]
+        },
+        "currency": {
+          "value": "USD",
+          "citations": [
+            {
+              "quote": "Currency: USD",
+              "chunkId": "7f852ea1-37eb-520a-8086-8da2cc7da6e7"
+            }
+          ]
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "2",
+              "unitPrice": "35.00",
+              "description": "Desk lamp"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "Item: Desk lamp\nQuantity: 2\nUnit price: 35.00",
+              "chunkId": "7f852ea1-37eb-520a-8086-8da2cc7da6e7"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "7f852ea1-37eb-520a-8086-8da2cc7da6e7": {
+          "page": 1,
+          "text": "Vendor: Synthetic Browser Supplies 12\nItem: Desk lamp\nQuantity: 2\nUnit price: 35.00\nCurrency: USD\nTotal: 70.00\n",
+          "start": 0,
+          "sourceId": "ac56a751-d744-480f-9392-b166bc4a7c47"
+        }
+      },
+      "revision": 2,
+      "sourceId": "ac56a751-d744-480f-9392-b166bc4a7c47",
+      "elapsedMs": 3968,
+      "promptHash": "cd29307ced12b36cfc6031b8529878e36bd3622a23c0fd56371bbd76477fa348",
+      "schemaHash": "b197c1fa91af0292cdf728b3bf8459f9821d2b91888aca0671609394cdd46b3e",
+      "inputTokens": 987,
+      "outputTokens": 233,
+      "sourceSha256": "caee49be23859b7cf9fde03ef744af33f57f53ae70540bf1233f55c2867c67de",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000768",
+      "retrievedChunkIds": [
+        "7f852ea1-37eb-520a-8086-8da2cc7da6e7"
+      ],
+      "retrievalElapsedMs": 0
+    }
+  },
+  "review": {
+    "jobId": "567c5d6e-fc45-4c11-a858-0f9eb5fe6f9d",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 4,
+    "stale": true,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "257836c6-7e6e-46d1-ad88-1253ac5d1dcd",
+      "output": {
+        "summary": "The purchase is for a Browser R2 desk lamp with 2 units at a unit price of 35.00 USD, totaling 70.00 USD from vendor Synthetic Browser Supplies 12. Policy requires that desk lamp purchase requests include a cost center and a written business justification before approval, as well as managerial approval prior to finance approval.",
+        "citations": [
+          {
+            "quote": "Desk lamp purchase requests must include a cost center and a written business justification before approval.",
+            "chunkId": "77cebe8e-2c66-5324-a5c0-82064efcde49"
+          }
+        ],
+        "policy_findings": [
+          {
+            "claim": "Desk lamp purchase requests must include a cost center and a written business justification before approval.",
+            "citations": [
+              {
+                "quote": "Desk lamp purchase requests must include a cost center and a written business justification before approval.",
+                "chunkId": "77cebe8e-2c66-5324-a5c0-82064efcde49"
+              }
+            ]
+          }
+        ],
+        "missing_information": [
+          "costCenter",
+          "justification"
+        ],
+        "insufficient_evidence": false
+      },
+      "evidence": {
+        "05ca7db5-1783-5ed4-88d8-c4dddcd62e61": {
+          "page": 1,
+          "text": "Equipment purchases require a cost center before approval. This is a synthetic purchasing policy.",
+          "start": 0,
+          "sourceId": "0e4ccfc7-41c4-4e12-abc0-4388152ef6b0"
+        },
+        "1a6aa1cf-f7c1-55af-80ad-e5ddabcc7e94": {
+          "page": 1,
+          "text": "Equipment purchases require a cost center before approval. This is a synthetic purchasing policy.",
+          "start": 0,
+          "sourceId": "09e127f3-36bd-4282-9adb-b020bddfd5f4"
+        },
+        "4b300e81-442d-52ea-a8d9-f4f29d561b02": {
+          "page": 1,
+          "text": "Equipment purchases require a cost center before approval. This is a synthetic purchasing policy.",
+          "start": 0,
+          "sourceId": "c013da10-bc18-421f-97e2-35d9da3d1559"
+        },
+        "71e478fd-5370-5b99-a85a-56587b956068": {
+          "page": 1,
+          "text": "Equipment purchases require a cost center before approval. This is a synthetic purchasing policy.",
+          "start": 0,
+          "sourceId": "8186421f-007d-4e0b-acab-2bb4d69e1118"
+        },
+        "77cebe8e-2c66-5324-a5c0-82064efcde49": {
+          "page": 1,
+          "text": "Desk lamp purchase requests must include a cost center and a written business justification before approval. Manager approval must precede finance approval.",
+          "start": 0,
+          "sourceId": "3f67a886-f84f-443d-ae1a-9b4dd551bb8a"
+        }
+      },
+      "revision": 4,
+      "sourceId": null,
+      "elapsedMs": 4468,
+      "promptHash": "1049190feb0db5f574c18d2cf7c0e9fe14c8aab57886d3de58a9a477948ab996",
+      "schemaHash": "5d25214cd19d6e478f60389741be07e0639362f2ce3946ae02d2b4759ade0747",
+      "inputTokens": 1480,
+      "outputTokens": 218,
+      "sourceSha256": null,
+      "promptVersion": "purchase-review-2026-09-16-v6",
+      "schemaVersion": "purchase-review-v5",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Browser OR R2 OR desk OR lamp OR purchase OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000941",
+      "retrievedChunkIds": [
+        "77cebe8e-2c66-5324-a5c0-82064efcde49",
+        "1a6aa1cf-f7c1-55af-80ad-e5ddabcc7e94",
+        "05ca7db5-1783-5ed4-88d8-c4dddcd62e61",
+        "71e478fd-5370-5b99-a85a-56587b956068",
+        "4b300e81-442d-52ea-a8d9-f4f29d561b02"
+      ],
+      "retrievalElapsedMs": 0
+    }
+  },
+  "documents": {
+    "items": [
+      {
+        "jobId": "9428937b-263a-4985-a25b-aaa4f02121d2",
+        "attempt": 1,
+        "status": "SUCCEEDED",
+        "failureCode": null,
+        "createdAt": "2026-09-17T02:41:47.988756Z",
+        "sha256": "30d4fb4541468b66abefd21741e8cb0ad3217f5f2f1efef216f4ab4738c81e9d",
+        "byteSize": 36989
+      }
+    ]
+  },
+  "downloadedDocument": {
+    "sha256": "30d4fb4541468b66abefd21741e8cb0ad3217f5f2f1efef216f4ab4738c81e9d",
+    "byteSize": 36989
+  },
+  "checksPassed": true
+}

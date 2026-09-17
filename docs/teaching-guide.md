@@ -652,3 +652,18 @@ generated directory was convenient, but later demo-result JSON files caused
 Keycloak to fail on restart. A narrow file mount keeps those unrelated outputs
 outside the import boundary. Local restart and OIDC sign-in were verified;
 see `docs/evidence/2026-09-16-r2/local-restart.md`.
+## What the complete browser journey proves
+
+The local browser check follows the product boundaries in order: administrator
+publishes configuration; requester uploads a quote and accepts selected AI
+fields; Java computes the total; cited review points to missing details; the
+requester supplies them; manager and finance decide; Python renders the approved
+snapshot; Java authorizes the download. The downloaded document matched the
+stored checksum and displayed purchase. Evidence is in
+`docs/evidence/2026-09-16-r2/browser-journey/README.md`.
+
+The AI suggestions remain separate until acceptance. After the purchase changes,
+the original result becomes stale. This preserves both the original advice and
+the person's later correction rather than rewriting history. The trade-off is
+more visible versions and occasional retries on conflicts. The check exercised
+a real HTTP 409 when actions overlapped and confirmed no stale write occurred.

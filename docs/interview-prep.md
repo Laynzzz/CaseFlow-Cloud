@@ -375,3 +375,22 @@ suite has 41 Python tests; tests establish scorer behavior, not model accuracy.
 
 Evidence and trade-offs: [review-quality notes](r2-review-quality.md),
 [architecture overview](architecture.md), and their linked code and raw runs.
+## Local assisted browser journey (2026-09-16)
+
+**How do you prove AI cannot approve a purchase?** The browser journey accepted
+selected quote fields into a draft, then required manager and finance actions in
+order. Finance had no approval control before the manager acted; the API's separate
+permission/order tests enforce the same boundary. Final approval queued the DOCX.
+Follow-up: UI hiding alone is insufficient; Java must reject unauthorized actions.
+
+**What happens when a draft changes after AI runs?** Results retain their input
+revision, show a stale notice and disable acceptance. The browser verified this
+after saving suggestions and refreshing policies. A fast stale upload also
+received HTTP 409 instead of overwriting newer state. Follow-up: optimistic
+concurrency protects state, but the user may need to retry after refresh.
+
+**What does the browser evidence actually establish?** One local synthetic flow
+from admin setup through real model suggestions, explicit acceptance, sequential
+approvals and a checksum-matched download. Focused keyboard and narrow-screen
+checks passed. It is not a human usability study, full accessibility audit or
+cloud-readiness claim. Evidence: `evidence/2026-09-16-r2/browser-journey/README.md`.
