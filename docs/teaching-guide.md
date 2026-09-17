@@ -1060,3 +1060,15 @@ Verified: 42 Java/169 Python tests and an actual two-service exported trace thro
 the packaged approval flow. The telemetry evidence also records Windows classpath
 length recovery and new trace-flag compatibility. Monitoring and cloud/load claims
 need their own evidence: [telemetry report](evidence/2026-09-17-r3/telemetry/summary.md).
+
+## Poison-message acknowledgement checkpoint
+
+Four real process crashes cover Python and Java before dead-letter submission and
+after broker acknowledgement but before source-offset commit. Restart replays the
+original source coordinate. A diagnosis acknowledged before the crash can repeat;
+no business data changes. This is at-least-once error handling, not exactly-once
+messaging or permission to replay arbitrary payloads. Recovery requires diagnosis
+and authorized business commands; preserve source coordinates and redacted digest.
+See [the crash report](evidence/2026-09-17-r3/deadletters/summary.md) and
+[operator runbook](runbooks/deadletter-recovery.md). These extend the previous
+thirteen business-boundary scenarios to seventeen; cleanup remains a separate tier.

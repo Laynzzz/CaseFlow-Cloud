@@ -1,0 +1,42 @@
+[
+  {
+    "file": "java-focused.txt",
+    "source_sha256": "21ef3d47b397e2173b75002fb1c18daec0584230e2a83da01a71a15ff8d4ece4",
+    "archive_sha256": "7c51f4ee27378b9c5339f39f1766d420d76ee4954502c84336397e6fb8c01c2a"
+  },
+  {
+    "file": "java-focused.xml",
+    "source_sha256": "5fcbbe425ad775fd60015c06a3d921aec7dbf3a6c415b28ba8046634aa95237b",
+    "archive_sha256": "b799a9bf05d520f2581e6697426f4926920351b35b2ac8b8def4ddebf4f6e34f"
+  },
+  {
+    "file": "python-final.txt",
+    "source_sha256": "1ac68e840b80fed0f686a7eae4623c30fbf3ec1082deae3ae84639a6057edbd5",
+    "archive_sha256": "fb07d7f1edb8a691de42b8361d4815db0cb1cf71b52809e0ab6b7964e0b29eab"
+  },
+  {
+    "file": "python-final.xml",
+    "source_sha256": "8ae587d56c8dda5ad0b06c6946342007ba1db5e5d61dfb4b14272d8a1c7cb4a0",
+    "archive_sha256": "59d1242688ea72ebdfab2d4e2d30aa944c453558ef1c9010c73c77ad563bd16f"
+  },
+  {
+    "file": "python-focused.txt",
+    "source_sha256": "968600207fcd6f61cf7583e59f3fd69b44799481e0bcf14e52ac5ac71d7cf367",
+    "archive_sha256": "c1ad008defd4e536d57539a14cbcb479704b0bb20437adea6df81e62b631b5eb"
+  },
+  {
+    "file": "python-focused.xml",
+    "source_sha256": "8b338f4ca6743a079782cbb11aef793a1c4fbc3f461920a98c95b40a8ccefd68",
+    "archive_sha256": "9d1c821500fed56092debf4720a82d15aa22f2394b332120282f33ddb56f0a44"
+  },
+  {
+    "file": "source-manifest.json",
+    "source_sha256": "555cf083c1a76e5b58edc71549f1cd1fe73648d53ff834fb058faa845854dedf",
+    "archive_sha256": "c6d2e735199b53b65e8894160eaacc2bd218382d12f52a976f301a1835cd8c79"
+  },
+  {
+    "file": "summary.md",
+    "source_sha256": "c7edb9649a804bbe5ff38c38bf6d6248924ed198495bf78ff550688be885b273",
+    "archive_sha256": "95429cc6798d6cb74f3ed645cfb6d8099073b4c52119fb46714a1c1b72e1c799"
+  }
+]

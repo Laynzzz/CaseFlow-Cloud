@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="dev.caseflow.documents.DeadLetterProcessRecoveryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-09-17T14:58:00.737Z" hostname="DESTOP-4485" time="16.886">
+<testsuite name="dev.caseflow.documents.DeadLetterProcessRecoveryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-09-17T14:45:04.158Z" hostname="DESTOP-4485" time="16.754">
   <properties/>
-  <testcase name="[1] boundary = &quot;BEFORE_SEND&quot;" classname="dev.caseflow.documents.DeadLetterProcessRecoveryTest" time="8.678"/>
-  <testcase name="[2] boundary = &quot;AFTER_ACK&quot;" classname="dev.caseflow.documents.DeadLetterProcessRecoveryTest" time="8.182"/>
-  <system-out><![CDATA[10:58:00.971 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- AdminClientConfig values:
+  <testcase name="[1] boundary = &quot;BEFORE_SEND&quot;" classname="dev.caseflow.documents.DeadLetterProcessRecoveryTest" time="8.661"/>
+  <testcase name="[2] boundary = &quot;AFTER_ACK&quot;" classname="dev.caseflow.documents.DeadLetterProcessRecoveryTest" time="7.95"/>
+  <system-out><![CDATA[10:45:04.701 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- AdminClientConfig values:
 	bootstrap.controllers = []
 	bootstrap.servers = [127.0.0.1:9092]
 	client.dns.lookup = use_all_dns_ips
@@ -96,10 +96,10 @@
 	ssl.truststore.password = null
 	ssl.truststore.type = JKS
 
-10:58:01.090 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka version: 4.2.1
-10:58:01.090 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka commitId: 92f61c44867f39dc
-10:58:01.090 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka startTimeMs: 1789657081088
-10:58:01.374 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- ProducerConfig values:
+10:45:04.804 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka version: 4.2.1
+10:45:04.804 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka commitId: 92f61c44867f39dc
+10:45:04.804 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka startTimeMs: 1789656304803
+10:45:05.107 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- ProducerConfig values:
 	acks = -1
 	batch.size = 16384
 	bootstrap.servers = [127.0.0.1:9092]
@@ -214,28 +214,28 @@
 	transactional.id = null
 	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
 
-10:58:01.391 [Test worker] INFO org.apache.kafka.common.telemetry.internals.KafkaMetricsCollector -- initializing Kafka metrics collector
-10:58:01.398 [Test worker] INFO org.apache.kafka.clients.producer.KafkaProducer -- [Producer clientId=producer-1] Instantiated an idempotent producer.
-10:58:01.413 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka version: 4.2.1
-10:58:01.413 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka commitId: 92f61c44867f39dc
-10:58:01.413 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka startTimeMs: 1789657081413
-10:58:01.422 [kafka-producer-network-thread | producer-1] INFO org.apache.kafka.clients.Metadata -- [Producer clientId=producer-1] Cluster ID: 4L6g3nShT-eMCtK--X86sw
-10:58:01.422 [kafka-producer-network-thread | producer-1] INFO org.apache.kafka.clients.producer.internals.TransactionManager -- [Producer clientId=producer-1] ProducerId set to 1209 with epoch 0
-10:58:01.444 [Test worker] INFO org.apache.kafka.clients.producer.KafkaProducer -- [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.
-10:58:01.450 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Metrics scheduler closed
-10:58:01.450 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.metrics.JmxReporter
-10:58:01.450 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
-10:58:01.450 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Metrics reporters closed
-10:58:01.453 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- App info kafka.producer for producer-1 unregistered
-KAFKA_CRASH_BOUNDARY pid=39296 database=caseflow_test_26f608b5f4124201a1e67264c745f765 BOUNDARY:BEFORE_SEND:{"acknowledged":false}
-10:58:02.748 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- ConsumerConfig values:
+10:45:05.121 [Test worker] INFO org.apache.kafka.common.telemetry.internals.KafkaMetricsCollector -- initializing Kafka metrics collector
+10:45:05.129 [Test worker] INFO org.apache.kafka.clients.producer.KafkaProducer -- [Producer clientId=producer-1] Instantiated an idempotent producer.
+10:45:05.145 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka version: 4.2.1
+10:45:05.145 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka commitId: 92f61c44867f39dc
+10:45:05.145 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka startTimeMs: 1789656305145
+10:45:05.154 [kafka-producer-network-thread | producer-1] INFO org.apache.kafka.clients.Metadata -- [Producer clientId=producer-1] Cluster ID: 4L6g3nShT-eMCtK--X86sw
+10:45:05.155 [kafka-producer-network-thread | producer-1] INFO org.apache.kafka.clients.producer.internals.TransactionManager -- [Producer clientId=producer-1] ProducerId set to 1165 with epoch 0
+10:45:05.180 [Test worker] INFO org.apache.kafka.clients.producer.KafkaProducer -- [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.
+10:45:05.185 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Metrics scheduler closed
+10:45:05.185 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.metrics.JmxReporter
+10:45:05.186 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+10:45:05.186 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Metrics reporters closed
+10:45:05.187 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- App info kafka.producer for producer-1 unregistered
+KAFKA_CRASH_BOUNDARY pid=41312 database=caseflow_test_a691460d0cc64de9b3f73a0624791508 BOUNDARY:BEFORE_SEND:{"acknowledged":false}
+10:45:06.218 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- ConsumerConfig values:
 	allow.auto.create.topics = true
 	auto.commit.interval.ms = 5000
 	auto.offset.reset = earliest
 	bootstrap.servers = [127.0.0.1:9092]
 	check.crcs = true
 	client.dns.lookup = use_all_dns_ips
-	client.id = consumer-caseflow_test_ca2afc7ddc6e404eae8df096477314d9.observer-1
+	client.id = consumer-caseflow_test_34e3326743954ff69da645fb18415746.observer-1
 	client.rack =
 	config.providers = []
 	connections.max.idle.ms = 540000
@@ -246,7 +246,7 @@ KAFKA_CRASH_BOUNDARY pid=39296 database=caseflow_test_26f608b5f4124201a1e67264c7
 	fetch.max.bytes = 52428800
 	fetch.max.wait.ms = 500
 	fetch.min.bytes = 1
-	group.id = caseflow_test_ca2afc7ddc6e404eae8df096477314d9.observer
+	group.id = caseflow_test_34e3326743954ff69da645fb18415746.observer
 	group.instance.id = null
 	group.protocol = classic
 	group.remote.assignor = null
@@ -346,30 +346,30 @@ KAFKA_CRASH_BOUNDARY pid=39296 database=caseflow_test_26f608b5f4124201a1e67264c7
 	ssl.truststore.type = JKS
 	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
 
-10:58:02.760 [Test worker] INFO org.apache.kafka.common.telemetry.internals.KafkaMetricsCollector -- initializing Kafka metrics collector
-10:58:02.805 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka version: 4.2.1
-10:58:02.805 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka commitId: 92f61c44867f39dc
-10:58:02.805 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka startTimeMs: 1789657082805
-10:58:02.806 [Test worker] INFO org.apache.kafka.clients.consumer.internals.ClassicKafkaConsumer -- [Consumer clientId=consumer-caseflow_test_ca2afc7ddc6e404eae8df096477314d9.observer-1, groupId=caseflow_test_ca2afc7ddc6e404eae8df096477314d9.observer] Assigned to partition(s): caseflow_test_ca2afc7ddc6e404eae8df096477314d9.deadletters-0
-10:58:02.809 [Test worker] INFO org.apache.kafka.clients.consumer.internals.SubscriptionState -- [Consumer clientId=consumer-caseflow_test_ca2afc7ddc6e404eae8df096477314d9.observer-1, groupId=caseflow_test_ca2afc7ddc6e404eae8df096477314d9.observer] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition caseflow_test_ca2afc7ddc6e404eae8df096477314d9.deadletters-0
-10:58:02.817 [Test worker] INFO org.apache.kafka.clients.Metadata -- [Consumer clientId=consumer-caseflow_test_ca2afc7ddc6e404eae8df096477314d9.observer-1, groupId=caseflow_test_ca2afc7ddc6e404eae8df096477314d9.observer] Cluster ID: 4L6g3nShT-eMCtK--X86sw
-10:58:02.824 [Test worker] INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator -- [Consumer clientId=consumer-caseflow_test_ca2afc7ddc6e404eae8df096477314d9.observer-1, groupId=caseflow_test_ca2afc7ddc6e404eae8df096477314d9.observer] Resetting generation and member id due to: consumer pro-actively leaving the group
-10:58:02.824 [Test worker] INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator -- [Consumer clientId=consumer-caseflow_test_ca2afc7ddc6e404eae8df096477314d9.observer-1, groupId=caseflow_test_ca2afc7ddc6e404eae8df096477314d9.observer] Request joining group due to: consumer pro-actively leaving the group
-10:58:02.826 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Metrics scheduler closed
-10:58:02.826 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.metrics.JmxReporter
-10:58:02.826 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
-10:58:02.826 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Metrics reporters closed
-10:58:02.828 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- App info kafka.consumer for consumer-caseflow_test_ca2afc7ddc6e404eae8df096477314d9.observer-1 unregistered
-KAFKA_CRASH_KILLED pid=39296 exit=1
-DEADLETTER_RECOVERED pid=44860 exit=0
-10:58:09.312 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- ConsumerConfig values:
+10:45:06.226 [Test worker] INFO org.apache.kafka.common.telemetry.internals.KafkaMetricsCollector -- initializing Kafka metrics collector
+10:45:06.261 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka version: 4.2.1
+10:45:06.261 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka commitId: 92f61c44867f39dc
+10:45:06.261 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka startTimeMs: 1789656306260
+10:45:06.262 [Test worker] INFO org.apache.kafka.clients.consumer.internals.ClassicKafkaConsumer -- [Consumer clientId=consumer-caseflow_test_34e3326743954ff69da645fb18415746.observer-1, groupId=caseflow_test_34e3326743954ff69da645fb18415746.observer] Assigned to partition(s): caseflow_test_34e3326743954ff69da645fb18415746.deadletters-0
+10:45:06.264 [Test worker] INFO org.apache.kafka.clients.consumer.internals.SubscriptionState -- [Consumer clientId=consumer-caseflow_test_34e3326743954ff69da645fb18415746.observer-1, groupId=caseflow_test_34e3326743954ff69da645fb18415746.observer] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition caseflow_test_34e3326743954ff69da645fb18415746.deadletters-0
+10:45:06.269 [Test worker] INFO org.apache.kafka.clients.Metadata -- [Consumer clientId=consumer-caseflow_test_34e3326743954ff69da645fb18415746.observer-1, groupId=caseflow_test_34e3326743954ff69da645fb18415746.observer] Cluster ID: 4L6g3nShT-eMCtK--X86sw
+10:45:06.277 [Test worker] INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator -- [Consumer clientId=consumer-caseflow_test_34e3326743954ff69da645fb18415746.observer-1, groupId=caseflow_test_34e3326743954ff69da645fb18415746.observer] Resetting generation and member id due to: consumer pro-actively leaving the group
+10:45:06.277 [Test worker] INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator -- [Consumer clientId=consumer-caseflow_test_34e3326743954ff69da645fb18415746.observer-1, groupId=caseflow_test_34e3326743954ff69da645fb18415746.observer] Request joining group due to: consumer pro-actively leaving the group
+10:45:06.278 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Metrics scheduler closed
+10:45:06.278 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.metrics.JmxReporter
+10:45:06.278 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+10:45:06.279 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Metrics reporters closed
+10:45:06.280 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- App info kafka.consumer for consumer-caseflow_test_34e3326743954ff69da645fb18415746.observer-1 unregistered
+KAFKA_CRASH_KILLED pid=41312 exit=1
+DEADLETTER_RECOVERED pid=17080 exit=0
+10:45:12.820 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- ConsumerConfig values:
 	allow.auto.create.topics = true
 	auto.commit.interval.ms = 5000
 	auto.offset.reset = earliest
 	bootstrap.servers = [127.0.0.1:9092]
 	check.crcs = true
 	client.dns.lookup = use_all_dns_ips
-	client.id = consumer-caseflow_test_ca2afc7ddc6e404eae8df096477314d9.observer-2
+	client.id = consumer-caseflow_test_34e3326743954ff69da645fb18415746.observer-2
 	client.rack =
 	config.providers = []
 	connections.max.idle.ms = 540000
@@ -380,7 +380,7 @@ DEADLETTER_RECOVERED pid=44860 exit=0
 	fetch.max.bytes = 52428800
 	fetch.max.wait.ms = 500
 	fetch.min.bytes = 1
-	group.id = caseflow_test_ca2afc7ddc6e404eae8df096477314d9.observer
+	group.id = caseflow_test_34e3326743954ff69da645fb18415746.observer
 	group.instance.id = null
 	group.protocol = classic
 	group.remote.assignor = null
@@ -480,30 +480,30 @@ DEADLETTER_RECOVERED pid=44860 exit=0
 	ssl.truststore.type = JKS
 	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
 
-10:58:09.313 [Test worker] INFO org.apache.kafka.common.telemetry.internals.KafkaMetricsCollector -- initializing Kafka metrics collector
-10:58:09.315 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka version: 4.2.1
-10:58:09.315 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka commitId: 92f61c44867f39dc
-10:58:09.315 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka startTimeMs: 1789657089315
-10:58:09.316 [Test worker] INFO org.apache.kafka.clients.consumer.internals.ClassicKafkaConsumer -- [Consumer clientId=consumer-caseflow_test_ca2afc7ddc6e404eae8df096477314d9.observer-2, groupId=caseflow_test_ca2afc7ddc6e404eae8df096477314d9.observer] Assigned to partition(s): caseflow_test_ca2afc7ddc6e404eae8df096477314d9.deadletters-0
-10:58:09.316 [Test worker] INFO org.apache.kafka.clients.consumer.internals.SubscriptionState -- [Consumer clientId=consumer-caseflow_test_ca2afc7ddc6e404eae8df096477314d9.observer-2, groupId=caseflow_test_ca2afc7ddc6e404eae8df096477314d9.observer] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition caseflow_test_ca2afc7ddc6e404eae8df096477314d9.deadletters-0
-10:58:09.319 [Test worker] INFO org.apache.kafka.clients.Metadata -- [Consumer clientId=consumer-caseflow_test_ca2afc7ddc6e404eae8df096477314d9.observer-2, groupId=caseflow_test_ca2afc7ddc6e404eae8df096477314d9.observer] Cluster ID: 4L6g3nShT-eMCtK--X86sw
-10:58:09.331 [Test worker] INFO org.apache.kafka.clients.consumer.internals.SubscriptionState -- [Consumer clientId=consumer-caseflow_test_ca2afc7ddc6e404eae8df096477314d9.observer-2, groupId=caseflow_test_ca2afc7ddc6e404eae8df096477314d9.observer] Resetting offset for partition caseflow_test_ca2afc7ddc6e404eae8df096477314d9.deadletters-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null isFenced: false)], epoch=0}}.
-10:58:09.340 [Test worker] INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator -- [Consumer clientId=consumer-caseflow_test_ca2afc7ddc6e404eae8df096477314d9.observer-2, groupId=caseflow_test_ca2afc7ddc6e404eae8df096477314d9.observer] Resetting generation and member id due to: consumer pro-actively leaving the group
-10:58:09.341 [Test worker] INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator -- [Consumer clientId=consumer-caseflow_test_ca2afc7ddc6e404eae8df096477314d9.observer-2, groupId=caseflow_test_ca2afc7ddc6e404eae8df096477314d9.observer] Request joining group due to: consumer pro-actively leaving the group
-10:58:09.343 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Metrics scheduler closed
-10:58:09.343 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.metrics.JmxReporter
-10:58:09.343 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
-10:58:09.344 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Metrics reporters closed
-10:58:09.345 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- App info kafka.consumer for consumer-caseflow_test_ca2afc7ddc6e404eae8df096477314d9.observer-2 unregistered
-DEADLETTER_RECOVERY_VERIFIED {"committedOffset":1,"redactionVerified":true,"deadletterCount":1,"businessEffects":0,"source":{"offset":0,"partition":0,"topic":"caseflow_test_ca2afc7ddc6e404eae8df096477314d9.completions"},"boundary":"BEFORE_SEND"}
-10:58:09.417 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Metrics scheduler closed
-10:58:09.417 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.metrics.JmxReporter
-10:58:09.417 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Metrics reporters closed
-10:58:09.417 [kafka-admin-client-thread | adminclient-1] INFO org.apache.kafka.common.utils.AppInfoParser -- App info kafka.admin.client for adminclient-1 unregistered
-10:58:09.419 [kafka-admin-client-thread | adminclient-1] INFO org.apache.kafka.common.metrics.Metrics -- Metrics scheduler closed
-10:58:09.419 [kafka-admin-client-thread | adminclient-1] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.metrics.JmxReporter
-10:58:09.419 [kafka-admin-client-thread | adminclient-1] INFO org.apache.kafka.common.metrics.Metrics -- Metrics reporters closed
-10:58:09.623 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- AdminClientConfig values:
+10:45:12.822 [Test worker] INFO org.apache.kafka.common.telemetry.internals.KafkaMetricsCollector -- initializing Kafka metrics collector
+10:45:12.825 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka version: 4.2.1
+10:45:12.825 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka commitId: 92f61c44867f39dc
+10:45:12.825 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka startTimeMs: 1789656312825
+10:45:12.826 [Test worker] INFO org.apache.kafka.clients.consumer.internals.ClassicKafkaConsumer -- [Consumer clientId=consumer-caseflow_test_34e3326743954ff69da645fb18415746.observer-2, groupId=caseflow_test_34e3326743954ff69da645fb18415746.observer] Assigned to partition(s): caseflow_test_34e3326743954ff69da645fb18415746.deadletters-0
+10:45:12.826 [Test worker] INFO org.apache.kafka.clients.consumer.internals.SubscriptionState -- [Consumer clientId=consumer-caseflow_test_34e3326743954ff69da645fb18415746.observer-2, groupId=caseflow_test_34e3326743954ff69da645fb18415746.observer] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition caseflow_test_34e3326743954ff69da645fb18415746.deadletters-0
+10:45:12.829 [Test worker] INFO org.apache.kafka.clients.Metadata -- [Consumer clientId=consumer-caseflow_test_34e3326743954ff69da645fb18415746.observer-2, groupId=caseflow_test_34e3326743954ff69da645fb18415746.observer] Cluster ID: 4L6g3nShT-eMCtK--X86sw
+10:45:12.841 [Test worker] INFO org.apache.kafka.clients.consumer.internals.SubscriptionState -- [Consumer clientId=consumer-caseflow_test_34e3326743954ff69da645fb18415746.observer-2, groupId=caseflow_test_34e3326743954ff69da645fb18415746.observer] Resetting offset for partition caseflow_test_34e3326743954ff69da645fb18415746.deadletters-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null isFenced: false)], epoch=0}}.
+10:45:12.851 [Test worker] INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator -- [Consumer clientId=consumer-caseflow_test_34e3326743954ff69da645fb18415746.observer-2, groupId=caseflow_test_34e3326743954ff69da645fb18415746.observer] Resetting generation and member id due to: consumer pro-actively leaving the group
+10:45:12.852 [Test worker] INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator -- [Consumer clientId=consumer-caseflow_test_34e3326743954ff69da645fb18415746.observer-2, groupId=caseflow_test_34e3326743954ff69da645fb18415746.observer] Request joining group due to: consumer pro-actively leaving the group
+10:45:12.854 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Metrics scheduler closed
+10:45:12.854 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.metrics.JmxReporter
+10:45:12.854 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+10:45:12.854 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Metrics reporters closed
+10:45:12.856 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- App info kafka.consumer for consumer-caseflow_test_34e3326743954ff69da645fb18415746.observer-2 unregistered
+DEADLETTER_RECOVERY_VERIFIED {"source":{"topic":"caseflow_test_34e3326743954ff69da645fb18415746.completions","partition":0,"offset":0},"businessEffects":0,"deadletterCount":1,"redactionVerified":true,"committedOffset":1,"boundary":"BEFORE_SEND"}
+10:45:12.930 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Metrics scheduler closed
+10:45:12.930 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.metrics.JmxReporter
+10:45:12.930 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Metrics reporters closed
+10:45:12.931 [kafka-admin-client-thread | adminclient-1] INFO org.apache.kafka.common.utils.AppInfoParser -- App info kafka.admin.client for adminclient-1 unregistered
+10:45:12.932 [kafka-admin-client-thread | adminclient-1] INFO org.apache.kafka.common.metrics.Metrics -- Metrics scheduler closed
+10:45:12.932 [kafka-admin-client-thread | adminclient-1] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.metrics.JmxReporter
+10:45:12.932 [kafka-admin-client-thread | adminclient-1] INFO org.apache.kafka.common.metrics.Metrics -- Metrics reporters closed
+10:45:13.147 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- AdminClientConfig values:
 	bootstrap.controllers = []
 	bootstrap.servers = [127.0.0.1:9092]
 	client.dns.lookup = use_all_dns_ips
@@ -596,10 +596,10 @@ DEADLETTER_RECOVERY_VERIFIED {"committedOffset":1,"redactionVerified":true,"dead
 	ssl.truststore.password = null
 	ssl.truststore.type = JKS
 
-10:58:09.625 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka version: 4.2.1
-10:58:09.625 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka commitId: 92f61c44867f39dc
-10:58:09.625 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka startTimeMs: 1789657089625
-10:58:09.659 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- ProducerConfig values:
+10:45:13.149 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka version: 4.2.1
+10:45:13.149 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka commitId: 92f61c44867f39dc
+10:45:13.149 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka startTimeMs: 1789656313149
+10:45:13.172 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- ProducerConfig values:
 	acks = -1
 	batch.size = 16384
 	bootstrap.servers = [127.0.0.1:9092]
@@ -714,28 +714,28 @@ DEADLETTER_RECOVERY_VERIFIED {"committedOffset":1,"redactionVerified":true,"dead
 	transactional.id = null
 	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
 
-10:58:09.659 [Test worker] INFO org.apache.kafka.common.telemetry.internals.KafkaMetricsCollector -- initializing Kafka metrics collector
-10:58:09.659 [Test worker] INFO org.apache.kafka.clients.producer.KafkaProducer -- [Producer clientId=producer-2] Instantiated an idempotent producer.
-10:58:09.661 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka version: 4.2.1
-10:58:09.662 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka commitId: 92f61c44867f39dc
-10:58:09.662 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka startTimeMs: 1789657089661
-10:58:09.665 [kafka-producer-network-thread | producer-2] INFO org.apache.kafka.clients.Metadata -- [Producer clientId=producer-2] Cluster ID: 4L6g3nShT-eMCtK--X86sw
-10:58:09.665 [kafka-producer-network-thread | producer-2] INFO org.apache.kafka.clients.producer.internals.TransactionManager -- [Producer clientId=producer-2] ProducerId set to 1212 with epoch 0
-10:58:09.685 [Test worker] INFO org.apache.kafka.clients.producer.KafkaProducer -- [Producer clientId=producer-2] Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.
-10:58:09.686 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Metrics scheduler closed
-10:58:09.686 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.metrics.JmxReporter
-10:58:09.686 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
-10:58:09.687 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Metrics reporters closed
-10:58:09.687 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- App info kafka.producer for producer-2 unregistered
-KAFKA_CRASH_BOUNDARY pid=46368 database=caseflow_test_3419c7730c7e429f9e5e17f6918c2cb2 BOUNDARY:AFTER_ACK:{"partition":0,"acknowledged":true,"topic":"caseflow_test_a611d2bb23a24be7a36109df66191457.deadletters","offset":0}
-10:58:10.925 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- ConsumerConfig values:
+10:45:13.172 [Test worker] INFO org.apache.kafka.common.telemetry.internals.KafkaMetricsCollector -- initializing Kafka metrics collector
+10:45:13.173 [Test worker] INFO org.apache.kafka.clients.producer.KafkaProducer -- [Producer clientId=producer-2] Instantiated an idempotent producer.
+10:45:13.175 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka version: 4.2.1
+10:45:13.175 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka commitId: 92f61c44867f39dc
+10:45:13.175 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka startTimeMs: 1789656313175
+10:45:13.178 [kafka-producer-network-thread | producer-2] INFO org.apache.kafka.clients.Metadata -- [Producer clientId=producer-2] Cluster ID: 4L6g3nShT-eMCtK--X86sw
+10:45:13.179 [kafka-producer-network-thread | producer-2] INFO org.apache.kafka.clients.producer.internals.TransactionManager -- [Producer clientId=producer-2] ProducerId set to 1168 with epoch 0
+10:45:13.190 [Test worker] INFO org.apache.kafka.clients.producer.KafkaProducer -- [Producer clientId=producer-2] Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.
+10:45:13.192 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Metrics scheduler closed
+10:45:13.192 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.metrics.JmxReporter
+10:45:13.192 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+10:45:13.192 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Metrics reporters closed
+10:45:13.192 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- App info kafka.producer for producer-2 unregistered
+KAFKA_CRASH_BOUNDARY pid=10656 database=caseflow_test_627e75cd30e5461eb5e5d947c92e6510 BOUNDARY:AFTER_ACK:{"topic":"caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.deadletters","acknowledged":true,"partition":0,"offset":0}
+10:45:14.240 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- ConsumerConfig values:
 	allow.auto.create.topics = true
 	auto.commit.interval.ms = 5000
 	auto.offset.reset = earliest
 	bootstrap.servers = [127.0.0.1:9092]
 	check.crcs = true
 	client.dns.lookup = use_all_dns_ips
-	client.id = consumer-caseflow_test_a611d2bb23a24be7a36109df66191457.observer-3
+	client.id = consumer-caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.observer-3
 	client.rack =
 	config.providers = []
 	connections.max.idle.ms = 540000
@@ -746,7 +746,7 @@ KAFKA_CRASH_BOUNDARY pid=46368 database=caseflow_test_3419c7730c7e429f9e5e17f691
 	fetch.max.bytes = 52428800
 	fetch.max.wait.ms = 500
 	fetch.min.bytes = 1
-	group.id = caseflow_test_a611d2bb23a24be7a36109df66191457.observer
+	group.id = caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.observer
 	group.instance.id = null
 	group.protocol = classic
 	group.remote.assignor = null
@@ -846,31 +846,31 @@ KAFKA_CRASH_BOUNDARY pid=46368 database=caseflow_test_3419c7730c7e429f9e5e17f691
 	ssl.truststore.type = JKS
 	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
 
-10:58:10.926 [Test worker] INFO org.apache.kafka.common.telemetry.internals.KafkaMetricsCollector -- initializing Kafka metrics collector
-10:58:10.928 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka version: 4.2.1
-10:58:10.928 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka commitId: 92f61c44867f39dc
-10:58:10.928 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka startTimeMs: 1789657090928
-10:58:10.928 [Test worker] INFO org.apache.kafka.clients.consumer.internals.ClassicKafkaConsumer -- [Consumer clientId=consumer-caseflow_test_a611d2bb23a24be7a36109df66191457.observer-3, groupId=caseflow_test_a611d2bb23a24be7a36109df66191457.observer] Assigned to partition(s): caseflow_test_a611d2bb23a24be7a36109df66191457.deadletters-0
-10:58:10.928 [Test worker] INFO org.apache.kafka.clients.consumer.internals.SubscriptionState -- [Consumer clientId=consumer-caseflow_test_a611d2bb23a24be7a36109df66191457.observer-3, groupId=caseflow_test_a611d2bb23a24be7a36109df66191457.observer] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition caseflow_test_a611d2bb23a24be7a36109df66191457.deadletters-0
-10:58:10.932 [Test worker] INFO org.apache.kafka.clients.Metadata -- [Consumer clientId=consumer-caseflow_test_a611d2bb23a24be7a36109df66191457.observer-3, groupId=caseflow_test_a611d2bb23a24be7a36109df66191457.observer] Cluster ID: 4L6g3nShT-eMCtK--X86sw
-10:58:10.937 [Test worker] INFO org.apache.kafka.clients.consumer.internals.SubscriptionState -- [Consumer clientId=consumer-caseflow_test_a611d2bb23a24be7a36109df66191457.observer-3, groupId=caseflow_test_a611d2bb23a24be7a36109df66191457.observer] Resetting offset for partition caseflow_test_a611d2bb23a24be7a36109df66191457.deadletters-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null isFenced: false)], epoch=0}}.
-10:58:10.938 [Test worker] INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator -- [Consumer clientId=consumer-caseflow_test_a611d2bb23a24be7a36109df66191457.observer-3, groupId=caseflow_test_a611d2bb23a24be7a36109df66191457.observer] Resetting generation and member id due to: consumer pro-actively leaving the group
-10:58:10.938 [Test worker] INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator -- [Consumer clientId=consumer-caseflow_test_a611d2bb23a24be7a36109df66191457.observer-3, groupId=caseflow_test_a611d2bb23a24be7a36109df66191457.observer] Request joining group due to: consumer pro-actively leaving the group
-10:58:10.940 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Metrics scheduler closed
-10:58:10.940 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.metrics.JmxReporter
-10:58:10.940 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
-10:58:10.940 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Metrics reporters closed
-10:58:10.941 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- App info kafka.consumer for consumer-caseflow_test_a611d2bb23a24be7a36109df66191457.observer-3 unregistered
-KAFKA_CRASH_KILLED pid=46368 exit=1
-DEADLETTER_RECOVERED pid=38984 exit=0
-10:58:17.500 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- ConsumerConfig values:
+10:45:14.240 [Test worker] INFO org.apache.kafka.common.telemetry.internals.KafkaMetricsCollector -- initializing Kafka metrics collector
+10:45:14.243 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka version: 4.2.1
+10:45:14.243 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka commitId: 92f61c44867f39dc
+10:45:14.243 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka startTimeMs: 1789656314243
+10:45:14.243 [Test worker] INFO org.apache.kafka.clients.consumer.internals.ClassicKafkaConsumer -- [Consumer clientId=consumer-caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.observer-3, groupId=caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.observer] Assigned to partition(s): caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.deadletters-0
+10:45:14.243 [Test worker] INFO org.apache.kafka.clients.consumer.internals.SubscriptionState -- [Consumer clientId=consumer-caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.observer-3, groupId=caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.observer] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.deadletters-0
+10:45:14.246 [Test worker] INFO org.apache.kafka.clients.Metadata -- [Consumer clientId=consumer-caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.observer-3, groupId=caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.observer] Cluster ID: 4L6g3nShT-eMCtK--X86sw
+10:45:14.251 [Test worker] INFO org.apache.kafka.clients.consumer.internals.SubscriptionState -- [Consumer clientId=consumer-caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.observer-3, groupId=caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.observer] Resetting offset for partition caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.deadletters-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null isFenced: false)], epoch=0}}.
+10:45:14.253 [Test worker] INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator -- [Consumer clientId=consumer-caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.observer-3, groupId=caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.observer] Resetting generation and member id due to: consumer pro-actively leaving the group
+10:45:14.253 [Test worker] INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator -- [Consumer clientId=consumer-caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.observer-3, groupId=caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.observer] Request joining group due to: consumer pro-actively leaving the group
+10:45:14.255 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Metrics scheduler closed
+10:45:14.255 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.metrics.JmxReporter
+10:45:14.255 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+10:45:14.255 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Metrics reporters closed
+10:45:14.256 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- App info kafka.consumer for consumer-caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.observer-3 unregistered
+KAFKA_CRASH_KILLED pid=10656 exit=1
+DEADLETTER_RECOVERED pid=45008 exit=0
+10:45:20.812 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- ConsumerConfig values:
 	allow.auto.create.topics = true
 	auto.commit.interval.ms = 5000
 	auto.offset.reset = earliest
 	bootstrap.servers = [127.0.0.1:9092]
 	check.crcs = true
 	client.dns.lookup = use_all_dns_ips
-	client.id = consumer-caseflow_test_a611d2bb23a24be7a36109df66191457.observer-4
+	client.id = consumer-caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.observer-4
 	client.rack =
 	config.providers = []
 	connections.max.idle.ms = 540000
@@ -881,7 +881,7 @@ DEADLETTER_RECOVERED pid=38984 exit=0
 	fetch.max.bytes = 52428800
 	fetch.max.wait.ms = 500
 	fetch.min.bytes = 1
-	group.id = caseflow_test_a611d2bb23a24be7a36109df66191457.observer
+	group.id = caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.observer
 	group.instance.id = null
 	group.protocol = classic
 	group.remote.assignor = null
@@ -981,29 +981,29 @@ DEADLETTER_RECOVERED pid=38984 exit=0
 	ssl.truststore.type = JKS
 	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
 
-10:58:17.501 [Test worker] INFO org.apache.kafka.common.telemetry.internals.KafkaMetricsCollector -- initializing Kafka metrics collector
-10:58:17.503 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka version: 4.2.1
-10:58:17.503 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka commitId: 92f61c44867f39dc
-10:58:17.503 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka startTimeMs: 1789657097503
-10:58:17.503 [Test worker] INFO org.apache.kafka.clients.consumer.internals.ClassicKafkaConsumer -- [Consumer clientId=consumer-caseflow_test_a611d2bb23a24be7a36109df66191457.observer-4, groupId=caseflow_test_a611d2bb23a24be7a36109df66191457.observer] Assigned to partition(s): caseflow_test_a611d2bb23a24be7a36109df66191457.deadletters-0
-10:58:17.503 [Test worker] INFO org.apache.kafka.clients.consumer.internals.SubscriptionState -- [Consumer clientId=consumer-caseflow_test_a611d2bb23a24be7a36109df66191457.observer-4, groupId=caseflow_test_a611d2bb23a24be7a36109df66191457.observer] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition caseflow_test_a611d2bb23a24be7a36109df66191457.deadletters-0
-10:58:17.507 [Test worker] INFO org.apache.kafka.clients.Metadata -- [Consumer clientId=consumer-caseflow_test_a611d2bb23a24be7a36109df66191457.observer-4, groupId=caseflow_test_a611d2bb23a24be7a36109df66191457.observer] Cluster ID: 4L6g3nShT-eMCtK--X86sw
-10:58:17.511 [Test worker] INFO org.apache.kafka.clients.consumer.internals.SubscriptionState -- [Consumer clientId=consumer-caseflow_test_a611d2bb23a24be7a36109df66191457.observer-4, groupId=caseflow_test_a611d2bb23a24be7a36109df66191457.observer] Resetting offset for partition caseflow_test_a611d2bb23a24be7a36109df66191457.deadletters-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null isFenced: false)], epoch=0}}.
-10:58:17.513 [Test worker] INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator -- [Consumer clientId=consumer-caseflow_test_a611d2bb23a24be7a36109df66191457.observer-4, groupId=caseflow_test_a611d2bb23a24be7a36109df66191457.observer] Resetting generation and member id due to: consumer pro-actively leaving the group
-10:58:17.513 [Test worker] INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator -- [Consumer clientId=consumer-caseflow_test_a611d2bb23a24be7a36109df66191457.observer-4, groupId=caseflow_test_a611d2bb23a24be7a36109df66191457.observer] Request joining group due to: consumer pro-actively leaving the group
-10:58:17.515 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Metrics scheduler closed
-10:58:17.515 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.metrics.JmxReporter
-10:58:17.515 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
-10:58:17.515 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Metrics reporters closed
-10:58:17.516 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- App info kafka.consumer for consumer-caseflow_test_a611d2bb23a24be7a36109df66191457.observer-4 unregistered
-DEADLETTER_RECOVERY_VERIFIED {"committedOffset":1,"redactionVerified":true,"deadletterCount":2,"businessEffects":0,"source":{"offset":0,"partition":0,"topic":"caseflow_test_a611d2bb23a24be7a36109df66191457.completions"},"boundary":"AFTER_ACK"}
-10:58:17.583 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Metrics scheduler closed
-10:58:17.584 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.metrics.JmxReporter
-10:58:17.584 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Metrics reporters closed
-10:58:17.584 [kafka-admin-client-thread | adminclient-2] INFO org.apache.kafka.common.utils.AppInfoParser -- App info kafka.admin.client for adminclient-2 unregistered
-10:58:17.585 [kafka-admin-client-thread | adminclient-2] INFO org.apache.kafka.common.metrics.Metrics -- Metrics scheduler closed
-10:58:17.585 [kafka-admin-client-thread | adminclient-2] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.metrics.JmxReporter
-10:58:17.585 [kafka-admin-client-thread | adminclient-2] INFO org.apache.kafka.common.metrics.Metrics -- Metrics reporters closed
+10:45:20.813 [Test worker] INFO org.apache.kafka.common.telemetry.internals.KafkaMetricsCollector -- initializing Kafka metrics collector
+10:45:20.815 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka version: 4.2.1
+10:45:20.815 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka commitId: 92f61c44867f39dc
+10:45:20.815 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka startTimeMs: 1789656320815
+10:45:20.815 [Test worker] INFO org.apache.kafka.clients.consumer.internals.ClassicKafkaConsumer -- [Consumer clientId=consumer-caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.observer-4, groupId=caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.observer] Assigned to partition(s): caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.deadletters-0
+10:45:20.815 [Test worker] INFO org.apache.kafka.clients.consumer.internals.SubscriptionState -- [Consumer clientId=consumer-caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.observer-4, groupId=caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.observer] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.deadletters-0
+10:45:20.818 [Test worker] INFO org.apache.kafka.clients.Metadata -- [Consumer clientId=consumer-caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.observer-4, groupId=caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.observer] Cluster ID: 4L6g3nShT-eMCtK--X86sw
+10:45:20.821 [Test worker] INFO org.apache.kafka.clients.consumer.internals.SubscriptionState -- [Consumer clientId=consumer-caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.observer-4, groupId=caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.observer] Resetting offset for partition caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.deadletters-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null isFenced: false)], epoch=0}}.
+10:45:20.824 [Test worker] INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator -- [Consumer clientId=consumer-caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.observer-4, groupId=caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.observer] Resetting generation and member id due to: consumer pro-actively leaving the group
+10:45:20.824 [Test worker] INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator -- [Consumer clientId=consumer-caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.observer-4, groupId=caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.observer] Request joining group due to: consumer pro-actively leaving the group
+10:45:20.825 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Metrics scheduler closed
+10:45:20.825 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.metrics.JmxReporter
+10:45:20.825 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+10:45:20.825 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Metrics reporters closed
+10:45:20.826 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- App info kafka.consumer for consumer-caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.observer-4 unregistered
+DEADLETTER_RECOVERY_VERIFIED {"source":{"topic":"caseflow_test_aa5b68f7651c4ffbbd73faf7307a9a02.completions","partition":0,"offset":0},"businessEffects":0,"deadletterCount":2,"redactionVerified":true,"committedOffset":1,"boundary":"AFTER_ACK"}
+10:45:20.889 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Metrics scheduler closed
+10:45:20.889 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.metrics.JmxReporter
+10:45:20.889 [Test worker] INFO org.apache.kafka.common.metrics.Metrics -- Metrics reporters closed
+10:45:20.889 [kafka-admin-client-thread | adminclient-2] INFO org.apache.kafka.common.utils.AppInfoParser -- App info kafka.admin.client for adminclient-2 unregistered
+10:45:20.893 [kafka-admin-client-thread | adminclient-2] INFO org.apache.kafka.common.metrics.Metrics -- Metrics scheduler closed
+10:45:20.893 [kafka-admin-client-thread | adminclient-2] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.metrics.JmxReporter
+10:45:20.893 [kafka-admin-client-thread | adminclient-2] INFO org.apache.kafka.common.metrics.Metrics -- Metrics reporters closed
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

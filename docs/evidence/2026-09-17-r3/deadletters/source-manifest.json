@@ -1,0 +1,42 @@
+{
+  "baseline_revision": "d01f9073bc1a1c76026e28e8fdc2b8634c22e3e4",
+  "source_sha256_worktree_bytes": {
+    "services/worker/tests/deadletter_process_probe.py": "7d6cd32a7ad454ffcc1506dd342628ea587db77ad41a680a5eb894614404abc7",
+    "services/worker/tests/test_deadletter_process_recovery.py": "678c1d9aa380b4eee3ec300cf688704d22f9fff67efc7985db1d752068fddcc9",
+    "services/worker/tests/kafka_process_probe.py": "d25fcd43c788d6bb05a2623b67f86108e784ba5eb0cd0c63e57f44908e057ec1",
+    "services/worker/caseflow_worker/runtime.py": "5ea26bd51c0028e6b47cfa67f4378eb9904bd24b17bc94c4ca003a72690c090e",
+    "services/case-api/src/test/java/dev/caseflow/documents/DeadLetterCrashProbe.java": "03b9f21428cedc0fc7b6075e9720c38f2fd0a30e052cd7acfe5383fb538c572a",
+    "services/case-api/src/test/java/dev/caseflow/documents/DeadLetterProcessRecoveryTest.java": "94ac5c5109323a8650bb5e84c5f93a7dad55a36e899aefc6243d6e5d5991d232",
+    "services/case-api/src/test/java/dev/caseflow/documents/KafkaMessagingCrashProbe.java": "abf5bb56a771982d82a1369695a2d71d90e083cdf8cc3662898078249a28a3f2",
+    "services/case-api/src/main/java/dev/caseflow/documents/JobMessaging.java": "bbf9ca1220040113e4a5c7646a8207077e7e8c3d18a68dc9dfd5bf0b661d6f27",
+    "docs/runbooks/deadletter-recovery.md": "21ed9cc7a6f7ce02ed3728b5c9dfcdd1f964c115354169682e8f401736bfdf1f"
+  },
+  "scope": "Two Python and two Java poison-envelope crash boundaries; owned subprocesses, real local Kafka, disposable PostgreSQL; no model/cloud calls.",
+  "results": {
+    "python-final": {
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "15.435",
+      "timestamp": "2026-09-17T10:45:56.062331-04:00"
+    },
+    "java-focused": {
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "16.754",
+      "timestamp": "2026-09-17T14:45:04.158Z"
+    }
+  },
+  "artifact_sha256": {
+    "java-focused.txt": "21ef3d47b397e2173b75002fb1c18daec0584230e2a83da01a71a15ff8d4ece4",
+    "java-focused.xml": "5fcbbe425ad775fd60015c06a3d921aec7dbf3a6c415b28ba8046634aa95237b",
+    "python-final.txt": "1ac68e840b80fed0f686a7eae4623c30fbf3ec1082deae3ae84639a6057edbd5",
+    "python-final.xml": "8ae587d56c8dda5ad0b06c6946342007ba1db5e5d61dfb4b14272d8a1c7cb4a0",
+    "python-focused.txt": "968600207fcd6f61cf7583e59f3fd69b44799481e0bcf14e52ac5ac71d7cf367",
+    "python-focused.xml": "8b338f4ca6743a079782cbb11aef793a1c4fbc3f461920a98c95b40a8ccefd68",
+    "summary.md": "c7edb9649a804bbe5ff38c38bf6d6248924ed198495bf78ff550688be885b273"
+  }
+}

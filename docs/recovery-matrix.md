@@ -32,3 +32,11 @@ These tests run local components and synthetic fixtures. The plan's cloud
 smoke/rollback/teardown, tracing, query optimization and sustained load gates
 remain separate. At-least-once delivery can repeat computation and model billing
 even when database effects are idempotent.
+
+## Dead-letter gap closed
+
+[Four new forced-kill scenarios](evidence/2026-09-17-r3/deadletters/summary.md)
+cover Python/Java before submission and after acknowledgement/before offset commit.
+They bring business-boundary crash coverage to seventeen. The earlier table's
+poison-process gap is superseded by this evidence; wider ordering and whole-service
+recovery remain separate. Duplicate redacted diagnoses are expected after ack.

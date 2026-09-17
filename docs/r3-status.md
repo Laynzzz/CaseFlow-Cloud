@@ -148,3 +148,11 @@ completion. Separate private metrics endpoints expose HTTP, pool/transaction,
 queue/execution/outbox/lease, Kafka lag and durable AI ledger signals. Monitoring
 unavailability is explicit. Full trace sampling was used only for this bounded
 rehearsal; load/alert/rollback and AWS gates remain separately verified.
+
+## Poison-message process recovery
+
+[Four actual dead-letter interruption scenarios](evidence/2026-09-17-r3/deadletters/summary.md)
+pass across Python/Java before submission and after acknowledgement. Original
+coordinates replay, next offsets commit only after acknowledgement, diagnosis
+fields remain redacted, and invalid records create zero business effects. This
+closes the narrower dead-letter process gap; full-service/cloud gates are separate.

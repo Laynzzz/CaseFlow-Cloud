@@ -694,3 +694,11 @@ baggage are excluded. Follow-up: 100% sampling is a bounded evidence setting, no
 a production-wide promise.
 
 Evidence: [actual trace and regression suites](evidence/2026-09-17-r3/telemetry/summary.md).
+
+**Can dead-letter messages repeat?** Yes. If the process crashes after the broker
+acknowledges the diagnosis but before committing the original offset, the source
+record replays and emits the same redacted diagnosis again. Four forced-kill tests
+prove that boundary across Java and Python, with zero business database effects.
+Follow-up: a dead-letter queue is diagnosis, not an authorization bypass; arbitrary
+payload replay and offset resets are not supplied as an operator shortcut.
+Evidence: [dead-letter crashes](evidence/2026-09-17-r3/deadletters/summary.md).

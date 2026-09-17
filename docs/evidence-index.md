@@ -361,3 +361,10 @@ clean-commit deployment; cloud delivery and candidate rollback are not claimed.
 request-to-worker-to-completion trace, private management boundaries, fixed-label
 operational metrics and 42 Java/169 Python passing regressions. No cloud or load
 claim follows from these tests alone.
+
+## R3 dead-letter recovery
+
+[Four process-crash cases](evidence/2026-09-17-r3/deadletters/summary.md) extend
+business-boundary coverage to seventeen. The archive records redacted diagnosis,
+original-coordinate replay and offset evidence; repetitions of a run are not new
+crash scenarios. Whole-service/cloud scope is tracked separately.

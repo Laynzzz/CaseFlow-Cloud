@@ -8,11 +8,11 @@
   <testcase name="completionNormalReleaseCommitsOffsetAfterOneBusinessEffect()" classname="dev.caseflow.documents.KafkaMessagingProcessRecoveryTest" time="2.372"/>
   <testcase name="cleanupAfterAbruptConsumerDeathRemovesOwnedGroupAndTopics()" classname="dev.caseflow.documents.KafkaMessagingProcessRecoveryTest" time="7.428"/>
   <testcase name="publisherKilledAfterActualAckRepublishesSameEventAtNewOffset()" classname="dev.caseflow.documents.KafkaMessagingProcessRecoveryTest" time="2.651"/>
-  <system-out><![CDATA[10:58:17.815 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- AdminClientConfig values: 
+  <system-out><![CDATA[10:58:17.815 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- AdminClientConfig values:
 	bootstrap.controllers = []
 	bootstrap.servers = [127.0.0.1:9092]
 	client.dns.lookup = use_all_dns_ips
-	client.id = 
+	client.id =
 	config.providers = []
 	connections.max.idle.ms = 300000
 	default.api.timeout.ms = 15000
@@ -106,7 +106,7 @@
 10:58:17.817 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka startTimeMs: 1789657097817
 KAFKA_CRASH_BOUNDARY pid=42464 database=caseflow_test_043eaab37b4e4740aac6067f1b08f097 BOUNDARY:PUBLISH_ACK:{"eventId":"b8bcfded-d63e-41b5-b1d9-f4abd8aa5fc5","topic":"caseflow_test_c0830845d83d4aadb7bc7e85a382602b.jobs","partition":0,"offset":0}
 KAFKA_CONTROL_RELEASE pid=42464 exit=0
-10:58:19.215 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- ConsumerConfig values: 
+10:58:19.215 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- ConsumerConfig values:
 	allow.auto.create.topics = true
 	auto.commit.interval.ms = 5000
 	auto.offset.reset = earliest
@@ -114,7 +114,7 @@ KAFKA_CONTROL_RELEASE pid=42464 exit=0
 	check.crcs = true
 	client.dns.lookup = use_all_dns_ips
 	client.id = consumer-caseflow_test_c0830845d83d4aadb7bc7e85a382602b.observer-5
-	client.rack = 
+	client.rack =
 	config.providers = []
 	connections.max.idle.ms = 540000
 	default.api.timeout.ms = 10000
@@ -247,11 +247,11 @@ KAFKA_PUBLISH_VERIFIED {"eventId":"b8bcfded-d63e-41b5-b1d9-f4abd8aa5fc5","offset
 10:58:19.277 [kafka-admin-client-thread | adminclient-3] INFO org.apache.kafka.common.metrics.Metrics -- Metrics scheduler closed
 10:58:19.277 [kafka-admin-client-thread | adminclient-3] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.metrics.JmxReporter
 10:58:19.277 [kafka-admin-client-thread | adminclient-3] INFO org.apache.kafka.common.metrics.Metrics -- Metrics reporters closed
-10:58:19.471 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- AdminClientConfig values: 
+10:58:19.471 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- AdminClientConfig values:
 	bootstrap.controllers = []
 	bootstrap.servers = [127.0.0.1:9092]
 	client.dns.lookup = use_all_dns_ips
-	client.id = 
+	client.id =
 	config.providers = []
 	connections.max.idle.ms = 300000
 	default.api.timeout.ms = 15000
@@ -343,7 +343,7 @@ KAFKA_PUBLISH_VERIFIED {"eventId":"b8bcfded-d63e-41b5-b1d9-f4abd8aa5fc5","offset
 10:58:19.473 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka version: 4.2.1
 10:58:19.473 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka commitId: 92f61c44867f39dc
 10:58:19.473 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka startTimeMs: 1789657099473
-10:58:19.554 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- ProducerConfig values: 
+10:58:19.554 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- ProducerConfig values:
 	acks = -1
 	batch.size = 16384
 	bootstrap.servers = [127.0.0.1:9092]
@@ -481,11 +481,11 @@ KAFKA_CONTROL_REJECTED fault=MISSING_PERSISTENCE
 10:58:21.269 [kafka-admin-client-thread | adminclient-4] INFO org.apache.kafka.common.metrics.Metrics -- Metrics scheduler closed
 10:58:21.269 [kafka-admin-client-thread | adminclient-4] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.metrics.JmxReporter
 10:58:21.269 [kafka-admin-client-thread | adminclient-4] INFO org.apache.kafka.common.metrics.Metrics -- Metrics reporters closed
-10:58:21.488 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- AdminClientConfig values: 
+10:58:21.488 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- AdminClientConfig values:
 	bootstrap.controllers = []
 	bootstrap.servers = [127.0.0.1:9092]
 	client.dns.lookup = use_all_dns_ips
-	client.id = 
+	client.id =
 	config.providers = []
 	connections.max.idle.ms = 300000
 	default.api.timeout.ms = 15000
@@ -577,7 +577,7 @@ KAFKA_CONTROL_REJECTED fault=MISSING_PERSISTENCE
 10:58:21.491 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka version: 4.2.1
 10:58:21.491 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka commitId: 92f61c44867f39dc
 10:58:21.491 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka startTimeMs: 1789657101491
-10:58:21.595 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- ProducerConfig values: 
+10:58:21.595 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- ProducerConfig values:
 	acks = -1
 	batch.size = 16384
 	bootstrap.servers = [127.0.0.1:9092]
@@ -715,11 +715,11 @@ KAFKA_CONTROL_REJECTED fault=EARLY_OFFSET
 10:58:23.602 [kafka-admin-client-thread | adminclient-5] INFO org.apache.kafka.common.metrics.Metrics -- Metrics scheduler closed
 10:58:23.602 [kafka-admin-client-thread | adminclient-5] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.metrics.JmxReporter
 10:58:23.602 [kafka-admin-client-thread | adminclient-5] INFO org.apache.kafka.common.metrics.Metrics -- Metrics reporters closed
-10:58:23.791 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- AdminClientConfig values: 
+10:58:23.791 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- AdminClientConfig values:
 	bootstrap.controllers = []
 	bootstrap.servers = [127.0.0.1:9092]
 	client.dns.lookup = use_all_dns_ips
-	client.id = 
+	client.id =
 	config.providers = []
 	connections.max.idle.ms = 300000
 	default.api.timeout.ms = 15000
@@ -811,7 +811,7 @@ KAFKA_CONTROL_REJECTED fault=EARLY_OFFSET
 10:58:23.793 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka version: 4.2.1
 10:58:23.793 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka commitId: 92f61c44867f39dc
 10:58:23.793 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka startTimeMs: 1789657103793
-10:58:23.876 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- ProducerConfig values: 
+10:58:23.876 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- ProducerConfig values:
 	acks = -1
 	batch.size = 16384
 	bootstrap.servers = [127.0.0.1:9092]
@@ -951,11 +951,11 @@ KAFKA_RECOVERY_REPLAY {"eventId":"7e2b794f-3226-4ceb-ae55-dde494ae51c9","committ
 10:58:31.852 [kafka-admin-client-thread | adminclient-6] INFO org.apache.kafka.common.metrics.Metrics -- Metrics scheduler closed
 10:58:31.852 [kafka-admin-client-thread | adminclient-6] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.metrics.JmxReporter
 10:58:31.852 [kafka-admin-client-thread | adminclient-6] INFO org.apache.kafka.common.metrics.Metrics -- Metrics reporters closed
-10:58:32.061 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- AdminClientConfig values: 
+10:58:32.061 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- AdminClientConfig values:
 	bootstrap.controllers = []
 	bootstrap.servers = [127.0.0.1:9092]
 	client.dns.lookup = use_all_dns_ips
-	client.id = 
+	client.id =
 	config.providers = []
 	connections.max.idle.ms = 300000
 	default.api.timeout.ms = 15000
@@ -1047,7 +1047,7 @@ KAFKA_RECOVERY_REPLAY {"eventId":"7e2b794f-3226-4ceb-ae55-dde494ae51c9","committ
 10:58:32.063 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka version: 4.2.1
 10:58:32.063 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka commitId: 92f61c44867f39dc
 10:58:32.063 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka startTimeMs: 1789657112063
-10:58:32.149 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- ProducerConfig values: 
+10:58:32.149 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- ProducerConfig values:
 	acks = -1
 	batch.size = 16384
 	bootstrap.servers = [127.0.0.1:9092]
@@ -1184,11 +1184,11 @@ KAFKA_CONTROL_RELEASE pid=44556 exit=0
 10:58:34.226 [kafka-admin-client-thread | adminclient-7] INFO org.apache.kafka.common.metrics.Metrics -- Metrics scheduler closed
 10:58:34.226 [kafka-admin-client-thread | adminclient-7] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.metrics.JmxReporter
 10:58:34.226 [kafka-admin-client-thread | adminclient-7] INFO org.apache.kafka.common.metrics.Metrics -- Metrics reporters closed
-10:58:34.409 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- AdminClientConfig values: 
+10:58:34.409 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- AdminClientConfig values:
 	bootstrap.controllers = []
 	bootstrap.servers = [127.0.0.1:9092]
 	client.dns.lookup = use_all_dns_ips
-	client.id = 
+	client.id =
 	config.providers = []
 	connections.max.idle.ms = 300000
 	default.api.timeout.ms = 15000
@@ -1280,7 +1280,7 @@ KAFKA_CONTROL_RELEASE pid=44556 exit=0
 10:58:34.410 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka version: 4.2.1
 10:58:34.410 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka commitId: 92f61c44867f39dc
 10:58:34.410 [Test worker] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka startTimeMs: 1789657114410
-10:58:34.493 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- ProducerConfig values: 
+10:58:34.493 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- ProducerConfig values:
 	acks = -1
 	batch.size = 16384
 	bootstrap.servers = [127.0.0.1:9092]
@@ -1418,11 +1418,11 @@ KAFKA_CLEANUP_WAIT group=caseflow_test_a723088333054cbe9df5f6cf78e5025d.consumer
 10:58:41.646 [kafka-admin-client-thread | adminclient-8] INFO org.apache.kafka.common.metrics.Metrics -- Metrics scheduler closed
 10:58:41.646 [kafka-admin-client-thread | adminclient-8] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.metrics.JmxReporter
 10:58:41.646 [kafka-admin-client-thread | adminclient-8] INFO org.apache.kafka.common.metrics.Metrics -- Metrics reporters closed
-10:58:41.665 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- AdminClientConfig values: 
+10:58:41.665 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- AdminClientConfig values:
 	bootstrap.controllers = []
 	bootstrap.servers = [127.0.0.1:9092]
 	client.dns.lookup = use_all_dns_ips
-	client.id = 
+	client.id =
 	config.providers = []
 	connections.max.idle.ms = 300000
 	default.api.timeout.ms = 15000
@@ -1522,11 +1522,11 @@ KAFKA_CLEANUP_WAIT group=caseflow_test_a723088333054cbe9df5f6cf78e5025d.consumer
 10:58:41.675 [kafka-admin-client-thread | adminclient-9] INFO org.apache.kafka.common.metrics.Metrics -- Closing reporter org.apache.kafka.common.metrics.JmxReporter
 10:58:41.675 [kafka-admin-client-thread | adminclient-9] INFO org.apache.kafka.common.metrics.Metrics -- Metrics reporters closed
 KAFKA_CLEANUP_VERIFIED namespace=caseflow_test_a723088333054cbe9df5f6cf78e5025d liveMembershipKill=true
-10:58:41.836 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- AdminClientConfig values: 
+10:58:41.836 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- AdminClientConfig values:
 	bootstrap.controllers = []
 	bootstrap.servers = [127.0.0.1:9092]
 	client.dns.lookup = use_all_dns_ips
-	client.id = 
+	client.id =
 	config.providers = []
 	connections.max.idle.ms = 300000
 	default.api.timeout.ms = 15000
@@ -1622,7 +1622,7 @@ KAFKA_CRASH_BOUNDARY pid=41356 database=caseflow_test_0cb3bfd239b6494bb53113e7f8
 KAFKA_CRASH_KILLED pid=41356 exit=1
 KAFKA_CRASH_BOUNDARY pid=41392 database=caseflow_test_0cb3bfd239b6494bb53113e7f80d8b7f BOUNDARY:PUBLISH_ACK:{"partition":0,"offset":1,"eventId":"6f8f8878-fb5a-4107-9851-0e168d65c8b4","topic":"caseflow_test_82e46eb528c946fc96588815a8ba3c35.jobs"}
 KAFKA_CONTROL_RELEASE pid=41392 exit=0
-10:58:44.255 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- ConsumerConfig values: 
+10:58:44.255 [Test worker] INFO org.apache.kafka.common.config.AbstractConfig -- ConsumerConfig values:
 	allow.auto.create.topics = true
 	auto.commit.interval.ms = 5000
 	auto.offset.reset = earliest
@@ -1630,7 +1630,7 @@ KAFKA_CONTROL_RELEASE pid=41392 exit=0
 	check.crcs = true
 	client.dns.lookup = use_all_dns_ips
 	client.id = consumer-caseflow_test_82e46eb528c946fc96588815a8ba3c35.observer-6
-	client.rack = 
+	client.rack =
 	config.providers = []
 	connections.max.idle.ms = 540000
 	default.api.timeout.ms = 10000
