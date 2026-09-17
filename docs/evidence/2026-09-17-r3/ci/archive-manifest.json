@@ -1,0 +1,505 @@
+{
+  "revision": "e31ac4f74c85cb4d53779ac389e0a1f8c70ab6b5",
+  "dirty": true,
+  "normalization": "UTF-8/LF; trailing whitespace removed; known credentials and password= fragments redacted; gzip mtime zero",
+  "files": [
+    {
+      "path": "ci-final/critical-coverage.json",
+      "source_sha256": "584de00da0652d1b9ffee20e0caac2e47f90d64a454daca605199c618f890d64",
+      "archive_sha256": "edc257d7024f26fb0a3052dc41c03f14c7bbfcce10a30738ebd5d6f77d12a1b0"
+    },
+    {
+      "path": "ci-final/static-summary.json",
+      "source_sha256": "67a6ecb55ed13f618da49ee060bb2700c49b69c6d2b974130021fe0558fc774b",
+      "archive_sha256": "67a6ecb55ed13f618da49ee060bb2700c49b69c6d2b974130021fe0558fc774b"
+    },
+    {
+      "path": "ci-final/test-summary.json",
+      "source_sha256": "6fe94af7fa45d5b0844516614d6abe1eaca1c146248dfd8bbbd9ba519e3f4ef8",
+      "archive_sha256": "6fe94af7fa45d5b0844516614d6abe1eaca1c146248dfd8bbbd9ba519e3f4ef8"
+    },
+    {
+      "path": "ci-final/worker-coverage.json.gz",
+      "source_sha256": "158b3f3d98994938539f820e17ce8e6850c834ec723abf3305c83b2ce3fcf03e",
+      "archive_sha256": "be728cb62e36d46d980633708e3be3921dd744d4e1850e5c38436bb28f3c3a3b"
+    },
+    {
+      "path": "ci-final/ci-guards.txt",
+      "source_sha256": "e6fd3dbbf11f1b06e7f4d90d237ce4b691920a1533ecc737f1d7f1d50b0d766e",
+      "archive_sha256": "ce22630fc7c34a988df630b4a92fb58d299903bc888dd68e961f12bfa2af1024"
+    },
+    {
+      "path": "ci-final/client-generate.txt",
+      "source_sha256": "94ed58fdeeae9223dbf1647a88ace16c083980f0d36cd17dcebb597711219242",
+      "archive_sha256": "94ed58fdeeae9223dbf1647a88ace16c083980f0d36cd17dcebb597711219242"
+    },
+    {
+      "path": "ci-final/contract-generate.txt",
+      "source_sha256": "e97f53242e38eac93e5a3735a3922df07db97d26f7be67ffd38f4b51e20aac64",
+      "archive_sha256": "e97f53242e38eac93e5a3735a3922df07db97d26f7be67ffd38f4b51e20aac64"
+    },
+    {
+      "path": "ci-final/critical-coverage.txt",
+      "source_sha256": "57f84f5ee202d14b9caaeb46fb8afa6067c11e25c1070007f64de0816692f109",
+      "archive_sha256": "45ae76ff8182a964a182e85c6e8de31dc74fc36d6e3ef1b4af6041d7c140d659"
+    },
+    {
+      "path": "ci-final/java-tests.txt",
+      "source_sha256": "426a4293dc104995287829d895b587433d2264f1440a519a95d9ead37e3e3898",
+      "archive_sha256": "bfdec3c83ce4dc8d6443cb75074c96a9798ff096f14df07a1d924d4aeeeeaa6e"
+    },
+    {
+      "path": "ci-final/node-guards.txt",
+      "source_sha256": "61104f8be10b10e1edf475fc3f1a1259e6cb9d47016cc7a371787c84e78e53d8",
+      "archive_sha256": "61104f8be10b10e1edf475fc3f1a1259e6cb9d47016cc7a371787c84e78e53d8"
+    },
+    {
+      "path": "ci-final/python-lint.txt",
+      "source_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "archive_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "path": "ci-final/terraform-bootstrap-test.txt",
+      "source_sha256": "45fba5e3ff1e0757561d13974b7e359f42ac96b867119feb36bfc48dc1d7f620",
+      "archive_sha256": "acbadd455418fe405791d2d792bd1c63190d32c09dc2792bcd7909f7c0699441"
+    },
+    {
+      "path": "ci-final/terraform-format.txt",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archive_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "ci-final/terraform-init.txt",
+      "source_sha256": "745570cafbb56abf0dd0547cbeea9129ae42c630dc4f94d3f656fd3d1abea796",
+      "archive_sha256": "745570cafbb56abf0dd0547cbeea9129ae42c630dc4f94d3f656fd3d1abea796"
+    },
+    {
+      "path": "ci-final/terraform-mock-tests.txt",
+      "source_sha256": "e882cfd4596e7d9ac6a2a84c6f03a9df8d921e765e87353b5e6f6a1158c88e3f",
+      "archive_sha256": "e882cfd4596e7d9ac6a2a84c6f03a9df8d921e765e87353b5e6f6a1158c88e3f"
+    },
+    {
+      "path": "ci-final/terraform-validate.txt",
+      "source_sha256": "f7997225125835fdd14060ac776d273f394b874f9a481b9e2122c83dc8adc5c1",
+      "archive_sha256": "8c2da36b055dadd87820511dda88d1c148debd142526dc41c74945c7cf693099"
+    },
+    {
+      "path": "ci-final/web-build.txt",
+      "source_sha256": "b42f9be673a5856ea50d272b7aebf422753dbed4408dbe081ea4dce3c2a8bc7e",
+      "archive_sha256": "b42f9be673a5856ea50d272b7aebf422753dbed4408dbe081ea4dce3c2a8bc7e"
+    },
+    {
+      "path": "ci-final/web-format.txt",
+      "source_sha256": "ee8f2589792d8a353eb6561cf9d648d14a09aa38f4e24a1a174e8f4f4516a247",
+      "archive_sha256": "ee8f2589792d8a353eb6561cf9d648d14a09aa38f4e24a1a174e8f4f4516a247"
+    },
+    {
+      "path": "ci-final/worker-coverage.txt",
+      "source_sha256": "a7d1dfd2b35f86f724f86b2055d4c12e0361fdde43ebd44f5f5ecc6e0421c499",
+      "archive_sha256": "e690036de81a2aa57111ba3a56fcd38b20234e37cb8977002ba60943136b8a04"
+    },
+    {
+      "path": "ci-final/worker-tests.txt",
+      "source_sha256": "e900faab1d9f439b196de3c725dccc20a423676e6cec959c4b3195e3acc5b76e",
+      "archive_sha256": "b159787367905b15c20a3706a7a5c5e005eb43ee09288d1437f62bb9113df35b"
+    },
+    {
+      "path": "ci-final/ci-guards.xml",
+      "source_sha256": "ab091f4eff490bc38f308be05518457637f7c5578a591eeb1ce0c11d022d3c3b",
+      "archive_sha256": "24f894b4c435e3908512557424bf65341c245e299c9652f66b9836e5c37277dd"
+    },
+    {
+      "path": "ci-final/java-coverage.xml.gz",
+      "source_sha256": "60783d830f923c945580bfce5a70e751db38d9725c87445766d45e29d869a914",
+      "archive_sha256": "20d5932c7bfadfd4a6df83873f4d36a0933a9fe1a8eedcf565d88f4a518dcb2e"
+    },
+    {
+      "path": "ci-final/worker-tests.xml.gz",
+      "source_sha256": "203f36952f4f49b470246fd2267fff6ac7ed107e1132d8b6336626d4d668e661",
+      "archive_sha256": "11195626c412004b61d7c72c223f30f2f84c0eb217bd7ed2fb9fdcc53f36a855"
+    },
+    {
+      "path": "ci-final/java-tests/TEST-dev.caseflow.cases.CaseQueriesIntegrationTest.xml",
+      "source_sha256": "60cbcf6ccb72971e8c021ac000e1cfa92ae255ae06d9f150e97c679009319110",
+      "archive_sha256": "24b00499314bddef67be563fe394e8c482a3fe64f9ed7662cab1754c48d4d817"
+    },
+    {
+      "path": "ci-final/java-tests/TEST-dev.caseflow.cases.PurchaseTest.xml",
+      "source_sha256": "fd5989278754aebb66134aa92dcc4310ebb7d4371a99e8aa014ab525a1626f14",
+      "archive_sha256": "1f16f4dc3809c60439d068e3b52b4dc8b43abcab06b0305ba20dc51e977f04be"
+    },
+    {
+      "path": "ci-final/java-tests/TEST-dev.caseflow.documents.CompletionHandlerIntegrationTest.xml",
+      "source_sha256": "92255eceb10f36d309c60b84a79a3cc6b45c862e5e15d54150f21e10431d07a9",
+      "archive_sha256": "e50a305ba0236f1c890ed185085c48b794a735253b23729128ef0e63c0eb5a22"
+    },
+    {
+      "path": "ci-final/java-tests/TEST-dev.caseflow.documents.ObjectStoragePublicEndpointTest.xml",
+      "source_sha256": "caa572eda633d8ea56470515d3461be0464e0acc00e9877af5bd8052c83e96ba",
+      "archive_sha256": "4a01535794074640a8b8d4bfc6092f4e97b2ae30ceadb31e68c0093d54c9e8e2"
+    },
+    {
+      "path": "ci-final/java-tests/TEST-dev.caseflow.documents.TemplateValidatorTest.xml",
+      "source_sha256": "d2a7835d738d4d3ef8cd24b6aa968bcd53f3ee791fd3022808833097cc8aaab0",
+      "archive_sha256": "c4edf69d608877a36b479038e9ea8ccac78460cc71dab14ed2ee58ccaa4a3dac"
+    },
+    {
+      "path": "ci-final/java-tests/TEST-dev.caseflow.evidence.AssistantIntegrationTest.xml",
+      "source_sha256": "957057489f86b4833355c6e5592c1615e5880e694d800abe8106af0815eb6bc0",
+      "archive_sha256": "6b71cd5d210937942dad4f7e7c0b45780fa912383cb7b54ec4c0a0a8c4d97d68"
+    },
+    {
+      "path": "ci-final/java-tests/TEST-dev.caseflow.health.HealthControllerTest.xml",
+      "source_sha256": "a6e91228337a80722bc3bd7182da7a6a2bf9cdc5e154bf9029fe7b1d65e4b427",
+      "archive_sha256": "c5a86de51a4f127715d078f35cd8aa5e9fc8ff7f56876a9bc3e4f1a334ce877c"
+    },
+    {
+      "path": "ci-final/java-tests/TEST-dev.caseflow.observability.ManagementSecurityTest.xml",
+      "source_sha256": "da2a65af6229aa794d7626f8b1920bd576edbb3db7fccac44f00f4f319ad1ed1",
+      "archive_sha256": "c62f746dbccf1a4e5cc40c60f36316368654d181410cf70404ecb109c37a8ce2"
+    },
+    {
+      "path": "ci-final/java-tests/TEST-dev.caseflow.observability.TelemetryTest.xml",
+      "source_sha256": "d0f5de72b5494d2084160d74c901ce6121c221562a384a3ebb371c384b154b25",
+      "archive_sha256": "c4fafbd8184015a8c2937aac2cda1ec80681dbb12eb7bc9c0b35799a13a6df85"
+    },
+    {
+      "path": "ci-final/java-tests/TEST-dev.caseflow.web.WebSecurityTest.xml",
+      "source_sha256": "31b511fb4d4b02db92ad1cbdb6d3e385fdcccf8c0beac78d5033098829da5558",
+      "archive_sha256": "43073004b142bcf87df3154c79a9caf8f69b0b9e96c9e185bdf4ef1b60c0113a"
+    },
+    {
+      "path": "ci-release/critical-coverage.json",
+      "source_sha256": "584de00da0652d1b9ffee20e0caac2e47f90d64a454daca605199c618f890d64",
+      "archive_sha256": "edc257d7024f26fb0a3052dc41c03f14c7bbfcce10a30738ebd5d6f77d12a1b0"
+    },
+    {
+      "path": "ci-release/test-summary.json",
+      "source_sha256": "d5d94c3d89c58e080efda7bc53cf8271b4c2039813d1e24f59e7ac0d04428083",
+      "archive_sha256": "d5d94c3d89c58e080efda7bc53cf8271b4c2039813d1e24f59e7ac0d04428083"
+    },
+    {
+      "path": "ci-release/worker-coverage.json.gz",
+      "source_sha256": "0820cce76f3fe524775a02e6113d137d736ceb1aa3085fc888a951040d10b52d",
+      "archive_sha256": "dc3b47e0c5d01420e3a0dcf3652a11c9a2ae46c83889cdd731a540f65e607102"
+    },
+    {
+      "path": "ci-release/critical-coverage.txt",
+      "source_sha256": "57f84f5ee202d14b9caaeb46fb8afa6067c11e25c1070007f64de0816692f109",
+      "archive_sha256": "45ae76ff8182a964a182e85c6e8de31dc74fc36d6e3ef1b4af6041d7c140d659"
+    },
+    {
+      "path": "ci-release/java-tests.txt",
+      "source_sha256": "ff3eae49451ea45413b59787521d0b89f6b24f49b87ade11c52800c896833119",
+      "archive_sha256": "1c16ee6f998284eeaddf25fc05e5cd18c1a6e31e8a9eadfc05d4d50d5a5e55ab"
+    },
+    {
+      "path": "ci-release/worker-coverage.txt",
+      "source_sha256": "bfda647323348c2ae6be13a89d86f9b407ddba1f7ab39d867c566b6fb407debe",
+      "archive_sha256": "66a1ccaea2abe79ec1b270b3b9262fee5a22bba1e74e605f2ad1dc68211b1868"
+    },
+    {
+      "path": "ci-release/worker-tests.txt",
+      "source_sha256": "6b4c1ea4605a7fd504547264c7f0139e0c78eb33b9a8949b16ea7546ebd5a21c",
+      "archive_sha256": "d79689ed4967de51c1baa2083929e9bc92919ca611a8fd1860e7011690fff439"
+    },
+    {
+      "path": "ci-release/java-coverage.xml.gz",
+      "source_sha256": "c7283306b4effdb7b1a23f97ea39214a85405a83ed91a95e16677a0fee7939ea",
+      "archive_sha256": "63cbb2cec875550a3bea7596ff0e8fdc1e82eb5829d99f4e3842b5d27b50eca8"
+    },
+    {
+      "path": "ci-release/worker-tests.xml.gz",
+      "source_sha256": "80d8e5bbb45ba98654b17a5ae42ad219c23f414fafd04ba978b7953a5e9bef3a",
+      "archive_sha256": "21d3564271bab60abfeeab502580189eb4baa0aad8bc1f77503dc9956721fd45"
+    },
+    {
+      "path": "ci-release/java-tests/TEST-dev.caseflow.cases.CaseQueriesIntegrationTest.xml",
+      "source_sha256": "686671cb2acdf51bd1e36691d80cf9d07797aecfceff51956d3e06b87c38226f",
+      "archive_sha256": "c8ad4bccca2427038a358b25e7b6e2c23c7abe6c2edb1d99f8d30d907fd3ceff"
+    },
+    {
+      "path": "ci-release/java-tests/TEST-dev.caseflow.cases.CaseQueryPerformanceTest.xml",
+      "source_sha256": "80ab62ff57169f88d2a73c24f14c6f945e1d85fdd4a8ff355f32810616dc1baa",
+      "archive_sha256": "ea1f79ed37bb32b0bc96345dbdb335ba8362c63db547c80c95beb47c4824f054"
+    },
+    {
+      "path": "ci-release/java-tests/TEST-dev.caseflow.cases.PurchaseTest.xml",
+      "source_sha256": "f0e388dc38e78be57bfd31f44a548fa301c31a1e8561397208891031ad833cd5",
+      "archive_sha256": "ae5921c09ab70e09e85def0166973aa5b88fe1de2633721aad6170ef111c2a3d"
+    },
+    {
+      "path": "ci-release/java-tests/TEST-dev.caseflow.documents.CompletionHandlerIntegrationTest.xml",
+      "source_sha256": "decb807dd55c448fa135cc6b961d813549392232426267d1a6650deabd27e46c",
+      "archive_sha256": "e69562e1a8b989de143cff8e4ca59fa55940ed825fea941ede1282ddd1c4cb75"
+    },
+    {
+      "path": "ci-release/java-tests/TEST-dev.caseflow.documents.CompletionProcessRecoveryTest.xml",
+      "source_sha256": "0b8379ed41995f1b2ae71684cf8bf282d777a463d5dd5ca07bc64d94fd1acd71",
+      "archive_sha256": "be77290ad0bac68baac67e68da8c2fa28bb98ab181d3ad0d481683a63f14f9d5"
+    },
+    {
+      "path": "ci-release/java-tests/TEST-dev.caseflow.documents.DeadLetterProcessRecoveryTest.xml.gz",
+      "source_sha256": "dbce0399fc63c6f05fea5e3e41e70887b3f530c67d826678f1af99d6473b8b7e",
+      "archive_sha256": "74c34a16c756116b8acde7d8cde682814bb97c534c4d59e2e2c8ff57518b252b"
+    },
+    {
+      "path": "ci-release/java-tests/TEST-dev.caseflow.documents.KafkaMessagingProcessRecoveryTest.xml.gz",
+      "source_sha256": "3c977556fb778a9fd38480a308afdcbd65b4f20ee96b7171712149b6f5f2699d",
+      "archive_sha256": "85a76d9b9b2f3becaa8b4cab5377b8324824e72257f6006702e5684e21fddbe0"
+    },
+    {
+      "path": "ci-release/java-tests/TEST-dev.caseflow.documents.ObjectStoragePublicEndpointTest.xml",
+      "source_sha256": "68f0a7160cd6a6fc6bba0ee477b3b8d06448af02e5decc1a4eeb7b79ce7e7b14",
+      "archive_sha256": "738af0c8612dc77fe92e54e9204e14a0a8b55ba1b3f2e5c09fcf9cee6ee54cca"
+    },
+    {
+      "path": "ci-release/java-tests/TEST-dev.caseflow.documents.TemplateValidatorTest.xml",
+      "source_sha256": "46fdd689f2799564e1e7dd33e99e8ef94e1802f3fbc7064e75940faf7dcd2216",
+      "archive_sha256": "eb950e1dc6b5b1da3ef2bf2175ed93d1aee2d5c3c37cba7092a37b468a7bb4dd"
+    },
+    {
+      "path": "ci-release/java-tests/TEST-dev.caseflow.evidence.AssistantIntegrationTest.xml",
+      "source_sha256": "8a28a57ae1d5e7f305af50b7d5d9778e6e217458b94ee28c2dfd5242037916a1",
+      "archive_sha256": "c2c8db74d0fa23b345e6e88ade0bd6c34a061c4fe8f7bc35e1565e0f29a2fbf4"
+    },
+    {
+      "path": "ci-release/java-tests/TEST-dev.caseflow.health.HealthControllerTest.xml",
+      "source_sha256": "dc05ff072ef15ab44eea0f04ec34a29cb7171ab0808504e8f5e2466748728987",
+      "archive_sha256": "75c9abd288f76cf4055525cbf73b8179a07fd58943b2f61edcad6c801ae4b8ec"
+    },
+    {
+      "path": "ci-release/java-tests/TEST-dev.caseflow.observability.ManagementSecurityTest.xml",
+      "source_sha256": "07c0b0e4215edf79805c7b625a433f6b8600693bee4eb5ad3d396e00724bdd93",
+      "archive_sha256": "8cc0b6d6f7ba0d74bd35710e19366bf0f60ebea2b041b8f6a5b7fe7c45a9e642"
+    },
+    {
+      "path": "ci-release/java-tests/TEST-dev.caseflow.observability.TelemetryTest.xml",
+      "source_sha256": "2687bd3f6014ea82c5144293f461f47904eca101420d412090f2552f29e29cb3",
+      "archive_sha256": "aeb91237802f6d2f60ec7b5c1b9c9ea22fc9a58d0c9662d7529a57514b9311c4"
+    },
+    {
+      "path": "ci-release/java-tests/TEST-dev.caseflow.web.WebSecurityTest.xml",
+      "source_sha256": "7163666e61f20193d7363942dcc948e047f6b1108c582d23f0dc189647549b67",
+      "archive_sha256": "2b9bf92ac8554ce01519cc891d62c30fe5e1f78400411fcb9505fc403df3440b"
+    },
+    {
+      "path": "ci/scan-summary.json",
+      "source_sha256": "09999069373330016c22c361b04d368bbeaf0096779451a1a94ff24c5091324a",
+      "archive_sha256": "09999069373330016c22c361b04d368bbeaf0096779451a1a94ff24c5091324a"
+    },
+    {
+      "path": "ci/container-api.json.gz",
+      "source_sha256": "7af3947348e60357933bd672dfc0d73cbc7b1a086fcbf0d9297f23a8e02bec80",
+      "archive_sha256": "c05c721cac425e84c850b4b8f666646916ade6c1615d62f2b2953a2264c5aeb1"
+    },
+    {
+      "path": "ci/container-worker.json.gz",
+      "source_sha256": "5195e4b0b9e087e50bdcc26baeb6054eb81bb4b6b7f96ff752ca5ee4f17c2aa6",
+      "archive_sha256": "7f0903c3aa68fca555cad4be9b826267f142d27e80654d302c8cde8232c40eb4"
+    },
+    {
+      "path": "ci/container-review-api.json",
+      "source_sha256": "016a6909cde5e84047c9e6dca617244e2638fd46a2bb50c63bbf49470c64778e",
+      "archive_sha256": "5b7edaa3b69c24fb800fac8a1fdc7a8f85e31bda328cd8ee8443e659de48f18e"
+    },
+    {
+      "path": "ci/container-review-worker.json.gz",
+      "source_sha256": "1a051af64f645df5f8b577bafeaefc059c62e196255bd4d354d654fd4891dcdb",
+      "archive_sha256": "5b539f1daa86838b363164e096030206f6d7960a883716096f0ebacf2b009d98"
+    },
+    {
+      "path": "ci/dependencies.json.gz",
+      "source_sha256": "74ecac36cea2d3e491cd2fdef41492ee20a34bf5cfbf06ce2bf6b9318d37b421",
+      "archive_sha256": "43595b28833a2d10093db588ae5327f6b83cc759a5a757665e605fd58db5864a"
+    },
+    {
+      "path": "ci/gitleaks-worktree.json",
+      "source_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "archive_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "ci/gitleaks-history.json",
+      "source_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "archive_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "ci/worker-runtime-review.json",
+      "source_sha256": "a80146978cf1a56ed632ae9f4f7db31d13c3c324204d5aa26391bab3694d7e22",
+      "archive_sha256": "e805063db6e097750e507e2d1ab72f8dd713136c314d3c30c9674e11129adf93"
+    },
+    {
+      "path": "ci/secret-worktree.txt",
+      "source_sha256": "08cc4883dcefcd70b4b8d32116d3f2992d03e7b454ea8b9843322a11abba6707",
+      "archive_sha256": "08cc4883dcefcd70b4b8d32116d3f2992d03e7b454ea8b9843322a11abba6707"
+    },
+    {
+      "path": "ci/secret-history.txt",
+      "source_sha256": "ca9c25efdedf85a455c50780cd9b4aae2c52c92171918a84806a99f3d6ca1529",
+      "archive_sha256": "ca9c25efdedf85a455c50780cd9b4aae2c52c92171918a84806a99f3d6ca1529"
+    },
+    {
+      "path": "ci/dependency-scan.txt",
+      "source_sha256": "c10bb5edb5147b8e84c6106e7377996260bee922b71046cf5feab403a1c2bd82",
+      "archive_sha256": "c10bb5edb5147b8e84c6106e7377996260bee922b71046cf5feab403a1c2bd82"
+    },
+    {
+      "path": "ci/container-scan-api.txt",
+      "source_sha256": "4fd8dec78c1214c8e13a63bbfe3c0c04fc6784ea44f8eebfae4ffb48dbf2cb21",
+      "archive_sha256": "4fd8dec78c1214c8e13a63bbfe3c0c04fc6784ea44f8eebfae4ffb48dbf2cb21"
+    },
+    {
+      "path": "ci/container-scan-worker.txt",
+      "source_sha256": "f9ab865363850edf74061977a82db70d9ee92f017859b422fe159ddb65eb5b0f",
+      "archive_sha256": "f9ab865363850edf74061977a82db70d9ee92f017859b422fe159ddb65eb5b0f"
+    },
+    {
+      "path": "ci/initial-findings/scan-summary.json",
+      "source_sha256": "3c6a8ae82889cf2b2b5023e272972987a2cc5b03125e182ccfba29f75111536d",
+      "archive_sha256": "3c6a8ae82889cf2b2b5023e272972987a2cc5b03125e182ccfba29f75111536d"
+    },
+    {
+      "path": "ci/initial-findings/dependencies.json.gz",
+      "source_sha256": "55f32d1e99b80565776d90b2ca67202286e8b16b0deb236faac9402b30fe39bf",
+      "archive_sha256": "f808690b85beaa9e002de26b574fc3f8b749d03f9ded064e3ab1b8913347d3da"
+    },
+    {
+      "path": "ci/initial-findings/container-worker.json.gz",
+      "source_sha256": "ab85042ea4028e6634f4ab0e561562adf68677b0788a61f9da362a90e7b24ed4",
+      "archive_sha256": "81207ba3af4459fef760f6a97d6ea81752c7192eb549387741c4043dc0b53cf7"
+    },
+    {
+      "path": "ci/initial-findings/gitleaks-worktree.json.gz",
+      "source_sha256": "7ed68e05d0bbd13ed92147600cf98f09c0c5c659eaa18bd4993f7331fcb5d472",
+      "archive_sha256": "954d7fd447d12bac24c6b4af3df9de648039fd2a76203170cecc7747f9074072"
+    },
+    {
+      "path": "ci/initial-findings/gitleaks-history.json.gz",
+      "source_sha256": "e96c13e2f06938526842c3ce00324924a2b1ca8840c7f597da09d9fe6ee6493e",
+      "archive_sha256": "ed32b4b3f46c53b26b59de84250851e0c520cdd9d12a1f24903a504c9ff73c0f"
+    },
+    {
+      "path": "ci/initial-findings/critical-coverage.json",
+      "source_sha256": "858ad8f274315baea47566c10a86ab6ecc23600f23fbabddf487677002cf3389",
+      "archive_sha256": "0f819d02bf1f304afe007abdb2e2a301371c5e7f6e2b3204722f2eaa7b1ca64d"
+    },
+    {
+      "path": "ci/initial-findings/container-scan-api.txt",
+      "source_sha256": "da7ad4812df11d32184ca515c41ed4aea59b6725a47444e95391bfba5baece2d",
+      "archive_sha256": "da7ad4812df11d32184ca515c41ed4aea59b6725a47444e95391bfba5baece2d"
+    },
+    {
+      "path": "ci/before-os-patches/scan-summary.json",
+      "source_sha256": "7f4434e3e72a19f4722f904ed6dedd061e1642b94542ee252d76c066f2ce831f",
+      "archive_sha256": "7f4434e3e72a19f4722f904ed6dedd061e1642b94542ee252d76c066f2ce831f"
+    },
+    {
+      "path": "ci/before-os-patches/dependencies.json.gz",
+      "source_sha256": "2fc3986be45839dee0c286a8f0eb461a42464e6bf03def033b38a66219aa07f7",
+      "archive_sha256": "21fd7cb283051025609bec8ec548b0a1ed9254892fdcc593435dcb3917d9a9ee"
+    },
+    {
+      "path": "ci/before-os-patches/container-worker.json.gz",
+      "source_sha256": "fa4b5f9d6fb3117797c3dc517380d4a5ba43e2ead88fb3a658fb39d57bf8e0e1",
+      "archive_sha256": "8ffe4fd0388e08d78215e7eb2898f4295c226eef71444d0664d5e73360ef5f16"
+    },
+    {
+      "path": "ci/before-os-patches/gitleaks-worktree.json",
+      "source_sha256": "8b641818c83b304aeabae47c3a907e342cb0cbea1cd06233ac7e9d5cbc07a2ed",
+      "archive_sha256": "8b641818c83b304aeabae47c3a907e342cb0cbea1cd06233ac7e9d5cbc07a2ed"
+    },
+    {
+      "path": "ci/before-os-patches/gitleaks-history.json",
+      "source_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "archive_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "ci/before-os-patches/critical-coverage.json",
+      "source_sha256": "858ad8f274315baea47566c10a86ab6ecc23600f23fbabddf487677002cf3389",
+      "archive_sha256": "0f819d02bf1f304afe007abdb2e2a301371c5e7f6e2b3204722f2eaa7b1ca64d"
+    },
+    {
+      "path": "ci/before-os-patches/container-scan-api.txt.gz",
+      "source_sha256": "e8202d997c23c2a972fe21887160ac00afddb88c51219de554cc859c5f2ffbbc",
+      "archive_sha256": "be9c691e004c8843fc774a81b892e6a46c6d6a50c6c744c0a8fd59d0a9433370"
+    },
+    {
+      "path": "r3-release/security-patched-deploy.txt",
+      "source_sha256": "d742bda64c36f413d39466a045c5e84c7b1f011462728f4645ca643aa18477cb",
+      "archive_sha256": "10b72553a0cfb2dd659aa9b430acbc44899813343e94bfe354af05a23e97907f"
+    },
+    {
+      "path": "r3-release/configured-default-smoke.txt",
+      "source_sha256": "6e8388f16ee00135559fa76f9ae43ebfacdbeffa01c5b6bb3b0e3e8f4fec1fbe",
+      "archive_sha256": "a239b86ea3e9af0f844001f38d7e87e72905ad40f6cb9b641df81da7f652db21"
+    },
+    {
+      "path": "r3-release/configured-runtime-smoke.txt",
+      "source_sha256": "e5dc2d46e29278f00e42b482570e35d66c97e262cbb11a84fbd3a6c107234340",
+      "archive_sha256": "db88b68e53e9eb1011a466c123b490e2db59bffdc6bd2511462f044a745d6dc4"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "scripts/ci-coverage.py",
+      "sha256": "55565fed6d9c10cd9c9fc54de79c2f1de36dc46ffd3d47059c89aeab49ab0a72"
+    },
+    {
+      "path": "scripts/ci.mjs",
+      "sha256": "15aa4e367b20fcffa8a6eb9d6223953b9263a8bc8f5f43265baf19fb4a848bf3"
+    },
+    {
+      "path": "scripts/scan-review.py",
+      "sha256": "b0cb9c6906f1915347cb26bcfe6f78714e772d4dde15b59c50894d5edbc3b3d2"
+    },
+    {
+      "path": "tests/ci/coverage-scope.json",
+      "sha256": "8748f11b012ab8d97829d27b584b99d49b3a06c7c6067542895d766caadb835c"
+    },
+    {
+      "path": "tests/ci/test_coverage_report.py",
+      "sha256": "a8d7a9cc48face835def9829e47ab0650cb9f5604d6681365f5380be0986cb56"
+    },
+    {
+      "path": "tests/ci/test_scan_review.py",
+      "sha256": "7bad56e4a4738565015b180e437d7b546f7f8c170291cae1fe1a88f01a2a6cd4"
+    },
+    {
+      "path": "tests/ci/tool-pins.json",
+      "sha256": "210ca66130978faa207245359eaa0b2e9cbf401def31eadcaa400f750bb5e87a"
+    },
+    {
+      "path": "tests/ci/vulnerability-reviews.json",
+      "sha256": "63ac8bc36f7b9d60f79ccb9d8364eaa977ce0ec9b26a9a3ec9a018320ea19651"
+    },
+    {
+      "path": "services/worker/Dockerfile",
+      "sha256": "e71e94fde15aa3f96af50270584a02d661f76269ad634b0d59dafc92db167b82"
+    },
+    {
+      "path": "services/case-api/build.gradle",
+      "sha256": "c3dac65cc30cee68c0bb6d1e55643df8245baa51b01e3ca989e98ad05f8f0168"
+    },
+    {
+      "path": "services/case-api/gradle.lockfile",
+      "sha256": "17cc6fa2db51e34cfb43071e6026c8fe7e56ae40e9acb6f79632e9ff1910084f"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "477d12bccabd24c092c2dd50439fb19b0ffa71d01e91e22eb838e4a06c073445"
+    },
+    {
+      "path": ".gitleaks.toml",
+      "sha256": "c490ac6ae643e3d238b745cd45529ffe56f88cb352bfe4d826c99516c21d56dd"
+    }
+  ],
+  "images": {
+    "name": "security-patched",
+    "revision": "e31ac4f74c85cb4d53779ac389e0a1f8c70ab6b5",
+    "dirty": true,
+    "sourceSha256": "7843d6a38552e6054ad6121fa41d02b86f5b488198d6e90fded31f8c0dff0f78",
+    "createdAt": "2026-09-17T15:53:55.604Z",
+    "api": "sha256:92e715450654f9eb3b708053a0dc11b5881c52560eba8945a678582c4f595690",
+    "worker": "sha256:9ca9903cb15a677bccbcd0f82717d3268d6d6ddb47b057f85f45f7e63676fe74"
+  }
+}

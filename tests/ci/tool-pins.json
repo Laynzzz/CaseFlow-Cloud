@@ -1,0 +1,23 @@
+{
+  "verifiedAt": "2026-09-17",
+  "verification": "Official GitHub latest-release APIs and tag commit resolution; Docker registry manifest digests; official PyPI package metadata.",
+  "actions": {
+    "actions/checkout": {"version": "v7.0.1", "commit": "3d3c42e5aac5ba805825da76410c181273ba90b1"},
+    "actions/setup-node": {"version": "v7.0.0", "commit": "820762786026740c76f36085b0efc47a31fe5020"},
+    "actions/setup-java": {"version": "v6.0.1", "commit": "de7274f081f381c8f8158605e0321c36c376e2e6"},
+    "actions/setup-python": {"version": "v7.0.0", "commit": "5fda3b95a4ea91299a34e894583c3862153e4b97"},
+    "actions/upload-artifact": {"version": "v7.0.1", "commit": "043fb46d1a93c77aae656e7c1c64a875d1fc6a0a"},
+    "hashicorp/setup-terraform": {"version": "v4.0.1", "commit": "dfe3c3f87815947d99a8997f908cb6525fc44e9e"}
+  },
+  "gitleaks": {
+    "image": "ghcr.io/gitleaks/gitleaks:v8.30.1@sha256:c00b6bd0aeb3071cbcb79009cb16a60dd9e0a7c60e2be9ab65d25e6bc8abbb7f",
+    "release": "https://github.com/gitleaks/gitleaks/releases/tag/v8.30.1"
+  },
+  "trivy": {
+    "image": "aquasec/trivy:0.74.0@sha256:62b1e65e8869bc4b4c6aa4fa2b21595256c7c2f6018a9d9ad61caf87187c1969",
+    "release": "https://github.com/aquasecurity/trivy/releases/tag/v0.74.0",
+    "note": "Use the pinned August release, not the affected March 0.69.4-0.69.6 releases or mutable trivy-action tags. No Docker socket or local credentials are mounted."
+  },
+  "coverage": {"java": "JaCoCo 0.8.15", "python": "coverage 7.16.1"},
+  "ruff": "0.16.8"
+}

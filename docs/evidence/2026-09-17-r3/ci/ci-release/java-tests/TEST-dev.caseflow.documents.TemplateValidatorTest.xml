@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.caseflow.documents.TemplateValidatorTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-09-17T16:03:36.999Z" hostname="DESTOP-4485" time="0.099">
+  <properties/>
+  <testcase name="acceptsAllowlistedPlaceholders()" classname="dev.caseflow.documents.TemplateValidatorTest" time="0.047"/>
+  <testcase name="rejectsExpressionsAndStatements()" classname="dev.caseflow.documents.TemplateValidatorTest" time="0.02"/>
+  <testcase name="rejectsExternalRelationshipsAndSplitTokens()" classname="dev.caseflow.documents.TemplateValidatorTest" time="0.013"/>
+  <testcase name="rejectsInvalidArchivesAndEntityDefinitions()" classname="dev.caseflow.documents.TemplateValidatorTest" time="0.016"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[[Fatal Error] :1:10: DOCTYPE is disallowed when the feature "http://apache.org/xml/features/disallow-doctype-decl" set to true.
+]]></system-err>
+</testsuite>

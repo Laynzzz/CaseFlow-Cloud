@@ -1,0 +1,39 @@
+{
+  "minimum_branch_percent": 80,
+  "modules": [
+    {
+      "language": "java",
+      "module": "dev/caseflow/cases/Purchase",
+      "covered": 18,
+      "total": 26,
+      "percent": 69.23,
+      "meets_target": false
+    },
+    {
+      "language": "java",
+      "module": "dev/caseflow/cases/CaseQueries",
+      "covered": 22,
+      "total": 36,
+      "percent": 61.11,
+      "meets_target": false
+    },
+    {
+      "language": "java",
+      "module": "dev/caseflow/documents/CompletionHandler",
+      "covered": 33,
+      "total": 60,
+      "percent": 55.0,
+      "meets_target": false
+    },
+    {
+      "language": "python",
+      "module": "services/worker/caseflow_worker/jobs.py",
+      "covered": 19,
+      "total": 24,
+      "percent": 79.17,
+      "meets_target": false
+    }
+  ],
+  "meets_target": false,
+  "limitations": "Initial critical-domain scope covers currency/submission normalization, tenant-filtered query/pagination, completion state/attempt checks, and durable worker scheduling/leases/fencing. This is not repository-wide coverage. HTTP controllers, authorization commands, AI providers and child-process execution require their separate invariant/integration evidence; they are not claimed to meet this numeric target."
+}

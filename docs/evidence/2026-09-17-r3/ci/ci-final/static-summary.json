@@ -1,0 +1,7 @@
+{
+  "webFormat": true,
+  "generatedContractStable": true,
+  "typescriptAndBuild": true,
+  "pythonFatalLint": true,
+  "nodeSyntax": true
+}

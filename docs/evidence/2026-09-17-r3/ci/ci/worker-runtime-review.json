@@ -1,0 +1,10 @@
+{
+  "uid": 10001,
+  "status": [
+    "CapEff:\t0000000000000000",
+    "NoNewPrivs:\t1"
+  ],
+  "systemd_homed_exists": false,
+  "perl_archive_tar_exists": false,
+  "application_shell_commands": "Python parser/provider subprocess only; separate source review"
+}

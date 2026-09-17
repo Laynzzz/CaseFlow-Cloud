@@ -1,0 +1,12 @@
+{
+  "minimum_branch_percent": 80,
+  "java": [
+    "dev/caseflow/cases/Purchase",
+    "dev/caseflow/cases/CaseQueries",
+    "dev/caseflow/documents/CompletionHandler"
+  ],
+  "python": [
+    "services/worker/caseflow_worker/jobs.py"
+  ],
+  "limitations": "Initial critical-domain scope covers currency/submission normalization, tenant-filtered query/pagination, completion state/attempt checks, and durable worker scheduling/leases/fencing. This is not repository-wide coverage. HTTP controllers, authorization commands, AI providers and child-process execution require their separate invariant/integration evidence; they are not claimed to meet this numeric target."
+}

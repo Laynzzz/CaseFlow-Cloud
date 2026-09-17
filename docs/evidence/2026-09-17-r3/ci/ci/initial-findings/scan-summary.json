@@ -1,0 +1,11 @@
+{
+  "secretWorktree": false,
+  "secretHistory": false,
+  "dependencies": false,
+  "containers": {
+    "api": false,
+    "worker": false
+  },
+  "policy": "All HIGH/CRITICAL vulnerabilities block, including unfixed. No blanket ignores.",
+  "dockerSocketMounted": false
+}

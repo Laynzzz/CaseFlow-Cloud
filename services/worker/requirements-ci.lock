@@ -1,0 +1,4 @@
+# Test tooling only. Runtime dependencies remain in requirements.lock.
+# Verified against official PyPI metadata on 2026-09-17.
+coverage==7.16.1
+ruff==0.16.8

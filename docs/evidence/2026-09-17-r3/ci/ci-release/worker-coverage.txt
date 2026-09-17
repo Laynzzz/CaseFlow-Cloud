@@ -1,0 +1,1 @@
+Wrote JSON report to F:\Me\Project\caseflow-cloud\output\ci-release\worker-coverage.json

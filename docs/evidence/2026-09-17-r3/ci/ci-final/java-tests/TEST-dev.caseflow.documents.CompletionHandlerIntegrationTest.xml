@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.caseflow.documents.CompletionHandlerIntegrationTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2026-09-17T15:49:12.186Z" hostname="DESTOP-4485" time="4.3">
+  <properties/>
+  <testcase name="quarantinesFutureAttemptUnprovenFenceMissingResultAndWrongTenantWithoutMutation()" classname="dev.caseflow.documents.CompletionHandlerIntegrationTest" time="0.468"/>
+  <testcase name="appliesSuccessAtomically()" classname="dev.caseflow.documents.CompletionHandlerIntegrationTest" time="0.432"/>
+  <testcase name="policyIngestionFailureUpdatesOnlyTheMatchingSource()" classname="dev.caseflow.documents.CompletionHandlerIntegrationTest" time="0.485"/>
+  <testcase name="staleAttemptAndFenceCannotRegressCurrentExecution()" classname="dev.caseflow.documents.CompletionHandlerIntegrationTest" time="0.45"/>
+  <testcase name="rejectsUnsupportedAndMismatchedCompletionsWithoutBusinessEffects()" classname="dev.caseflow.documents.CompletionHandlerIntegrationTest" time="0.459"/>
+  <testcase name="rollsBackBeforeCommitThenReplaysAndClassifiesDuplicates()" classname="dev.caseflow.documents.CompletionHandlerIntegrationTest" time="0.45"/>
+  <testcase name="keepsSuccessTerminalWhenDelayedFailureArrives()" classname="dev.caseflow.documents.CompletionHandlerIntegrationTest" time="0.356"/>
+  <testcase name="concurrentDuplicateCompletionHasOneBusinessEffectAndFiniteDeadline()" classname="dev.caseflow.documents.CompletionHandlerIntegrationTest" time="0.372"/>
+  <testcase name="workerProofAndMonotonicStatusAreRequiredBeforeApplyingCompletion()" classname="dev.caseflow.documents.CompletionHandlerIntegrationTest" time="0.47"/>
+  <testcase name="durableWorkerSuccessRejectsFailureBeforeApiHasReceivedSuccess()" classname="dev.caseflow.documents.CompletionHandlerIntegrationTest" time="0.351"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

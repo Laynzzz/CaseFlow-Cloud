@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.caseflow.observability.ManagementSecurityTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-09-17T15:49:21.121Z" hostname="DESTOP-4485" time="4.214">
+  <properties/>
+  <testcase name="onlyPrivateListenerCanReadExplicitOperationalEndpoints()" classname="dev.caseflow.observability.ManagementSecurityTest" time="4.212"/>
+  <system-out><![CDATA[11:49:25.109 [Test worker] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+11:49:25.111 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+11:49:25.119 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 7 ms
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

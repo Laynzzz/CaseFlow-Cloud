@@ -1,4 +1,10 @@
-FROM python:3.12.14-slim-bookworm@sha256:782412e85d0f0984994c290652577d4018aff08145c85b262bb63dc0c7522254
+FROM python:3.12.14-slim-trixie@sha256:78387bc3881b8273120a12ebe6c1ab22b018ccc2c9adf565ae1ac9b536e184ea
+# Security updates published after the immutable upstream image; refresh these
+# exact Debian versions with the image scan, rather than ignoring fixed CVEs.
+RUN apt-get update && apt-get install -y --no-install-recommends --only-upgrade \
+    gzip=1.13-1+deb13u1 perl-base=5.40.1-6+deb13u1 \
+    libsqlite3-0=3.46.1-7+deb13u2 libpcre2-8-0=10.46-1~deb13u2 \
+    && rm -rf /var/lib/apt/lists/*
 ARG REVISION=unknown
 LABEL org.opencontainers.image.title="CaseFlow worker" org.opencontainers.image.revision=${REVISION}
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1

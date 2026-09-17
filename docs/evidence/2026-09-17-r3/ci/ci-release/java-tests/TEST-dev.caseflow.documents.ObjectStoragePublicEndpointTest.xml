@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.caseflow.documents.ObjectStoragePublicEndpointTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-09-17T16:03:36.144Z" hostname="DESTOP-4485" time="0.853">
+  <properties/>
+  <testcase name="browserDownloadsUsePublicEndpointAndRetainSignatureAndObjectPath()" classname="dev.caseflow.documents.ObjectStoragePublicEndpointTest" time="0.844"/>
+  <testcase name="omittedPublicEndpointKeepsExistingLocalDownloadAddress()" classname="dev.caseflow.documents.ObjectStoragePublicEndpointTest" time="0.008"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

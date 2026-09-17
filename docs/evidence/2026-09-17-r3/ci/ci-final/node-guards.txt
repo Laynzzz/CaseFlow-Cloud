@@ -1,0 +1,76 @@
+TAP version 13
+# Subtest: predeclared fixtures match across a rotated nine-task comparison
+ok 1 - predeclared fixtures match across a rotated nine-task comparison
+  ---
+  duration_ms: 5.9463
+  type: 'test'
+  ...
+# Subtest: actual field comparison normalizes decimal formatting but preserves omissions and disagreements
+ok 2 - actual field comparison normalizes decimal formatting but preserves omissions and disagreements
+  ---
+  duration_ms: 0.5358
+  type: 'test'
+  ...
+# Subtest: validation needs no credentials or network and live mode requires explicit new output
+ok 3 - validation needs no credentials or network and live mode requires explicit new output
+  ---
+  duration_ms: 139.8537
+  type: 'test'
+  ...
+# Subtest: load refuses external hosts and request counts beyond the bounded experiment
+ok 4 - load refuses external hosts and request counts beyond the bounded experiment
+  ---
+  duration_ms: 1.0123
+  type: 'test'
+  ...
+# Subtest: deterministic mixed arrivals distribute reads and documents across both tenants
+ok 5 - deterministic mixed arrivals distribute reads and documents across both tenants
+  ---
+  duration_ms: 0.5904
+  type: 'test'
+  ...
+# Subtest: drain cannot claim completion when documents failed or approvals remain unresolved
+ok 6 - drain cannot claim completion when documents failed or approvals remain unresolved
+  ---
+  duration_ms: 0.7131
+  type: 'test'
+  ...
+# Subtest: histogram extraction keeps only requested kind and preserves cumulative buckets
+ok 7 - histogram extraction keeps only requested kind and preserves cumulative buckets
+  ---
+  duration_ms: 0.2684
+  type: 'test'
+  ...
+# Subtest: execution histogram aggregates success and failure bucket counts without overwriting
+ok 8 - execution histogram aggregates success and failure bucket counts without overwriting
+  ---
+  duration_ms: 0.1144
+  type: 'test'
+  ...
+# Subtest: default smoke targets the isolated loopback release
+ok 9 - default smoke targets the isolated loopback release
+  ---
+  duration_ms: 0.5964
+  type: 'test'
+  ...
+# Subtest: explicit cloud smoke requires HTTPS origins and an immutable local helper image
+ok 10 - explicit cloud smoke requires HTTPS origins and an immutable local helper image
+  ---
+  duration_ms: 1.1637
+  type: 'test'
+  ...
+# Subtest: dependency faults require exact isolated project and service ownership
+ok 11 - dependency faults require exact isolated project and service ownership
+  ---
+  duration_ms: 0.7346
+  type: 'test'
+  ...
+1..11
+# tests 11
+# suites 0
+# pass 11
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 208.9242

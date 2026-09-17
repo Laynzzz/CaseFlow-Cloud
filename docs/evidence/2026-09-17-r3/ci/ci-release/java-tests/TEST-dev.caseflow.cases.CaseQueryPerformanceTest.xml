@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.caseflow.cases.CaseQueryPerformanceTest" tests="1" skipped="1" failures="0" errors="0" timestamp="2026-09-17T16:02:43.492Z" hostname="DESTOP-4485" time="0.002">
+  <properties/>
+  <testcase name="stateFilteredQueueReducesDatabaseWorkWithoutChangingResults()" classname="dev.caseflow.cases.CaseQueryPerformanceTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

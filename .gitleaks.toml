@@ -1,0 +1,33 @@
+title = "CaseFlow: default rules with reviewed evidence false positives"
+[extend]
+useDefault = true
+
+[[rules]]
+id = "generic-api-key"
+[[rules.allowlists]]
+description = "Source-file SHA-256 entries in archived evidence manifests"
+condition = "AND"
+regexTarget = "match"
+paths = ['''(^|/)docs/evidence/[^\r\n]+/manifest\.json$''']
+regexes = ['''^(V4__api_worker_view_access\.sql|CaseApiApplication\.java|Access\.java)":\s*"[a-f0-9]{64}"$''']
+
+[[rules.allowlists]]
+description = "Documented internal Prometheus endpoint, no credential"
+condition = "AND"
+regexTarget = "match"
+paths = ['''(^|/)docs/runbooks/observability\.md$''']
+regexes = ['''^api:9091/actuator/prometheus`?$''']
+
+[[rules.allowlists]]
+description = "Recorded Prometheus target identity, no credential"
+condition = "AND"
+regexTarget = "match"
+paths = ['''(^|/)docs/evidence/2026-09-17-r3/monitoring-recovery/r3-observability/prometheus-targets\.json$''']
+regexes = ['''^api:9091(?:/actuator/prometheus)?"$''']
+
+[[rules.allowlists]]
+description = "Exact project-plan sentence fragment, ordinary prose"
+condition = "AND"
+regexTarget = "line"
+paths = ['''(^|/)plan\.md$''']
+regexes = ['''Separate engineering walkthrough: denied tenant access, duplicate/crash recovery, one logical output, trace, SQL optimization, evaluation report and deployment rollback\.''']

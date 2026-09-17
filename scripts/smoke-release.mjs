@@ -1,12 +1,18 @@
 import assert from 'node:assert/strict';
 import { createHash, randomBytes } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
-import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import {resolve,sep} from 'node:path';
+import {pathToFileURL} from 'node:url';
+import {smokeConfig} from './release-config.mjs';
 
-const origin = 'http://127.0.0.1:18080';
-const issuer = 'http://127.0.0.1:18180/realms/caseflow';
-const dir = new URL('../infrastructure/release/generated/', import.meta.url);
-const env = Object.fromEntries(readFileSync(new URL('.env', dir), 'utf8').trim().split(/\r?\n/).map(line => line.split('=')));
+const configPath=process.argv[2];
+const config=smokeConfig(configPath?JSON.parse(readFileSync(configPath,'utf8')):undefined);
+const {origin,issuer}=config;
+const directory=resolve(config.stateDirectory);mkdirSync(directory,{recursive:true});
+const dir=pathToFileURL(directory+sep);
+const env = Object.fromEntries(readFileSync(config.envFile, 'utf8').trim().split(/\r?\n/).map(line => {const split=line.indexOf('=');return [line.slice(0,split),line.slice(split+1)];}));
+assert.ok(env.DEMO_PASSWORD,'Synthetic identity password is required');
 const priorFile = new URL('release-ids.json', dir);
 const prior = existsSync(priorFile) ? JSON.parse(readFileSync(priorFile, 'utf8')) : null;
 const deadline = Date.now() + 120000;
@@ -23,7 +29,7 @@ for (const route of ['/', '/account', '/new', '/admin', '/cases/00000000-0000-40
 assert.equal((await fetch(`${origin}/api/v1/me`)).status, 401);
 assert.equal((await fetch(`${origin}/actuator/prometheus`)).status, 401);
 assert.equal((await fetch(`${origin}/api/v1/health`)).status, 200);
-assert.equal((await fetch('http://127.0.0.1:18090/health')).status, 200);
+if(config.workerHealthUrl)assert.equal((await fetch(config.workerHealthUrl)).status, 200);
 
 async function signIn(username) {
   const verifier = randomBytes(32).toString('base64url'), state = randomBytes(16).toString('hex'), cookies = new Map();
@@ -36,7 +42,9 @@ async function signIn(username) {
   const page = await request(`${issuer}/protocol/openid-connect/auth?${params}`);
   const form = (await page.text()).match(/<form[^>]*id="kc-form-login"[^>]*action="([^"]+)"/);
   assert.ok(form, 'Release OIDC login form');
-  const login = await request(form[1].replaceAll('&amp;', '&'), { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams({ username, password: env.DEMO_PASSWORD, credentialId: '' }) });
+  const action=new URL(form[1].replaceAll('&amp;', '&'));
+  assert.equal(action.origin,new URL(issuer).origin,'Credentials only go to the configured issuer');
+  const login = await request(action, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams({ username, password: env.DEMO_PASSWORD, credentialId: '' }) });
   const callback = new URL(login.headers.get('location'));
   assert.equal(callback.origin, origin); assert.equal(callback.searchParams.get('state'), state);
   const exchange = await fetch(`${issuer}/protocol/openid-connect/token`, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams({ grant_type: 'authorization_code', client_id: 'caseflow-web', code: callback.searchParams.get('code'), redirect_uri: origin + '/', code_verifier: verifier }) });
@@ -71,9 +79,10 @@ if (!workflow) {
   workflow = await api('admin', `${path}/workflows/${workflow.id}/publish`, 'POST', { expectedVersion: workflow.version });
 }
 // Generate a synthetic DOCX using the same pinned Python image; no host Python is required.
-const worker = execFileSync('docker', ['ps', '--filter', 'label=com.docker.compose.project=caseflow-release', '--filter', 'label=com.docker.compose.service=worker', '--format', '{{.ID}}'], { encoding: 'utf8' }).trim();
-assert.match(worker, /^[a-f0-9]+$/);
-const template = execFileSync('docker', ['exec', worker, 'python', '-c', "import io,sys; from docx import Document; d=Document(); d.add_heading('Synthetic release purchase',0); [d.add_paragraph('{{ '+k+' }}') for k in ['vendor','total','description','cost_center','justification']]; b=io.BytesIO(); d.save(b); sys.stdout.buffer.write(b.getvalue())"]);
+const worker = config.runtimeImage?null:execFileSync('docker', ['ps', '--filter', 'label=com.docker.compose.project=caseflow-release', '--filter', 'label=com.docker.compose.service=worker', '--format', '{{.ID}}'], { encoding: 'utf8' }).trim();
+if(worker!==null)assert.match(worker, /^[a-f0-9]+$/);
+const pythonArgs=config.runtimeImage?['run','--rm','--pull','never','--network','none','--read-only','--cap-drop','ALL','--security-opt','no-new-privileges:true','-i','--entrypoint','python',config.runtimeImage,'-c']:['exec','-i',worker,'python','-c'];
+const template = execFileSync('docker', [...pythonArgs, "import io,sys; from docx import Document; d=Document(); d.add_heading('Synthetic release purchase',0); [d.add_paragraph('{{ '+k+' }}') for k in ['vendor','total','description','cost_center','justification']]; b=io.BytesIO(); d.save(b); sys.stdout.buffer.write(b.getvalue())"]);
 writeFileSync(new URL('purchase-template.docx', dir), template);
 let published = (await api('admin', path + '/templates')).items.find(t => t.name === 'Release purchase v1' && t.state === 'PUBLISHED');
 if (!published) {
@@ -99,10 +108,10 @@ while (job.status !== 'SUCCEEDED' && Date.now() < jobDeadline) {
 assert.equal(job.status, 'SUCCEEDED');
 await api('outsider', casePath, 'GET', undefined, 404);
 const download = await api('requester', `${casePath}/documents/${job.jobId}/download-url`, 'POST');
-assert.equal(new URL(download.url).origin, 'http://127.0.0.1:18333');
+assert.equal(new URL(download.url).origin, config.storageOrigin);
 const response = await fetch(download.url); assert.equal(response.status, 200);
 const bytes = Buffer.from(await response.arrayBuffer());
 assert.equal(createHash('sha256').update(bytes).digest('hex'), job.sha256); assert.equal(bytes.length, job.byteSize);
-execFileSync('docker', ['exec', '-i', worker, 'python', '-c', "import io,sys; from docx import Document; t='\\n'.join(p.text for p in Document(io.BytesIO(sys.stdin.buffer.read())).paragraphs); assert 'Synthetic release vendor' in t; assert '4200.00' in t; assert '{{' not in t"], { input: bytes });
+execFileSync('docker', [...pythonArgs, "import io,sys; from docx import Document; t='\\n'.join(p.text for p in Document(io.BytesIO(sys.stdin.buffer.read())).paragraphs); assert 'Synthetic release vendor' in t; assert '4200.00' in t; assert '{{' not in t"], { input: bytes });
 writeFileSync(new URL('release-ids.json', dir), JSON.stringify({ tenantId: tenant.id, workflowId: workflow.id, templateId: published.id, caseId: item.id, jobId: job.jobId, sha256: job.sha256, users: Object.fromEntries(Object.entries(identities).map(([name, identity]) => [name, identity.id])) }, null, 2) + '\n');
 console.log(`PASS packaged SPA deep links, PKCE, API/operations denial, tenant denial, ${prior ? 'prior approved case preserved, ' : ''}two approvals, Kafka/worker completion and SHA-256 verified DOCX; synthetic case ${item.id}. No paid AI calls.`);

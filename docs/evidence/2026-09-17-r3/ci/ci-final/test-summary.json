@@ -1,0 +1,8 @@
+{
+  "broad": false,
+  "java": true,
+  "worker": true,
+  "criticalCoverage": true,
+  "serialDatabaseSuites": true,
+  "liveAI": false
+}

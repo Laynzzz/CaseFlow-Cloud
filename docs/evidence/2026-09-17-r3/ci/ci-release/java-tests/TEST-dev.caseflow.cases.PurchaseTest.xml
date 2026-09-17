@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.caseflow.cases.PurchaseTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2026-09-17T16:02:43.496Z" hostname="DESTOP-4485" time="0.082">
+  <properties/>
+  <testcase name="aBlankLineDescriptionCanBeSavedAsADraftButCannotBeSubmitted()" classname="dev.caseflow.cases.PurchaseTest" time="0.004"/>
+  <testcase name="calculatesWithDecimalArithmetic()" classname="dev.caseflow.cases.PurchaseTest" time="0.001"/>
+  <testcase name="permitsIncompleteDraftButPreventsSubmission()" classname="dev.caseflow.cases.PurchaseTest" time="0.001"/>
+  <testcase name="acceptsTrailingZerosAndThreeDecimalCurrencyWithoutBinaryRounding()" classname="dev.caseflow.cases.PurchaseTest" time="0.001"/>
+  <testcase name="[1] currency = &quot;ZZZ&quot;" classname="dev.caseflow.cases.PurchaseTest" time="0.007"/>
+  <testcase name="[2] currency = &quot;XXX&quot;" classname="dev.caseflow.cases.PurchaseTest" time="0.0"/>
+  <testcase name="rejectsATotalThatOverflowsEvenWhenEachQuantityAndPriceIsWithinItsFieldLimit()" classname="dev.caseflow.cases.PurchaseTest" time="0.001"/>
+  <testcase name="[1] missing = &quot;description&quot;" classname="dev.caseflow.cases.PurchaseTest" time="0.002"/>
+  <testcase name="[2] missing = &quot;costCenter&quot;" classname="dev.caseflow.cases.PurchaseTest" time="0.0"/>
+  <testcase name="[3] missing = &quot;justification&quot;" classname="dev.caseflow.cases.PurchaseTest" time="0.001"/>
+  <testcase name="[4] missing = &quot;lineItems&quot;" classname="dev.caseflow.cases.PurchaseTest" time="0.001"/>
+  <testcase name="rejectsFractionalPricesForZeroDecimalCurrency()" classname="dev.caseflow.cases.PurchaseTest" time="0.001"/>
+  <testcase name="roundsEachLineToCurrencyMinorUnits()" classname="dev.caseflow.cases.PurchaseTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

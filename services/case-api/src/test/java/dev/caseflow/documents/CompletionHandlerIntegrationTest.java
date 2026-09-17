@@ -211,6 +211,92 @@ class CompletionHandlerIntegrationTest {
         assertEquals(1, count("SELECT count(*) FROM core.audit WHERE event_type='DOCUMENT_SUCCEEDED'"));
     }
 
+    @Test
+    void rejectsUnsupportedAndMismatchedCompletionsWithoutBusinessEffects() {
+        for (var change : java.util.List.of(Map.of("schemaVersion", (Object) 2),
+                Map.of("aggregateType", (Object) "unknown"), Map.of("status", (Object) "UNKNOWN"),
+                Map.of("eventType", (Object) "ingestion.succeeded"), Map.of("inputHash", (Object) "c".repeat(64)))) {
+            var event = success(UUID.randomUUID());
+            event.putAll(change);
+            apply(event);
+        }
+        var unknownJob = success(UUID.randomUUID());
+        unknownJob.put("jobId", UUID.randomUUID().toString());
+        apply(unknownJob);
+        assertEquals(2, count("SELECT count(*) FROM core.event_inbox WHERE reason='UNSUPPORTED_SCHEMA'"));
+        assertEquals(3, count("SELECT count(*) FROM core.event_inbox WHERE reason='INVALID_COMPLETION'"));
+        assertReceipt("UNKNOWN_JOB");
+        assertEquals("QUEUED", jobStatus());
+        assertEquals("QUEUED", documentStatus());
+        assertEquals(0, count("SELECT count(*) FROM core.audit"));
+    }
+
+    @Test
+    void staleAttemptAndFenceCannotRegressCurrentExecution() {
+        admin.update("UPDATE core.job_requests SET attempt=2,last_fence=3");
+        apply(event(UUID.randomUUID(), tenant, 1, 4, "RUNNING"));
+        apply(event(UUID.randomUUID(), tenant, 2, 2, "RUNNING"));
+        assertEquals(2, count("SELECT count(*) FROM core.event_inbox WHERE reason='OLDER_EXECUTION'"));
+        assertEquals("QUEUED", jobStatus());
+        assertEquals(0, count("SELECT count(*) FROM core.audit"));
+    }
+
+    @Test
+    void workerProofAndMonotonicStatusAreRequiredBeforeApplyingCompletion() {
+        admin.update("DELETE FROM worker.artifacts");
+        admin.update("DELETE FROM worker.jobs");
+        apply(success(UUID.randomUUID()));
+        assertReceipt("UNPROVEN_EXECUTION");
+        admin.update("INSERT INTO worker.jobs(tenant_id,job_id,case_id,kind,attempt,input_hash,status,fence,lease_owner,lease_until) "
+                + "VALUES (?,?,?,'DOCUMENT',1,?,'RUNNING',2,?,now()+interval '60 seconds')", tenant, jobId, caseId, INPUT_HASH, UUID.randomUUID());
+        apply(event(UUID.randomUUID(), tenant, 1, 1, "RUNNING"));
+        apply(event(UUID.randomUUID(), tenant, 1, 2, "SUCCEEDED"));
+        assertReceipt("MISSING_RESULT");
+        apply(event(UUID.randomUUID(), tenant, 1, 2, "RUNNING"));
+        assertEquals("RUNNING", jobStatus());
+        assertEquals("RUNNING", documentStatus());
+        apply(event(UUID.randomUUID(), tenant, 1, 2, "RUNNING"));
+        apply(event(UUID.randomUUID(), tenant, 1, 2, "RETRY_WAIT"));
+        assertEquals("RETRY_WAIT", jobStatus());
+        assertEquals(2, count("SELECT count(*) FROM core.event_inbox WHERE reason='OLDER_STATUS'"));
+        assertEquals(2, count("SELECT count(*) FROM core.audit"));
+    }
+
+    @Test
+    void durableWorkerSuccessRejectsFailureBeforeApiHasReceivedSuccess() {
+        apply(event(UUID.randomUUID(), tenant, 1, 1, "FAILED"));
+        assertEquals(1, count("SELECT count(*) FROM core.event_inbox WHERE reason='WORKER_ALREADY_SUCCEEDED'"));
+        assertEquals("QUEUED", jobStatus());
+        assertEquals(0, count("SELECT count(*) FROM core.audit"));
+        apply(success(UUID.randomUUID()));
+        assertBusinessSuccess();
+    }
+
+    @Test
+    void policyIngestionFailureUpdatesOnlyTheMatchingSource() {
+        UUID source = UUID.randomUUID(), ingestion = UUID.randomUUID();
+        admin.update("INSERT INTO core.sources(tenant_id,id,kind,name,media_type,upload_key,byte_size,created_by) "
+                + "VALUES (?,?,'POLICY','Synthetic policy','text/plain',?,32,?)", tenant, source, "synthetic/" + source, actor);
+        admin.update("INSERT INTO core.job_requests(tenant_id,job_id,source_id,kind,input,input_hash,requested_by,status) "
+                + "VALUES (?,?,?,'INGESTION','{}'::jsonb,?,?,'QUEUED')", tenant, ingestion, source, INPUT_HASH, actor);
+        admin.update("UPDATE core.sources SET state='INDEXING',object_key=?,sha256=?,ingestion_job_id=? WHERE id=?",
+                "synthetic/policy/" + source, INPUT_HASH, ingestion, source);
+        admin.update("INSERT INTO worker.jobs(tenant_id,job_id,source_id,kind,attempt,input_hash,status,fence) "
+                + "VALUES (?,?,?,'INGESTION',1,?,'FAILED',1)", tenant, ingestion, source, INPUT_HASH);
+        var completion = event(UUID.randomUUID(), tenant, 1, 1, "RUNNING");
+        completion.put("aggregateType", "policy"); completion.put("aggregateId", source.toString());
+        completion.put("jobId", ingestion.toString()); completion.put("eventType", "ingestion.running");
+        apply(completion);
+        assertEquals("INDEXING", db.queryForObject("SELECT state FROM core.sources WHERE id=?", String.class, source));
+        completion.put("eventId", UUID.randomUUID().toString()); completion.put("status", "FAILED");
+        completion.put("eventType", "ingestion.failed"); completion.put("failureCode", "SYNTHETIC_INVALID_SOURCE");
+        apply(completion);
+        assertEquals("FAILED", db.queryForObject("SELECT state FROM core.sources WHERE id=?", String.class, source));
+        assertEquals("SYNTHETIC_INVALID_SOURCE", db.queryForObject("SELECT failure_code FROM core.sources WHERE id=?", String.class, source));
+        assertEquals("QUEUED", jobStatus()); assertEquals("QUEUED", documentStatus());
+        assertEquals(1, count("SELECT count(*) FROM core.audit WHERE event_type='INGESTION_FAILED' AND case_id IS NULL"));
+    }
+
     private String jdbcUrl() {
         return "jdbc:postgresql://127.0.0.1:54320/" + databaseName;
     }

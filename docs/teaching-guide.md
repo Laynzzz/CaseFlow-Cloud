@@ -1117,3 +1117,20 @@ rollback preserved four selected documents and completed a new one. This proves
 application compatibility, not database backup restoration or cloud availability.
 See [evidence](evidence/2026-09-17-r3/monitoring-recovery/summary.md) and
 [runbook](runbooks/observability.md) for commands and limits.
+
+## Repeatable release checks
+
+GitHub Actions is the hosted workflow runner; YAML describes its gates. Node
+orchestrates the same local checks, JaCoCo measures Java branch execution, and
+coverage.py measures Python branches. Tests use PostgreSQL/Kafka/object storage
+with synthetic fixtures; paid AI is excluded. Explicitly naming four critical
+modules prevents presenting a partial coverage number as whole-project coverage.
+Invariant and crash tests answer failure questions that percentages cannot.
+
+Gitleaks looks for committed credentials; Trivy checks dependency and image
+vulnerability databases. A scanner exit can mean findings or an operational
+failure, so both raw output and reviewed disposition matter. The API's Tomcat
+and worker OS patches removed fixable findings. Eight unfixed worker OS CVEs
+remain with 44 package entries, exact-version reasoning and an expiry; a fixed
+version, new finding or expiry fails the gate again. This is visible risk review,
+not a claim that scanners prove security. [Current evidence](evidence/2026-09-17-r3/ci/summary.md).

@@ -739,3 +739,24 @@ probe verified sentinel removal and parent retention. Dropping unsupported
 linked spans and normalizing Java framework names reduces diagnostic detail.
 
 Evidence: [monitoring and recovery](evidence/2026-09-17-r3/monitoring-recovery/summary.md).
+
+## CI and security-scan checkpoint
+
+**What does the coverage number establish?** The four declared critical modules
+exceed 80% branch coverage; the actual range is 96.15–100%. It demonstrates those
+branches executed, not that all outcomes or the whole repository are correct.
+Separate concurrency, role, tenant and process-crash invariants provide stronger
+behavioral evidence. The latest broad run passed 60 Java and 174 Python tests;
+one Java performance benchmark was separately opt-in and skipped in that run.
+
+**What did you do with vulnerability findings?** Patched Tomcat and four worker
+OS packages, retained raw scan failures, then documented eight unfixed CVEs with
+exact package versions, runtime reasoning and October 1 expiry. No fixed or
+CRITICAL finding is exempted. This is engineering risk review, not independent
+certification. A future fix or expired review blocks CI again.
+
+**Has CI run in the cloud?** Workflow source and its commands are verified
+locally; no GitHub-hosted run is claimed. Similarly, Terraform validation and
+mocked plans do not establish that AWS deployment works.
+
+Evidence: [local checks and scans](evidence/2026-09-17-r3/ci/summary.md).
