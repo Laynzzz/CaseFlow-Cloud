@@ -743,3 +743,48 @@ first transaction. Merely starting two threads would allow a sequential run to
 pass. A privileged read-only test observer sees the lock state; the actual
 handler transactions retain their restricted API role. See
 [the commands and measured scope](evidence/2026-09-16-r3/recovery-contracts.md).
+
+## R3: proving that a stopped process can recover
+
+For a finance-approved purchase, a worker can upload a document and stop before
+recording which document the application should display. The uploaded file then
+exists but is unselected. Another worker must recover the job without allowing
+the old worker to replace its result.
+
+`services/worker/tests/process_probe.py` is Python test infrastructure using
+the standard multiprocessing library. It starts a separate local process that
+calls the real worker code. A pipe reports that the intended boundary was
+reached; the parent then terminates that owned child. This avoids timing guesses
+such as sleeping and hoping the upload finished. PostgreSQL remains real, and
+the object-upload scenario uses the local S3-compatible store and real DOCX
+rendering. Disposable databases keep the demo's data separate from crash tests.
+
+`CompletionCrashProbe.java` and `CompletionProcessRecoveryTest.java` are Java
+test code using JUnit and a separately launched JVM. They run the actual Java
+completion handler with the restricted API database role, without starting the
+whole Spring Boot server. The Gradle test configuration supplies the child JVM's
+dependencies. This is a controlled component crash test; a complete service or
+machine outage has additional failure modes.
+
+The upload test waits for the real five-second lease to expire, then reclaims
+with a higher fencing token. A new immutable object is selected, the stale
+owner cannot finalize, and the old object's bytes remain unchanged. Fencing
+protects database selection; immutable keys protect object bytes. Neither
+mechanism removes abandoned objects. Test fixture cleanup is implemented;
+production garbage collection and reconciliation are still required.
+
+`services/worker/tools/replay_document.py` is a Python command-line tool using
+the Confluent Kafka client and PostgreSQL read-only inspection. Producer
+acknowledgements prove the broker accepted records. Consumer offsets prove that
+the existing groups advanced past those records; offsets identify the next
+record, so each committed offset must exceed the maximum acknowledged offset.
+Before/after database assertions then check the business outcome. Those three
+checks answer different questions and are all needed.
+
+The observed run sent 10,000 duplicates for one already completed job plus one
+late failure. Execution count, selected artifact and success audit stayed one.
+This demonstrates idempotent handling for that fixture, not exactly-once
+transport or the capacity to generate 10,000 documents. Seven distinct real
+process-crash scenarios and the separate broker experiment are recorded in the
+[September 17 report](evidence/2026-09-17-r3/summary.md), including negative
+controls that deliberately let children exit normally and caused tests to fail.

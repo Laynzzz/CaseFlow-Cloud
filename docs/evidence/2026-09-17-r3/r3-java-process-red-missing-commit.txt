@@ -1,0 +1,33 @@
+
+> Task :compileJava
+
+> Task :processResources
+> Task :classes
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+> Task :compileTestJava
+> Task :processTestResources NO-SOURCE
+> Task :testClasses
+
+> Task :test
+
+CompletionProcessRecoveryTest > killedJvmAfterCommitPreservesSuccessAcrossDuplicateAndLateFailure() FAILED
+    org.opentest4j.AssertionFailedError at CompletionProcessRecoveryTest.java:222
+
+2 tests completed, 1 failed
+
+> Task :test FAILED
+
+[Incubating] Problems report is available at: file:///F:/Me/Project/caseflow-cloud/services/case-api/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':test'.
+> There were failing tests. See the report at: file:///F:/Me/Project/caseflow-cloud/services/case-api/build/reports/tests/test/index.html
+
+* Try:
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+
+BUILD FAILED in 7s
+4 actionable tasks: 4 executed

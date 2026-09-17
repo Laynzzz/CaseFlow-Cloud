@@ -1,0 +1,278 @@
+{
+  "schemaVersion": 1,
+  "runId": "d9b311a6-6829-4414-9383-294e80bc3131",
+  "status": "PASSED",
+  "startedAt": "2026-09-17T03:57:42.050425+00:00",
+  "scope": "Existing synthetic local document; repeated event IDs; not a throughput benchmark",
+  "environment": {
+    "broker": "127.0.0.1:9092",
+    "database": "127.0.0.1:54320/caseflow",
+    "groups": {
+      "caseflow.jobs.v1": "caseflow-worker-v1",
+      "caseflow.completions.v1": "caseflow-api-completion-v1"
+    }
+  },
+  "countPerTopic": 10,
+  "requestedRedeliveries": 20,
+  "lateFailures": 1,
+  "timeoutSeconds": 180.0,
+  "scriptSha256": "392af7ee75d9ac2664007c57d63e180fb212162d6e44ad529fd32fe1472bcb0a",
+  "acknowledgements": [
+    {
+      "topic": "caseflow.jobs.v1",
+      "partition": 1,
+      "offset": 607
+    },
+    {
+      "topic": "caseflow.jobs.v1",
+      "partition": 1,
+      "offset": 608
+    },
+    {
+      "topic": "caseflow.jobs.v1",
+      "partition": 1,
+      "offset": 609
+    },
+    {
+      "topic": "caseflow.jobs.v1",
+      "partition": 1,
+      "offset": 610
+    },
+    {
+      "topic": "caseflow.jobs.v1",
+      "partition": 1,
+      "offset": 611
+    },
+    {
+      "topic": "caseflow.jobs.v1",
+      "partition": 1,
+      "offset": 612
+    },
+    {
+      "topic": "caseflow.jobs.v1",
+      "partition": 1,
+      "offset": 613
+    },
+    {
+      "topic": "caseflow.jobs.v1",
+      "partition": 1,
+      "offset": 614
+    },
+    {
+      "topic": "caseflow.jobs.v1",
+      "partition": 1,
+      "offset": 615
+    },
+    {
+      "topic": "caseflow.jobs.v1",
+      "partition": 1,
+      "offset": 616
+    },
+    {
+      "topic": "caseflow.completions.v1",
+      "partition": 1,
+      "offset": 1202
+    },
+    {
+      "topic": "caseflow.completions.v1",
+      "partition": 1,
+      "offset": 1203
+    },
+    {
+      "topic": "caseflow.completions.v1",
+      "partition": 1,
+      "offset": 1204
+    },
+    {
+      "topic": "caseflow.completions.v1",
+      "partition": 1,
+      "offset": 1205
+    },
+    {
+      "topic": "caseflow.completions.v1",
+      "partition": 1,
+      "offset": 1206
+    },
+    {
+      "topic": "caseflow.completions.v1",
+      "partition": 1,
+      "offset": 1207
+    },
+    {
+      "topic": "caseflow.completions.v1",
+      "partition": 1,
+      "offset": 1208
+    },
+    {
+      "topic": "caseflow.completions.v1",
+      "partition": 1,
+      "offset": 1209
+    },
+    {
+      "topic": "caseflow.completions.v1",
+      "partition": 1,
+      "offset": 1210
+    },
+    {
+      "topic": "caseflow.completions.v1",
+      "partition": 1,
+      "offset": 1211
+    },
+    {
+      "topic": "caseflow.completions.v1",
+      "partition": 1,
+      "offset": 1212
+    }
+  ],
+  "deliveryErrors": [],
+  "enqueued": 21,
+  "boundaries": [
+    {
+      "topic": "caseflow.completions.v1",
+      "partition": 1,
+      "first": 1202,
+      "last": 1212,
+      "acknowledged": 11,
+      "requiredCommitted": 1213,
+      "group": "caseflow-api-completion-v1"
+    },
+    {
+      "topic": "caseflow.jobs.v1",
+      "partition": 1,
+      "first": 607,
+      "last": 616,
+      "acknowledged": 10,
+      "requiredCommitted": 617,
+      "group": "caseflow-worker-v1"
+    }
+  ],
+  "committedOffsets": [
+    {
+      "group": "caseflow-worker-v1",
+      "topic": "caseflow.jobs.v1",
+      "partition": 1,
+      "offset": 617,
+      "error": null
+    },
+    {
+      "group": "caseflow-api-completion-v1",
+      "topic": "caseflow.completions.v1",
+      "partition": 1,
+      "offset": 1213,
+      "error": null
+    }
+  ],
+  "baselineAssertions": {
+    "terminalSuccess": true,
+    "approvedDocument": true,
+    "selectedJob": true,
+    "oneArtifact": true,
+    "oneSuccessAudit": true,
+    "noFailureAudit": true,
+    "sameAttempt": true,
+    "sameFence": true,
+    "inputHash": true,
+    "artifactHash": true,
+    "immutableArtifactKey": true,
+    "artifactSize": true
+  },
+  "finalAssertions": {
+    "terminalSuccess": true,
+    "approvedDocument": true,
+    "selectedJob": true,
+    "oneArtifact": true,
+    "oneSuccessAudit": true,
+    "noFailureAudit": true,
+    "sameAttempt": true,
+    "sameFence": true,
+    "inputHash": true,
+    "artifactHash": true,
+    "immutableArtifactKey": true,
+    "artifactSize": true,
+    "unchanged": true,
+    "lateFailureStale": true
+  },
+  "artifactVerification": "Selected database object key/checksum metadata; no object-store byte download",
+  "revision": "0b4e7151ab850b710dd380ae4ed013c68cf210d1",
+  "fixture": {
+    "caseId": "ea54cff3-8906-4296-8859-d5c4a5f7d3fd",
+    "jobId": "a7b403e6-e3ea-45d0-9ab3-351b9c8e1f20",
+    "tenantId": "69461d55-4af7-46b4-aac9-946d0807eac9"
+  },
+  "fixturePath": "infrastructure\\local\\generated\\document-demo.json",
+  "fixtureSha256": "b789d5f5f90c04cad5bb5fcbbf506bd00dc3c720e44deb7346b089668853a67e",
+  "baseline": {
+    "core_status": "SUCCEEDED",
+    "worker_status": "SUCCEEDED",
+    "business_state": "APPROVED",
+    "document_status": "SUCCEEDED",
+    "generation_id": "a7b403e6-e3ea-45d0-9ab3-351b9c8e1f20",
+    "core_attempt": 1,
+    "worker_attempt": 1,
+    "core_fence": 1,
+    "worker_fence": 1,
+    "worker_executions": 1,
+    "core_input_hash": "6c5a8639fa06b1e09f03788772fced818bd1bc25ec9e4f012888d1a602304090",
+    "worker_input_hash": "6c5a8639fa06b1e09f03788772fced818bd1bc25ec9e4f012888d1a602304090",
+    "success_audits": 1,
+    "failure_audits": 0,
+    "artifact_count": 1,
+    "artifact": {
+      "attempt": 1,
+      "fence": 1,
+      "object_key": "tenants/69461d55-4af7-46b4-aac9-946d0807eac9/documents/a7b403e6-e3ea-45d0-9ab3-351b9c8e1f20/attempt-1/fence-1/c0241042-6eb1-4d7b-9d68-fade37c25b94.docx",
+      "sha256": "101540f5422116a11c724036fef5cae6ff42680f96362e9acee5cd73f1918bc8",
+      "byte_size": 36963
+    }
+  },
+  "events": {
+    "request": {
+      "eventId": "aff89fb4-bea5-407f-8b7e-0cc865ff389d",
+      "sha256": "e7d41f4fff62c41b51803333e90edc27e5040ac7a18a820a4c39009efbb719d0"
+    },
+    "success": {
+      "eventId": "53f3e760-6ae7-4e66-9d2c-b1fa52cec836",
+      "sha256": "4d971d9645ac4d42c3b21f88d1b72ebbb3ed32a3b3e36660ec77e382f79c9b42"
+    },
+    "lateFailure": {
+      "eventId": "f8efb133-a9b7-4644-ba29-11a4b859b21f",
+      "sha256": "3e1b6b30f86202fe0bf4430913e8099fe9c62b4e3af4cc27c0889aa3a98f2363"
+    }
+  },
+  "unflushed": 0,
+  "deliveryAssertions": {
+    "noErrors": true,
+    "flushed": true,
+    "allAcknowledged": true,
+    "requestCount": true,
+    "completionCount": true
+  },
+  "offsetsReached": true,
+  "final": {
+    "core_status": "SUCCEEDED",
+    "worker_status": "SUCCEEDED",
+    "business_state": "APPROVED",
+    "document_status": "SUCCEEDED",
+    "generation_id": "a7b403e6-e3ea-45d0-9ab3-351b9c8e1f20",
+    "core_attempt": 1,
+    "worker_attempt": 1,
+    "core_fence": 1,
+    "worker_fence": 1,
+    "worker_executions": 1,
+    "core_input_hash": "6c5a8639fa06b1e09f03788772fced818bd1bc25ec9e4f012888d1a602304090",
+    "worker_input_hash": "6c5a8639fa06b1e09f03788772fced818bd1bc25ec9e4f012888d1a602304090",
+    "success_audits": 1,
+    "failure_audits": 0,
+    "artifact_count": 1,
+    "artifact": {
+      "attempt": 1,
+      "fence": 1,
+      "object_key": "tenants/69461d55-4af7-46b4-aac9-946d0807eac9/documents/a7b403e6-e3ea-45d0-9ab3-351b9c8e1f20/attempt-1/fence-1/c0241042-6eb1-4d7b-9d68-fade37c25b94.docx",
+      "sha256": "101540f5422116a11c724036fef5cae6ff42680f96362e9acee5cd73f1918bc8",
+      "byte_size": 36963
+    }
+  },
+  "lateFailureDisposition": "STALE",
+  "finishedAt": "2026-09-17T03:57:43.168094+00:00",
+  "elapsedSeconds": 1.125
+}

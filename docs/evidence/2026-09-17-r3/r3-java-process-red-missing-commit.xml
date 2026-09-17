@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.caseflow.documents.CompletionProcessRecoveryTest" tests="2" skipped="0" failures="1" errors="0" timestamp="2026-09-17T03:52:18.397Z" hostname="local-test-host" time="3.159">
+  <properties/>
+  <testcase name="killedJvmAfterCommitPreservesSuccessAcrossDuplicateAndLateFailure()" classname="dev.caseflow.documents.CompletionProcessRecoveryTest" time="1.508">
+    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;SUCCEEDED&gt; but was: &lt;QUEUED&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;SUCCEEDED&gt; but was: &lt;QUEUED&gt;
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:184)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:179)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1188)
+	at dev.caseflow.documents.CompletionProcessRecoveryTest.assertStatus(CompletionProcessRecoveryTest.java:222)
+	at dev.caseflow.documents.CompletionProcessRecoveryTest.assertOneSuccess(CompletionProcessRecoveryTest.java:215)
+	at dev.caseflow.documents.CompletionProcessRecoveryTest.killedJvmAfterCommitPreservesSuccessAcrossDuplicateAndLateFailure(CompletionProcessRecoveryTest.java:140)
+</failure>
+  </testcase>
+  <testcase name="killedJvmBeforeCommitRollsBackThenReplayHasOneBusinessEffect()" classname="dev.caseflow.documents.CompletionProcessRecoveryTest" time="1.634"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

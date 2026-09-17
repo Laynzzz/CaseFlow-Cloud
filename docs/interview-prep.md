@@ -462,3 +462,35 @@ transaction waiting on a PostgreSQL lock before allowing the first to commit.
 This establishes real contention for that pair, not scheduler fairness or
 high-volume broker behavior. Full suites passed 73 Python and 20 Java tests;
 focused final reruns cover the strengthened assertions.
+
+## R3 process-crash and broker evidence checkpoint
+
+**How did you test an actual process failure?** We launched owned Python/JVM
+children that execute production transaction components against isolated real
+databases. A boundary handshake confirmed the child was alive at the intended
+point before forced termination. Five worker scenarios and two Java completion
+scenarios passed. Negative controls allowing normal exit failed the tests.
+Follow-up: these are component subprocesses, not complete service, machine or
+dependency outages; those broader gates remain open.
+
+**What happens when the worker dies after uploading a file?** The test observes
+an uploaded but unselected DOCX. The real lease expires; a new owner with a
+higher fence writes a different immutable key and selects its result. The old
+owner cannot finalize and its object bytes remain unchanged. We verify hashes
+and the selected document's synthetic contents.
+Follow-up: abandoned objects still need production garbage collection; deleting
+test fixtures does not implement that operational feature.
+
+**What does the 10,000-redelivery result actually prove?** We injected 5,000
+request and 5,000 completion duplicates for one completed synthetic job, plus
+one late failure. We retained all acknowledged broker coordinates and checked
+both consumer groups advanced beyond them. One execution, one artifact and one
+success audit remained; the late failure was stale. The run took 73.187 seconds.
+Follow-up: this is duplicate-handling evidence, not a sustained-throughput
+benchmark, 10,000 distinct purchases, or exactly-once transport.
+
+Evidence: [results, commands and limits](evidence/2026-09-17-r3/summary.md).
+Implementation: Python `services/worker/tests/test_process_recovery.py` and
+`services/worker/tools/replay_document.py`; Java
+`services/case-api/src/test/java/dev/caseflow/documents/CompletionProcessRecoveryTest.java`.
+Full recorded regression suites: 95 Python and 22 Java tests, no failures/skips.

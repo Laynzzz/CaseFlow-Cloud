@@ -1,0 +1,18 @@
+
+> Task :compileJava
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+
+> Task :processResources
+> Task :classes
+> Task :compileTestJava
+> Task :processTestResources NO-SOURCE
+> Task :testClasses
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+> Task :test
+
+[Incubating] Problems report is available at: file:///F:/Me/Project/caseflow-cloud/services/case-api/build/reports/problems/problems-report.html
+
+BUILD SUCCESSFUL in 11s
+4 actionable tasks: 4 executed
+Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.7.1/userguide/configuration_cache_enabling.html

@@ -1,5 +1,17 @@
 # Evidence index
 
+## September 17 UTC: process termination and 10,000 broker redeliveries
+
+[Results and reproducible commands](evidence/2026-09-17-r3/summary.md) record
+five Python process crashes, two JVM crashes, and a separate broker run with
+5,000 request duplicates, 5,000 completion duplicates and one late failure.
+Both consumer groups caught up; the selected artifact, success audit and worker
+execution count remained one. Full suites passed 95 Python and 22 Java tests.
+One process test verifies actual uploaded and recovered DOCX bytes; the broker
+run compares stored artifact identity/checksum metadata. Negative controls and
+raw outputs are retained. This does not establish the complete crash matrix,
+sustained throughput, production orphan collection or cloud recovery.
+
 ## R3 first recovery batch: local database contracts
 
 [Recovery evidence](evidence/2026-09-16-r3/recovery-contracts.md) adds six Python

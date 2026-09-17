@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.caseflow.documents.CompletionProcessRecoveryTest" tests="2" skipped="0" failures="2" errors="0" timestamp="2026-09-17T03:52:46.065Z" hostname="local-test-host" time="2.966">
+  <properties/>
+  <testcase name="killedJvmAfterCommitPreservesSuccessAcrossDuplicateAndLateFailure()" classname="dev.caseflow.documents.CompletionProcessRecoveryTest" time="1.701">
+    <failure message="org.opentest4j.AssertionFailedError: Normal exit is not crash evidence ==&gt; expected: not equal but was: &lt;0&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Normal exit is not crash evidence ==&gt; expected: not equal but was: &lt;0&gt;
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:159)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertNotEquals.failEqual(AssertNotEquals.java:282)
+	at org.junit.jupiter.api.AssertNotEquals.assertNotEquals(AssertNotEquals.java:96)
+	at org.junit.jupiter.api.Assertions.assertNotEquals(Assertions.java:2095)
+	at dev.caseflow.documents.CompletionProcessRecoveryTest.forceKillOwnedChild(CompletionProcessRecoveryTest.java:201)
+	at dev.caseflow.documents.CompletionProcessRecoveryTest.killedJvmAfterCommitPreservesSuccessAcrossDuplicateAndLateFailure(CompletionProcessRecoveryTest.java:139)
+</failure>
+  </testcase>
+  <testcase name="killedJvmBeforeCommitRollsBackThenReplayHasOneBusinessEffect()" classname="dev.caseflow.documents.CompletionProcessRecoveryTest" time="1.247">
+    <failure message="org.opentest4j.AssertionFailedError: Normal exit is not crash evidence ==&gt; expected: not equal but was: &lt;0&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Normal exit is not crash evidence ==&gt; expected: not equal but was: &lt;0&gt;
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:159)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertNotEquals.failEqual(AssertNotEquals.java:282)
+	at org.junit.jupiter.api.AssertNotEquals.assertNotEquals(AssertNotEquals.java:96)
+	at org.junit.jupiter.api.Assertions.assertNotEquals(Assertions.java:2095)
+	at dev.caseflow.documents.CompletionProcessRecoveryTest.forceKillOwnedChild(CompletionProcessRecoveryTest.java:201)
+	at dev.caseflow.documents.CompletionProcessRecoveryTest.killedJvmBeforeCommitRollsBackThenReplayHasOneBusinessEffect(CompletionProcessRecoveryTest.java:123)
+</failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

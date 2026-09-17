@@ -1,0 +1,88 @@
+FF                                                                       [100%]
+================================== FAILURES ===================================
+_ test_scheduling_survives_process_termination[schedule-before-commit-False] __
+
+event = Envelope(eventId=UUID('20942caf-ac8c-4af6-99b4-29cafd3aa9a1'), eventType='document.requested', schemaVersion=1, timest...tionId='synthetic-test', inputHash='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', traceContext={})
+boundary = 'schedule-before-commit', committed = False
+record_testsuite_property = <function record_testsuite_property.<locals>.record_func at 0x0000026947825260>
+
+    @pytest.mark.parametrize("boundary,committed", [("schedule-before-commit", False), ("schedule-after-commit", True)])
+    def test_scheduling_survives_process_termination(event, boundary, committed, record_testsuite_property):
+>       evidence = terminate_at_boundary(boundary, event.model_dump_json())
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+services\worker\tests\test_process_recovery.py:46:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+boundary = 'schedule-before-commit'
+event_json = '{"eventId":"20942caf-ac8c-4af6-99b4-29cafd3aa9a1","eventType":"document.requested","schemaVersion":1,"timestamp":"202...Id":"synthetic-test","inputHash":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","traceContext":{}}'
+
+    def terminate_at_boundary(boundary, event_json):
+        guard_database()
+        if boundary not in BOUNDARIES:
+            raise ValueError("unknown crash boundary")
+        context = multiprocessing.get_context("spawn")
+        parent, child = context.Pipe()
+        process = context.Process(target=child_probe, args=(child, boundary, event_json), name="caseflow-crash-probe")
+        try:
+            process.start()
+            child.close()
+            if not parent.poll(20):
+                raise AssertionError("child did not reach the crash boundary within 20 seconds")
+            evidence = parent.recv()
+            assert "error_type" not in evidence, evidence.get("error_type")
+            assert evidence["boundary"] == boundary and evidence["pid"] == process.pid
+            assert process.is_alive(), "child exited before forced termination"
+            parent.send("continue normally")
+            process.join(10)
+            assert not process.is_alive(), "child survived forced termination"
+>           assert process.exitcode not in (None, 0), "normal exit is not crash evidence"
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           AssertionError: normal exit is not crash evidence
+
+services\worker\tests\process_probe.py:100: AssertionError
+__ test_scheduling_survives_process_termination[schedule-after-commit-True] ___
+
+event = Envelope(eventId=UUID('99a176e0-fb23-480f-b0d1-d6fb66a88a79'), eventType='document.requested', schemaVersion=1, timest...tionId='synthetic-test', inputHash='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', traceContext={})
+boundary = 'schedule-after-commit', committed = True
+record_testsuite_property = <function record_testsuite_property.<locals>.record_func at 0x0000026947825260>
+
+    @pytest.mark.parametrize("boundary,committed", [("schedule-before-commit", False), ("schedule-after-commit", True)])
+    def test_scheduling_survives_process_termination(event, boundary, committed, record_testsuite_property):
+>       evidence = terminate_at_boundary(boundary, event.model_dump_json())
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+services\worker\tests\test_process_recovery.py:46:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+boundary = 'schedule-after-commit'
+event_json = '{"eventId":"99a176e0-fb23-480f-b0d1-d6fb66a88a79","eventType":"document.requested","schemaVersion":1,"timestamp":"202...Id":"synthetic-test","inputHash":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","traceContext":{}}'
+
+    def terminate_at_boundary(boundary, event_json):
+        guard_database()
+        if boundary not in BOUNDARIES:
+            raise ValueError("unknown crash boundary")
+        context = multiprocessing.get_context("spawn")
+        parent, child = context.Pipe()
+        process = context.Process(target=child_probe, args=(child, boundary, event_json), name="caseflow-crash-probe")
+        try:
+            process.start()
+            child.close()
+            if not parent.poll(20):
+                raise AssertionError("child did not reach the crash boundary within 20 seconds")
+            evidence = parent.recv()
+            assert "error_type" not in evidence, evidence.get("error_type")
+            assert evidence["boundary"] == boundary and evidence["pid"] == process.pid
+            assert process.is_alive(), "child exited before forced termination"
+            parent.send("continue normally")
+            process.join(10)
+            assert not process.is_alive(), "child survived forced termination"
+>           assert process.exitcode not in (None, 0), "normal exit is not crash evidence"
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           AssertionError: normal exit is not crash evidence
+
+services\worker\tests\process_probe.py:100: AssertionError
+=========================== short test summary info ===========================
+FAILED services/worker/tests/test_process_recovery.py::test_scheduling_survives_process_termination[schedule-before-commit-False]
+FAILED services/worker/tests/test_process_recovery.py::test_scheduling_survives_process_termination[schedule-after-commit-True]
+2 failed, 7 deselected in 2.66s
