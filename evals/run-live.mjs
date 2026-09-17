@@ -7,21 +7,19 @@ import {createHash} from 'node:crypto';
 import {client,signIn} from '../tests/e2e/oidc-session.mjs';
 import {uploadIndexedSource,waitAssistantJob} from '../tests/e2e/ai-workflow.mjs';
 import {loadFrozenDataset,requireAnnotationReview} from './dataset.mjs';
+import {selectCases} from './case-selection.mjs';
 
-const {values}=parseArgs({options:{live:{type:'boolean'},'validate-only':{type:'boolean'},'compare-retrieval':{type:'boolean'},split:{type:'string',default:'development'},limit:{type:'string'},output:{type:'string'},'annotation-review':{type:'string'},'dataset-version':{type:'string',default:'synthetic-v1'},'evaluation-profile':{type:'string',default:'human-reviewed'}}});
+const {values}=parseArgs({options:{live:{type:'boolean'},'validate-only':{type:'boolean'},'compare-retrieval':{type:'boolean'},split:{type:'string',default:'development'},limit:{type:'string'},ids:{type:'string'},output:{type:'string'},'annotation-review':{type:'string'},'dataset-version':{type:'string',default:'synthetic-v1'},'evaluation-profile':{type:'string',default:'human-reviewed'}}});
 const root=fileURLToPath(new URL('.',import.meta.url));
 const {manifest,splits}=loadFrozenDataset(root,values['dataset-version']);
 const profile=values['evaluation-profile'];
 if(!['human-reviewed','ai-reviewed-learning'].includes(profile)) throw new Error('Unknown evaluation profile');
 const reviewBytes=values['annotation-review'] ? readFileSync(values['annotation-review']) : null;
 const annotationReview=reviewBytes ? JSON.parse(reviewBytes.toString('utf8')) : null;
-if(!['development','heldout'].includes(values.split)) throw new Error('Split must be development or heldout');
+const cases=selectCases(splits,{split:values.split,limit:values.limit,ids:values.ids});
 if(values.split==='heldout' || annotationReview) requireAnnotationReview(manifest,annotationReview,profile,splits);
-const limit=values.limit===undefined ? splits[values.split].length : Number(values.limit);
-if(!Number.isInteger(limit)||limit<1||limit>splits[values.split].length) throw new Error('Limit must be a positive count within this split');
-const cases=splits[values.split].slice(0,limit);
 if(values['validate-only']) {
-  console.log(JSON.stringify({datasetVersion:manifest.version,split:values.split,selected:cases.length,providerCalls:0,qualityMeasured:false}));
+  console.log(JSON.stringify({datasetVersion:manifest.version,split:values.split,selected:cases.length,selectedIds:cases.map(c=>c.id),providerCalls:0,qualityMeasured:false}));
   process.exit(0);
 }
 if(!values.live||!values.output) throw new Error('Requires --live, --output NEW_DIRECTORY and an approved shared AI budget');
@@ -34,7 +32,7 @@ const metadata={startedAt:new Date().toISOString(),datasetVersion:manifest.versi
     sha256:createHash('sha256').update(reviewBytes).digest('hex')}:null,
   compareRetrieval:Boolean(values['compare-retrieval']),
   datasetSha256:manifest.files[values.split+'.jsonl'].sha256,selectedIds:cases.map(c=>c.id),
-  transport:'real-oidc-api-kafka-worker',selection:'first N in frozen file order',releaseGatePassed:false,
+  transport:'real-oidc-api-kafka-worker',selection:values.ids===undefined?'first N in frozen file order':'explicit IDs in requested order',releaseGatePassed:false,
   note:'Synthetic diagnostic run. Reference and claim review required; failed calls need ledger reconciliation.'};
 writeFileSync(join(directory,'run.json'),JSON.stringify(metadata,null,2)+'\n',{flag:'wx'});
 if(reviewBytes) writeFileSync(join(directory,'annotation-review.json'),reviewBytes,{flag:'wx'});
