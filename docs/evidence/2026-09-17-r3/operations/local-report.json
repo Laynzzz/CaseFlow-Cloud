@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "status": "ATTENTION",
+  "observedAt": "2026-09-17T13:09:35.021156+00:00",
+  "thresholdSeconds": 300,
+  "limit": 100,
+  "truncated": false,
+  "findings": [
+    {
+      "kind": "APPROVED_MISSING_REQUEST",
+      "tenantId": "69461d55-4af7-46b4-aac9-946d0807eac9",
+      "caseId": "926f812c-68a5-40a8-a39c-0d5b5059d1ad",
+      "jobId": "adfb6dd5-f97d-45b5-8020-83a7030e86ce",
+      "eventId": null,
+      "ageSeconds": 216018
+    },
+    {
+      "kind": "APPROVED_MISSING_REQUEST",
+      "tenantId": "69461d55-4af7-46b4-aac9-946d0807eac9",
+      "caseId": "dd9ea9f0-9a3c-4eb9-82b7-eec798ae6de1",
+      "jobId": "b1577ae6-2eda-428f-833b-14a9a1a161e9",
+      "eventId": null,
+      "ageSeconds": 215393
+    }
+  ]
+}

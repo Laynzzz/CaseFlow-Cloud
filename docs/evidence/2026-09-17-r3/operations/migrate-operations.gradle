@@ -1,0 +1,22 @@
+// One-off local additive migration using the API's locked Flyway dependency.
+allprojects {
+    afterEvaluate {
+        tasks.register('migrateLocalOperations') {
+            dependsOn tasks.named('classes')
+            doLast {
+                def urls = sourceSets.main.runtimeClasspath.files.collect { it.toURI().toURL() }
+                def loader = new URLClassLoader(urls as URL[], ClassLoader.getPlatformClassLoader())
+                try {
+                    def flywayClass = loader.loadClass('org.flywaydb.core.Flyway')
+                    def config = flywayClass.getMethod('configure', ClassLoader).invoke(null, loader)
+                    config.dataSource('jdbc:postgresql://127.0.0.1:54320/caseflow', 'caseflow_migrator', System.getenv('DB_MIGRATOR_PASSWORD'))
+                    config.defaultSchema('public')
+                    config.cleanDisabled(true)
+                    config.locations(['classpath:db/migration'] as String[])
+                    def result = config.load().migrate()
+                    println('Local Flyway migrations executed: ' + result.migrationsExecuted)
+                } finally { loader.close() }
+            }
+        }
+    }
+}

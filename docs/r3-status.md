@@ -13,12 +13,12 @@ work. Performance and cloud claims need reproducible measurements.
 
 | Workstream | Current evidence | Required next evidence |
 | --- | --- | --- |
-| Recovery transactions | [13 actual business-boundary process-crash scenarios](recovery-matrix.md), including real Kafka publish/offset gaps, upload/result selection and Java completion; earlier deterministic checks retained | Dependency restarts, dead-letter crash windows, full-service recovery and operational reconciliation |
+| Recovery transactions | [13 actual business-boundary process-crash scenarios](recovery-matrix.md), including real Kafka publish/offset gaps, upload/result selection and Java completion; earlier deterministic checks retained | Dead-letter crash windows, full-service recovery and broader reconciliation/repair |
 | Broker redelivery | [10,000 injected duplicates plus one late failure](evidence/2026-09-17-r3/summary.md); both consumers caught up, one artifact and success audit, no added execution | This bounded duplicate gate passes; distinct active jobs and sustained arrivals remain separate load work |
 | Dependency recovery | [Actual isolated broker/database restarts and two storage timeout cases](evidence/2026-09-17-r3/dependencies/summary.md); same worker recovers durable state | Java connection-pool/full-deployment recovery, longer outages and sustained workloads |
 | Query optimization | Tenant/permission predicates and cursor implementation | Skewed synthetic tenants, baseline query plans, one controlled change, identical-workload rerun and trade-offs |
 | Sustained load | Functional journey and AI latency records | Workload/environment declaration, sustained mixed arrivals, errors/dropped work, backlog and saturation |
-| Operations | Structured worker logs and health endpoints | Correlated exported traces, bounded-cardinality metrics, reconciliation, alerts and runbooks with diagnosed failure |
+| Operations | Structured logs/health, [read-only reconciliation and guarded document cleanup](operations-runbook.md), [diagnosed legacy missing jobs](evidence/2026-09-17-r3/operations/summary.md) | Correlated exported traces, bounded-cardinality metrics, alerts, broader reconciliation and repair policies |
 | Cloud release | Planned AWS architecture; no deployed evidence | Account/region/identity/cost prerequisites, Terraform, actual deploy/smoke/rollback/teardown |
 | Portfolio | Local browser flow, synthetic AI evaluation and architecture/learning notes | Clean-checkout demo, final claim-to-evidence table and release limitations |
 
@@ -41,7 +41,8 @@ Python child-process and two JVM terminations around real production transaction
 code. One Python case uploads actual DOCX bytes before termination, waits for
 real lease expiry, and verifies a higher-fenced replacement plus the unchanged
 orphan. These are test children invoking production components, not termination
-of the full running services. Garbage collection remains unimplemented.
+of the full running services. That batch did not implement garbage collection;
+the fifth batch below adds a limited manual cleanup policy.
 
 A separate run delivered 5,000 request and 5,000 completion duplicates for one
 already successful synthetic job, plus one late failure. All broker coordinates
@@ -76,10 +77,29 @@ valid document and leaves the unconfirmed upload unselected. Full worker tests:
 restart scenarios and nine harness guards. Failed setup and negative controls
 remain published, including the earlier anonymous-volume cleanup limitation.
 
-These results do not implement reconciliation, production orphan collection,
-monitoring, query optimization, sustained load or cloud release. Those remain
-the next major workstreams; the detailed matrix still identifies narrower
-dead-letter and Java/full-service recovery gaps.
+That dependency batch did not implement operations or performance features.
+The detailed matrix still identifies narrower dead-letter and Java/full-service
+recovery gaps.
+
+## Fifth batch: detecting delayed work and cleaning abandoned files
+
+The [operations evidence](evidence/2026-09-17-r3/operations/summary.md) records six
+read-only finding types and a manual, job-scoped cleanup tool. Cleanup requires
+a consistent successful document result, a 24-hour minimum grace, strict keys,
+state/reference locks and a durable deletion journal. Selected and referenced
+files remain protected. Two actual cleanup-process exits preserve uncertain
+outcomes; these supplement the thirteen prior business-process boundaries.
+
+The full regression suites passed 152 Python and 29 Java tests with no failures
+or skips. V11/V12 applied through Flyway to the local database. A real read-only
+report found two approved cases from before document jobs were implemented;
+their original outbox records exist, but their durable generation requests do
+not. They remain recorded findings rather than silently repaired history.
+
+The [runbook](operations-runbook.md) explains report codes, investigation and
+explicit cleanup. No demo file was deleted. Controlled-clock cleanup tests do
+not prove a 24-hour soak or AWS behavior. Monitoring, broader reconciliation,
+query optimization, sustained load, cloud release and portfolio evidence remain.
 
 ## Limits carried from R2
 

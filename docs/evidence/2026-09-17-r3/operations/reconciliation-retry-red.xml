@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="0.279" timestamp="2026-09-17T09:06:10.121717-04:00" hostname="local-test-host"><testcase classname="services.worker.tests.test_reconciliation" name="test_missing_retry_attempt_is_detected_after_current_attempt_grace" time="0.171"><failure message="AssertionError: assert set() == {'APPROVED_MI...G_WORKER_JOB'}&#10;  &#10;  Extra items in the right set:&#10;  'APPROVED_MISSING_WORKER_JOB'&#10;  Use -v to get more diff">event = Envelope(eventId=UUID('80438bed-9641-4cf1-ac6e-c9ec04812c81'), eventType='document.requested', schemaVersion=1, timest...tionId='synthetic-test', inputHash='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', traceContext={})
+isolated_database = {'host': '127.0.0.1', 'port': 54320, 'dbname': 'caseflow_test_2d2feaa227854129bec3864e0ffa6c38', 'user': 'caseflow_migrator', ...}
+
+    def test_missing_retry_attempt_is_detected_after_current_attempt_grace(event, isolated_database):
+        jobs.schedule(event)
+        with psycopg.connect(**isolated_database) as db:
+            db.execute("UPDATE worker.jobs SET status='FAILED'")
+            db.execute("""UPDATE core.cases SET state='APPROVED',generation_id=%s,
+                approved_at=now()-interval '1 day',updated_at=now()-interval '1 day'""", (event.jobId,))
+            db.execute("""UPDATE core.job_requests SET attempt=2,created_at=now()-interval '1 day',updated_at=now()""")
+        # Original request age must not make a fresh retry immediately overdue.
+        assert reconcile()['findings'] == []
+        with psycopg.connect(**isolated_database) as db:
+            db.execute("UPDATE core.job_requests SET updated_at=now()-interval '10 minutes'")
+&gt;       assert kinds(reconcile()) == {'APPROVED_MISSING_WORKER_JOB'}
+E       AssertionError: assert set() == {'APPROVED_MI...G_WORKER_JOB'}
+E
+E         Extra items in the right set:
+E         'APPROVED_MISSING_WORKER_JOB'
+E         Use -v to get more diff
+
+services\worker\tests\test_reconciliation.py:123: AssertionError</failure></testcase></testsuite></testsuites>

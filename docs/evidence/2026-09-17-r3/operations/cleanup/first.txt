@@ -1,0 +1,56 @@
+..........F..............                                                [100%]
+================================== FAILURES ===================================
+________ test_inconsistent_or_nonterminal_jobs_protected[missing_job] _________
+
+cleanup = <module 'caseflow_worker.cleanup' from 'F:\\Me\\Project\\caseflow-cloud\\services\\worker\\caseflow_worker\\cleanup.py'>
+succeeded = (Envelope(eventId=UUID('0628398d-f303-4f1f-9b36-24c0817a7453'), eventType='document.requested', schemaVersion=1, times...661196db29/documents/0dab34cc-a0cc-4649-9874-eeb264241892/attempt-1/fence-1/6a45f222-abb3-41f8-9a70-2727640e8681.docx')
+isolated_database = {'host': '127.0.0.1', 'port': 54320, 'dbname': 'caseflow_test_747621e7988448c8af850887a38000cb', 'user': 'caseflow_migrator', ...}
+mutation = 'missing_job'
+tmp_path = WindowsPath('C:/Users/tiany/AppData/Local/Temp/pytest-of-tiany/pytest-47/test_inconsistent_or_nontermin7')
+
+    @pytest.mark.parametrize('mutation', ['FAILED', 'QUEUED', 'RUNNING', 'RETRY_WAIT', 'wrong_kind', 'wrong_fence', 'missing_artifact', 'missing_job', 'bad_selected_key'])
+    def test_inconsistent_or_nonterminal_jobs_protected(cleanup, succeeded, isolated_database, mutation, tmp_path):
+        event, client, _, orphan = succeeded
+        report = scan(cleanup, succeeded)
+        with psycopg.connect(**isolated_database) as db:
+            if mutation == 'missing_job':
+                db.execute('DELETE FROM worker.artifacts')
+>               db.execute('DELETE FROM worker.jobs')
+
+services\worker\tests\test_document_cleanup.py:88:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <psycopg.Connection [BAD] at 0x17fd459d970>
+query = 'DELETE FROM worker.jobs', params = None, prepare = None, binary = False
+
+    def execute(
+        self,
+        query: Query,
+        params: Params | None = None,
+        *,
+        prepare: bool | None = None,
+        binary: bool = False,
+    ) -> Cursor[Row]:
+        """Execute a query and return a cursor to read its results."""
+        try:
+            cur = self.cursor()
+            if binary:
+                cur.format = BINARY
+
+            if isinstance(query, Template):
+                if params is not None:
+                    raise TypeError(
+                        "'execute()' with string template query doesn't support parameters"
+                    )
+                return cur.execute(query, prepare=prepare)
+            else:
+                return cur.execute(query, params, prepare=prepare)
+        except e._NO_TRACEBACK as ex:
+>           raise ex.with_traceback(None)
+E           psycopg.errors.ForeignKeyViolation: update or delete on table "jobs" violates foreign key constraint "outbox_tenant_id_job_id_fkey" on table "outbox"
+E           DETAIL:  Key (tenant_id, job_id)=(0718fe52-8b1b-4e3e-81ec-2e661196db29, 0dab34cc-a0cc-4649-9874-eeb264241892) is still referenced from table "outbox".
+
+services\worker\.venv\Lib\site-packages\psycopg\connection.py:300: ForeignKeyViolation
+=========================== short test summary info ===========================
+FAILED services/worker/tests/test_document_cleanup.py::test_inconsistent_or_nonterminal_jobs_protected[missing_job]
+1 failed, 24 passed in 5.80s

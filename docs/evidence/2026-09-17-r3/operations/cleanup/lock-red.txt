@@ -1,0 +1,132 @@
+FF                                                                       [100%]
+================================== FAILURES ===================================
+____ test_apply_blocks_selection_races_but_keeps_other_heartbeats_working _____
+
+cleanup = <module 'caseflow_worker.cleanup' from 'F:\\Me\\Project\\caseflow-cloud\\services\\worker\\caseflow_worker\\cleanup.py'>
+succeeded = (Envelope(eventId=UUID('1247db2d-a700-4284-9130-8808b2c5ee16'), eventType='document.requested', schemaVersion=1, times...8d3e3fe2d1/documents/bf955431-7bd9-4550-bcea-c099bbdc7178/attempt-1/fence-1/f4231017-b91a-458b-bf2d-38113d5c59a1.docx')
+event = Envelope(eventId=UUID('02bd9def-bdb1-409a-a91a-86226bdb44a3'), eventType='document.requested', schemaVersion=1, timest...tionId='synthetic-test', inputHash='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', traceContext={})
+tmp_path = WindowsPath('C:/Users/tiany/AppData/Local/Temp/pytest-of-tiany/pytest-48/test_apply_blocks_selection_ra0')
+
+    def test_apply_blocks_selection_races_but_keeps_other_heartbeats_working(cleanup, succeeded, event, tmp_path):
+        _, client, _, orphan = succeeded
+        jobs.schedule(event)
+        other_job = jobs.claim(uuid4())
+        report = scan(cleanup, succeeded)
+        class RaceProbe:
+            def __getattr__(self, name):
+                return getattr(client, name)
+            def head_object(self, **kwargs):
+                assert jobs.heartbeat(other_job), 'cleanup must not block another job heartbeat'
+                with database() as db:
+                    db.execute("SET LOCAL lock_timeout='100ms'")
+                    with pytest.raises(psycopg.errors.LockNotAvailable):
+                        db.execute('''INSERT INTO worker.artifacts(tenant_id,job_id,attempt,fence,object_key,sha256,byte_size)
+                            VALUES (%s,%s,1,1,%s,%s,1)''', (event.tenantId, event.jobId, orphan, 'b'*64))
+                    db.rollback()
+                with database() as db:
+                    db.execute("SET LOCAL lock_timeout='100ms'")
+                    with pytest.raises(psycopg.errors.LockNotAvailable):
+                        db.execute("UPDATE worker.jobs SET status='FAILED' WHERE tenant_id=%s AND job_id=%s",
+                                   (report['tenant'], report['job']))
+                    db.rollback()
+                return client.head_object(**kwargs)
+        with cleanup.DeletionJournal(tmp_path / 'locks.jsonl', report) as journal:
+>           result = cleanup.apply(report, journal, client=RaceProbe(), now=aged_clock())
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+services\worker\tests\test_document_cleanup.py:231:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+services\worker\caseflow_worker\cleanup.py:180: in apply
+    head = client.head_object(Bucket=BUCKET, Key=key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+services\worker\tests\test_document_cleanup.py:216: in head_object
+    assert jobs.heartbeat(other_job), 'cleanup must not block another job heartbeat'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+services\worker\caseflow_worker\jobs.py:97: in heartbeat
+    return db.execute("""UPDATE worker.jobs SET lease_until=now()+%s*interval '1 second'
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <psycopg.Connection [BAD] at 0x27d68df7e00>
+query = "UPDATE worker.jobs SET lease_until=now()+%s*interval '1 second'\n            WHERE tenant_id=%s AND job_id=%s AND fence=%s AND attempt=%s AND lease_owner=%s\n            AND status='RUNNING' AND lease_until>now()"
+params = (30, UUID('3b4c2060-1752-4fc2-90b8-718d3e3fe2d1'), UUID('48685ea0-a046-47b6-9953-fbe8b3a964ee'), 1, 1, UUID('170b9352-153b-4f1b-bdd2-6380c61e4ebb'))
+prepare = None, binary = False
+
+    def execute(
+        self,
+        query: Query,
+        params: Params | None = None,
+        *,
+        prepare: bool | None = None,
+        binary: bool = False,
+    ) -> Cursor[Row]:
+        """Execute a query and return a cursor to read its results."""
+        try:
+            cur = self.cursor()
+            if binary:
+                cur.format = BINARY
+
+            if isinstance(query, Template):
+                if params is not None:
+                    raise TypeError(
+                        "'execute()' with string template query doesn't support parameters"
+                    )
+                return cur.execute(query, prepare=prepare)
+            else:
+                return cur.execute(query, params, prepare=prepare)
+        except e._NO_TRACEBACK as ex:
+>           raise ex.with_traceback(None)
+E           psycopg.errors.LockNotAvailable: canceling statement due to lock timeout
+E           LINE 1: UPDATE worker.jobs SET lease_until=now()+$1*interval '1 seco...
+E                          ^
+
+services\worker\.venv\Lib\site-packages\psycopg\connection.py:300: LockNotAvailable
+______________ test_cleanup_lock_function_has_narrow_privileges _______________
+
+cleanup = <module 'caseflow_worker.cleanup' from 'F:\\Me\\Project\\caseflow-cloud\\services\\worker\\caseflow_worker\\cleanup.py'>
+event = Envelope(eventId=UUID('1ecb1627-1db5-4462-afcb-8856dd745f74'), eventType='document.requested', schemaVersion=1, timest...tionId='synthetic-test', inputHash='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', traceContext={})
+
+    def test_cleanup_lock_function_has_narrow_privileges(cleanup, event):
+        with database() as db:
+            assert not db.execute("SELECT has_table_privilege(current_user,'worker.artifacts','UPDATE') AS allowed").fetchone()['allowed']
+            assert not db.execute("SELECT has_table_privilege(current_user,'core.cases','SELECT') AS allowed").fetchone()['allowed']
+>           assert not db.execute("SELECT has_function_privilege('caseflow_api','worker.lock_artifacts_for_cleanup()','EXECUTE') AS allowed").fetchone()['allowed']
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+services\worker\tests\test_document_cleanup.py:239:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <psycopg.Connection [BAD] at 0x27d68d4fa10>
+query = "SELECT has_function_privilege('caseflow_api','worker.lock_artifacts_for_cleanup()','EXECUTE') AS allowed"
+params = None, prepare = None, binary = False
+
+    def execute(
+        self,
+        query: Query,
+        params: Params | None = None,
+        *,
+        prepare: bool | None = None,
+        binary: bool = False,
+    ) -> Cursor[Row]:
+        """Execute a query and return a cursor to read its results."""
+        try:
+            cur = self.cursor()
+            if binary:
+                cur.format = BINARY
+
+            if isinstance(query, Template):
+                if params is not None:
+                    raise TypeError(
+                        "'execute()' with string template query doesn't support parameters"
+                    )
+                return cur.execute(query, prepare=prepare)
+            else:
+                return cur.execute(query, params, prepare=prepare)
+        except e._NO_TRACEBACK as ex:
+>           raise ex.with_traceback(None)
+E           psycopg.errors.UndefinedFunction: function "worker.lock_artifacts_for_cleanup()" does not exist
+
+services\worker\.venv\Lib\site-packages\psycopg\connection.py:300: UndefinedFunction
+=========================== short test summary info ===========================
+FAILED services/worker/tests/test_document_cleanup.py::test_apply_blocks_selection_races_but_keeps_other_heartbeats_working
+FAILED services/worker/tests/test_document_cleanup.py::test_cleanup_lock_function_has_narrow_privileges
+2 failed, 25 deselected in 3.88s

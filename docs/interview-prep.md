@@ -578,3 +578,43 @@ Follow-up: test cleanup needs the same care as production operations; image
 declared anonymous volumes and failure-path worker shutdown can otherwise leak.
 
 Evidence and limitations: [dependency batch](evidence/2026-09-17-r3/dependencies/summary.md).
+
+## R3 operational reporting and cleanup checkpoint
+
+**How would you diagnose an approved purchase whose document never appears?**
+Use the read-only operational report to distinguish expired ownership, overdue
+work, pending publication and a missing current generation attempt. It emits
+IDs and timestamps rather than purchase or policy contents. Check worker and
+dependency health before retrying through the application's audited action.
+Follow-up: reports are bounded snapshots, not automatic repair or universal
+health checks. Our first local run identified two preserved legacy approvals
+from before durable document jobs existed; no synthetic job history was invented.
+
+**Why check the attempt number as well as the job ID?** A retry keeps the
+logical job ID but advances its attempt. An old failed worker row can exist
+while the new attempt never arrives. The report compares the current attempt
+and ages it from the retry's update time. Independent review found this gap;
+a regression failed before the fix and passes afterward.
+Follow-up: distinguish a new business retry attempt from a higher fencing token
+when a worker reclaims the same attempt after lease expiry.
+
+**How do you avoid deleting a file another transaction selects?** Cleanup is
+explicitly job scoped, requires a consistent successful document, protects all
+artifact references and rechecks state under locks through deletion. A narrow
+SQL function takes an artifact SHARE lock without granting artifact writes.
+Concurrent reference creation is blocked; unrelated heartbeat updates proceed.
+Follow-up: artifact selection across jobs pauses briefly, so this manual tool
+trades throughput for a simpler safety argument. It is not a bucket-wide collector.
+
+**Can you roll back a file delete if the database transaction fails?** No.
+Storage and PostgreSQL do not share a commit. We flush a deletion intent into
+an exclusive journal first and record acknowledged or unknown outcomes afterward.
+Actual child-process exits before/after deletion leave pending intent and preserve
+the selected document. Operators inspect uncertain outcomes rather than assuming
+rollback restored bytes.
+Follow-up: conditional ETags rely on immutable key usage; cloud/versioned-bucket
+behavior and a real 24-hour retention soak remain unverified.
+
+Evidence: [15 reporting tests, 33 cleanup tests and full regressions](evidence/2026-09-17-r3/operations/summary.md).
+Current full regression result: 152 Python and 29 Java tests; these totals
+include earlier tests and must not be described as 181 failure scenarios.

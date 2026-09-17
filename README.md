@@ -159,6 +159,10 @@ Stop host services with Ctrl+C, then docker compose stop. This preserves volumes
 Never overwrite a JAR while a process is running from it; stop that API instance
 before replacing its artifact.
 
+For read-only delayed-work reports and explicit job-scoped abandoned document
+cleanup, see the [operator runbook](docs/operations-runbook.md). Cleanup defaults
+to preview and requires a new durable report for apply; it is not scheduled.
+
 ## Project map and later learning
 
 | Directory | Technology | Purpose |

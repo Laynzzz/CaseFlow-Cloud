@@ -1,0 +1,16 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_________________________ test_cleanup_module_exists __________________________
+
+    def test_cleanup_module_exists():
+>       assert importlib.util.find_spec('caseflow_worker.cleanup'), 'cleanup safety implementation is missing'
+E       AssertionError: cleanup safety implementation is missing
+E       assert None
+E        +  where None = <function find_spec at 0x000002144DEB3920>('caseflow_worker.cleanup')
+E        +    where <function find_spec at 0x000002144DEB3920> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+services\worker\tests\test_document_cleanup.py:21: AssertionError
+=========================== short test summary info ===========================
+FAILED services/worker/tests/test_document_cleanup.py::test_cleanup_module_exists
+1 failed, 24 deselected in 0.32s

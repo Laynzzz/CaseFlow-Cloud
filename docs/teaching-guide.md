@@ -896,5 +896,69 @@ preserves failed runs and the verified scope.
 
 These tests cover selected worker loops on a single local broker/database.
 They do not establish Java connection-pool recovery, cloud failover, sustained
-capacity, or a universal time-to-recovery guarantee. Reconciliation, orphan
-cleanup and full operational monitoring remain separate work.
+capacity, or a universal time-to-recovery guarantee. The next section records
+the separate reconciliation/cleanup work; full monitoring remains open.
+
+## R3: detecting problems before repairing them
+
+For an approved equipment purchase, a healthy web page does not prove its
+document will arrive. The worker may be unavailable, an event may be waiting
+to publish, or the approved case may lack its generation request. A read-only
+report makes these conditions visible without changing business history.
+
+`db/migrations/V11__worker_operation_signals.sql` is SQL run by Flyway in
+PostgreSQL. It exposes a narrow view containing operational IDs and timestamps.
+`services/worker/caseflow_worker/reconciliation.py` is Python using Psycopg on
+the operator host; it combines this view with worker-owned job/outbox metadata
+inside a read-only transaction. `tools/reconcile.py` is its command-line entry
+point. Neither is a new browser endpoint or an automated repair service.
+
+The design distinguishes expired leases, due work, unpublished events and
+missing generation requests/current worker attempts. A failed attempt 1 does
+not prove that retry attempt 2 arrived. Independent review found that initial
+gap; a failing regression drove the attempt-aware check and retry-specific
+grace period. Bounded output and database timeouts keep the report controlled,
+but a clean report only means these checks found nothing under their thresholds.
+It does not prove complete health or detect every completion mismatch.
+
+The first local run found two real legacy demo cases approved before the
+document-job implementation. Read-only investigation found their original
+outbox events but no durable job requests. Earlier source history explains
+that state: approval originally created only an event. We preserved the
+finding instead of constructing missing immutable inputs or altering history.
+Current approval creates its document request inside the business transaction.
+
+## R3: deleting an abandoned file safely
+
+An upload timeout can leave two files: one selected document and one abandoned
+attempt. `services/worker/caseflow_worker/cleanup.py` is Python using Psycopg
+and Boto3 on a trusted operator host. Its CLI previews one explicitly named
+successful document job; apply is a separate flag. The conservative policy
+keeps selected, referenced, fresh, malformed and ambiguous objects. Sources,
+templates, active/failed jobs and AI artifacts are outside this policy.
+
+The hard decision is coordinating PostgreSQL references with an external
+delete. A check followed by an unlocked delete would allow another transaction
+to select the file in between. Apply locks the job row and then artifact
+references. V12 is a SQL migration providing only the required artifact SHARE
+lock through a restricted function; it does not grant artifact mutation rights.
+A wider jobs-table lock was rejected because it stopped unrelated heartbeats.
+The narrower lock still pauses artifact selection across jobs, a documented
+cost of this simple manual maintenance tool. Short, single-attempt storage
+calls limit exposure but cannot promise an absolute wall-clock deadline.
+
+Each delete also checks current object identity/age and uses its ETag as a
+condition. The normal renderer writes unique keys without overwriting them.
+This is not a transaction against arbitrary privileged storage rewrites or
+a purge of all versions in a versioned bucket.
+
+A new local JSONL journal records and flushes intent before deletion, then
+records the observed response. PostgreSQL, object storage and a file cannot
+commit together. If the process exits between these steps, the journal keeps
+an uncertain outcome requiring inspection. Tests actually terminate children
+on both sides of deletion and verify that the selected document survives.
+Grace tests advance a controlled clock; they do not claim a real 24-hour soak.
+
+Evidence: [operations batch](evidence/2026-09-17-r3/operations/summary.md).
+The [runbook](operations-runbook.md) has reproducible commands and response
+guidance. These local capabilities do not complete monitoring or the R3 gate.

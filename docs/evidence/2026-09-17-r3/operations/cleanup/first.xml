@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="25" time="5.674" timestamp="2026-09-17T09:02:54.070836-04:00" hostname="local-test-host"><testcase classname="services.worker.tests.test_document_cleanup" name="test_cleanup_module_exists" time="0.000" /><testcase classname="services.worker.tests.test_document_cleanup" name="test_preview_never_deletes_selected_or_orphan" time="0.384" /><testcase classname="services.worker.tests.test_document_cleanup" name="test_apply_deletes_only_old_orphan_with_durable_journal" time="0.259" /><testcase classname="services.worker.tests.test_document_cleanup" name="test_inconsistent_or_nonterminal_jobs_protected[FAILED]" time="0.285" /><testcase classname="services.worker.tests.test_document_cleanup" name="test_inconsistent_or_nonterminal_jobs_protected[QUEUED]" time="0.284" /><testcase classname="services.worker.tests.test_document_cleanup" name="test_inconsistent_or_nonterminal_jobs_protected[RUNNING]" time="0.342" /><testcase classname="services.worker.tests.test_document_cleanup" name="test_inconsistent_or_nonterminal_jobs_protected[RETRY_WAIT]" time="0.287" /><testcase classname="services.worker.tests.test_document_cleanup" name="test_inconsistent_or_nonterminal_jobs_protected[wrong_kind]" time="0.309" /><testcase classname="services.worker.tests.test_document_cleanup" name="test_inconsistent_or_nonterminal_jobs_protected[wrong_fence]" time="0.291" /><testcase classname="services.worker.tests.test_document_cleanup" name="test_inconsistent_or_nonterminal_jobs_protected[missing_artifact]" time="0.316" /><testcase classname="services.worker.tests.test_document_cleanup" name="test_inconsistent_or_nonterminal_jobs_protected[missing_job]" time="0.281"><failure message="psycopg.errors.ForeignKeyViolation: update or delete on table &quot;jobs&quot; violates foreign key constraint &quot;outbox_tenant_id_job_id_fkey&quot; on table &quot;outbox&quot;&#10;DETAIL:  Key (tenant_id, job_id)=(0718fe52-8b1b-4e3e-81ec-2e661196db29, 0dab34cc-a0cc-4649-9874-eeb264241892) is still referenced from table &quot;outbox&quot;.">cleanup = &lt;module 'caseflow_worker.cleanup' from 'F:\\Me\\Project\\caseflow-cloud\\services\\worker\\caseflow_worker\\cleanup.py'&gt;
+succeeded = (Envelope(eventId=UUID('0628398d-f303-4f1f-9b36-24c0817a7453'), eventType='document.requested', schemaVersion=1, times...661196db29/documents/0dab34cc-a0cc-4649-9874-eeb264241892/attempt-1/fence-1/6a45f222-abb3-41f8-9a70-2727640e8681.docx')
+isolated_database = {'host': '127.0.0.1', 'port': 54320, 'dbname': 'caseflow_test_747621e7988448c8af850887a38000cb', 'user': 'caseflow_migrator', ...}
+mutation = 'missing_job'
+tmp_path = WindowsPath('C:/Users/tiany/AppData/Local/Temp/pytest-of-tiany/pytest-47/test_inconsistent_or_nontermin7')
+
+    @pytest.mark.parametrize('mutation', ['FAILED', 'QUEUED', 'RUNNING', 'RETRY_WAIT', 'wrong_kind', 'wrong_fence', 'missing_artifact', 'missing_job', 'bad_selected_key'])
+    def test_inconsistent_or_nonterminal_jobs_protected(cleanup, succeeded, isolated_database, mutation, tmp_path):
+        event, client, _, orphan = succeeded
+        report = scan(cleanup, succeeded)
+        with psycopg.connect(**isolated_database) as db:
+            if mutation == 'missing_job':
+                db.execute('DELETE FROM worker.artifacts')
+&gt;               db.execute('DELETE FROM worker.jobs')
+
+services\worker\tests\test_document_cleanup.py:88:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;psycopg.Connection [BAD] at 0x17fd459d970&gt;
+query = 'DELETE FROM worker.jobs', params = None, prepare = None, binary = False
+
+    def execute(
+        self,
+        query: Query,
+        params: Params | None = None,
+        *,
+        prepare: bool | None = None,
+        binary: bool = False,
+    ) -&gt; Cursor[Row]:
+        """Execute a query and return a cursor to read its results."""
+        try:
+            cur = self.cursor()
+            if binary:
+                cur.format = BINARY
+
+            if isinstance(query, Template):
+                if params is not None:
+                    raise TypeError(
+                        "'execute()' with string template query doesn't support parameters"
+                    )
+                return cur.execute(query, prepare=prepare)
+            else:
+                return cur.execute(query, params, prepare=prepare)
+        except e._NO_TRACEBACK as ex:
+&gt;           raise ex.with_traceback(None)
+E           psycopg.errors.ForeignKeyViolation: update or delete on table "jobs" violates foreign key constraint "outbox_tenant_id_job_id_fkey" on table "outbox"
+E           DETAIL:  Key (tenant_id, job_id)=(0718fe52-8b1b-4e3e-81ec-2e661196db29, 0dab34cc-a0cc-4649-9874-eeb264241892) is still referenced from table "outbox".
+
+services\worker\.venv\Lib\site-packages\psycopg\connection.py:300: ForeignKeyViolation</failure></testcase><testcase classname="services.worker.tests.test_document_cleanup" name="test_inconsistent_or_nonterminal_jobs_protected[bad_selected_key]" time="0.287" /><testcase classname="services.worker.tests.test_document_cleanup" name="test_fresh_malformed_and_foreign_keys_are_protected" time="0.312" /><testcase classname="services.worker.tests.test_document_cleanup" name="test_listing_is_bounded_and_truncation_explicit" time="0.245" /><testcase classname="services.worker.tests.test_document_cleanup" name="test_invalid_scope_and_limits_refused_before_dependencies[bad-9eff6e67-4068-4e44-bb4a-55f3be0c3f17-24-50]" time="0.001" /><testcase classname="services.worker.tests.test_document_cleanup" name="test_invalid_scope_and_limits_refused_before_dependencies[E54B09D1-8012-4545-AA9B-F4BD140FE7EF-31d05525-ad03-4c3a-804e-4d8be9522f07-24-50]" time="0.000" /><testcase classname="services.worker.tests.test_document_cleanup" name="test_invalid_scope_and_limits_refused_before_dependencies[5eb0d68b-59ae-4ac4-a671-4003edd31fab-../other-24-50]" time="0.000" /><testcase classname="services.worker.tests.test_document_cleanup" name="test_invalid_scope_and_limits_refused_before_dependencies[1a507a38-fc83-4632-a402-826b0ed55ab3-ba3d6ec8-5e75-40e9-bf66-0af36806d3a8-23.99-50]" time="0.000" /><testcase classname="services.worker.tests.test_document_cleanup" name="test_invalid_scope_and_limits_refused_before_dependencies[cef0ae64-ad54-4177-b414-ee317ff98afd-6fa9418b-48bb-4a0a-8fc2-689d1f40f109-nan-50]" time="0.000" /><testcase classname="services.worker.tests.test_document_cleanup" name="test_invalid_scope_and_limits_refused_before_dependencies[8aca2d3f-5a06-470f-af03-cc7d64f01136-318d197f-7d82-4d65-af98-56ff6a840875-24-0]" time="0.000" /><testcase classname="services.worker.tests.test_document_cleanup" name="test_additional_artifact_reference_protects_key" time="0.388" /><testcase classname="services.worker.tests.test_document_cleanup" name="test_existing_report_refused_without_touching_objects" time="0.333" /><testcase classname="services.worker.tests.test_document_cleanup" name="test_intent_flush_failure_prevents_delete" time="0.264" /><testcase classname="services.worker.tests.test_document_cleanup" name="test_delete_acknowledgement_loss_is_unknown_and_stops_batch" time="0.268" /><testcase classname="services.worker.tests.test_document_cleanup" name="test_result_journal_failure_leaves_pending_intent" time="0.327" /></testsuite></testsuites>
