@@ -131,3 +131,11 @@ the R2 handoff; this recovery batch makes no provider calls.
 Cloud work has separate prerequisites and costs. The AI testing budget is not
 authorization for paid AWS resources. Local recovery and performance work can
 continue while cloud prerequisites remain unconfigured.
+
+## Packaged baseline (local only)
+
+[Actual packaged baseline evidence](evidence/2026-09-17-r3/release-baseline/README.md)
+records immutable images, fresh isolated volumes, sign-in/approvals/document
+completion, cross-tenant denial and download checksum/content checks. A repeat
+smoke preserves the previous approved case and selected artifact. Candidate
+rollback, monitoring/load and real AWS gates remain pending.

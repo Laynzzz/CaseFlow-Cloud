@@ -26,6 +26,7 @@ public class ObjectStorage implements AutoCloseable {
     private final String bucket;
 
     public ObjectStorage(@Value("${caseflow.storage.endpoint:http://127.0.0.1:8333}") String endpoint,
+                         @Value("${caseflow.storage.public-endpoint:}") String publicEndpoint,
                          @Value("${caseflow.storage.region:us-east-1}") String region,
                          @Value("${caseflow.storage.bucket:caseflow-local}") String bucket,
                          @Value("${S3_ACCESS_KEY:}") String accessKey,
@@ -42,7 +43,9 @@ public class ObjectStorage implements AutoCloseable {
             .overrideConfiguration(c -> c.apiCallTimeout(Duration.ofSeconds(25)));
         var presigner = S3Presigner.builder().region(Region.of(region)).credentialsProvider(credentials)
             .serviceConfiguration(configuration);
-        if (!endpoint.isBlank()) { builder.endpointOverride(URI.create(endpoint)); presigner.endpointOverride(URI.create(endpoint)); }
+        if (!endpoint.isBlank()) builder.endpointOverride(URI.create(endpoint));
+        String downloadEndpoint = publicEndpoint.isBlank() ? endpoint : publicEndpoint;
+        if (!downloadEndpoint.isBlank()) presigner.endpointOverride(URI.create(downloadEndpoint));
         client = builder.build(); signer = presigner.build();
     }
 

@@ -1,0 +1,126 @@
+name: caseflow-release
+services:
+  postgres:
+    image: postgres:18.6-bookworm@sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af
+    environment:
+      POSTGRES_USER: caseflow_admin
+      POSTGRES_DB: caseflow
+      POSTGRES_PASSWORD: ${DB_ADMIN_PASSWORD:?Run node scripts/init-release.mjs}
+      DB_MIGRATOR_PASSWORD: ${DB_MIGRATOR_PASSWORD:?Release environment required}
+      DB_API_PASSWORD: ${DB_API_PASSWORD:?Release environment required}
+      DB_WORKER_PASSWORD: ${DB_WORKER_PASSWORD:?Release environment required}
+    volumes:
+      - postgres-data:/var/lib/postgresql
+      - ./infrastructure/local/init-db.sh:/docker-entrypoint-initdb.d/01-roles.sh:ro
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U caseflow_admin -d caseflow']
+      interval: 3s
+      timeout: 3s
+      retries: 30
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.7.3@sha256:e03b95891c214fba3ab72f12f40c983211549e817c5fce8d0f37761db04ae185
+    command: ['start-dev', '--import-realm']
+    environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: release-admin
+      KC_BOOTSTRAP_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD:?Release environment required}
+      KC_HOSTNAME: http://127.0.0.1:18180
+      KC_HEALTH_ENABLED: 'true'
+    ports: ['127.0.0.1:18180:8080']
+    volumes:
+      - keycloak-data:/opt/keycloak/data
+      - ./infrastructure/release/generated/caseflow-realm.json:/opt/keycloak/data/import/caseflow-realm.json:ro
+  kafka:
+    image: apache/kafka:4.2.1@sha256:2d2f77837385f202b1947fc3ed62421de344f0ced47dde360ca5afdad11b51fa
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_LISTENERS: INTERNAL://:29092,CONTROLLER://:29093
+      KAFKA_ADVERTISED_LISTENERS: INTERNAL://kafka:29092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INTERNAL:PLAINTEXT,CONTROLLER:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:29093
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_LOG_DIRS: /var/lib/kafka/data
+      KAFKA_NUM_PARTITIONS: 3
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      CLUSTER_ID: 4L6g3nShT-eMCtK--X86sx
+    volumes: ['kafka-data:/var/lib/kafka/data']
+    healthcheck:
+      test: ['CMD-SHELL', '/opt/kafka/bin/kafka-topics.sh --bootstrap-server localhost:29092 --list >/dev/null 2>&1']
+      interval: 10s
+      timeout: 10s
+      retries: 18
+  object-store:
+    image: chrislusf/seaweedfs:4.47@sha256:f83509b0721dfd8e2e07faf76c0a899f67a8a889c89abe2fa0a5227ba1320362
+    command: ['mini', '-dir=/data']
+    environment:
+      AWS_ACCESS_KEY_ID: ${S3_ACCESS_KEY:?Release environment required}
+      AWS_SECRET_ACCESS_KEY: ${S3_SECRET_KEY:?Release environment required}
+      S3_BUCKET: caseflow-release
+    ports: ['127.0.0.1:18333:8333']
+    volumes: ['object-data:/data']
+  api:
+    image: ${RELEASE_API_IMAGE:?Build images with scripts/release.mjs}
+    pull_policy: never
+    environment:
+      DB_URL: jdbc:postgresql://postgres:5432/caseflow
+      DB_API_PASSWORD: ${DB_API_PASSWORD}
+      DB_MIGRATOR_PASSWORD: ${DB_MIGRATOR_PASSWORD}
+      OIDC_ISSUER: http://127.0.0.1:18180/realms/caseflow
+      OIDC_JWKS: http://keycloak:8080/realms/caseflow/protocol/openid-connect/certs
+      KAFKA_BOOTSTRAP_SERVERS: kafka:29092
+      CASEFLOW_STORAGE_ENDPOINT: http://object-store:8333
+      CASEFLOW_STORAGE_PUBLIC_ENDPOINT: http://127.0.0.1:18333
+      CASEFLOW_STORAGE_BUCKET: caseflow-release
+      S3_ACCESS_KEY: ${S3_ACCESS_KEY}
+      S3_SECRET_KEY: ${S3_SECRET_KEY}
+      JAVA_TOOL_OPTIONS: -XX:MaxRAMPercentage=65
+      MANAGEMENT_SERVER_ADDRESS: 0.0.0.0
+      MANAGEMENT_SERVER_PORT: 9091
+      CASEFLOW_TRACING_EXPORT_ENABLED: ${CASEFLOW_TRACING_EXPORT_ENABLED:-false}
+      OTEL_EXPORTER_OTLP_ENDPOINT: ${OTEL_EXPORTER_OTLP_ENDPOINT:-}
+      OTEL_TRACES_EXPORTER: ${OTEL_TRACES_EXPORTER:-none}
+      CASEFLOW_TRACE_SAMPLE_RATE: ${CASEFLOW_TRACE_SAMPLE_RATE:-0.1}
+    ports: ['127.0.0.1:18080:8080', '127.0.0.1:18081:9091']
+    mem_limit: 768m
+    read_only: true
+    tmpfs: ['/tmp:rw,noexec,nosuid,size=128m']
+    security_opt: ['no-new-privileges:true']
+    cap_drop: ['ALL']
+    depends_on:
+      postgres: {condition: service_healthy}
+      kafka: {condition: service_healthy}
+      keycloak: {condition: service_started}
+      object-store: {condition: service_started}
+  worker:
+    image: ${RELEASE_WORKER_IMAGE:?Build images with scripts/release.mjs}
+    pull_policy: never
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_WORKER_PASSWORD: ${DB_WORKER_PASSWORD}
+      KAFKA_BOOTSTRAP_SERVERS: kafka:29092
+      S3_ENDPOINT: http://object-store:8333
+      S3_BUCKET: caseflow-release
+      S3_ACCESS_KEY: ${S3_ACCESS_KEY}
+      S3_SECRET_KEY: ${S3_SECRET_KEY}
+      OTEL_EXPORTER_OTLP_ENDPOINT: ${OTEL_EXPORTER_OTLP_ENDPOINT:-}
+      OTEL_TRACES_EXPORTER: ${OTEL_TRACES_EXPORTER:-none}
+      CASEFLOW_TRACE_SAMPLE_RATE: ${CASEFLOW_TRACE_SAMPLE_RATE:-0.1}
+    ports: ['127.0.0.1:18090:8090']
+    mem_limit: 768m
+    read_only: true
+    tmpfs: ['/tmp:rw,noexec,nosuid,size=256m']
+    security_opt: ['no-new-privileges:true']
+    cap_drop: ['ALL']
+    stop_grace_period: 70s
+    depends_on:
+      api: {condition: service_healthy}
+volumes:
+  postgres-data:
+  keycloak-data:
+  kafka-data:
+  object-data:

@@ -1,0 +1,91 @@
+{
+  "url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonRDS/current/us-east-1/index.json",
+  "fetchedAt": "2026-09-17T14:55:57.935Z",
+  "publicationDate": "2026-09-11T12:45:02Z",
+  "rows": [
+    {
+      "sku": "9HPEGXQTDDGH53C9",
+      "attributes": {
+        "servicecode": "AmazonRDS",
+        "location": "US East (N. Virginia)",
+        "locationType": "AWS Region",
+        "instanceType": "db.t4g.micro",
+        "currentGeneration": "Yes",
+        "instanceFamily": "General purpose",
+        "vcpu": "2",
+        "physicalProcessor": "AWS Graviton2",
+        "memory": "1 GiB",
+        "storage": "EBS Only",
+        "networkPerformance": "Up to 5 Gigabit",
+        "processorArchitecture": "64-bit",
+        "engineCode": "14",
+        "databaseEngine": "PostgreSQL",
+        "licenseModel": "No license required",
+        "deploymentOption": "Single-AZ",
+        "usagetype": "InstanceUsage:db.t4g.micro",
+        "operation": "CreateDBInstance:0014",
+        "instanceTypeFamily": "T4G",
+        "normalizationSizeFactor": "0.5",
+        "regionCode": "us-east-1",
+        "servicename": "Amazon Relational Database Service",
+        "unbundledLicensing": "FALSE"
+      },
+      "description": "$ 0.016 per RDS db.t4g.micro Single-AZ instance hour (or partial hour) running PostgreSQL",
+      "unit": "Hrs",
+      "price": "0.0160000000"
+    },
+    {
+      "sku": "S9H3AXMBHSKRFJTA",
+      "attributes": {
+        "servicecode": "AmazonRDS",
+        "location": "US East (N. Virginia)",
+        "locationType": "AWS Region",
+        "instanceType": "db.t4g.small",
+        "currentGeneration": "Yes",
+        "instanceFamily": "General purpose",
+        "vcpu": "2",
+        "physicalProcessor": "AWS Graviton2",
+        "memory": "2 GiB",
+        "storage": "EBS Only",
+        "networkPerformance": "Up to 5 Gigabit",
+        "processorArchitecture": "64-bit",
+        "engineCode": "14",
+        "databaseEngine": "PostgreSQL",
+        "licenseModel": "No license required",
+        "deploymentOption": "Single-AZ",
+        "usagetype": "InstanceUsage:db.t4g.small",
+        "operation": "CreateDBInstance:0014",
+        "instanceTypeFamily": "T4G",
+        "normalizationSizeFactor": "1",
+        "regionCode": "us-east-1",
+        "servicename": "Amazon Relational Database Service",
+        "unbundledLicensing": "FALSE"
+      },
+      "description": "$ 0.032 per RDS db.t4g.small Single-AZ instance hour (or partial hour) running PostgreSQL",
+      "unit": "Hrs",
+      "price": "0.0320000000"
+    },
+    {
+      "sku": "KYVYY29G957PKY3B",
+      "attributes": {
+        "servicecode": "AmazonRDS",
+        "location": "US East (N. Virginia)",
+        "locationType": "AWS Region",
+        "storageMedia": "SSD",
+        "volumeType": "General Purpose-GP3",
+        "minVolumeSize": "5 GB",
+        "maxVolumeSize": "16 TB",
+        "engineCode": "14",
+        "databaseEngine": "PostgreSQL",
+        "deploymentOption": "Single-AZ",
+        "usagetype": "RDS:GP3-Storage",
+        "operation": "CreateDBInstance:0014",
+        "regionCode": "us-east-1",
+        "servicename": "Amazon Relational Database Service"
+      },
+      "description": "$0.115 per GB-month of provisioned GP3 storage running PostgreSQL",
+      "unit": "GB-Mo",
+      "price": "0.1150000000"
+    }
+  ]
+}

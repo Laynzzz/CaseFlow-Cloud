@@ -347,3 +347,10 @@ equivalents have not been executed. No timing here is a performance benchmark.
 
 Finish executable fixtures, domain/API/event contracts, measurement design,
 and remaining local-service foundations before marking Phase 0 complete.
+
+## R3 packaged local baseline
+
+[Packaged baseline](evidence/2026-09-17-r3/release-baseline/README.md): actual local
+image build, fresh-schema deployment and repeated approval/download smoke. Exact
+image IDs and captured source hashes are recorded. The dirty baseline is not a
+clean-commit deployment; cloud delivery and candidate rollback are not claimed.

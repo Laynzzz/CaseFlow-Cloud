@@ -1,0 +1,11 @@
+{
+  "name": "release-baseline",
+  "revision": "d01f9073bc1a1c76026e28e8fdc2b8634c22e3e4",
+  "dirty": true,
+  "createdAt": "2026-09-17T14:50:42.086Z",
+  "api": "sha256:ff15f6a414ee19e43cb6e956edb2a17cb17b680fe4f13e511dc8fc01b810b398",
+  "worker": "sha256:32d9dab7eabdf35598f493ee269dbdfac72011830e2beb76e1045163efe8452b",
+  "builder": "sha256:19b9fddd5b69a29ade83c2cf84eaacb5a8bc306cbd353e5c17e6bea94b684746",
+  "sourceEvidence": "output/r3-release/baseline-packaged-source-hashes.txt",
+  "note": "Baseline snapshot before telemetry implementation; API new telemetry dependencies present but source configuration and worker retain preceding runtime. Immutable builder retains exact API source and packaged static assets."
+}

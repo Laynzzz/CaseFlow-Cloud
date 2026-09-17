@@ -15,6 +15,7 @@ public class SecurityConfiguration {
         return http.authorizeHttpRequests(auth -> auth
                         .requestMatchers(HttpMethod.GET, "/api/v1/health").permitAll()
                         .requestMatchers("/api/v1/**").authenticated()
+                        .requestMatchers(HttpMethod.GET, "/", "/index.html", "/assets/**", "/account", "/new", "/admin", "/cases/{caseId}").permitAll()
                         .anyRequest().denyAll())
                 // Explicit bearer tokens only; the API never authenticates with cookies.
                 .csrf(csrf -> csrf.disable())

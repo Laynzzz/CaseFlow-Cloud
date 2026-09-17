@@ -651,3 +651,24 @@ the final results use that revised fixture. EXPLAIN timings and pooled Java
 timings are separate observations, neither a sustained system load test.
 
 Evidence and reproducible commands: [query performance](query-performance.md).
+
+## Packaged local release checkpoint
+
+**What does Docker add here?** It packages the Java/API/frontend and Python worker
+with pinned runtimes/dependencies. The isolated Compose profile tests their real
+network paths and persistent dependencies together. A successful local container
+run is deployment rehearsal, not evidence of AWS operation or production users.
+
+**How would you roll back safely?** Keep immutable prior image IDs, apply only
+backward-compatible migrations, health-check the candidate and run the approval
+smoke, then restore the prior images if needed. Never automatically undo business
+data or SQL migrations. The initial packaged baseline and data-preservation smoke
+passed; executed candidate rollback is recorded separately when completed.
+
+**Why have internal and public endpoints?** Containers resolve service names that
+a browser cannot. The issuer remains the public OIDC identity, while Java fetches
+keys internally. Object reads use internal storage; signed download URLs must be
+signed with the host the browser actually reaches. Follow-up: an issued signed
+URL remains a bearer capability until its short expiry.
+
+Evidence: [local baseline](evidence/2026-09-17-r3/release-baseline/README.md).

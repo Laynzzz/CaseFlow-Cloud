@@ -1008,3 +1008,27 @@ are measured here, and EXPLAIN executes separately from any cached prepared plan
 The controlled fixture intentionally favors a selective state workload. Sparse
 ownership, sustained traffic, backlog, cloud hardware and write throughput
 remain separate work. See [measurement method and results](query-performance.md).
+
+## Packaged local release (2026-09-17)
+
+The React/TypeScript browser bundle is built with Node/Vite and served from the
+Java/Spring Boot API image. Python runs separately as the background worker.
+Dockerfiles define those repeatable build/runtime environments; Compose connects
+them to an isolated database, broker, identity service and object store. This
+keeps the two-deployment architecture while avoiding another web-server service.
+The trade-off is a shared frontend/API release cadence and image size.
+
+`compose.release.yaml` is a local rehearsal. Its own ports and persistent volumes
+protect the existing development demo. OIDC has one browser-visible issuer and an
+internal verification-key URL. Object storage likewise separates internal reads
+from browser-visible signed download URLs; rewriting a signed hostname would
+invalidate the signature. Images run without root with read-only roots and
+bounded writable temporary directories.
+
+The release script records immutable image IDs, source revision/dirty status and
+source hashes. Deployment checks health and a real synthetic approval/download
+journey before moving its success pointer. Rollback restores previous images,
+retains data and depends on compatible forward migrations. The first packaged
+baseline passed, including previous approved-artifact preservation; actual
+candidate rollback and AWS delivery remain separate gates. Evidence:
+[evidence/2026-09-17-r3/release-baseline/README.md](evidence/2026-09-17-r3/release-baseline/README.md).
