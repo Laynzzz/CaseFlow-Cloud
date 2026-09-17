@@ -681,3 +681,23 @@ represent a person's reading and typing. The trade-off is reproducible integrati
 evidence without the stronger usability evidence of an actual participant study.
 Model calls also add waiting even when they reduce the information a person must
 type. Human benefit remains unmeasured.
+## R2 release status versus model quality
+
+The fresh held-out run exposed the cost of strict literal citations: the model
+sometimes joins separated text or changes whitespace, so ordinary Python
+validation rejects the entire extraction. Nineteen rejected jobs reduce the
+score to 164/240 (68.33%), even though all accepted fields matched references.
+This is a reliability limitation in the assistant, not permission to bypass
+the source checks. Three repetitions also varied between rejection and success.
+
+The review pipeline separately scored 463/463 supported assertions under AI
+grading. These are narrow synthetic results with correlated cases and reviewer
+limitations. A strong review score does not repair extraction or establish
+real-world quality. All previous baselines remain preserved.
+
+R2's plan defines delivery as working assisted/manual paths and published actual
+evaluation. Its provisional targets still apply; the missed extraction goal keeps
+AI experimental. The manual approval/document product remains usable. See
+`docs/evidence/2026-09-16-r2/r2-acceptance.md` for the exact gate mapping and
+`heldout-v3-summary.md` in that directory for measured limits. R3 adds recovery
+and operational evidence; it must not silently relabel experimental AI as proven.

@@ -22,33 +22,29 @@ Verified against local PostgreSQL and Keycloak: tenant/resource access,
 deactivation, stale writes, duplicate commands, concurrent final approval,
 ordered decisions and cursor behavior. See [evidence](docs/evidence-index.md).
 
-**R1 is unfinished:** local document execution and download work, but cloud
-deployment, the complete browser journey and remaining acceptance checks are
-still open. Baseline database lease/concurrency tests and broker redeliveries
-pass; these are not the complete crash matrix.
-**R2 is in progress / experimental:** quote and policy PDF/TXT uploads and pasted
-text, bounded parsing, publication, pinned policy retrieval, live AI extraction,
-cited review and explicit selected-field acceptance work locally. Provider calls
-share the user-authorized USD 10 lifetime ledger and have enforced deadlines.
-The full 60-case held-out run matched 221/240 fields (92.08%), retrieved
-48/48 expected passages and abstained on 12/12 insufficient-evidence cases.
-Vendor match was only 44/60, one extraction was rejected, and two answerable
-reviews falsely abstained. AI claim grading found 360/412 supported assertions
-(87.38%), below the 95% target. AI reference and claim reviews are explicitly
-labeled; no independent human verification is claimed. Browser file upload and
-manual editing during a simulated AI failure passed.
-See the [held-out report](docs/evidence/2026-09-15-r2/heldout-summary.md),
-[evidence index](docs/evidence-index.md), and [R2 map](docs/r2-status.md).
-R2 remains unfinished because claim quality and other acceptance evidence are
-still incomplete. R3 has not started. No production readiness, adoption or
-real-world AI-quality guarantee is claimed.
+**R1 remains unfinished:** the local admin-to-DOCX browser journey now passes,
+but cloud deployment/smoke and remaining delivery checks are open. Existing
+duplicate/lease tests are not the full recovery matrix.
 
-Current development work improves review instructions and rejects false
-missing-field reports. Its full 60-case development assessment scored 459/460
-supported factual claims (99.78%), with one unsupported claim remaining; this
-does not replace the earlier held-out baseline. See
-[the new assessment](docs/evidence/2026-09-16-r2/summary.md) and the
-[plain-language architecture map](docs/architecture.md).
+**R2 is locally complete as an experimental learning release.** Assisted and
+manual paths work, actual held-out results and three fixed-subset repetitions
+are published, and nine automated workflow-comparison tasks completed correctly.
+This meets the plan's functional/evaluation deliverable; it does **not** mean
+all AI quality targets passed. See the explicit
+[acceptance decision](docs/evidence/2026-09-16-r2/r2-acceptance.md).
+
+The fresh 60-case v3 run scored **164/240 extraction fields (68.33%)**, below 90%:
+19 outputs were rejected for nonliteral citations. Retrieval was 48/48, correct
+abstention 12/12, false abstention 0/48. AI grading found 463/463 supported review
+assertions in this narrow synthetic set; there is no independent human review
+or real-world quality guarantee. Earlier baselines remain preserved. The shared
+USD 10 lifetime ledger accounts for USD 0.633975, including old unknown usage.
+No human time savings, production readiness or adoption is claimed.
+
+See [fresh results](docs/evidence/2026-09-16-r2/heldout-v3-summary.md),
+[browser evidence](docs/evidence/2026-09-16-r2/browser-journey/README.md),
+[R2 map](docs/r2-status.md), and [architecture](docs/architecture.md).
+R3 reliability and operations are the next implementation phase.
 
 ## Run locally (PowerShell)
 

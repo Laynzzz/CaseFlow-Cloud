@@ -1,5 +1,17 @@
 # Evidence index
 
+## R2 acceptance: local experimental release
+
+[Decision and gate mapping](evidence/2026-09-16-r2/r2-acceptance.md): assisted/manual
+journeys and evaluation deliverables complete. Extraction target remains missed;
+R1 cloud delivery is not complete. [Fresh 60-case report](evidence/2026-09-16-r2/heldout-v3-summary.md)
+records 164/240 extraction fields, 48/48 recall, 12/12 correct abstention,
+0/48 false abstention and 463/463 AI-supported review assertions. Nineteen
+nonliteral-citation outputs were rejected, preserved and scored as failures.
+[Three repeats](evidence/2026-09-16-r2/heldout-v3-repeats.md) retain variable
+extraction outcomes; [shared budget](evidence/2026-09-16-r2/budget-after-v3.json)
+is USD0.633975 of USD10. All semantic review remains explicitly AI-reviewed.
+
 ## 2026-09-16 local / September 17 UTC: browser and workflow acceptance
 
 [Assisted browser-to-DOCX journey](evidence/2026-09-16-r2/browser-journey/README.md)

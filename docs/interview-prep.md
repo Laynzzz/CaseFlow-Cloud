@@ -406,3 +406,23 @@ adoption or time savings. Evidence:
 failure followed by manual entry could still produce a correct draft. Reporting
 only that outcome would hide a broken assistant. The harness records both; all
 nine tasks completed their assigned mode in this particular small run.
+## Fresh held-out results and experimental release
+
+**What did the new test reveal?** Quote extraction matched164/240 fields (68.33%)
+on60 fresh synthetic cases. Nineteen outputs were rejected for nonliteral source
+quotes, while the41 accepted outputs matched all references. This exposes a
+formatting-generalization and reliability weakness. Follow-up: failing safely
+protects displayed results but still counts as a task failure, not a correct answer.
+
+**Can you claim the AI is accurate?** Only report the measured scope:48/48
+retrieval,12/12 correct abstention,0/48 false abstention,463/463 AI-supported
+review assertions, and the missed90% extraction goal. These are AI-reviewed,
+correlated synthetic cases, not independent human or production validation.
+Follow-up: repeat scores vary; do not choose the best run or pool repeated cases
+as new independent examples.
+
+**Why move to R3 with a missed target?** The plan's R2 deliverable is the working
+assisted/manual product plus actual evaluation. It explicitly leaves AI experimental
+when provisional goals are missed. We document that limitation and preserve
+manual entry; R3 verifies recovery/operations without claiming the model was fixed.
+Evidence: `evidence/2026-09-16-r2/r2-acceptance.md` and `heldout-v3-summary.md`.
