@@ -1,0 +1,30 @@
+{
+  "declaredAt": "2026-09-16T22:32:40.7009219-04:00",
+  "sourceDeclaration": "docs/evidence/2026-09-16-r2/heldout-v3-plan.json",
+  "datasetVersion": "synthetic-v3",
+  "split": "heldout",
+  "selectedIds": [
+    "calibration-001",
+    "calibration-006",
+    "filtration-001",
+    "filtration-006",
+    "packaging-001",
+    "packaging-006",
+    "textiles-001",
+    "textiles-006",
+    "signage-001",
+    "signage-006",
+    "mobility-001",
+    "mobility-006"
+  ],
+  "extractionPromptVersion": "purchase-assistant-2026-09-15-v5",
+  "reviewPromptVersion": "purchase-review-2026-09-16-v6",
+  "extractionSchemaVersion": "purchase-assistant-v4",
+  "reviewSchemaVersion": "purchase-review-v5",
+  "model": "gpt-4.1-mini-2025-04-14",
+  "repetitions": 3,
+  "compareRetrieval": false,
+  "method": "Repeat fixed IDs001and006pernewfamily, three additional runs; compare with full run on identical subset. Preserve every failed job and original source identities.",
+  "humanVerified": false,
+  "releaseGatePassed": false
+}
