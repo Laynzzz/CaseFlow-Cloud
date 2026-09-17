@@ -36,5 +36,8 @@ tasks.named('processResources') {
     from('../../db/migrations') { into 'db/migration'; include '*.sql' }
 }
 
-tasks.named('test') { useJUnitPlatform() }
+tasks.named('test') {
+    useJUnitPlatform()
+    systemProperty 'caseflow.test.runtimeClasspath', sourceSets.test.runtimeClasspath.asPath
+}
 dependencyLocking { lockAllConfigurations() }
