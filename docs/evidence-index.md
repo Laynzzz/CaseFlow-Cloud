@@ -1,5 +1,17 @@
 # Evidence index
 
+## September 17 UTC: actual Kafka publish and offset crash boundaries
+
+[Kafka process results](evidence/2026-09-17-r3/kafka-boundaries/summary.md)
+add four Python and two Java business-boundary forced-termination scenarios
+with real local Kafka/PostgreSQL. Restarts replay pending outbox events and
+uncommitted consumer offsets while retaining one logical job/audit. Separate
+normal-exit, early-offset and missing-persistence controls check test sensitivity.
+The [recovery matrix](recovery-matrix.md) distinguishes thirteen observed
+business-boundary process scenarios from dependency restarts and operational
+features still required. Temporary topic/group cleanup is also regression-tested.
+Full suites passed 102 Python and 29 Java tests, with no failures/errors/skips.
+
 ## September 17 UTC: process termination and 10,000 broker redeliveries
 
 [Results and reproducible commands](evidence/2026-09-17-r3/summary.md) record

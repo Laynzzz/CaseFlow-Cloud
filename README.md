@@ -45,10 +45,10 @@ See [fresh results](docs/evidence/2026-09-16-r2/heldout-v3-summary.md),
 [browser evidence](docs/evidence/2026-09-16-r2/browser-journey/README.md),
 [R2 map](docs/r2-status.md), and [architecture](docs/architecture.md).
 R3 reliability and operations are now in progress; see the
-[remaining-work map](docs/r3-status.md). Seven actual process-crash scenarios
+[remaining-work map](docs/r3-status.md). Actual process-crash scenarios
 and 10,000 broker redeliveries now pass locally; the full recovery matrix,
 performance, operations and cloud gates remain open. See the
-[recorded scope and results](docs/evidence/2026-09-17-r3/summary.md).
+[latest recorded scope and results](docs/evidence/2026-09-17-r3/kafka-boundaries/summary.md).
 
 ## Run locally (PowerShell)
 
@@ -107,6 +107,7 @@ Stop Vite before a clean npm reinstall on Windows.
 
 ```powershell
 . ./scripts/dev-env.ps1
+$env:CASEFLOW_KAFKA_PROCESS_TESTS = '1'
 ./services/case-api/gradlew.bat -p services/case-api test bootJar
 node scripts/generate-contract.mjs
 npm --prefix apps/web run generate:api
@@ -129,8 +130,12 @@ demo session while running it. Unit tests and UI inspection do not replace these
 integration assertions. The contract generator owns OpenAPI; regenerate browser
 types after changing it. A passing build alone does not complete a release gate.
 
-The worker integration suite needs local PostgreSQL and object storage. Process
-tests terminate only their own disposable test children. Replay needs the API,
+The worker integration suite needs local PostgreSQL, Kafka and object storage.
+The Java Kafka process suite requires `CASEFLOW_KAFKA_PROCESS_TESTS=1`; verify
+it ran rather than accepting skipped tests as recovery evidence. Process tests
+terminate only their own disposable test children and use temporary topics/groups.
+See the [boundary-by-boundary recovery map](docs/recovery-matrix.md).
+Replay needs the API,
 worker and broker running plus the fixture created by `document-api.mjs`; its
 default sends 20 duplicates and one late failure, recording a new output file.
 

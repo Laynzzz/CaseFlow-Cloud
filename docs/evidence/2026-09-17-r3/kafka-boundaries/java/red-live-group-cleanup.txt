@@ -1,0 +1,43 @@
+
+> Task :compileJava
+
+> Task :processResources
+> Task :classes
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+
+> Task :compileTestJava
+F:\Me\Project\caseflow-cloud\services\case-api\src\test\java\dev\caseflow\documents\KafkaMessagingProcessRecoveryTest.java:127: warning: [removal] listConsumerGroups() in Admin has been deprecated and marked for removal
+            assertTrue(verifier.listConsumerGroups().all().get(15, TimeUnit.SECONDS).stream()
+                               ^
+warning: [removal] ConsumerGroupListing in org.apache.kafka.clients.admin has been deprecated and marked for removal
+Note: F:\Me\Project\caseflow-cloud\services\case-api\src\test\java\dev\caseflow\documents\KafkaMessagingCrashProbe.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+2 warnings
+
+> Task :processTestResources NO-SOURCE
+> Task :testClasses
+
+> Task :test
+
+KafkaMessagingProcessRecoveryTest > cleanupAfterAbruptConsumerDeathRemovesOwnedGroupAndTopics() FAILED
+    java.util.concurrent.ExecutionException at KafkaMessagingProcessRecoveryTest.java:97
+
+1 test completed, 1 failed
+        Caused by: org.apache.kafka.common.errors.GroupNotEmptyException
+
+> Task :test FAILED
+
+
+[Incubating] Problems report is available at: file:///F:/Me/Project/caseflow-cloud/services/case-api/build/reports/problems/problems-report.html
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':test'.
+> There were failing tests. See the report at: file:///F:/Me/Project/caseflow-cloud/services/case-api/build/reports/tests/test/index.html
+
+* Try:
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+
+BUILD FAILED in 5s
+4 actionable tasks: 4 executed

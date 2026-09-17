@@ -1,0 +1,21 @@
+
+> Task :compileJava
+
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+> Task :processResources
+> Task :classes
+
+> Task :compileTestJava
+Note: F:\Me\Project\caseflow-cloud\services\case-api\src\test\java\dev\caseflow\documents\KafkaMessagingCrashProbe.java uses or overrides a deprecated API.
+
+Note: Recompile with -Xlint:deprecation for details.
+> Task :processTestResources NO-SOURCE
+> Task :testClasses
+> Task :test
+
+[Incubating] Problems report is available at: file:///F:/Me/Project/caseflow-cloud/services/case-api/build/reports/problems/problems-report.html
+
+BUILD SUCCESSFUL in 22s
+4 actionable tasks: 4 executed
+Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.7.1/userguide/configuration_cache_enabling.html

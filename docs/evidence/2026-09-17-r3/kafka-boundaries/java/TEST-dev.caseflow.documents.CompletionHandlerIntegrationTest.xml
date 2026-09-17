@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.caseflow.documents.CompletionHandlerIntegrationTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-09-17T06:19:14.095Z" hostname="local-test-host" time="1.834">
+  <properties/>
+  <testcase name="quarantinesFutureAttemptUnprovenFenceMissingResultAndWrongTenantWithoutMutation()" classname="dev.caseflow.documents.CompletionHandlerIntegrationTest" time="0.654"/>
+  <testcase name="appliesSuccessAtomically()" classname="dev.caseflow.documents.CompletionHandlerIntegrationTest" time="0.297"/>
+  <testcase name="rollsBackBeforeCommitThenReplaysAndClassifiesDuplicates()" classname="dev.caseflow.documents.CompletionHandlerIntegrationTest" time="0.341"/>
+  <testcase name="keepsSuccessTerminalWhenDelayedFailureArrives()" classname="dev.caseflow.documents.CompletionHandlerIntegrationTest" time="0.269"/>
+  <testcase name="concurrentDuplicateCompletionHasOneBusinessEffectAndFiniteDeadline()" classname="dev.caseflow.documents.CompletionHandlerIntegrationTest" time="0.272"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

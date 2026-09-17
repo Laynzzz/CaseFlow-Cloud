@@ -494,3 +494,36 @@ Implementation: Python `services/worker/tests/test_process_recovery.py` and
 `services/worker/tools/replay_document.py`; Java
 `services/case-api/src/test/java/dev/caseflow/documents/CompletionProcessRecoveryTest.java`.
 Full recorded regression suites: 95 Python and 22 Java tests, no failures/skips.
+
+## R3 real Kafka acknowledgement checkpoint
+
+**Why is commit ordering important?** The worker first stores its inbox receipt
+and durable job in PostgreSQL, then acknowledges consumption to Kafka. A crash
+between them causes redelivery, and the stored receipt makes the repeated
+database effect harmless. Committing the offset first could lose work. The new
+Python process test observes the offset at the boundary and a fresh process
+receiving exactly the same record after a kill.
+Follow-up: an event receipt means scheduling finished, not that document
+rendering finished; those are separate transactions.
+
+**Why does the publisher sometimes send twice?** A real broker acknowledgement
+can occur before the outbox's published marker commits. The test kills the
+publisher in that gap, then observes the same event ID at two different Kafka
+offsets after restart. It is safer to retry than to mark an unacknowledged send
+as complete. Consumer idempotency protects business state.
+Follow-up: idempotent producer configuration alone cannot make Kafka and
+PostgreSQL one atomic transaction.
+
+**Why add a constructor just for testing?** Java's messaging component used
+concrete clients and fixed topics internally. An internal constructor accepts
+client interfaces and test topics while the public Spring constructor keeps
+the production configuration. Tests can then pause real clients at observed
+boundaries without rewriting the business loop or touching demo groups.
+Follow-up: the child uses Spring's transactional proxy around the real handler;
+calling a manually created annotated object would not reproduce that boundary.
+
+Evidence scope and current results: [recovery matrix](recovery-matrix.md) and
+[Kafka process report](evidence/2026-09-17-r3/kafka-boundaries/summary.md).
+Full regression suites passed 102 Python and 29 Java tests without failures or
+skips. These counts include controls and existing regressions, not 131 crash
+scenarios; the map counts thirteen distinct business-boundary process crashes.

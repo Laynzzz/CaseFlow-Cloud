@@ -788,3 +788,48 @@ transport or the capacity to generate 10,000 documents. Seven distinct real
 process-crash scenarios and the separate broker experiment are recorded in the
 [September 17 report](evidence/2026-09-17-r3/summary.md), including negative
 controls that deliberately let children exit normally and caused tests to fail.
+
+## R3: the gap between database commits and Kafka acknowledgements
+
+An approved purchase must keep moving even if a process stops between recording
+work in PostgreSQL and acknowledging it to Kafka. These systems have separate
+transactions. The project deliberately accepts repeat delivery and makes the
+database effect safe to repeat.
+
+`services/worker/tests/kafka_process_probe.py` is Python test infrastructure
+running local child processes with the real Confluent Kafka client. It exercises
+the existing Python messaging loops and records exact broker offsets. If the
+worker stops after scheduling but before committing its Kafka offset, the new
+process receives the same record and finds the existing durable job. If the
+offset already committed, the new process continues with the next event. Event
+receipts and logical jobs have different identities: two distinct events can
+still describe just one job.
+
+The reverse gap exists for the outbox publisher: Kafka may accept the message
+before PostgreSQL records it as sent. After a crash, the pending row is sent
+again with the same event ID but a different broker offset. If the published
+mark already committed, the restarted publisher sends nothing. Producer
+idempotence does not join the database transaction to Kafka or suppress all
+duplicates across newly started producer sessions.
+
+Java's `JobMessaging.java` remains the Spring Boot component responsible for
+outbox publishing and completion consumption. Its internal constructor now
+accepts Kafka client interfaces and topic names, allowing tests to wrap real
+clients and use isolated topics. The public Spring constructor retains existing
+production defaults and is explicitly marked for dependency injection. This
+small seam avoids duplicating the messaging algorithm in the test harness.
+The trade-off is a second constructor whose defaults must remain consistent.
+
+The Java tests use a Spring transactional proxy around the actual completion
+handler so the database commit really occurs before the offset boundary. A
+plain manually constructed annotated Java object would not automatically gain
+Spring transaction handling. These are component-process tests with real local
+dependencies; they do not boot or terminate an entire application deployment.
+
+Temporary topics/groups keep fault tests away from the demo. Test group session
+timeouts are shortened so killed members expire within bounded tests, while
+production settings remain unchanged. Negative controls deliberately allow
+normal exit, commit offsets early or omit persistence, and check that the
+corresponding assertions reject those conditions. The
+[recovery matrix](recovery-matrix.md) separates these proofs from active
+dependency restarts, dead-letter crash windows and sustained load still to do.

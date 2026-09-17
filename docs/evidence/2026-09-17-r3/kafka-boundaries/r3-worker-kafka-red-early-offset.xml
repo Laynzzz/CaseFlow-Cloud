@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="7.706" timestamp="2026-09-17T02:10:29.312673-04:00" hostname="local-test-host"><properties><property name="consume-before-offset" value="{&quot;boundary&quot;: &quot;consume-before-offset&quot;, &quot;pid&quot;: 14296, &quot;reached_at&quot;: &quot;2026-09-17T06:10:30.720809+00:00&quot;, &quot;sent_event&quot;: null, &quot;record&quot;: {&quot;topic&quot;: &quot;caseflow_test_python_3f2c0b6dd02c42f593fe0f1a244c3bdf&quot;, &quot;partition&quot;: 0, &quot;offset&quot;: 0}, &quot;exit_code&quot;: -15, &quot;termination&quot;: &quot;Process.terminate&quot;, &quot;ended_at&quot;: &quot;2026-09-17T06:10:30.727150+00:00&quot;}" /></properties><testcase classname="services.worker.tests.test_kafka_process_recovery" name="test_real_offset_recovery[consume-before-offset]" time="7.583"><failure message="assert 1 &lt; (0 + 1)">event = Envelope(eventId=UUID('37722709-4715-4d3a-92f9-9b24e142f56c'), eventType='document.requested', schemaVersion=1, timest...tionId='synthetic-test', inputHash='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', traceContext={})
+broker = &lt;kafka_process_probe.BrokerFixture object at 0x0000022319543D70&gt;
+boundary = 'consume-before-offset'
+record_testsuite_property = &lt;bound method LogXML.add_global_property of &lt;_pytest.junitxml.LogXML object at 0x0000022315C36480&gt;&gt;
+
+    @pytest.mark.parametrize('boundary', ['consume-before-offset', 'consume-after-offset'])
+    def test_real_offset_recovery(event, broker, boundary, record_testsuite_property):
+        first = broker.send(event.model_dump_json())
+        killed = run_child(broker, boundary, kill=True)
+        record_testsuite_property(boundary, json.dumps(killed))
+        assert killed['record'] == first
+        assert state()['jobs'] == state()['inbox'] == 1
+        before = broker.committed()
+        if boundary == 'consume-before-offset':
+&gt;           assert before &lt; first['offset'] + 1
+E           assert 1 &lt; (0 + 1)
+
+services\worker\tests\test_kafka_process_recovery.py:37: AssertionError</failure></testcase></testsuite></testsuites>

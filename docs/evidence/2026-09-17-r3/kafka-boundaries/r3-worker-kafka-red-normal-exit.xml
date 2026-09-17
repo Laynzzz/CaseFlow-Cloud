@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="2" time="2.886" timestamp="2026-09-17T02:10:09.639216-04:00" hostname="local-test-host"><testcase classname="services.worker.tests.test_kafka_process_recovery" name="test_real_offset_recovery[consume-before-offset]" time="1.460"><failure message="AssertionError: normal exit is not crash evidence">event = Envelope(eventId=UUID('811db008-4ad3-448b-b60b-aaa3cffb1e06'), eventType='document.requested', schemaVersion=1, timest...tionId='synthetic-test', inputHash='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', traceContext={})
+broker = &lt;kafka_process_probe.BrokerFixture object at 0x000001E1780C3BF0&gt;
+boundary = 'consume-before-offset'
+record_testsuite_property = &lt;bound method LogXML.add_global_property of &lt;_pytest.junitxml.LogXML object at 0x000001E175F86450&gt;&gt;
+
+    @pytest.mark.parametrize('boundary', ['consume-before-offset', 'consume-after-offset'])
+    def test_real_offset_recovery(event, broker, boundary, record_testsuite_property):
+        first = broker.send(event.model_dump_json())
+&gt;       killed = run_child(broker, boundary, kill=True)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+services\worker\tests\test_kafka_process_recovery.py:31:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fixture = &lt;kafka_process_probe.BrokerFixture object at 0x000001E1780C3BF0&gt;
+boundary = 'consume-before-offset', kill = True
+
+    def run_child(fixture, boundary, *, kill):
+        guard_database()
+        guard_broker(fixture.topic, fixture.group)
+        if boundary not in BOUNDARIES:
+            raise ValueError('unknown broker crash boundary')
+        fixture.consumed |= boundary.startswith('consume-')
+        context = multiprocessing.get_context('spawn')
+        parent, child = context.Pipe()
+        process = context.Process(target=child_main, args=(child, fixture.topic, fixture.group, boundary))
+        try:
+            process.start()
+            child.close()
+            assert parent.poll(30), 'child did not reach broker boundary before deadline'
+            evidence = parent.recv()
+            assert 'error_type' not in evidence, evidence.get('error_type')
+            assert evidence['pid'] == process.pid and evidence['boundary'] == boundary
+            if kill:
+                assert not evidence.get('finished') and process.is_alive()
+                parent.send("RELEASE")
+            process.join(10)
+            assert not process.is_alive(), 'owned child did not terminate'
+            if kill:
+&gt;               assert process.exitcode not in (None, 0), 'normal exit is not crash evidence'
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               AssertionError: normal exit is not crash evidence
+
+services\worker\tests\kafka_process_probe.py:205: AssertionError</failure></testcase><testcase classname="services.worker.tests.test_kafka_process_recovery" name="test_real_publish_recovery[publish-before-mark]" time="1.290"><failure message="AssertionError: normal exit is not crash evidence">event = Envelope(eventId=UUID('cef2061a-ec2f-4441-add4-1a69daac0beb'), eventType='document.requested', schemaVersion=1, timest...tionId='synthetic-test', inputHash='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', traceContext={})
+broker = &lt;kafka_process_probe.BrokerFixture object at 0x000001E1781117C0&gt;
+boundary = 'publish-before-mark'
+record_testsuite_property = &lt;bound method LogXML.add_global_property of &lt;_pytest.junitxml.LogXML object at 0x000001E175F86450&gt;&gt;
+
+    @pytest.mark.parametrize('boundary', ['publish-before-mark', 'publish-after-mark'])
+    def test_real_publish_recovery(event, broker, boundary, record_testsuite_property):
+        jobs.schedule(event)
+        assert jobs.claim(uuid4()) is not None
+        initial = state()
+        assert len(initial['outbox']) == 1 and initial['outbox'][0]['published_at'] is None
+        event_id = str(initial['outbox'][0]['event_id'])
+&gt;       killed = run_child(broker, boundary, kill=True)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+services\worker\tests\test_kafka_process_recovery.py:58:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fixture = &lt;kafka_process_probe.BrokerFixture object at 0x000001E1781117C0&gt;
+boundary = 'publish-before-mark', kill = True
+
+    def run_child(fixture, boundary, *, kill):
+        guard_database()
+        guard_broker(fixture.topic, fixture.group)
+        if boundary not in BOUNDARIES:
+            raise ValueError('unknown broker crash boundary')
+        fixture.consumed |= boundary.startswith('consume-')
+        context = multiprocessing.get_context('spawn')
+        parent, child = context.Pipe()
+        process = context.Process(target=child_main, args=(child, fixture.topic, fixture.group, boundary))
+        try:
+            process.start()
+            child.close()
+            assert parent.poll(30), 'child did not reach broker boundary before deadline'
+            evidence = parent.recv()
+            assert 'error_type' not in evidence, evidence.get('error_type')
+            assert evidence['pid'] == process.pid and evidence['boundary'] == boundary
+            if kill:
+                assert not evidence.get('finished') and process.is_alive()
+                parent.send("RELEASE")
+            process.join(10)
+            assert not process.is_alive(), 'owned child did not terminate'
+            if kill:
+&gt;               assert process.exitcode not in (None, 0), 'normal exit is not crash evidence'
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               AssertionError: normal exit is not crash evidence
+
+services\worker\tests\kafka_process_probe.py:205: AssertionError</failure></testcase></testsuite></testsuites>

@@ -1,0 +1,16 @@
+
+=================================== ERRORS ====================================
+____ ERROR collecting services/worker/tests/test_kafka_process_recovery.py ____
+ImportError while importing test module 'F:\Me\Project\caseflow-cloud\services\worker\tests\test_kafka_process_recovery.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Users\tiany\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+services\worker\tests\test_kafka_process_recovery.py:10: in <module>
+    from kafka_process_probe import BrokerFixture, run_child, guard_broker
+E   ModuleNotFoundError: No module named 'kafka_process_probe'
+=========================== short test summary info ===========================
+ERROR services/worker/tests/test_kafka_process_recovery.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.26s

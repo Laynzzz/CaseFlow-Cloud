@@ -1,0 +1,1 @@
+Deletion of requested consumer groups ('caseflow_test_17a34bb4f8154f908ac72c35438a461d.consumer') was successful.

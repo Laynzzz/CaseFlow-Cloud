@@ -1,0 +1,38 @@
+> Task :compileJava UP-TO-DATE
+> Task :processResources UP-TO-DATE
+> Task :classes UP-TO-DATE
+
+> Task :compileTestJava FAILED
+F:\Me\Project\caseflow-cloud\services\case-api\src\test\java\dev\caseflow\documents\KafkaMessagingCrashProbe.java:99: error: constructor JobMessaging in class JobMessaging cannot be applied to given types;
+            var messaging = new JobMessaging(db, JSON, handler, manager, producer, consumer,
+                            ^
+  required: JdbcTemplate,Json,CompletionHandler,PlatformTransactionManager,String
+  found:    JdbcTemplate,Json,CompletionHandler,JdbcTransactionManager,Producer<String,String>,Consumer<String,String>,String,String,String
+  reason: actual and formal argument lists differ in length
+Note: F:\Me\Project\caseflow-cloud\services\case-api\src\test\java\dev\caseflow\documents\KafkaMessagingCrashProbe.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+1 error
+
+[Incubating] Problems report is available at: file:///F:/Me/Project/caseflow-cloud/services/case-api/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileTestJava' (registered by plugin class 'org.gradle.api.plugins.JavaBasePlugin').
+> Compilation failed; see the compiler output below.
+  Note: F:\Me\Project\caseflow-cloud\services\case-api\src\test\java\dev\caseflow\documents\KafkaMessagingCrashProbe.java uses or overrides a deprecated API.
+  F:\Me\Project\caseflow-cloud\services\case-api\src\test\java\dev\caseflow\documents\KafkaMessagingCrashProbe.java:99: error: constructor JobMessaging in class JobMessaging cannot be applied to given types;
+              var messaging = new JobMessaging(db, JSON, handler, manager, producer, consumer,
+                              ^
+    required: JdbcTemplate,Json,CompletionHandler,PlatformTransactionManager,String
+    found:    JdbcTemplate,Json,CompletionHandler,JdbcTransactionManager,Producer<String,String>,Consumer<String,String>,String,String,String
+    reason: actual and formal argument lists differ in length
+  Note: Recompile with -Xlint:deprecation for details.
+  1 error
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+
+BUILD FAILED in 1s
+3 actionable tasks: 1 executed, 2 up-to-date

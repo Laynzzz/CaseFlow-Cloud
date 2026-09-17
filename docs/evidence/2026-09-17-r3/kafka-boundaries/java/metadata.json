@@ -1,0 +1,16 @@
+{
+  "recordedAtUtc": "2026-09-17T06:18:46.1378797Z",
+  "revision": "cfaa52b627d443bc73279c93d56de0d0b7264d83",
+  "dirtySources": [
+    "services/case-api/src/main/java/dev/caseflow/documents/JobMessaging.java",
+    "services/case-api/src/test/java/dev/caseflow/documents/KafkaMessagingCrashProbe.java",
+    "services/case-api/src/test/java/dev/caseflow/documents/KafkaMessagingProcessRecoveryTest.java"
+  ],
+  "os": "Windows / PowerShell",
+  "database": "postgres:18.6-bookworm on loopback 54320",
+  "broker": "apache/kafka:4.2.1 on loopback 9092",
+  "tests": 9,
+  "skipped": 0,
+  "failed": 0,
+  "limits": "Owned child JVM production JobMessaging and transactional CompletionHandler; not full Spring Boot restart, broker failover, cloud, or end-to-end DOCX evidence"
+}

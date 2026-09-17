@@ -1,0 +1,14 @@
+[
+  {
+    "path": "services/case-api/src/main/java/dev/caseflow/documents/JobMessaging.java",
+    "sha256": "bbf9ca1220040113e4a5c7646a8207077e7e8c3d18a68dc9dfd5bf0b661d6f27"
+  },
+  {
+    "path": "services/case-api/src/test/java/dev/caseflow/documents/KafkaMessagingCrashProbe.java",
+    "sha256": "abf5bb56a771982d82a1369695a2d71d90e083cdf8cc3662898078249a28a3f2"
+  },
+  {
+    "path": "services/case-api/src/test/java/dev/caseflow/documents/KafkaMessagingProcessRecoveryTest.java",
+    "sha256": "60408f0b89ead41451b20bd6390c304791c99badde7a9a9738b2766b87b37079"
+  }
+]

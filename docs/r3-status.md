@@ -13,7 +13,7 @@ work. Performance and cloud claims need reproducible measurements.
 
 | Workstream | Current evidence | Required next evidence |
 | --- | --- | --- |
-| Recovery transactions | [11 deterministic recovery checks](evidence/2026-09-16-r3/recovery-contracts.md), plus [seven actual process-crash scenarios](evidence/2026-09-17-r3/summary.md), including upload/result selection and Java completion | Remaining publisher and Kafka offset crash boundaries; full-service/dependency recovery |
+| Recovery transactions | [13 actual business-boundary process-crash scenarios](recovery-matrix.md), including real Kafka publish/offset gaps, upload/result selection and Java completion; earlier deterministic checks retained | Dependency restarts, dead-letter crash windows, full-service recovery and operational reconciliation |
 | Broker redelivery | [10,000 injected duplicates plus one late failure](evidence/2026-09-17-r3/summary.md); both consumers caught up, one artifact and success audit, no added execution | This bounded duplicate gate passes; distinct active jobs and sustained arrivals remain separate load work |
 | Dependency recovery | Local dependency startup/recovery recorded during R2 | Controlled broker/database restarts and object-store timeouts during active work |
 | Query optimization | Tenant/permission predicates and cursor implementation | Skewed synthetic tenants, baseline query plans, one controlled change, identical-workload rerun and trade-offs |
@@ -49,6 +49,21 @@ were acknowledged and both existing consumer groups committed beyond them.
 Baseline and final business state matched. This was not concurrent with the
 process-kill experiment and is not a throughput benchmark. Full suites passed
 95 Python and 22 Java tests. No AI provider calls or cloud resources were used.
+
+## Third recovery batch: Kafka acknowledgements
+
+[Six more business-boundary process-crash scenarios](evidence/2026-09-17-r3/kafka-boundaries/summary.md)
+exercise the actual worker/Java messaging loops with real local Kafka and SQL.
+Pending outbox records replay with the same event ID at a new broker offset;
+durably handled messages replay without another job or audit when offset commit
+was interrupted. Each test owns temporary topics/groups and a disposable
+database. The running demo's groups and topics are unchanged. A cleanup
+regression also covers Kafka retaining a killed member until session expiry.
+Full regression suites passed 102 Python and 29 Java tests without failures/skips.
+
+These are component subprocesses, not full deployment or broker/database
+restarts. See the [boundary-by-boundary matrix](recovery-matrix.md) for coverage
+and remaining work. No model calls, AI ledger changes or paid resources.
 
 ## Limits carried from R2
 
