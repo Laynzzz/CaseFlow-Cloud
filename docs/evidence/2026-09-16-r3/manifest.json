@@ -25,7 +25,7 @@
   },
   "evidenceTier": "local PostgreSQL; deterministic exceptions; Python Kafka transport doubles; observed Java row-lock contention",
   "liveAiCalls": 0,
-  "normalization": "JUnit hostnames generalized to local-test-host; other raw test output retained.",
+  "normalization": "JUnit hostnames generalized to local-test-host; all evidence text uses LF line endings; other raw test output retained.",
   "sources": {
     "services/worker/tests/test_recovery.py": "39fb3aa270bb9ee72647ad6a4218af856c3739bd9bf20c8e81cc0e601c1f5622",
     "services/worker/tests/test_jobs.py": "b98b89abcc047212e5101618fdc9ec160bd7b49c20f092119c244dff01f3ea54",
@@ -37,7 +37,7 @@
     "services/case-api/src/main/java/dev/caseflow/documents/CompletionHandler.java": "df8c8c1725a6d8f790bb4239009a74b1887d181342700bffd76a5132f556dda3",
     "services/case-api/src/main/java/dev/caseflow/common/Commands.java": "8f8387658e5253e19fb2a00f894d219568d59485e24fcffad0c1e01e6184697c",
     "services/case-api/build.gradle": "dd513dbdc5d0b7199c835169870e42150131ed45904ba98aa723b9c35c9c7abd",
-    "services/worker/requirements.lock": "8a9b33f40125e20649749ef72cf6e99adb0ae061cee515a86a7905493cbeb86a",
+    "services/worker/requirements.lock": "7862d681bfcffd3e38a7a5537d8f776bd9f8337c40ab1dd577aa1c3ab5dbaff7",
     "db/migrations/V10__embedding_cache.sql": "93f92632b7b7ba2583564a32e5318fdcbe64482afc625620c36e426bc03765a0",
     "db/migrations/V1__foundation.sql": "3294f9713fe9acc147a1fab6dd56b129fa09a2ea7530eab90d8112eceb864b4a",
     "db/migrations/V2__purchase_domain.sql": "54338506e68bd0d56c15797be06ef59cc08f590db142a1f0723eeb937071fa99",
@@ -50,20 +50,21 @@
     "db/migrations/V9__ai_response_evidence.sql": "a365f19224fb8a5509d000274d2042bc56cd4aeba2a6753e7ba85d001b6cbe8c"
   },
   "artifacts": {
-    "java-recovery-review.txt": "f0ed81be7dacdd079ad5a39dc3b576d6d14aca3ebda1ddc85d7c6f1a3f2196ec",
-    "java-recovery-review.xml": "26bebc4efe382241272c42f3f5b718fa02d3eba021d3f5143b3059f5974419db",
-    "java-task-report.md": "027866e9b1425cced89395f119710c6b9a0ee2724459159518789a55ba7342de",
-    "java-tests.txt": "f931141130a4d820e6cd7d497b352bf651e949036ec3b13c6db0c5a5cf1604a1",
-    "recovery-contracts.md": "7d81ecb55b8c2faf3b1842d99e3de492b8d20de67ecbc06fb7fd285bbad70aa1",
-    "TEST-dev.caseflow.cases.PurchaseTest.xml": "c9a72c2a40b6b397842adb63169ea42eb7d5e9edbb9076d434815d33a1a44ca6",
-    "TEST-dev.caseflow.documents.CompletionHandlerIntegrationTest.xml": "01cf077e1423f99ee98f97189b45936c868df63fc4a870565098211593380e17",
-    "TEST-dev.caseflow.documents.TemplateValidatorTest.xml": "1e4b451d6248383cf6e85ba7fd0950ad79a667bcb5f9955407de14999366eb8e",
-    "TEST-dev.caseflow.evidence.AssistantIntegrationTest.xml": "590a73d07ad699a3182ef392115fb6a6ff080b90276d5612e2df0060f10aa773",
-    "TEST-dev.caseflow.health.HealthControllerTest.xml": "8df8888e9b02b4872539fd2fb34a22885d02852e9ba363b2e5010bcb296d2c6d",
-    "worker-recovery-review.txt": "82665cba4e4607e45c105c6c1ed7c38cb745593779855f2faf932dcca8476522",
-    "worker-recovery-review.xml": "6c126ab741d956ad6d56918d8dea89eeef35354f1907419b7114f8d364324116",
+    "java-recovery-review.txt": "e219d1ba6a00c8a33c1248d100b4a71c3a0e2aba1287450f27833017f3835845",
+    "java-recovery-review.xml": "26881ca0514b003a5ce3e35306f84e62f75560f733baa4fb0cd7629573ce6c6b",
+    "java-task-report.md": "bd76161bdeaab2fcea5eec2223c23af3dbff55cf49a7769f94e98045229bbe72",
+    "java-tests.txt": "ce0cd62e27892c3ed1c8786648be615072926a3a9e6dd099f8c7f86b8885b85a",
+    "recovery-contracts.md": "4fe9f5052c4205dc5f182b8e8f332ffb5298eb4116cb7c63d1dd81dea8bfc6ee",
+    "TEST-dev.caseflow.cases.PurchaseTest.xml": "4735305dae67e316dbf40f5dae72148ea4d5345925182caece5844a33ebe6f06",
+    "TEST-dev.caseflow.documents.CompletionHandlerIntegrationTest.xml": "68c3760ddf0772f0fdfde51150a25b9f626b60920c545d68221d09c0c7021dec",
+    "TEST-dev.caseflow.documents.TemplateValidatorTest.xml": "a1e6804f547420d136dacd7bca22d6dc2a06c11315c8e6b79cfcdf81db027ddf",
+    "TEST-dev.caseflow.evidence.AssistantIntegrationTest.xml": "d3ca5a1ab620cc56848b6e0744f926bbb49b1c338aa5423f91b3628cbd32055c",
+    "TEST-dev.caseflow.health.HealthControllerTest.xml": "5df24a54473a5b437b8335afd660da318eace247d43eb1bfc173d8e678b17d95",
+    "worker-recovery-review.txt": "eb86ba2e29b1bdd43b589ccd48e26678af17d4e4e746425957fdc3a46fb34fc3",
+    "worker-recovery-review.xml": "ba2af937535835e50d46f3f9b218c115a67779855b9a54b917307f15d9bd76be",
     "worker-task-report.md": "b6ebeabf490b1eef6db7f32763acc42b70adab67f10ac03bb5dd273501c4fe47",
-    "worker-tests.txt": "47bf01eb3907dedfa8dea4604320f2b95842e045ea9e15de93a5d69f43709b98",
-    "worker-tests.xml": "908bdfd02fae36fefd3a3b5375d3852195902d582adfb95bd3adcbd0dbf8ff18"
-  }
+    "worker-tests.txt": "d6e7aab4d8ff2f29a1d3844627835ef33fd58a2320e8d776700690f433ed3147",
+    "worker-tests.xml": "33c9cb2e4f35852140838c4175a865564cee3d383422b43fc38bbb481072f648"
+  },
+  "hashing": "SHA-256 of UTF-8 file bytes with CRLF normalized to LF. Source entries equal Git blob bytes at sourceRevision."
 }

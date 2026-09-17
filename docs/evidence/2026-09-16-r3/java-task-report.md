@@ -2,9 +2,9 @@
 
 Status: **DONE**
 
-Date: 2026-09-16  
-Baseline: `3e5820a` on `codex/r2-evaluation`  
-Database: local PostgreSQL on `127.0.0.1:54320`; a fresh guarded `caseflow_test_<32 hex>` database per test  
+Date: 2026-09-16
+Baseline: `3e5820a` on `codex/r2-evaluation`
+Database: local PostgreSQL on `127.0.0.1:54320`; a fresh guarded `caseflow_test_<32 hex>` database per test
 Live AI calls: none
 
 ## Files

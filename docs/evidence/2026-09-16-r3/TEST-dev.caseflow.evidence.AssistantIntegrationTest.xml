@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="dev.caseflow.evidence.AssistantIntegrationTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-09-17T03:14:39.271Z" hostname="local-test-host" time="2.1">
   <properties />
   <testcase name="acceptsOnlySelectedFieldsAndReplaysWithoutAnotherMutation()" classname="dev.caseflow.evidence.AssistantIntegrationTest" time="0.869" />

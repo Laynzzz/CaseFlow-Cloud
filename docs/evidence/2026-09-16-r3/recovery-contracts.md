@@ -73,8 +73,9 @@ See [focused output](java-recovery-review.txt) and
 [JUnit XML](java-recovery-review.xml).
 
 Raw outputs: [worker](worker-tests.txt), [Java](java-tests.txt). JUnit XML files
-in this directory preserve case names/counts and timestamps; only the machine
-hostname is generalized to `local-test-host`. Java compilation retains its
+in this directory preserve case names/counts and timestamps; the machine
+hostname is generalized to `local-test-host`, and text line endings are normalized
+to LF for reproducible Git hashes. Java compilation retains its
 pre-existing unchecked-operation notice; the full suite also reports a JVM
 class-data-sharing warning from its test tooling. Neither is a new assertion
 failure, and neither was silently removed from the raw output.
