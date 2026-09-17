@@ -643,3 +643,12 @@ See [the quality evidence and commands](r2-review-quality.md), the Python
 [validation contracts](../services/worker/caseflow_worker/ai_contracts.py).
 Unit tests check application behavior; graded development output measures the
 model on those examples. Neither substitutes for a fresh held-out assessment.
+# Restart configuration: import only the intended identity file
+
+`compose.yaml` is YAML read by Docker Compose on the developer's machine.
+Keycloak owns sign-in; the application still owns purchase permissions.
+Its import mount now exposes only the generated realm JSON. Mounting the entire
+generated directory was convenient, but later demo-result JSON files caused
+Keycloak to fail on restart. A narrow file mount keeps those unrelated outputs
+outside the import boundary. Local restart and OIDC sign-in were verified;
+see `docs/evidence/2026-09-16-r2/local-restart.md`.

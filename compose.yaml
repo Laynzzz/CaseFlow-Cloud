@@ -31,7 +31,7 @@ services:
       - '127.0.0.1:8180:8080'
     volumes:
       - keycloak-data:/opt/keycloak/data
-      - ./infrastructure/local/generated:/opt/keycloak/data/import:ro
+      - ./infrastructure/local/generated/caseflow-realm.json:/opt/keycloak/data/import/caseflow-realm.json:ro
   kafka:
     image: apache/kafka:4.2.1@sha256:2d2f77837385f202b1947fc3ed62421de344f0ced47dde360ca5afdad11b51fa
     environment:
