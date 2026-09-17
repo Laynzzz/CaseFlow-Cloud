@@ -1,0 +1,254 @@
+{
+  "id": "packaging-001",
+  "startedAt": "2026-09-17T02:47:15.503Z",
+  "sourceMap": {
+    "e002df81-3242-4ebe-96af-993f75552868": "packaging-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "packaging-p1",
+      "source": {
+        "id": "e002df81-3242-4ebe-96af-993f75552868",
+        "kind": "POLICY",
+        "name": "Synthetic packaging-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 94,
+        "sha256": "a7fc66edbcf1c0352dffed6555fd6f274ea8f10eee6158a6e8b2d857d76eba9f",
+        "jobId": "66baf5a5-9d5d-400b-a85b-453b216417e4",
+        "failureCode": null
+      },
+      "chunks": {
+        "source": {
+          "id": "e002df81-3242-4ebe-96af-993f75552868",
+          "kind": "POLICY",
+          "name": "Synthetic packaging-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 94,
+          "sha256": "a7fc66edbcf1c0352dffed6555fd6f274ea8f10eee6158a6e8b2d857d76eba9f",
+          "jobId": "66baf5a5-9d5d-400b-a85b-453b216417e4",
+          "failureCode": null
+        },
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "items": [
+          {
+            "id": "e45e2232-c4d5-5f5d-bb1b-abf6fca8a49e",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 94,
+            "text": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+            "sha256": "a7fc66edbcf1c0352dffed6555fd6f274ea8f10eee6158a6e8b2d857d76eba9f"
+          }
+        ]
+      }
+    }
+  ],
+  "tenantId": "55e4ffe1-2f4e-4772-8966-8ab1b8b1bdb2",
+  "caseId": "ed90a2ec-13ef-4a8b-82d7-e13b402bc732",
+  "quote": {
+    "id": "a95a038b-265f-4ef4-ae11-db175698796a",
+    "kind": "QUOTE",
+    "name": "Synthetic packaging-001 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "ed90a2ec-13ef-4a8b-82d7-e13b402bc732",
+    "mediaType": "text/plain",
+    "byteSize": 276,
+    "sha256": "9a3ac7718a387882503afe5c97ec512fc6b528520ef1f2565f485b72d76ee553",
+    "jobId": "9e87db6c-b88b-442b-b80a-0ed92204ce34",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "e002df81-3242-4ebe-96af-993f75552868",
+        "name": "Synthetic packaging-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Reusable packing tray",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "7ece4c3b-2557-47fd-af83-7eaaa391486e",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "2aba1b0b-2655-4e8d-bb39-d8b54e09c529",
+      "output": {
+        "total": {
+          "value": "173.05",
+          "citations": [
+            {
+              "quote": "\"amountPayable\": \"173.05\"",
+              "chunkId": "510d19ef-ddb3-59fb-bb0f-bfb4a7257601"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Synthetic Cobalt Parcel Collective 1",
+          "citations": [
+            {
+              "quote": "\"supplier\": \"Synthetic Cobalt Parcel Collective 1\"",
+              "chunkId": "510d19ef-ddb3-59fb-bb0f-bfb4a7257601"
+            }
+          ]
+        },
+        "currency": {
+          "value": "EUR",
+          "citations": [
+            {
+              "quote": "\"currencyCode\": \"EUR\"",
+              "chunkId": "510d19ef-ddb3-59fb-bb0f-bfb4a7257601"
+            }
+          ]
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "1",
+              "unitPrice": "173.05",
+              "description": "Reusable packing tray"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "\"description\": \"Reusable packing tray\"",
+              "chunkId": "510d19ef-ddb3-59fb-bb0f-bfb4a7257601"
+            },
+            {
+              "quote": "\"quantity\": \"1\"",
+              "chunkId": "510d19ef-ddb3-59fb-bb0f-bfb4a7257601"
+            },
+            {
+              "quote": "\"unitPrice\": \"173.05\"",
+              "chunkId": "510d19ef-ddb3-59fb-bb0f-bfb4a7257601"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "510d19ef-ddb3-59fb-bb0f-bfb4a7257601": {
+          "page": 1,
+          "text": "VENDOR QUOTE (null means not supplied)\n{\n  \"supplier\": \"Synthetic Cobalt Parcel Collective 1\",\n  \"currencyCode\": \"EUR\",\n  \"goods\": [\n    {\n      \"description\": \"Reusable packing tray\",\n      \"quantity\": \"1\",\n      \"unitPrice\": \"173.05\"\n    }\n  ],\n  \"amountPayable\": \"173.05\"\n}",
+          "start": 0,
+          "sourceId": "a95a038b-265f-4ef4-ae11-db175698796a"
+        }
+      },
+      "revision": 2,
+      "sourceId": "a95a038b-265f-4ef4-ae11-db175698796a",
+      "elapsedMs": 4843,
+      "promptHash": "df53da61dc207778f9aa938d761d95f0e988c1a686338e16832208ac987491c7",
+      "schemaHash": "e8652dd43c2a96a787f916b9f162e66223048bb641767555d1534f3462381af1",
+      "inputTokens": 1039,
+      "outputTokens": 299,
+      "sourceSha256": "9a3ac7718a387882503afe5c97ec512fc6b528520ef1f2565f485b72d76ee553",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000894",
+      "retrievedChunkIds": [
+        "510d19ef-ddb3-59fb-bb0f-bfb4a7257601"
+      ],
+      "retrievalElapsedMs": 14
+    }
+  },
+  "review": {
+    "jobId": "a55cd68d-8d5f-4414-b132-8129ea77cc66",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "a91d2a47-83d1-4146-99cd-0c6d25a1da46",
+      "output": {
+        "summary": "The purchase request is for a reusable packing tray with a total of 0.00 USD. The cost center, justification, line items, and vendor information are not provided. According to the policy, packaging requests may be approved only after the purchase request identifies its cost center.",
+        "citations": [
+          {
+            "quote": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+            "chunkId": "e45e2232-c4d5-5f5d-bb1b-abf6fca8a49e"
+          }
+        ],
+        "policy_findings": [
+          {
+            "claim": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+            "citations": [
+              {
+                "quote": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+                "chunkId": "e45e2232-c4d5-5f5d-bb1b-abf6fca8a49e"
+              }
+            ]
+          }
+        ],
+        "missing_information": [
+          "vendor",
+          "costCenter",
+          "justification",
+          "lineItems"
+        ],
+        "insufficient_evidence": false
+      },
+      "evidence": {
+        "e45e2232-c4d5-5f5d-bb1b-abf6fca8a49e": {
+          "page": 1,
+          "text": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "start": 0,
+          "sourceId": "e002df81-3242-4ebe-96af-993f75552868"
+        }
+      },
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 4063,
+      "promptHash": "7542ab5aca248b76f5eab4befcc18ee55b5bc9830dcabbe4221b773c9c4515d9",
+      "schemaHash": "963b73f2d64f4087be5c945f3558cf39bf89bec954a6a7a0209b2f6b64b63298",
+      "inputTokens": 1037,
+      "outputTokens": 212,
+      "sourceSha256": null,
+      "promptVersion": "purchase-review-2026-09-16-v6",
+      "schemaVersion": "purchase-review-v5",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Reusable OR packing OR tray OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000754",
+      "retrievedChunkIds": [
+        "e45e2232-c4d5-5f5d-bb1b-abf6fca8a49e"
+      ],
+      "retrievalElapsedMs": 15
+    }
+  },
+  "retrievedPassageIds": [
+    "packaging-p1"
+  ],
+  "finishedAt": "2026-09-17T02:47:30.361Z"
+}

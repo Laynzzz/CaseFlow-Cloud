@@ -1,0 +1,171 @@
+{
+  "id": "filtration-006",
+  "startedAt": "2026-09-17T02:53:42.192Z",
+  "sourceMap": {
+    "b618ebd3-ad62-49c9-b8af-2203b3101bce": "filtration-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "filtration-p1",
+      "source": {
+        "id": "b618ebd3-ad62-49c9-b8af-2203b3101bce",
+        "kind": "POLICY",
+        "name": "Synthetic filtration-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 117,
+        "sha256": "8b7b190837c5921a20491585b600853d036d52847008a22ad6afd8cfa48e89ac",
+        "jobId": "a563ae46-4bb9-46ac-89e1-f07a92f83a4e",
+        "failureCode": null
+      },
+      "chunks": {
+        "source": {
+          "id": "b618ebd3-ad62-49c9-b8af-2203b3101bce",
+          "kind": "POLICY",
+          "name": "Synthetic filtration-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 117,
+          "sha256": "8b7b190837c5921a20491585b600853d036d52847008a22ad6afd8cfa48e89ac",
+          "jobId": "a563ae46-4bb9-46ac-89e1-f07a92f83a4e",
+          "failureCode": null
+        },
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "items": [
+          {
+            "id": "f9a1de10-106e-5fee-829c-e5f9af304540",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 117,
+            "text": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+            "sha256": "8b7b190837c5921a20491585b600853d036d52847008a22ad6afd8cfa48e89ac"
+          }
+        ]
+      }
+    }
+  ],
+  "tenantId": "9546501f-430e-4df4-ae03-24f57a65e916",
+  "caseId": "c709df19-c20f-4a0e-b34e-695444d1724b",
+  "quote": {
+    "id": "a61794dc-ce8d-44a0-a92e-5989831bf4ef",
+    "kind": "QUOTE",
+    "name": "Synthetic filtration-006 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "c709df19-c20f-4a0e-b34e-695444d1724b",
+    "mediaType": "text/plain",
+    "byteSize": 449,
+    "sha256": "07bec54b3624e5828648238c15f8954f19ded7bd1ecafc504149e93a931d39c9",
+    "jobId": "3d9df273-4f3e-4630-ae03-8f92fc86e809",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "b618ebd3-ad62-49c9-b8af-2203b3101bce",
+        "name": "Synthetic filtration-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Replacement filter pack",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "72723bbe-5e7e-4396-8148-5565db50856b",
+    "kind": "EXTRACTION",
+    "status": "FAILED",
+    "failureCode": "INVALID_AI_OUTPUT",
+    "revision": 2,
+    "stale": false,
+    "result": null
+  },
+  "review": {
+    "jobId": "4ca0d0f6-ad84-4a35-81c9-7820d10b1f53",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "46fe6b61-866c-4d40-8437-c7cd80cc6f0a",
+      "output": {
+        "summary": "The purchase request is for a replacement filter pack with a total amount of 0.00 USD. The cost center, vendor, justification, and line items are not provided. According to the policy, a filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+        "citations": [
+          {
+            "quote": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+            "chunkId": "f9a1de10-106e-5fee-829c-e5f9af304540"
+          }
+        ],
+        "policy_findings": [
+          {
+            "claim": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+            "citations": [
+              {
+                "quote": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+                "chunkId": "f9a1de10-106e-5fee-829c-e5f9af304540"
+              }
+            ]
+          }
+        ],
+        "missing_information": [
+          "vendor",
+          "costCenter",
+          "justification",
+          "lineItems"
+        ],
+        "insufficient_evidence": false
+      },
+      "evidence": {
+        "f9a1de10-106e-5fee-829c-e5f9af304540": {
+          "page": 1,
+          "text": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "start": 0,
+          "sourceId": "b618ebd3-ad62-49c9-b8af-2203b3101bce"
+        }
+      },
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 4171,
+      "promptHash": "e58ed1e1d87a0cfba58816921f31840126008f7d0d2bf8bd38e2afd77d7848a3",
+      "schemaHash": "a9d078712506c138a934b9b01ff0099e1be2478f4e0b6ead1eb9cc7ec2e86b48",
+      "inputTokens": 1032,
+      "outputTokens": 210,
+      "sourceSha256": null,
+      "promptVersion": "purchase-review-2026-09-16-v6",
+      "schemaVersion": "purchase-review-v5",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Replacement OR filter OR pack OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000749",
+      "retrievedChunkIds": [
+        "f9a1de10-106e-5fee-829c-e5f9af304540"
+      ],
+      "retrievalElapsedMs": 0
+    }
+  },
+  "retrievedPassageIds": [
+    "filtration-p1"
+  ],
+  "finishedAt": "2026-09-17T02:53:57.798Z"
+}

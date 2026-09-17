@@ -1,0 +1,171 @@
+{
+  "id": "packaging-006",
+  "startedAt": "2026-09-17T02:47:30.362Z",
+  "sourceMap": {
+    "23c46c02-fbbd-419a-91e5-3b2c89047f13": "packaging-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "packaging-p1",
+      "source": {
+        "id": "23c46c02-fbbd-419a-91e5-3b2c89047f13",
+        "kind": "POLICY",
+        "name": "Synthetic packaging-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 94,
+        "sha256": "a7fc66edbcf1c0352dffed6555fd6f274ea8f10eee6158a6e8b2d857d76eba9f",
+        "jobId": "67cefccd-3523-4c71-9876-61812e27bd89",
+        "failureCode": null
+      },
+      "chunks": {
+        "source": {
+          "id": "23c46c02-fbbd-419a-91e5-3b2c89047f13",
+          "kind": "POLICY",
+          "name": "Synthetic packaging-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 94,
+          "sha256": "a7fc66edbcf1c0352dffed6555fd6f274ea8f10eee6158a6e8b2d857d76eba9f",
+          "jobId": "67cefccd-3523-4c71-9876-61812e27bd89",
+          "failureCode": null
+        },
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "items": [
+          {
+            "id": "022e9666-52d8-515c-a7af-156287048428",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 94,
+            "text": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+            "sha256": "a7fc66edbcf1c0352dffed6555fd6f274ea8f10eee6158a6e8b2d857d76eba9f"
+          }
+        ]
+      }
+    }
+  ],
+  "tenantId": "2ec84c95-d691-45e8-a9c4-31e78ed1bfb0",
+  "caseId": "a6b928a9-a51a-4554-b4ad-913b3505d59b",
+  "quote": {
+    "id": "7fa2f0e5-37e4-474b-8ac6-75ed57cb676d",
+    "kind": "QUOTE",
+    "name": "Synthetic packaging-006 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "a6b928a9-a51a-4554-b4ad-913b3505d59b",
+    "mediaType": "text/plain",
+    "byteSize": 433,
+    "sha256": "98f43ac3c706e1ad4f32b365df0cfa04049d3fe27b6bea6fb1db93fc8d8910d1",
+    "jobId": "0849ec76-fe55-49e7-b620-9ca0181bd060",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "23c46c02-fbbd-419a-91e5-3b2c89047f13",
+        "name": "Synthetic packaging-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Reusable packing tray",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "f8e41011-286c-4b8a-af59-c125d7433dca",
+    "kind": "EXTRACTION",
+    "status": "FAILED",
+    "failureCode": "INVALID_AI_OUTPUT",
+    "revision": 2,
+    "stale": false,
+    "result": null
+  },
+  "review": {
+    "jobId": "db1f7c35-95d9-43e4-8fff-0bb5aa6f666c",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "65833761-53cd-405f-963a-17f43db08782",
+      "output": {
+        "summary": "The purchase request is for a reusable packing tray priced at 0.00 USD, without a specified vendor, cost center, justification, or line items. According to policy, packaging requests require identification of a cost center for approval.",
+        "citations": [
+          {
+            "quote": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+            "chunkId": "022e9666-52d8-515c-a7af-156287048428"
+          }
+        ],
+        "policy_findings": [
+          {
+            "claim": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+            "citations": [
+              {
+                "quote": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+                "chunkId": "022e9666-52d8-515c-a7af-156287048428"
+              }
+            ]
+          }
+        ],
+        "missing_information": [
+          "vendor",
+          "costCenter",
+          "justification",
+          "lineItems"
+        ],
+        "insufficient_evidence": false
+      },
+      "evidence": {
+        "022e9666-52d8-515c-a7af-156287048428": {
+          "page": 1,
+          "text": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "start": 0,
+          "sourceId": "23c46c02-fbbd-419a-91e5-3b2c89047f13"
+        }
+      },
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 3875,
+      "promptHash": "0038fedaa395374552aece2f21e06feb1002914cd76dfd1d11731e766d53d752",
+      "schemaHash": "b4b47577892bd372a24650ef68d65a1d6938b7551bfb53a5adadc255e7f37b40",
+      "inputTokens": 1026,
+      "outputTokens": 187,
+      "sourceSha256": null,
+      "promptVersion": "purchase-review-2026-09-16-v6",
+      "schemaVersion": "purchase-review-v5",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Reusable OR packing OR tray OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000710",
+      "retrievedChunkIds": [
+        "022e9666-52d8-515c-a7af-156287048428"
+      ],
+      "retrievalElapsedMs": 14
+    }
+  },
+  "retrievedPassageIds": [
+    "packaging-p1"
+  ],
+  "finishedAt": "2026-09-17T02:47:45.224Z"
+}

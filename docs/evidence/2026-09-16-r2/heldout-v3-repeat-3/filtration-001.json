@@ -1,0 +1,246 @@
+{
+  "id": "filtration-001",
+  "startedAt": "2026-09-17T02:53:25.076Z",
+  "sourceMap": {
+    "edf36c80-cfbd-4cbc-835b-de1c0722dc6b": "filtration-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "filtration-p1",
+      "source": {
+        "id": "edf36c80-cfbd-4cbc-835b-de1c0722dc6b",
+        "kind": "POLICY",
+        "name": "Synthetic filtration-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 117,
+        "sha256": "8b7b190837c5921a20491585b600853d036d52847008a22ad6afd8cfa48e89ac",
+        "jobId": "2ee1fbb2-310b-441a-bbc9-44573b2ec07e",
+        "failureCode": null
+      },
+      "chunks": {
+        "source": {
+          "id": "edf36c80-cfbd-4cbc-835b-de1c0722dc6b",
+          "kind": "POLICY",
+          "name": "Synthetic filtration-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 117,
+          "sha256": "8b7b190837c5921a20491585b600853d036d52847008a22ad6afd8cfa48e89ac",
+          "jobId": "2ee1fbb2-310b-441a-bbc9-44573b2ec07e",
+          "failureCode": null
+        },
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "items": [
+          {
+            "id": "71d0f5a8-c50d-58eb-99b0-8aa7126c7caa",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 117,
+            "text": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+            "sha256": "8b7b190837c5921a20491585b600853d036d52847008a22ad6afd8cfa48e89ac"
+          }
+        ]
+      }
+    }
+  ],
+  "tenantId": "83d312cd-89bd-4255-b458-8d1c2d87bf41",
+  "caseId": "c9ea331a-fb3b-419b-82d6-d621d1fedd9f",
+  "quote": {
+    "id": "85337c2c-f038-4eae-a38b-2ecfafafac06",
+    "kind": "QUOTE",
+    "name": "Synthetic filtration-001 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "c9ea331a-fb3b-419b-82d6-d621d1fedd9f",
+    "mediaType": "text/plain",
+    "byteSize": 294,
+    "sha256": "a64dba4335a698fd6f182c2ff6eba445a82fb3bdbbef0c59addc51f3b7442dd4",
+    "jobId": "b8b62123-7229-4821-9c88-6d365aada510",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "edf36c80-cfbd-4cbc-835b-de1c0722dc6b",
+        "name": "Synthetic filtration-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Replacement filter pack",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "9b4f12b2-945d-4562-b6f3-56942d21afa2",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "92c749b4-253a-42ab-a13b-e8f18692c035",
+      "output": {
+        "total": {
+          "value": "149.65",
+          "citations": [
+            {
+              "quote": "<amountPayable>149.65</amountPayable>",
+              "chunkId": "56e91409-724d-5188-a010-b75e1a7667bc"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Synthetic Brook Filter Atelier 1",
+          "citations": [
+            {
+              "quote": "<supplier>Synthetic Brook Filter Atelier 1</supplier>",
+              "chunkId": "56e91409-724d-5188-a010-b75e1a7667bc"
+            }
+          ]
+        },
+        "currency": {
+          "value": "CAD",
+          "citations": [
+            {
+              "quote": "<currencyCode>CAD</currencyCode>",
+              "chunkId": "56e91409-724d-5188-a010-b75e1a7667bc"
+            }
+          ]
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "1",
+              "unitPrice": "149.65",
+              "description": "Replacement filter pack"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "<description>Replacement filter pack</description>\n    <quantity>1</quantity>\n    <unitPrice>149.65</unitPrice>",
+              "chunkId": "56e91409-724d-5188-a010-b75e1a7667bc"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "56e91409-724d-5188-a010-b75e1a7667bc": {
+          "page": 1,
+          "text": "<vendorOffer>\n  <supplier>Synthetic Brook Filter Atelier 1</supplier>\n  <currencyCode>CAD</currencyCode>\n  <line>\n    <description>Replacement filter pack</description>\n    <quantity>1</quantity>\n    <unitPrice>149.65</unitPrice>\n  </line>\n  <amountPayable>149.65</amountPayable>\n</vendorOffer>",
+          "start": 0,
+          "sourceId": "85337c2c-f038-4eae-a38b-2ecfafafac06"
+        }
+      },
+      "revision": 2,
+      "sourceId": "85337c2c-f038-4eae-a38b-2ecfafafac06",
+      "elapsedMs": 4421,
+      "promptHash": "145cc6ecdf28afcf174cdbbf1df6f4c7f1ea200028c393c35e8a5295f62ef5f5",
+      "schemaHash": "3e8361a2ec998622482cb68a690d9aaba840a875b7ce1d73b4968ee33c448fa1",
+      "inputTokens": 1035,
+      "outputTokens": 251,
+      "sourceSha256": "a64dba4335a698fd6f182c2ff6eba445a82fb3bdbbef0c59addc51f3b7442dd4",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000816",
+      "retrievedChunkIds": [
+        "56e91409-724d-5188-a010-b75e1a7667bc"
+      ],
+      "retrievalElapsedMs": 14
+    }
+  },
+  "review": {
+    "jobId": "29f385c8-3c4f-4b81-8b22-b99e6d88b6f0",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "b6c4f7d3-a9ec-4e88-85a5-64ee245bc62c",
+      "output": {
+        "summary": "The purchase request is for a replacement filter pack costing 0.00 USD. It lacks a vendor, cost center, justification, and line items. Policy requires a written justification explaining why a filtration purchase is needed before approval.",
+        "citations": [
+          {
+            "quote": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+            "chunkId": "71d0f5a8-c50d-58eb-99b0-8aa7126c7caa"
+          }
+        ],
+        "policy_findings": [
+          {
+            "claim": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+            "citations": [
+              {
+                "quote": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+                "chunkId": "71d0f5a8-c50d-58eb-99b0-8aa7126c7caa"
+              }
+            ]
+          }
+        ],
+        "missing_information": [
+          "vendor",
+          "costCenter",
+          "justification",
+          "lineItems"
+        ],
+        "insufficient_evidence": false
+      },
+      "evidence": {
+        "71d0f5a8-c50d-58eb-99b0-8aa7126c7caa": {
+          "page": 1,
+          "text": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "start": 0,
+          "sourceId": "edf36c80-cfbd-4cbc-835b-de1c0722dc6b"
+        }
+      },
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 5985,
+      "promptHash": "35fcd70180f44a9e4aa89428cdf4dfc1146ab72888b9ed9c0ef3c04966cbaf2d",
+      "schemaHash": "78042670c47c89249c9e5c67ce2b8960105f40b092c99d0322ef9cd213fb7af0",
+      "inputTokens": 1039,
+      "outputTokens": 206,
+      "sourceSha256": null,
+      "promptVersion": "purchase-review-2026-09-16-v6",
+      "schemaVersion": "purchase-review-v5",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Replacement OR filter OR pack OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000746",
+      "retrievedChunkIds": [
+        "71d0f5a8-c50d-58eb-99b0-8aa7126c7caa"
+      ],
+      "retrievalElapsedMs": 14
+    }
+  },
+  "retrievedPassageIds": [
+    "filtration-p1"
+  ],
+  "finishedAt": "2026-09-17T02:53:42.191Z"
+}

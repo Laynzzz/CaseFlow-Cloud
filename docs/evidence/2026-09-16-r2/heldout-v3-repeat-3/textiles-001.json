@@ -1,0 +1,246 @@
+{
+  "id": "textiles-001",
+  "startedAt": "2026-09-17T02:54:30.495Z",
+  "sourceMap": {
+    "f629ac3a-0f12-4565-8fed-f2c3ed7b663f": "textiles-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "textiles-p1",
+      "source": {
+        "id": "f629ac3a-0f12-4565-8fed-f2c3ed7b663f",
+        "kind": "POLICY",
+        "name": "Synthetic textiles-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 133,
+        "sha256": "48cae365316102d22aa91f630faad85eaafec921c9c6d3f8bf8d3150f2f88a23",
+        "jobId": "b8d156b3-ec34-4e92-9228-a09605e28900",
+        "failureCode": null
+      },
+      "chunks": {
+        "source": {
+          "id": "f629ac3a-0f12-4565-8fed-f2c3ed7b663f",
+          "kind": "POLICY",
+          "name": "Synthetic textiles-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 133,
+          "sha256": "48cae365316102d22aa91f630faad85eaafec921c9c6d3f8bf8d3150f2f88a23",
+          "jobId": "b8d156b3-ec34-4e92-9228-a09605e28900",
+          "failureCode": null
+        },
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "items": [
+          {
+            "id": "eea7cbb4-1507-54aa-aa3b-48e0262780f6",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 133,
+            "text": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+            "sha256": "48cae365316102d22aa91f630faad85eaafec921c9c6d3f8bf8d3150f2f88a23"
+          }
+        ]
+      }
+    }
+  ],
+  "tenantId": "d3c7056d-893d-4bb6-923a-8c3a82f99b3a",
+  "caseId": "61403ffd-50f9-48ed-b036-b15bd21cfd56",
+  "quote": {
+    "id": "3650aba0-0584-493e-b1ae-e4f90bbd0154",
+    "kind": "QUOTE",
+    "name": "Synthetic textiles-001 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "61403ffd-50f9-48ed-b036-b15bd21cfd56",
+    "mediaType": "text/plain",
+    "byteSize": 209,
+    "sha256": "aa15407bc8bc00bc445c92d827bd21c45bed43077f8ea26579c7dc6400532491",
+    "jobId": "ee020dab-30f0-4e7b-aa5e-779d71ff5698",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "f629ac3a-0f12-4565-8fed-f2c3ed7b663f",
+        "name": "Synthetic textiles-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Washable fabric cover",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "94a9e787-688e-4f8f-b551-8ab6932aa3c7",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "779dff3a-e1ec-4b2d-a8bf-1f9736d11b7b",
+      "output": {
+        "total": {
+          "value": "196.45",
+          "citations": [
+            {
+              "quote": "196.45",
+              "chunkId": "35bf43ce-ddea-5267-aa42-5903a1200e42"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Synthetic Dune Fabric House 1",
+          "citations": [
+            {
+              "quote": "\"Synthetic Dune Fabric House 1\"",
+              "chunkId": "35bf43ce-ddea-5267-aa42-5903a1200e42"
+            }
+          ]
+        },
+        "currency": {
+          "value": "USD",
+          "citations": [
+            {
+              "quote": "USD",
+              "chunkId": "35bf43ce-ddea-5267-aa42-5903a1200e42"
+            }
+          ]
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "1",
+              "unitPrice": "196.45",
+              "description": "Washable fabric cover"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "Washable fabric cover\",1,196.45,196.45",
+              "chunkId": "35bf43ce-ddea-5267-aa42-5903a1200e42"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "35bf43ce-ddea-5267-aa42-5903a1200e42": {
+          "page": 1,
+          "text": "Vendor quote export; one goods row; header names define the columns.\nsupplier,currencyCode,product,quantity,unitPrice,amountPayable\n\"Synthetic Dune Fabric House 1\",\"USD\",\"Washable fabric cover\",1,196.45,196.45",
+          "start": 0,
+          "sourceId": "3650aba0-0584-493e-b1ae-e4f90bbd0154"
+        }
+      },
+      "revision": 2,
+      "sourceId": "3650aba0-0584-493e-b1ae-e4f90bbd0154",
+      "elapsedMs": 4483,
+      "promptHash": "dcf4538bd70d6790362f1f4d7fc3e1f2840d19172f4fddbff8d2b85abe7e7ceb",
+      "schemaHash": "03d6770bbd89b5375161cbaf836d36561cc94f6a9f71560fa6b7d257f38bb036",
+      "inputTokens": 997,
+      "outputTokens": 211,
+      "sourceSha256": "aa15407bc8bc00bc445c92d827bd21c45bed43077f8ea26579c7dc6400532491",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000737",
+      "retrievedChunkIds": [
+        "35bf43ce-ddea-5267-aa42-5903a1200e42"
+      ],
+      "retrievalElapsedMs": 0
+    }
+  },
+  "review": {
+    "jobId": "c4f185bc-cc80-49e6-a384-1f4df91e160a",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "7e9d7df2-1862-4899-a17a-3d5683571f7d",
+      "output": {
+        "summary": "The purchase is for a washable fabric cover with no line items, no vendor specified, no justification provided, a zero total, and an empty cost center. Policy requires a justification describing the business need before approving a textiles purchase.",
+        "citations": [
+          {
+            "quote": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+            "chunkId": "eea7cbb4-1507-54aa-aa3b-48e0262780f6"
+          }
+        ],
+        "policy_findings": [
+          {
+            "claim": "The request must include a justification describing the business need before approving a textiles purchase.",
+            "citations": [
+              {
+                "quote": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+                "chunkId": "eea7cbb4-1507-54aa-aa3b-48e0262780f6"
+              }
+            ]
+          }
+        ],
+        "missing_information": [
+          "vendor",
+          "costCenter",
+          "justification",
+          "lineItems"
+        ],
+        "insufficient_evidence": false
+      },
+      "evidence": {
+        "eea7cbb4-1507-54aa-aa3b-48e0262780f6": {
+          "page": 1,
+          "text": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+          "start": 0,
+          "sourceId": "f629ac3a-0f12-4565-8fed-f2c3ed7b663f"
+        }
+      },
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 4078,
+      "promptHash": "ed1a1d602930013669cc59d0d5fe81e15d7f73768a9f8a312205c7276c81227e",
+      "schemaHash": "bcffe97ee8239fd0069d7db9826b697ca041400f6da6b88272435675dd60ce34",
+      "inputTokens": 1041,
+      "outputTokens": 207,
+      "sourceSha256": null,
+      "promptVersion": "purchase-review-2026-09-16-v6",
+      "schemaVersion": "purchase-review-v5",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Washable OR fabric OR cover OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000748",
+      "retrievedChunkIds": [
+        "eea7cbb4-1507-54aa-aa3b-48e0262780f6"
+      ],
+      "retrievalElapsedMs": 16
+    }
+  },
+  "retrievedPassageIds": [
+    "textiles-p1"
+  ],
+  "finishedAt": "2026-09-17T02:54:45.312Z"
+}

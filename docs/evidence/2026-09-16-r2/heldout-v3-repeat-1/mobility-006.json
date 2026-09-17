@@ -1,0 +1,171 @@
+{
+  "id": "mobility-006",
+  "startedAt": "2026-09-17T02:49:13.220Z",
+  "sourceMap": {
+    "dbb69afc-3780-4bb7-b2a5-9d1a95423470": "mobility-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "mobility-p1",
+      "source": {
+        "id": "dbb69afc-3780-4bb7-b2a5-9d1a95423470",
+        "kind": "POLICY",
+        "name": "Synthetic mobility-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 122,
+        "sha256": "3a6b79cbdf9563e4574dbaf1a67cacbf5ca2217cffc7283da5383cc8186f3263",
+        "jobId": "dc0279c0-15f1-49f5-9ed5-9edc6bd6b31b",
+        "failureCode": null
+      },
+      "chunks": {
+        "source": {
+          "id": "dbb69afc-3780-4bb7-b2a5-9d1a95423470",
+          "kind": "POLICY",
+          "name": "Synthetic mobility-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 122,
+          "sha256": "3a6b79cbdf9563e4574dbaf1a67cacbf5ca2217cffc7283da5383cc8186f3263",
+          "jobId": "dc0279c0-15f1-49f5-9ed5-9edc6bd6b31b",
+          "failureCode": null
+        },
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "items": [
+          {
+            "id": "963824d1-a89b-5b5f-93c0-0c1f42152832",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 122,
+            "text": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+            "sha256": "3a6b79cbdf9563e4574dbaf1a67cacbf5ca2217cffc7283da5383cc8186f3263"
+          }
+        ]
+      }
+    }
+  ],
+  "tenantId": "eaaceeff-6663-49e2-958b-c72b51932698",
+  "caseId": "953d80e6-b1fb-4cb5-9eeb-cab0a2b8cbf8",
+  "quote": {
+    "id": "b46a1c4f-1cee-4ef1-8806-d6ce33f95c03",
+    "kind": "QUOTE",
+    "name": "Synthetic mobility-006 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "953d80e6-b1fb-4cb5-9eeb-cab0a2b8cbf8",
+    "mediaType": "text/plain",
+    "byteSize": 556,
+    "sha256": "729ae1861b6d336bb51ca252ffbd0a32d9da6adbf0d9c19d706b4a87e03e5246",
+    "jobId": "40cd81af-6026-4054-bea2-c2408573c2df",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "dbb69afc-3780-4bb7-b2a5-9d1a95423470",
+        "name": "Synthetic mobility-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Portable equipment cart",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "fed0199c-7873-4a16-8fdf-b124dbe5573b",
+    "kind": "EXTRACTION",
+    "status": "FAILED",
+    "failureCode": "INVALID_AI_OUTPUT",
+    "revision": 2,
+    "stale": false,
+    "result": null
+  },
+  "review": {
+    "jobId": "dc40d96f-a426-4e40-a3b2-a4e001bbf6d6",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "173b917e-1674-40d2-9c25-188a49e08193",
+      "output": {
+        "summary": "The purchase request is for a Portable equipment cart with a total amount of 0.00 USD. The request lacks a vendor, cost center, justification, and line items. According to the provided policy evidence, mobility purchases must include a justification in the request before approval, describing the intended use.",
+        "citations": [
+          {
+            "quote": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+            "chunkId": "963824d1-a89b-5b5f-93c0-0c1f42152832"
+          }
+        ],
+        "policy_findings": [
+          {
+            "claim": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+            "citations": [
+              {
+                "quote": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+                "chunkId": "963824d1-a89b-5b5f-93c0-0c1f42152832"
+              }
+            ]
+          }
+        ],
+        "missing_information": [
+          "vendor",
+          "costCenter",
+          "justification",
+          "lineItems"
+        ],
+        "insufficient_evidence": false
+      },
+      "evidence": {
+        "963824d1-a89b-5b5f-93c0-0c1f42152832": {
+          "page": 1,
+          "text": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "start": 0,
+          "sourceId": "dbb69afc-3780-4bb7-b2a5-9d1a95423470"
+        }
+      },
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 4655,
+      "promptHash": "96b37bb0b7dbb7e3d4f019b29fcd5fc01b00883c3a3600ec680bb3e39c29d906",
+      "schemaHash": "2f23e0ce56b109c644bc31e23931230b83e0d102dd8f2328f3d30f02fdb1af38",
+      "inputTokens": 1041,
+      "outputTokens": 225,
+      "sourceSha256": null,
+      "promptVersion": "purchase-review-2026-09-16-v6",
+      "schemaVersion": "purchase-review-v5",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Portable OR equipment OR cart OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000777",
+      "retrievedChunkIds": [
+        "963824d1-a89b-5b5f-93c0-0c1f42152832"
+      ],
+      "retrievalElapsedMs": 14
+    }
+  },
+  "retrievedPassageIds": [
+    "mobility-p1"
+  ],
+  "finishedAt": "2026-09-17T02:49:29.587Z"
+}

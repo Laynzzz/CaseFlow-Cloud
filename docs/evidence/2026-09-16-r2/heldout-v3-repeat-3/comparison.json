@@ -1,0 +1,271 @@
+{
+  "datasetVersion": "synthetic-v3",
+  "selectedIds": [
+    "calibration-001",
+    "calibration-006",
+    "filtration-001",
+    "filtration-006",
+    "packaging-001",
+    "packaging-006",
+    "textiles-001",
+    "textiles-006",
+    "signage-001",
+    "signage-006",
+    "mobility-001",
+    "mobility-006"
+  ],
+  "baselineSubsetExtraction": {
+    "numerator": 28,
+    "denominator": 48,
+    "rate": 0.5833333333333334
+  },
+  "repeatSubsetExtraction": {
+    "numerator": 32,
+    "denominator": 48,
+    "rate": 0.6666666666666666
+  },
+  "planSha256": "01206729eec312fbf4d8c25d8bddd0290d4d45a1ba41c9fdf8d9bfff58e518cf",
+  "predictionHashes": [
+    "ad5bdde8a94433372238e69e2174553da55e96af42d5ca5e35b7adf655dd5c1f",
+    "21da574d04975178f11533879b115d3b2ca61388ca3a7a632d3e0b002722e832"
+  ],
+  "changedExtractionFields": [
+    {
+      "id": "calibration-006",
+      "field": "vendor"
+    },
+    {
+      "id": "calibration-006",
+      "field": "currency"
+    },
+    {
+      "id": "calibration-006",
+      "field": "total"
+    },
+    {
+      "id": "calibration-006",
+      "field": "lineItems"
+    }
+  ],
+  "comparisons": [
+    {
+      "id": "calibration-001",
+      "changedExtractionFields": [],
+      "inputComparability": "verified",
+      "unverifiedInputs": [],
+      "extractionStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "reviewStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "summaryTextChanged": true,
+      "findingTextsChanged": true,
+      "abstentionChanged": false
+    },
+    {
+      "id": "calibration-006",
+      "changedExtractionFields": [
+        "vendor",
+        "currency",
+        "total",
+        "lineItems"
+      ],
+      "inputComparability": "verified",
+      "unverifiedInputs": [],
+      "extractionStatuses": [
+        "FAILED",
+        "SUCCEEDED"
+      ],
+      "reviewStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "summaryTextChanged": true,
+      "findingTextsChanged": true,
+      "abstentionChanged": false
+    },
+    {
+      "id": "filtration-001",
+      "changedExtractionFields": [],
+      "inputComparability": "verified",
+      "unverifiedInputs": [],
+      "extractionStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "reviewStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "summaryTextChanged": true,
+      "findingTextsChanged": false,
+      "abstentionChanged": false
+    },
+    {
+      "id": "filtration-006",
+      "changedExtractionFields": [],
+      "inputComparability": "verified",
+      "unverifiedInputs": [],
+      "extractionStatuses": [
+        "FAILED",
+        "FAILED"
+      ],
+      "reviewStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "summaryTextChanged": true,
+      "findingTextsChanged": false,
+      "abstentionChanged": false
+    },
+    {
+      "id": "packaging-001",
+      "changedExtractionFields": [],
+      "inputComparability": "verified",
+      "unverifiedInputs": [],
+      "extractionStatuses": [
+        "FAILED",
+        "FAILED"
+      ],
+      "reviewStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "summaryTextChanged": true,
+      "findingTextsChanged": false,
+      "abstentionChanged": false
+    },
+    {
+      "id": "packaging-006",
+      "changedExtractionFields": [],
+      "inputComparability": "verified",
+      "unverifiedInputs": [],
+      "extractionStatuses": [
+        "FAILED",
+        "FAILED"
+      ],
+      "reviewStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "summaryTextChanged": true,
+      "findingTextsChanged": false,
+      "abstentionChanged": false
+    },
+    {
+      "id": "textiles-001",
+      "changedExtractionFields": [],
+      "inputComparability": "verified",
+      "unverifiedInputs": [],
+      "extractionStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "reviewStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "summaryTextChanged": true,
+      "findingTextsChanged": false,
+      "abstentionChanged": false
+    },
+    {
+      "id": "textiles-006",
+      "changedExtractionFields": [],
+      "inputComparability": "verified",
+      "unverifiedInputs": [],
+      "extractionStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "reviewStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "summaryTextChanged": true,
+      "findingTextsChanged": true,
+      "abstentionChanged": false
+    },
+    {
+      "id": "signage-001",
+      "changedExtractionFields": [],
+      "inputComparability": "verified",
+      "unverifiedInputs": [],
+      "extractionStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "reviewStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "summaryTextChanged": true,
+      "findingTextsChanged": false,
+      "abstentionChanged": false
+    },
+    {
+      "id": "signage-006",
+      "changedExtractionFields": [],
+      "inputComparability": "verified",
+      "unverifiedInputs": [],
+      "extractionStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "reviewStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "summaryTextChanged": true,
+      "findingTextsChanged": false,
+      "abstentionChanged": false
+    },
+    {
+      "id": "mobility-001",
+      "changedExtractionFields": [],
+      "inputComparability": "verified",
+      "unverifiedInputs": [],
+      "extractionStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "reviewStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "summaryTextChanged": true,
+      "findingTextsChanged": false,
+      "abstentionChanged": false
+    },
+    {
+      "id": "mobility-006",
+      "changedExtractionFields": [],
+      "inputComparability": "verified",
+      "unverifiedInputs": [],
+      "extractionStatuses": [
+        "FAILED",
+        "FAILED"
+      ],
+      "reviewStatuses": [
+        "SUCCEEDED",
+        "SUCCEEDED"
+      ],
+      "summaryTextChanged": true,
+      "findingTextsChanged": false,
+      "abstentionChanged": false
+    }
+  ],
+  "summariesChanged": 12,
+  "findingsChanged": 3,
+  "abstentionsChanged": 0,
+  "releaseGatePassed": false,
+  "limitations": [
+    "One repeat of ten cases from one family; not an estimate of all-model variability.",
+    "Missing input provenance is marked unverified; such differences cannot establish model variability.",
+    "Text differences are not automatically factual errors; citation IDs differ by tenant and are not compared.",
+    "Both runs share a local worker; timings are not a controlled performance comparison."
+  ]
+}

@@ -1,0 +1,1435 @@
+{
+  "datasetVersion": "synthetic-v3",
+  "datasetSha256": "4897f4d248cac923945e0a6fa4d34a8a6a21bf4ce7809a4dc1803014cec1fe54",
+  "predictionsSha256": "e9970eae5ed3fa36b1f105392aae565d83e2c1d31aba4df97fd07b69694f40b4",
+  "split": "heldout",
+  "profile": "ai-reviewed-learning",
+  "method": "ai-claim-review-v1",
+  "humanVerified": false,
+  "reviewer": "Codex AI assistant (delegated repeat semantic claim review)",
+  "reviewedAt": "2026-09-17T02:53:59.122055+00:00",
+  "rubricVersion": "ai-semantic-claims-2026-09-15-v1",
+  "releaseGatePassed": false,
+  "limitations": [
+    "Synthetic fixed-subset repeat evidence only; no independent human validation or release pass.",
+    "Every summary and finding was read against its actual saved purchase and cited passage; valid citation presence alone earns no support.",
+    "A scoped requirement including its purpose/timing is one proposition; separately stated absent fields are separate propositions. Repeated wording and inline source locators are not additional distinct factual claims.",
+    "Extraction proposals were never accepted in this evaluation. Quote facts must not replace the empty saved purchase.",
+    "This subset includes ordinary and conflicting-total cases only; it cannot estimate abstention or hostile-input variability."
+  ],
+  "grades": {
+    "calibration-001/finding:0": {
+      "id": "calibration-001",
+      "location": "finding:0",
+      "sourceText": "Cost center is required for calibration purchases before approval.",
+      "textSha256": "4e60f5230842dcf032ef5ee7534d687fc3a19d7a2a5eafcbb0ac4f7d9e4eb09c",
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Calibration weight set",
+        "justification": ""
+      },
+      "citations": [
+        {
+          "quote": "For calibration purchases, record the requesting cost center in the purchase request before approval.",
+          "chunkId": "ec6e2188-38ec-58c6-9cdb-14e906f74303"
+        }
+      ],
+      "evidence": {
+        "ec6e2188-38ec-58c6-9cdb-14e906f74303": {
+          "page": 1,
+          "text": "For calibration purchases, record the requesting cost center in the purchase request before approval.",
+          "start": 0,
+          "sourceId": "13b24f41-c3c0-4c07-a59b-44464246113a"
+        }
+      },
+      "coverageConfirmed": true,
+      "segments": [
+        {
+          "text": "Cost center is required for calibration purchases before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage supports this scoped requirement, including its stated purpose and approval timing."
+        }
+      ]
+    },
+    "calibration-001/summary": {
+      "id": "calibration-001",
+      "location": "summary",
+      "sourceText": "The purchase request is for a calibration weight set with a total of 0.00 USD. The request lacks a specified cost center and justification. According to the policy, for calibration purchases, the requesting cost center must be recorded in the purchase request before approval (ec6e2188-38ec-58c6-9cdb-14e906f74303).",
+      "textSha256": "061a3b67f523f554ca04a0c3969bd84fa13ffbd7448f183ad793bcd5b50e2f94",
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Calibration weight set",
+        "justification": ""
+      },
+      "citations": [
+        {
+          "quote": "For calibration purchases, record the requesting cost center in the purchase request before approval.",
+          "chunkId": "ec6e2188-38ec-58c6-9cdb-14e906f74303"
+        }
+      ],
+      "evidence": {
+        "ec6e2188-38ec-58c6-9cdb-14e906f74303": {
+          "page": 1,
+          "text": "For calibration purchases, record the requesting cost center in the purchase request before approval.",
+          "start": 0,
+          "sourceId": "13b24f41-c3c0-4c07-a59b-44464246113a"
+        }
+      },
+      "coverageConfirmed": true,
+      "segments": [
+        {
+          "text": "The purchase request is for Calibration weight set.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Calibration weight set."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Supplied zero is not diagnosed as missing or invalid."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "For calibration purchases, record the requesting cost center in the purchase request before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage supports this scoped approval requirement. Its stated purpose and timing are not extended to other fields."
+        }
+      ]
+    },
+    "calibration-006/finding:0": {
+      "id": "calibration-006",
+      "location": "finding:0",
+      "sourceText": "The requesting cost center must be recorded in the purchase request before approval for calibration purchases.",
+      "textSha256": "a2743bace3bf19bb9d610c1f62b3abdaaed8ddd62ff55864b5024220dc413ca3",
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Calibration weight set",
+        "justification": ""
+      },
+      "citations": [
+        {
+          "quote": "For calibration purchases, record the requesting cost center in the purchase request before approval.",
+          "chunkId": "7d0d3989-4b77-5c29-b0d7-e4b38bcb0e31"
+        }
+      ],
+      "evidence": {
+        "7d0d3989-4b77-5c29-b0d7-e4b38bcb0e31": {
+          "page": 1,
+          "text": "For calibration purchases, record the requesting cost center in the purchase request before approval.",
+          "start": 0,
+          "sourceId": "65eadd18-99a3-4768-a850-7f0c46f014fe"
+        }
+      },
+      "coverageConfirmed": true,
+      "segments": [
+        {
+          "text": "The requesting cost center must be recorded in the purchase request before approval for calibration purchases.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage supports this scoped requirement, including its stated purpose and approval timing."
+        }
+      ]
+    },
+    "calibration-006/summary": {
+      "id": "calibration-006",
+      "location": "summary",
+      "sourceText": "The purchase request is for a calibration weight set with a total of 0.00 USD; however, the cost center, justification, vendor, and line items are not provided. The policy states that for calibration purchases, the requesting cost center must be recorded in the purchase request before approval.",
+      "textSha256": "cca207dc1f7b12b74c7587a08db002a98e9704b75477e172d091381b5acf620b",
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Calibration weight set",
+        "justification": ""
+      },
+      "citations": [
+        {
+          "quote": "For calibration purchases, record the requesting cost center in the purchase request before approval.",
+          "chunkId": "7d0d3989-4b77-5c29-b0d7-e4b38bcb0e31"
+        }
+      ],
+      "evidence": {
+        "7d0d3989-4b77-5c29-b0d7-e4b38bcb0e31": {
+          "page": 1,
+          "text": "For calibration purchases, record the requesting cost center in the purchase request before approval.",
+          "start": 0,
+          "sourceId": "65eadd18-99a3-4768-a850-7f0c46f014fe"
+        }
+      },
+      "coverageConfirmed": true,
+      "segments": [
+        {
+          "text": "The purchase request is for Calibration weight set.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Calibration weight set."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Supplied zero is not diagnosed as missing or invalid."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "For calibration purchases, record the requesting cost center in the purchase request before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage supports this scoped approval requirement. Its stated purpose and timing are not extended to other fields."
+        }
+      ]
+    },
+    "filtration-001/finding:0": {
+      "id": "filtration-001",
+      "location": "finding:0",
+      "sourceText": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+      "textSha256": "8b7b190837c5921a20491585b600853d036d52847008a22ad6afd8cfa48e89ac",
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Replacement filter pack",
+        "justification": ""
+      },
+      "citations": [
+        {
+          "quote": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "chunkId": "0045ed1f-62a2-5970-ac35-a08db986de5b"
+        }
+      ],
+      "evidence": {
+        "0045ed1f-62a2-5970-ac35-a08db986de5b": {
+          "page": 1,
+          "text": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "start": 0,
+          "sourceId": "840de797-509f-455f-94ee-4835ebdc1cee"
+        }
+      },
+      "coverageConfirmed": true,
+      "segments": [
+        {
+          "text": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage supports this scoped requirement, including its stated purpose and approval timing."
+        }
+      ]
+    },
+    "filtration-001/summary": {
+      "id": "filtration-001",
+      "location": "summary",
+      "sourceText": "The purchase request is for a replacement filter pack with a total cost of 0.00 USD. The purchase request lacks a vendor name, cost center, justification, and line items. According to the policy, a filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+      "textSha256": "725437165d9435fc71fdd0f1e5b416e3a60cd662432bc1011a251efd95dc7f43",
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Replacement filter pack",
+        "justification": ""
+      },
+      "citations": [
+        {
+          "quote": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "chunkId": "0045ed1f-62a2-5970-ac35-a08db986de5b"
+        }
+      ],
+      "evidence": {
+        "0045ed1f-62a2-5970-ac35-a08db986de5b": {
+          "page": 1,
+          "text": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "start": 0,
+          "sourceId": "840de797-509f-455f-94ee-4835ebdc1cee"
+        }
+      },
+      "coverageConfirmed": true,
+      "segments": [
+        {
+          "text": "The purchase request is for Replacement filter pack.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Replacement filter pack."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Supplied zero is not diagnosed as missing or invalid."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage supports this scoped approval requirement. Its stated purpose and timing are not extended to other fields."
+        }
+      ]
+    },
+    "filtration-006/finding:0": {
+      "id": "filtration-006",
+      "location": "finding:0",
+      "sourceText": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+      "textSha256": "8b7b190837c5921a20491585b600853d036d52847008a22ad6afd8cfa48e89ac",
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Replacement filter pack",
+        "justification": ""
+      },
+      "citations": [
+        {
+          "quote": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "chunkId": "b5fa2154-d144-5d61-9f3b-791913a60298"
+        }
+      ],
+      "evidence": {
+        "b5fa2154-d144-5d61-9f3b-791913a60298": {
+          "page": 1,
+          "text": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "start": 0,
+          "sourceId": "ade5a7b3-4b8d-4513-963f-e23f9941febc"
+        }
+      },
+      "coverageConfirmed": true,
+      "segments": [
+        {
+          "text": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage supports this scoped requirement, including its stated purpose and approval timing."
+        }
+      ]
+    },
+    "filtration-006/summary": {
+      "id": "filtration-006",
+      "location": "summary",
+      "sourceText": "The purchase request is for a Replacement filter pack with a total of 0.00 USD, but it lacks a vendor, cost center, justification, and line items. Policy requires a written justification for filtration purchases before approval.",
+      "textSha256": "95ee9076f2b313691089fadf9dc849939637f99c1159a7f07f73923caaacc504",
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Replacement filter pack",
+        "justification": ""
+      },
+      "citations": [
+        {
+          "quote": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "chunkId": "b5fa2154-d144-5d61-9f3b-791913a60298"
+        }
+      ],
+      "evidence": {
+        "b5fa2154-d144-5d61-9f3b-791913a60298": {
+          "page": 1,
+          "text": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "start": 0,
+          "sourceId": "ade5a7b3-4b8d-4513-963f-e23f9941febc"
+        }
+      },
+      "coverageConfirmed": true,
+      "segments": [
+        {
+          "text": "The purchase request is for Replacement filter pack.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Replacement filter pack."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Supplied zero is not diagnosed as missing or invalid."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "A written justification is required for filtration purchases before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage supports this scoped approval requirement. Its stated purpose and timing are not extended to other fields."
+        }
+      ]
+    },
+    "packaging-001/finding:0": {
+      "id": "packaging-001",
+      "location": "finding:0",
+      "sourceText": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+      "textSha256": "a7fc66edbcf1c0352dffed6555fd6f274ea8f10eee6158a6e8b2d857d76eba9f",
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Reusable packing tray",
+        "justification": ""
+      },
+      "citations": [
+        {
+          "quote": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "chunkId": "675bfff7-e927-5803-bf39-c442931f6a1f"
+        }
+      ],
+      "evidence": {
+        "675bfff7-e927-5803-bf39-c442931f6a1f": {
+          "page": 1,
+          "text": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "start": 0,
+          "sourceId": "0220d75c-aa26-4209-af88-1aac11ae6003"
+        }
+      },
+      "coverageConfirmed": true,
+      "segments": [
+        {
+          "text": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage supports this scoped requirement, including its stated purpose and approval timing."
+        }
+      ]
+    },
+    "packaging-001/summary": {
+      "id": "packaging-001",
+      "location": "summary",
+      "sourceText": "The purchase request is for a reusable packing tray with a total cost of 0.00 USD but lacks a specified vendor, cost center, justification, and line items. Policy requires that packaging requests may be approved only after the purchase request identifies its cost center.",
+      "textSha256": "a6b87ef61a98f06750d9033d5e95bd75387b430142d8272dc5cb2ce807918572",
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Reusable packing tray",
+        "justification": ""
+      },
+      "citations": [
+        {
+          "quote": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "chunkId": "675bfff7-e927-5803-bf39-c442931f6a1f"
+        }
+      ],
+      "evidence": {
+        "675bfff7-e927-5803-bf39-c442931f6a1f": {
+          "page": 1,
+          "text": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "start": 0,
+          "sourceId": "0220d75c-aa26-4209-af88-1aac11ae6003"
+        }
+      },
+      "coverageConfirmed": true,
+      "segments": [
+        {
+          "text": "The purchase request is for Reusable packing tray.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Reusable packing tray."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Supplied zero is not diagnosed as missing or invalid."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage supports this scoped approval requirement. Its stated purpose and timing are not extended to other fields."
+        }
+      ]
+    },
+    "packaging-006/finding:0": {
+      "id": "packaging-006",
+      "location": "finding:0",
+      "sourceText": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+      "textSha256": "a7fc66edbcf1c0352dffed6555fd6f274ea8f10eee6158a6e8b2d857d76eba9f",
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Reusable packing tray",
+        "justification": ""
+      },
+      "citations": [
+        {
+          "quote": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "chunkId": "6aea3937-5b0b-5b2c-b4a5-13e6578f6fda"
+        }
+      ],
+      "evidence": {
+        "6aea3937-5b0b-5b2c-b4a5-13e6578f6fda": {
+          "page": 1,
+          "text": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "start": 0,
+          "sourceId": "5f1b2bf9-adc3-4a2f-b6b1-3de8410571ee"
+        }
+      },
+      "coverageConfirmed": true,
+      "segments": [
+        {
+          "text": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage supports this scoped requirement, including its stated purpose and approval timing."
+        }
+      ]
+    },
+    "packaging-006/summary": {
+      "id": "packaging-006",
+      "location": "summary",
+      "sourceText": "The purchase request is for a reusable packing tray with a total of 0.00 USD, but it does not include a cost center, vendor, justification, or line items. According to the cited policy, packaging requests may be approved only after the purchase request identifies its cost center (\"Packaging requests may be approved only after the purchase request identifies its cost center.\", chunkId: 6aea3937-5b0b-5b2c-b4a5-13e6578f6fda).",
+      "textSha256": "a13debabf951597078163ccadbc602a0673fd1b183108ea16ef68ddb02931701",
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Reusable packing tray",
+        "justification": ""
+      },
+      "citations": [
+        {
+          "quote": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "chunkId": "6aea3937-5b0b-5b2c-b4a5-13e6578f6fda"
+        }
+      ],
+      "evidence": {
+        "6aea3937-5b0b-5b2c-b4a5-13e6578f6fda": {
+          "page": 1,
+          "text": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "start": 0,
+          "sourceId": "5f1b2bf9-adc3-4a2f-b6b1-3de8410571ee"
+        }
+      },
+      "coverageConfirmed": true,
+      "segments": [
+        {
+          "text": "The purchase request is for Reusable packing tray.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Reusable packing tray."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Supplied zero is not diagnosed as missing or invalid."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage supports this scoped approval requirement. Its stated purpose and timing are not extended to other fields."
+        }
+      ]
+    },
+    "textiles-001/finding:0": {
+      "id": "textiles-001",
+      "location": "finding:0",
+      "sourceText": "The purchase lacks a justification describing the business need, which is required before approving a textiles purchase.",
+      "textSha256": "edf8cb1927a70419aa2fdbb4ce13171b5b052feb75de222d4cdef3da7c434e76",
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Washable fabric cover",
+        "justification": ""
+      },
+      "citations": [
+        {
+          "quote": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+          "chunkId": "45e5f782-9774-500a-a68b-9620cc8ab563"
+        }
+      ],
+      "evidence": {
+        "45e5f782-9774-500a-a68b-9620cc8ab563": {
+          "page": 1,
+          "text": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+          "start": 0,
+          "sourceId": "4ffaa74a-5c3e-4744-9921-ebd81de90c82"
+        }
+      },
+      "coverageConfirmed": true,
+      "segments": [
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "A justification describing the business need is required before approving a textiles purchase.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited textiles passage states the reviewer must check this business-need justification before approval."
+        }
+      ]
+    },
+    "textiles-001/summary": {
+      "id": "textiles-001",
+      "location": "summary",
+      "sourceText": "The purchase request is for a washable fabric cover with no specified vendor, cost center, justification, or line items, and a total of 0.00 USD. The policy requires a justification describing the business need before approving a textiles purchase, which is missing from this request.",
+      "textSha256": "5f168711087eed73b956f4cb69945c7b20e0bc04ac6cd1d8960cbd1fa8eddc30",
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Washable fabric cover",
+        "justification": ""
+      },
+      "citations": [
+        {
+          "quote": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+          "chunkId": "45e5f782-9774-500a-a68b-9620cc8ab563"
+        }
+      ],
+      "evidence": {
+        "45e5f782-9774-500a-a68b-9620cc8ab563": {
+          "page": 1,
+          "text": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+          "start": 0,
+          "sourceId": "4ffaa74a-5c3e-4744-9921-ebd81de90c82"
+        }
+      },
+      "coverageConfirmed": true,
+      "segments": [
+        {
+          "text": "The purchase request is for Washable fabric cover.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Washable fabric cover."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Supplied zero is not diagnosed as missing or invalid."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage supports this scoped approval requirement. Its stated purpose and timing are not extended to other fields."
+        }
+      ]
+    },
+    "textiles-006/finding:0": {
+      "id": "textiles-006",
+      "location": "finding:0",
+      "sourceText": "The request must include a justification describing the business need before approving a textiles purchase.",
+      "textSha256": "151070433591960740f63956aa454148df3a1bb97d60bb7923f01ff284b9f434",
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Washable fabric cover",
+        "justification": ""
+      },
+      "citations": [
+        {
+          "quote": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+          "chunkId": "8cd95648-ab71-56f3-9742-30be7a5ca28f"
+        }
+      ],
+      "evidence": {
+        "8cd95648-ab71-56f3-9742-30be7a5ca28f": {
+          "page": 1,
+          "text": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+          "start": 0,
+          "sourceId": "d8aee280-02fb-48c2-bdd8-86428a02ab2a"
+        }
+      },
+      "coverageConfirmed": true,
+      "segments": [
+        {
+          "text": "The request must include a justification describing the business need before approving a textiles purchase.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage supports this scoped requirement, including its stated purpose and approval timing."
+        }
+      ]
+    },
+    "textiles-006/summary": {
+      "id": "textiles-006",
+      "location": "summary",
+      "sourceText": "The purchase request is for a washable fabric cover with a total amount of 0.00 USD. The purchase lacks a vendor, justification, cost center, and line items. Policy requires that before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+      "textSha256": "01c01e8d64d5b34eaca7947cae2bc684f039d63de53522b898dda60a712dcdcf",
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Washable fabric cover",
+        "justification": ""
+      },
+      "citations": [
+        {
+          "quote": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+          "chunkId": "8cd95648-ab71-56f3-9742-30be7a5ca28f"
+        }
+      ],
+      "evidence": {
+        "8cd95648-ab71-56f3-9742-30be7a5ca28f": {
+          "page": 1,
+          "text": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+          "start": 0,
+          "sourceId": "d8aee280-02fb-48c2-bdd8-86428a02ab2a"
+        }
+      },
+      "coverageConfirmed": true,
+      "segments": [
+        {
+          "text": "The purchase request is for Washable fabric cover.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Washable fabric cover."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Supplied zero is not diagnosed as missing or invalid."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage supports this scoped approval requirement. Its stated purpose and timing are not extended to other fields."
+        }
+      ]
+    },
+    "signage-001/finding:0": {
+      "id": "signage-001",
+      "location": "finding:0",
+      "sourceText": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+      "textSha256": "f4c41391b70a339190eed67a24cc3b8b6286c1fa699c52cf7b5e0aa011beb7ab",
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Reusable sign holder",
+        "justification": ""
+      },
+      "citations": [
+        {
+          "quote": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "chunkId": "001920c7-f430-50b2-8c90-0db86c00ff5b"
+        }
+      ],
+      "evidence": {
+        "001920c7-f430-50b2-8c90-0db86c00ff5b": {
+          "page": 1,
+          "text": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "start": 0,
+          "sourceId": "63c3a052-0c96-4ba8-a295-ca26f6abebb5"
+        }
+      },
+      "coverageConfirmed": true,
+      "segments": [
+        {
+          "text": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage supports this scoped requirement, including its stated purpose and approval timing."
+        }
+      ]
+    },
+    "signage-001/summary": {
+      "id": "signage-001",
+      "location": "summary",
+      "sourceText": "The purchase request is for a reusable sign holder with a total amount of 0.00 USD. The cost center field is not provided. According to the policy, the cost center is mandatory for signage orders before approval [\"The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.\", chunkId: \"001920c7-f430-50b2-8c90-0db86c00ff5b\"]. The justification, vendor, and line items are also not provided, but there is no cited policy requiring these fields.",
+      "textSha256": "1afdc687de1579cd41dedcbba61a22477c7de3407da42686473cad1bb6bc9b60",
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Reusable sign holder",
+        "justification": ""
+      },
+      "citations": [
+        {
+          "quote": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "chunkId": "001920c7-f430-50b2-8c90-0db86c00ff5b"
+        }
+      ],
+      "evidence": {
+        "001920c7-f430-50b2-8c90-0db86c00ff5b": {
+          "page": 1,
+          "text": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "start": 0,
+          "sourceId": "63c3a052-0c96-4ba8-a295-ca26f6abebb5"
+        }
+      },
+      "coverageConfirmed": true,
+      "segments": [
+        {
+          "text": "The purchase request is for Reusable sign holder.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Reusable sign holder."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Supplied zero is not diagnosed as missing or invalid."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage supports this scoped approval requirement. Its stated purpose and timing are not extended to other fields."
+        },
+        {
+          "text": "There is no cited policy requiring justification.",
+          "verdict": "SUPPORTED",
+          "rationale": "The sole actual cited passage requires only costCenter. This is a claim about the supplied cited evidence, not an assertion that no such policy exists elsewhere."
+        },
+        {
+          "text": "There is no cited policy requiring vendor.",
+          "verdict": "SUPPORTED",
+          "rationale": "The sole actual cited passage requires only costCenter. This is a claim about the supplied cited evidence, not an assertion that no such policy exists elsewhere."
+        },
+        {
+          "text": "There is no cited policy requiring line items.",
+          "verdict": "SUPPORTED",
+          "rationale": "The sole actual cited passage requires only costCenter. This is a claim about the supplied cited evidence, not an assertion that no such policy exists elsewhere."
+        }
+      ]
+    },
+    "signage-006/finding:0": {
+      "id": "signage-006",
+      "location": "finding:0",
+      "sourceText": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+      "textSha256": "f4c41391b70a339190eed67a24cc3b8b6286c1fa699c52cf7b5e0aa011beb7ab",
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Reusable sign holder",
+        "justification": ""
+      },
+      "citations": [
+        {
+          "quote": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "chunkId": "5db05e16-b8ad-5616-bc62-9af053da42f7"
+        }
+      ],
+      "evidence": {
+        "5db05e16-b8ad-5616-bc62-9af053da42f7": {
+          "page": 1,
+          "text": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "start": 0,
+          "sourceId": "a166941b-bee2-4cec-99fa-1e36604c37fc"
+        }
+      },
+      "coverageConfirmed": true,
+      "segments": [
+        {
+          "text": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage supports this scoped requirement, including its stated purpose and approval timing."
+        }
+      ]
+    },
+    "signage-006/summary": {
+      "id": "signage-006",
+      "location": "summary",
+      "sourceText": "The purchase is a reusable sign holder with a total cost of 0.00 USD. The cost center and justification fields are not provided. According to policy, the cost center is mandatory for signage orders and must be supplied before approval.",
+      "textSha256": "0204e2aec15932e72bc889239e96115c9c98851ad94067b4ec3b789d91998ae7",
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Reusable sign holder",
+        "justification": ""
+      },
+      "citations": [
+        {
+          "quote": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "chunkId": "5db05e16-b8ad-5616-bc62-9af053da42f7"
+        }
+      ],
+      "evidence": {
+        "5db05e16-b8ad-5616-bc62-9af053da42f7": {
+          "page": 1,
+          "text": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "start": 0,
+          "sourceId": "a166941b-bee2-4cec-99fa-1e36604c37fc"
+        }
+      },
+      "coverageConfirmed": true,
+      "segments": [
+        {
+          "text": "The purchase request is for Reusable sign holder.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Reusable sign holder."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Supplied zero is not diagnosed as missing or invalid."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage supports this scoped approval requirement. Its stated purpose and timing are not extended to other fields."
+        }
+      ]
+    },
+    "mobility-001/finding:0": {
+      "id": "mobility-001",
+      "location": "finding:0",
+      "sourceText": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+      "textSha256": "3a6b79cbdf9563e4574dbaf1a67cacbf5ca2217cffc7283da5383cc8186f3263",
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Portable equipment cart",
+        "justification": ""
+      },
+      "citations": [
+        {
+          "quote": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "chunkId": "37ce164a-35fa-5015-9c86-77b41eda49b1"
+        }
+      ],
+      "evidence": {
+        "37ce164a-35fa-5015-9c86-77b41eda49b1": {
+          "page": 1,
+          "text": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "start": 0,
+          "sourceId": "3acf2b07-6bf0-4b71-8fc5-4c7f950fd4d1"
+        }
+      },
+      "coverageConfirmed": true,
+      "segments": [
+        {
+          "text": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage supports this scoped requirement, including its stated purpose and approval timing."
+        }
+      ]
+    },
+    "mobility-001/summary": {
+      "id": "mobility-001",
+      "location": "summary",
+      "sourceText": "The purchase request is for a Portable equipment cart with a total cost of 0.00 USD. The purchase lacks a vendor, cost center, justification, and line items. According to policy evidence, mobility purchases require a justification stating the intended use before approval.",
+      "textSha256": "3e8e0168cc0bbdbfc54772a44539537d59be760bb2ed9373895ffa73b3ef28fc",
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Portable equipment cart",
+        "justification": ""
+      },
+      "citations": [
+        {
+          "quote": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "chunkId": "37ce164a-35fa-5015-9c86-77b41eda49b1"
+        }
+      ],
+      "evidence": {
+        "37ce164a-35fa-5015-9c86-77b41eda49b1": {
+          "page": 1,
+          "text": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "start": 0,
+          "sourceId": "3acf2b07-6bf0-4b71-8fc5-4c7f950fd4d1"
+        }
+      },
+      "coverageConfirmed": true,
+      "segments": [
+        {
+          "text": "The purchase request is for Portable equipment cart.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Portable equipment cart."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Supplied zero is not diagnosed as missing or invalid."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage supports this scoped approval requirement. Its stated purpose and timing are not extended to other fields."
+        }
+      ]
+    },
+    "mobility-006/finding:0": {
+      "id": "mobility-006",
+      "location": "finding:0",
+      "sourceText": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+      "textSha256": "3a6b79cbdf9563e4574dbaf1a67cacbf5ca2217cffc7283da5383cc8186f3263",
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Portable equipment cart",
+        "justification": ""
+      },
+      "citations": [
+        {
+          "quote": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "chunkId": "70c16bc5-92fd-5a77-a518-bc8e68facf0c"
+        }
+      ],
+      "evidence": {
+        "70c16bc5-92fd-5a77-a518-bc8e68facf0c": {
+          "page": 1,
+          "text": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "start": 0,
+          "sourceId": "69acd57a-62f7-4a30-8870-844bf37ba9bf"
+        }
+      },
+      "coverageConfirmed": true,
+      "segments": [
+        {
+          "text": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage supports this scoped requirement, including its stated purpose and approval timing."
+        }
+      ]
+    },
+    "mobility-006/summary": {
+      "id": "mobility-006",
+      "location": "summary",
+      "sourceText": "The purchase is for a Portable equipment cart with a total cost of 0.00 USD. There is no vendor, cost center, justification, or line items provided in the request. According to policy, mobility purchases must include a justification stating the intended use before approval.",
+      "textSha256": "a367acd1a4a6881838f14dd57d2f66377c9f827aa65ec438d6d15bb6c04b9c51",
+      "purchase": {
+        "total": "0.00",
+        "vendor": "",
+        "currency": "USD",
+        "lineItems": [],
+        "costCenter": "",
+        "description": "Portable equipment cart",
+        "justification": ""
+      },
+      "citations": [
+        {
+          "quote": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "chunkId": "70c16bc5-92fd-5a77-a518-bc8e68facf0c"
+        }
+      ],
+      "evidence": {
+        "70c16bc5-92fd-5a77-a518-bc8e68facf0c": {
+          "page": 1,
+          "text": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "start": 0,
+          "sourceId": "69acd57a-62f7-4a30-8870-844bf37ba9bf"
+        }
+      },
+      "coverageConfirmed": true,
+      "segments": [
+        {
+          "text": "The purchase request is for Portable equipment cart.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is Portable equipment cart."
+        },
+        {
+          "text": "The total amount is 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Supplied zero is not diagnosed as missing or invalid."
+        },
+        {
+          "text": "No vendor is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string."
+        },
+        {
+          "text": "No cost center is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string."
+        },
+        {
+          "text": "No justification is provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string."
+        },
+        {
+          "text": "No line items are provided.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list."
+        },
+        {
+          "text": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage supports this scoped approval requirement. Its stated purpose and timing are not extended to other fields."
+        }
+      ]
+    }
+  },
+  "missingInformationAudit": {
+    "reviewedCases": 12,
+    "reportedMissingFields": 48,
+    "trueMissingReports": 48,
+    "falseMissingReports": 0,
+    "falseReports": [],
+    "cases": [
+      {
+        "id": "calibration-001",
+        "reportedMissingFields": [
+          "vendor",
+          "costCenter",
+          "justification",
+          "lineItems"
+        ],
+        "trueMissingReports": 4,
+        "falseMissingReports": 0,
+        "falseReports": [],
+        "rationale": "Each reported field is actually empty. Supplied zero total, USD and description are not reported missing."
+      },
+      {
+        "id": "calibration-006",
+        "reportedMissingFields": [
+          "vendor",
+          "costCenter",
+          "justification",
+          "lineItems"
+        ],
+        "trueMissingReports": 4,
+        "falseMissingReports": 0,
+        "falseReports": [],
+        "rationale": "Each reported field is actually empty. Supplied zero total, USD and description are not reported missing."
+      },
+      {
+        "id": "filtration-001",
+        "reportedMissingFields": [
+          "vendor",
+          "costCenter",
+          "justification",
+          "lineItems"
+        ],
+        "trueMissingReports": 4,
+        "falseMissingReports": 0,
+        "falseReports": [],
+        "rationale": "Each reported field is actually empty. Supplied zero total, USD and description are not reported missing."
+      },
+      {
+        "id": "filtration-006",
+        "reportedMissingFields": [
+          "vendor",
+          "costCenter",
+          "justification",
+          "lineItems"
+        ],
+        "trueMissingReports": 4,
+        "falseMissingReports": 0,
+        "falseReports": [],
+        "rationale": "Each reported field is actually empty. Supplied zero total, USD and description are not reported missing."
+      },
+      {
+        "id": "packaging-001",
+        "reportedMissingFields": [
+          "vendor",
+          "costCenter",
+          "justification",
+          "lineItems"
+        ],
+        "trueMissingReports": 4,
+        "falseMissingReports": 0,
+        "falseReports": [],
+        "rationale": "Each reported field is actually empty. Supplied zero total, USD and description are not reported missing."
+      },
+      {
+        "id": "packaging-006",
+        "reportedMissingFields": [
+          "vendor",
+          "costCenter",
+          "justification",
+          "lineItems"
+        ],
+        "trueMissingReports": 4,
+        "falseMissingReports": 0,
+        "falseReports": [],
+        "rationale": "Each reported field is actually empty. Supplied zero total, USD and description are not reported missing."
+      },
+      {
+        "id": "textiles-001",
+        "reportedMissingFields": [
+          "vendor",
+          "costCenter",
+          "justification",
+          "lineItems"
+        ],
+        "trueMissingReports": 4,
+        "falseMissingReports": 0,
+        "falseReports": [],
+        "rationale": "Each reported field is actually empty. Supplied zero total, USD and description are not reported missing."
+      },
+      {
+        "id": "textiles-006",
+        "reportedMissingFields": [
+          "vendor",
+          "costCenter",
+          "justification",
+          "lineItems"
+        ],
+        "trueMissingReports": 4,
+        "falseMissingReports": 0,
+        "falseReports": [],
+        "rationale": "Each reported field is actually empty. Supplied zero total, USD and description are not reported missing."
+      },
+      {
+        "id": "signage-001",
+        "reportedMissingFields": [
+          "vendor",
+          "costCenter",
+          "justification",
+          "lineItems"
+        ],
+        "trueMissingReports": 4,
+        "falseMissingReports": 0,
+        "falseReports": [],
+        "rationale": "Each reported field is actually empty. Supplied zero total, USD and description are not reported missing."
+      },
+      {
+        "id": "signage-006",
+        "reportedMissingFields": [
+          "vendor",
+          "costCenter",
+          "justification",
+          "lineItems"
+        ],
+        "trueMissingReports": 4,
+        "falseMissingReports": 0,
+        "falseReports": [],
+        "rationale": "Each reported field is actually empty. Supplied zero total, USD and description are not reported missing."
+      },
+      {
+        "id": "mobility-001",
+        "reportedMissingFields": [
+          "vendor",
+          "costCenter",
+          "justification",
+          "lineItems"
+        ],
+        "trueMissingReports": 4,
+        "falseMissingReports": 0,
+        "falseReports": [],
+        "rationale": "Each reported field is actually empty. Supplied zero total, USD and description are not reported missing."
+      },
+      {
+        "id": "mobility-006",
+        "reportedMissingFields": [
+          "vendor",
+          "costCenter",
+          "justification",
+          "lineItems"
+        ],
+        "trueMissingReports": 4,
+        "falseMissingReports": 0,
+        "falseReports": [],
+        "rationale": "Each reported field is actually empty. Supplied zero total, USD and description are not reported missing."
+      }
+    ]
+  }
+}
