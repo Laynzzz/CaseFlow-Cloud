@@ -1,0 +1,86 @@
+[
+  {
+    "path": "r3-telemetry-worker-full.xml",
+    "sha256": "13dad77a0e16a05b8d0b7b48983f2de18e447ed0339f05b6b1c545de7e4b6251"
+  },
+  {
+    "path": "r3-telemetry-worker-full.txt",
+    "sha256": "7d8c0ed24ac02b5ef2451deb8e5f21528a4f1ec65d1b3bd4479b80f93565527f"
+  },
+  {
+    "path": "r3-telemetry-focused.xml",
+    "sha256": "67d5d6141b93fc31a3e9cf141f8338b9b182c2db12039ae4e81e6561d2053fa6"
+  },
+  {
+    "path": "r3-telemetry-java-full.txt",
+    "sha256": "3c0caf7d91d557b19da89ee70f822d73ade2e8709ef219f99237456a468553ca"
+  },
+  {
+    "path": "r3-telemetry-java-red.txt",
+    "sha256": "175d55a4d1a1612697488636d4dae8e93cb0151778d929ea9391829623bfa899"
+  },
+  {
+    "path": "r3-management-red.txt",
+    "sha256": "76faab2ad98c6170de94e1369ed4eea055831b6de687be7c896f4d5b72a2c1fd"
+  },
+  {
+    "path": "TEST-dev.caseflow.cases.CaseQueriesIntegrationTest.xml",
+    "sha256": "a28220e58d9e6ffa6beee56bbddfe52445053d27dbc002303a7ad56345a26937"
+  },
+  {
+    "path": "TEST-dev.caseflow.cases.CaseQueryPerformanceTest.xml",
+    "sha256": "7df6dcbdfb4c9460d445e5faab1cb45f83a2e79006cf740551881fc59b412289"
+  },
+  {
+    "path": "TEST-dev.caseflow.cases.PurchaseTest.xml",
+    "sha256": "d25941901e16b89ffb6f20ee8b5607a66c76c9e6733ef4389e1b79cead720fd1"
+  },
+  {
+    "path": "TEST-dev.caseflow.documents.CompletionHandlerIntegrationTest.xml",
+    "sha256": "a8c917422610ade7bf7a99d85baee1824a6eacf64d11ea4910100a62060a16ea"
+  },
+  {
+    "path": "TEST-dev.caseflow.documents.CompletionProcessRecoveryTest.xml",
+    "sha256": "cf3396f820047a87fb688ff9a844df4b4ad8d1588fbef0205bfe56c0a403aabb"
+  },
+  {
+    "path": "TEST-dev.caseflow.documents.DeadLetterProcessRecoveryTest.xml",
+    "sha256": "91febaabbf966a25ac3ebcb5cd21cf5573980cc88f6533bb2000cdb1a24e365a"
+  },
+  {
+    "path": "TEST-dev.caseflow.documents.KafkaMessagingProcessRecoveryTest.xml",
+    "sha256": "7f44d44af25ccbdf7db62d16c06e523685e3ab45c9449da390708a4629f826c4"
+  },
+  {
+    "path": "TEST-dev.caseflow.documents.ObjectStoragePublicEndpointTest.xml",
+    "sha256": "2fff4758dfac18d4748a824600c82e21e07de354b4a32c1083958ee1704a6c85"
+  },
+  {
+    "path": "TEST-dev.caseflow.documents.TemplateValidatorTest.xml",
+    "sha256": "da406bf9b44b1f9941349f074b8368fb03eb00aa20786368d92c3056092f49eb"
+  },
+  {
+    "path": "TEST-dev.caseflow.evidence.AssistantIntegrationTest.xml",
+    "sha256": "77382340eee8927c27fc2a349137e251579130e6b91521d46312b59b5e84fc1c"
+  },
+  {
+    "path": "TEST-dev.caseflow.health.HealthControllerTest.xml",
+    "sha256": "b28803d53a8afb08084a91c0aef8ce7ec53807f692cf9edb678eca9d17bd6a6e"
+  },
+  {
+    "path": "TEST-dev.caseflow.observability.ManagementSecurityTest.xml",
+    "sha256": "f84756b6275ddbf3df0c29e9cbb3fa9603f7dbff56eeccf91e1e223c0fafac97"
+  },
+  {
+    "path": "TEST-dev.caseflow.observability.TelemetryTest.xml",
+    "sha256": "33c49bef41efc170eb0bbeca50ce2af5a17e60b6bd051dada64eff6985d5c951"
+  },
+  {
+    "path": "TEST-dev.caseflow.web.WebSecurityTest.xml",
+    "sha256": "75dff224efd2a91f6f22fc472667735b8b1cdbe75013dc98e423051ac6479009"
+  },
+  {
+    "path": "actual-trace.json",
+    "sha256": "7229130fd6c19e03a7311738e6f73b5d933a5ccfe5e112a6eddf28d5bf0303a6"
+  }
+]

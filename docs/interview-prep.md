@@ -672,3 +672,25 @@ signed with the host the browser actually reaches. Follow-up: an issued signed
 URL remains a bearer capability until its short expiry.
 
 Evidence: [local baseline](evidence/2026-09-17-r3/release-baseline/README.md).
+
+## Correlated telemetry checkpoint
+
+**How do you trace asynchronous work after the HTTP request ends?** Persist the
+trace parent in the Java outbox envelope and durable Python job, then propagate
+it through worker completion and Java consumption. Each operation gets its own
+span while retaining request ancestry; storage and restart do not require an
+in-memory HTTP context. V14 is additive for prior-image compatibility.
+
+**Why distinguish HTTP, queue and execution latency?** A fast acknowledgement can
+hide an ever-growing job backlog. Ready-to-claim timing excludes deliberate retry
+backoff; reclaimed work becomes ready at lease expiry. Execution includes result
+persistence; client-observed completion is measured independently by load tests.
+
+**What happens when monitoring fails?** Export is asynchronous/bounded, does not
+control business commits, and starts only when explicitly configured. DB/broker
+metrics publish an unavailable signal and omit invented zero backlog/lag. Metric
+labels have finite kind/status/operation values; raw text, tokens and arbitrary
+baggage are excluded. Follow-up: 100% sampling is a bounded evidence setting, not
+a production-wide promise.
+
+Evidence: [actual trace and regression suites](evidence/2026-09-17-r3/telemetry/summary.md).

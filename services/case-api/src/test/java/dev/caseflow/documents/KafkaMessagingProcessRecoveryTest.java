@@ -329,7 +329,7 @@ class KafkaMessagingProcessRecoveryTest {
         final List<Map<String, Object>> delivered = new ArrayList<>();
 
         OwnedChild(String mode, String fault) throws Exception {
-            String classpath = System.getProperty("caseflow.test.runtimeClasspath");
+            String classpath = java.nio.file.Files.readString(java.nio.file.Path.of(System.getProperty("caseflow.test.runtimeClasspathFile")));
             assertNotNull(classpath);
             arguments = Files.createTempFile("caseflow-kafka-crash-", ".args");
             Files.writeString(arguments, "-cp\n\"" + classpath.replace("\\", "\\\\").replace("\"", "\\\"")

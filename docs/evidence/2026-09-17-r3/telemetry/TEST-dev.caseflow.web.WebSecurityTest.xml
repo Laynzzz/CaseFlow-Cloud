@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.caseflow.web.WebSecurityTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-09-17T14:58:48.444Z" hostname="DESTOP-4485" time="0.08">
+  <properties/>
+  <testcase name="browserRoutesArePublicButApiUnknownRoutesAndWritesRemainProtected()" classname="dev.caseflow.web.WebSecurityTest" time="0.08"/>
+  <system-out><![CDATA[10:58:48.508 [Test worker] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+10:58:48.508 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+10:58:48.509 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 1 ms
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

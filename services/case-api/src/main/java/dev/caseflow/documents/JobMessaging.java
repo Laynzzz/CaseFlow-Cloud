@@ -1,6 +1,7 @@
 package dev.caseflow.documents;
 
 import dev.caseflow.common.Json;
+import dev.caseflow.observability.Telemetry;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import java.time.Duration;
@@ -31,6 +32,8 @@ public class JobMessaging {
     private final Consumer<String,String> consumer;
     private final String jobsTopic,completionsTopic,deadlettersTopic;
     private volatile boolean running=true;private Thread thread;
+    private Telemetry telemetry=Telemetry.noop();
+    @Autowired void telemetry(Telemetry telemetry) {this.telemetry=telemetry;}
     @Autowired
     public JobMessaging(JdbcTemplate db,Json json,CompletionHandler completion,PlatformTransactionManager manager,
                         @Value("${KAFKA_BOOTSTRAP_SERVERS:127.0.0.1:9092}") String brokers) {
@@ -68,11 +71,16 @@ public class JobMessaging {
                 if(rows.isEmpty())return;var row=rows.getFirst();
                 try {
                     var payload=json.object(row.get("payload").toString());
-                    producer.send(new ProducerRecord<>(jobsTopic,row.get("tenant_id")+":"+payload.get("aggregateId"),row.get("payload").toString())).get(20,TimeUnit.SECONDS);
+                    try(var span=telemetry.span("api.publish",payload.get("traceContext"))) {
+                        var carrier=Telemetry.capture();
+                        if(!carrier.isEmpty())payload.put("traceContext",carrier);
+                        try {producer.send(new ProducerRecord<>(jobsTopic,row.get("tenant_id")+":"+payload.get("aggregateId"),json.write(payload))).get(20,TimeUnit.SECONDS);}
+                        catch(Exception error) {span.failed();throw error;}
+                    }
                 } catch(Exception e) {throw new IllegalStateException("Broker acknowledgement unavailable",e);}
                 db.update("UPDATE core.outbox SET published_at=now() WHERE event_id=?",row.get("event_id"));
             });
-        }catch(Exception e){LOG.warn("outbox_publish_retry error_type={}",e.getClass().getSimpleName());}
+        }catch(Exception e){telemetry.event("publish","retry");LOG.warn("outbox_publish_retry error_type={}",e.getClass().getSimpleName());}
     }
     private void consume() {
         consumer.subscribe(List.of(completionsTopic));
@@ -84,14 +92,22 @@ public class JobMessaging {
                 for(var record:records) {
                     while(running) {
                         try {
-                            try {completion.apply(json.object(record.value()));}
+                            try {
+                                var payload=json.object(record.value());
+                                try(var span=telemetry.span("api.complete",payload.get("traceContext"))) {
+                                    try {completion.apply(payload);}
+                                    catch(Exception error) {span.failed();throw error;}
+                                }
+                            }
                             catch(IllegalArgumentException|NullPointerException|ClassCastException e) {
                                 var dead=Map.of("reason","INVALID_COMPLETION_ENVELOPE","topic",record.topic(),"partition",record.partition(),"offset",record.offset(),"hash",json.hash(record.value()));
                                 producer.send(new ProducerRecord<>(deadlettersTopic,"invalid-completion",json.write(dead))).get(20,TimeUnit.SECONDS);
+                                telemetry.event("deadletter","acknowledged");
                             }
                             consumer.commitSync(Map.of(new org.apache.kafka.common.TopicPartition(record.topic(),record.partition()),new OffsetAndMetadata(record.offset()+1)));
                             break;
                         } catch(Exception e) {
+                            telemetry.event("complete","retry");
                             LOG.warn("completion_retry error_type={}",e.getClass().getSimpleName());
                             try {Thread.sleep(2000);}catch(InterruptedException interrupted){Thread.currentThread().interrupt();return;}
                         }

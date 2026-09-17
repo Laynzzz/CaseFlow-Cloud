@@ -34,3 +34,36 @@ logging:
   structured:
     format:
       console: ecs
+management:
+  server:
+    address: ${MANAGEMENT_ADDRESS:127.0.0.1}
+    port: ${MANAGEMENT_PORT:9091}
+  endpoints:
+    web:
+      exposure:
+        include: health,prometheus
+  endpoint:
+    health:
+      show-details: never
+  tracing:
+    sampling:
+      probability: ${CASEFLOW_TRACE_SAMPLE_RATE:0.1}
+    baggage:
+      enabled: false
+    export:
+      enabled: ${CASEFLOW_TRACING_EXPORT_ENABLED:false}
+  logging:
+    export:
+      otlp:
+        enabled: false
+  opentelemetry:
+    tracing:
+      export:
+        otlp:
+          endpoint: ${OTEL_EXPORTER_OTLP_ENDPOINT:http://127.0.0.1:4318}/v1/traces
+          connect-timeout: 2s
+          timeout: 2s
+  metrics:
+    distribution:
+      percentiles-histogram:
+        http.server.requests: true

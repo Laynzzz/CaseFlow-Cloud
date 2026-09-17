@@ -136,7 +136,7 @@ public class SourceController {
             envelope.put("eventId",event);envelope.put("eventType","ingestion.requested");envelope.put("schemaVersion",1);
             envelope.put("timestamp",Instant.now().toString());envelope.put("tenantId",tenantId);envelope.put("aggregateId",caseId==null?sourceId:caseId);
             envelope.put("aggregateType",caseId==null?"policy":"case");envelope.put("aggregateSequence",revision);envelope.put("jobId",job);
-            envelope.put("attempt",1);envelope.put("correlationId",job);envelope.put("causationId",key);envelope.put("traceContext",Map.of());envelope.put("inputHash",hash);
+            envelope.put("attempt",1);envelope.put("correlationId",job);envelope.put("causationId",key);envelope.put("traceContext",dev.caseflow.observability.Telemetry.capture());envelope.put("inputHash",hash);
             db.update("INSERT INTO core.outbox(event_id,tenant_id,case_id,event_type,payload) VALUES (?,?,?,'ingestion.requested',?::jsonb)",event,tenantId,caseId,json.write(envelope));
             commands.audit(tenantId,caseId,actor,"SOURCE_FINALIZED",Map.of("sourceId",sourceId,"jobId",job,"sha256",sha));
             return output(one(tenantId,sourceId,false));

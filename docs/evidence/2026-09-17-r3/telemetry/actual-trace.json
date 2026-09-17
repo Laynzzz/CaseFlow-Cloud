@@ -1,0 +1,207 @@
+{
+  "batches": [
+    {
+      "resource": {
+        "attributes": [
+          {
+            "key": "service.name",
+            "value": {
+              "stringValue": "case-worker"
+            }
+          }
+        ]
+      },
+      "scopeSpans": [
+        {
+          "scope": {
+            "name": "caseflow-worker"
+          },
+          "spans": [
+            {
+              "traceId": "n/qn+Jk5TiqN0WJQSwydsQ==",
+              "spanId": "ABqi2rbU8xc=",
+              "parentSpanId": "orb2jUtuzY4=",
+              "name": "worker.schedule",
+              "kind": "SPAN_KIND_INTERNAL",
+              "startTimeUnixNano": "1789657272827551002",
+              "endTimeUnixNano": "1789657272835437570",
+              "status": {}
+            },
+            {
+              "traceId": "n/qn+Jk5TiqN0WJQSwydsQ==",
+              "spanId": "msfVNelQaYo=",
+              "parentSpanId": "orb2jUtuzY4=",
+              "name": "worker.execute",
+              "kind": "SPAN_KIND_INTERNAL",
+              "startTimeUnixNano": "1789657272866442432",
+              "endTimeUnixNano": "1789657272976955562",
+              "attributes": [
+                {
+                  "key": "job.kind",
+                  "value": {
+                    "stringValue": "DOCUMENT"
+                  }
+                },
+                {
+                  "key": "outcome",
+                  "value": {
+                    "stringValue": "succeeded"
+                  }
+                }
+              ],
+              "status": {}
+            },
+            {
+              "traceId": "n/qn+Jk5TiqN0WJQSwydsQ==",
+              "spanId": "dNR43cDNYDA=",
+              "parentSpanId": "orb2jUtuzY4=",
+              "name": "worker.publish",
+              "kind": "SPAN_KIND_INTERNAL",
+              "startTimeUnixNano": "1789657273369509387",
+              "endTimeUnixNano": "1789657273377147505",
+              "status": {}
+            },
+            {
+              "traceId": "n/qn+Jk5TiqN0WJQSwydsQ==",
+              "spanId": "igMhPV22MSM=",
+              "parentSpanId": "msfVNelQaYo=",
+              "name": "worker.publish",
+              "kind": "SPAN_KIND_INTERNAL",
+              "startTimeUnixNano": "1789657273882940873",
+              "endTimeUnixNano": "1789657273890011676",
+              "status": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "resource": {
+        "attributes": [
+          {
+            "key": "service.name",
+            "value": {
+              "stringValue": "case-api"
+            }
+          }
+        ]
+      },
+      "scopeSpans": [
+        {
+          "scope": {
+            "name": "org.springframework.boot",
+            "version": "4.1.1"
+          },
+          "spans": [
+            {
+              "traceId": "n/qn+Jk5TiqN0WJQSwydsQ==",
+              "spanId": "W6dOCz5E+Hw=",
+              "parentSpanId": "5Aliob7B6Xc=",
+              "name": "caseflow.operation",
+              "kind": "SPAN_KIND_INTERNAL",
+              "startTimeUnixNano": "1789657272411722616",
+              "endTimeUnixNano": "1789657272413337056",
+              "status": {
+                "code": "STATUS_CODE_OK"
+              }
+            },
+            {
+              "traceId": "n/qn+Jk5TiqN0WJQSwydsQ==",
+              "spanId": "5Aliob7B6Xc=",
+              "name": "caseflow.operation",
+              "kind": "SPAN_KIND_SERVER",
+              "startTimeUnixNano": "1789657272411291119",
+              "endTimeUnixNano": "1789657272427485835",
+              "status": {}
+            },
+            {
+              "traceId": "n/qn+Jk5TiqN0WJQSwydsQ==",
+              "spanId": "VnWFmCCkX2c=",
+              "parentSpanId": "5Aliob7B6Xc=",
+              "name": "caseflow.operation",
+              "kind": "SPAN_KIND_INTERNAL",
+              "startTimeUnixNano": "1789657272427084040",
+              "endTimeUnixNano": "1789657272427384325",
+              "status": {
+                "code": "STATUS_CODE_OK"
+              }
+            },
+            {
+              "traceId": "n/qn+Jk5TiqN0WJQSwydsQ==",
+              "spanId": "JKShsHTfxo0=",
+              "parentSpanId": "W6dOCz5E+Hw=",
+              "name": "caseflow.operation",
+              "kind": "SPAN_KIND_INTERNAL",
+              "startTimeUnixNano": "1789657272413116993",
+              "endTimeUnixNano": "1789657272413284137",
+              "status": {
+                "code": "STATUS_CODE_OK"
+              }
+            },
+            {
+              "traceId": "n/qn+Jk5TiqN0WJQSwydsQ==",
+              "spanId": "nYCG5nD1jyQ=",
+              "parentSpanId": "W6dOCz5E+Hw=",
+              "name": "caseflow.operation",
+              "kind": "SPAN_KIND_INTERNAL",
+              "startTimeUnixNano": "1789657272411967619",
+              "endTimeUnixNano": "1789657272412990374",
+              "status": {
+                "code": "STATUS_CODE_OK"
+              }
+            },
+            {
+              "traceId": "n/qn+Jk5TiqN0WJQSwydsQ==",
+              "spanId": "xV+pUQRdfrs=",
+              "parentSpanId": "5Aliob7B6Xc=",
+              "name": "caseflow.operation",
+              "kind": "SPAN_KIND_INTERNAL",
+              "startTimeUnixNano": "1789657272413355798",
+              "endTimeUnixNano": "1789657272427023537",
+              "status": {
+                "code": "STATUS_CODE_OK"
+              }
+            }
+          ]
+        },
+        {
+          "scope": {
+            "name": "caseflow-api"
+          },
+          "spans": [
+            {
+              "traceId": "n/qn+Jk5TiqN0WJQSwydsQ==",
+              "spanId": "LVXf8MZs6U0=",
+              "parentSpanId": "igMhPV22MSM=",
+              "name": "api.complete",
+              "kind": "SPAN_KIND_INTERNAL",
+              "startTimeUnixNano": "1789657273890707738",
+              "endTimeUnixNano": "1789657273895277222",
+              "status": {}
+            },
+            {
+              "traceId": "n/qn+Jk5TiqN0WJQSwydsQ==",
+              "spanId": "orb2jUtuzY4=",
+              "parentSpanId": "xV+pUQRdfrs=",
+              "name": "api.publish",
+              "kind": "SPAN_KIND_INTERNAL",
+              "startTimeUnixNano": "1789657272803175606",
+              "endTimeUnixNano": "1789657272829084969",
+              "status": {}
+            },
+            {
+              "traceId": "n/qn+Jk5TiqN0WJQSwydsQ==",
+              "spanId": "jkYjlj72FlI=",
+              "parentSpanId": "dNR43cDNYDA=",
+              "name": "api.complete",
+              "kind": "SPAN_KIND_INTERNAL",
+              "startTimeUnixNano": "1789657273379280113",
+              "endTimeUnixNano": "1789657273383484100",
+              "status": {}
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

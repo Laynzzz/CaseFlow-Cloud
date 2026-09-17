@@ -1032,3 +1032,31 @@ retains data and depends on compatible forward migrations. The first packaged
 baseline passed, including previous approved-artifact preservation; actual
 candidate rollback and AWS delivery remain separate gates. Evidence:
 [evidence/2026-09-17-r3/release-baseline/README.md](evidence/2026-09-17-r3/release-baseline/README.md).
+
+## Correlated operations (2026-09-17)
+
+Java/Spring Boot instrumentation uses OpenTelemetry for traces and Micrometer for
+metrics. Python uses the same trace format plus Prometheus metrics. A trace links
+one request across API outbox, broker, durable job, worker completion and Java's
+visible update. V14 adds a defaulted JSON trace-parent column so a worker restart
+does not lose the original request relationship. It changes no business-state or
+acknowledgement boundary and old images can ignore the added column on rollback.
+
+Only a valid W3C trace parent persists; arbitrary baggage is discarded. Background
+spans contain fixed operation names and bounded kinds/outcomes. Exception text is
+not exported. Metrics aggregate by a fixed set of operation/kind/status labels;
+IDs belong in scoped traces/logs, not expanding metric series. API management runs
+on a separate private listener, and the public API still rejects actuator access.
+Export requires explicit configuration; default sampling is parent-based 10%.
+
+Queue time starts when work is eligible, including lease expiry on reclamation;
+execution includes the handler and result transaction. Neither is the user's
+end-to-end document time. Independent Kafka AdminClient reads observe committed
+positions without joining or altering the business consumer. Failed observations
+report unavailable instead of treating missing data as zero lag. AI metrics read
+the durable lifetime ledger; unknown calls remain budget reservations.
+
+Verified: 42 Java/169 Python tests and an actual two-service exported trace through
+the packaged approval flow. The telemetry evidence also records Windows classpath
+length recovery and new trace-flag compatibility. Monitoring and cloud/load claims
+need their own evidence: [telemetry report](evidence/2026-09-17-r3/telemetry/summary.md).

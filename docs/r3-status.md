@@ -139,3 +139,12 @@ records immutable images, fresh isolated volumes, sign-in/approvals/document
 completion, cross-tenant denial and download checksum/content checks. A repeat
 smoke preserves the previous approved case and selected artifact. Candidate
 rollback, monitoring/load and real AWS gates remain pending.
+
+## Correlated telemetry batch
+
+[Telemetry evidence](evidence/2026-09-17-r3/telemetry/summary.md) records 42 Java and
+169 Python passing tests plus a real two-service trace across API/outbox/Kafka/job/
+completion. Separate private metrics endpoints expose HTTP, pool/transaction,
+queue/execution/outbox/lease, Kafka lag and durable AI ledger signals. Monitoring
+unavailability is explicit. Full trace sampling was used only for this bounded
+rehearsal; load/alert/rollback and AWS gates remain separately verified.

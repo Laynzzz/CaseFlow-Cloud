@@ -1,0 +1,32 @@
+> Task :compileJava UP-TO-DATE
+> Task :processResources UP-TO-DATE
+> Task :classes UP-TO-DATE
+
+> Task :compileTestJava FAILED
+F:\Me\Project\caseflow-cloud\services\case-api\src\test\java\dev\caseflow\observability\ManagementSecurityTest.java:31: error: cannot find symbol
+            context.register(TestConfig.class,Endpoints.class,SecurityConfiguration.class,ManagementSecurity.class);
+                                                                                          ^
+  symbol:   class ManagementSecurity
+  location: class ManagementSecurityTest
+1 error
+
+[Incubating] Problems report is available at: file:///F:/Me/Project/caseflow-cloud/services/case-api/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileTestJava' (registered by plugin class 'org.gradle.api.plugins.JavaBasePlugin').
+> Compilation failed; see the compiler output below.
+  F:\Me\Project\caseflow-cloud\services\case-api\src\test\java\dev\caseflow\observability\ManagementSecurityTest.java:31: error: cannot find symbol
+              context.register(TestConfig.class,Endpoints.class,SecurityConfiguration.class,ManagementSecurity.class);
+                                                                                            ^
+    symbol:   class ManagementSecurity
+    location: class ManagementSecurityTest
+  1 error
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+
+BUILD FAILED in 1s
+3 actionable tasks: 1 executed, 2 up-to-date

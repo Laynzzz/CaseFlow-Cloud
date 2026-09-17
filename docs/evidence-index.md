@@ -354,3 +354,10 @@ and remaining local-service foundations before marking Phase 0 complete.
 image build, fresh-schema deployment and repeated approval/download smoke. Exact
 image IDs and captured source hashes are recorded. The dirty baseline is not a
 clean-commit deployment; cloud delivery and candidate rollback are not claimed.
+
+## R3 correlated telemetry
+
+[Telemetry report](evidence/2026-09-17-r3/telemetry/summary.md): actual exported
+request-to-worker-to-completion trace, private management boundaries, fixed-label
+operational metrics and 42 Java/169 Python passing regressions. No cloud or load
+claim follows from these tests alone.

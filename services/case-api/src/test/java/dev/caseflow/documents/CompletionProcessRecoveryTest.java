@@ -158,7 +158,7 @@ class CompletionProcessRecoveryTest {
 
     private void startAtBoundary(String boundary, UUID eventId) throws Exception {
         CompletionCrashProbe.validateDatabaseName(databaseName);
-        String classpath = System.getProperty("caseflow.test.runtimeClasspath");
+        String classpath = java.nio.file.Files.readString(java.nio.file.Path.of(System.getProperty("caseflow.test.runtimeClasspathFile")));
         assertNotNull(classpath, "Gradle must expose the test runtime classpath for the child JVM");
         javaArguments = Files.createTempFile("caseflow-completion-crash-", ".args");
         // A Java argument file avoids Windows command length limits; no credentials go into it.

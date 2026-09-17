@@ -7,6 +7,7 @@ from typing import Literal
 from psycopg.types.json import Jsonb
 from pydantic import BaseModel, Field, ConfigDict
 from .settings import database
+from . import telemetry
 
 
 class Envelope(BaseModel):
@@ -41,13 +42,14 @@ def schedule(event: Envelope):
                              (event.eventId,)).fetchone()
         if not receipt or source["attempt"] > event.attempt or source["status"] == "SUCCEEDED":
             return False
-        db.execute("""INSERT INTO worker.jobs(tenant_id,job_id,case_id,source_id,kind,attempt,input_hash,status)
-            VALUES (%s,%s,%s,%s,%s,%s,%s,'QUEUED')
+        db.execute("""INSERT INTO worker.jobs(tenant_id,job_id,case_id,source_id,kind,attempt,input_hash,status,trace_context)
+            VALUES (%s,%s,%s,%s,%s,%s,%s,'QUEUED',%s)
             ON CONFLICT (tenant_id,job_id) DO UPDATE SET attempt=EXCLUDED.attempt,status='QUEUED',
             fence=worker.jobs.fence+1,executions=0,available_at=now(),updated_at=now(),
-            lease_owner=NULL,lease_until=NULL,failure_code=NULL
+            lease_owner=NULL,lease_until=NULL,failure_code=NULL,trace_context=EXCLUDED.trace_context
             WHERE worker.jobs.status='FAILED' AND worker.jobs.attempt<EXCLUDED.attempt""",
-            (event.tenantId,event.jobId,source["case_id"],source["source_id"],source["kind"],event.attempt,event.inputHash))
+            (event.tenantId,event.jobId,source["case_id"],source["source_id"],source["kind"],event.attempt,event.inputHash,
+             Jsonb(telemetry.sanitize(event.traceContext))))
         return True
 
 
@@ -59,7 +61,8 @@ def emit(db, job, status, code=None):
                  aggregateId=str(job["case_id"] or job["source_id"]), aggregateType="case" if job["case_id"] else "policy", jobId=str(job["job_id"]),
                  attempt=job["attempt"], fence=job["fence"], status=status, failureCode=code,
                  inputHash=job["input_hash"], correlationId=str(job["job_id"]),
-                 causationId=str(job["job_id"]), aggregateSequence=int(source["revision"] or 0), traceContext={})
+                 causationId=str(job["job_id"]), aggregateSequence=int(source["revision"] or 0),
+                 traceContext=telemetry.capture() or telemetry.sanitize(job.get("trace_context", {})))
     db.execute("INSERT INTO worker.outbox(event_id,tenant_id,job_id,payload) VALUES (%s,%s,%s,%s)",
                (event["eventId"],job["tenant_id"],job["job_id"],Jsonb(event)))
 
@@ -85,10 +88,12 @@ def claim(owner: UUID, lease_seconds=30):
                 (job["tenant_id"],job["job_id"])).fetchone()
             emit(db,failed,"FAILED","EXECUTION_LIMIT")
             return None
+        ready_at = job["lease_until"] if job["status"] == "RUNNING" else job["available_at"]
         job = db.execute("""UPDATE worker.jobs SET status='RUNNING',fence=fence+1,executions=executions+1,
             lease_owner=%s,lease_until=now()+%s*interval '1 second',updated_at=now()
             WHERE tenant_id=%s AND job_id=%s RETURNING *""", (owner,lease_seconds,job["tenant_id"],job["job_id"])).fetchone()
         emit(db,job,"RUNNING")
+        job["ready_at"] = ready_at
         return job
 
 

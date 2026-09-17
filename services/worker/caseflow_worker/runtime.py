@@ -1,18 +1,19 @@
 import hashlib
 import json
 import threading
+import time
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from uuid import uuid4
 from confluent_kafka import Consumer, Producer, KafkaException
 from pydantic import ValidationError
-from . import jobs, render, ingestion, assistant
+from . import jobs, render, ingestion, assistant, telemetry
 from .settings import database, BROKER, REQUEST_TOPIC, COMPLETION_TOPIC, DEAD_TOPIC
 
 
 def log(event, **fields):
     print(json.dumps(dict(timestamp=datetime.now(timezone.utc).isoformat(), service="case-worker",
-                          event=event, **fields)), flush=True)
+                          event=event, **telemetry.correlation(), **fields)), flush=True)
 
 
 class Runtime:
@@ -63,16 +64,19 @@ class Runtime:
                     try:
                         try:
                             envelope = jobs.Envelope.model_validate_json(message.value())
-                            jobs.schedule(envelope)
+                            with telemetry.span("worker.schedule", envelope.traceContext):
+                                jobs.schedule(envelope)
                         except (ValidationError, ValueError):
                             self.send(DEAD_TOPIC, "invalid-request", {
                                 "reason": "INVALID_REQUEST_ENVELOPE_OR_REFERENCE",
                                 "sha256": hashlib.sha256(message.value()).hexdigest(),
                                 "topic": message.topic(), "partition": message.partition(), "offset": message.offset(),
                             })
+                            telemetry.events.labels("deadletter", "acknowledged").inc()
                         consumer.commit(message=message, asynchronous=False)
                         break
                     except Exception as error:
+                        telemetry.events.labels("schedule", "retry").inc()
                         log("scheduling_retry", error_type=type(error).__name__)
                         self.stop.wait(2)
         finally:
@@ -93,13 +97,31 @@ class Runtime:
                 self.stop.wait(0.5)
 
     def execute(self, job):
+        with telemetry.span("worker.execute", job.get("trace_context", {})) as span:
+            span.set_attribute("job.kind", job["kind"])
+            telemetry.queue_seconds.labels(job["kind"]).observe(max(0, (job["updated_at"]-job.get("ready_at", job["available_at"])).total_seconds()))
+            if job["executions"] > 1:
+                telemetry.events.labels("execute", "retry").inc()
+            started = time.monotonic()
+            outcome = "deferred"
+            try:
+                outcome = self._execute(job)
+                if outcome in ("failed", "deferred"):
+                    span.set_status(telemetry.trace.StatusCode.ERROR)
+            finally:
+                telemetry.execution_seconds.labels(job["kind"], outcome).observe(time.monotonic()-started)
+                span.set_attribute("outcome", outcome)
+
+    def _execute(self, job):
         finished = threading.Event()
         def renew():
             while not finished.wait(5):
                 try:
                     if not jobs.heartbeat(job):
+                        telemetry.events.labels("lease", "lost").inc()
                         return
                 except Exception:
+                    telemetry.events.labels("lease", "renewal_failed").inc()
                     return  # Never revive a lost lease; fenced completion will reject it.
         heartbeat = threading.Thread(target=renew, daemon=True)
         heartbeat.start()
@@ -108,6 +130,7 @@ class Runtime:
             artifact = executor.execute(job, jobs.input_for(job))
             selected = jobs.finish(job, artifact)
             log("job_finished", kind=job["kind"], job_id=str(job["job_id"]), attempt=job["attempt"], fence=job["fence"], selected=selected)
+            return "succeeded" if selected else "fenced"
         except Exception as error:
             permanent = isinstance(error, (ValueError, KeyError))
             code = "INVALID_DOCUMENT_INPUT" if permanent else "DEPENDENCY_UNAVAILABLE"
@@ -128,6 +151,8 @@ class Runtime:
             except Exception:
                 log("failure_record_deferred", job_id=str(job["job_id"]))
             log("job_failed", kind=job["kind"], job_id=str(job["job_id"]), code=code)
+            telemetry.events.labels("execute", "validation_failed" if permanent else "dependency_failed").inc()
+            return "failed"
         finally:
             finished.set()
             heartbeat.join(timeout=1)
@@ -139,8 +164,11 @@ class Runtime:
                     row = db.execute("""SELECT * FROM worker.outbox WHERE published_at IS NULL
                         ORDER BY created_at FOR UPDATE SKIP LOCKED LIMIT 1""").fetchone()
                     if row:
-                        self.send(COMPLETION_TOPIC, str(row["tenant_id"])+":"+row["payload"]["aggregateId"], row["payload"])
-                        db.execute("UPDATE worker.outbox SET published_at=now() WHERE event_id=%s", (row["event_id"],))
+                        with telemetry.span("worker.publish", row["payload"].get("traceContext", {})):
+                            payload = {**row["payload"], "traceContext": telemetry.capture() or row["payload"].get("traceContext", {})}
+                            self.send(COMPLETION_TOPIC, str(row["tenant_id"])+":"+payload["aggregateId"], payload)
+                            db.execute("UPDATE worker.outbox SET published_at=now() WHERE event_id=%s", (row["event_id"],))
             except Exception as error:
+                telemetry.events.labels("publish", "retry").inc()
                 log("completion_publish_retry", error_type=type(error).__name__)
             self.stop.wait(0.5)

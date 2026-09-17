@@ -31,7 +31,7 @@ public class DocumentJobs {
         envelope.put("timestamp",Instant.now().toString());envelope.put("tenantId",tenant);envelope.put("aggregateId",caseId);
         envelope.put("aggregateType","case");envelope.put("aggregateSequence",sequence);envelope.put("jobId",job);
         envelope.put("attempt",attempt);envelope.put("correlationId",job);envelope.put("causationId",cause);
-        envelope.put("traceContext",Map.of());envelope.put("inputHash",hash);
+        envelope.put("traceContext",dev.caseflow.observability.Telemetry.capture());envelope.put("inputHash",hash);
         db.update("INSERT INTO core.outbox(event_id,tenant_id,case_id,event_type,payload) VALUES (?,?,?,'document.requested',?::jsonb)",event,tenant,caseId,json.write(envelope));
     }
 }

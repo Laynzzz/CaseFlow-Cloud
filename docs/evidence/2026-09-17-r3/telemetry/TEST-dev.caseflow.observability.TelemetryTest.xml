@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.caseflow.observability.TelemetryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-09-17T14:58:48.378Z" hostname="DESTOP-4485" time="0.065">
+  <properties/>
+  <testcase name="persistedParentConnectsNewThreadSpanWithoutBaggage()" classname="dev.caseflow.observability.TelemetryTest" time="0.064"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
