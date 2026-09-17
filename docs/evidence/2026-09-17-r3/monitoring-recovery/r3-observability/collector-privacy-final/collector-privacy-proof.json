@@ -1,0 +1,11 @@
+{
+  "spans_sent": 3,
+  "spans_exported": 2,
+  "sentinel_absent": true,
+  "fixed_name_retained": true,
+  "dynamic_name_normalized": true,
+  "trace_parent_preserved": true,
+  "events_removed": true,
+  "unsupported_linked_span_dropped": true,
+  "image": "otel/opentelemetry-collector-contrib:0.161.0@sha256:fd328de2552466ad78385e1b1289c3f2402b1c45f265b252aab1955b42845ac1"
+}

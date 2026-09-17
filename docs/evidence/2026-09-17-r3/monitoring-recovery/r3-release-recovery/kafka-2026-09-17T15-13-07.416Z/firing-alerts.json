@@ -1,0 +1,48 @@
+{
+  "status": "success",
+  "data": {
+    "alerts": [
+      {
+        "labels": {
+          "alertname": "CaseflowKafkaMetricsUnavailable",
+          "instance": "worker:8090",
+          "job": "caseflow-worker",
+          "severity": "warning"
+        },
+        "annotations": {
+          "runbook_url": "docs/runbooks/observability.md#kafka-lag-and-telemetry-export",
+          "summary": "Read-only Kafka lag observation is unavailable"
+        },
+        "state": "firing",
+        "activeAt": "2026-09-17T15:13:25.520318647Z",
+        "value": "0e+00"
+      },
+      {
+        "labels": {
+          "alertname": "CaseflowRepeatedFailures",
+          "severity": "warning"
+        },
+        "annotations": {
+          "runbook_url": "docs/runbooks/observability.md#repeated-failures-and-dead-letters",
+          "summary": "Repeated worker failure or retry events"
+        },
+        "state": "firing",
+        "activeAt": "2026-09-17T15:09:10.520318647Z",
+        "value": "1.9955677390217517e+01"
+      },
+      {
+        "labels": {
+          "alertname": "CaseflowHttpLatencyHigh",
+          "severity": "warning"
+        },
+        "annotations": {
+          "runbook_url": "docs/runbooks/observability.md#latency-and-saturation",
+          "summary": "API HTTP p95 exceeds one second"
+        },
+        "state": "pending",
+        "activeAt": "2026-09-17T15:12:20.520318647Z",
+        "value": "3.0993152332736296e+00"
+      }
+    ]
+  }
+}

@@ -1094,3 +1094,26 @@ This is a measured operating point, not a cloud capacity guarantee or AI benchma
 [Complete measured analysis](../tests/load/results/2026-09-17T15-04-19-100Z/analysis.md)
 retains image/source fingerprints, backlog, errors, downloads, raw metrics and
 resource caveats. [Method](load-methodology.md) documents limits and commands.
+
+## Monitoring and safe application rollback
+
+For the requester, a dependency outage means the approved document may arrive
+later. The durable database job survives a Kafka outage. The API returns unhealthy
+when its database is unavailable; after the dependency returns, existing processes
+reconnect. Actual local fault tests verify those behaviors and one completion audit.
+
+The monitoring configuration is YAML running in Docker: Prometheus collects
+bounded metrics, Tempo stores traces, Grafana presents them, and the OpenTelemetry
+Collector filters metadata before export. Metrics answer where work is waiting;
+traces connect stages of one operation. Neither replaces the durable job ledger.
+The collector intentionally discards unsupported linked spans to preserve its
+privacy boundary; this trades completeness for bounded exported metadata.
+
+The release helper is JavaScript running on the developer machine. It records
+immutable image IDs and can select prior API/worker images while retaining the
+database. V14 is additive, so the older application still works; destructive
+schema changes would require a different compatibility plan. The actual local
+rollback preserved four selected documents and completed a new one. This proves
+application compatibility, not database backup restoration or cloud availability.
+See [evidence](evidence/2026-09-17-r3/monitoring-recovery/summary.md) and
+[runbook](runbooks/observability.md) for commands and limits.

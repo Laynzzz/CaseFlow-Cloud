@@ -1,0 +1,35 @@
+{
+  "status": "success",
+  "data": {
+    "alerts": [
+      {
+        "labels": {
+          "alertname": "CaseflowMetricsDatabaseUnavailable",
+          "instance": "worker:8090",
+          "job": "caseflow-worker",
+          "severity": "warning"
+        },
+        "annotations": {
+          "runbook_url": "docs/runbooks/observability.md#metrics-target-or-database-unavailable",
+          "summary": "Worker cannot read durable queue metrics"
+        },
+        "state": "firing",
+        "activeAt": "2026-09-17T15:08:55.520318647Z",
+        "value": "0e+00"
+      },
+      {
+        "labels": {
+          "alertname": "CaseflowRepeatedFailures",
+          "severity": "warning"
+        },
+        "annotations": {
+          "runbook_url": "docs/runbooks/observability.md#repeated-failures-and-dead-letters",
+          "summary": "Repeated worker failure or retry events"
+        },
+        "state": "pending",
+        "activeAt": "2026-09-17T15:09:10.520318647Z",
+        "value": "1.0302813622455767e+01"
+      }
+    ]
+  }
+}

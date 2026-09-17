@@ -1,0 +1,470 @@
+2026-09-17T14:56:05.922Z	error	traces/processor.go:78	failed processing traces	{"resource": {"service.instance.id": "2fb5b36c-bb66-46e7-8cd5-362e375e8cc1", "service.name": "otelcol-contrib", "service.version": "0.161.0"}, "otelcol.component.id": "transform/metadata_only", "otelcol.component.kind": "processor", "otelcol.pipeline.id": "traces", "otelcol.signal": "traces", "error": "failed to execute statement: set(span.events, []), expects ptrace.SpanEventSlice but got []interface {}"}
+github.com/open-telemetry/opentelemetry-collector-contrib/processor/transformprocessor/internal/traces.(*Processor).ProcessTraces
+	github.com/open-telemetry/opentelemetry-collector-contrib/processor/transformprocessor@v0.161.0/internal/traces/processor.go:78
+go.opentelemetry.io/collector/processor/processorhelper.NewTraces.func1
+	go.opentelemetry.io/collector/processor/processorhelper@v0.161.0/traces.go:59
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.67.0/traces.go:27
+go.opentelemetry.io/collector/service/internal/refconsumer.refTraces.ConsumeTraces
+	go.opentelemetry.io/collector/service@v0.161.0/internal/refconsumer/traces.go:29
+go.opentelemetry.io/collector/processor/processorhelper.NewTraces.func1
+	go.opentelemetry.io/collector/processor/processorhelper@v0.161.0/traces.go:71
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.67.0/traces.go:27
+go.opentelemetry.io/collector/service/internal/refconsumer.refTraces.ConsumeTraces
+	go.opentelemetry.io/collector/service@v0.161.0/internal/refconsumer/traces.go:29
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.67.0/traces.go:27
+go.opentelemetry.io/collector/internal/fanoutconsumer.(*tracesConsumer).ConsumeTraces
+	go.opentelemetry.io/collector/internal/fanoutconsumer@v0.161.0/traces.go:60
+go.opentelemetry.io/collector/receiver/otlpreceiver/internal/trace.(*Receiver).Export
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.161.0/internal/trace/otlp.go:42
+go.opentelemetry.io/collector/receiver/otlpreceiver.handleTraces
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.161.0/otlphttp.go:46
+go.opentelemetry.io/collector/receiver/otlpreceiver.(*otlpReceiver).startHTTPServer.func1
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.161.0/otlp.go:141
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2286
+net/http.(*ServeMux).ServeHTTP
+	net/http/server.go:2828
+go.opentelemetry.io/collector/config/confighttp.(*decompressor).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.161.0/compression.go:287
+go.opentelemetry.io/collector/config/confighttp.(*ServerConfig).ToServer.maxRequestBodySizeInterceptor.func3
+	go.opentelemetry.io/collector/config/confighttp@v0.161.0/server.go:526
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2286
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*middleware).serveHTTP
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.71.0/handler.go:185
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.NewMiddleware.func2.1
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.71.0/handler.go:67
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2286
+go.opentelemetry.io/collector/config/confighttp.(*clientInfoHandler).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.161.0/clientinfohandler.go:26
+net/http.serverHandler.ServeHTTP
+	net/http/server.go:3311
+net/http.(*conn).serve
+	net/http/server.go:2067
+2026-09-17T14:56:06.141Z	error	traces/processor.go:78	failed processing traces	{"resource": {"service.instance.id": "2fb5b36c-bb66-46e7-8cd5-362e375e8cc1", "service.name": "otelcol-contrib", "service.version": "0.161.0"}, "otelcol.component.id": "transform/metadata_only", "otelcol.component.kind": "processor", "otelcol.pipeline.id": "traces", "otelcol.signal": "traces", "error": "failed to execute statement: set(span.events, []), expects ptrace.SpanEventSlice but got []interface {}"}
+github.com/open-telemetry/opentelemetry-collector-contrib/processor/transformprocessor/internal/traces.(*Processor).ProcessTraces
+	github.com/open-telemetry/opentelemetry-collector-contrib/processor/transformprocessor@v0.161.0/internal/traces/processor.go:78
+go.opentelemetry.io/collector/processor/processorhelper.NewTraces.func1
+	go.opentelemetry.io/collector/processor/processorhelper@v0.161.0/traces.go:59
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.67.0/traces.go:27
+go.opentelemetry.io/collector/service/internal/refconsumer.refTraces.ConsumeTraces
+	go.opentelemetry.io/collector/service@v0.161.0/internal/refconsumer/traces.go:29
+go.opentelemetry.io/collector/processor/processorhelper.NewTraces.func1
+	go.opentelemetry.io/collector/processor/processorhelper@v0.161.0/traces.go:71
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.67.0/traces.go:27
+go.opentelemetry.io/collector/service/internal/refconsumer.refTraces.ConsumeTraces
+	go.opentelemetry.io/collector/service@v0.161.0/internal/refconsumer/traces.go:29
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.67.0/traces.go:27
+go.opentelemetry.io/collector/internal/fanoutconsumer.(*tracesConsumer).ConsumeTraces
+	go.opentelemetry.io/collector/internal/fanoutconsumer@v0.161.0/traces.go:60
+go.opentelemetry.io/collector/receiver/otlpreceiver/internal/trace.(*Receiver).Export
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.161.0/internal/trace/otlp.go:42
+go.opentelemetry.io/collector/receiver/otlpreceiver.handleTraces
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.161.0/otlphttp.go:46
+go.opentelemetry.io/collector/receiver/otlpreceiver.(*otlpReceiver).startHTTPServer.func1
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.161.0/otlp.go:141
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2286
+net/http.(*ServeMux).ServeHTTP
+	net/http/server.go:2828
+go.opentelemetry.io/collector/config/confighttp.(*decompressor).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.161.0/compression.go:287
+go.opentelemetry.io/collector/config/confighttp.(*ServerConfig).ToServer.maxRequestBodySizeInterceptor.func3
+	go.opentelemetry.io/collector/config/confighttp@v0.161.0/server.go:526
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2286
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*middleware).serveHTTP
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.71.0/handler.go:185
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.NewMiddleware.func2.1
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.71.0/handler.go:67
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2286
+go.opentelemetry.io/collector/config/confighttp.(*clientInfoHandler).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.161.0/clientinfohandler.go:26
+net/http.serverHandler.ServeHTTP
+	net/http/server.go:3311
+net/http.(*conn).serve
+	net/http/server.go:2067
+2026-09-17T14:56:06.344Z	error	traces/processor.go:78	failed processing traces	{"resource": {"service.instance.id": "2fb5b36c-bb66-46e7-8cd5-362e375e8cc1", "service.name": "otelcol-contrib", "service.version": "0.161.0"}, "otelcol.component.id": "transform/metadata_only", "otelcol.component.kind": "processor", "otelcol.pipeline.id": "traces", "otelcol.signal": "traces", "error": "failed to execute statement: set(span.events, []), expects ptrace.SpanEventSlice but got []interface {}"}
+github.com/open-telemetry/opentelemetry-collector-contrib/processor/transformprocessor/internal/traces.(*Processor).ProcessTraces
+	github.com/open-telemetry/opentelemetry-collector-contrib/processor/transformprocessor@v0.161.0/internal/traces/processor.go:78
+go.opentelemetry.io/collector/processor/processorhelper.NewTraces.func1
+	go.opentelemetry.io/collector/processor/processorhelper@v0.161.0/traces.go:59
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.67.0/traces.go:27
+go.opentelemetry.io/collector/service/internal/refconsumer.refTraces.ConsumeTraces
+	go.opentelemetry.io/collector/service@v0.161.0/internal/refconsumer/traces.go:29
+go.opentelemetry.io/collector/processor/processorhelper.NewTraces.func1
+	go.opentelemetry.io/collector/processor/processorhelper@v0.161.0/traces.go:71
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.67.0/traces.go:27
+go.opentelemetry.io/collector/service/internal/refconsumer.refTraces.ConsumeTraces
+	go.opentelemetry.io/collector/service@v0.161.0/internal/refconsumer/traces.go:29
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.67.0/traces.go:27
+go.opentelemetry.io/collector/internal/fanoutconsumer.(*tracesConsumer).ConsumeTraces
+	go.opentelemetry.io/collector/internal/fanoutconsumer@v0.161.0/traces.go:60
+go.opentelemetry.io/collector/receiver/otlpreceiver/internal/trace.(*Receiver).Export
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.161.0/internal/trace/otlp.go:42
+go.opentelemetry.io/collector/receiver/otlpreceiver.handleTraces
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.161.0/otlphttp.go:46
+go.opentelemetry.io/collector/receiver/otlpreceiver.(*otlpReceiver).startHTTPServer.func1
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.161.0/otlp.go:141
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2286
+net/http.(*ServeMux).ServeHTTP
+	net/http/server.go:2828
+go.opentelemetry.io/collector/config/confighttp.(*decompressor).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.161.0/compression.go:287
+go.opentelemetry.io/collector/config/confighttp.(*ServerConfig).ToServer.maxRequestBodySizeInterceptor.func3
+	go.opentelemetry.io/collector/config/confighttp@v0.161.0/server.go:526
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2286
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*middleware).serveHTTP
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.71.0/handler.go:185
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.NewMiddleware.func2.1
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.71.0/handler.go:67
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2286
+go.opentelemetry.io/collector/config/confighttp.(*clientInfoHandler).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.161.0/clientinfohandler.go:26
+net/http.serverHandler.ServeHTTP
+	net/http/server.go:3311
+net/http.(*conn).serve
+	net/http/server.go:2067
+2026-09-17T14:56:06.546Z	error	traces/processor.go:78	failed processing traces	{"resource": {"service.instance.id": "2fb5b36c-bb66-46e7-8cd5-362e375e8cc1", "service.name": "otelcol-contrib", "service.version": "0.161.0"}, "otelcol.component.id": "transform/metadata_only", "otelcol.component.kind": "processor", "otelcol.pipeline.id": "traces", "otelcol.signal": "traces", "error": "failed to execute statement: set(span.events, []), expects ptrace.SpanEventSlice but got []interface {}"}
+github.com/open-telemetry/opentelemetry-collector-contrib/processor/transformprocessor/internal/traces.(*Processor).ProcessTraces
+	github.com/open-telemetry/opentelemetry-collector-contrib/processor/transformprocessor@v0.161.0/internal/traces/processor.go:78
+go.opentelemetry.io/collector/processor/processorhelper.NewTraces.func1
+	go.opentelemetry.io/collector/processor/processorhelper@v0.161.0/traces.go:59
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.67.0/traces.go:27
+go.opentelemetry.io/collector/service/internal/refconsumer.refTraces.ConsumeTraces
+	go.opentelemetry.io/collector/service@v0.161.0/internal/refconsumer/traces.go:29
+go.opentelemetry.io/collector/processor/processorhelper.NewTraces.func1
+	go.opentelemetry.io/collector/processor/processorhelper@v0.161.0/traces.go:71
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.67.0/traces.go:27
+go.opentelemetry.io/collector/service/internal/refconsumer.refTraces.ConsumeTraces
+	go.opentelemetry.io/collector/service@v0.161.0/internal/refconsumer/traces.go:29
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.67.0/traces.go:27
+go.opentelemetry.io/collector/internal/fanoutconsumer.(*tracesConsumer).ConsumeTraces
+	go.opentelemetry.io/collector/internal/fanoutconsumer@v0.161.0/traces.go:60
+go.opentelemetry.io/collector/receiver/otlpreceiver/internal/trace.(*Receiver).Export
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.161.0/internal/trace/otlp.go:42
+go.opentelemetry.io/collector/receiver/otlpreceiver.handleTraces
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.161.0/otlphttp.go:46
+go.opentelemetry.io/collector/receiver/otlpreceiver.(*otlpReceiver).startHTTPServer.func1
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.161.0/otlp.go:141
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2286
+net/http.(*ServeMux).ServeHTTP
+	net/http/server.go:2828
+go.opentelemetry.io/collector/config/confighttp.(*decompressor).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.161.0/compression.go:287
+go.opentelemetry.io/collector/config/confighttp.(*ServerConfig).ToServer.maxRequestBodySizeInterceptor.func3
+	go.opentelemetry.io/collector/config/confighttp@v0.161.0/server.go:526
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2286
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*middleware).serveHTTP
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.71.0/handler.go:185
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.NewMiddleware.func2.1
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.71.0/handler.go:67
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2286
+go.opentelemetry.io/collector/config/confighttp.(*clientInfoHandler).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.161.0/clientinfohandler.go:26
+net/http.serverHandler.ServeHTTP
+	net/http/server.go:3311
+net/http.(*conn).serve
+	net/http/server.go:2067
+2026-09-17T14:56:06.747Z	error	traces/processor.go:78	failed processing traces	{"resource": {"service.instance.id": "2fb5b36c-bb66-46e7-8cd5-362e375e8cc1", "service.name": "otelcol-contrib", "service.version": "0.161.0"}, "otelcol.component.id": "transform/metadata_only", "otelcol.component.kind": "processor", "otelcol.pipeline.id": "traces", "otelcol.signal": "traces", "error": "failed to execute statement: set(span.events, []), expects ptrace.SpanEventSlice but got []interface {}"}
+github.com/open-telemetry/opentelemetry-collector-contrib/processor/transformprocessor/internal/traces.(*Processor).ProcessTraces
+	github.com/open-telemetry/opentelemetry-collector-contrib/processor/transformprocessor@v0.161.0/internal/traces/processor.go:78
+go.opentelemetry.io/collector/processor/processorhelper.NewTraces.func1
+	go.opentelemetry.io/collector/processor/processorhelper@v0.161.0/traces.go:59
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.67.0/traces.go:27
+go.opentelemetry.io/collector/service/internal/refconsumer.refTraces.ConsumeTraces
+	go.opentelemetry.io/collector/service@v0.161.0/internal/refconsumer/traces.go:29
+go.opentelemetry.io/collector/processor/processorhelper.NewTraces.func1
+	go.opentelemetry.io/collector/processor/processorhelper@v0.161.0/traces.go:71
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.67.0/traces.go:27
+go.opentelemetry.io/collector/service/internal/refconsumer.refTraces.ConsumeTraces
+	go.opentelemetry.io/collector/service@v0.161.0/internal/refconsumer/traces.go:29
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.67.0/traces.go:27
+go.opentelemetry.io/collector/internal/fanoutconsumer.(*tracesConsumer).ConsumeTraces
+	go.opentelemetry.io/collector/internal/fanoutconsumer@v0.161.0/traces.go:60
+go.opentelemetry.io/collector/receiver/otlpreceiver/internal/trace.(*Receiver).Export
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.161.0/internal/trace/otlp.go:42
+go.opentelemetry.io/collector/receiver/otlpreceiver.handleTraces
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.161.0/otlphttp.go:46
+go.opentelemetry.io/collector/receiver/otlpreceiver.(*otlpReceiver).startHTTPServer.func1
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.161.0/otlp.go:141
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2286
+net/http.(*ServeMux).ServeHTTP
+	net/http/server.go:2828
+go.opentelemetry.io/collector/config/confighttp.(*decompressor).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.161.0/compression.go:287
+go.opentelemetry.io/collector/config/confighttp.(*ServerConfig).ToServer.maxRequestBodySizeInterceptor.func3
+	go.opentelemetry.io/collector/config/confighttp@v0.161.0/server.go:526
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2286
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*middleware).serveHTTP
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.71.0/handler.go:185
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.NewMiddleware.func2.1
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.71.0/handler.go:67
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2286
+go.opentelemetry.io/collector/config/confighttp.(*clientInfoHandler).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.161.0/clientinfohandler.go:26
+net/http.serverHandler.ServeHTTP
+	net/http/server.go:3311
+net/http.(*conn).serve
+	net/http/server.go:2067
+2026-09-17T14:56:06.949Z	error	traces/processor.go:78	failed processing traces	{"resource": {"service.instance.id": "2fb5b36c-bb66-46e7-8cd5-362e375e8cc1", "service.name": "otelcol-contrib", "service.version": "0.161.0"}, "otelcol.component.id": "transform/metadata_only", "otelcol.component.kind": "processor", "otelcol.pipeline.id": "traces", "otelcol.signal": "traces", "error": "failed to execute statement: set(span.events, []), expects ptrace.SpanEventSlice but got []interface {}"}
+github.com/open-telemetry/opentelemetry-collector-contrib/processor/transformprocessor/internal/traces.(*Processor).ProcessTraces
+	github.com/open-telemetry/opentelemetry-collector-contrib/processor/transformprocessor@v0.161.0/internal/traces/processor.go:78
+go.opentelemetry.io/collector/processor/processorhelper.NewTraces.func1
+	go.opentelemetry.io/collector/processor/processorhelper@v0.161.0/traces.go:59
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.67.0/traces.go:27
+go.opentelemetry.io/collector/service/internal/refconsumer.refTraces.ConsumeTraces
+	go.opentelemetry.io/collector/service@v0.161.0/internal/refconsumer/traces.go:29
+go.opentelemetry.io/collector/processor/processorhelper.NewTraces.func1
+	go.opentelemetry.io/collector/processor/processorhelper@v0.161.0/traces.go:71
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.67.0/traces.go:27
+go.opentelemetry.io/collector/service/internal/refconsumer.refTraces.ConsumeTraces
+	go.opentelemetry.io/collector/service@v0.161.0/internal/refconsumer/traces.go:29
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.67.0/traces.go:27
+go.opentelemetry.io/collector/internal/fanoutconsumer.(*tracesConsumer).ConsumeTraces
+	go.opentelemetry.io/collector/internal/fanoutconsumer@v0.161.0/traces.go:60
+go.opentelemetry.io/collector/receiver/otlpreceiver/internal/trace.(*Receiver).Export
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.161.0/internal/trace/otlp.go:42
+go.opentelemetry.io/collector/receiver/otlpreceiver.handleTraces
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.161.0/otlphttp.go:46
+go.opentelemetry.io/collector/receiver/otlpreceiver.(*otlpReceiver).startHTTPServer.func1
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.161.0/otlp.go:141
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2286
+net/http.(*ServeMux).ServeHTTP
+	net/http/server.go:2828
+go.opentelemetry.io/collector/config/confighttp.(*decompressor).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.161.0/compression.go:287
+go.opentelemetry.io/collector/config/confighttp.(*ServerConfig).ToServer.maxRequestBodySizeInterceptor.func3
+	go.opentelemetry.io/collector/config/confighttp@v0.161.0/server.go:526
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2286
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*middleware).serveHTTP
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.71.0/handler.go:185
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.NewMiddleware.func2.1
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.71.0/handler.go:67
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2286
+go.opentelemetry.io/collector/config/confighttp.(*clientInfoHandler).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.161.0/clientinfohandler.go:26
+net/http.serverHandler.ServeHTTP
+	net/http/server.go:3311
+net/http.(*conn).serve
+	net/http/server.go:2067
+2026-09-17T14:56:07.150Z	error	traces/processor.go:78	failed processing traces	{"resource": {"service.instance.id": "2fb5b36c-bb66-46e7-8cd5-362e375e8cc1", "service.name": "otelcol-contrib", "service.version": "0.161.0"}, "otelcol.component.id": "transform/metadata_only", "otelcol.component.kind": "processor", "otelcol.pipeline.id": "traces", "otelcol.signal": "traces", "error": "failed to execute statement: set(span.events, []), expects ptrace.SpanEventSlice but got []interface {}"}
+github.com/open-telemetry/opentelemetry-collector-contrib/processor/transformprocessor/internal/traces.(*Processor).ProcessTraces
+	github.com/open-telemetry/opentelemetry-collector-contrib/processor/transformprocessor@v0.161.0/internal/traces/processor.go:78
+go.opentelemetry.io/collector/processor/processorhelper.NewTraces.func1
+	go.opentelemetry.io/collector/processor/processorhelper@v0.161.0/traces.go:59
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.67.0/traces.go:27
+go.opentelemetry.io/collector/service/internal/refconsumer.refTraces.ConsumeTraces
+	go.opentelemetry.io/collector/service@v0.161.0/internal/refconsumer/traces.go:29
+go.opentelemetry.io/collector/processor/processorhelper.NewTraces.func1
+	go.opentelemetry.io/collector/processor/processorhelper@v0.161.0/traces.go:71
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.67.0/traces.go:27
+go.opentelemetry.io/collector/service/internal/refconsumer.refTraces.ConsumeTraces
+	go.opentelemetry.io/collector/service@v0.161.0/internal/refconsumer/traces.go:29
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.67.0/traces.go:27
+go.opentelemetry.io/collector/internal/fanoutconsumer.(*tracesConsumer).ConsumeTraces
+	go.opentelemetry.io/collector/internal/fanoutconsumer@v0.161.0/traces.go:60
+go.opentelemetry.io/collector/receiver/otlpreceiver/internal/trace.(*Receiver).Export
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.161.0/internal/trace/otlp.go:42
+go.opentelemetry.io/collector/receiver/otlpreceiver.handleTraces
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.161.0/otlphttp.go:46
+go.opentelemetry.io/collector/receiver/otlpreceiver.(*otlpReceiver).startHTTPServer.func1
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.161.0/otlp.go:141
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2286
+net/http.(*ServeMux).ServeHTTP
+	net/http/server.go:2828
+go.opentelemetry.io/collector/config/confighttp.(*decompressor).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.161.0/compression.go:287
+go.opentelemetry.io/collector/config/confighttp.(*ServerConfig).ToServer.maxRequestBodySizeInterceptor.func3
+	go.opentelemetry.io/collector/config/confighttp@v0.161.0/server.go:526
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2286
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*middleware).serveHTTP
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.71.0/handler.go:185
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.NewMiddleware.func2.1
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.71.0/handler.go:67
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2286
+go.opentelemetry.io/collector/config/confighttp.(*clientInfoHandler).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.161.0/clientinfohandler.go:26
+net/http.serverHandler.ServeHTTP
+	net/http/server.go:3311
+net/http.(*conn).serve
+	net/http/server.go:2067
+2026-09-17T14:56:07.351Z	error	traces/processor.go:78	failed processing traces	{"resource": {"service.instance.id": "2fb5b36c-bb66-46e7-8cd5-362e375e8cc1", "service.name": "otelcol-contrib", "service.version": "0.161.0"}, "otelcol.component.id": "transform/metadata_only", "otelcol.component.kind": "processor", "otelcol.pipeline.id": "traces", "otelcol.signal": "traces", "error": "failed to execute statement: set(span.events, []), expects ptrace.SpanEventSlice but got []interface {}"}
+github.com/open-telemetry/opentelemetry-collector-contrib/processor/transformprocessor/internal/traces.(*Processor).ProcessTraces
+	github.com/open-telemetry/opentelemetry-collector-contrib/processor/transformprocessor@v0.161.0/internal/traces/processor.go:78
+go.opentelemetry.io/collector/processor/processorhelper.NewTraces.func1
+	go.opentelemetry.io/collector/processor/processorhelper@v0.161.0/traces.go:59
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.67.0/traces.go:27
+go.opentelemetry.io/collector/service/internal/refconsumer.refTraces.ConsumeTraces
+	go.opentelemetry.io/collector/service@v0.161.0/internal/refconsumer/traces.go:29
+go.opentelemetry.io/collector/processor/processorhelper.NewTraces.func1
+	go.opentelemetry.io/collector/processor/processorhelper@v0.161.0/traces.go:71
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.67.0/traces.go:27
+go.opentelemetry.io/collector/service/internal/refconsumer.refTraces.ConsumeTraces
+	go.opentelemetry.io/collector/service@v0.161.0/internal/refconsumer/traces.go:29
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.67.0/traces.go:27
+go.opentelemetry.io/collector/internal/fanoutconsumer.(*tracesConsumer).ConsumeTraces
+	go.opentelemetry.io/collector/internal/fanoutconsumer@v0.161.0/traces.go:60
+go.opentelemetry.io/collector/receiver/otlpreceiver/internal/trace.(*Receiver).Export
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.161.0/internal/trace/otlp.go:42
+go.opentelemetry.io/collector/receiver/otlpreceiver.handleTraces
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.161.0/otlphttp.go:46
+go.opentelemetry.io/collector/receiver/otlpreceiver.(*otlpReceiver).startHTTPServer.func1
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.161.0/otlp.go:141
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2286
+net/http.(*ServeMux).ServeHTTP
+	net/http/server.go:2828
+go.opentelemetry.io/collector/config/confighttp.(*decompressor).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.161.0/compression.go:287
+go.opentelemetry.io/collector/config/confighttp.(*ServerConfig).ToServer.maxRequestBodySizeInterceptor.func3
+	go.opentelemetry.io/collector/config/confighttp@v0.161.0/server.go:526
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2286
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*middleware).serveHTTP
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.71.0/handler.go:185
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.NewMiddleware.func2.1
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.71.0/handler.go:67
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2286
+go.opentelemetry.io/collector/config/confighttp.(*clientInfoHandler).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.161.0/clientinfohandler.go:26
+net/http.serverHandler.ServeHTTP
+	net/http/server.go:3311
+net/http.(*conn).serve
+	net/http/server.go:2067
+2026-09-17T14:56:07.553Z	error	traces/processor.go:78	failed processing traces	{"resource": {"service.instance.id": "2fb5b36c-bb66-46e7-8cd5-362e375e8cc1", "service.name": "otelcol-contrib", "service.version": "0.161.0"}, "otelcol.component.id": "transform/metadata_only", "otelcol.component.kind": "processor", "otelcol.pipeline.id": "traces", "otelcol.signal": "traces", "error": "failed to execute statement: set(span.events, []), expects ptrace.SpanEventSlice but got []interface {}"}
+github.com/open-telemetry/opentelemetry-collector-contrib/processor/transformprocessor/internal/traces.(*Processor).ProcessTraces
+	github.com/open-telemetry/opentelemetry-collector-contrib/processor/transformprocessor@v0.161.0/internal/traces/processor.go:78
+go.opentelemetry.io/collector/processor/processorhelper.NewTraces.func1
+	go.opentelemetry.io/collector/processor/processorhelper@v0.161.0/traces.go:59
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.67.0/traces.go:27
+go.opentelemetry.io/collector/service/internal/refconsumer.refTraces.ConsumeTraces
+	go.opentelemetry.io/collector/service@v0.161.0/internal/refconsumer/traces.go:29
+go.opentelemetry.io/collector/processor/processorhelper.NewTraces.func1
+	go.opentelemetry.io/collector/processor/processorhelper@v0.161.0/traces.go:71
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.67.0/traces.go:27
+go.opentelemetry.io/collector/service/internal/refconsumer.refTraces.ConsumeTraces
+	go.opentelemetry.io/collector/service@v0.161.0/internal/refconsumer/traces.go:29
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.67.0/traces.go:27
+go.opentelemetry.io/collector/internal/fanoutconsumer.(*tracesConsumer).ConsumeTraces
+	go.opentelemetry.io/collector/internal/fanoutconsumer@v0.161.0/traces.go:60
+go.opentelemetry.io/collector/receiver/otlpreceiver/internal/trace.(*Receiver).Export
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.161.0/internal/trace/otlp.go:42
+go.opentelemetry.io/collector/receiver/otlpreceiver.handleTraces
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.161.0/otlphttp.go:46
+go.opentelemetry.io/collector/receiver/otlpreceiver.(*otlpReceiver).startHTTPServer.func1
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.161.0/otlp.go:141
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2286
+net/http.(*ServeMux).ServeHTTP
+	net/http/server.go:2828
+go.opentelemetry.io/collector/config/confighttp.(*decompressor).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.161.0/compression.go:287
+go.opentelemetry.io/collector/config/confighttp.(*ServerConfig).ToServer.maxRequestBodySizeInterceptor.func3
+	go.opentelemetry.io/collector/config/confighttp@v0.161.0/server.go:526
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2286
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*middleware).serveHTTP
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.71.0/handler.go:185
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.NewMiddleware.func2.1
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.71.0/handler.go:67
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2286
+go.opentelemetry.io/collector/config/confighttp.(*clientInfoHandler).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.161.0/clientinfohandler.go:26
+net/http.serverHandler.ServeHTTP
+	net/http/server.go:3311
+net/http.(*conn).serve
+	net/http/server.go:2067
+2026-09-17T14:56:07.770Z	error	traces/processor.go:78	failed processing traces	{"resource": {"service.instance.id": "2fb5b36c-bb66-46e7-8cd5-362e375e8cc1", "service.name": "otelcol-contrib", "service.version": "0.161.0"}, "otelcol.component.id": "transform/metadata_only", "otelcol.component.kind": "processor", "otelcol.pipeline.id": "traces", "otelcol.signal": "traces", "error": "failed to execute statement: set(span.events, []), expects ptrace.SpanEventSlice but got []interface {}"}
+github.com/open-telemetry/opentelemetry-collector-contrib/processor/transformprocessor/internal/traces.(*Processor).ProcessTraces
+	github.com/open-telemetry/opentelemetry-collector-contrib/processor/transformprocessor@v0.161.0/internal/traces/processor.go:78
+go.opentelemetry.io/collector/processor/processorhelper.NewTraces.func1
+	go.opentelemetry.io/collector/processor/processorhelper@v0.161.0/traces.go:59
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.67.0/traces.go:27
+go.opentelemetry.io/collector/service/internal/refconsumer.refTraces.ConsumeTraces
+	go.opentelemetry.io/collector/service@v0.161.0/internal/refconsumer/traces.go:29
+go.opentelemetry.io/collector/processor/processorhelper.NewTraces.func1
+	go.opentelemetry.io/collector/processor/processorhelper@v0.161.0/traces.go:71
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.67.0/traces.go:27
+go.opentelemetry.io/collector/service/internal/refconsumer.refTraces.ConsumeTraces
+	go.opentelemetry.io/collector/service@v0.161.0/internal/refconsumer/traces.go:29
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.67.0/traces.go:27
+go.opentelemetry.io/collector/internal/fanoutconsumer.(*tracesConsumer).ConsumeTraces
+	go.opentelemetry.io/collector/internal/fanoutconsumer@v0.161.0/traces.go:60
+go.opentelemetry.io/collector/receiver/otlpreceiver/internal/trace.(*Receiver).Export
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.161.0/internal/trace/otlp.go:42
+go.opentelemetry.io/collector/receiver/otlpreceiver.handleTraces
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.161.0/otlphttp.go:46
+go.opentelemetry.io/collector/receiver/otlpreceiver.(*otlpReceiver).startHTTPServer.func1
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.161.0/otlp.go:141
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2286
+net/http.(*ServeMux).ServeHTTP
+	net/http/server.go:2828
+go.opentelemetry.io/collector/config/confighttp.(*decompressor).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.161.0/compression.go:287
+go.opentelemetry.io/collector/config/confighttp.(*ServerConfig).ToServer.maxRequestBodySizeInterceptor.func3
+	go.opentelemetry.io/collector/config/confighttp@v0.161.0/server.go:526
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2286
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*middleware).serveHTTP
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.71.0/handler.go:185
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.NewMiddleware.func2.1
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.71.0/handler.go:67
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2286
+go.opentelemetry.io/collector/config/confighttp.(*clientInfoHandler).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.161.0/clientinfohandler.go:26
+net/http.serverHandler.ServeHTTP
+	net/http/server.go:3311
+net/http.(*conn).serve
+	net/http/server.go:2067

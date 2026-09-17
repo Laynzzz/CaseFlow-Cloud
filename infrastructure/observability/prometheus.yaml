@@ -1,0 +1,25 @@
+global:
+  scrape_interval: 15s
+  scrape_timeout: 10s
+  evaluation_interval: 5s
+  external_labels:
+    environment: local-release
+rule_files: ['/etc/prometheus/alerts.yaml']
+scrape_configs:
+  - job_name: caseflow-collector
+    static_configs:
+      - targets: ['otel-collector:8888']
+  - job_name: caseflow-api
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: ['api:9091']
+    metric_relabel_configs:
+      - action: labeldrop
+        regex: 'tenant.*|case_id|job_id|event_id|correlation_id|trace_id|user.*|.*url.*|.*query.*|.*authorization.*'
+  - job_name: caseflow-worker
+    metrics_path: /metrics
+    static_configs:
+      - targets: ['worker:8090']
+    metric_relabel_configs:
+      - action: labeldrop
+        regex: 'tenant.*|case_id|job_id|event_id|correlation_id|trace_id|user.*|.*url.*|.*query.*|.*authorization.*'

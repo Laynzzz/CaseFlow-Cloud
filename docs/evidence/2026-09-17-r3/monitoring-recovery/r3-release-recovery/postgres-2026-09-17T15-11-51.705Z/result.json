@@ -1,0 +1,63 @@
+{
+  "service": "postgres",
+  "containerId": "0ec008d3636d1902e2cd8167be46700db8d5a1c17f9320a7d2557a20eb48665e",
+  "image": "sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af",
+  "startedAt": "2026-09-17T15:11:51.992Z",
+  "events": [
+    {
+      "event": "dependency_stopped",
+      "at": "2026-09-17T15:11:53.306Z"
+    },
+    {
+      "event": "diagnosed_alert_firing",
+      "at": "2026-09-17T15:12:42.573Z",
+      "alert": "CaseflowMetricsDatabaseUnavailable"
+    },
+    {
+      "event": "same_services_recovered",
+      "at": "2026-09-17T15:12:55.144Z"
+    }
+  ],
+  "revision": "23febb2071cbd48a47edf9b4beeb9f8f9afa384a",
+  "sourceSha256": "3cba868b429b911ea1d2e12171c5e7b64661fc1589809fefb4987e84b8905725",
+  "applicationBefore": [
+    {
+      "service": "api",
+      "id": "2251f93a329ba7f048e028555ea4c6b409e3fb56f59629e1321604ed67ad380f",
+      "startedAt": "2026-09-17T15:00:58.734539301Z",
+      "restarts": 0,
+      "image": "sha256:87a44e850c5453ed5600d633e39ecb65bb17470a04457618888fb39380b16c60"
+    },
+    {
+      "service": "worker",
+      "id": "ff696b9d92ac09be74dd091e4f204d85232c1bf1bb1e95b1d352b81bfc4d6850",
+      "startedAt": "2026-09-17T15:01:05.123118132Z",
+      "restarts": 0,
+      "image": "sha256:00b022975f90d6baeb85854253632bb4be867b2244a49dfc24ec066689c668c3"
+    }
+  ],
+  "healthDuringOutage": 503,
+  "applicationAfter": [
+    {
+      "service": "api",
+      "id": "2251f93a329ba7f048e028555ea4c6b409e3fb56f59629e1321604ed67ad380f",
+      "startedAt": "2026-09-17T15:00:58.734539301Z",
+      "restarts": 0,
+      "image": "sha256:87a44e850c5453ed5600d633e39ecb65bb17470a04457618888fb39380b16c60"
+    },
+    {
+      "service": "worker",
+      "id": "ff696b9d92ac09be74dd091e4f204d85232c1bf1bb1e95b1d352b81bfc4d6850",
+      "startedAt": "2026-09-17T15:01:05.123118132Z",
+      "restarts": 0,
+      "image": "sha256:00b022975f90d6baeb85854253632bb4be867b2244a49dfc24ec066689c668c3"
+    }
+  ],
+  "caseId": "060f8153-4865-4099-9072-64551fbac670",
+  "jobId": "c3b1fb36-f0b2-49bb-85ff-eb20d825ac86",
+  "sha256": "6d591c79c281c6faabb77c856de497a080c4781f54b528da9330c405e0810eec",
+  "selectedBytes": 36726,
+  "completionAudits": 1,
+  "passed": true,
+  "finishedAt": "2026-09-17T15:12:55.702Z"
+}

@@ -1,0 +1,63 @@
+{
+  "service": "kafka",
+  "containerId": "6eb32edc62b639dd1c25eacde2df14529c7cec92a3a44e7aaaff4355d68b739a",
+  "image": "sha256:2d2f77837385f202b1947fc3ed62421de344f0ced47dde360ca5afdad11b51fa",
+  "startedAt": "2026-09-17T15:13:07.711Z",
+  "events": [
+    {
+      "event": "dependency_stopped",
+      "at": "2026-09-17T15:13:09.745Z"
+    },
+    {
+      "event": "diagnosed_alert_firing",
+      "at": "2026-09-17T15:13:58.059Z",
+      "alert": "CaseflowKafkaMetricsUnavailable"
+    },
+    {
+      "event": "same_services_recovered",
+      "at": "2026-09-17T15:14:48.764Z"
+    }
+  ],
+  "revision": "23febb2071cbd48a47edf9b4beeb9f8f9afa384a",
+  "sourceSha256": "3cba868b429b911ea1d2e12171c5e7b64661fc1589809fefb4987e84b8905725",
+  "applicationBefore": [
+    {
+      "service": "api",
+      "id": "2251f93a329ba7f048e028555ea4c6b409e3fb56f59629e1321604ed67ad380f",
+      "startedAt": "2026-09-17T15:00:58.734539301Z",
+      "restarts": 0,
+      "image": "sha256:87a44e850c5453ed5600d633e39ecb65bb17470a04457618888fb39380b16c60"
+    },
+    {
+      "service": "worker",
+      "id": "ff696b9d92ac09be74dd091e4f204d85232c1bf1bb1e95b1d352b81bfc4d6850",
+      "startedAt": "2026-09-17T15:01:05.123118132Z",
+      "restarts": 0,
+      "image": "sha256:00b022975f90d6baeb85854253632bb4be867b2244a49dfc24ec066689c668c3"
+    }
+  ],
+  "queuedJob": "ff3230fc-c405-4f93-9c69-c6be7440d93e",
+  "applicationAfter": [
+    {
+      "service": "api",
+      "id": "2251f93a329ba7f048e028555ea4c6b409e3fb56f59629e1321604ed67ad380f",
+      "startedAt": "2026-09-17T15:00:58.734539301Z",
+      "restarts": 0,
+      "image": "sha256:87a44e850c5453ed5600d633e39ecb65bb17470a04457618888fb39380b16c60"
+    },
+    {
+      "service": "worker",
+      "id": "ff696b9d92ac09be74dd091e4f204d85232c1bf1bb1e95b1d352b81bfc4d6850",
+      "startedAt": "2026-09-17T15:01:05.123118132Z",
+      "restarts": 0,
+      "image": "sha256:00b022975f90d6baeb85854253632bb4be867b2244a49dfc24ec066689c668c3"
+    }
+  ],
+  "caseId": "cc47c2f3-8181-4ab3-ac5d-39598b840f43",
+  "jobId": "ff3230fc-c405-4f93-9c69-c6be7440d93e",
+  "sha256": "857f52b2a520b0b0750ea210508ec447f1756c5bca8f51861070908e16aa5cb5",
+  "selectedBytes": 36726,
+  "completionAudits": 1,
+  "passed": true,
+  "finishedAt": "2026-09-17T15:14:49.325Z"
+}

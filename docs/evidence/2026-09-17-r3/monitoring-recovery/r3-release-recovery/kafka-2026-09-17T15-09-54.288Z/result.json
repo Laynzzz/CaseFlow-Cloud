@@ -1,0 +1,30 @@
+{
+  "service": "kafka",
+  "containerId": "6eb32edc62b639dd1c25eacde2df14529c7cec92a3a44e7aaaff4355d68b739a",
+  "image": "sha256:2d2f77837385f202b1947fc3ed62421de344f0ced47dde360ca5afdad11b51fa",
+  "startedAt": "2026-09-17T15:09:54.578Z",
+  "events": [
+    {
+      "event": "dependency_stopped",
+      "at": "2026-09-17T15:09:55.779Z"
+    },
+    {
+      "event": "diagnosed_alert_firing",
+      "at": "2026-09-17T15:10:42.121Z",
+      "alert": "CaseflowKafkaMetricsUnavailable"
+    },
+    {
+      "event": "same_services_recovered",
+      "at": "2026-09-17T15:11:30.833Z"
+    }
+  ],
+  "revision": "23febb2071cbd48a47edf9b4beeb9f8f9afa384a",
+  "queuedJob": "3b91fdf2-2dbf-4d9e-805b-7b76664675b2",
+  "caseId": "032f4b72-351c-4fff-90ea-8fdbb2f893cf",
+  "jobId": "3b91fdf2-2dbf-4d9e-805b-7b76664675b2",
+  "sha256": "1b476b7b91a74c3c48c92db6e251069404edb28fb10637cc6d8411684ce6a0c8",
+  "selectedBytes": 36726,
+  "completionAudits": 1,
+  "passed": true,
+  "finishedAt": "2026-09-17T15:11:30.833Z"
+}

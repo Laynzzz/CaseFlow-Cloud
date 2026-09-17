@@ -1,0 +1,121 @@
+{
+  "normalization": "UTF-8, LF, trailing whitespace removed; known local credentials checked and withheld",
+  "files": {
+    "r3-release-recovery/kafka-2026-09-17T15-09-54.288Z/firing-alerts.json": {
+      "source_sha256": "f5ab77234141e28fcc5d13859ff3ff53140086757e1e47695ed67d97c0ae9ac1",
+      "archive_sha256": "f5ab77234141e28fcc5d13859ff3ff53140086757e1e47695ed67d97c0ae9ac1"
+    },
+    "r3-release-recovery/kafka-2026-09-17T15-09-54.288Z/resolved-alerts.json": {
+      "source_sha256": "442eee5f8bb9a5bc96846c059099de8cce1f3f0df750eee1a7f42e8feaac801b",
+      "archive_sha256": "442eee5f8bb9a5bc96846c059099de8cce1f3f0df750eee1a7f42e8feaac801b"
+    },
+    "r3-release-recovery/kafka-2026-09-17T15-09-54.288Z/result.json": {
+      "source_sha256": "6c42f26e951c3bf5f103a16d5834a06307a6da49b817d7531aa2133e9520df25",
+      "archive_sha256": "6c42f26e951c3bf5f103a16d5834a06307a6da49b817d7531aa2133e9520df25"
+    },
+    "r3-release-recovery/kafka-2026-09-17T15-13-07.416Z/firing-alerts.json": {
+      "source_sha256": "c3731cf9de59e86558b6d997b7dc7baa2a140f0528702aaecaa9c7dc9cfc7c42",
+      "archive_sha256": "c3731cf9de59e86558b6d997b7dc7baa2a140f0528702aaecaa9c7dc9cfc7c42"
+    },
+    "r3-release-recovery/kafka-2026-09-17T15-13-07.416Z/resolved-alerts.json": {
+      "source_sha256": "6ef7b0cafb81549851347f95d368a24015b93b9f41fa012b402b6f55b5c5beb4",
+      "archive_sha256": "6ef7b0cafb81549851347f95d368a24015b93b9f41fa012b402b6f55b5c5beb4"
+    },
+    "r3-release-recovery/kafka-2026-09-17T15-13-07.416Z/result.json": {
+      "source_sha256": "a28bddff2e0a7032dfca928cc43864fc412dc40af6856f39a643ed09dd9cfc13",
+      "archive_sha256": "a28bddff2e0a7032dfca928cc43864fc412dc40af6856f39a643ed09dd9cfc13"
+    },
+    "r3-release-recovery/postgres-2026-09-17T15-08-38.005Z/firing-alerts.json": {
+      "source_sha256": "819c6544e62ff8cdc94e4dd66329aef5dd0d0a822a324895d1d28d808a34f828",
+      "archive_sha256": "819c6544e62ff8cdc94e4dd66329aef5dd0d0a822a324895d1d28d808a34f828"
+    },
+    "r3-release-recovery/postgres-2026-09-17T15-08-38.005Z/resolved-alerts.json": {
+      "source_sha256": "594f9f5ebb3486d3f9c69639c85b8a1147554f7a33ff4b26530f114e1e0b4c04",
+      "archive_sha256": "594f9f5ebb3486d3f9c69639c85b8a1147554f7a33ff4b26530f114e1e0b4c04"
+    },
+    "r3-release-recovery/postgres-2026-09-17T15-08-38.005Z/result.json": {
+      "source_sha256": "dded36bd4f8e2b34d6f0cdebde27c8a1edab6d1b5cb98b39d54cf9cb09a233a8",
+      "archive_sha256": "dded36bd4f8e2b34d6f0cdebde27c8a1edab6d1b5cb98b39d54cf9cb09a233a8"
+    },
+    "r3-release-recovery/postgres-2026-09-17T15-11-51.705Z/firing-alerts.json": {
+      "source_sha256": "dd45d415943296276ffd5b9496b1d90b6d3ca3a32fc2c73ac691333d20971dbd",
+      "archive_sha256": "dd45d415943296276ffd5b9496b1d90b6d3ca3a32fc2c73ac691333d20971dbd"
+    },
+    "r3-release-recovery/postgres-2026-09-17T15-11-51.705Z/resolved-alerts.json": {
+      "source_sha256": "0ad28656249d94c2dc84cecc5cb1c4015f35f687ccdd28cf0cfe43005e807532",
+      "archive_sha256": "0ad28656249d94c2dc84cecc5cb1c4015f35f687ccdd28cf0cfe43005e807532"
+    },
+    "r3-release-recovery/postgres-2026-09-17T15-11-51.705Z/result.json": {
+      "source_sha256": "95a938a7dbcef20f5fab052d7255a15609a7c9cae058ef8e0565dc1a9e44a1e3",
+      "archive_sha256": "95a938a7dbcef20f5fab052d7255a15609a7c9cae058ef8e0565dc1a9e44a1e3"
+    },
+    "r3-observability/infrastructure-manifest.json": {
+      "source_sha256": "664b32ca00253a7585752554e469eeceb4c598aea225b3037a923c28eb5902fb",
+      "archive_sha256": "05ea388983f14c18118d6f7644e631ca15925bf2d94971735aba196ee66a79dd"
+    },
+    "r3-observability/actual-trace.json": {
+      "source_sha256": "7229130fd6c19e03a7311738e6f73b5d933a5ccfe5e112a6eddf28d5bf0303a6",
+      "archive_sha256": "55e1d711d75d3660487a17f0024f7ccaa5888c4f4b9786b85f62aa78f57b9383"
+    },
+    "r3-observability/prometheus-targets.json": {
+      "source_sha256": "4f78f4f53e7d7d6b7bfd9b000f8c3922809b3ff7fe9358e282ebd733a0c4434f",
+      "archive_sha256": "a8b2f675eeb23ccba17a02824d3511e7e5f82947e4bdc36910422d4074964e35"
+    },
+    "r3-observability/grafana-dashboard.json": {
+      "source_sha256": "120b28b0573838f43918a1cbf4209cc4fc9eaf5ab524125d0bfefef0f8119df8",
+      "archive_sha256": "6bd4b128ca071037cc6f4f96067e40de420143c7dcd5b6dd7c4081c9629dad7e"
+    },
+    "r3-observability/collector-probe-initial-failure.txt": {
+      "source_sha256": "427a7773f1715994e55ca4a7bc346cf7661161c69c5e753f8f6ad70e98748d9c",
+      "archive_sha256": "427a7773f1715994e55ca4a7bc346cf7661161c69c5e753f8f6ad70e98748d9c"
+    },
+    "r3-observability/collector-validate-final.txt": {
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archive_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "r3-observability/prometheus-validate-final.txt": {
+      "source_sha256": "c397222a311a6728f0ae7b2309bf39ec897d794fa17bc0ac4359ed3b8c6c2bb5",
+      "archive_sha256": "88d3151ffa974c1c7f43eb7d385d8944f64585cd4f113e7fac1f48ace82b587d"
+    },
+    "r3-observability/tempo-validate-final.txt": {
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archive_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "r3-observability/collector-privacy-final/collector-privacy-proof.json": {
+      "source_sha256": "566e520cb412053606e59dcacc8b89e9606a1f4b396ddac20499ad9daf5e2fe0",
+      "archive_sha256": "f3b593eff4cce0844072755898252808ddf71f6849cfb500c1c590322547deeb"
+    },
+    "r3-observability/collector-privacy-final/collector-probe.txt": {
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archive_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "r3-observability/collector-privacy-final/collector-probe.yaml": {
+      "source_sha256": "302b94719521be9d8c39cff873124c3220ff665cbbc85a9622336694849e01c5",
+      "archive_sha256": "22e4b9076b9fc35250763d6b04c43316721193139487730632db75c5a0c571bc"
+    },
+    "r3-observability/collector-privacy-final/sanitized.json": {
+      "source_sha256": "07cd02ddfb9577f3ff052757acb8d7cfc469c4f5b0a5bcce2df051dd78ee15b1",
+      "archive_sha256": "07cd02ddfb9577f3ff052757acb8d7cfc469c4f5b0a5bcce2df051dd78ee15b1"
+    },
+    "r3-release/rollback.txt": {
+      "source_sha256": "c600e74f2ad88160f8f2e0a79c29ed1e185f89e7a43dd63792ca3da8ee39797d",
+      "archive_sha256": "4cdb2e069df6b778573c2add974bfcd8a9ac2589661be10cf553a4982edd6ec2"
+    },
+    "r3-release/rollback-schema-history.txt": {
+      "source_sha256": "a66163755a68996fbc14f88d0cba7707d507cabb35935e839b6a4d809c669586",
+      "archive_sha256": "0b0696285d36fb4d80e882adc7e6ac811361edad9e52be40c0ae1b2eb40d0c60"
+    },
+    "r3-release/rollback-preservation.json": {
+      "source_sha256": "15401e01e4ca737963a64033c94af52aa4b34c6665964c187d3ad782aa3c6563",
+      "archive_sha256": "15401e01e4ca737963a64033c94af52aa4b34c6665964c187d3ad782aa3c6563"
+    },
+    "r3-release/restore-candidate.txt": {
+      "source_sha256": "7b032cf851c1620857c1735469ddb5cb22f22ab95c9ca12a2875e1969859551c",
+      "archive_sha256": "de3b226ebcca7002a0e9cd608c1533b98da078ca12e372fd4ba27d3a8d1d3b55"
+    },
+    "r3-release/restored-preservation.json": {
+      "source_sha256": "15f9735eda04f9212e9589a5ea522763aa68cecf8f7110ffee6b940470fad854",
+      "archive_sha256": "15f9735eda04f9212e9589a5ea522763aa68cecf8f7110ffee6b940470fad854"
+    }
+  }
+}

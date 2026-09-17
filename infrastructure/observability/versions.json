@@ -1,0 +1,22 @@
+{
+  "verifiedAt": "2026-09-17",
+  "verification": "Official GitHub latest-release APIs and docker buildx imagetools inspect; all four pinned images pulled successfully.",
+  "images": {
+    "collector": {
+      "image": "otel/opentelemetry-collector-contrib:0.161.0@sha256:fd328de2552466ad78385e1b1289c3f2402b1c45f265b252aab1955b42845ac1",
+      "release": "https://github.com/open-telemetry/opentelemetry-collector-releases/releases/tag/v0.161.0"
+    },
+    "prometheus": {
+      "image": "prom/prometheus:v3.14.0@sha256:5ce7540c3c00ef4ab0c9d2c995c6a5b9c421f44b4a115d97a2c7af3b1c21cbb0",
+      "release": "https://github.com/prometheus/prometheus/releases/tag/v3.14.0"
+    },
+    "tempo": {
+      "image": "grafana/tempo:3.0.3@sha256:0296560ac66f8a3600d7fb3014a52c189d4d9c3549ad6ff441bf2409855d68d5",
+      "release": "https://github.com/grafana/tempo/releases/tag/v3.0.3"
+    },
+    "grafana": {
+      "image": "grafana/grafana:13.2.2@sha256:ac461fb352abc50da10a51c7d02462e9c05488f11f53f14b3ad79a8145f638a0",
+      "release": "https://github.com/grafana/grafana/releases/tag/v13.2.2"
+    }
+  }
+}

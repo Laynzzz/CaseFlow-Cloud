@@ -1,0 +1,33 @@
+time="2026-09-17T11:15:28-04:00" level=warning msg="Found orphan containers ([caseflow-release-otel-collector-1 caseflow-release-grafana-1 caseflow-release-prometheus-1 caseflow-release-tempo-1]) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up."
+ Container caseflow-release-object-store-1  Running
+ Container caseflow-release-kafka-1  Running
+ Container caseflow-release-keycloak-1  Running
+ Container caseflow-release-postgres-1  Running
+ Container caseflow-release-api-1  Recreate
+ Container caseflow-release-api-1  Recreated
+ Container caseflow-release-worker-1  Recreate
+ Container caseflow-release-worker-1  Recreated
+ Container caseflow-release-postgres-1  Waiting
+ Container caseflow-release-kafka-1  Waiting
+ Container caseflow-release-postgres-1  Healthy
+ Container caseflow-release-kafka-1  Healthy
+ Container caseflow-release-api-1  Starting
+ Container caseflow-release-api-1  Started
+ Container caseflow-release-api-1  Waiting
+ Container caseflow-release-api-1  Healthy
+ Container caseflow-release-worker-1  Starting
+ Container caseflow-release-worker-1  Started
+ Container caseflow-release-object-store-1  Waiting
+ Container caseflow-release-api-1  Waiting
+ Container caseflow-release-worker-1  Waiting
+ Container caseflow-release-postgres-1  Waiting
+ Container caseflow-release-keycloak-1  Waiting
+ Container caseflow-release-kafka-1  Waiting
+ Container caseflow-release-object-store-1  Healthy
+ Container caseflow-release-postgres-1  Healthy
+ Container caseflow-release-keycloak-1  Healthy
+ Container caseflow-release-api-1  Healthy
+ Container caseflow-release-kafka-1  Healthy
+ Container caseflow-release-worker-1  Healthy
+PASS packaged SPA deep links, PKCE, API/operations denial, tenant denial, prior approved case preserved, two approvals, Kafka/worker completion and SHA-256 verified DOCX; synthetic case 93a16cbd-8fb4-423b-a73f-7c5b6f7639b5. No paid AI calls.
+PASS rollback: release-baseline; immutable API sha256:ff15f6a414ee19e43cb6e956edb2a17cb17b680fe4f13e511dc8fc01b810b398, worker sha256:32d9dab7eabdf35598f493ee269dbdfac72011830e2beb76e1045163efe8452b

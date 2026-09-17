@@ -165,3 +165,14 @@ measured-phase documents. Zero workload errors/dropped iterations, peak observed
 pending2 and final0, two verified downloads, clean release-fixture reconciliation.
 Measured HTTP p95=10.458ms; polling-inclusive completion p95=3.835s. The report
 retains sampled resource/lag evidence and excludes maximum-capacity/cloud claims.
+
+## Monitoring, whole-service recovery and local rollback
+
+[Actual evidence](evidence/2026-09-17-r3/monitoring-recovery/summary.md) records
+healthy scrape targets, a provisioned 22-panel dashboard and collector privacy
+checks. Stopping PostgreSQL and Kafka separately triggered diagnostic alerts;
+the same API/worker processes recovered after dependencies returned. Documents
+completed with one audit and verified checksums. Prior application images ran
+against additive V14 and preserved four existing documents; restoring the
+candidate also passed. These are local gates. Hosted CI, clean-checkout demo,
+security scans and actual AWS deployment/rollback remain separately tracked.

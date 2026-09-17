@@ -1,0 +1,73 @@
+groups:
+  - name: caseflow-recovery
+    rules:
+      - alert: CaseflowMetricsTargetDown
+        expr: up{job=~"caseflow-api|caseflow-worker|caseflow-collector"} == 0
+        for: 30s
+        labels: {severity: warning}
+        annotations:
+          summary: 'CaseFlow metrics target is unavailable'
+          runbook_url: 'docs/runbooks/observability.md#metrics-target-or-database-unavailable'
+      - alert: CaseflowKafkaMetricsUnavailable
+        expr: caseflow_kafka_metrics_up == 0
+        for: 30s
+        labels: {severity: warning}
+        annotations:
+          summary: 'Read-only Kafka lag observation is unavailable'
+          runbook_url: 'docs/runbooks/observability.md#kafka-lag-and-telemetry-export'
+      - alert: CaseflowKafkaConsumerLag
+        expr: caseflow_kafka_consumer_lag > 100
+        for: 2m
+        labels: {severity: warning}
+        annotations:
+          summary: 'A fixed CaseFlow consumer group is over 100 records behind'
+          runbook_url: 'docs/runbooks/observability.md#kafka-lag-and-telemetry-export'
+      - alert: CaseflowMetricsDatabaseUnavailable
+        expr: caseflow_metrics_database_up == 0
+        for: 30s
+        labels: {severity: warning}
+        annotations:
+          summary: 'Worker cannot read durable queue metrics'
+          runbook_url: 'docs/runbooks/observability.md#metrics-target-or-database-unavailable'
+      - alert: CaseflowReadyJobOld
+        expr: caseflow_oldest_ready_job_seconds > 120
+        for: 2m
+        labels: {severity: warning}
+        annotations:
+          summary: 'Ready job age exceeds two minutes'
+          runbook_url: 'docs/runbooks/observability.md#old-jobs-outbox-or-expired-leases'
+      - alert: CaseflowOutboxOld
+        expr: caseflow_outbox_oldest_seconds > 60
+        for: 2m
+        labels: {severity: warning}
+        annotations:
+          summary: 'Unpublished event age exceeds one minute'
+          runbook_url: 'docs/runbooks/observability.md#old-jobs-outbox-or-expired-leases'
+      - alert: CaseflowExpiredLease
+        expr: caseflow_expired_leases > 0
+        for: 1m
+        labels: {severity: warning}
+        annotations:
+          summary: 'Expired execution lease remains unreclaimed'
+          runbook_url: 'docs/runbooks/observability.md#old-jobs-outbox-or-expired-leases'
+      - alert: CaseflowRepeatedFailures
+        expr: sum(increase(caseflow_worker_events_total{outcome=~"retry|validation_failed|dependency_failed|renewal_failed"}[5m])) > 3
+        for: 30s
+        labels: {severity: warning}
+        annotations:
+          summary: 'Repeated worker failure or retry events'
+          runbook_url: 'docs/runbooks/observability.md#repeated-failures-and-dead-letters'
+      - alert: CaseflowDeadletterObserved
+        expr: sum(increase(caseflow_worker_events_total{operation="deadletter",outcome="acknowledged"}[5m])) > 0
+        for: 0s
+        labels: {severity: warning}
+        annotations:
+          summary: 'Worker published a redacted poison-message diagnosis'
+          runbook_url: 'docs/runbooks/observability.md#repeated-failures-and-dead-letters'
+      - alert: CaseflowHttpLatencyHigh
+        expr: histogram_quantile(0.95, sum by (le) (rate(http_server_requests_seconds_bucket{job="caseflow-api",uri!~"/actuator.*"}[5m]))) > 1
+        for: 2m
+        labels: {severity: warning}
+        annotations:
+          summary: 'API HTTP p95 exceeds one second'
+          runbook_url: 'docs/runbooks/observability.md#latency-and-saturation'

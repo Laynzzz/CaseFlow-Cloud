@@ -1,0 +1,27 @@
+{
+  "verified_at": "2026-09-17",
+  "config_validation": {
+    "collector": 0,
+    "promtool": 0,
+    "tempo": 0
+  },
+  "collector_privacy_proof": "collector-privacy-final/collector-privacy-proof.json",
+  "component_startup": {
+    "tempo": "ready",
+    "grafana": "ready, two sources and initial eighteen-panel dashboard; final dashboard adds four panels"
+  },
+  "integrated_application_proof": "Parent integration owns output/r3-observability/actual-trace.json and Prometheus target checks.",
+  "sha256": {
+    "infrastructure/observability/alerts.yaml": "c9e91e4711a1cffbad1785daeb32202e52839f4fccafc9f4673560f0b9ed7e1c",
+    "infrastructure/observability/collector.yaml": "5de3187032f43fe49ec26b8f99f3bb62f5641c73d2ab17ae3201ff136f8f9c2a",
+    "infrastructure/observability/prometheus.yaml": "718b5a10e7823239917bf7ff79af50c81632af2c91e0be91855f98722174c73e",
+    "infrastructure/observability/tempo.yaml": "20f4a09ae1bb1b6b5b1ae6999018f00a3354ce46c2b2c9cfd5dbd577ef944401",
+    "infrastructure/observability/verify-collector.py": "be1fa53abc77900090e399b7cfc10c5472ef5b94d09d5c6b5017b7c7c62657a0",
+    "infrastructure/observability/versions.json": "a09faaba34254244c1fe7cb66dbecd91cd7a0228acd0bc0e98c268a6c27aaa35",
+    "infrastructure/observability/grafana/dashboards/operations.json": "d1848673bd9a55c7cf2c829647739dc52c559bb40ecf2bd21f6cb1eb41153293",
+    "infrastructure/observability/grafana/provisioning/dashboards/local.yaml": "10f328c0b66c0230dc77c66f57e30ee5546c75ba9865afd1fa65d700751ac1a1",
+    "infrastructure/observability/grafana/provisioning/datasources/local.yaml": "85c0f774e45a9671f7dbae7ba609d0672f1797995acd4576176d7c171c6b848c",
+    "compose.observability.yaml": "00309a1c3eacf10479bbfae879f27960b4af782360c83e6e8f76b448a3593bfb",
+    "docs/runbooks/observability.md": "518fd94c94c4fea3d42caa01accae055b58d6a220ad9ca75f59c9118561c449c"
+  }
+}

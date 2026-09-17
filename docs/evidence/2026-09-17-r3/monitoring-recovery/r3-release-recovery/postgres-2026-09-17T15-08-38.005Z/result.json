@@ -1,0 +1,30 @@
+{
+  "service": "postgres",
+  "containerId": "0ec008d3636d1902e2cd8167be46700db8d5a1c17f9320a7d2557a20eb48665e",
+  "image": "sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af",
+  "startedAt": "2026-09-17T15:08:38.295Z",
+  "events": [
+    {
+      "event": "dependency_stopped",
+      "at": "2026-09-17T15:08:38.995Z"
+    },
+    {
+      "event": "diagnosed_alert_firing",
+      "at": "2026-09-17T15:09:28.311Z",
+      "alert": "CaseflowMetricsDatabaseUnavailable"
+    },
+    {
+      "event": "same_services_recovered",
+      "at": "2026-09-17T15:09:40.775Z"
+    }
+  ],
+  "revision": "23febb2071cbd48a47edf9b4beeb9f8f9afa384a",
+  "healthDuringOutage": 503,
+  "caseId": "8662935d-ed32-4c0c-89af-73a5e0a38f73",
+  "jobId": "d4a6c754-ddbf-4d7c-81a7-185fd5a66b98",
+  "sha256": "b2318d70c84d4ddd51e35b2c68d76e17943efeec57f0b476567c84617ee589ea",
+  "selectedBytes": 36726,
+  "completionAudits": 1,
+  "passed": true,
+  "finishedAt": "2026-09-17T15:09:40.775Z"
+}

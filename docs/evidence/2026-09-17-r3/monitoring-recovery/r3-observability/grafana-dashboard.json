@@ -1,0 +1,683 @@
+{
+  "meta": {
+    "type": "db",
+    "canSave": false,
+    "canEdit": false,
+    "canAdmin": false,
+    "canStar": false,
+    "canDelete": false,
+    "slug": "caseflow-operations",
+    "url": "/d/caseflow-operations/caseflow-operations",
+    "expires": "0001-01-01T00:00:00Z",
+    "created": "2026-09-17T15:01:03Z",
+    "updated": "2026-09-17T15:01:03Z",
+    "updatedBy": "Anonymous",
+    "createdBy": "Anonymous",
+    "version": 1,
+    "hasAcl": false,
+    "isFolder": false,
+    "apiVersion": "v0alpha1",
+    "folderId": 1923504526897152,
+    "folderUid": "afyjcvtmpybk0b",
+    "folderTitle": "CaseFlow",
+    "folderUrl": "/dashboards/f/afyjcvtmpybk0b/caseflow",
+    "provisioned": true,
+    "provisionedExternalId": "operations.json",
+    "annotationsPermissions": {
+      "dashboard": {
+        "canAdd": false,
+        "canEdit": false,
+        "canDelete": false
+      }
+    }
+  },
+  "dashboard": {
+    "annotations": {
+      "list": []
+    },
+    "editable": false,
+    "id": 1923504616402944,
+    "links": [
+      {
+        "title": "Trace exploration",
+        "type": "link",
+        "url": "/explore?left=%7B%22datasource%22%3A%22caseflow-tempo%22%7D"
+      }
+    ],
+    "panels": [
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "caseflow-prometheus"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "s"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 0
+        },
+        "id": 1,
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.95, sum by (le) (rate(http_server_requests_seconds_bucket{job=\"caseflow-api\",uri!~\"/actuator.*\"}[5m])))",
+            "legendFormat": "API",
+            "refId": "A"
+          }
+        ],
+        "title": "HTTP acknowledgement p95",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "caseflow-prometheus"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "reqps"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 0
+        },
+        "id": 2,
+        "targets": [
+          {
+            "expr": "sum by (uri) (rate(http_server_requests_seconds_count{job=\"caseflow-api\",uri!~\"/actuator.*\"}[5m]))",
+            "legendFormat": "{{uri}}",
+            "refId": "A"
+          }
+        ],
+        "title": "HTTP request rate / route",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "caseflow-prometheus"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "s"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 8
+        },
+        "id": 3,
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.95, sum by (le,kind) (rate(caseflow_job_queue_seconds_bucket[5m])))",
+            "legendFormat": "{{kind}}",
+            "refId": "A"
+          }
+        ],
+        "title": "Ready-to-claim queue p95",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "caseflow-prometheus"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "s"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 8
+        },
+        "id": 4,
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.95, sum by (le,kind,outcome) (rate(caseflow_job_execution_seconds_bucket[5m])))",
+            "legendFormat": "{{kind}} {{outcome}}",
+            "refId": "A"
+          }
+        ],
+        "title": "Execution and persistence p95",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "caseflow-prometheus"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 16
+        },
+        "id": 5,
+        "targets": [
+          {
+            "expr": "caseflow_jobs",
+            "legendFormat": "{{kind}} {{status}}",
+            "refId": "A"
+          }
+        ],
+        "title": "Durable jobs by status",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "caseflow-prometheus"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "s"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 16
+        },
+        "id": 6,
+        "targets": [
+          {
+            "expr": "caseflow_oldest_ready_job_seconds",
+            "legendFormat": "worker",
+            "refId": "A"
+          }
+        ],
+        "title": "Oldest ready job",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "caseflow-prometheus"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 24
+        },
+        "id": 7,
+        "targets": [
+          {
+            "expr": "caseflow_outbox_pending",
+            "legendFormat": "{{service}}",
+            "refId": "A"
+          }
+        ],
+        "title": "Unpublished events",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "caseflow-prometheus"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "s"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 24
+        },
+        "id": 8,
+        "targets": [
+          {
+            "expr": "caseflow_outbox_oldest_seconds",
+            "legendFormat": "{{service}}",
+            "refId": "A"
+          }
+        ],
+        "title": "Oldest unpublished event",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "caseflow-prometheus"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 32
+        },
+        "id": 9,
+        "targets": [
+          {
+            "expr": "caseflow_expired_leases",
+            "legendFormat": "worker",
+            "refId": "A"
+          }
+        ],
+        "title": "Expired leases",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "caseflow-prometheus"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "ops"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 32
+        },
+        "id": 10,
+        "targets": [
+          {
+            "expr": "sum by(operation,outcome) (rate(caseflow_worker_events_total[5m]))",
+            "legendFormat": "{{operation}} {{outcome}}",
+            "refId": "A"
+          }
+        ],
+        "title": "Worker failures / retries / dead letters",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "caseflow-prometheus"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 40
+        },
+        "id": 11,
+        "targets": [
+          {
+            "expr": "up{job=~\"caseflow-api|caseflow-worker\"}",
+            "legendFormat": "{{job}}",
+            "refId": "A"
+          }
+        ],
+        "title": "Metrics availability",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "caseflow-prometheus"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 40
+        },
+        "id": 12,
+        "targets": [
+          {
+            "expr": "caseflow_metrics_database_up",
+            "legendFormat": "worker",
+            "refId": "A"
+          }
+        ],
+        "title": "Queue database observation available",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "caseflow-prometheus"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 48
+        },
+        "id": 13,
+        "targets": [
+          {
+            "expr": "hikaricp_connections_active",
+            "legendFormat": "{{pool}}",
+            "refId": "A"
+          }
+        ],
+        "title": "API pool active connections",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "caseflow-prometheus"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 48
+        },
+        "id": 14,
+        "targets": [
+          {
+            "expr": "hikaricp_connections_pending",
+            "legendFormat": "{{pool}}",
+            "refId": "A"
+          }
+        ],
+        "title": "API pool pending acquisitions",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "caseflow-prometheus"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "currencyUSD"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 56
+        },
+        "id": 15,
+        "targets": [
+          {
+            "expr": "caseflow_ai_actual_usd",
+            "legendFormat": "{{state}}",
+            "refId": "A"
+          }
+        ],
+        "title": "AI actual cost from durable ledger",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "caseflow-prometheus"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "currencyUSD"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 56
+        },
+        "id": 16,
+        "targets": [
+          {
+            "expr": "caseflow_ai_reserved_usd",
+            "legendFormat": "{{state}}",
+            "refId": "A"
+          }
+        ],
+        "title": "AI reservation exposure",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "caseflow-prometheus"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 64
+        },
+        "id": 17,
+        "targets": [
+          {
+            "expr": "caseflow_ai_input_tokens",
+            "legendFormat": "{{state}}",
+            "refId": "A"
+          }
+        ],
+        "title": "AI input tokens",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "caseflow-prometheus"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 64
+        },
+        "id": 18,
+        "targets": [
+          {
+            "expr": "caseflow_ai_output_tokens",
+            "legendFormat": "{{state}}",
+            "refId": "A"
+          }
+        ],
+        "title": "AI output tokens",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "caseflow-prometheus"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 72
+        },
+        "id": 19,
+        "targets": [
+          {
+            "expr": "up{job=\"caseflow-collector\"}",
+            "legendFormat": "collector",
+            "refId": "A"
+          }
+        ],
+        "title": "Collector metrics available",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "caseflow-prometheus"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 72
+        },
+        "id": 20,
+        "targets": [
+          {
+            "expr": "caseflow_kafka_metrics_up",
+            "legendFormat": "Kafka",
+            "refId": "A"
+          }
+        ],
+        "title": "Kafka observation available",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "caseflow-prometheus"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 80
+        },
+        "id": 21,
+        "targets": [
+          {
+            "expr": "caseflow_kafka_consumer_lag",
+            "legendFormat": "{{topic}} {{group}}",
+            "refId": "A"
+          }
+        ],
+        "title": "Kafka lag / fixed consumer pair",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "caseflow-prometheus"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "ops"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 80
+        },
+        "id": 22,
+        "targets": [
+          {
+            "expr": "sum by(outcome) (rate(caseflow_db_transactions_total[5m]))",
+            "legendFormat": "{{outcome}}",
+            "refId": "A"
+          }
+        ],
+        "title": "API transactions / outcome",
+        "type": "timeseries"
+      }
+    ],
+    "refresh": "5s",
+    "schemaVersion": 39,
+    "tags": [
+      "caseflow",
+      "local-release"
+    ],
+    "templating": {
+      "list": []
+    },
+    "time": {
+      "from": "now-30m",
+      "to": "now"
+    },
+    "timezone": "utc",
+    "title": "CaseFlow operations",
+    "uid": "caseflow-operations",
+    "version": 1
+  }
+}

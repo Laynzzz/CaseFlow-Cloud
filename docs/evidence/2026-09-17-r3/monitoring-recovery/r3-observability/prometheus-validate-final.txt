@@ -1,0 +1,6 @@
+Checking /etc/prometheus/prometheus.yaml
+  SUCCESS: 1 rule files found
+ SUCCESS: /etc/prometheus/prometheus.yaml is valid prometheus config file syntax
+
+Checking /etc/prometheus/alerts.yaml
+  SUCCESS: 10 rules found

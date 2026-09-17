@@ -718,3 +718,24 @@ CPU and Kafka lag do not exclude transient peaks. Exact image/workload hashes,
 limits and warm-cache state make the experiment reproducible without exaggeration.
 
 [Actual load evidence](../tests/load/results/2026-09-17T15-04-19-100Z/analysis.md).
+
+## Monitoring and rollback checkpoint
+
+**What happens if Kafka goes down after finance approves?** Approval and the
+outbox remain durable. In the actual isolated release fault, the job stayed
+queued and the Kafka-unavailable alert fired. When the broker returned, the same
+application processes completed it with one completion audit and a matching
+download checksum. This does not prove recovery from lost broker/database data.
+
+**What did rollback prove?** Older API/worker images ran against additive V14,
+completed a new purchase and preserved four existing artifacts. Restoring the
+candidate repeated those checks. The database was retained; this is application
+rollback, not a database restore or a claim about arbitrary schema compatibility.
+
+**Why filter traces if applications already avoid business data?** Defense at
+the export boundary: framework exceptions or dynamic span names may still carry
+unwanted text. The collector removes events and unsupported attributes; a real
+probe verified sentinel removal and parent retention. Dropping unsupported
+linked spans and normalizing Java framework names reduces diagnostic detail.
+
+Evidence: [monitoring and recovery](evidence/2026-09-17-r3/monitoring-recovery/summary.md).

@@ -1,0 +1,33 @@
+{
+  "at": "2026-09-17T15:15:48.995Z",
+  "verified": [
+    {
+      "caseId": "032f4b72-351c-4fff-90ea-8fdbb2f893cf",
+      "jobId": "3b91fdf2-2dbf-4d9e-805b-7b76664675b2",
+      "sha256": "1b476b7b91a74c3c48c92db6e251069404edb28fb10637cc6d8411684ce6a0c8",
+      "bytes": 36726,
+      "completionAudits": 1
+    },
+    {
+      "caseId": "cc47c2f3-8181-4ab3-ac5d-39598b840f43",
+      "jobId": "ff3230fc-c405-4f93-9c69-c6be7440d93e",
+      "sha256": "857f52b2a520b0b0750ea210508ec447f1756c5bca8f51861070908e16aa5cb5",
+      "bytes": 36726,
+      "completionAudits": 1
+    },
+    {
+      "caseId": "8662935d-ed32-4c0c-89af-73a5e0a38f73",
+      "jobId": "d4a6c754-ddbf-4d7c-81a7-185fd5a66b98",
+      "sha256": "b2318d70c84d4ddd51e35b2c68d76e17943efeec57f0b476567c84617ee589ea",
+      "bytes": 36726,
+      "completionAudits": 1
+    },
+    {
+      "caseId": "060f8153-4865-4099-9072-64551fbac670",
+      "jobId": "c3b1fb36-f0b2-49bb-85ff-eb20d825ac86",
+      "sha256": "6d591c79c281c6faabb77c856de497a080c4781f54b528da9330c405e0810eec",
+      "bytes": 36726,
+      "completionAudits": 1
+    }
+  ]
+}

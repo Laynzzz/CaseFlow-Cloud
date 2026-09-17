@@ -376,3 +376,10 @@ crash scenarios. Whole-service/cloud scope is tracked separately.
 separate acknowledgement and completion timing, no workload errors/dropped work.
 [Method and safeguards](load-methodology.md). One short local run does not prove
 maximum sustainable throughput, cloud capacity or AI performance.
+
+## R3 monitoring and local release recovery
+
+[Monitoring/recovery archive](evidence/2026-09-17-r3/monitoring-recovery/summary.md):
+actual diagnostic alerts during PostgreSQL/Kafka outages, same-process recovery,
+collector privacy checks, prior-image rollback on additive V14 and preservation
+of four selected documents. This does not establish cloud rollback or disaster recovery.

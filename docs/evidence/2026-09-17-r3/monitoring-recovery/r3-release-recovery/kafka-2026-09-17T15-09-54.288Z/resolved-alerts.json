@@ -1,0 +1,20 @@
+{
+  "status": "success",
+  "data": {
+    "alerts": [
+      {
+        "labels": {
+          "alertname": "CaseflowRepeatedFailures",
+          "severity": "warning"
+        },
+        "annotations": {
+          "runbook_url": "docs/runbooks/observability.md#repeated-failures-and-dead-letters",
+          "summary": "Repeated worker failure or retry events"
+        },
+        "state": "firing",
+        "activeAt": "2026-09-17T15:09:10.520318647Z",
+        "value": "1.0925083307282486e+01"
+      }
+    ]
+  }
+}
