@@ -13,6 +13,7 @@ import java.util.UUID;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -36,6 +37,7 @@ class CompletionHandlerIntegrationTest {
 
     private String databaseName;
     private JdbcTemplate admin;
+    private JdbcTemplate observer;
     private JdbcTemplate db;
     private TransactionTemplate tx;
     private CompletionHandler handler;
@@ -53,6 +55,8 @@ class CompletionHandlerIntegrationTest {
         }
         admin = new JdbcTemplate(new DriverManagerDataSource(
                 jdbcUrl(), "caseflow_migrator", System.getenv("DB_MIGRATOR_PASSWORD")));
+        observer = new JdbcTemplate(new DriverManagerDataSource(
+                jdbcUrl(), "caseflow_admin", System.getenv("DB_ADMIN_PASSWORD")));
         try (var files = Files.list(Path.of("../../db/migrations"))) {
             for (var path : files.filter(p -> p.getFileName().toString().matches("V\\d+__.*\\.sql"))
                     .sorted(Comparator.comparingInt(p -> Integer.parseInt(
@@ -169,12 +173,34 @@ class CompletionHandlerIntegrationTest {
     @Test
     void concurrentDuplicateCompletionHasOneBusinessEffectAndFiniteDeadline() {
         assertTimeoutPreemptively(Duration.ofSeconds(10), () -> {
-            var start = new CountDownLatch(1);
+            var firstHasCaseLock = new CountDownLatch(1);
+            var releaseFirst = new CountDownLatch(1);
+            var secondTransactionStarted = new CountDownLatch(1);
+            var secondBackendPid = new AtomicInteger();
             try (var executor = Executors.newFixedThreadPool(2)) {
                 UUID eventId = UUID.randomUUID();
-                var first = executor.submit(() -> applyAfter(start, success(eventId)));
-                var second = executor.submit(() -> applyAfter(start, success(eventId)));
-                start.countDown();
+                var completion = success(eventId);
+                var first = executor.submit(() -> tx.executeWithoutResult(status -> {
+                    db.queryForObject("SELECT id FROM core.cases WHERE tenant_id=? AND id=? FOR UPDATE",
+                            UUID.class, tenant, caseId);
+                    firstHasCaseLock.countDown();
+                    await(releaseFirst, "release first completion");
+                    handler.apply(completion);
+                }));
+                var second = executor.submit(() -> {
+                    await(firstHasCaseLock, "first transaction case lock");
+                    tx.executeWithoutResult(status -> {
+                        secondBackendPid.set(db.queryForObject("SELECT pg_backend_pid()", Integer.class));
+                        secondTransactionStarted.countDown();
+                        handler.apply(completion);
+                    });
+                });
+                try {
+                    assertTrue(secondTransactionStarted.await(2, TimeUnit.SECONDS));
+                    assertBackendWaitsOnLock(secondBackendPid.get());
+                } finally {
+                    releaseFirst.countDown();
+                }
                 first.get(8, TimeUnit.SECONDS);
                 second.get(8, TimeUnit.SECONDS);
             }
@@ -193,14 +219,31 @@ class CompletionHandlerIntegrationTest {
         tx.executeWithoutResult(status -> handler.apply(event));
     }
 
-    private void applyAfter(CountDownLatch start, Map<String, Object> event) {
+    private void await(CountDownLatch latch, String boundary) {
         try {
-            assertTrue(start.await(2, TimeUnit.SECONDS));
+            assertTrue(latch.await(5, TimeUnit.SECONDS), "Timed out waiting for " + boundary);
         } catch (InterruptedException exception) {
             Thread.currentThread().interrupt();
-            throw new IllegalStateException("Interrupted before concurrent completion", exception);
+            throw new IllegalStateException("Interrupted while waiting for " + boundary, exception);
         }
-        apply(event);
+    }
+
+    private void assertBackendWaitsOnLock(int backendPid) throws InterruptedException {
+        long deadline = System.nanoTime() + TimeUnit.SECONDS.toNanos(5);
+        while (System.nanoTime() < deadline) {
+            String waitType = backendWaitType(backendPid);
+            if ("Lock".equals(waitType)) {
+                return;
+            }
+            Thread.sleep(20);
+        }
+        assertEquals("Lock", backendWaitType(backendPid));
+    }
+
+    private String backendWaitType(int backendPid) {
+        var rows = observer.queryForList(
+                "SELECT wait_event_type FROM pg_stat_activity WHERE pid=?", String.class, backendPid);
+        return rows.isEmpty() ? null : rows.getFirst();
     }
 
     private Map<String, Object> success(UUID eventId) {
