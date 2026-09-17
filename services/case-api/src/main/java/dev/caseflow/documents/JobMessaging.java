@@ -14,6 +14,7 @@ import org.apache.kafka.common.serialization.StringSerializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -26,12 +27,15 @@ import org.springframework.transaction.support.TransactionTemplate;
 public class JobMessaging {
     private static final Logger LOG=LoggerFactory.getLogger(JobMessaging.class);
     private final JdbcTemplate db;private final Json json;private final CompletionHandler completion;
-    private final TransactionTemplate transaction;private final KafkaProducer<String,String> producer;
-    private final KafkaConsumer<String,String> consumer;
+    private final TransactionTemplate transaction;private final Producer<String,String> producer;
+    private final Consumer<String,String> consumer;
+    private final String jobsTopic,completionsTopic,deadlettersTopic;
     private volatile boolean running=true;private Thread thread;
+    @Autowired
     public JobMessaging(JdbcTemplate db,Json json,CompletionHandler completion,PlatformTransactionManager manager,
                         @Value("${KAFKA_BOOTSTRAP_SERVERS:127.0.0.1:9092}") String brokers) {
         this.db=db;this.json=json;this.completion=completion;transaction=new TransactionTemplate(manager);
+        jobsTopic="caseflow.jobs.v1";completionsTopic="caseflow.completions.v1";deadlettersTopic="caseflow.deadletters.v1";
         var producerOptions=new Properties();producerOptions.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,brokers);
         producerOptions.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG,StringSerializer.class);
         producerOptions.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,StringSerializer.class);
@@ -46,6 +50,13 @@ public class JobMessaging {
         consumerOptions.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,StringDeserializer.class);
         consumerOptions.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG,20);consumer=new KafkaConsumer<>(consumerOptions);
     }
+    JobMessaging(JdbcTemplate db,Json json,CompletionHandler completion,PlatformTransactionManager manager,
+                 Producer<String,String> producer,Consumer<String,String> consumer,
+                 String jobsTopic,String completionsTopic,String deadlettersTopic) {
+        this.db=db;this.json=json;this.completion=completion;transaction=new TransactionTemplate(manager);
+        this.producer=producer;this.consumer=consumer;this.jobsTopic=jobsTopic;
+        this.completionsTopic=completionsTopic;this.deadlettersTopic=deadlettersTopic;
+    }
     @PostConstruct void start() {
         thread=new Thread(this::consume,"completion-consumer");thread.setDaemon(true);thread.start();
     }
@@ -57,14 +68,14 @@ public class JobMessaging {
                 if(rows.isEmpty())return;var row=rows.getFirst();
                 try {
                     var payload=json.object(row.get("payload").toString());
-                    producer.send(new ProducerRecord<>("caseflow.jobs.v1",row.get("tenant_id")+":"+payload.get("aggregateId"),row.get("payload").toString())).get(20,TimeUnit.SECONDS);
+                    producer.send(new ProducerRecord<>(jobsTopic,row.get("tenant_id")+":"+payload.get("aggregateId"),row.get("payload").toString())).get(20,TimeUnit.SECONDS);
                 } catch(Exception e) {throw new IllegalStateException("Broker acknowledgement unavailable",e);}
                 db.update("UPDATE core.outbox SET published_at=now() WHERE event_id=?",row.get("event_id"));
             });
         }catch(Exception e){LOG.warn("outbox_publish_retry error_type={}",e.getClass().getSimpleName());}
     }
     private void consume() {
-        consumer.subscribe(List.of("caseflow.completions.v1"));
+        consumer.subscribe(List.of(completionsTopic));
         try {
             while(running) {
                 ConsumerRecords<String,String> records;
@@ -76,7 +87,7 @@ public class JobMessaging {
                             try {completion.apply(json.object(record.value()));}
                             catch(IllegalArgumentException|NullPointerException|ClassCastException e) {
                                 var dead=Map.of("reason","INVALID_COMPLETION_ENVELOPE","topic",record.topic(),"partition",record.partition(),"offset",record.offset(),"hash",json.hash(record.value()));
-                                producer.send(new ProducerRecord<>("caseflow.deadletters.v1","invalid-completion",json.write(dead))).get(20,TimeUnit.SECONDS);
+                                producer.send(new ProducerRecord<>(deadlettersTopic,"invalid-completion",json.write(dead))).get(20,TimeUnit.SECONDS);
                             }
                             consumer.commitSync(Map.of(new org.apache.kafka.common.TopicPartition(record.topic(),record.partition()),new OffsetAndMetadata(record.offset()+1)));
                             break;
