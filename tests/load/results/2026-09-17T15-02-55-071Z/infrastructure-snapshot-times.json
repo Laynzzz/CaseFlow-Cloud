@@ -1,0 +1,18 @@
+{
+  "before": {
+    "startedAt": 1789657376215,
+    "finishedAt": 1789657379592
+  },
+  "midpoint": {
+    "startedAt": 1789657384608,
+    "finishedAt": 1789657386971
+  },
+  "after-arrivals": {
+    "startedAt": 1789657389846,
+    "finishedAt": 1789657391549
+  },
+  "after-drain": {
+    "startedAt": 1789657391589,
+    "finishedAt": 1789657394452
+  }
+}

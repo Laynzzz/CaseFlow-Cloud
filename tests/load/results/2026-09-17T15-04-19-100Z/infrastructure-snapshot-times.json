@@ -1,0 +1,22 @@
+{
+  "before": {
+    "startedAt": 1789657459907,
+    "finishedAt": 1789657462630
+  },
+  "after-warmup": {
+    "startedAt": 1789657492640,
+    "finishedAt": 1789657494974
+  },
+  "midpoint": {
+    "startedAt": 1789657582650,
+    "finishedAt": 1789657584981
+  },
+  "after-arrivals": {
+    "startedAt": 1789657672851,
+    "finishedAt": 1789657675189
+  },
+  "after-drain": {
+    "startedAt": 1789657675214,
+    "finishedAt": 1789657678072
+  }
+}

@@ -156,3 +156,12 @@ pass across Python/Java before submission and after acknowledgement. Original
 coordinates replay, next offsets commit only after acknowledgement, diagnosis
 fields remain redacted, and invalid records create zero business effects. This
 closes the narrower dead-letter process gap; full-service/cloud gates are separate.
+
+## Sustained mixed-load gate (local)
+
+[Measured run](../tests/load/results/2026-09-17T15-04-19-100Z/analysis.md):30seconds
+warmup +180seconds at2 mixed arrivals/s;420 iterations,84/84 documents including72
+measured-phase documents. Zero workload errors/dropped iterations, peak observed
+pending2 and final0, two verified downloads, clean release-fixture reconciliation.
+Measured HTTP p95=10.458ms; polling-inclusive completion p95=3.835s. The report
+retains sampled resource/lag evidence and excludes maximum-capacity/cloud claims.

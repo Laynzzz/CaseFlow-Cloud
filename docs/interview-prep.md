@@ -702,3 +702,19 @@ prove that boundary across Java and Python, with zero business database effects.
 Follow-up: a dead-letter queue is diagnosis, not an authorization bypass; arbitrary
 payload replay and offset resets are not supplied as an operator shortcut.
 Evidence: [dead-letter crashes](evidence/2026-09-17-r3/deadletters/summary.md).
+
+## Sustained-load interview checkpoint
+
+**What did you measure beyond fast APIs?** A fixed mixed arrival rate, actual
+approved DOCX completions, bounded backlog and drain, error/dropped work, queue
+and execution metrics, pool/CPU/memory observations and two tenant boundaries.
+The local measured phase completed72 documents, with observed p95 completion
+3.835s and no workload failures. Total including warmup:84/84 documents.
+
+**Can you claim maximum throughput or production performance?** No. This was one
+180-second measured local operating point at2 mixed arrivals/s, not a saturation
+search or long soak. Completion observations include polling. Raw point-sampled
+CPU and Kafka lag do not exclude transient peaks. Exact image/workload hashes,
+limits and warm-cache state make the experiment reproducible without exaggeration.
+
+[Actual load evidence](../tests/load/results/2026-09-17T15-04-19-100Z/analysis.md).

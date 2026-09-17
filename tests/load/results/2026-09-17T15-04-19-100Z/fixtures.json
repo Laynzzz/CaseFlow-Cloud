@@ -1,0 +1,80 @@
+{
+  "apiUrl": "http://127.0.0.1:18080",
+  "issuer": "http://127.0.0.1:18180/realms/caseflow",
+  "redirectUri": "http://127.0.0.1:18080/",
+  "rate": 2,
+  "warmupSeconds": 30,
+  "durationSeconds": 180,
+  "drainSeconds": 120,
+  "vus": 10,
+  "offeredIterations": 420,
+  "fixtureVersion": "synthetic-manual-purchase-load-v1",
+  "seed": 20260917,
+  "readFraction": 0.8,
+  "tenantDistribution": [
+    0.5,
+    0.5
+  ],
+  "workerMetricsUrl": "http://127.0.0.1:18090/metrics",
+  "apiMetricsUrl": "http://127.0.0.1:18081/actuator/prometheus",
+  "composeProject": "caseflow-release",
+  "traceSampling": "1.0 (100 percent; coordinated bounded trace evidence)",
+  "runId": "2026-09-17T15-04-19-100Z",
+  "users": {
+    "admin": "82a51632-ae54-4189-80aa-306c697c2ffe",
+    "requester": "7b7f697a-eaf2-41d0-8119-b29428cd68d8",
+    "manager": "185cbbb9-8c6f-4927-8b00-129af0219a65",
+    "finance": "8908910a-d9bd-4a5e-9d1b-2c7190cef182",
+    "outsider": "ba041d92-fc6d-47cb-8dc2-bc23936ea734"
+  },
+  "tenants": [
+    {
+      "id": "2a362e79-eefd-49f4-b16e-1313b17218e1",
+      "workflowId": "a82470e1-e898-4f8b-9ad7-b6caa0e9e932",
+      "templateId": "63d7a3cc-afd7-4bba-9295-06958cc8342a",
+      "readCaseIds": [
+        "0171796e-3680-497d-b6b2-d72b9fc1180b",
+        "0acf5b2c-216c-4bef-aa55-5c749506d43d",
+        "ac238562-9988-4daf-a0bb-c5aee60021ce",
+        "e42273e2-ef5d-4a3d-aa91-7ebc19b00820",
+        "c56417d9-1d65-4f59-a22b-fe27b6be7858",
+        "4eab7eee-cf86-45db-828f-0286864eeb59",
+        "b40f7a5b-d01a-4ddb-8059-fa36706cafb5",
+        "2083cc96-2436-47a6-a78a-5741c080d3bc",
+        "c8fffb34-2254-4149-abcd-282f331d459a",
+        "76c61758-7ca0-45fb-84f0-b244c81ab221"
+      ]
+    },
+    {
+      "id": "cd3d3f36-3d7f-45fb-b379-db77d355c6bf",
+      "workflowId": "85a967c3-a3e3-42ba-b560-1ab98861d29a",
+      "templateId": "0b8493c2-785a-4bee-acc8-ffdd9fc927d8",
+      "readCaseIds": [
+        "86737b65-92d6-46ac-a7eb-51d3b81e760d",
+        "5653be2b-8cb5-4773-abc5-4cb61af16d5f",
+        "114b7dac-8b55-4527-8075-902d4eecd97e",
+        "45061ac2-5d3d-49fd-a2c0-d5e4153e3404",
+        "12eedf1b-56ff-4cdb-bdb2-8e541239be4a",
+        "71b2727a-4be5-4b15-8ac9-4483b3e29953",
+        "9c6a06fb-149c-4fac-93d6-f467ea8236e8",
+        "5d95165f-8440-4d95-8a6d-5fe74cd061b8",
+        "7b7ef20b-3e23-44c8-9a82-a0caaa0f5513",
+        "cc1d0305-58e7-4722-a965-913a158ebc56"
+      ]
+    }
+  ],
+  "purchase": {
+    "vendor": "Synthetic Load Tools",
+    "description": "Synthetic manual purchase load fixture",
+    "currency": "USD",
+    "costCenter": "TRAINING",
+    "justification": "Bounded synthetic reliability self-test",
+    "lineItems": [
+      {
+        "description": "Laptop",
+        "quantity": "1",
+        "unitPrice": "4200.00"
+      }
+    ]
+  }
+}

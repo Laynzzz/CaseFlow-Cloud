@@ -1,0 +1,69 @@
+{
+  "runId": "2026-09-17T15-04-19-100Z",
+  "k6ExitCode": 0,
+  "workloadStartedAt": 1789657462630,
+  "arrivalStoppedAt": 1789657672851,
+  "finishedAt": 1789657678076,
+  "summary": {
+    "total": 84,
+    "completed": 84,
+    "failed": 0,
+    "pending": 0,
+    "allCompleted": true,
+    "completionMs": {
+      "count": 84,
+      "p50": 2605,
+      "p95": 3802,
+      "max": 3950
+    }
+  },
+  "sustained": {
+    "total": 72,
+    "completed": 72,
+    "failed": 0,
+    "pending": 0,
+    "allCompleted": true,
+    "completionMs": {
+      "count": 72,
+      "p50": 2664,
+      "p95": 3835,
+      "max": 3950
+    }
+  },
+  "completionFromApprovalStartMs": {
+    "count": 84,
+    "p50": 2611,
+    "p95": 3806,
+    "max": 3955
+  },
+  "pollingIntervalMs": 2000,
+  "observerRequests": 153,
+  "observerRequestLimit": 1200,
+  "observerBudgetExceeded": false,
+  "completionDefinition": "API-visible SUCCEEDED observed by independent polling; includes poll-cycle and bounded round-robin observer delay (10 requests per pass)",
+  "drainLimitSeconds": 120,
+  "downloadsVerified": 2,
+  "samplingErrors": 0,
+  "reconciliation": {
+    "before": {
+      "schemaVersion": 1,
+      "status": "NO_FINDINGS",
+      "observedAt": "2026-09-17T15:04:22.491560+00:00",
+      "thresholdSeconds": 60,
+      "limit": 100,
+      "truncated": false,
+      "findings": []
+    },
+    "after-drain": {
+      "schemaVersion": 1,
+      "status": "NO_FINDINGS",
+      "observedAt": "2026-09-17T15:07:57.964993+00:00",
+      "thresholdSeconds": 60,
+      "limit": 100,
+      "truncated": false,
+      "findings": []
+    }
+  },
+  "histogramEvidenceComplete": true,
+  "passed": true
+}

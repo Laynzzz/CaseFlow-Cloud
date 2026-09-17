@@ -1,0 +1,10 @@
+{"BlockIO":"0B / 0B","CPUPerc":"21.91%","Container":"ff696b9d92ac","ID":"ff696b9d92ac","MemPerc":"12.21%","MemUsage":"93.77MiB / 768MiB","Name":"caseflow-release-worker-1","NetIO":"1.3MB / 1.16MB","PIDs":"18"}
+{"BlockIO":"0B / 0B","CPUPerc":"0.03%","Container":"54f2bcee1f5b","ID":"54f2bcee1f5b","MemPerc":"19.66%","MemUsage":"50.34MiB / 256MiB","Name":"caseflow-release-otel-collector-1","NetIO":"810kB / 78.2kB","PIDs":"20"}
+{"BlockIO":"0B / 0B","CPUPerc":"1.06%","Container":"cc89ff9c2dd4","ID":"cc89ff9c2dd4","MemPerc":"64.99%","MemUsage":"249.6MiB / 384MiB","Name":"caseflow-release-grafana-1","NetIO":"2.16kB / 126B","PIDs":"197"}
+{"BlockIO":"0B / 0B","CPUPerc":"0.51%","Container":"ec311cba212a","ID":"ec311cba212a","MemPerc":"14.56%","MemUsage":"55.91MiB / 384MiB","Name":"caseflow-release-prometheus-1","NetIO":"2.3MB / 30.5kB","PIDs":"19"}
+{"BlockIO":"0B / 0B","CPUPerc":"0.35%","Container":"52fef270c2cb","ID":"52fef270c2cb","MemPerc":"26.41%","MemUsage":"135.2MiB / 512MiB","Name":"caseflow-release-tempo-1","NetIO":"55.2kB / 7.36kB","PIDs":"31"}
+{"BlockIO":"0B / 0B","CPUPerc":"4.32%","Container":"2251f93a329b","ID":"2251f93a329b","MemPerc":"48.97%","MemUsage":"376.1MiB / 768MiB","Name":"caseflow-release-api-1","NetIO":"994kB / 5.37MB","PIDs":"67"}
+{"BlockIO":"0B / 0B","CPUPerc":"2.75%","Container":"0ec008d3636d","ID":"0ec008d3636d","MemPerc":"0.36%","MemUsage":"56.8MiB / 15.49GiB","Name":"caseflow-release-postgres-1","NetIO":"5.51MB / 6.36MB","PIDs":"15"}
+{"BlockIO":"0B / 0B","CPUPerc":"0.18%","Container":"ad2dae7bcc34","ID":"ad2dae7bcc34","MemPerc":"5.95%","MemUsage":"944.2MiB / 15.49GiB","Name":"caseflow-release-keycloak-1","NetIO":"88.9kB / 316kB","PIDs":"81"}
+{"BlockIO":"0B / 0B","CPUPerc":"0.55%","Container":"980ca992106b","ID":"980ca992106b","MemPerc":"0.92%","MemUsage":"145.3MiB / 15.49GiB","Name":"caseflow-release-object-store-1","NetIO":"524kB / 500kB","PIDs":"24"}
+{"BlockIO":"0B / 0B","CPUPerc":"2.06%","Container":"6eb32edc62b6","ID":"6eb32edc62b6","MemPerc":"2.60%","MemUsage":"412.2MiB / 15.49GiB","Name":"caseflow-release-kafka-1","NetIO":"739kB / 773kB","PIDs":"126"}

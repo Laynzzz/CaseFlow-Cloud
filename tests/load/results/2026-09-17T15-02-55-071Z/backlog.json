@@ -1,0 +1,104 @@
+[
+  {
+    "at": 1789657381607,
+    "sinceStartMs": 2015,
+    "total": 0,
+    "completed": 0,
+    "failed": 0,
+    "pending": 0,
+    "allCompleted": false,
+    "completionMs": {
+      "count": 0,
+      "p50": null,
+      "p95": null,
+      "max": null
+    },
+    "freeHostMemoryBytes": 3064672256,
+    "harnessRssBytes": 69378048
+  },
+  {
+    "at": 1789657383609,
+    "sinceStartMs": 4017,
+    "total": 0,
+    "completed": 0,
+    "failed": 0,
+    "pending": 0,
+    "allCompleted": false,
+    "completionMs": {
+      "count": 0,
+      "p50": null,
+      "p95": null,
+      "max": null
+    },
+    "freeHostMemoryBytes": 3164344320,
+    "harnessRssBytes": 63418368
+  },
+  {
+    "at": 1789657385630,
+    "sinceStartMs": 6038,
+    "total": 2,
+    "completed": 1,
+    "failed": 0,
+    "pending": 1,
+    "allCompleted": false,
+    "completionMs": {
+      "count": 1,
+      "p50": 1926,
+      "p95": 1926,
+      "max": 1926
+    },
+    "freeHostMemoryBytes": 3162468352,
+    "harnessRssBytes": 64081920
+  },
+  {
+    "at": 1789657387624,
+    "sinceStartMs": 8032,
+    "total": 2,
+    "completed": 2,
+    "failed": 0,
+    "pending": 0,
+    "allCompleted": true,
+    "completionMs": {
+      "count": 2,
+      "p50": 1926,
+      "p95": 3433,
+      "max": 3433
+    },
+    "freeHostMemoryBytes": 3143929856,
+    "harnessRssBytes": 62971904
+  },
+  {
+    "at": 1789657389646,
+    "sinceStartMs": 10054,
+    "total": 4,
+    "completed": 2,
+    "failed": 0,
+    "pending": 2,
+    "allCompleted": false,
+    "completionMs": {
+      "count": 2,
+      "p50": 1926,
+      "p95": 3433,
+      "max": 3433
+    },
+    "freeHostMemoryBytes": 3162525696,
+    "harnessRssBytes": 63320064
+  },
+  {
+    "at": 1789657391561,
+    "sinceStartMs": 11969,
+    "total": 4,
+    "completed": 4,
+    "failed": 0,
+    "pending": 0,
+    "allCompleted": true,
+    "completionMs": {
+      "count": 4,
+      "p50": 2373,
+      "p95": 3433,
+      "max": 3433
+    },
+    "freeHostMemoryBytes": 3200872448,
+    "harnessRssBytes": 65253376
+  }
+]

@@ -1,0 +1,69 @@
+{
+  "normalization": "gzip mtime=0, compression level=9; decompressed bytes unchanged",
+  "artifacts": [
+    {
+      "rawPath": "after-arrivals-api.prom",
+      "gzipPath": "after-arrivals-api.prom.gz",
+      "rawBytes": 367145,
+      "gzipBytes": 15721,
+      "rawSha256": "607df81b8e70c2f9daf51f2681d8b21b3f6d6b77a2609e7fb58d324f99602fbc",
+      "normalizedGzipSha256": "02f7338b83ecebd347a955668e36af945a9dd69cdf9bf578f3a62e5b6b14e9c5"
+    },
+    {
+      "rawPath": "after-arrivals-worker.prom",
+      "gzipPath": "after-arrivals-worker.prom.gz",
+      "rawBytes": 5147,
+      "gzipBytes": 1007,
+      "rawSha256": "b428c2f9edab884fa658c8f1768a979564ac89cd50c5c266d4128fdab5f2c1d5",
+      "normalizedGzipSha256": "af26faf64c55b35e0701bb536ead7dd73f110919b388e94b78ba48e39059fed4"
+    },
+    {
+      "rawPath": "after-drain-api.prom",
+      "gzipPath": "after-drain-api.prom.gz",
+      "rawBytes": 382568,
+      "gzipBytes": 16212,
+      "rawSha256": "4a2b13e200721dfe92220ed352e64e6d1014041c943a850c52e3d9b0c9b71fd7",
+      "normalizedGzipSha256": "52f5cc72e9ac67f1290a1cf9d3bca8fb2e0c75613ad013fd1292eb409665abda"
+    },
+    {
+      "rawPath": "after-drain-worker.prom",
+      "gzipPath": "after-drain-worker.prom.gz",
+      "rawBytes": 5075,
+      "gzipBytes": 979,
+      "rawSha256": "4b77096670d0d62b59c65410506f10d0ebf0e50e0eea5a2c25b3a597136ced6f",
+      "normalizedGzipSha256": "d491e016012aad18773030b4202c9996ed60e948f8bf3cbd35cb74240d9c80d7"
+    },
+    {
+      "rawPath": "before-api.prom",
+      "gzipPath": "before-api.prom.gz",
+      "rawBytes": 354855,
+      "gzipBytes": 15437,
+      "rawSha256": "1eca4ff586593e6363c473348cff84736fa8c92f442fcb435c04385ef4181f5c",
+      "normalizedGzipSha256": "748a83b2c7864f4f0d367fba887b74535607fd5b5b7934176ab52e11c3aa4a9f"
+    },
+    {
+      "rawPath": "before-worker.prom",
+      "gzipPath": "before-worker.prom.gz",
+      "rawBytes": 5072,
+      "gzipBytes": 964,
+      "rawSha256": "20a3e1518ef847f472e7719bef945864c3a8c08d30d822413f484e2f6d0f25fb",
+      "normalizedGzipSha256": "95b982cb8c0f0c3da77071d60441dde8b964472a871b10b8a64c7532615cd551"
+    },
+    {
+      "rawPath": "midpoint-api.prom",
+      "gzipPath": "midpoint-api.prom.gz",
+      "rawBytes": 366968,
+      "gzipBytes": 15757,
+      "rawSha256": "140d76715c3a7c88eaf494bb9638a3172e58a04c4294a687612bf91e5fbd6612",
+      "normalizedGzipSha256": "a91fe86017f899fc6a49409f82cb6d3e08072d02e9674b68f5f5cb98c5d58368"
+    },
+    {
+      "rawPath": "midpoint-worker.prom",
+      "gzipPath": "midpoint-worker.prom.gz",
+      "rawBytes": 5079,
+      "gzipBytes": 981,
+      "rawSha256": "c168c7e44d653cc5f4953cf249a588b929c962bca43b8c021d77a6f2bad323f0",
+      "normalizedGzipSha256": "1c1b76f90925302b7f7a48d942c23eca739b0d280b4fb2e0c3fe1a4b9f3041d3"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "tenantIndex": 0,
+    "caseId": "28a40386-73d7-4a1a-b715-a06c3a918a10",
+    "sha256": "9c4418c0309c7dfd405b74cec90d938d0be5773bb1c6d35ed97c95e26fb3edf9",
+    "byteSize": 36730,
+    "outsiderDenied": true
+  },
+  {
+    "tenantIndex": 1,
+    "caseId": "2cb107af-3970-4d36-a7ca-ee70c0324406",
+    "sha256": "a8e8bde1c6e9836da2ee6c61905736b1b3f6b1a729a8398a9c01581e0221b059",
+    "byteSize": 36730,
+    "outsiderDenied": true
+  }
+]

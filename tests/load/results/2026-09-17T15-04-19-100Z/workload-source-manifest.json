@@ -1,0 +1,13 @@
+{
+  "archive": "workload-source.tar.gz",
+  "normalization": "sorted names; USTAR; mode 0644; uid/gid/mtime zero; empty owner names; gzip mtime zero",
+  "normalizedTarSha256": "9afad8cd117d3453509ee7221fc3bc933b3c694ceb0678e68824f02a8e89ba8b",
+  "normalizedGzipSha256": "6185c9708346dd4831bed24f04d3cee4ea13527b45c9b29e5f72df1a6e837191",
+  "sourceSha256": {
+    "harness.test.mjs": "78fd5710973d78a36c705faa03fca23bfe7e8b89b55e98003f67d9fa54e41a29",
+    "mixed.k6.js": "ecba0560552807dbb8b91cc806606108b5d82a6729adea9d4048b712560b645c",
+    "model.mjs": "f0b9118c2e06dd42dc24e982544fdeb8eff1767f770a1bd825b3758932b2c0ec",
+    "oidc.mjs": "f2305aa7f900730a8a67610522b67cf849537f1ca2bdcad1075ff60beb83c7a2",
+    "run.mjs": "156c7d172235d30dfebd2d4f9fd9b051de903d48f9dfadd558c1b1c2b29da23c"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "unauthorizedActorDenied": 2,
+  "wrongTenantResourceDenied": 1,
+  "expectedStatus": 404,
+  "skipped": 0
+}

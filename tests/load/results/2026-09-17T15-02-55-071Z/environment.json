@@ -1,0 +1,48 @@
+{
+  "startedAt": "2026-09-17T15:02:55.159Z",
+  "revision": "de03e248cf708fed102b1100648b6e12057e0660",
+  "dirty": "M services/case-api/build.gradle\n M services/case-api/gradle.lockfile\n M services/case-api/src/main/java/dev/caseflow/documents/DocumentJobs.java\n M services/case-api/src/main/java/dev/caseflow/documents/JobMessaging.java\n M services/case-api/src/main/java/dev/caseflow/evidence/AssistantController.java\n M services/case-api/src/main/java/dev/caseflow/evidence/SourceController.java\n M services/case-api/src/main/resources/application.yaml\n M services/case-api/src/test/java/dev/caseflow/documents/CompletionProcessRecoveryTest.java\n M services/case-api/src/test/java/dev/caseflow/documents/KafkaMessagingProcessRecoveryTest.java\n M services/worker/caseflow_worker/app.py\n M services/worker/caseflow_worker/jobs.py\n M services/worker/caseflow_worker/runtime.py\n M services/worker/requirements.lock\n?? compose.observability.yaml\n?? db/migrations/V14__durable_trace_context.sql\n?? docs/aws-deployment-proposal.md\n?? docs/load-methodology.md\n?? docs/runbooks/\n?? infrastructure/observability/alerts.yaml\n?? infrastructure/observability/collector.yaml\n?? infrastructure/observability/grafana/\n?? infrastructure/observability/prometheus.yaml\n?? infrastructure/observability/tempo.yaml\n?? infrastructure/observability/verify-collector.py\n?? infrastructure/observability/versions.json\n?? infrastructure/terraform/rehearsal/\n?? output/r3-deadletters/\n?? output/r3-management-red.txt\n?? output/r3-observability/\n?? output/r3-query/\n?? output/r3-release/\n?? output/r3-telemetry-dependencies.txt\n?? output/r3-telemetry-focused.xml\n?? output/r3-telemetry-java-full.txt\n?? output/r3-telemetry-java-red.txt\n?? output/r3-telemetry-java-results/\n?? output/r3-telemetry-worker-full.txt\n?? output/r3-telemetry-worker-full.xml\n?? services/case-api/src/main/java/dev/caseflow/observability/\n?? services/case-api/src/test/java/dev/caseflow/documents/DeadLetterCrashProbe.java\n?? services/case-api/src/test/java/dev/caseflow/documents/DeadLetterProcessRecoveryTest.java\n?? services/case-api/src/test/java/dev/caseflow/observability/\n?? services/worker/caseflow_worker/kafka_metrics.py\n?? services/worker/caseflow_worker/telemetry.py\n?? services/worker/tests/deadletter_process_probe.py\n?? services/worker/tests/test_deadletter_process_recovery.py\n?? services/worker/tests/test_kafka_metrics.py\n?? services/worker/tests/test_telemetry.py\n?? tests/load/harness.test.mjs\n?? tests/load/mixed.k6.js\n?? tests/load/model.mjs\n?? tests/load/oidc.mjs\n?? tests/load/run.mjs",
+  "version": "k6.exe v2.2.0 (commit/00a9a1b7f5, go1.26.5, windows/amd64)",
+  "node": "v22.20.0",
+  "os": {
+    "platform": "win32",
+    "release": "10.0.26200",
+    "arch": "x64",
+    "cpuModel": "13th Gen Intel(R) Core(TM) i7-13700K",
+    "logicalCpus": 24,
+    "totalMemoryBytes": 34084626432
+  },
+  "config": {
+    "apiUrl": "http://127.0.0.1:18080",
+    "issuer": "http://127.0.0.1:18180/realms/caseflow",
+    "redirectUri": "http://127.0.0.1:18080/",
+    "rate": 2,
+    "warmupSeconds": 0,
+    "durationSeconds": 10,
+    "drainSeconds": 120,
+    "vus": 10,
+    "offeredIterations": 20,
+    "fixtureVersion": "synthetic-manual-purchase-load-v1",
+    "seed": 20260917,
+    "readFraction": 0.8,
+    "tenantDistribution": [
+      0.5,
+      0.5
+    ],
+    "workerMetricsUrl": "http://127.0.0.1:18090/metrics",
+    "apiMetricsUrl": "http://127.0.0.1:18081/actuator/prometheus",
+    "composeProject": "caseflow-release",
+    "traceSampling": "1.0 (100 percent; coordinated bounded trace evidence)"
+  },
+  "runId": "2026-09-17T15-02-55-071Z",
+  "sourceSha256": {
+    "harness.test.mjs": "78fd5710973d78a36c705faa03fca23bfe7e8b89b55e98003f67d9fa54e41a29",
+    "mixed.k6.js": "54ceb648474489a2c8c73825c74f7ccfdfe3a590fc6f6eff4e2dd710c360184d",
+    "model.mjs": "f0b9118c2e06dd42dc24e982544fdeb8eff1767f770a1bd825b3758932b2c0ec",
+    "oidc.mjs": "f2305aa7f900730a8a67610522b67cf849537f1ca2bdcad1075ff60beb83c7a2",
+    "run.mjs": "156c7d172235d30dfebd2d4f9fd9b051de903d48f9dfadd558c1b1c2b29da23c"
+  },
+  "cacheState": "No cache flush; seeding and warmup precede measured arrivals",
+  "command": "node tests/load/run.mjs",
+  "limits": "Local synthetic short sustained experiment; no maximum capacity, cloud performance, or AI throughput claim."
+}

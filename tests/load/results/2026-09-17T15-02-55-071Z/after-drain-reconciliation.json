@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "status": "NO_FINDINGS",
+  "observedAt": "2026-09-17T15:03:14.292717+00:00",
+  "thresholdSeconds": 60,
+  "limit": 100,
+  "truncated": false,
+  "findings": []
+}

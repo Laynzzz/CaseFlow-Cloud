@@ -1072,3 +1072,25 @@ and authorized business commands; preserve source coordinates and redacted diges
 See [the crash report](evidence/2026-09-17-r3/deadletters/summary.md) and
 [operator runbook](runbooks/deadletter-recovery.md). These extend the previous
 thirteen business-boundary scenarios to seventeen; cleanup remains a separate tier.
+
+## Bounded sustained-load checkpoint
+
+k6 is the external HTTP load generator; Node orchestrates synthetic OIDC sessions,
+fixtures, metrics and completion observation. Credentials stay in memory behind
+an authenticated loopback bridge. The workload uses 80% reads and 20% complete
+approval journeys across two new tenants. This isolates offered traffic from the
+worker's real document completion rate; a fast HTTP response alone cannot pass.
+
+The September17 local run completed420 mixed iterations and84 real documents,
+including72 measured-phase documents after30seconds warmup. No errors/dropped
+iterations remained, pending jobs peaked at2 and drained to0. Measured business
+HTTP p95 was10.458ms; observed document-completion p95 was3.835s, including2-second
+polling delay. Queue/execution histograms report exact means and bucket bounds,
+not made-up exact percentiles. Full trace export was enabled for this bounded run.
+
+The trade-offs matter: only180seconds measured, two small tenants, warmed caches,
+shared Docker Desktop hardware, sparse resource samples and no saturation search.
+This is a measured operating point, not a cloud capacity guarantee or AI benchmark.
+[Complete measured analysis](../tests/load/results/2026-09-17T15-04-19-100Z/analysis.md)
+retains image/source fingerprints, backlog, errors, downloads, raw metrics and
+resource caveats. [Method](load-methodology.md) documents limits and commands.

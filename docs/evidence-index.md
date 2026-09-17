@@ -368,3 +368,11 @@ claim follows from these tests alone.
 business-boundary coverage to seventeen. The archive records redacted diagnosis,
 original-coordinate replay and offset evidence; repetitions of a run are not new
 crash scenarios. Whole-service/cloud scope is tracked separately.
+
+## R3 sustained local operating point
+
+[Load analysis and raw evidence](../tests/load/results/2026-09-17T15-04-19-100Z/analysis.md):
+420 mixed iterations,84/84 real document completions, bounded/drained backlog,
+separate acknowledgement and completion timing, no workload errors/dropped work.
+[Method and safeguards](load-methodology.md). One short local run does not prove
+maximum sustainable throughput, cloud capacity or AI performance.

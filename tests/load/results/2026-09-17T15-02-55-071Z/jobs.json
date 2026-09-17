@@ -1,0 +1,62 @@
+[
+  {
+    "tenantIndex": 0,
+    "caseId": "be4fc69a-3ef1-42e8-b64f-85afa849494c",
+    "phase": "sustained",
+    "createdAt": 1789657383655,
+    "state": "SUCCEEDED",
+    "acknowledgedAt": 1789657383697,
+    "approvalStartedAt": 1789657383685,
+    "lastCheckedAt": 1789657385615,
+    "jobId": "33c9f5c0-a041-47d5-986a-42af7822c04e",
+    "requestedAt": "2026-09-17T15:03:03.724485Z",
+    "observedAt": 1789657385623,
+    "sha256": "1f78089a611fb5d050cf179c2257c30c9942a9e8dcbc10c7e5cfa0dbedb3702e",
+    "byteSize": 36730
+  },
+  {
+    "tenantIndex": 1,
+    "caseId": "a24b44f1-b273-45ac-8190-b5eff8a2d8f2",
+    "phase": "sustained",
+    "createdAt": 1789657384154,
+    "state": "SUCCEEDED",
+    "acknowledgedAt": 1789657384191,
+    "approvalStartedAt": 1789657384182,
+    "lastCheckedAt": 1789657387618,
+    "jobId": "b363dfae-609f-4717-b3be-32fa2c7f2d34",
+    "requestedAt": "2026-09-17T15:03:04.219213Z",
+    "observedAt": 1789657387624,
+    "sha256": "1f78089a611fb5d050cf179c2257c30c9942a9e8dcbc10c7e5cfa0dbedb3702e",
+    "byteSize": 36730
+  },
+  {
+    "tenantIndex": 0,
+    "caseId": "c56313b4-b218-4841-a7a5-09dd4f1f4f04",
+    "phase": "sustained",
+    "createdAt": 1789657388653,
+    "state": "SUCCEEDED",
+    "acknowledgedAt": 1789657388684,
+    "approvalStartedAt": 1789657388676,
+    "lastCheckedAt": 1789657391549,
+    "jobId": "b8285258-ed76-4301-a49c-b589e50f2050",
+    "requestedAt": "2026-09-17T15:03:08.692577Z",
+    "observedAt": 1789657391557,
+    "sha256": "6738d107c9554eaccda23aba582545e8bf43293589f7faa6baafb6b4b5e88b82",
+    "byteSize": 36730
+  },
+  {
+    "tenantIndex": 1,
+    "caseId": "56f06082-7195-46dd-a44f-136e96796284",
+    "phase": "sustained",
+    "createdAt": 1789657389151,
+    "state": "SUCCEEDED",
+    "acknowledgedAt": 1789657389188,
+    "approvalStartedAt": 1789657389178,
+    "lastCheckedAt": 1789657391557,
+    "jobId": "959df74c-bbda-4567-b259-7e9bb71f1e78",
+    "requestedAt": "2026-09-17T15:03:09.193293Z",
+    "observedAt": 1789657391561,
+    "sha256": "6738d107c9554eaccda23aba582545e8bf43293589f7faa6baafb6b4b5e88b82",
+    "byteSize": 36730
+  }
+]
