@@ -163,6 +163,10 @@ For read-only delayed-work reports and explicit job-scoped abandoned document
 cleanup, see the [operator runbook](docs/operations-runbook.md). Cleanup defaults
 to preview and requires a new durable report for apply; it is not scheduled.
 
+The opt-in [query performance comparison](docs/query-performance.md) seeds a
+disposable database and measures one index change against the same workloads.
+Run database-heavy regression suites serially on the local Windows setup.
+
 ## Project map and later learning
 
 | Directory | Technology | Purpose |

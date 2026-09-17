@@ -1,0 +1,137 @@
+package dev.caseflow.cases;
+
+import java.nio.file.*;
+import java.time.Instant;
+import java.util.*;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
+import org.springframework.jdbc.core.ConnectionCallback;
+import static dev.caseflow.cases.CaseQueryFixture.*;
+import static org.junit.jupiter.api.Assertions.*;
+
+/** Opt-in, serial, warm-cache SQL comparison; not an HTTP/load benchmark. */
+@EnabledIfEnvironmentVariable(named="CASEFLOW_QUERY_BENCHMARK",matches="1")
+class CaseQueryPerformanceTest {
+    record Workload(String name,UUID tenant,UUID actor,String state,boolean assigned,String cursor) {}
+    @Test void stateFilteredQueueReducesDatabaseWorkWithoutChangingResults() throws Exception {
+        Path directory=Path.of("../../output/r3-query",UUID.randomUUID().toString());
+        Files.createDirectories(directory.getParent());Files.createDirectory(directory);
+        try(var f=new CaseQueryFixture(true)) {
+            seed(f,f.tenant,100000,1000);seed(f,f.small,200,10);
+            f.admin.execute("VACUUM ANALYZE core.cases");f.admin.execute("VACUUM ANALYZE core.assignments");
+            var meta=new LinkedHashMap<String,Object>();
+            meta.put("startedAt",Instant.now().toString());meta.put("database",f.name);
+            meta.put("server",f.admin.queryForObject("SELECT version()",String.class));
+            meta.put("java",System.getProperty("java.version"));meta.put("os",System.getProperty("os.name"));
+            meta.put("processorsVisibleToJvm",Runtime.getRuntime().availableProcessors());
+            meta.put("dataset",Map.of("largeTenantRows",100000,"smallTenantRows",200,"largeActiveRows",100,"smallActiveRows",20));
+            meta.put("method",Map.of("concurrency",1,"warmupPerWorkload",3,"samplesPerWorkload",15,
+                    "cache","warm; no cache flush", "driver","DriverManagerDataSource; fresh connections, no pool",
+                    "order",List.of("baseline-1","indexed-1","baseline-2","indexed-2")));
+            var settings=new LinkedHashMap<String,String>();
+            for(String name:List.of("shared_buffers","work_mem","effective_cache_size","random_page_cost","seq_page_cost","jit","max_parallel_workers_per_gather"))
+                settings.put(name,f.admin.queryForObject("SHOW "+name,String.class));
+            meta.put("settings",settings);
+            var cursor=CaseQueries.cursorFor(Map.of("createdAt","2026-01-01T13:53:20Z","id",new UUID(0,0)));
+            var work=List.of(new Workload("large-active-admin",f.tenant,f.manager,"ACTIVE",false,null),
+                    new Workload("large-active-deep",f.tenant,f.manager,"ACTIVE",false,cursor),
+                    new Workload("large-unfiltered",f.tenant,f.manager,null,false,null),
+                    new Workload("large-common-state",f.tenant,f.manager,"CANCELLED",false,null),
+                    new Workload("small-active",f.small,f.manager,"ACTIVE",false,null),
+                    new Workload("large-active-owner",f.tenant,f.owner,"ACTIVE",false,null),
+                    new Workload("large-active-assigned",f.tenant,f.approver,"ACTIVE",true,null));
+            Path migration=Path.of("../../db/migrations/V13__case_state_queue.sql");
+            meta.put("candidatePresent",Files.exists(migration));
+            var stages=new ArrayList<Map<String,Object>>();
+            var expected=new HashMap<String,String>();
+            for(String stage:List.of("baseline-1","indexed-1","baseline-2","indexed-2")) {
+                if(stage.equals("baseline-2") && Files.exists(migration)) f.admin.execute("DROP INDEX core.cases_state_queue");
+                if(stage.startsWith("indexed") && Files.exists(migration)) {
+                    long start=System.nanoTime();f.admin.execute(Files.readString(migration));
+                    meta.put(stage+"BuildMs",(System.nanoTime()-start)/1e6);
+                }
+                var measurements=new ArrayList<Map<String,Object>>();
+                for(var w:work) measurements.add(measure(f,w,expected));
+                var result=new LinkedHashMap<String,Object>();result.put("stage",stage);result.put("queries",measurements);
+                result.put("writeProbe",writeProbe(f));
+                result.put("caseIndexBytes",f.admin.queryForObject("SELECT pg_indexes_size('core.cases')",Long.class));
+                result.put("candidateIndexBytes",stage.startsWith("indexed") && Files.exists(migration)
+                        ?f.admin.queryForObject("SELECT pg_relation_size('core.cases_state_queue')",Long.class):0);
+                stages.add(result);
+                Files.writeString(directory.resolve(stage+".json"),f.json.write(result),StandardOpenOption.CREATE_NEW);
+            }
+            meta.put("finishedAt",Instant.now().toString());
+            Files.writeString(directory.resolve("manifest.json"),f.json.write(meta),StandardOpenOption.CREATE_NEW);
+            assertEquals(100200,f.admin.queryForObject("SELECT count(*) FROM core.cases",Integer.class));
+            // Buffer work is a structural gate; noisy elapsed times are measurements, not CI thresholds.
+            for(int pair=0;pair<2;pair++) {
+                var before=query(stages.get(pair*2),"large-active-admin");
+                var after=query(stages.get(pair*2+1),"large-active-admin");
+                assertTrue(((Number)before.get("bufferBlocks")).longValue() > 5*((Number)after.get("bufferBlocks")).longValue(),
+                        "Selective state query must reduce buffer work at least 5x; evidence: "+directory);
+            }
+        }
+        Files.writeString(directory.resolve("cleanup.json"),"{\"ownedDatabaseDropped\":true}",StandardOpenOption.CREATE_NEW);
+    }
+    void seed(CaseQueryFixture f,UUID tenant,int count,int activeEvery) {
+        f.admin.update("""
+            INSERT INTO core.cases(tenant_id,id,owner_id,state,purchase,created_at,updated_at)
+            SELECT ?::uuid,md5('case-'||n)::uuid,CASE WHEN n%2=0 THEN ?::uuid ELSE ?::uuid END,
+              CASE WHEN n%?=0 THEN 'ACTIVE' ELSE 'CANCELLED' END,
+              '{"vendor":"Synthetic vendor","description":"Synthetic equipment","currency":"USD","total":"4200.00","justification":"Query measurement","costCenter":"OPS"}'::jsonb,
+              '2026-01-01'::timestamptz+n*interval '1 second','2026-01-01'::timestamptz+n*interval '1 second'
+            FROM generate_series(1,?) n
+            """,tenant,f.owner,f.other,activeEvery,count);
+        f.admin.update("""
+            INSERT INTO core.assignments(tenant_id,case_id,step,user_id)
+            SELECT tenant_id,id,step,? FROM core.cases CROSS JOIN generate_series(0,1) step
+            WHERE tenant_id=? AND state='ACTIVE'
+            """,f.approver,tenant);
+    }
+    @SuppressWarnings("unchecked") Map<String,Object> measure(CaseQueryFixture f,Workload w,Map<String,String> expected) {
+        var clientTimes=new ArrayList<Double>();var serverTimes=new ArrayList<Double>();
+        Map<String,Object> lastPlan=null;Map<String,Object> page=null;
+        for(int i=-3;i<15;i++) {
+            f.db.calls=0;long start=System.nanoTime();
+            page=f.queries.list(w.tenant,w.actor,w.state,w.assigned,w.cursor,25);
+            double elapsed=(System.nanoTime()-start)/1e6;
+            assertEquals(3,f.db.calls);
+            String hash=f.json.hash(page);
+            assertEquals(expected.computeIfAbsent(w.name,k->hash),hash,"Result changed: "+w.name);
+            String raw=f.db.queryForObject("EXPLAIN (ANALYZE, BUFFERS, FORMAT JSON) "+f.db.caseSql,String.class,f.db.caseArgs);
+            lastPlan=(Map<String,Object>)f.json.list(raw).getFirst();
+            if(i>=0) { clientTimes.add(elapsed);serverTimes.add(((Number)lastPlan.get("Execution Time")).doubleValue()); }
+        }
+        var plan=(Map<String,Object>)lastPlan.get("Plan");
+        long blocks=((Number)plan.getOrDefault("Shared Hit Blocks",0)).longValue()+((Number)plan.getOrDefault("Shared Read Blocks",0)).longValue();
+        var result=new LinkedHashMap<String,Object>();result.put("name",w.name);result.put("rowCount",rows(page).size());
+        result.put("resultSha256",expected.get(w.name));result.put("sql",f.db.caseSql);result.put("binds",Arrays.asList(f.db.caseArgs));
+        result.put("clientMs",clientTimes);result.put("serverExecutionMs",serverTimes);result.put("bufferBlocks",blocks);
+        result.put("clientMedianMs",median(clientTimes));result.put("serverMedianMs",median(serverTimes));result.put("explain",lastPlan);
+        return result;
+    }
+    List<Map<String,Object>> writeProbe(CaseQueryFixture f) {
+        var plans=new ArrayList<Map<String,Object>>();
+        for(int i=0;i<4;i++) {
+            String raw=f.admin.execute((ConnectionCallback<String>) connection->{
+                connection.setAutoCommit(false);
+                try(var statement=connection.prepareStatement("""
+                    EXPLAIN (ANALYZE, BUFFERS, WAL, FORMAT JSON)
+                    INSERT INTO core.cases(tenant_id,id,owner_id,state,purchase,created_at)
+                    SELECT ?::uuid,md5('write-probe-'||n)::uuid,?::uuid,'DRAFT','{}','2025-01-01'::timestamptz
+                    FROM generate_series(1,1000) n
+                    """)) {
+                    statement.setObject(1,f.tenant);statement.setObject(2,f.owner);statement.setQueryTimeout(15);
+                    try(var results=statement.executeQuery()) { results.next();return results.getString(1); }
+                } finally { connection.rollback(); }
+            });
+            @SuppressWarnings("unchecked") var plan=(Map<String,Object>)f.json.list(raw).getFirst();
+            if(i>0) plans.add(plan);
+        }
+        return plans;
+    }
+    static double median(List<Double> values) { return values.stream().sorted().toList().get(values.size()/2); }
+    @SuppressWarnings("unchecked") static Map<String,Object> query(Map<String,Object> stage,String name) {
+        return ((List<Map<String,Object>>)stage.get("queries")).stream().filter(q->name.equals(q.get("name"))).findFirst().orElseThrow();
+    }
+}

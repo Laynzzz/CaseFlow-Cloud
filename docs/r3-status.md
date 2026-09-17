@@ -16,7 +16,7 @@ work. Performance and cloud claims need reproducible measurements.
 | Recovery transactions | [13 actual business-boundary process-crash scenarios](recovery-matrix.md), including real Kafka publish/offset gaps, upload/result selection and Java completion; earlier deterministic checks retained | Dead-letter crash windows, full-service recovery and broader reconciliation/repair |
 | Broker redelivery | [10,000 injected duplicates plus one late failure](evidence/2026-09-17-r3/summary.md); both consumers caught up, one artifact and success audit, no added execution | This bounded duplicate gate passes; distinct active jobs and sustained arrivals remain separate load work |
 | Dependency recovery | [Actual isolated broker/database restarts and two storage timeout cases](evidence/2026-09-17-r3/dependencies/summary.md); same worker recovers durable state | Java connection-pool/full-deployment recovery, longer outages and sustained workloads |
-| Query optimization | Tenant/permission predicates and cursor implementation | Skewed synthetic tenants, baseline query plans, one controlled change, identical-workload rerun and trade-offs |
+| Query optimization | [Controlled V13 index comparison](query-performance.md): 100,000/200-case tenants, repeated before/after plans, identical results, permission/cursor/N+1 checks and storage cost | This bounded optimization passes; sparse permission distributions, write cost and representative workloads remain unmeasured |
 | Sustained load | Functional journey and AI latency records | Workload/environment declaration, sustained mixed arrivals, errors/dropped work, backlog and saturation |
 | Operations | Structured logs/health, [read-only reconciliation and guarded document cleanup](operations-runbook.md), [diagnosed legacy missing jobs](evidence/2026-09-17-r3/operations/summary.md) | Correlated exported traces, bounded-cardinality metrics, alerts, broader reconciliation and repair policies |
 | Cloud release | Planned AWS architecture; no deployed evidence | Account/region/identity/cost prerequisites, Terraform, actual deploy/smoke/rollback/teardown |
@@ -99,7 +99,26 @@ not. They remain recorded findings rather than silently repaired history.
 The [runbook](operations-runbook.md) explains report codes, investigation and
 explicit cleanup. No demo file was deleted. Controlled-clock cleanup tests do
 not prove a 24-hour soak or AWS behavior. Monitoring, broader reconciliation,
-query optimization, sustained load, cloud release and portfolio evidence remain.
+sustained load, cloud release and portfolio evidence remain. The next batch
+addresses the bounded query-optimization requirement.
+
+## Sixth batch: measured purchase-list optimization
+
+The [query evidence](evidence/2026-09-17-r3/queries/summary.md) records a single
+additive tenant/state/cursor index. On the synthetic large tenant, the selective
+ACTIVE query drops from 1,281 buffer accesses to 29 in repeated comparisons,
+with identical results. The common-state query slightly increases work and
+unfiltered queries gain little. Storage grows by 7.41 MiB on this fixture;
+write throughput is not measured.
+
+Five new correctness checks protect role/tenant visibility, assignment isolation,
+pagination under inserts and batched loading. Full suites pass 35 Java and 152
+Python tests. V13 is applied locally and API/preview smoke checks pass. An earlier
+parallel run hit socket-allocation failures; the revised benchmark pools its
+connections and final suites ran serially. Failed evidence is retained.
+
+This completes the controlled SQL comparison, not sustained mixed load or the
+remaining monitoring, recovery, cloud rollback and portfolio release gates.
 
 ## Limits carried from R2
 

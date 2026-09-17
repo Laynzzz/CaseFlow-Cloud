@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.caseflow.cases.CaseQueriesIntegrationTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-09-17T14:12:53.138Z" hostname="local-test-host" time="2.737">
+  <properties/>
+  <testcase name="deactivatedOrForeignMembershipAndInvalidCursorsAreRejected()" classname="dev.caseflow.cases.CaseQueriesIntegrationTest" time="0.808"/>
+  <testcase name="permissionAndTenantFiltersRetainExactlyVisibleCases()" classname="dev.caseflow.cases.CaseQueriesIntegrationTest" time="0.472"/>
+  <testcase name="assignmentsAreBatchedInsteadOfOneQueryPerCase()" classname="dev.caseflow.cases.CaseQueriesIntegrationTest" time="0.465"/>
+  <testcase name="keysetPaginationHandlesEqualTimestampsAndNewerInserts()" classname="dev.caseflow.cases.CaseQueriesIntegrationTest" time="0.49"/>
+  <testcase name="assignedAndStateFiltersDoNotDuplicateOrLeakRows()" classname="dev.caseflow.cases.CaseQueriesIntegrationTest" time="0.492"/>
+  <system-out><![CDATA[10:12:53.887 [Test worker] INFO com.zaxxer.hikari.HikariDataSource -- case-query-test - Starting...
+10:12:53.914 [Test worker] INFO com.zaxxer.hikari.pool.HikariPool -- case-query-test - Added connection org.postgresql.jdbc.PgConnection@451882b2
+10:12:53.915 [Test worker] INFO com.zaxxer.hikari.HikariDataSource -- case-query-test - Start completed.
+10:12:53.930 [Test worker] INFO com.zaxxer.hikari.HikariDataSource -- case-query-test - Shutdown initiated...
+10:12:53.931 [Test worker] INFO com.zaxxer.hikari.HikariDataSource -- case-query-test - Shutdown completed.
+10:12:54.365 [Test worker] INFO com.zaxxer.hikari.HikariDataSource -- case-query-test - Starting...
+10:12:54.372 [Test worker] INFO com.zaxxer.hikari.pool.HikariPool -- case-query-test - Added connection org.postgresql.jdbc.PgConnection@3f9270ed
+10:12:54.372 [Test worker] INFO com.zaxxer.hikari.HikariDataSource -- case-query-test - Start completed.
+10:12:54.406 [Test worker] INFO com.zaxxer.hikari.HikariDataSource -- case-query-test - Shutdown initiated...
+10:12:54.407 [Test worker] INFO com.zaxxer.hikari.HikariDataSource -- case-query-test - Shutdown completed.
+10:12:54.855 [Test worker] INFO com.zaxxer.hikari.HikariDataSource -- case-query-test - Starting...
+10:12:54.862 [Test worker] INFO com.zaxxer.hikari.pool.HikariPool -- case-query-test - Added connection org.postgresql.jdbc.PgConnection@57402ba1
+10:12:54.863 [Test worker] INFO com.zaxxer.hikari.HikariDataSource -- case-query-test - Start completed.
+10:12:54.872 [Test worker] INFO com.zaxxer.hikari.HikariDataSource -- case-query-test - Shutdown initiated...
+10:12:54.873 [Test worker] INFO com.zaxxer.hikari.HikariDataSource -- case-query-test - Shutdown completed.
+10:12:55.337 [Test worker] INFO com.zaxxer.hikari.HikariDataSource -- case-query-test - Starting...
+10:12:55.345 [Test worker] INFO com.zaxxer.hikari.pool.HikariPool -- case-query-test - Added connection org.postgresql.jdbc.PgConnection@53ed09e8
+10:12:55.345 [Test worker] INFO com.zaxxer.hikari.HikariDataSource -- case-query-test - Start completed.
+10:12:55.363 [Test worker] INFO com.zaxxer.hikari.HikariDataSource -- case-query-test - Shutdown initiated...
+10:12:55.363 [Test worker] INFO com.zaxxer.hikari.HikariDataSource -- case-query-test - Shutdown completed.
+10:12:55.836 [Test worker] INFO com.zaxxer.hikari.HikariDataSource -- case-query-test - Starting...
+10:12:55.844 [Test worker] INFO com.zaxxer.hikari.pool.HikariPool -- case-query-test - Added connection org.postgresql.jdbc.PgConnection@76889e60
+10:12:55.845 [Test worker] INFO com.zaxxer.hikari.HikariDataSource -- case-query-test - Start completed.
+10:12:55.854 [Test worker] INFO com.zaxxer.hikari.HikariDataSource -- case-query-test - Shutdown initiated...
+10:12:55.855 [Test worker] INFO com.zaxxer.hikari.HikariDataSource -- case-query-test - Shutdown completed.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

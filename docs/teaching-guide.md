@@ -962,3 +962,49 @@ Grace tests advance a controlled clock; they do not claim a real 24-hour soak.
 Evidence: [operations batch](evidence/2026-09-17-r3/operations/summary.md).
 The [runbook](operations-runbook.md) has reproducible commands and response
 guidance. These local capabilities do not complete monitoring or the R3 gate.
+
+## R3: measure a slow purchase filter before adding an index
+
+When a finance user filters the queue to ACTIVE purchases, most of a large
+tenant's historical cases may already be cancelled. The original time-ordered
+index could scan thousands of unrelated records to find one page. The product
+behavior was correct; the unnecessary database work was the problem.
+
+`CaseQueries.java` is Java/Spring JDBC in the API. It checks membership, queries
+the permitted cases and fetches all page assignments together. That production
+code did not need changing. `V13__case_state_queue.sql` is a Flyway/PostgreSQL
+migration adding an index ordered by tenant, state, creation time and ID. It
+matches the filter followed by the existing cursor order. The original index
+remains useful when no state filter is selected.
+
+The alternative ACTIVE-only index would be smaller but cover fewer supported
+filters. Changing the query or adding caching would introduce more behavior
+without evidence that either was necessary. This single additive index trades
+7.41 MiB on the measured fixture, plus unmeasured write maintenance, for less
+work on selective state queries. It does not make every query faster.
+
+`CaseQueryFixture.java` and `CaseQueryPerformanceTest.java` are Java/JUnit test
+infrastructure running on the developer host against a disposable PostgreSQL
+database. They use 100,000 cases in one tenant and 200 in another, execute the
+real list method, and alternate baseline/indexed/baseline/indexed. Full result
+hashes must remain identical. EXPLAIN shows the database plan and buffer work;
+the structural check uses buffer counts rather than a fragile millisecond limit.
+
+The final fixture uses a small Hikari connection pool, like the application.
+An earlier fresh-connection version passed the comparison but triggered local
+socket-allocation errors when broader suites ran together. Pooling reduces
+connection churn; final suites run serially. Those failed runs remain evidence,
+and the pooled measurements are reported separately from the earlier figures.
+
+`CaseQueriesIntegrationTest.java` verifies behavior independently of timing:
+tenant and role boundaries, foreign-only assignments, pending filters, tied
+timestamps, new arrivals between pages and a fixed three-query list operation.
+Newer inserts do not cause repeats on subsequent keyset pages; this is not a
+snapshot guarantee for backdated inserts, changing permissions or changing states.
+
+Keep three evidence levels separate in interviews: server EXPLAIN timing,
+Java service-method timing, and full HTTP/system throughput. Only the first two
+are measured here, and EXPLAIN executes separately from any cached prepared plan.
+The controlled fixture intentionally favors a selective state workload. Sparse
+ownership, sustained traffic, backlog, cloud hardware and write throughput
+remain separate work. See [measurement method and results](query-performance.md).

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.caseflow.cases.CaseQueryPerformanceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-09-17T14:12:07.824Z" hostname="local-test-host" time="5.497">
+  <properties/>
+  <testcase name="stateFilteredQueueReducesDatabaseWorkWithoutChangingResults()" classname="dev.caseflow.cases.CaseQueryPerformanceTest" time="5.497"/>
+  <system-out><![CDATA[10:12:09.780 [Test worker] INFO com.zaxxer.hikari.HikariDataSource -- case-query-test - Starting...
+10:12:09.791 [Test worker] INFO com.zaxxer.hikari.pool.HikariPool -- case-query-test - Added connection org.postgresql.jdbc.PgConnection@3bddc676
+10:12:09.791 [Test worker] INFO com.zaxxer.hikari.HikariDataSource -- case-query-test - Start completed.
+10:12:13.289 [Test worker] INFO com.zaxxer.hikari.HikariDataSource -- case-query-test - Shutdown initiated...
+10:12:13.291 [Test worker] INFO com.zaxxer.hikari.HikariDataSource -- case-query-test - Shutdown completed.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

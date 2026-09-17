@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.caseflow.documents.CompletionProcessRecoveryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-09-17T14:09:45.960Z" hostname="local-test-host" time="2.174">
+  <properties/>
+  <testcase name="killedJvmAfterCommitPreservesSuccessAcrossDuplicateAndLateFailure()" classname="dev.caseflow.documents.CompletionProcessRecoveryTest" time="1.107"/>
+  <testcase name="killedJvmBeforeCommitRollsBackThenReplayHasOneBusinessEffect()" classname="dev.caseflow.documents.CompletionProcessRecoveryTest" time="1.065"/>
+  <system-out><![CDATA[COMPLETION_CRASH_BOUNDARY boundary=AFTER_COMMIT childPid=17428
+COMPLETION_CRASH_TERMINATED childPid=17428 exitCode=1
+COMPLETION_CRASH_BOUNDARY boundary=BEFORE_COMMIT childPid=32532
+COMPLETION_CRASH_TERMINATED childPid=32532 exitCode=1
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

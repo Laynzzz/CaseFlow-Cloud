@@ -618,3 +618,36 @@ behavior and a real 24-hour retention soak remain unverified.
 Evidence: [15 reporting tests, 33 cleanup tests and full regressions](evidence/2026-09-17-r3/operations/summary.md).
 Current full regression result: 152 Python and 29 Java tests; these totals
 include earlier tests and must not be described as 181 failure scenarios.
+
+## R3 query optimization checkpoint
+
+**What did you optimize, and how do you know it helped?** I measured the actual
+tenant-scoped purchase-list query on a 100,000-case tenant and a 200-case tenant.
+An index on tenant, state and cursor order reduced buffer accesses for the
+large selective ACTIVE query from 1,281 to 29 in repeated before/after pairs.
+The same rows and cursors were returned. This is a synthetic warm-cache SQL
+result, not a production adoption or HTTP-throughput claim.
+Follow-up: retain unfiltered/common-state comparisons; the latter increased
+from five to six buffer accesses. More indexes are not universally better.
+
+**Why keep the original index? What is the cost of the new one?** The original
+tenant/time index supports unfiltered lists. The new index efficiently selects
+a tenant/state range before walking cursor order. It adds 7.41 MiB on this
+fixture and needs maintenance on inserts and state transitions; write throughput
+was not measured. An ACTIVE-only partial index is narrower but less general.
+Follow-up: ordinary CREATE INDEX blocks writes during construction. The local
+build duration does not establish a safe production maintenance window.
+
+**How did you guard correctness and measurement validity?** Real API-role
+integration tests check permissions, tenant isolation and pagination while a
+recording JdbcTemplate counts SQL without replacing database results. The
+benchmark captures actual SQL/binds, plans, result hashes and source fingerprints,
+then alternates before/after twice with fixed data. A no-index control fails
+the buffer-reduction gate. Millisecond samples are reported rather than used
+as universal thresholds.
+Follow-up: a fresh-connection test fixture hit Windows socket-allocation errors
+during concurrent suites. A small Hikari pool reduced connection churn, and
+the final results use that revised fixture. EXPLAIN timings and pooled Java
+timings are separate observations, neither a sustained system load test.
+
+Evidence and reproducible commands: [query performance](query-performance.md).

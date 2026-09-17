@@ -1,0 +1,116 @@
+........................................................................ [ 47%]
+........................................................................ [ 94%]
+......F.                                                                 [100%]
+================================== FAILURES ===================================
+_ test_storage_timeout_retries_without_selecting_partial_result[template-read] _
+
+uploaded_document = (Envelope(eventId=UUID('81a4fad2-aa6e-4784-97f7-9981670acaff'), eventType='document.requested', schemaVersion=1, times...7ca75d04b07b1ebfb92aecefabd036b55495ea1489a85375', traceContext={}), <botocore.client.S3 object at 0x000002965F8E9220>)
+boundary = 'template-read'
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002965F8EB3B0>
+record_testsuite_property = <bound method LogXML.add_global_property of <_pytest.junitxml.LogXML object at 0x00000296587D6180>>
+
+    @pytest.mark.parametrize('boundary', ['template-read', 'upload-response'])
+    def test_storage_timeout_retries_without_selecting_partial_result(uploaded_document, boundary,
+                                                                     monkeypatch, record_testsuite_property):
+        event, client = uploaded_document
+        jobs.schedule(event)
+        first = jobs.claim(uuid4())
+        worker = runtime.Runtime.__new__(runtime.Runtime)
+        original_storage = render.storage
+        started = time.monotonic()
+        with storage_timeout(client, event, boundary) as fault:
+            monkeypatch.setattr(render, 'storage', lambda: fault.client)
+            worker.execute(first)
+            assert fault.received.is_set(), 'timeout endpoint must receive an actual request'
+            assert fault.timeouts == ['ReadTimeoutError'], 'must observe a network timeout, not a fake exception'
+            assert not fault.errors, fault.errors
+            failed = current_state()
+            assert failed['job']['status'] == 'RETRY_WAIT'
+            assert failed['job']['failure_code'] == 'DEPENDENCY_UNAVAILABLE'
+            assert failed['job']['lease_owner'] is None
+            assert failed['artifacts'] == [] and failed['success'] == 0 and failed['retries'] == 1
+            assert jobs.claim(uuid4()) is None, 'backoff must delay immediate retry'
+            orphan = fault.uploaded
+            assert (orphan is not None) == (boundary == 'upload-response')
+            if orphan:
+                assert fault.upload_acknowledged_at <= fault.timed_out_at
+                assert sha256(object_bytes(client, orphan['key'])).hexdigest() == orphan['sha256']
+            record_testsuite_property(boundary + '-timeout', json.dumps(dict(
+                boundary=boundary, network_errors=fault.timeouts, orphan=orphan,
+                failure_code=failed['job']['failure_code'], status=failed['job']['status'],
+                upload_acknowledged_before_timeout=(fault.upload_acknowledged_at <= fault.timed_out_at) if orphan else None,
+                elapsed_seconds=round(time.monotonic()-started, 3))))
+
+        monkeypatch.setattr(render, 'storage', original_storage)
+        deadline = time.monotonic() + 8
+        second = None
+        while time.monotonic() < deadline and second is None:
+>           second = jobs.claim(uuid4())
+                     ^^^^^^^^^^^^^^^^^^^
+
+services\worker\tests\test_storage_timeout_recovery.py:63:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+services\worker\caseflow_worker\jobs.py:68: in claim
+    with database() as db:
+         ^^^^^^^^^^
+services\worker\caseflow_worker\settings.py:9: in database
+    return psycopg.connect(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+cls = <class 'psycopg.Connection'>
+conninfo = "host=127.0.0.1 port=54320 dbname=caseflow_test_b1d43c1055c14e5f8193d80a7a8f6e37 user=caseflow_worker password=REDACTED_LOCAL_CREDENTIAL connect_timeout=5 options='-c statement_timeout=10000 -c lock_timeout=3000' hostaddr=127.0.0.1"
+autocommit = False, prepare_threshold = 5, context = None
+row_factory = <function dict_row at 0x00000296590DD1C0>, cursor_factory = None
+kwargs = {'host': '127.0.0.1', 'port': 54320, 'dbname': 'caseflow_test_b1d43c1055c14e5f8193d80a7a8f6e37', 'user': 'caseflow_worker', ...}
+
+    @classmethod
+    def connect(
+        cls,
+        conninfo: str = "",
+        *,
+        autocommit: bool = False,
+        prepare_threshold: int | None = 5,
+        context: AdaptContext | None = None,
+        row_factory: RowFactory[Row] | None = None,
+        cursor_factory: type[Cursor[Row]] | None = None,
+        **kwargs: ConnParam,
+    ) -> Self:
+        """
+        Connect to a database server and return a new `Connection` instance.
+        """
+
+        params = cls._get_connection_params(conninfo, **kwargs)
+        timeout = timeout_from_conninfo(params)
+        rv = None
+        attempts = conninfo_attempts(params)
+        conn_errors: list[tuple[e.Error, str]] = []
+        for attempt in attempts:
+            tdescr = (attempt.get("host"), attempt.get("port"), attempt.get("hostaddr"))
+            descr = "host: %r, port: %r, hostaddr: %r" % tdescr
+            logger.debug("connection attempt: %s", descr)
+            try:
+                conninfo = make_conninfo("", **attempt)
+                gen = cls._connect_gen(conninfo, timeout=timeout)
+                rv = waiting.wait_conn(gen, interval=_WAIT_INTERVAL)
+            except e.Error as ex:
+                logger.debug("connection failed: %s: %s", descr, str(ex))
+                conn_errors.append((ex, descr))
+            except e._NO_TRACEBACK as ex:
+                raise ex.with_traceback(None)
+            else:
+                logger.debug("connection succeeded: %s", descr)
+                break
+
+        if not rv:
+            last_ex = conn_errors[-1][0]
+            if len(conn_errors) == 1:
+>               raise last_ex.with_traceback(None)
+E               psycopg.OperationalError: connection failed: connection to server at "127.0.0.1", port 54320 failed: Address already in use (0x00002740/10048)
+E               	Is the server running on that host and accepting TCP/IP connections?
+
+services\worker\.venv\Lib\site-packages\psycopg\connection.py:122: OperationalError
+---------------------------- Captured stdout call -----------------------------
+{"timestamp": "2026-09-17T14:10:23.960701+00:00", "service": "case-worker", "event": "job_failed", "kind": "DOCUMENT", "job_id": "d54e9c3f-4020-4db6-b084-ca045de4066d", "code": "DEPENDENCY_UNAVAILABLE"}
+=========================== short test summary info ===========================
+FAILED services/worker/tests/test_storage_timeout_recovery.py::test_storage_timeout_retries_without_selecting_partial_result[template-read]
+1 failed, 151 passed in 74.48s (0:01:14)

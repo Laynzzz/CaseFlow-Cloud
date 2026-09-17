@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.caseflow.cases.CaseQueryPerformanceTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2026-09-17T14:06:52.935Z" hostname="local-test-host" time="25.254">
+  <properties/>
+  <testcase name="stateFilteredQueueReducesDatabaseWorkWithoutChangingResults()" classname="dev.caseflow.cases.CaseQueryPerformanceTest" time="25.245">
+    <failure message="org.opentest4j.AssertionFailedError: Selective state query must reduce buffer work at least 5x; evidence: ..\..\output\r3-query\958f629b-2350-46ae-bfbb-db9b6e0ef066 ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Selective state query must reduce buffer work at least 5x; evidence: ..\..\output\r3-query\958f629b-2350-46ae-bfbb-db9b6e0ef066 ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:69)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:41)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:228)
+	at dev.caseflow.cases.CaseQueryPerformanceTest.stateFilteredQueueReducesDatabaseWorkWithoutChangingResults(CaseQueryPerformanceTest.java:68)
+</failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
