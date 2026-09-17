@@ -1,0 +1,287 @@
+{
+  "id": "signage-004",
+  "startedAt": "2026-09-17T02:46:48.325Z",
+  "sourceMap": {
+    "1e495d54-c7f0-406f-83ca-7f0d2735c273": "signage-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "signage-p1",
+      "source": {
+        "id": "1e495d54-c7f0-406f-83ca-7f0d2735c273",
+        "kind": "POLICY",
+        "name": "Synthetic signage-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 110,
+        "sha256": "f4c41391b70a339190eed67a24cc3b8b6286c1fa699c52cf7b5e0aa011beb7ab",
+        "jobId": "c05969dd-a136-48ae-ac56-dd3d0521da64",
+        "failureCode": null
+      },
+      "chunks": {
+        "source": {
+          "id": "1e495d54-c7f0-406f-83ca-7f0d2735c273",
+          "kind": "POLICY",
+          "name": "Synthetic signage-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 110,
+          "sha256": "f4c41391b70a339190eed67a24cc3b8b6286c1fa699c52cf7b5e0aa011beb7ab",
+          "jobId": "c05969dd-a136-48ae-ac56-dd3d0521da64",
+          "failureCode": null
+        },
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "items": [
+          {
+            "id": "8843e797-776a-5f4d-afe4-bf3f9f02e2a6",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 110,
+            "text": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+            "sha256": "f4c41391b70a339190eed67a24cc3b8b6286c1fa699c52cf7b5e0aa011beb7ab"
+          }
+        ]
+      }
+    }
+  ],
+  "tenantId": "5184a29d-bec7-4f3e-a7cb-6092540327b2",
+  "caseId": "feed8c7e-a74b-4ecc-b74f-c54cf6bb2d64",
+  "quote": {
+    "id": "be55c000-87cc-4bfb-aa51-8a6cebf525a8",
+    "kind": "QUOTE",
+    "name": "Synthetic signage-004 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "feed8c7e-a74b-4ecc-b74f-c54cf6bb2d64",
+    "mediaType": "text/plain",
+    "byteSize": 235,
+    "sha256": "0520660fb3a35d3de1eef67bc0fb1c22c89a5a73247d23953427ddd936b015d4",
+    "jobId": "9ddc51c4-4759-41d7-87c0-1af4f466c623",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "1e495d54-c7f0-406f-83ca-7f0d2735c273",
+        "name": "Synthetic signage-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Reusable sign holder",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "dd2c71c7-4411-4ca9-938d-4a57e8b93e9d",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "dea25162-f916-46f2-90a6-2475f67cb224",
+      "output": {
+        "total": {
+          "value": "888.40",
+          "citations": [
+            {
+              "quote": "Full amount payable: 888.40",
+              "chunkId": "0d415ecb-007a-5cbb-bbcb-d197c625ef9d"
+            }
+          ]
+        },
+        "vendor": {
+          "value": null,
+          "citations": [
+            {
+              "quote": "Seller: [not supplied]",
+              "chunkId": "0d415ecb-007a-5cbb-bbcb-d197c625ef9d"
+            }
+          ]
+        },
+        "currency": {
+          "value": null,
+          "citations": [
+            {
+              "quote": "Currency code: [not supplied]",
+              "chunkId": "0d415ecb-007a-5cbb-bbcb-d197c625ef9d"
+            }
+          ]
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "4",
+              "unitPrice": "222.10",
+              "description": "Reusable sign holder"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "Product: Reusable sign holder\n  * Units ordered: 4\n  * Price for one unit: 222.10",
+              "chunkId": "0d415ecb-007a-5cbb-bbcb-d197c625ef9d"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "0d415ecb-007a-5cbb-bbcb-d197c625ef9d": {
+          "page": 1,
+          "text": "Proposal\n* Commercial party\n  * Seller: [not supplied]\n* Goods offered\n  * Product: Reusable sign holder\n  * Units ordered: 4\n  * Price for one unit: 222.10\n* Settlement\n  * Currency code: [not supplied]\n  * Full amount payable: 888.40",
+          "start": 0,
+          "sourceId": "be55c000-87cc-4bfb-aa51-8a6cebf525a8"
+        }
+      },
+      "revision": 2,
+      "sourceId": "be55c000-87cc-4bfb-aa51-8a6cebf525a8",
+      "elapsedMs": 4406,
+      "promptHash": "e1a9b04381c6d9fa3bc4db78e58ebbbf918a4b5671df7d80b35d71e5c1f2695b",
+      "schemaHash": "f0bee32dd80cca0ce9a3b2b62ef8dbe6df5858064cb7ddc81d4cdb7f522ceef7",
+      "inputTokens": 1019,
+      "outputTokens": 236,
+      "sourceSha256": "0520660fb3a35d3de1eef67bc0fb1c22c89a5a73247d23953427ddd936b015d4",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000786",
+      "retrievedChunkIds": [
+        "0d415ecb-007a-5cbb-bbcb-d197c625ef9d"
+      ],
+      "retrievalElapsedMs": 16
+    }
+  },
+  "review": {
+    "jobId": "e7e4c940-8dfd-4026-85c7-39e49da0a2a9",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "d05f8c9c-374b-470b-ba87-833cbbe8cf9c",
+      "output": {
+        "summary": "The purchase request is for a reusable sign holder priced at 0.00 USD without specified vendor, justification, cost center, or line items. The cost center is a mandatory field for signage orders and must be supplied before approval.",
+        "citations": [
+          {
+            "quote": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+            "chunkId": "8843e797-776a-5f4d-afe4-bf3f9f02e2a6"
+          }
+        ],
+        "policy_findings": [
+          {
+            "claim": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+            "citations": [
+              {
+                "quote": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+                "chunkId": "8843e797-776a-5f4d-afe4-bf3f9f02e2a6"
+              }
+            ]
+          }
+        ],
+        "missing_information": [
+          "vendor",
+          "costCenter",
+          "justification",
+          "lineItems"
+        ],
+        "insufficient_evidence": false
+      },
+      "evidence": {
+        "8843e797-776a-5f4d-afe4-bf3f9f02e2a6": {
+          "page": 1,
+          "text": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "start": 0,
+          "sourceId": "1e495d54-c7f0-406f-83ca-7f0d2735c273"
+        }
+      },
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 4750,
+      "promptHash": "f4a6d95f060b8676457c68c6ec346826d2a4bb840417e7bc27662a06acb54a99",
+      "schemaHash": "39623167bdd63ab143844943010f3b6081ef5ec787db15a297e8d84e3705d031",
+      "inputTokens": 1044,
+      "outputTokens": 213,
+      "sourceSha256": null,
+      "promptVersion": "purchase-review-2026-09-16-v6",
+      "schemaVersion": "purchase-review-v5",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Reusable OR sign OR holder OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000759",
+      "retrievedChunkIds": [
+        "8843e797-776a-5f4d-afe4-bf3f9f02e2a6"
+      ],
+      "retrievalElapsedMs": 14,
+      "retrievalComparison": {
+        "model": "text-embedding-3-small",
+        "query": "Reusable OR sign OR holder OR purchase OR cost OR center OR justification",
+        "corpus": [
+          {
+            "cosine": 0.605222625934565,
+            "sha256": "f4c41391b70a339190eed67a24cc3b8b6286c1fa699c52cf7b5e0aa011beb7ab",
+            "chunkId": "8843e797-776a-5f4d-afe4-bf3f9f02e2a6",
+            "sourceId": "1e495d54-c7f0-406f-83ca-7f0d2735c273"
+          }
+        ],
+        "method": "exact-cosine-rrf60-v1",
+        "elapsedMs": 2203,
+        "dimensions": 256,
+        "corpusCount": 1,
+        "cachedChunks": 0,
+        "hybridChunkIds": [
+          "8843e797-776a-5f4d-afe4-bf3f9f02e2a6"
+        ],
+        "providerCalled": true,
+        "embeddingCallId": "ecaf8dbf-1e44-4dd7-9122-812883d64e08",
+        "baselineChunkIds": [
+          "8843e797-776a-5f4d-afe4-bf3f9f02e2a6"
+        ],
+        "embeddingCostUsd": "0.000001",
+        "embeddingVersion": "openai-small-256-v1",
+        "semanticChunkIds": [
+          "8843e797-776a-5f4d-afe4-bf3f9f02e2a6"
+        ]
+      }
+    }
+  },
+  "retrievedPassageIds": [
+    "signage-p1"
+  ],
+  "retrievalComparisons": {
+    "fullText": [
+      "signage-p1"
+    ],
+    "semantic": [
+      "signage-p1"
+    ],
+    "hybrid": [
+      "signage-p1"
+    ]
+  },
+  "finishedAt": "2026-09-17T02:47:06.277Z"
+}

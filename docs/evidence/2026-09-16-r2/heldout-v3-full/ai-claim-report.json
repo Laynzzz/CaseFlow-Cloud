@@ -1,0 +1,2883 @@
+{
+  "claimSupport": {
+    "numerator": 463,
+    "denominator": 463,
+    "rate": 1.0
+  },
+  "unsupportedClaims": 0,
+  "nonFactualSegments": 0,
+  "reviewedOutputs": 108,
+  "reviewer": "Codex AI assistant (delegated semantic claim reviewer)",
+  "reviewedAt": "2026-09-17T02:52:14.682702+00:00",
+  "method": "ai-claim-review-v1",
+  "profile": "ai-reviewed-learning",
+  "humanVerified": false,
+  "datasetSha256": "4897f4d248cac923945e0a6fa4d34a8a6a21bf4ce7809a4dc1803014cec1fe54",
+  "predictionsSha256": "ad5bdde8a94433372238e69e2174553da55e96af42d5ca5e35b7adf655dd5c1f",
+  "failedOrMissingReviews": 0,
+  "grades": [
+    {
+      "key": "calibration-001/finding:0",
+      "segments": [
+        {
+          "text": "The cost center is required for calibration purchases before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'For calibration purchases, record the requesting cost center in the purchase request before approval.' entails this scoped requirement for the saved purchase description 'Calibration weight set'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "calibration-001/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Calibration weight set.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Calibration weight set'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "For calibration purchases, the requesting cost center must be recorded before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'For calibration purchases, record the requesting cost center in the purchase request before approval.' entails this scoped requirement for the saved purchase description 'Calibration weight set'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "calibration-002/finding:0",
+      "segments": [
+        {
+          "text": "For calibration purchases, record the requesting cost center in the purchase request before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'For calibration purchases, record the requesting cost center in the purchase request before approval.' entails this scoped requirement for the saved purchase description 'Calibration weight set'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "calibration-002/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Calibration weight set.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Calibration weight set'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "For calibration purchases, the requesting cost center must be recorded before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'For calibration purchases, record the requesting cost center in the purchase request before approval.' entails this scoped requirement for the saved purchase description 'Calibration weight set'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "calibration-003/finding:0",
+      "segments": [
+        {
+          "text": "The requesting cost center must be recorded in the purchase request before approval for calibration purchases.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'For calibration purchases, record the requesting cost center in the purchase request before approval.' entails this scoped requirement for the saved purchase description 'Calibration weight set'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "calibration-003/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Calibration weight set.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Calibration weight set'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "For calibration purchases, the requesting cost center must be recorded before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'For calibration purchases, record the requesting cost center in the purchase request before approval.' entails this scoped requirement for the saved purchase description 'Calibration weight set'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "calibration-004/finding:0",
+      "segments": [
+        {
+          "text": "Cost center must be recorded in the purchase request before approval for calibration purchases.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'For calibration purchases, record the requesting cost center in the purchase request before approval.' entails this scoped requirement for the saved purchase description 'Calibration weight set'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "calibration-004/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Calibration weight set.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Calibration weight set'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "For calibration purchases, the requesting cost center must be recorded before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'For calibration purchases, record the requesting cost center in the purchase request before approval.' entails this scoped requirement for the saved purchase description 'Calibration weight set'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "calibration-005/finding:0",
+      "segments": [
+        {
+          "text": "For calibration purchases, the requesting cost center must be recorded in the purchase request before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'For calibration purchases, record the requesting cost center in the purchase request before approval.' entails this scoped requirement for the saved purchase description 'Calibration weight set'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "calibration-005/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Calibration weight set.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Calibration weight set'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "For calibration purchases, the requesting cost center must be recorded before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'For calibration purchases, record the requesting cost center in the purchase request before approval.' entails this scoped requirement for the saved purchase description 'Calibration weight set'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "calibration-006/finding:0",
+      "segments": [
+        {
+          "text": "The requesting cost center must be recorded in the purchase request for calibration purchases before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'For calibration purchases, record the requesting cost center in the purchase request before approval.' entails this scoped requirement for the saved purchase description 'Calibration weight set'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "calibration-006/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Calibration weight set.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Calibration weight set'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "For calibration purchases, the requesting cost center must be recorded before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'For calibration purchases, record the requesting cost center in the purchase request before approval.' entails this scoped requirement for the saved purchase description 'Calibration weight set'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "calibration-007/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Calibration weight set.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Calibration weight set'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No policy evidence was supplied to assess this purchase against policy requirements.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved review evidence object and citations are empty. The statement is limited to inability to assess requirements/compliance and does not claim that purchasing is prohibited."
+        }
+      ]
+    },
+    {
+      "key": "calibration-008/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Calibration weight set.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Calibration weight set'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No policy evidence was supplied to assess this purchase against policy requirements.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved review evidence object and citations are empty. The statement is limited to inability to assess requirements/compliance and does not claim that purchasing is prohibited."
+        }
+      ]
+    },
+    {
+      "key": "calibration-009/finding:0",
+      "segments": [
+        {
+          "text": "For calibration purchases, the requesting cost center must be recorded in the purchase request before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'For calibration purchases, record the requesting cost center in the purchase request before approval.' entails this scoped requirement for the saved purchase description 'Calibration weight set'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "calibration-009/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Calibration weight set.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Calibration weight set'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "For calibration purchases, the requesting cost center must be recorded before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'For calibration purchases, record the requesting cost center in the purchase request before approval.' entails this scoped requirement for the saved purchase description 'Calibration weight set'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "calibration-010/finding:0",
+      "segments": [
+        {
+          "text": "The requesting cost center must be recorded in the purchase request for calibration purchases before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'For calibration purchases, record the requesting cost center in the purchase request before approval.' entails this scoped requirement for the saved purchase description 'Calibration weight set'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "calibration-010/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Calibration weight set.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Calibration weight set'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "For calibration purchases, the requesting cost center must be recorded before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'For calibration purchases, record the requesting cost center in the purchase request before approval.' entails this scoped requirement for the saved purchase description 'Calibration weight set'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "filtration-001/finding:0",
+      "segments": [
+        {
+          "text": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'A filtration purchase request requires a written justification explaining why the purchase is needed before approval.' entails this scoped requirement for the saved purchase description 'Replacement filter pack'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "filtration-001/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Replacement filter pack.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Replacement filter pack'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'A filtration purchase request requires a written justification explaining why the purchase is needed before approval.' entails this scoped requirement for the saved purchase description 'Replacement filter pack'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "filtration-002/finding:0",
+      "segments": [
+        {
+          "text": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'A filtration purchase request requires a written justification explaining why the purchase is needed before approval.' entails this scoped requirement for the saved purchase description 'Replacement filter pack'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "filtration-002/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Replacement filter pack.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Replacement filter pack'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'A filtration purchase request requires a written justification explaining why the purchase is needed before approval.' entails this scoped requirement for the saved purchase description 'Replacement filter pack'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "filtration-003/finding:0",
+      "segments": [
+        {
+          "text": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'A filtration purchase request requires a written justification explaining why the purchase is needed before approval.' entails this scoped requirement for the saved purchase description 'Replacement filter pack'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "filtration-003/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Replacement filter pack.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Replacement filter pack'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "A filtration purchase request requires a written justification before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'A filtration purchase request requires a written justification explaining why the purchase is needed before approval.' entails this scoped requirement for the saved purchase description 'Replacement filter pack'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "filtration-004/finding:0",
+      "segments": [
+        {
+          "text": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'A filtration purchase request requires a written justification explaining why the purchase is needed before approval.' entails this scoped requirement for the saved purchase description 'Replacement filter pack'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "filtration-004/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Replacement filter pack.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Replacement filter pack'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "A filtration purchase request requires a written justification before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'A filtration purchase request requires a written justification explaining why the purchase is needed before approval.' entails this scoped requirement for the saved purchase description 'Replacement filter pack'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "filtration-005/finding:0",
+      "segments": [
+        {
+          "text": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'A filtration purchase request requires a written justification explaining why the purchase is needed before approval.' entails this scoped requirement for the saved purchase description 'Replacement filter pack'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "filtration-005/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Replacement filter pack.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Replacement filter pack'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'A filtration purchase request requires a written justification explaining why the purchase is needed before approval.' entails this scoped requirement for the saved purchase description 'Replacement filter pack'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "filtration-006/finding:0",
+      "segments": [
+        {
+          "text": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'A filtration purchase request requires a written justification explaining why the purchase is needed before approval.' entails this scoped requirement for the saved purchase description 'Replacement filter pack'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "filtration-006/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Replacement filter pack.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Replacement filter pack'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'A filtration purchase request requires a written justification explaining why the purchase is needed before approval.' entails this scoped requirement for the saved purchase description 'Replacement filter pack'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "filtration-007/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Replacement filter pack.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Replacement filter pack'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No policy evidence was supplied to assess this purchase against policy requirements.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved review evidence object and citations are empty. The statement is limited to inability to assess requirements/compliance and does not claim that purchasing is prohibited."
+        }
+      ]
+    },
+    {
+      "key": "filtration-008/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Replacement filter pack.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Replacement filter pack'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No policy evidence was supplied to assess this purchase against policy requirements.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved review evidence object and citations are empty. The statement is limited to inability to assess requirements/compliance and does not claim that purchasing is prohibited."
+        }
+      ]
+    },
+    {
+      "key": "filtration-009/finding:0",
+      "segments": [
+        {
+          "text": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'A filtration purchase request requires a written justification explaining why the purchase is needed before approval.' entails this scoped requirement for the saved purchase description 'Replacement filter pack'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "filtration-009/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Replacement filter pack.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Replacement filter pack'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'A filtration purchase request requires a written justification explaining why the purchase is needed before approval.' entails this scoped requirement for the saved purchase description 'Replacement filter pack'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "filtration-010/finding:0",
+      "segments": [
+        {
+          "text": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'A filtration purchase request requires a written justification explaining why the purchase is needed before approval.' entails this scoped requirement for the saved purchase description 'Replacement filter pack'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "filtration-010/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Replacement filter pack.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Replacement filter pack'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'A filtration purchase request requires a written justification explaining why the purchase is needed before approval.' entails this scoped requirement for the saved purchase description 'Replacement filter pack'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "packaging-001/finding:0",
+      "segments": [
+        {
+          "text": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Packaging requests may be approved only after the purchase request identifies its cost center.' entails this scoped requirement for the saved purchase description 'Reusable packing tray'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "packaging-001/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Reusable packing tray.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Reusable packing tray'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "A packaging purchase request must identify its cost center before it can be approved.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Packaging requests may be approved only after the purchase request identifies its cost center.' entails this scoped requirement for the saved purchase description 'Reusable packing tray'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "packaging-002/finding:0",
+      "segments": [
+        {
+          "text": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Packaging requests may be approved only after the purchase request identifies its cost center.' entails this scoped requirement for the saved purchase description 'Reusable packing tray'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "packaging-002/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Reusable packing tray.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Reusable packing tray'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "A packaging purchase request must identify its cost center before it can be approved.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Packaging requests may be approved only after the purchase request identifies its cost center.' entails this scoped requirement for the saved purchase description 'Reusable packing tray'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "packaging-003/finding:0",
+      "segments": [
+        {
+          "text": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Packaging requests may be approved only after the purchase request identifies its cost center.' entails this scoped requirement for the saved purchase description 'Reusable packing tray'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "packaging-003/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Reusable packing tray.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Reusable packing tray'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "A packaging purchase request must identify its cost center before it can be approved.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Packaging requests may be approved only after the purchase request identifies its cost center.' entails this scoped requirement for the saved purchase description 'Reusable packing tray'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "packaging-004/finding:0",
+      "segments": [
+        {
+          "text": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Packaging requests may be approved only after the purchase request identifies its cost center.' entails this scoped requirement for the saved purchase description 'Reusable packing tray'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "packaging-004/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Reusable packing tray.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Reusable packing tray'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "A packaging purchase request must identify its cost center before it can be approved.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Packaging requests may be approved only after the purchase request identifies its cost center.' entails this scoped requirement for the saved purchase description 'Reusable packing tray'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "packaging-005/finding:0",
+      "segments": [
+        {
+          "text": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Packaging requests may be approved only after the purchase request identifies its cost center.' entails this scoped requirement for the saved purchase description 'Reusable packing tray'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "packaging-005/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Reusable packing tray.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Reusable packing tray'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "A packaging purchase request must identify its cost center before it can be approved.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Packaging requests may be approved only after the purchase request identifies its cost center.' entails this scoped requirement for the saved purchase description 'Reusable packing tray'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "packaging-006/finding:0",
+      "segments": [
+        {
+          "text": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Packaging requests may be approved only after the purchase request identifies its cost center.' entails this scoped requirement for the saved purchase description 'Reusable packing tray'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "packaging-006/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Reusable packing tray.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Reusable packing tray'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "A packaging purchase request must identify its cost center before it can be approved.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Packaging requests may be approved only after the purchase request identifies its cost center.' entails this scoped requirement for the saved purchase description 'Reusable packing tray'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "packaging-007/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Reusable packing tray.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Reusable packing tray'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No policy evidence was supplied to assess this purchase against policy requirements.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved review evidence object and citations are empty. The statement is limited to inability to assess requirements/compliance and does not claim that purchasing is prohibited."
+        }
+      ]
+    },
+    {
+      "key": "packaging-008/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Reusable packing tray.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Reusable packing tray'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No policy evidence was supplied to assess this purchase against policy requirements.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved review evidence object and citations are empty. The statement is limited to inability to assess requirements/compliance and does not claim that purchasing is prohibited."
+        }
+      ]
+    },
+    {
+      "key": "packaging-009/finding:0",
+      "segments": [
+        {
+          "text": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Packaging requests may be approved only after the purchase request identifies its cost center.' entails this scoped requirement for the saved purchase description 'Reusable packing tray'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "packaging-009/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Reusable packing tray.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Reusable packing tray'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "A packaging purchase request must identify its cost center before it can be approved.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Packaging requests may be approved only after the purchase request identifies its cost center.' entails this scoped requirement for the saved purchase description 'Reusable packing tray'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "packaging-010/finding:0",
+      "segments": [
+        {
+          "text": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Packaging requests may be approved only after the purchase request identifies its cost center.' entails this scoped requirement for the saved purchase description 'Reusable packing tray'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "packaging-010/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Reusable packing tray.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Reusable packing tray'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "A packaging purchase request must identify its cost center before it can be approved.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Packaging requests may be approved only after the purchase request identifies its cost center.' entails this scoped requirement for the saved purchase description 'Reusable packing tray'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "textiles-001/finding:0",
+      "segments": [
+        {
+          "text": "The request must include a justification describing the business need before approving a textiles purchase.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.' entails this scoped requirement for the saved purchase description 'Washable fabric cover'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "textiles-001/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Washable fabric cover.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Washable fabric cover'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "A textiles request must include a justification describing the business need before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.' entails this scoped requirement for the saved purchase description 'Washable fabric cover'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "textiles-002/finding:0",
+      "segments": [
+        {
+          "text": "The justification describing the business need is required before approving a textiles purchase.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.' entails this scoped requirement for the saved purchase description 'Washable fabric cover'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "textiles-002/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Washable fabric cover.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Washable fabric cover'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.' entails this scoped requirement for the saved purchase description 'Washable fabric cover'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "textiles-003/finding:0",
+      "segments": [
+        {
+          "text": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.' entails this scoped requirement for the saved purchase description 'Washable fabric cover'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "textiles-003/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Washable fabric cover.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Washable fabric cover'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "A textiles request must include a justification describing the business need before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.' entails this scoped requirement for the saved purchase description 'Washable fabric cover'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "textiles-004/finding:0",
+      "segments": [
+        {
+          "text": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.' entails this scoped requirement for the saved purchase description 'Washable fabric cover'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "textiles-004/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Washable fabric cover.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Washable fabric cover'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "A textiles purchase must include a justification describing the business need.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.' entails this scoped requirement for the saved purchase description 'Washable fabric cover'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "textiles-005/finding:0",
+      "segments": [
+        {
+          "text": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.' entails this scoped requirement for the saved purchase description 'Washable fabric cover'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "textiles-005/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Washable fabric cover.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Washable fabric cover'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "A textiles request must include a justification describing the business need before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.' entails this scoped requirement for the saved purchase description 'Washable fabric cover'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "textiles-006/finding:0",
+      "segments": [
+        {
+          "text": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.' entails this scoped requirement for the saved purchase description 'Washable fabric cover'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "textiles-006/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Washable fabric cover.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Washable fabric cover'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "A textiles request must include a justification describing the business need before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.' entails this scoped requirement for the saved purchase description 'Washable fabric cover'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "textiles-007/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Washable fabric cover.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Washable fabric cover'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No policy evidence was supplied to assess this purchase against policy requirements.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved review evidence object and citations are empty. The statement is limited to inability to assess requirements/compliance and does not claim that purchasing is prohibited."
+        }
+      ]
+    },
+    {
+      "key": "textiles-008/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Washable fabric cover.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Washable fabric cover'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No policy evidence was supplied to assess this purchase against policy requirements.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved review evidence object and citations are empty. The statement is limited to inability to assess requirements/compliance and does not claim that purchasing is prohibited."
+        }
+      ]
+    },
+    {
+      "key": "textiles-009/finding:0",
+      "segments": [
+        {
+          "text": "The request contains no justification describing the business need.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This establishes the absence proposition independently of the normative assertion."
+        },
+        {
+          "text": "A textiles request must include a justification describing the business need before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.' entails this scoped requirement for the saved purchase description 'Washable fabric cover'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "textiles-009/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Washable fabric cover.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Washable fabric cover'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "A textiles request must include a justification describing the business need before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.' entails this scoped requirement for the saved purchase description 'Washable fabric cover'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "textiles-010/finding:0",
+      "segments": [
+        {
+          "text": "The request contains no justification describing the business need.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This establishes the absence proposition independently of the normative assertion."
+        },
+        {
+          "text": "A textiles request must include a justification describing the business need before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.' entails this scoped requirement for the saved purchase description 'Washable fabric cover'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "textiles-010/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Washable fabric cover.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Washable fabric cover'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.' entails this scoped requirement for the saved purchase description 'Washable fabric cover'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "signage-001/finding:0",
+      "segments": [
+        {
+          "text": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.' entails this scoped requirement for the saved purchase description 'Reusable sign holder'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "signage-001/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Reusable sign holder.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Reusable sign holder'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "The cost center is mandatory for signage orders and must be supplied before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.' entails this scoped requirement for the saved purchase description 'Reusable sign holder'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "signage-002/finding:0",
+      "segments": [
+        {
+          "text": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.' entails this scoped requirement for the saved purchase description 'Reusable sign holder'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "signage-002/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Reusable sign holder.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Reusable sign holder'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "The cost center is mandatory for signage orders and must be supplied before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.' entails this scoped requirement for the saved purchase description 'Reusable sign holder'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "signage-003/finding:0",
+      "segments": [
+        {
+          "text": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.' entails this scoped requirement for the saved purchase description 'Reusable sign holder'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "signage-003/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Reusable sign holder.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Reusable sign holder'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "The cost center is mandatory for signage orders and must be supplied before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.' entails this scoped requirement for the saved purchase description 'Reusable sign holder'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "signage-004/finding:0",
+      "segments": [
+        {
+          "text": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.' entails this scoped requirement for the saved purchase description 'Reusable sign holder'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "signage-004/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Reusable sign holder.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Reusable sign holder'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "The cost center is mandatory for signage orders and must be supplied before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.' entails this scoped requirement for the saved purchase description 'Reusable sign holder'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "signage-005/finding:0",
+      "segments": [
+        {
+          "text": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.' entails this scoped requirement for the saved purchase description 'Reusable sign holder'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "signage-005/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Reusable sign holder.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Reusable sign holder'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "The cost center is mandatory for signage orders and must be supplied before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.' entails this scoped requirement for the saved purchase description 'Reusable sign holder'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "signage-006/finding:0",
+      "segments": [
+        {
+          "text": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.' entails this scoped requirement for the saved purchase description 'Reusable sign holder'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "signage-006/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Reusable sign holder.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Reusable sign holder'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "The cost center is mandatory for signage orders and must be supplied before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.' entails this scoped requirement for the saved purchase description 'Reusable sign holder'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "signage-007/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Reusable sign holder.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Reusable sign holder'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No policy evidence was supplied to assess this purchase against policy requirements.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved review evidence object and citations are empty. The statement is limited to inability to assess requirements/compliance and does not claim that purchasing is prohibited."
+        }
+      ]
+    },
+    {
+      "key": "signage-008/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Reusable sign holder.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Reusable sign holder'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No policy evidence was supplied to assess this purchase against policy requirements.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved review evidence object and citations are empty. The statement is limited to inability to assess requirements/compliance and does not claim that purchasing is prohibited."
+        }
+      ]
+    },
+    {
+      "key": "signage-009/finding:0",
+      "segments": [
+        {
+          "text": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.' entails this scoped requirement for the saved purchase description 'Reusable sign holder'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "signage-009/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Reusable sign holder.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Reusable sign holder'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "The cost center is mandatory for signage orders and must be supplied before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.' entails this scoped requirement for the saved purchase description 'Reusable sign holder'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "signage-010/finding:0",
+      "segments": [
+        {
+          "text": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.' entails this scoped requirement for the saved purchase description 'Reusable sign holder'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "signage-010/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Reusable sign holder.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Reusable sign holder'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "The cost center is mandatory for signage orders and must be supplied before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.' entails this scoped requirement for the saved purchase description 'Reusable sign holder'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "mobility-001/finding:0",
+      "segments": [
+        {
+          "text": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Mobility purchases must include a justification in the request before approval; the justification states the intended use.' entails this scoped requirement for the saved purchase description 'Portable equipment cart'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "mobility-001/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Portable equipment cart.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Portable equipment cart'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "A mobility purchase request must include a justification stating the intended use before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Mobility purchases must include a justification in the request before approval; the justification states the intended use.' entails this scoped requirement for the saved purchase description 'Portable equipment cart'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "mobility-002/finding:0",
+      "segments": [
+        {
+          "text": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Mobility purchases must include a justification in the request before approval; the justification states the intended use.' entails this scoped requirement for the saved purchase description 'Portable equipment cart'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "mobility-002/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Portable equipment cart.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Portable equipment cart'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "A mobility purchase request must include a justification stating the intended use before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Mobility purchases must include a justification in the request before approval; the justification states the intended use.' entails this scoped requirement for the saved purchase description 'Portable equipment cart'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "mobility-003/finding:0",
+      "segments": [
+        {
+          "text": "The request contains no justification describing the intended use.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This establishes the absence proposition independently of the normative assertion."
+        },
+        {
+          "text": "A mobility purchase request must include a justification stating the intended use before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Mobility purchases must include a justification in the request before approval; the justification states the intended use.' entails this scoped requirement for the saved purchase description 'Portable equipment cart'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "mobility-003/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Portable equipment cart.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Portable equipment cart'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "A mobility purchase request must include a justification stating the intended use before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Mobility purchases must include a justification in the request before approval; the justification states the intended use.' entails this scoped requirement for the saved purchase description 'Portable equipment cart'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "mobility-004/finding:0",
+      "segments": [
+        {
+          "text": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Mobility purchases must include a justification in the request before approval; the justification states the intended use.' entails this scoped requirement for the saved purchase description 'Portable equipment cart'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "mobility-004/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Portable equipment cart.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Portable equipment cart'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "A mobility purchase request must include a justification stating the intended use before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Mobility purchases must include a justification in the request before approval; the justification states the intended use.' entails this scoped requirement for the saved purchase description 'Portable equipment cart'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "mobility-005/finding:0",
+      "segments": [
+        {
+          "text": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Mobility purchases must include a justification in the request before approval; the justification states the intended use.' entails this scoped requirement for the saved purchase description 'Portable equipment cart'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "mobility-005/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Portable equipment cart.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Portable equipment cart'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "A mobility purchase request must include a justification stating the intended use before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Mobility purchases must include a justification in the request before approval; the justification states the intended use.' entails this scoped requirement for the saved purchase description 'Portable equipment cart'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "mobility-006/finding:0",
+      "segments": [
+        {
+          "text": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Mobility purchases must include a justification in the request before approval; the justification states the intended use.' entails this scoped requirement for the saved purchase description 'Portable equipment cart'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "mobility-006/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Portable equipment cart.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Portable equipment cart'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "A mobility purchase request must include a justification stating the intended use before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Mobility purchases must include a justification in the request before approval; the justification states the intended use.' entails this scoped requirement for the saved purchase description 'Portable equipment cart'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "mobility-007/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Portable equipment cart.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Portable equipment cart'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No policy evidence was supplied to assess this purchase against policy requirements.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved review evidence object and citations are empty. The statement is limited to inability to assess requirements/compliance and does not claim that purchasing is prohibited."
+        }
+      ]
+    },
+    {
+      "key": "mobility-008/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Portable equipment cart.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Portable equipment cart'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No policy evidence was supplied to assess this purchase against policy requirements.",
+          "verdict": "SUPPORTED",
+          "rationale": "The saved review evidence object and citations are empty. The statement is limited to inability to assess requirements/compliance and does not claim that purchasing is prohibited."
+        }
+      ]
+    },
+    {
+      "key": "mobility-009/finding:0",
+      "segments": [
+        {
+          "text": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Mobility purchases must include a justification in the request before approval; the justification states the intended use.' entails this scoped requirement for the saved purchase description 'Portable equipment cart'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "mobility-009/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Portable equipment cart.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Portable equipment cart'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "A mobility purchase request must include a justification stating the intended use before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Mobility purchases must include a justification in the request before approval; the justification states the intended use.' entails this scoped requirement for the saved purchase description 'Portable equipment cart'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "mobility-010/finding:0",
+      "segments": [
+        {
+          "text": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Mobility purchases must include a justification in the request before approval; the justification states the intended use.' entails this scoped requirement for the saved purchase description 'Portable equipment cart'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    },
+    {
+      "key": "mobility-010/summary",
+      "segments": [
+        {
+          "text": "The purchase request is for Portable equipment cart.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.description is 'Portable equipment cart'. This is the saved request description, not an accepted quote item."
+        },
+        {
+          "text": "The purchase request states a total of 0.00 USD.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.total is 0.00 and currency is USD. Zero is present data; this statement does not imply a missing, invalid or nonpositive-price policy violation."
+        },
+        {
+          "text": "No vendor is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.vendor is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No cost center is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.costCenter is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No justification is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.justification is an empty string. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "No line items is supplied in the purchase request.",
+          "verdict": "SUPPORTED",
+          "rationale": "manualPurchase.lineItems is an empty list. This supports absence only, not a claim that policy requires this field."
+        },
+        {
+          "text": "A mobility purchase request must include a justification stating the intended use before approval.",
+          "verdict": "SUPPORTED",
+          "rationale": "The actual cited passage 'Mobility purchases must include a justification in the request before approval; the justification states the intended use.' entails this scoped requirement for the saved purchase description 'Portable equipment cart'. Its field, purpose and approval timing support the asserted wording; citation presence alone was not used as support."
+        }
+      ]
+    }
+  ],
+  "provisionalClaimTargetMet": true,
+  "releaseGatePassed": false,
+  "limitations": [
+    "Judgments come from the declared AI reviewer; this code checks completeness, not truth.",
+    "Compound-claim coverage is confirmed by the reviewer, not inferred by the scorer.",
+    "Missing/failed reviews are reported separately and must not disappear from the release decision.",
+    "Reference verification and other R2 gates remain separate."
+  ]
+}

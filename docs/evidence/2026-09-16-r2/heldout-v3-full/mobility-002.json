@@ -1,0 +1,287 @@
+{
+  "id": "mobility-002",
+  "startedAt": "2026-09-17T02:49:18.346Z",
+  "sourceMap": {
+    "41f81ecd-ab12-4b56-bbbc-b21527e66a6e": "mobility-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "mobility-p1",
+      "source": {
+        "id": "41f81ecd-ab12-4b56-bbbc-b21527e66a6e",
+        "kind": "POLICY",
+        "name": "Synthetic mobility-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 122,
+        "sha256": "3a6b79cbdf9563e4574dbaf1a67cacbf5ca2217cffc7283da5383cc8186f3263",
+        "jobId": "9a669365-e385-4b7d-8214-708e81ee221e",
+        "failureCode": null
+      },
+      "chunks": {
+        "source": {
+          "id": "41f81ecd-ab12-4b56-bbbc-b21527e66a6e",
+          "kind": "POLICY",
+          "name": "Synthetic mobility-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 122,
+          "sha256": "3a6b79cbdf9563e4574dbaf1a67cacbf5ca2217cffc7283da5383cc8186f3263",
+          "jobId": "9a669365-e385-4b7d-8214-708e81ee221e",
+          "failureCode": null
+        },
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "items": [
+          {
+            "id": "9368ba40-1636-5fbb-98ee-1d368f350b9a",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 122,
+            "text": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+            "sha256": "3a6b79cbdf9563e4574dbaf1a67cacbf5ca2217cffc7283da5383cc8186f3263"
+          }
+        ]
+      }
+    }
+  ],
+  "tenantId": "93ca3899-c4ed-45a3-b3a1-2ff68965b66c",
+  "caseId": "52b63451-3981-44bf-97c8-c999f567c0d3",
+  "quote": {
+    "id": "ca328df4-b67c-4eed-953b-068e10b0efda",
+    "kind": "QUOTE",
+    "name": "Synthetic mobility-002 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "52b63451-3981-44bf-97c8-c999f567c0d3",
+    "mediaType": "text/plain",
+    "byteSize": 399,
+    "sha256": "7e93bb9d1151524869bdded202c2ce9e338fd24f984d52bb91c9007edc20cb42",
+    "jobId": "92cf33a6-fa85-4300-a2b7-2748b4af4d0c",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "41f81ecd-ab12-4b56-bbbc-b21527e66a6e",
+        "name": "Synthetic mobility-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Portable equipment cart",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "e14da77f-fa0f-431c-99e9-286e8841f3af",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "a38f01aa-cd52-44f4-8f2e-0b61f5d362a7",
+      "output": {
+        "total": {
+          "value": "488.00",
+          "citations": [
+            {
+              "quote": "Buyer: What is the total amount payable?\nSupplier: 488.00",
+              "chunkId": "368be8c5-5b29-5238-ad6c-e2cfb6ef70c5"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Synthetic Fjord Cart Foundry 2",
+          "citations": [
+            {
+              "quote": "Supplier: Synthetic Fjord Cart Foundry 2",
+              "chunkId": "368be8c5-5b29-5238-ad6c-e2cfb6ef70c5"
+            }
+          ]
+        },
+        "currency": {
+          "value": "EUR",
+          "citations": [
+            {
+              "quote": "Buyer: Which currency code applies?\nSupplier: EUR",
+              "chunkId": "368be8c5-5b29-5238-ad6c-e2cfb6ef70c5"
+            }
+          ]
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "2",
+              "unitPrice": "244.00",
+              "description": "Portable equipment cart"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "Supplier: 2 units of Portable equipment cart.\nBuyer: What is the price for a single unit?\nSupplier: 244.00",
+              "chunkId": "368be8c5-5b29-5238-ad6c-e2cfb6ef70c5"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "368be8c5-5b29-5238-ad6c-e2cfb6ef70c5": {
+          "page": 1,
+          "text": "Written supplier quotation: question and answer record\nBuyer: Which company is making this offer?\nSupplier: Synthetic Fjord Cart Foundry 2\nBuyer: What product and quantity are offered?\nSupplier: 2 units of Portable equipment cart.\nBuyer: What is the price for a single unit?\nSupplier: 244.00\nBuyer: Which currency code applies?\nSupplier: EUR\nBuyer: What is the total amount payable?\nSupplier: 488.00",
+          "start": 0,
+          "sourceId": "ca328df4-b67c-4eed-953b-068e10b0efda"
+        }
+      },
+      "revision": 2,
+      "sourceId": "ca328df4-b67c-4eed-953b-068e10b0efda",
+      "elapsedMs": 4750,
+      "promptHash": "513354485bb358ee281fce98710c865f2dc820d27baf6da319cc28f4d5597a90",
+      "schemaHash": "cffff91d7ca910167343641a7373057fd9d66a0bc3d64c3fb47b6ccca3e536d6",
+      "inputTokens": 1049,
+      "outputTokens": 270,
+      "sourceSha256": "7e93bb9d1151524869bdded202c2ce9e338fd24f984d52bb91c9007edc20cb42",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000852",
+      "retrievedChunkIds": [
+        "368be8c5-5b29-5238-ad6c-e2cfb6ef70c5"
+      ],
+      "retrievalElapsedMs": 16
+    }
+  },
+  "review": {
+    "jobId": "f05243d6-739b-4e0b-aa25-bd9e4638ed1b",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "feb6c3fc-cd65-4477-85da-98d483aa622d",
+      "output": {
+        "summary": "The purchase request is for a 'Portable equipment cart' with a total of 0.00 USD, but it is missing the vendor, cost center, justification, and line items information. The policy states that mobility purchases must include a justification in the request before approval, describing the intended use.",
+        "citations": [
+          {
+            "quote": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+            "chunkId": "9368ba40-1636-5fbb-98ee-1d368f350b9a"
+          }
+        ],
+        "policy_findings": [
+          {
+            "claim": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+            "citations": [
+              {
+                "quote": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+                "chunkId": "9368ba40-1636-5fbb-98ee-1d368f350b9a"
+              }
+            ]
+          }
+        ],
+        "missing_information": [
+          "vendor",
+          "costCenter",
+          "justification",
+          "lineItems"
+        ],
+        "insufficient_evidence": false
+      },
+      "evidence": {
+        "9368ba40-1636-5fbb-98ee-1d368f350b9a": {
+          "page": 1,
+          "text": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "start": 0,
+          "sourceId": "41f81ecd-ab12-4b56-bbbc-b21527e66a6e"
+        }
+      },
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 4328,
+      "promptHash": "c6e4267f003c927eeb7e2b6e7bec3246440d4a3cb6eff834fffd1c850e3ace94",
+      "schemaHash": "48399dc96063e18967ce52f7f7e39e0535696b01ec35ac214ed31460f36683d1",
+      "inputTokens": 1035,
+      "outputTokens": 223,
+      "sourceSha256": null,
+      "promptVersion": "purchase-review-2026-09-16-v6",
+      "schemaVersion": "purchase-review-v5",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Portable OR equipment OR cart OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000771",
+      "retrievedChunkIds": [
+        "9368ba40-1636-5fbb-98ee-1d368f350b9a"
+      ],
+      "retrievalElapsedMs": 15,
+      "retrievalComparison": {
+        "model": "text-embedding-3-small",
+        "query": "Portable OR equipment OR cart OR purchase OR cost OR center OR justification",
+        "corpus": [
+          {
+            "cosine": 0.5726069104177335,
+            "sha256": "3a6b79cbdf9563e4574dbaf1a67cacbf5ca2217cffc7283da5383cc8186f3263",
+            "chunkId": "9368ba40-1636-5fbb-98ee-1d368f350b9a",
+            "sourceId": "41f81ecd-ab12-4b56-bbbc-b21527e66a6e"
+          }
+        ],
+        "method": "exact-cosine-rrf60-v1",
+        "elapsedMs": 2203,
+        "dimensions": 256,
+        "corpusCount": 1,
+        "cachedChunks": 0,
+        "hybridChunkIds": [
+          "9368ba40-1636-5fbb-98ee-1d368f350b9a"
+        ],
+        "providerCalled": true,
+        "embeddingCallId": "0bf5477a-3b61-4997-8d49-52cc53be6e14",
+        "baselineChunkIds": [
+          "9368ba40-1636-5fbb-98ee-1d368f350b9a"
+        ],
+        "embeddingCostUsd": "0.000001",
+        "embeddingVersion": "openai-small-256-v1",
+        "semanticChunkIds": [
+          "9368ba40-1636-5fbb-98ee-1d368f350b9a"
+        ]
+      }
+    }
+  },
+  "retrievedPassageIds": [
+    "mobility-p1"
+  ],
+  "retrievalComparisons": {
+    "fullText": [
+      "mobility-p1"
+    ],
+    "semantic": [
+      "mobility-p1"
+    ],
+    "hybrid": [
+      "mobility-p1"
+    ]
+  },
+  "finishedAt": "2026-09-17T02:49:37.054Z"
+}

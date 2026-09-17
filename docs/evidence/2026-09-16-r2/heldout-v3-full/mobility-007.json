@@ -1,0 +1,182 @@
+{
+  "id": "mobility-007",
+  "startedAt": "2026-09-17T02:50:51.690Z",
+  "sourceMap": {
+    "137a1f92-6454-4810-8528-3527f2801d00": "mobility-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "mobility-p1",
+      "source": {
+        "id": "137a1f92-6454-4810-8528-3527f2801d00",
+        "kind": "POLICY",
+        "name": "Synthetic mobility-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 76,
+        "sha256": "42a5a37f75b42c1445a16176cfc26ea7049e5b75e7b6765c1eb286809bfd6805",
+        "jobId": "2e4ec9fa-e778-44df-96b9-50e4276ac946",
+        "failureCode": null
+      },
+      "chunks": {
+        "source": {
+          "id": "137a1f92-6454-4810-8528-3527f2801d00",
+          "kind": "POLICY",
+          "name": "Synthetic mobility-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 76,
+          "sha256": "42a5a37f75b42c1445a16176cfc26ea7049e5b75e7b6765c1eb286809bfd6805",
+          "jobId": "2e4ec9fa-e778-44df-96b9-50e4276ac946",
+          "failureCode": null
+        },
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "items": [
+          {
+            "id": "382bd2b3-de1f-5315-b270-b972ff8b372d",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 76,
+            "text": "The office garden watering schedule is posted beside the courtyard entrance.",
+            "sha256": "42a5a37f75b42c1445a16176cfc26ea7049e5b75e7b6765c1eb286809bfd6805"
+          }
+        ]
+      }
+    }
+  ],
+  "tenantId": "54f5aa9b-8e29-4e21-bbc9-85fd8f7b03df",
+  "caseId": "67145e61-f47f-41f4-b1a2-76e3e759437f",
+  "quote": {
+    "id": "704e6305-4497-4e28-94d0-ad5f8ebe6245",
+    "kind": "QUOTE",
+    "name": "Synthetic mobility-007 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "67145e61-f47f-41f4-b1a2-76e3e759437f",
+    "mediaType": "text/plain",
+    "byteSize": 400,
+    "sha256": "53fa3cecd4e705c70ef3b3993b369b378be6e84b6dab07e6ed921c7ea27b48c5",
+    "jobId": "1dded230-3740-4f40-9cbe-4ce533e4246e",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "137a1f92-6454-4810-8528-3527f2801d00",
+        "name": "Synthetic mobility-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Portable equipment cart",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "a4b86e51-f88d-4d76-b01e-95d79653f494",
+    "kind": "EXTRACTION",
+    "status": "FAILED",
+    "failureCode": "INVALID_AI_OUTPUT",
+    "revision": 2,
+    "stale": false,
+    "result": null
+  },
+  "review": {
+    "jobId": "d202b50c-0d91-4092-b9e4-039381fd131a",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "470ce8c1-f32f-4dfb-824a-eb36537c1d9a",
+      "output": {
+        "summary": "The purchase is for a Portable equipment cart with a total cost of 0.00 USD. The purchase does not provide a vendor name, cost center, justification, or line items. There is no policy evidence available to assess compliance for this purchase.",
+        "citations": [],
+        "policy_findings": [],
+        "missing_information": [
+          "vendor",
+          "costCenter",
+          "justification",
+          "lineItems"
+        ],
+        "insufficient_evidence": true
+      },
+      "evidence": {},
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 3328,
+      "promptHash": "7cea8a4df7534f21f875eccba7d48b40d7e133364a5cd6214dda3b331d639537",
+      "schemaHash": "43c27d82595881e9bbea698af054455bd8782f858ec5547502ad3f984a973610",
+      "inputTokens": 931,
+      "outputTokens": 85,
+      "sourceSha256": null,
+      "promptVersion": "purchase-review-2026-09-16-v6",
+      "schemaVersion": "purchase-review-v5",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Portable OR equipment OR cart OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000509",
+      "retrievedChunkIds": [],
+      "retrievalElapsedMs": 14,
+      "retrievalComparison": {
+        "model": "text-embedding-3-small",
+        "query": "Portable OR equipment OR cart OR purchase OR cost OR center OR justification",
+        "corpus": [
+          {
+            "cosine": 0.16836324601310562,
+            "sha256": "42a5a37f75b42c1445a16176cfc26ea7049e5b75e7b6765c1eb286809bfd6805",
+            "chunkId": "382bd2b3-de1f-5315-b270-b972ff8b372d",
+            "sourceId": "137a1f92-6454-4810-8528-3527f2801d00"
+          }
+        ],
+        "method": "exact-cosine-rrf60-v1",
+        "elapsedMs": 2171,
+        "dimensions": 256,
+        "corpusCount": 1,
+        "cachedChunks": 0,
+        "hybridChunkIds": [
+          "382bd2b3-de1f-5315-b270-b972ff8b372d"
+        ],
+        "providerCalled": true,
+        "embeddingCallId": "ef71803b-f920-4077-bc4d-ba4b8ab26227",
+        "baselineChunkIds": [],
+        "embeddingCostUsd": "0.000001",
+        "embeddingVersion": "openai-small-256-v1",
+        "semanticChunkIds": [
+          "382bd2b3-de1f-5315-b270-b972ff8b372d"
+        ]
+      }
+    }
+  },
+  "retrievedPassageIds": [],
+  "retrievalComparisons": {
+    "fullText": [],
+    "semantic": [
+      "mobility-p1"
+    ],
+    "hybrid": [
+      "mobility-p1"
+    ]
+  },
+  "finishedAt": "2026-09-17T02:51:08.006Z"
+}

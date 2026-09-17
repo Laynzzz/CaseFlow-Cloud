@@ -1,0 +1,257 @@
+{
+  "id": "mobility-008",
+  "startedAt": "2026-09-17T02:51:08.007Z",
+  "sourceMap": {
+    "beb352e2-9775-4946-9e00-e398b82264b7": "mobility-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "mobility-p1",
+      "source": {
+        "id": "beb352e2-9775-4946-9e00-e398b82264b7",
+        "kind": "POLICY",
+        "name": "Synthetic mobility-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 76,
+        "sha256": "42a5a37f75b42c1445a16176cfc26ea7049e5b75e7b6765c1eb286809bfd6805",
+        "jobId": "7ed6de57-b294-41ec-aa98-0e35a374e759",
+        "failureCode": null
+      },
+      "chunks": {
+        "source": {
+          "id": "beb352e2-9775-4946-9e00-e398b82264b7",
+          "kind": "POLICY",
+          "name": "Synthetic mobility-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 76,
+          "sha256": "42a5a37f75b42c1445a16176cfc26ea7049e5b75e7b6765c1eb286809bfd6805",
+          "jobId": "7ed6de57-b294-41ec-aa98-0e35a374e759",
+          "failureCode": null
+        },
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "items": [
+          {
+            "id": "0c4e19c8-5e85-50a2-982a-b696feef0e07",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 76,
+            "text": "The office garden watering schedule is posted beside the courtyard entrance.",
+            "sha256": "42a5a37f75b42c1445a16176cfc26ea7049e5b75e7b6765c1eb286809bfd6805"
+          }
+        ]
+      }
+    }
+  ],
+  "tenantId": "17a0506c-24f7-4084-af57-57f4b1177d8e",
+  "caseId": "5fe9fe3f-ef35-4053-8a46-011390882aa7",
+  "quote": {
+    "id": "7427b982-d6b9-4da3-a797-d94585f0a6c7",
+    "kind": "QUOTE",
+    "name": "Synthetic mobility-008 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "5fe9fe3f-ef35-4053-8a46-011390882aa7",
+    "mediaType": "text/plain",
+    "byteSize": 400,
+    "sha256": "dbb02e7cebb598b7f81260b76b6f942cca4f6cab037784323818dd1caa100de8",
+    "jobId": "f685880d-d5fa-4e95-b37a-e73248d3f4a8",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "beb352e2-9775-4946-9e00-e398b82264b7",
+        "name": "Synthetic mobility-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Portable equipment cart",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "a7183cf3-6085-48f1-b215-91254740e982",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "796cf71d-6806-48d8-a632-8142e0763b2f",
+      "output": {
+        "total": {
+          "value": "1988.00",
+          "citations": [
+            {
+              "quote": "Supplier: 1988.00",
+              "chunkId": "edbb749d-368e-5a9c-a562-901738a4e8b1"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Synthetic Fjord Cart Foundry 8",
+          "citations": [
+            {
+              "quote": "Supplier: Synthetic Fjord Cart Foundry 8",
+              "chunkId": "edbb749d-368e-5a9c-a562-901738a4e8b1"
+            }
+          ]
+        },
+        "currency": {
+          "value": "EUR",
+          "citations": [
+            {
+              "quote": "Supplier: EUR",
+              "chunkId": "edbb749d-368e-5a9c-a562-901738a4e8b1"
+            }
+          ]
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "8",
+              "unitPrice": "248.50",
+              "description": "Portable equipment cart"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "Supplier: 8 units of Portable equipment cart.\nBuyer: What is the price for a single unit?\nSupplier: 248.50",
+              "chunkId": "edbb749d-368e-5a9c-a562-901738a4e8b1"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "edbb749d-368e-5a9c-a562-901738a4e8b1": {
+          "page": 1,
+          "text": "Written supplier quotation: question and answer record\nBuyer: Which company is making this offer?\nSupplier: Synthetic Fjord Cart Foundry 8\nBuyer: What product and quantity are offered?\nSupplier: 8 units of Portable equipment cart.\nBuyer: What is the price for a single unit?\nSupplier: 248.50\nBuyer: Which currency code applies?\nSupplier: EUR\nBuyer: What is the total amount payable?\nSupplier: 1988.00",
+          "start": 0,
+          "sourceId": "7427b982-d6b9-4da3-a797-d94585f0a6c7"
+        }
+      },
+      "revision": 2,
+      "sourceId": "7427b982-d6b9-4da3-a797-d94585f0a6c7",
+      "elapsedMs": 4500,
+      "promptHash": "e5c5eaae530f9cc416cf7ec67076a1ba4313ea6cab47086801d58d44895e9b43",
+      "schemaHash": "ea2e92667896b7b93f915b4de94ca8f9a27778e2439acc0c12f4854059406e10",
+      "inputTokens": 1050,
+      "outputTokens": 250,
+      "sourceSha256": "dbb02e7cebb598b7f81260b76b6f942cca4f6cab037784323818dd1caa100de8",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000820",
+      "retrievedChunkIds": [
+        "edbb749d-368e-5a9c-a562-901738a4e8b1"
+      ],
+      "retrievalElapsedMs": 16
+    }
+  },
+  "review": {
+    "jobId": "3788e776-3070-4972-8d96-aaa879f1440e",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "e5a72801-09d3-408e-b851-a6b40e1e68bf",
+      "output": {
+        "summary": "The purchase request is for a portable equipment cart with a total cost of 0.00 USD. The vendor, cost center, justification, and line items are not provided. Without relevant policy evidence, policy compliance cannot be assessed.",
+        "citations": [],
+        "policy_findings": [],
+        "missing_information": [
+          "vendor",
+          "costCenter",
+          "justification",
+          "lineItems"
+        ],
+        "insufficient_evidence": true
+      },
+      "evidence": {},
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 3281,
+      "promptHash": "7cea8a4df7534f21f875eccba7d48b40d7e133364a5cd6214dda3b331d639537",
+      "schemaHash": "43c27d82595881e9bbea698af054455bd8782f858ec5547502ad3f984a973610",
+      "inputTokens": 931,
+      "outputTokens": 81,
+      "sourceSha256": null,
+      "promptVersion": "purchase-review-2026-09-16-v6",
+      "schemaVersion": "purchase-review-v5",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Portable OR equipment OR cart OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000502",
+      "retrievedChunkIds": [],
+      "retrievalElapsedMs": 16,
+      "retrievalComparison": {
+        "model": "text-embedding-3-small",
+        "query": "Portable OR equipment OR cart OR purchase OR cost OR center OR justification",
+        "corpus": [
+          {
+            "cosine": 0.16836324601310562,
+            "sha256": "42a5a37f75b42c1445a16176cfc26ea7049e5b75e7b6765c1eb286809bfd6805",
+            "chunkId": "0c4e19c8-5e85-50a2-982a-b696feef0e07",
+            "sourceId": "beb352e2-9775-4946-9e00-e398b82264b7"
+          }
+        ],
+        "method": "exact-cosine-rrf60-v1",
+        "elapsedMs": 2186,
+        "dimensions": 256,
+        "corpusCount": 1,
+        "cachedChunks": 0,
+        "hybridChunkIds": [
+          "0c4e19c8-5e85-50a2-982a-b696feef0e07"
+        ],
+        "providerCalled": true,
+        "embeddingCallId": "bd159d7a-00ff-4a20-8b86-e153f540dc55",
+        "baselineChunkIds": [],
+        "embeddingCostUsd": "0.000001",
+        "embeddingVersion": "openai-small-256-v1",
+        "semanticChunkIds": [
+          "0c4e19c8-5e85-50a2-982a-b696feef0e07"
+        ]
+      }
+    }
+  },
+  "retrievedPassageIds": [],
+  "retrievalComparisons": {
+    "fullText": [],
+    "semantic": [
+      "mobility-p1"
+    ],
+    "hybrid": [
+      "mobility-p1"
+    ]
+  },
+  "finishedAt": "2026-09-17T02:51:25.095Z"
+}

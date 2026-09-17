@@ -1,0 +1,257 @@
+{
+  "id": "signage-007",
+  "startedAt": "2026-09-17T02:47:45.888Z",
+  "sourceMap": {
+    "26c434a4-82a4-49a4-a888-82d81e9d5245": "signage-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "signage-p1",
+      "source": {
+        "id": "26c434a4-82a4-49a4-a888-82d81e9d5245",
+        "kind": "POLICY",
+        "name": "Synthetic signage-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 76,
+        "sha256": "42a5a37f75b42c1445a16176cfc26ea7049e5b75e7b6765c1eb286809bfd6805",
+        "jobId": "37ea8cce-85a5-4401-87db-800dc9b805ac",
+        "failureCode": null
+      },
+      "chunks": {
+        "source": {
+          "id": "26c434a4-82a4-49a4-a888-82d81e9d5245",
+          "kind": "POLICY",
+          "name": "Synthetic signage-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 76,
+          "sha256": "42a5a37f75b42c1445a16176cfc26ea7049e5b75e7b6765c1eb286809bfd6805",
+          "jobId": "37ea8cce-85a5-4401-87db-800dc9b805ac",
+          "failureCode": null
+        },
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "items": [
+          {
+            "id": "f977db9d-c7b3-50f9-86f0-a7015c7d06d9",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 76,
+            "text": "The office garden watering schedule is posted beside the courtyard entrance.",
+            "sha256": "42a5a37f75b42c1445a16176cfc26ea7049e5b75e7b6765c1eb286809bfd6805"
+          }
+        ]
+      }
+    }
+  ],
+  "tenantId": "3a312fa4-7cac-4639-bb64-49b16632ef7c",
+  "caseId": "f680327b-8638-415c-baf1-67e0290f9721",
+  "quote": {
+    "id": "ca649796-6783-417a-82ab-2c8a3cefb2da",
+    "kind": "QUOTE",
+    "name": "Synthetic signage-007 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "f680327b-8638-415c-baf1-67e0290f9721",
+    "mediaType": "text/plain",
+    "byteSize": 239,
+    "sha256": "e7326a8afc59a9656063b7440a0cb56bccc7b79e2a6718507b871a15001c93b6",
+    "jobId": "520cfb06-8457-43bb-8388-ed2d680bc465",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "26c434a4-82a4-49a4-a888-82d81e9d5245",
+        "name": "Synthetic signage-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Reusable sign holder",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "e3ec639f-79f0-4cea-8009-4ab7c842f642",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "4c6ffbea-92ae-429e-ad1e-d48704c618ea",
+      "output": {
+        "total": {
+          "value": "1570.45",
+          "citations": [
+            {
+              "quote": "Full amount payable: 1570.45",
+              "chunkId": "3148da14-884f-566c-acb6-e5ae4c8cf803"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Synthetic Elm Marker Guild 7",
+          "citations": [
+            {
+              "quote": "Seller: Synthetic Elm Marker Guild 7",
+              "chunkId": "3148da14-884f-566c-acb6-e5ae4c8cf803"
+            }
+          ]
+        },
+        "currency": {
+          "value": "CAD",
+          "citations": [
+            {
+              "quote": "Currency code: CAD",
+              "chunkId": "3148da14-884f-566c-acb6-e5ae4c8cf803"
+            }
+          ]
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "7",
+              "unitPrice": "224.35",
+              "description": "Reusable sign holder"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "Product: Reusable sign holder\n  * Units ordered: 7\n  * Price for one unit: 224.35",
+              "chunkId": "3148da14-884f-566c-acb6-e5ae4c8cf803"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "3148da14-884f-566c-acb6-e5ae4c8cf803": {
+          "page": 1,
+          "text": "Proposal\n* Commercial party\n  * Seller: Synthetic Elm Marker Guild 7\n* Goods offered\n  * Product: Reusable sign holder\n  * Units ordered: 7\n  * Price for one unit: 224.35\n* Settlement\n  * Currency code: CAD\n  * Full amount payable: 1570.45",
+          "start": 0,
+          "sourceId": "ca649796-6783-417a-82ab-2c8a3cefb2da"
+        }
+      },
+      "revision": 2,
+      "sourceId": "ca649796-6783-417a-82ab-2c8a3cefb2da",
+      "elapsedMs": 3860,
+      "promptHash": "9da677969a5c956b74a56570d53af6296bd9ecf4504b1aff7330c94ace3e2059",
+      "schemaHash": "5a74c757e3f6c2b6f3de977bb8b6db63a40f40c31ce10c3cfd304b50852ced58",
+      "inputTokens": 1017,
+      "outputTokens": 238,
+      "sourceSha256": "e7326a8afc59a9656063b7440a0cb56bccc7b79e2a6718507b871a15001c93b6",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000788",
+      "retrievedChunkIds": [
+        "3148da14-884f-566c-acb6-e5ae4c8cf803"
+      ],
+      "retrievalElapsedMs": 15
+    }
+  },
+  "review": {
+    "jobId": "26dd1cfc-af6b-4625-a3e3-81203163057a",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "17d83488-954a-4367-9cd4-b0f150f292cb",
+      "output": {
+        "summary": "The purchase request is for a reusable sign holder with a total cost of 0.00 USD. The purchase lacks a specified vendor, cost center, justification, and line items. There is no policy evidence available to assess compliance or requirements regarding these missing fields.",
+        "citations": [],
+        "policy_findings": [],
+        "missing_information": [
+          "vendor",
+          "costCenter",
+          "justification",
+          "lineItems"
+        ],
+        "insufficient_evidence": true
+      },
+      "evidence": {},
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 3046,
+      "promptHash": "7884e62cb7e283f8fc2cddf1283fc121bd0e1af9d34028f355cd94d19c7e2097",
+      "schemaHash": "43c27d82595881e9bbea698af054455bd8782f858ec5547502ad3f984a973610",
+      "inputTokens": 931,
+      "outputTokens": 87,
+      "sourceSha256": null,
+      "promptVersion": "purchase-review-2026-09-16-v6",
+      "schemaVersion": "purchase-review-v5",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Reusable OR sign OR holder OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000512",
+      "retrievedChunkIds": [],
+      "retrievalElapsedMs": 0,
+      "retrievalComparison": {
+        "model": "text-embedding-3-small",
+        "query": "Reusable OR sign OR holder OR purchase OR cost OR center OR justification",
+        "corpus": [
+          {
+            "cosine": 0.08500117798587713,
+            "sha256": "42a5a37f75b42c1445a16176cfc26ea7049e5b75e7b6765c1eb286809bfd6805",
+            "chunkId": "f977db9d-c7b3-50f9-86f0-a7015c7d06d9",
+            "sourceId": "26c434a4-82a4-49a4-a888-82d81e9d5245"
+          }
+        ],
+        "method": "exact-cosine-rrf60-v1",
+        "elapsedMs": 2062,
+        "dimensions": 256,
+        "corpusCount": 1,
+        "cachedChunks": 0,
+        "hybridChunkIds": [
+          "f977db9d-c7b3-50f9-86f0-a7015c7d06d9"
+        ],
+        "providerCalled": true,
+        "embeddingCallId": "4a318061-9d33-476c-876f-863a0182743e",
+        "baselineChunkIds": [],
+        "embeddingCostUsd": "0.000001",
+        "embeddingVersion": "openai-small-256-v1",
+        "semanticChunkIds": [
+          "f977db9d-c7b3-50f9-86f0-a7015c7d06d9"
+        ]
+      }
+    }
+  },
+  "retrievedPassageIds": [],
+  "retrievalComparisons": {
+    "fullText": [],
+    "semantic": [
+      "signage-p1"
+    ],
+    "hybrid": [
+      "signage-p1"
+    ]
+  },
+  "finishedAt": "2026-09-17T02:48:02.279Z"
+}

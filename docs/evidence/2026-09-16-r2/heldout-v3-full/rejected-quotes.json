@@ -1,0 +1,252 @@
+{
+  "method": "Exact substring comparison against hash-matched original synthetic quote",
+  "predictionsSha256": "ad5bdde8a94433372238e69e2174553da55e96af42d5ca5e35b7adf655dd5c1f",
+  "rejectedJobs": 19,
+  "rejections": [
+    {
+      "id": "calibration-006",
+      "jobId": "116d4d0e-2166-481c-9a56-3c65ecec3cf8",
+      "sourceSha256": "5739993910bb7088af25f497187e7ac1269712b02050062dc472a81d0c2052d7",
+      "rawOutputSha256": "f196bdd5a044f035e08cedac689f2995fae8786f7c6096178d267be4e7e74d5e",
+      "invalidQuotes": [
+        {
+          "field": "total",
+          "quote": "Amount payable for this offer: 780.00 Unresolved supplier amendment: an alternative amount payable is 809.35. The original and amended total are both unconfirmed; neither supersedes the other."
+        }
+      ]
+    },
+    {
+      "id": "filtration-005",
+      "jobId": "7d3e6661-86ea-4afd-b1aa-83731aae9068",
+      "sourceSha256": "66de30298785ecc3b4dfae58a8850586465498bfeaa41ed99074bdd9045e8f3c",
+      "rawOutputSha256": "e7e7aba082cbe5abdcb7a8436f6b5b2f0ad20b59e90f411e5dcf87bb11f33fb5",
+      "invalidQuotes": [
+        {
+          "field": "total",
+          "quote": "<amountPayable>763.25</amountPayable>\nUnresolved supplier amendment: an alternative amount payable is 792.60."
+        }
+      ]
+    },
+    {
+      "id": "filtration-006",
+      "jobId": "625e7a7a-6912-46de-b2d0-a2f253d34d3e",
+      "sourceSha256": "07bec54b3624e5828648238c15f8954f19ded7bd1ecafc504149e93a931d39c9",
+      "rawOutputSha256": "6ed88d13a923fc6aef8421097a503d950cc8dbba9d02749d92d0bcd5a753c8b4",
+      "invalidQuotes": [
+        {
+          "field": "total",
+          "quote": "<amountPayable>920.40</amountPayable>\nUnresolved supplier amendment: an alternative amount payable is 949.75. The original and amended total are both unconfirmed; neither supersedes the other."
+        }
+      ]
+    },
+    {
+      "id": "packaging-001",
+      "jobId": "8826c82c-5559-4acc-bbff-c6db4a0234ca",
+      "sourceSha256": "9a3ac7718a387882503afe5c97ec512fc6b528520ef1f2565f485b72d76ee553",
+      "rawOutputSha256": "d0cf93b94558295409130b7e0f07902a71141ea7d1df75c33309a21eea39db3d",
+      "invalidQuotes": [
+        {
+          "field": "lineItems",
+          "quote": "\"description\": \"Reusable packing tray\",\"quantity\": \"1\",\"unitPrice\": \"173.05\""
+        }
+      ]
+    },
+    {
+      "id": "packaging-002",
+      "jobId": "1dbb07a2-ffb8-4820-8bc9-03d810347fa8",
+      "sourceSha256": "1f7749b5f375d6d0ff1114d8fc564c6ae9b88530cca944cb6619d2b305a7c67d",
+      "rawOutputSha256": "ae859bd777d2155002d7cbfc3ea57d6221940a0eaee3a7ebc6b1e95291f06263",
+      "invalidQuotes": [
+        {
+          "field": "lineItems",
+          "quote": "\"goods\": [ { \"description\": \"Reusable packing tray\", \"quantity\": \"2\", \"unitPrice\": \"173.80\" } ]"
+        }
+      ]
+    },
+    {
+      "id": "packaging-003",
+      "jobId": "041bf477-9315-4723-ac50-dad38c5dd33e",
+      "sourceSha256": "dbcb7a52f2f1b3bf40e7530789b2ba8d7124197a101a63d11f639fc5287f1e2a",
+      "rawOutputSha256": "98612fe01b8dbd181fc0c98af625a25bfa7855d4cf74a4d74f9e03e656890e70",
+      "invalidQuotes": [
+        {
+          "field": "lineItems",
+          "quote": "\"description\": \"Reusable packing tray\",\"quantity\": \"3\",\"unitPrice\": \"174.55\""
+        }
+      ]
+    },
+    {
+      "id": "packaging-004",
+      "jobId": "72ab1d19-bc6b-485f-9581-41d196c3ed64",
+      "sourceSha256": "18c25c2c56b8fc07144a53aba8ddeb6cd8f920ed4a26e51d4be1ca98cae28c0b",
+      "rawOutputSha256": "96100e3f86081d55986b6694903f3e5c436e6799d9ab0b9d4c510643cb5e7497",
+      "invalidQuotes": [
+        {
+          "field": "lineItems",
+          "quote": "\"goods\": [ { \"description\": \"Reusable packing tray\", \"quantity\": \"4\", \"unitPrice\": \"175.30\" } ]"
+        }
+      ]
+    },
+    {
+      "id": "packaging-005",
+      "jobId": "ed55de2c-8c24-480a-b45b-4d20b5304a49",
+      "sourceSha256": "42555c41a3355ba9446a60296056b72355f74b1868e3119e87fb1ef4ad7aecad",
+      "rawOutputSha256": "7e54a811048c62040abf2fc8ce4731784b051b687fb7926b4283087475ae7baa",
+      "invalidQuotes": [
+        {
+          "field": "total",
+          "quote": "\"amountPayable\": \"880.25\"\nUnresolved supplier amendment: an alternative amount payable is 909.60. The original and amended total are both unconfirmed; neither supersedes the other."
+        }
+      ]
+    },
+    {
+      "id": "packaging-006",
+      "jobId": "5cbcf28a-712c-4dc2-879c-5970f3f15b0c",
+      "sourceSha256": "98f43ac3c706e1ad4f32b365df0cfa04049d3fe27b6bea6fb1db93fc8d8910d1",
+      "rawOutputSha256": "85be863140a0bd979b7f757be400a1950c32bd83828f994dbd425c50eeb3a06d",
+      "invalidQuotes": [
+        {
+          "field": "lineItems",
+          "quote": "\"goods\": [ { \"description\": \"Reusable packing tray\", \"quantity\": \"6\", \"unitPrice\": \"176.80\" } ]"
+        }
+      ]
+    },
+    {
+      "id": "packaging-007",
+      "jobId": "6e5f1bdf-f3ea-4a14-a430-34ff55c027b4",
+      "sourceSha256": "f7ec050386266545f7968b608e33ee51f8930a278fe8f385a90b8af583814de1",
+      "rawOutputSha256": "21b5f1834472cb14d60b794a92bc6ab66b92806b1ff9f754c95903375207ba85",
+      "invalidQuotes": [
+        {
+          "field": "lineItems",
+          "quote": "\"description\": \"Reusable packing tray\",\"quantity\": \"7\",\"unitPrice\": \"177.55\""
+        }
+      ]
+    },
+    {
+      "id": "packaging-008",
+      "jobId": "e2a0646b-3460-4c9c-b522-7f52a2cf3a74",
+      "sourceSha256": "b96ce7b576cd47921e190b2150b6929d576835c072bfd240ff0b735015a9f10d",
+      "rawOutputSha256": "01bc777441fee3c86649f3a701a35a4f72f2fa3acf43844bca44ecb27bc08917",
+      "invalidQuotes": [
+        {
+          "field": "lineItems",
+          "quote": "\"description\": \"Reusable packing tray\",\"quantity\": \"8\",\"unitPrice\": \"178.30\""
+        }
+      ]
+    },
+    {
+      "id": "textiles-003",
+      "jobId": "54724f5f-cb38-4558-b64a-fdd57e6b4770",
+      "sourceSha256": "c65bc1a9d91a046bb14ba30763dab6e40a28ecef080f0310fa371a3cee24a78c",
+      "rawOutputSha256": "07cb3d015dfc38083f0d697f1a00abbe216f3cf036fe8077f5c4dbdfba9d7352",
+      "invalidQuotes": [
+        {
+          "field": "vendor",
+          "quote": "supplier,\"[not supplied]\""
+        },
+        {
+          "field": "currency",
+          "quote": "currencyCode,\"[not supplied]\""
+        },
+        {
+          "field": "total",
+          "quote": "amountPayable\n\"Washable fabric cover\",3,197.95,593.85"
+        }
+      ]
+    },
+    {
+      "id": "textiles-005",
+      "jobId": "a7a8029e-eaea-485e-a248-f12f7544b44c",
+      "sourceSha256": "701d59f412b4fbd588f18f967f74d7d9ea1a04a66dcc0fbf16af3d26cc6e7498",
+      "rawOutputSha256": "a4f47dfd72584063c7dfac7f44895721e8a102fbd0dd57fcbe7635981dbe9315",
+      "invalidQuotes": [
+        {
+          "field": "currency",
+          "quote": "currencyCode,\"USD\""
+        }
+      ]
+    },
+    {
+      "id": "signage-003",
+      "jobId": "5490e042-223f-47d2-a469-1f2332e964dd",
+      "sourceSha256": "bafceacda9a2c8c941f7c43854f04f27b7a2b70086a7f7088c45dfc6bb0f45ca",
+      "rawOutputSha256": "ce4cd65b47f377132d11bea586a83755fc9f20c27252078ba26d879edeca0bc1",
+      "invalidQuotes": [
+        {
+          "field": "lineItems",
+          "quote": "Product: Reusable sign holder  * Units ordered: 3  * Price for one unit: 221.35"
+        }
+      ]
+    },
+    {
+      "id": "mobility-003",
+      "jobId": "33b4fd72-c0c1-48a7-be2b-63e0403b476f",
+      "sourceSha256": "eaba5a9c6686df1cd1fcc9e1a1b213d2bc004bdb3954db226a3e53be8fa11f5f",
+      "rawOutputSha256": "388227ec9b41579b7501f33b02aaf37237755bfa0c7aa7a990c015e9cb0d9fe6",
+      "invalidQuotes": [
+        {
+          "field": "total",
+          "quote": "Buyer: What is the total amount payable? Supplier: 734.25"
+        },
+        {
+          "field": "lineItems",
+          "quote": "Supplier: 3 units of Portable equipment cart. Buyer: What is the price for a single unit? Supplier: 244.75"
+        }
+      ]
+    },
+    {
+      "id": "mobility-005",
+      "jobId": "8dcfc27b-2da9-4136-8c89-49d02a1e81b5",
+      "sourceSha256": "97c2b2e43489ced9c61ebc7edbe602d5448b8643aef701b4726fa689768a33a1",
+      "rawOutputSha256": "df633db07e9a6232fad1df67922ed6d35fefdc11aea45acf5fc41a03fd19f4d5",
+      "invalidQuotes": [
+        {
+          "field": "lineItems",
+          "quote": "Supplier: 5 units of Portable equipment cart. Supplier: 246.25"
+        }
+      ]
+    },
+    {
+      "id": "mobility-006",
+      "jobId": "5fb45c8d-e42a-46d7-be31-455f6aea2e23",
+      "sourceSha256": "729ae1861b6d336bb51ca252ffbd0a32d9da6adbf0d9c19d706b4a87e03e5246",
+      "rawOutputSha256": "24f6e7a2fe0d8d89e14fb521da399aeb63cf0f4ccabde61652448613fb0e6b75",
+      "invalidQuotes": [
+        {
+          "field": "total",
+          "quote": "What is the total amount payable? Supplier: 1482.00 Unresolved supplier amendment: an alternative amount payable is 1511.35"
+        },
+        {
+          "field": "lineItems",
+          "quote": "Supplier: 6 units of Portable equipment cart. Supplier: 247.00"
+        }
+      ]
+    },
+    {
+      "id": "mobility-007",
+      "jobId": "a4b86e51-f88d-4d76-b01e-95d79653f494",
+      "sourceSha256": "53fa3cecd4e705c70ef3b3993b369b378be6e84b6dab07e6ed921c7ea27b48c5",
+      "rawOutputSha256": "967b71a51d43d5077f61a9767b8b6c7f615d332860a8ea794bb48c76243f57d4",
+      "invalidQuotes": [
+        {
+          "field": "lineItems",
+          "quote": "7 units of Portable equipment cart. ... 247.75"
+        }
+      ]
+    },
+    {
+      "id": "mobility-010",
+      "jobId": "1e4f9588-28a2-491a-a779-d488d6d04ef4",
+      "sourceSha256": "9a2aa4052bc55cde12de93206528fdb1f3ae51caccb4c289e97aaf77555fadd0",
+      "rawOutputSha256": "e4a5e051854783216b6ffff3eb5a1377d07545c2894a790995c1aeb541c3b3ed",
+      "invalidQuotes": [
+        {
+          "field": "lineItems",
+          "quote": "Supplier: 10 units of Portable equipment cart.\nSupplier: 250.00"
+        }
+      ]
+    }
+  ],
+  "limitation": "This explains nonliteral quotation failures. It does not validate all model values, repair citations, change denominators, or evaluate extraction independently of rejection."
+}

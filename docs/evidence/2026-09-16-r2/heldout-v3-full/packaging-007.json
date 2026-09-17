@@ -1,0 +1,182 @@
+{
+  "id": "packaging-007",
+  "startedAt": "2026-09-17T02:41:37.301Z",
+  "sourceMap": {
+    "547b8188-9034-4eb7-b0d6-4f38e0c483f3": "packaging-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "packaging-p1",
+      "source": {
+        "id": "547b8188-9034-4eb7-b0d6-4f38e0c483f3",
+        "kind": "POLICY",
+        "name": "Synthetic packaging-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 76,
+        "sha256": "42a5a37f75b42c1445a16176cfc26ea7049e5b75e7b6765c1eb286809bfd6805",
+        "jobId": "730926c5-0bdd-438e-93a9-a2204f623115",
+        "failureCode": null
+      },
+      "chunks": {
+        "source": {
+          "id": "547b8188-9034-4eb7-b0d6-4f38e0c483f3",
+          "kind": "POLICY",
+          "name": "Synthetic packaging-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 76,
+          "sha256": "42a5a37f75b42c1445a16176cfc26ea7049e5b75e7b6765c1eb286809bfd6805",
+          "jobId": "730926c5-0bdd-438e-93a9-a2204f623115",
+          "failureCode": null
+        },
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "items": [
+          {
+            "id": "bd44e741-b361-5fe0-8031-4ea519c1d2d8",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 76,
+            "text": "The office garden watering schedule is posted beside the courtyard entrance.",
+            "sha256": "42a5a37f75b42c1445a16176cfc26ea7049e5b75e7b6765c1eb286809bfd6805"
+          }
+        ]
+      }
+    }
+  ],
+  "tenantId": "4e7fb4d6-5b8b-4882-80a6-358d4d964521",
+  "caseId": "1ee3f19b-1dd5-4d1f-b8ef-99eadae3930e",
+  "quote": {
+    "id": "616224a3-6473-4ca7-88e2-f8f04110fba2",
+    "kind": "QUOTE",
+    "name": "Synthetic packaging-007 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "1ee3f19b-1dd5-4d1f-b8ef-99eadae3930e",
+    "mediaType": "text/plain",
+    "byteSize": 277,
+    "sha256": "f7ec050386266545f7968b608e33ee51f8930a278fe8f385a90b8af583814de1",
+    "jobId": "8ae3e939-374d-451c-9e0a-2d46bee9412f",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "547b8188-9034-4eb7-b0d6-4f38e0c483f3",
+        "name": "Synthetic packaging-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Reusable packing tray",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "6e5f1bdf-f3ea-4a14-a430-34ff55c027b4",
+    "kind": "EXTRACTION",
+    "status": "FAILED",
+    "failureCode": "INVALID_AI_OUTPUT",
+    "revision": 2,
+    "stale": false,
+    "result": null
+  },
+  "review": {
+    "jobId": "98e227b3-c37d-4de7-a5c5-565d0842da15",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "76498b6f-4ac1-48e4-8ad8-1b2901f37198",
+      "output": {
+        "summary": "The purchase request is for a reusable packing tray with a total cost of 0.00 USD. The vendor, cost center, justification, and line items are not provided. There is no policy evidence supplied to assess compliance or missing information requirements.",
+        "citations": [],
+        "policy_findings": [],
+        "missing_information": [
+          "vendor",
+          "costCenter",
+          "justification",
+          "lineItems"
+        ],
+        "insufficient_evidence": true
+      },
+      "evidence": {},
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 4139,
+      "promptHash": "aea788615ff7c2286e1e77264df71ea106c5e7228cc87bd6f653bf5fe0a52f87",
+      "schemaHash": "43c27d82595881e9bbea698af054455bd8782f858ec5547502ad3f984a973610",
+      "inputTokens": 931,
+      "outputTokens": 84,
+      "sourceSha256": null,
+      "promptVersion": "purchase-review-2026-09-16-v6",
+      "schemaVersion": "purchase-review-v5",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Reusable OR packing OR tray OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000507",
+      "retrievedChunkIds": [],
+      "retrievalElapsedMs": 15,
+      "retrievalComparison": {
+        "model": "text-embedding-3-small",
+        "query": "Reusable OR packing OR tray OR purchase OR cost OR center OR justification",
+        "corpus": [
+          {
+            "cosine": 0.11460627370945004,
+            "sha256": "42a5a37f75b42c1445a16176cfc26ea7049e5b75e7b6765c1eb286809bfd6805",
+            "chunkId": "bd44e741-b361-5fe0-8031-4ea519c1d2d8",
+            "sourceId": "547b8188-9034-4eb7-b0d6-4f38e0c483f3"
+          }
+        ],
+        "method": "exact-cosine-rrf60-v1",
+        "elapsedMs": 2234,
+        "dimensions": 256,
+        "corpusCount": 1,
+        "cachedChunks": 0,
+        "hybridChunkIds": [
+          "bd44e741-b361-5fe0-8031-4ea519c1d2d8"
+        ],
+        "providerCalled": true,
+        "embeddingCallId": "a2a6752b-ce73-4890-8ab0-b9eabb9a11e8",
+        "baselineChunkIds": [],
+        "embeddingCostUsd": "0.000001",
+        "embeddingVersion": "openai-small-256-v1",
+        "semanticChunkIds": [
+          "bd44e741-b361-5fe0-8031-4ea519c1d2d8"
+        ]
+      }
+    }
+  },
+  "retrievedPassageIds": [],
+  "retrievalComparisons": {
+    "fullText": [],
+    "semantic": [
+      "packaging-p1"
+    ],
+    "hybrid": [
+      "packaging-p1"
+    ]
+  },
+  "finishedAt": "2026-09-17T02:41:56.715Z"
+}

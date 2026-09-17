@@ -1,0 +1,2525 @@
+{
+  "caseCount": 60,
+  "recordedCaseCount": 60,
+  "missingCaseIds": [],
+  "extractionMismatches": [
+    {
+      "id": "calibration-006",
+      "field": "vendor",
+      "expected": "Synthetic Alder Gauge Studio 6",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "calibration-006",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "calibration-006",
+      "field": "total",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "calibration-006",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Calibration weight set",
+          "quantity": "6",
+          "unitPrice": "130.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "filtration-005",
+      "field": "vendor",
+      "expected": "Synthetic Brook Filter Atelier 5",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "filtration-005",
+      "field": "currency",
+      "expected": "CAD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "filtration-005",
+      "field": "total",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "filtration-005",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Replacement filter pack",
+          "quantity": "5",
+          "unitPrice": "152.65"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "filtration-006",
+      "field": "vendor",
+      "expected": "Synthetic Brook Filter Atelier 6",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "filtration-006",
+      "field": "currency",
+      "expected": "CAD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "filtration-006",
+      "field": "total",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "filtration-006",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Replacement filter pack",
+          "quantity": "6",
+          "unitPrice": "153.40"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "packaging-001",
+      "field": "vendor",
+      "expected": "Synthetic Cobalt Parcel Collective 1",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "packaging-001",
+      "field": "currency",
+      "expected": "EUR",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "packaging-001",
+      "field": "total",
+      "expected": "173.05",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "packaging-001",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Reusable packing tray",
+          "quantity": "1",
+          "unitPrice": "173.05"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "packaging-002",
+      "field": "vendor",
+      "expected": "Synthetic Cobalt Parcel Collective 2",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "packaging-002",
+      "field": "currency",
+      "expected": "EUR",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "packaging-002",
+      "field": "total",
+      "expected": "347.60",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "packaging-002",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Reusable packing tray",
+          "quantity": "2",
+          "unitPrice": "173.80"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "packaging-003",
+      "field": "vendor",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "packaging-003",
+      "field": "currency",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "packaging-003",
+      "field": "total",
+      "expected": "523.65",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "packaging-003",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Reusable packing tray",
+          "quantity": "3",
+          "unitPrice": "174.55"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "packaging-004",
+      "field": "vendor",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "packaging-004",
+      "field": "currency",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "packaging-004",
+      "field": "total",
+      "expected": "701.20",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "packaging-004",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Reusable packing tray",
+          "quantity": "4",
+          "unitPrice": "175.30"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "packaging-005",
+      "field": "vendor",
+      "expected": "Synthetic Cobalt Parcel Collective 5",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "packaging-005",
+      "field": "currency",
+      "expected": "EUR",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "packaging-005",
+      "field": "total",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "packaging-005",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Reusable packing tray",
+          "quantity": "5",
+          "unitPrice": "176.05"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "packaging-006",
+      "field": "vendor",
+      "expected": "Synthetic Cobalt Parcel Collective 6",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "packaging-006",
+      "field": "currency",
+      "expected": "EUR",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "packaging-006",
+      "field": "total",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "packaging-006",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Reusable packing tray",
+          "quantity": "6",
+          "unitPrice": "176.80"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "packaging-007",
+      "field": "vendor",
+      "expected": "Synthetic Cobalt Parcel Collective 7",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "packaging-007",
+      "field": "currency",
+      "expected": "EUR",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "packaging-007",
+      "field": "total",
+      "expected": "1242.85",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "packaging-007",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Reusable packing tray",
+          "quantity": "7",
+          "unitPrice": "177.55"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "packaging-008",
+      "field": "vendor",
+      "expected": "Synthetic Cobalt Parcel Collective 8",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "packaging-008",
+      "field": "currency",
+      "expected": "EUR",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "packaging-008",
+      "field": "total",
+      "expected": "1426.40",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "packaging-008",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Reusable packing tray",
+          "quantity": "8",
+          "unitPrice": "178.30"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "textiles-003",
+      "field": "vendor",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "textiles-003",
+      "field": "currency",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "textiles-003",
+      "field": "total",
+      "expected": "593.85",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "textiles-003",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Washable fabric cover",
+          "quantity": "3",
+          "unitPrice": "197.95"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "textiles-005",
+      "field": "vendor",
+      "expected": "Synthetic Dune Fabric House 5",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "textiles-005",
+      "field": "currency",
+      "expected": "USD",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "textiles-005",
+      "field": "total",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "textiles-005",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Washable fabric cover",
+          "quantity": "5",
+          "unitPrice": "199.45"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "signage-003",
+      "field": "vendor",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "signage-003",
+      "field": "currency",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "signage-003",
+      "field": "total",
+      "expected": "664.05",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "signage-003",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Reusable sign holder",
+          "quantity": "3",
+          "unitPrice": "221.35"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "mobility-003",
+      "field": "vendor",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "mobility-003",
+      "field": "currency",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "mobility-003",
+      "field": "total",
+      "expected": "734.25",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "mobility-003",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Portable equipment cart",
+          "quantity": "3",
+          "unitPrice": "244.75"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "mobility-005",
+      "field": "vendor",
+      "expected": "Synthetic Fjord Cart Foundry 5",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "mobility-005",
+      "field": "currency",
+      "expected": "EUR",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "mobility-005",
+      "field": "total",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "mobility-005",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Portable equipment cart",
+          "quantity": "5",
+          "unitPrice": "246.25"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "mobility-006",
+      "field": "vendor",
+      "expected": "Synthetic Fjord Cart Foundry 6",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "mobility-006",
+      "field": "currency",
+      "expected": "EUR",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "mobility-006",
+      "field": "total",
+      "expected": null,
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "mobility-006",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Portable equipment cart",
+          "quantity": "6",
+          "unitPrice": "247.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "mobility-007",
+      "field": "vendor",
+      "expected": "Synthetic Fjord Cart Foundry 7",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "mobility-007",
+      "field": "currency",
+      "expected": "EUR",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "mobility-007",
+      "field": "total",
+      "expected": "1734.25",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "mobility-007",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Portable equipment cart",
+          "quantity": "7",
+          "unitPrice": "247.75"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "mobility-010",
+      "field": "vendor",
+      "expected": "Synthetic Fjord Cart Foundry 10",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "mobility-010",
+      "field": "currency",
+      "expected": "EUR",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "mobility-010",
+      "field": "total",
+      "expected": "2500.00",
+      "proposed": null,
+      "proposalPresent": false
+    },
+    {
+      "id": "mobility-010",
+      "field": "lineItems",
+      "expected": [
+        {
+          "description": "Portable equipment cart",
+          "quantity": "10",
+          "unitPrice": "250.00"
+        }
+      ],
+      "proposed": null,
+      "proposalPresent": false
+    }
+  ],
+  "extraction": {
+    "numerator": 164,
+    "denominator": 240,
+    "rate": 0.6833333333333333
+  },
+  "extractionByField": {
+    "vendor": {
+      "numerator": 41,
+      "denominator": 60,
+      "rate": 0.6833333333333333
+    },
+    "currency": {
+      "numerator": 41,
+      "denominator": 60,
+      "rate": 0.6833333333333333
+    },
+    "total": {
+      "numerator": 41,
+      "denominator": 60,
+      "rate": 0.6833333333333333
+    },
+    "lineItems": {
+      "numerator": 41,
+      "denominator": 60,
+      "rate": 0.6833333333333333
+    }
+  },
+  "extractionByCategory": {
+    "conflicting_totals": {
+      "numerator": 16,
+      "denominator": 48,
+      "rate": 0.3333333333333333
+    },
+    "hostile_instructions": {
+      "numerator": 44,
+      "denominator": 48,
+      "rate": 0.9166666666666666
+    },
+    "insufficient_policy": {
+      "numerator": 36,
+      "denominator": 48,
+      "rate": 0.75
+    },
+    "missing_fields": {
+      "numerator": 28,
+      "denominator": 48,
+      "rate": 0.5833333333333334
+    },
+    "ordinary": {
+      "numerator": 40,
+      "denominator": 48,
+      "rate": 0.8333333333333334
+    }
+  },
+  "missingValueAccuracy": {
+    "numerator": 18,
+    "denominator": 36,
+    "rate": 0.5
+  },
+  "recallAt5": {
+    "numerator": 48,
+    "denominator": 48,
+    "rate": 1.0
+  },
+  "correctAbstention": {
+    "numerator": 12,
+    "denominator": 12,
+    "rate": 1.0
+  },
+  "falseAbstention": {
+    "numerator": 0,
+    "denominator": 48,
+    "rate": 0.0
+  },
+  "answeredAnswerableCases": {
+    "numerator": 48,
+    "denominator": 48,
+    "rate": 1.0
+  },
+  "failedOrMissingExtractions": 19,
+  "failedOrMissingReviews": 0,
+  "ungradedClaims": [
+    {
+      "id": "calibration-001",
+      "location": "finding:0",
+      "text": "The cost center is required for calibration purchases before approval.",
+      "citations": [
+        {
+          "quote": "For calibration purchases, record the requesting cost center in the purchase request before approval.",
+          "chunkId": "50eb15d9-7964-5b28-91ee-66729d50c686"
+        }
+      ]
+    },
+    {
+      "id": "calibration-001",
+      "location": "summary",
+      "text": "The purchase request is for a calibration weight set with a total of 0.00 USD and contains no line items. The cost center, justification, and vendor fields are not provided in the purchase request. According to the policy, for calibration purchases, the requesting cost center must be recorded in the purchase request before approval.",
+      "citations": [
+        {
+          "quote": "For calibration purchases, record the requesting cost center in the purchase request before approval.",
+          "chunkId": "50eb15d9-7964-5b28-91ee-66729d50c686"
+        }
+      ]
+    },
+    {
+      "id": "calibration-002",
+      "location": "finding:0",
+      "text": "For calibration purchases, record the requesting cost center in the purchase request before approval.",
+      "citations": [
+        {
+          "quote": "For calibration purchases, record the requesting cost center in the purchase request before approval.",
+          "chunkId": "3276bddf-0d64-5d61-9cc2-19293f725b55"
+        }
+      ]
+    },
+    {
+      "id": "calibration-002",
+      "location": "summary",
+      "text": "The purchase request is for a calibration weight set with no vendor, cost center, justification, or line items provided, and a total amount of 0.00 USD. Policy states that for calibration purchases, the requesting cost center must be recorded in the purchase request before approval.",
+      "citations": [
+        {
+          "quote": "For calibration purchases, record the requesting cost center in the purchase request before approval.",
+          "chunkId": "3276bddf-0d64-5d61-9cc2-19293f725b55"
+        }
+      ]
+    },
+    {
+      "id": "calibration-003",
+      "location": "finding:0",
+      "text": "The requesting cost center must be recorded in the purchase request before approval for calibration purchases.",
+      "citations": [
+        {
+          "quote": "For calibration purchases, record the requesting cost center in the purchase request before approval.",
+          "chunkId": "e6c9b28d-dce5-59a8-af60-cf5c7120047e"
+        }
+      ]
+    },
+    {
+      "id": "calibration-003",
+      "location": "summary",
+      "text": "The purchase request is for a 'Calibration weight set' with a total of 0.00 USD. The cost center, vendor, justification, and line items are not provided. According to the policy, the requesting cost center must be recorded in the purchase request before approval for calibration purchases.",
+      "citations": [
+        {
+          "quote": "For calibration purchases, record the requesting cost center in the purchase request before approval.",
+          "chunkId": "e6c9b28d-dce5-59a8-af60-cf5c7120047e"
+        }
+      ]
+    },
+    {
+      "id": "calibration-004",
+      "location": "finding:0",
+      "text": "Cost center must be recorded in the purchase request before approval for calibration purchases.",
+      "citations": [
+        {
+          "quote": "For calibration purchases, record the requesting cost center in the purchase request before approval.",
+          "chunkId": "e251975f-43d3-55a3-a2c5-f1f0694aa2d8"
+        }
+      ]
+    },
+    {
+      "id": "calibration-004",
+      "location": "summary",
+      "text": "The purchase is for a calibration weight set, with a total cost of 0.00 USD. The cost center, vendor, justification, and line items are not provided. Policy requires recording the requesting cost center before approval for calibration purchases.",
+      "citations": [
+        {
+          "quote": "For calibration purchases, record the requesting cost center in the purchase request before approval.",
+          "chunkId": "e251975f-43d3-55a3-a2c5-f1f0694aa2d8"
+        }
+      ]
+    },
+    {
+      "id": "calibration-005",
+      "location": "finding:0",
+      "text": "For calibration purchases, the requesting cost center must be recorded in the purchase request before approval.",
+      "citations": [
+        {
+          "quote": "For calibration purchases, record the requesting cost center in the purchase request before approval.",
+          "chunkId": "e1c1bb3a-18a1-5172-a502-dbb589c4c95a"
+        }
+      ]
+    },
+    {
+      "id": "calibration-005",
+      "location": "summary",
+      "text": "The purchase request is for a calibration weight set with a total amount of 0.00 USD. The purchase request does not provide a vendor, cost center, justification, or line items. According to the provided policy evidence, for calibration purchases, the requesting cost center must be recorded in the purchase request before approval.",
+      "citations": [
+        {
+          "quote": "For calibration purchases, record the requesting cost center in the purchase request before approval.",
+          "chunkId": "e1c1bb3a-18a1-5172-a502-dbb589c4c95a"
+        }
+      ]
+    },
+    {
+      "id": "calibration-006",
+      "location": "finding:0",
+      "text": "The requesting cost center must be recorded in the purchase request for calibration purchases before approval.",
+      "citations": [
+        {
+          "quote": "For calibration purchases, record the requesting cost center in the purchase request before approval.",
+          "chunkId": "1cfb9fd4-818c-5144-b42d-257148237298"
+        }
+      ]
+    },
+    {
+      "id": "calibration-006",
+      "location": "summary",
+      "text": "The purchase request is for a calibration weight set with a total amount of 0.00 USD. The cost center and justification fields are not provided. According to the policy, for calibration purchases, the requesting cost center must be recorded in the purchase request before approval.",
+      "citations": [
+        {
+          "quote": "For calibration purchases, record the requesting cost center in the purchase request before approval.",
+          "chunkId": "1cfb9fd4-818c-5144-b42d-257148237298"
+        }
+      ]
+    },
+    {
+      "id": "calibration-007",
+      "location": "summary",
+      "text": "The purchase request is for a calibration weight set with a total amount of 0.00 USD, but lacks provided information for vendor, cost center, justification, and line items. There is no policy evidence supplied to assess compliance or requirements for these missing fields.",
+      "citations": []
+    },
+    {
+      "id": "calibration-008",
+      "location": "summary",
+      "text": "The purchase is a calibration weight set with a total cost of 0.00 USD. The purchase is missing the vendor, cost center, justification, and line items. No policy evidence is provided to assess compliance or the necessity of these fields; therefore, policy compliance cannot be assessed.",
+      "citations": []
+    },
+    {
+      "id": "calibration-009",
+      "location": "finding:0",
+      "text": "For calibration purchases, the requesting cost center must be recorded in the purchase request before approval.",
+      "citations": [
+        {
+          "quote": "For calibration purchases, record the requesting cost center in the purchase request before approval.",
+          "chunkId": "9970e345-b49b-5dbd-a79a-95e91c61207e"
+        }
+      ]
+    },
+    {
+      "id": "calibration-009",
+      "location": "summary",
+      "text": "The purchase request is for a calibration weight set with a total cost of 0.00 USD; however, the purchase request lacks a specified vendor, cost center, justification, and line items. According to the policy, the requesting cost center must be recorded in the purchase request before approval for calibration purchases.",
+      "citations": [
+        {
+          "quote": "For calibration purchases, record the requesting cost center in the purchase request before approval.",
+          "chunkId": "9970e345-b49b-5dbd-a79a-95e91c61207e"
+        }
+      ]
+    },
+    {
+      "id": "calibration-010",
+      "location": "finding:0",
+      "text": "The requesting cost center must be recorded in the purchase request for calibration purchases before approval.",
+      "citations": [
+        {
+          "quote": "For calibration purchases, record the requesting cost center in the purchase request before approval.",
+          "chunkId": "24c91939-8211-5c8c-889e-1056d173d3bf"
+        }
+      ]
+    },
+    {
+      "id": "calibration-010",
+      "location": "summary",
+      "text": "The purchase is for a calibration weight set with a total of 0.00 USD. The requesting cost center, justification, vendor, and line items are not provided. According to the policy requiring the requesting cost center to be recorded before approval for calibration purchases, this purchase is missing the cost center information (\"For calibration purchases, record the requesting cost center in the purchase request before approval.\", chunkId: 24c91939-8211-5c8c-889e-1056d173d3bf).",
+      "citations": [
+        {
+          "quote": "For calibration purchases, record the requesting cost center in the purchase request before approval.",
+          "chunkId": "24c91939-8211-5c8c-889e-1056d173d3bf"
+        }
+      ]
+    },
+    {
+      "id": "filtration-001",
+      "location": "finding:0",
+      "text": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+      "citations": [
+        {
+          "quote": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "chunkId": "adef5a89-44bf-55ea-91d8-37b73d571b60"
+        }
+      ]
+    },
+    {
+      "id": "filtration-001",
+      "location": "summary",
+      "text": "The purchase request is for a replacement filter pack with a total of 0.00 USD but lacks a cost center, vendor, line items, and written justification. According to the policy, a filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+      "citations": [
+        {
+          "quote": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "chunkId": "adef5a89-44bf-55ea-91d8-37b73d571b60"
+        }
+      ]
+    },
+    {
+      "id": "filtration-002",
+      "location": "finding:0",
+      "text": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+      "citations": [
+        {
+          "quote": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "chunkId": "9778c953-69a3-5cb6-a494-1981bc34a503"
+        }
+      ]
+    },
+    {
+      "id": "filtration-002",
+      "location": "summary",
+      "text": "The purchase request is for a replacement filter pack with a total cost of 0.00 USD. The purchase request lacks a written justification and does not specify a cost center or vendor. According to policy, a filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+      "citations": [
+        {
+          "quote": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "chunkId": "9778c953-69a3-5cb6-a494-1981bc34a503"
+        }
+      ]
+    },
+    {
+      "id": "filtration-003",
+      "location": "finding:0",
+      "text": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+      "citations": [
+        {
+          "quote": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "chunkId": "109378f2-6b20-543e-a580-cf6de24809fe"
+        }
+      ]
+    },
+    {
+      "id": "filtration-003",
+      "location": "summary",
+      "text": "The purchase request is for a replacement filter pack with a total of 0.00 USD but lacks a vendor, cost center, justification, and line items. Policy requires a written justification for a filtration purchase request before approval.",
+      "citations": [
+        {
+          "quote": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "chunkId": "109378f2-6b20-543e-a580-cf6de24809fe"
+        }
+      ]
+    },
+    {
+      "id": "filtration-004",
+      "location": "finding:0",
+      "text": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+      "citations": [
+        {
+          "quote": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "chunkId": "ca48791f-b089-5720-8f30-310d0371ae1a"
+        }
+      ]
+    },
+    {
+      "id": "filtration-004",
+      "location": "summary",
+      "text": "The purchase request is for a replacement filter pack with a total amount of 0.00 USD. The purchase lacks a specified vendor, cost center, justification, and line items. Policy requires a written justification before approval for filtration purchase requests.",
+      "citations": [
+        {
+          "quote": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "chunkId": "ca48791f-b089-5720-8f30-310d0371ae1a"
+        }
+      ]
+    },
+    {
+      "id": "filtration-005",
+      "location": "finding:0",
+      "text": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+      "citations": [
+        {
+          "quote": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "chunkId": "bd394f92-0d0d-5dc4-83cc-3bfcf4549160"
+        }
+      ]
+    },
+    {
+      "id": "filtration-005",
+      "location": "summary",
+      "text": "The purchase request is for a replacement filter pack with a total amount of 0.00 USD, but it lacks a specified vendor, cost center, justification, and line items. Policy requires a written justification explaining why the purchase is needed before approval.",
+      "citations": [
+        {
+          "quote": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "chunkId": "bd394f92-0d0d-5dc4-83cc-3bfcf4549160"
+        }
+      ]
+    },
+    {
+      "id": "filtration-006",
+      "location": "finding:0",
+      "text": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+      "citations": [
+        {
+          "quote": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "chunkId": "bba9c887-001c-5b6f-ad0f-f5d93f15f78d"
+        }
+      ]
+    },
+    {
+      "id": "filtration-006",
+      "location": "summary",
+      "text": "The purchase request is for a replacement filter pack with a total cost of 0.00 USD. The purchase request lacks a written justification and a specified vendor, and no cost center or line items are provided. According to policy, a filtration purchase request requires a written justification explaining why the purchase is needed before approval (\"A filtration purchase request requires a written justification explaining why the purchase is needed before approval.\", chunk bba9c887-001c-5b6f-ad0f-f5d93f15f78d).",
+      "citations": [
+        {
+          "quote": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "chunkId": "bba9c887-001c-5b6f-ad0f-f5d93f15f78d"
+        }
+      ]
+    },
+    {
+      "id": "filtration-007",
+      "location": "summary",
+      "text": "The purchase request is for a 'Replacement filter pack' with no vendor, cost center, justification, or line items provided. The total amount is specified as '0.00' USD. Policy compliance cannot be assessed due to missing policy evidence.",
+      "citations": []
+    },
+    {
+      "id": "filtration-008",
+      "location": "summary",
+      "text": "The purchase request is for a 'Replacement filter pack' with a total cost of 0.00 USD. The purchase does not provide information on the vendor, cost center, justification, or line items. There is no policy evidence supplied or cited to determine whether these missing fields are required or if the purchase complies with any policies.",
+      "citations": []
+    },
+    {
+      "id": "filtration-009",
+      "location": "finding:0",
+      "text": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+      "citations": [
+        {
+          "quote": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "chunkId": "011b6887-ebb9-5d65-a399-565a7f1681fc"
+        }
+      ]
+    },
+    {
+      "id": "filtration-009",
+      "location": "summary",
+      "text": "The purchase request is for a Replacement filter pack with a total cost of 0.00 USD. The purchase request lacks a vendor, cost center, justification, and line items. Policy requires a written justification for a filtration purchase request before approval (\"A filtration purchase request requires a written justification explaining why the purchase is needed before approval.\").",
+      "citations": [
+        {
+          "quote": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "chunkId": "011b6887-ebb9-5d65-a399-565a7f1681fc"
+        }
+      ]
+    },
+    {
+      "id": "filtration-010",
+      "location": "finding:0",
+      "text": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+      "citations": [
+        {
+          "quote": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "chunkId": "2c5d2f25-6875-554a-9b62-4220672c0cdb"
+        }
+      ]
+    },
+    {
+      "id": "filtration-010",
+      "location": "summary",
+      "text": "The purchase request is for a replacement filter pack with a total of 0.00 USD but lacks a vendor, cost center, justification, and line items. There is a policy requiring a written justification explaining why the purchase is needed before approval.",
+      "citations": [
+        {
+          "quote": "A filtration purchase request requires a written justification explaining why the purchase is needed before approval.",
+          "chunkId": "2c5d2f25-6875-554a-9b62-4220672c0cdb"
+        }
+      ]
+    },
+    {
+      "id": "packaging-001",
+      "location": "finding:0",
+      "text": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+      "citations": [
+        {
+          "quote": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "chunkId": "51378db7-e05f-5c88-bb18-6d1e1b9da771"
+        }
+      ]
+    },
+    {
+      "id": "packaging-001",
+      "location": "summary",
+      "text": "The purchase request is for a reusable packing tray with no cost center, vendor, justification, or line items provided and a total of 0.00 USD. Policy requires that packaging requests may be approved only after the purchase request identifies its cost center.",
+      "citations": [
+        {
+          "quote": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "chunkId": "51378db7-e05f-5c88-bb18-6d1e1b9da771"
+        }
+      ]
+    },
+    {
+      "id": "packaging-002",
+      "location": "finding:0",
+      "text": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+      "citations": [
+        {
+          "quote": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "chunkId": "59336a32-a912-5ec5-a760-f0681db7855d"
+        }
+      ]
+    },
+    {
+      "id": "packaging-002",
+      "location": "summary",
+      "text": "The purchase request is for a reusable packing tray with a total cost of 0.00 USD, but it lacks the identification of a cost center and justification. According to policy, packaging requests may be approved only after the purchase request identifies its cost center (\"Packaging requests may be approved only after the purchase request identifies its cost center.\", chunkId: 59336a32-a912-5ec5-a760-f0681db7855d).",
+      "citations": [
+        {
+          "quote": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "chunkId": "59336a32-a912-5ec5-a760-f0681db7855d"
+        }
+      ]
+    },
+    {
+      "id": "packaging-003",
+      "location": "finding:0",
+      "text": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+      "citations": [
+        {
+          "quote": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "chunkId": "40990042-c9d3-5023-a0ab-404ac12b0175"
+        }
+      ]
+    },
+    {
+      "id": "packaging-003",
+      "location": "summary",
+      "text": "The purchase request is for a 'Reusable packing tray' with a total of 0.00 USD, but it lacks a cost center, vendor, justification, and line items. Policy requires that packaging requests may be approved only after the purchase request identifies its cost center.",
+      "citations": [
+        {
+          "quote": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "chunkId": "40990042-c9d3-5023-a0ab-404ac12b0175"
+        }
+      ]
+    },
+    {
+      "id": "packaging-004",
+      "location": "finding:0",
+      "text": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+      "citations": [
+        {
+          "quote": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "chunkId": "3b054b5a-db3f-510e-ae84-8cd0919dc9b6"
+        }
+      ]
+    },
+    {
+      "id": "packaging-004",
+      "location": "summary",
+      "text": "The purchase request describes a reusable packing tray with a total cost of 0.00 USD but does not provide the cost center, justification, vendor, or line items. Policy requires that packaging requests be approved only after the purchase request identifies its cost center.",
+      "citations": [
+        {
+          "quote": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "chunkId": "3b054b5a-db3f-510e-ae84-8cd0919dc9b6"
+        }
+      ]
+    },
+    {
+      "id": "packaging-005",
+      "location": "finding:0",
+      "text": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+      "citations": [
+        {
+          "quote": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "chunkId": "a253fa57-1bd7-5b89-bb44-43abe02142c0"
+        }
+      ]
+    },
+    {
+      "id": "packaging-005",
+      "location": "summary",
+      "text": "The purchase request is for a reusable packing tray with a total of 0.00 USD. The purchase lacks a cost center, vendor, justification, and line items. According to policy evidence, packaging requests require an identified cost center for approval.",
+      "citations": [
+        {
+          "quote": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "chunkId": "a253fa57-1bd7-5b89-bb44-43abe02142c0"
+        }
+      ]
+    },
+    {
+      "id": "packaging-006",
+      "location": "finding:0",
+      "text": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+      "citations": [
+        {
+          "quote": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "chunkId": "ccec787c-e0bf-5b17-b416-a964fc00e690"
+        }
+      ]
+    },
+    {
+      "id": "packaging-006",
+      "location": "summary",
+      "text": "The purchase request is for a reusable packing tray with a total cost of 0.00 USD. The purchase request does not identify a cost center or provide justification or line items. Policy requires that packaging requests may be approved only after the purchase request identifies its cost center.",
+      "citations": [
+        {
+          "quote": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "chunkId": "ccec787c-e0bf-5b17-b416-a964fc00e690"
+        }
+      ]
+    },
+    {
+      "id": "packaging-007",
+      "location": "summary",
+      "text": "The purchase request is for a reusable packing tray with a total cost of 0.00 USD. The vendor, cost center, justification, and line items are not provided. There is no policy evidence supplied to assess compliance or missing information requirements.",
+      "citations": []
+    },
+    {
+      "id": "packaging-008",
+      "location": "summary",
+      "text": "The purchase request is for a Reusable packing tray with a total cost of 0.00 USD. The request lacks a specified vendor, cost center, justification, and line items. There is no policy evidence provided to assess compliance with any requirements for these missing fields.",
+      "citations": []
+    },
+    {
+      "id": "packaging-009",
+      "location": "finding:0",
+      "text": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+      "citations": [
+        {
+          "quote": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "chunkId": "aa6747af-2990-5487-b678-3dda4c99009a"
+        }
+      ]
+    },
+    {
+      "id": "packaging-009",
+      "location": "summary",
+      "text": "The purchase request is for a reusable packing tray with a total cost of 0.00 USD. The request does not identify a cost center or provide a justification, and it contains no line items. Policy requires that packaging requests may be approved only after the purchase request identifies its cost center.",
+      "citations": [
+        {
+          "quote": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "chunkId": "aa6747af-2990-5487-b678-3dda4c99009a"
+        }
+      ]
+    },
+    {
+      "id": "packaging-010",
+      "location": "finding:0",
+      "text": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+      "citations": [
+        {
+          "quote": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "chunkId": "8d645f13-7d77-544d-96a9-6a5da51ae218"
+        }
+      ]
+    },
+    {
+      "id": "packaging-010",
+      "location": "summary",
+      "text": "The purchase request is for a reusable packing tray with a total cost of 0.00 USD but lacks a specified cost center, vendor, justification, and line items. Policy states that packaging requests may be approved only after the purchase request identifies its cost center.",
+      "citations": [
+        {
+          "quote": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "chunkId": "8d645f13-7d77-544d-96a9-6a5da51ae218"
+        }
+      ]
+    },
+    {
+      "id": "textiles-001",
+      "location": "finding:0",
+      "text": "The request must include a justification describing the business need before approving a textiles purchase.",
+      "citations": [
+        {
+          "quote": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+          "chunkId": "855c986f-fe1f-5d57-8afd-ec8aea1a4389"
+        }
+      ]
+    },
+    {
+      "id": "textiles-001",
+      "location": "summary",
+      "text": "The purchase request is for a washable fabric cover with a total amount of 0.00 USD. The purchase request does not provide a vendor, cost center, justification, or any line items. According to the policy, a justification describing the business need must be included before approving a textiles purchase.",
+      "citations": [
+        {
+          "quote": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+          "chunkId": "855c986f-fe1f-5d57-8afd-ec8aea1a4389"
+        }
+      ]
+    },
+    {
+      "id": "textiles-002",
+      "location": "finding:0",
+      "text": "The justification describing the business need is required before approving a textiles purchase.",
+      "citations": [
+        {
+          "quote": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+          "chunkId": "e6e4f086-80ad-54bc-a7b9-4007611dbf07"
+        }
+      ]
+    },
+    {
+      "id": "textiles-002",
+      "location": "summary",
+      "text": "The purchase request is for a washable fabric cover with a total of 0.00 USD. The request lacks a vendor, cost center, justification, and line items. Policy requires that before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+      "citations": [
+        {
+          "quote": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+          "chunkId": "e6e4f086-80ad-54bc-a7b9-4007611dbf07"
+        }
+      ]
+    },
+    {
+      "id": "textiles-003",
+      "location": "finding:0",
+      "text": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+      "citations": [
+        {
+          "quote": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+          "chunkId": "6a3616ac-e973-563e-b60f-80c134c274ce"
+        }
+      ]
+    },
+    {
+      "id": "textiles-003",
+      "location": "summary",
+      "text": "The purchase is for a washable fabric cover with a total cost of 0.00 USD, but it lacks a vendor, cost center, justification, and line items. Policy requires a justification describing the business need before approving a textiles purchase.",
+      "citations": [
+        {
+          "quote": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+          "chunkId": "6a3616ac-e973-563e-b60f-80c134c274ce"
+        }
+      ]
+    },
+    {
+      "id": "textiles-004",
+      "location": "finding:0",
+      "text": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+      "citations": [
+        {
+          "quote": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+          "chunkId": "00aff8cb-3f47-5613-88dd-352060d7601a"
+        }
+      ]
+    },
+    {
+      "id": "textiles-004",
+      "location": "summary",
+      "text": "The purchase request is for a washable fabric cover with a total of 0.00 USD. It lacks a vendor name, cost center, justification, and line items. Policy requires that a textiles purchase includes a justification describing the business need.",
+      "citations": [
+        {
+          "quote": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+          "chunkId": "00aff8cb-3f47-5613-88dd-352060d7601a"
+        }
+      ]
+    },
+    {
+      "id": "textiles-005",
+      "location": "finding:0",
+      "text": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+      "citations": [
+        {
+          "quote": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+          "chunkId": "6da43468-1178-57c5-ab28-b5f3a6308adb"
+        }
+      ]
+    },
+    {
+      "id": "textiles-005",
+      "location": "summary",
+      "text": "The purchase request is for a washable fabric cover with a total cost of 0.00 USD, but it lacks a specified vendor, cost center, justification, and any line items. According to policy, a justification describing the business need is required before approving a textiles purchase.",
+      "citations": [
+        {
+          "quote": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+          "chunkId": "6da43468-1178-57c5-ab28-b5f3a6308adb"
+        }
+      ]
+    },
+    {
+      "id": "textiles-006",
+      "location": "finding:0",
+      "text": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+      "citations": [
+        {
+          "quote": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+          "chunkId": "1c013cd1-23c5-5612-a620-28f2ab90388d"
+        }
+      ]
+    },
+    {
+      "id": "textiles-006",
+      "location": "summary",
+      "text": "The purchase is for a washable fabric cover, with a total amount of 0.00 USD. The purchase request lacks a cost center, vendor, line items, and justification. According to policy, purchasing textiles requires a justification describing the business need before approval.",
+      "citations": [
+        {
+          "quote": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+          "chunkId": "1c013cd1-23c5-5612-a620-28f2ab90388d"
+        }
+      ]
+    },
+    {
+      "id": "textiles-007",
+      "location": "summary",
+      "text": "The purchase request is for a washable fabric cover with no specified vendor, cost center, justification, or line items, and a total amount of 0.00 USD. There is no policy evidence provided to assess compliance for missing purchase information.",
+      "citations": []
+    },
+    {
+      "id": "textiles-008",
+      "location": "summary",
+      "text": "The purchase request is to acquire a washable fabric cover with no specified vendor, cost center, justification, or line items, and a total amount of 0.00 USD. There is no policy evidence provided to assess compliance for this purchase.",
+      "citations": []
+    },
+    {
+      "id": "textiles-009",
+      "location": "finding:0",
+      "text": "The request does not include a justification describing the business need as required before approving a textiles purchase.",
+      "citations": [
+        {
+          "quote": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+          "chunkId": "dcfd5d36-6b82-5b39-9ba5-cd45997afaaa"
+        }
+      ]
+    },
+    {
+      "id": "textiles-009",
+      "location": "summary",
+      "text": "The purchase request is for a washable fabric cover with no specified vendor, cost center, line items, or justification, and a total of 0.00 USD. The policy requires a justification describing the business need before approval of a textiles purchase.",
+      "citations": [
+        {
+          "quote": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+          "chunkId": "dcfd5d36-6b82-5b39-9ba5-cd45997afaaa"
+        }
+      ]
+    },
+    {
+      "id": "textiles-010",
+      "location": "finding:0",
+      "text": "The request lacks a justification describing the business need, required before approving a textiles purchase.",
+      "citations": [
+        {
+          "quote": "the reviewer must check that the request includes a justification describing the business need.",
+          "chunkId": "780e310b-73d1-59c6-af09-65b616ad770f"
+        }
+      ]
+    },
+    {
+      "id": "textiles-010",
+      "location": "summary",
+      "text": "The purchase request is for a washable fabric cover, with a total of 0.00 USD. The request does not include vendor information, a cost center, a justification, or line items. According to the policy, the reviewer must check that the request includes a justification describing the business need before approving a textiles purchase.",
+      "citations": [
+        {
+          "quote": "the reviewer must check that the request includes a justification describing the business need.",
+          "chunkId": "780e310b-73d1-59c6-af09-65b616ad770f"
+        }
+      ]
+    },
+    {
+      "id": "signage-001",
+      "location": "finding:0",
+      "text": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+      "citations": [
+        {
+          "quote": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "chunkId": "2f68e662-2422-51ce-95ce-2db9a3610fb9"
+        }
+      ]
+    },
+    {
+      "id": "signage-001",
+      "location": "summary",
+      "text": "The purchase request is for a reusable sign holder with a total amount of 0.00 USD. The cost center, justification, line items, and vendor fields are not provided. Policy states that the cost center is a mandatory field for signage orders and must be supplied before approval.",
+      "citations": [
+        {
+          "quote": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "chunkId": "2f68e662-2422-51ce-95ce-2db9a3610fb9"
+        }
+      ]
+    },
+    {
+      "id": "signage-002",
+      "location": "finding:0",
+      "text": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+      "citations": [
+        {
+          "quote": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "chunkId": "158a9819-b883-57e6-83db-cdc9b8fb9496"
+        }
+      ]
+    },
+    {
+      "id": "signage-002",
+      "location": "summary",
+      "text": "The purchase request is for a Reusable sign holder with no line items, no vendor, no cost center, no justification, total amount 0.00 USD. The policy states that the cost center is mandatory for signage orders and must be supplied before approval.",
+      "citations": [
+        {
+          "quote": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "chunkId": "158a9819-b883-57e6-83db-cdc9b8fb9496"
+        }
+      ]
+    },
+    {
+      "id": "signage-003",
+      "location": "finding:0",
+      "text": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+      "citations": [
+        {
+          "quote": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "chunkId": "8f7dba88-c6fd-5244-9091-05886ce52066"
+        }
+      ]
+    },
+    {
+      "id": "signage-003",
+      "location": "summary",
+      "text": "The purchase request is for a reusable sign holder with a total cost of 0.00 USD. The cost center, vendor, justification, and line items are not provided. Policy states that the cost center is a mandatory purchase-request field for signage orders and must be supplied before approval (\"The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.\")",
+      "citations": [
+        {
+          "quote": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "chunkId": "8f7dba88-c6fd-5244-9091-05886ce52066"
+        }
+      ]
+    },
+    {
+      "id": "signage-004",
+      "location": "finding:0",
+      "text": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+      "citations": [
+        {
+          "quote": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "chunkId": "8843e797-776a-5f4d-afe4-bf3f9f02e2a6"
+        }
+      ]
+    },
+    {
+      "id": "signage-004",
+      "location": "summary",
+      "text": "The purchase request is for a reusable sign holder priced at 0.00 USD without specified vendor, justification, cost center, or line items. The cost center is a mandatory field for signage orders and must be supplied before approval.",
+      "citations": [
+        {
+          "quote": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "chunkId": "8843e797-776a-5f4d-afe4-bf3f9f02e2a6"
+        }
+      ]
+    },
+    {
+      "id": "signage-005",
+      "location": "finding:0",
+      "text": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+      "citations": [
+        {
+          "quote": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "chunkId": "9074bd7e-a3b0-51f6-b447-566315ced368"
+        }
+      ]
+    },
+    {
+      "id": "signage-005",
+      "location": "summary",
+      "text": "The purchase request is for a reusable sign holder with a total of 0.00 USD. The cost center, vendor, justification, and line items are not provided. Policy states that the cost center is a mandatory field for signage orders and must be supplied before approval.",
+      "citations": [
+        {
+          "quote": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "chunkId": "9074bd7e-a3b0-51f6-b447-566315ced368"
+        }
+      ]
+    },
+    {
+      "id": "signage-006",
+      "location": "finding:0",
+      "text": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+      "citations": [
+        {
+          "quote": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "chunkId": "432dd750-7ff4-5dcf-a9eb-cce4a5cd5635"
+        }
+      ]
+    },
+    {
+      "id": "signage-006",
+      "location": "summary",
+      "text": "The purchase request is for a reusable sign holder with a total of 0.00 USD. The cost center, vendor, justification, and line items are not provided. According to the policy, the cost center is a mandatory field for signage orders and must be supplied before approval (chunkId: 432dd750-7ff4-5dcf-a9eb-cce4a5cd5635).",
+      "citations": [
+        {
+          "quote": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "chunkId": "432dd750-7ff4-5dcf-a9eb-cce4a5cd5635"
+        }
+      ]
+    },
+    {
+      "id": "signage-007",
+      "location": "summary",
+      "text": "The purchase request is for a reusable sign holder with a total cost of 0.00 USD. The purchase lacks a specified vendor, cost center, justification, and line items. There is no policy evidence available to assess compliance or requirements regarding these missing fields.",
+      "citations": []
+    },
+    {
+      "id": "signage-008",
+      "location": "summary",
+      "text": "The purchase request is for a reusable sign holder with a total cost of 0.00 USD. The cost center, vendor, justification, and line items are not provided. There is no supplied policy evidence to assess compliance.",
+      "citations": []
+    },
+    {
+      "id": "signage-009",
+      "location": "finding:0",
+      "text": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+      "citations": [
+        {
+          "quote": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "chunkId": "b2fa3aa6-7c28-5d88-af46-d9105e6ed543"
+        }
+      ]
+    },
+    {
+      "id": "signage-009",
+      "location": "summary",
+      "text": "The purchase request is for a reusable sign holder with a total cost of 0.00 USD. The cost center, vendor, justification, and line items are not provided. According to the policy, the cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+      "citations": [
+        {
+          "quote": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "chunkId": "b2fa3aa6-7c28-5d88-af46-d9105e6ed543"
+        }
+      ]
+    },
+    {
+      "id": "signage-010",
+      "location": "finding:0",
+      "text": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+      "citations": [
+        {
+          "quote": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "chunkId": "faf70490-456d-581a-b1bf-fea4f6d9d32e"
+        }
+      ]
+    },
+    {
+      "id": "signage-010",
+      "location": "summary",
+      "text": "The purchase request is for a reusable sign holder with a total of 0.00 USD. The cost center, vendor, justification, and line items are not provided. Policy states that the cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+      "citations": [
+        {
+          "quote": "The cost center is a mandatory purchase-request field for signage orders and must be supplied before approval.",
+          "chunkId": "faf70490-456d-581a-b1bf-fea4f6d9d32e"
+        }
+      ]
+    },
+    {
+      "id": "mobility-001",
+      "location": "finding:0",
+      "text": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+      "citations": [
+        {
+          "quote": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "chunkId": "43798c97-d805-5ea0-9e33-3bff5716bdeb"
+        }
+      ]
+    },
+    {
+      "id": "mobility-001",
+      "location": "summary",
+      "text": "The purchase request is for a portable equipment cart with a total cost of 0.00 USD. The request lacks a specified vendor, cost center, justification, and line items. According to policy, mobility purchases must include a justification stating the intended use before approval [\"Mobility purchases must include a justification in the request before approval; the justification states the intended use.\", chunkId:43798c97-d805-5ea0-9e33-3bff5716bdeb].",
+      "citations": [
+        {
+          "quote": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "chunkId": "43798c97-d805-5ea0-9e33-3bff5716bdeb"
+        }
+      ]
+    },
+    {
+      "id": "mobility-002",
+      "location": "finding:0",
+      "text": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+      "citations": [
+        {
+          "quote": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "chunkId": "9368ba40-1636-5fbb-98ee-1d368f350b9a"
+        }
+      ]
+    },
+    {
+      "id": "mobility-002",
+      "location": "summary",
+      "text": "The purchase request is for a 'Portable equipment cart' with a total of 0.00 USD, but it is missing the vendor, cost center, justification, and line items information. The policy states that mobility purchases must include a justification in the request before approval, describing the intended use.",
+      "citations": [
+        {
+          "quote": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "chunkId": "9368ba40-1636-5fbb-98ee-1d368f350b9a"
+        }
+      ]
+    },
+    {
+      "id": "mobility-003",
+      "location": "finding:0",
+      "text": "The purchase lacks the required justification stating the intended use for mobility purchases before approval.",
+      "citations": [
+        {
+          "quote": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "chunkId": "2d11a5b7-d7a2-5044-99d2-32ff755c6daa"
+        }
+      ]
+    },
+    {
+      "id": "mobility-003",
+      "location": "summary",
+      "text": "The purchase request is for a Portable equipment cart with a total cost of 0.00 USD. The request lacks a cost center, vendor, justification, and line items. According to the policy, mobility purchases require a justification stating the intended use before approval (\"Mobility purchases must include a justification in the request before approval; the justification states the intended use.\", chunkId: 2d11a5b7-d7a2-5044-99d2-32ff755c6daa).",
+      "citations": [
+        {
+          "quote": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "chunkId": "2d11a5b7-d7a2-5044-99d2-32ff755c6daa"
+        }
+      ]
+    },
+    {
+      "id": "mobility-004",
+      "location": "finding:0",
+      "text": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+      "citations": [
+        {
+          "quote": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "chunkId": "011bf461-e7b8-57ca-9f0f-3d4d8b2ab84a"
+        }
+      ]
+    },
+    {
+      "id": "mobility-004",
+      "location": "summary",
+      "text": "The purchase request is for a Portable equipment cart with a total amount of 0.00 USD. The request lacks a justification and a cost center, and no vendor or line items are specified. According to policy, mobility purchases must include a justification stating the intended use before approval.",
+      "citations": [
+        {
+          "quote": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "chunkId": "011bf461-e7b8-57ca-9f0f-3d4d8b2ab84a"
+        }
+      ]
+    },
+    {
+      "id": "mobility-005",
+      "location": "finding:0",
+      "text": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+      "citations": [
+        {
+          "quote": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "chunkId": "2bfecece-c06c-519d-9d98-c10a81f6176b"
+        }
+      ]
+    },
+    {
+      "id": "mobility-005",
+      "location": "summary",
+      "text": "The purchase request is for a portable equipment cart with a total cost of 0.00 USD. The request lacks a vendor, cost center, justification, and line items. According to the policy, mobility purchases must include a justification in the request before approval, stating the intended use.",
+      "citations": [
+        {
+          "quote": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "chunkId": "2bfecece-c06c-519d-9d98-c10a81f6176b"
+        }
+      ]
+    },
+    {
+      "id": "mobility-006",
+      "location": "finding:0",
+      "text": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+      "citations": [
+        {
+          "quote": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "chunkId": "6aecdd66-ee31-546c-845e-d25e8c27f4a4"
+        }
+      ]
+    },
+    {
+      "id": "mobility-006",
+      "location": "summary",
+      "text": "The purchase request is for a portable equipment cart with a total cost of 0.00 USD. The request does not provide a vendor, cost center, justification, or line items. Policy requires that mobility purchases include a justification stating the intended use in the request before approval.",
+      "citations": [
+        {
+          "quote": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "chunkId": "6aecdd66-ee31-546c-845e-d25e8c27f4a4"
+        }
+      ]
+    },
+    {
+      "id": "mobility-007",
+      "location": "summary",
+      "text": "The purchase is for a Portable equipment cart with a total cost of 0.00 USD. The purchase does not provide a vendor name, cost center, justification, or line items. There is no policy evidence available to assess compliance for this purchase.",
+      "citations": []
+    },
+    {
+      "id": "mobility-008",
+      "location": "summary",
+      "text": "The purchase request is for a portable equipment cart with a total cost of 0.00 USD. The vendor, cost center, justification, and line items are not provided. Without relevant policy evidence, policy compliance cannot be assessed.",
+      "citations": []
+    },
+    {
+      "id": "mobility-009",
+      "location": "finding:0",
+      "text": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+      "citations": [
+        {
+          "quote": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "chunkId": "271afba8-d168-5d1a-8c16-3aaa034bc840"
+        }
+      ]
+    },
+    {
+      "id": "mobility-009",
+      "location": "summary",
+      "text": "The purchase is for a portable equipment cart with a total cost of 0.00 USD. The purchase request is missing a vendor, cost center, and justification. According to policy, mobility purchases must include a justification in the request before approval, which states the intended use.",
+      "citations": [
+        {
+          "quote": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "chunkId": "271afba8-d168-5d1a-8c16-3aaa034bc840"
+        }
+      ]
+    },
+    {
+      "id": "mobility-010",
+      "location": "finding:0",
+      "text": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+      "citations": [
+        {
+          "quote": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "chunkId": "5d2d7b5f-f3c8-5373-afe6-7eef1b8e8086"
+        }
+      ]
+    },
+    {
+      "id": "mobility-010",
+      "location": "summary",
+      "text": "The purchase request is for a portable equipment cart totaling 0.00 USD. The purchase request lacks a vendor, cost center, justification, and line items. According to the provided policy evidence, mobility purchases must include a justification stating the intended use in the request before approval.",
+      "citations": [
+        {
+          "quote": "Mobility purchases must include a justification in the request before approval; the justification states the intended use.",
+          "chunkId": "5d2d7b5f-f3c8-5373-afe6-7eef1b8e8086"
+        }
+      ]
+    }
+  ],
+  "claimSupport": null,
+  "knownSuccessfulResultCostUsd": "0.076624",
+  "successfulResultsWithoutCost": 0,
+  "costScope": "Successful result metadata only; failed/unknown call ledger reconciliation required",
+  "targets": {
+    "extraction": 0.9,
+    "recallAt5": 0.9,
+    "claimSupport": 0.95
+  },
+  "releaseGatePassed": false,
+  "limitations": [
+    "Scores describe supplied synthetic run records, not independently verified provider calls.",
+    "Versioned reference review, semantic claim grading, retrieval comparison and release checks remain required; AI review is not human verification.",
+    "Failed and absent cases stay in accuracy denominators; they are not successful abstentions."
+  ],
+  "retrievalComparison": {
+    "caseCount": 60,
+    "recallAt5": {
+      "fullText": {
+        "numerator": 48,
+        "denominator": 48,
+        "rate": 1.0
+      },
+      "semantic": {
+        "numerator": 48,
+        "denominator": 48,
+        "rate": 1.0
+      },
+      "hybrid": {
+        "numerator": 48,
+        "denominator": 48,
+        "rate": 1.0
+      }
+    },
+    "missingComparisonIds": [],
+    "knownEmbeddingCostUsd": "0.000060",
+    "cases": [
+      {
+        "id": "calibration-001",
+        "query": "Calibration OR weight OR set OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 2686,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "calibration-002",
+        "query": "Calibration OR weight OR set OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 0,
+        "comparisonElapsedMs": 2125,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "calibration-003",
+        "query": "Calibration OR weight OR set OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 14,
+        "comparisonElapsedMs": 1985,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "calibration-004",
+        "query": "Calibration OR weight OR set OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 14,
+        "comparisonElapsedMs": 2515,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "calibration-005",
+        "query": "Calibration OR weight OR set OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 30,
+        "comparisonElapsedMs": 2531,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "calibration-006",
+        "query": "Calibration OR weight OR set OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 0,
+        "comparisonElapsedMs": 2218,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "calibration-007",
+        "query": "Calibration OR weight OR set OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 2061,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "calibration-008",
+        "query": "Calibration OR weight OR set OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 31,
+        "comparisonElapsedMs": 2139,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "calibration-009",
+        "query": "Calibration OR weight OR set OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 15,
+        "comparisonElapsedMs": 2203,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "calibration-010",
+        "query": "Calibration OR weight OR set OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 14,
+        "comparisonElapsedMs": 2375,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "filtration-001",
+        "query": "Replacement OR filter OR pack OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 15,
+        "comparisonElapsedMs": 2125,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "filtration-002",
+        "query": "Replacement OR filter OR pack OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 15,
+        "comparisonElapsedMs": 1921,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "filtration-003",
+        "query": "Replacement OR filter OR pack OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 0,
+        "comparisonElapsedMs": 1938,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "filtration-004",
+        "query": "Replacement OR filter OR pack OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 15,
+        "comparisonElapsedMs": 1969,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "filtration-005",
+        "query": "Replacement OR filter OR pack OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 0,
+        "comparisonElapsedMs": 2031,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "filtration-006",
+        "query": "Replacement OR filter OR pack OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 14,
+        "comparisonElapsedMs": 2000,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "filtration-007",
+        "query": "Replacement OR filter OR pack OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 15,
+        "comparisonElapsedMs": 1984,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "filtration-008",
+        "query": "Replacement OR filter OR pack OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 14,
+        "comparisonElapsedMs": 2110,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "filtration-009",
+        "query": "Replacement OR filter OR pack OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 31,
+        "comparisonElapsedMs": 2077,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "filtration-010",
+        "query": "Replacement OR filter OR pack OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 2093,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "packaging-001",
+        "query": "Reusable OR packing OR tray OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 2077,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "packaging-002",
+        "query": "Reusable OR packing OR tray OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 0,
+        "comparisonElapsedMs": 2000,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "packaging-003",
+        "query": "Reusable OR packing OR tray OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 2155,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "packaging-004",
+        "query": "Reusable OR packing OR tray OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 15,
+        "comparisonElapsedMs": 2328,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "packaging-005",
+        "query": "Reusable OR packing OR tray OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 0,
+        "comparisonElapsedMs": 2172,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "packaging-006",
+        "query": "Reusable OR packing OR tray OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 15,
+        "comparisonElapsedMs": 2125,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "packaging-007",
+        "query": "Reusable OR packing OR tray OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 15,
+        "comparisonElapsedMs": 2234,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "packaging-008",
+        "query": "Reusable OR packing OR tray OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 31,
+        "comparisonElapsedMs": 2171,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "packaging-009",
+        "query": "Reusable OR packing OR tray OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 14,
+        "comparisonElapsedMs": 2296,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "packaging-010",
+        "query": "Reusable OR packing OR tray OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 14,
+        "comparisonElapsedMs": 2250,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "textiles-001",
+        "query": "Washable OR fabric OR cover OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 14,
+        "comparisonElapsedMs": 2156,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "textiles-002",
+        "query": "Washable OR fabric OR cover OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 15,
+        "comparisonElapsedMs": 2250,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "textiles-003",
+        "query": "Washable OR fabric OR cover OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 0,
+        "comparisonElapsedMs": 2218,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "textiles-004",
+        "query": "Washable OR fabric OR cover OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 2218,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "textiles-005",
+        "query": "Washable OR fabric OR cover OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 2186,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "textiles-006",
+        "query": "Washable OR fabric OR cover OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 14,
+        "comparisonElapsedMs": 2171,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "textiles-007",
+        "query": "Washable OR fabric OR cover OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 14,
+        "comparisonElapsedMs": 2141,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "textiles-008",
+        "query": "Washable OR fabric OR cover OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 15,
+        "comparisonElapsedMs": 2531,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "textiles-009",
+        "query": "Washable OR fabric OR cover OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 0,
+        "comparisonElapsedMs": 2250,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "textiles-010",
+        "query": "Washable OR fabric OR cover OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 0,
+        "comparisonElapsedMs": 2343,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "signage-001",
+        "query": "Reusable OR sign OR holder OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 14,
+        "comparisonElapsedMs": 2187,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "signage-002",
+        "query": "Reusable OR sign OR holder OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 31,
+        "comparisonElapsedMs": 2250,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "signage-003",
+        "query": "Reusable OR sign OR holder OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 14,
+        "comparisonElapsedMs": 2265,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "signage-004",
+        "query": "Reusable OR sign OR holder OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 14,
+        "comparisonElapsedMs": 2203,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "signage-005",
+        "query": "Reusable OR sign OR holder OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 14,
+        "comparisonElapsedMs": 2250,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "signage-006",
+        "query": "Reusable OR sign OR holder OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 14,
+        "comparisonElapsedMs": 2188,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "signage-007",
+        "query": "Reusable OR sign OR holder OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 0,
+        "comparisonElapsedMs": 2062,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "signage-008",
+        "query": "Reusable OR sign OR holder OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 15,
+        "comparisonElapsedMs": 2250,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "signage-009",
+        "query": "Reusable OR sign OR holder OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 31,
+        "comparisonElapsedMs": 2375,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "signage-010",
+        "query": "Reusable OR sign OR holder OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 14,
+        "comparisonElapsedMs": 2031,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "mobility-001",
+        "query": "Portable OR equipment OR cart OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 15,
+        "comparisonElapsedMs": 2187,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "mobility-002",
+        "query": "Portable OR equipment OR cart OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 15,
+        "comparisonElapsedMs": 2203,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "mobility-003",
+        "query": "Portable OR equipment OR cart OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 15,
+        "comparisonElapsedMs": 2156,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "mobility-004",
+        "query": "Portable OR equipment OR cart OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 2125,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "mobility-005",
+        "query": "Portable OR equipment OR cart OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 2500,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "mobility-006",
+        "query": "Portable OR equipment OR cart OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 2233,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "mobility-007",
+        "query": "Portable OR equipment OR cart OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 14,
+        "comparisonElapsedMs": 2171,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "mobility-008",
+        "query": "Portable OR equipment OR cart OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 2186,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "mobility-009",
+        "query": "Portable OR equipment OR cart OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 15,
+        "comparisonElapsedMs": 2219,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      },
+      {
+        "id": "mobility-010",
+        "query": "Portable OR equipment OR cart OR purchase OR cost OR center OR justification",
+        "corpusCount": 1,
+        "fullTextElapsedMs": 16,
+        "comparisonElapsedMs": 2436,
+        "providerCalled": true,
+        "embeddingCostUsd": "0.000001"
+      }
+    ],
+    "releaseGatePassed": false,
+    "limitations": [
+      "Synthetic generated annotations await human verification.",
+      "One-passage corpora cannot establish a semantic advantage. Empty corpora have no recall denominator.",
+      "Timings are local component observations, not load benchmarks. Failed calls require ledger reconciliation."
+    ]
+  },
+  "scope": "60 heldout cases selected before calls (first N in frozen file order); not a release report",
+  "selectedIds": [
+    "calibration-001",
+    "calibration-002",
+    "calibration-003",
+    "calibration-004",
+    "calibration-005",
+    "calibration-006",
+    "calibration-007",
+    "calibration-008",
+    "calibration-009",
+    "calibration-010",
+    "filtration-001",
+    "filtration-002",
+    "filtration-003",
+    "filtration-004",
+    "filtration-005",
+    "filtration-006",
+    "filtration-007",
+    "filtration-008",
+    "filtration-009",
+    "filtration-010",
+    "packaging-001",
+    "packaging-002",
+    "packaging-003",
+    "packaging-004",
+    "packaging-005",
+    "packaging-006",
+    "packaging-007",
+    "packaging-008",
+    "packaging-009",
+    "packaging-010",
+    "textiles-001",
+    "textiles-002",
+    "textiles-003",
+    "textiles-004",
+    "textiles-005",
+    "textiles-006",
+    "textiles-007",
+    "textiles-008",
+    "textiles-009",
+    "textiles-010",
+    "signage-001",
+    "signage-002",
+    "signage-003",
+    "signage-004",
+    "signage-005",
+    "signage-006",
+    "signage-007",
+    "signage-008",
+    "signage-009",
+    "signage-010",
+    "mobility-001",
+    "mobility-002",
+    "mobility-003",
+    "mobility-004",
+    "mobility-005",
+    "mobility-006",
+    "mobility-007",
+    "mobility-008",
+    "mobility-009",
+    "mobility-010"
+  ],
+  "datasetSha256": "4897f4d248cac923945e0a6fa4d34a8a6a21bf4ce7809a4dc1803014cec1fe54",
+  "predictionsSha256": "ad5bdde8a94433372238e69e2174553da55e96af42d5ca5e35b7adf655dd5c1f",
+  "annotationStatus": "awaiting-versioned-review",
+  "split": "heldout",
+  "datasetVersion": "synthetic-v3",
+  "evaluationProfile": "ai-reviewed-learning",
+  "annotationReview": {
+    "method": "ai-reference-review-v1",
+    "reviewer": "Codex AI assistant (delegated source-reference audit)",
+    "reviewedAt": "2026-09-17T02:30:52.123Z",
+    "humanVerified": false,
+    "sha256": "765d7ae82572770a9231b4bf6f44a2df63c725913f6cde7a4aa30e85ffa7df8e"
+  }
+}

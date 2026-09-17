@@ -1,0 +1,287 @@
+{
+  "id": "calibration-004",
+  "startedAt": "2026-09-17T02:34:51.444Z",
+  "sourceMap": {
+    "ac5b14e8-86f4-4731-9e85-87953294631c": "calibration-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "calibration-p1",
+      "source": {
+        "id": "ac5b14e8-86f4-4731-9e85-87953294631c",
+        "kind": "POLICY",
+        "name": "Synthetic calibration-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 101,
+        "sha256": "3d9317bdfa355f35ec32e5608146b41123db1b4fef5d394d0fea5634d8d087fa",
+        "jobId": "9d1467b8-82e8-434f-bd32-84a24699e903",
+        "failureCode": null
+      },
+      "chunks": {
+        "source": {
+          "id": "ac5b14e8-86f4-4731-9e85-87953294631c",
+          "kind": "POLICY",
+          "name": "Synthetic calibration-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 101,
+          "sha256": "3d9317bdfa355f35ec32e5608146b41123db1b4fef5d394d0fea5634d8d087fa",
+          "jobId": "9d1467b8-82e8-434f-bd32-84a24699e903",
+          "failureCode": null
+        },
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "items": [
+          {
+            "id": "e251975f-43d3-55a3-a2c5-f1f0694aa2d8",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 101,
+            "text": "For calibration purchases, record the requesting cost center in the purchase request before approval.",
+            "sha256": "3d9317bdfa355f35ec32e5608146b41123db1b4fef5d394d0fea5634d8d087fa"
+          }
+        ]
+      }
+    }
+  ],
+  "tenantId": "ae301292-f16c-44ef-ba06-eb04f66d54a2",
+  "caseId": "1ee52356-e320-4c56-b226-eae6a0207ce0",
+  "quote": {
+    "id": "230cbbb6-408b-42fb-ac22-f147a02ae479",
+    "kind": "QUOTE",
+    "name": "Synthetic calibration-004 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "1ee52356-e320-4c56-b226-eae6a0207ce0",
+    "mediaType": "text/plain",
+    "byteSize": 258,
+    "sha256": "3c26bc91f81b7d5196b09d223806ebbc50024b0ac3b030d92c3c6621eb170525",
+    "jobId": "7c87856c-398c-400f-8a30-d1e0ec613feb",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "ac5b14e8-86f4-4731-9e85-87953294631c",
+        "name": "Synthetic calibration-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Calibration weight set",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "abaaa1a4-62a4-4172-9783-86b5e9ed13be",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "2a025236-8b06-41fe-9c72-422a3e7eb735",
+      "output": {
+        "total": {
+          "value": "514.00",
+          "citations": [
+            {
+              "quote": "Amount payable for this offer: 514.00",
+              "chunkId": "69c041c8-75d1-5003-9d27-80228163129c"
+            }
+          ]
+        },
+        "vendor": {
+          "value": null,
+          "citations": [
+            {
+              "quote": "Issued by: [not supplied]",
+              "chunkId": "69c041c8-75d1-5003-9d27-80228163129c"
+            }
+          ]
+        },
+        "currency": {
+          "value": null,
+          "citations": [
+            {
+              "quote": "All prices use currency code: [not supplied]",
+              "chunkId": "69c041c8-75d1-5003-9d27-80228163129c"
+            }
+          ]
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "4",
+              "unitPrice": "128.50",
+              "description": "Calibration weight set"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "| Calibration weight set | 4 | 128.50 | 514.00 |",
+              "chunkId": "69c041c8-75d1-5003-9d27-80228163129c"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "69c041c8-75d1-5003-9d27-80228163129c": {
+          "page": 1,
+          "text": "# Vendor offer\nIssued by: [not supplied]\nAll prices use currency code: [not supplied]\n\n| Product | Ordered units | Unit price | Line amount |\n| --- | ---: | ---: | ---: |\n| Calibration weight set | 4 | 128.50 | 514.00 |\n\nAmount payable for this offer: 514.00",
+          "start": 0,
+          "sourceId": "230cbbb6-408b-42fb-ac22-f147a02ae479"
+        }
+      },
+      "revision": 2,
+      "sourceId": "230cbbb6-408b-42fb-ac22-f147a02ae479",
+      "elapsedMs": 4703,
+      "promptHash": "83013de27b054d18c51225b979eebed184f5c4600f6b40a18edcf5a7631494ca",
+      "schemaHash": "b8f508fbf4ab6c2fa97f3c4c12e03401be2866de5915b7c97b32765ee24005fe",
+      "inputTokens": 1024,
+      "outputTokens": 234,
+      "sourceSha256": "3c26bc91f81b7d5196b09d223806ebbc50024b0ac3b030d92c3c6621eb170525",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000784",
+      "retrievedChunkIds": [
+        "69c041c8-75d1-5003-9d27-80228163129c"
+      ],
+      "retrievalElapsedMs": 15
+    }
+  },
+  "review": {
+    "jobId": "4c1ed457-593b-4b6e-9831-c75fbd4ed0d0",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "85ac64f8-a5c2-4362-93d4-fd667d9a18ac",
+      "output": {
+        "summary": "The purchase is for a calibration weight set, with a total cost of 0.00 USD. The cost center, vendor, justification, and line items are not provided. Policy requires recording the requesting cost center before approval for calibration purchases.",
+        "citations": [
+          {
+            "quote": "For calibration purchases, record the requesting cost center in the purchase request before approval.",
+            "chunkId": "e251975f-43d3-55a3-a2c5-f1f0694aa2d8"
+          }
+        ],
+        "policy_findings": [
+          {
+            "claim": "Cost center must be recorded in the purchase request before approval for calibration purchases.",
+            "citations": [
+              {
+                "quote": "For calibration purchases, record the requesting cost center in the purchase request before approval.",
+                "chunkId": "e251975f-43d3-55a3-a2c5-f1f0694aa2d8"
+              }
+            ]
+          }
+        ],
+        "missing_information": [
+          "vendor",
+          "costCenter",
+          "justification",
+          "lineItems"
+        ],
+        "insufficient_evidence": false
+      },
+      "evidence": {
+        "e251975f-43d3-55a3-a2c5-f1f0694aa2d8": {
+          "page": 1,
+          "text": "For calibration purchases, record the requesting cost center in the purchase request before approval.",
+          "start": 0,
+          "sourceId": "ac5b14e8-86f4-4731-9e85-87953294631c"
+        }
+      },
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 4188,
+      "promptHash": "c41f009d730ebfda578371f95a9050772a8781c890da7ca2ddec03c6e6266446",
+      "schemaHash": "83e035fe1e74d078d8a829acd66a3696f90ac0b39d322678baf3925ba85b4a68",
+      "inputTokens": 1038,
+      "outputTokens": 203,
+      "sourceSha256": null,
+      "promptVersion": "purchase-review-2026-09-16-v6",
+      "schemaVersion": "purchase-review-v5",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Calibration OR weight OR set OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000740",
+      "retrievedChunkIds": [
+        "e251975f-43d3-55a3-a2c5-f1f0694aa2d8"
+      ],
+      "retrievalElapsedMs": 14,
+      "retrievalComparison": {
+        "model": "text-embedding-3-small",
+        "query": "Calibration OR weight OR set OR purchase OR cost OR center OR justification",
+        "corpus": [
+          {
+            "cosine": 0.6423010824853136,
+            "sha256": "3d9317bdfa355f35ec32e5608146b41123db1b4fef5d394d0fea5634d8d087fa",
+            "chunkId": "e251975f-43d3-55a3-a2c5-f1f0694aa2d8",
+            "sourceId": "ac5b14e8-86f4-4731-9e85-87953294631c"
+          }
+        ],
+        "method": "exact-cosine-rrf60-v1",
+        "elapsedMs": 2515,
+        "dimensions": 256,
+        "corpusCount": 1,
+        "cachedChunks": 0,
+        "hybridChunkIds": [
+          "e251975f-43d3-55a3-a2c5-f1f0694aa2d8"
+        ],
+        "providerCalled": true,
+        "embeddingCallId": "4b22156d-3bf9-4a07-ae10-4d273298c090",
+        "baselineChunkIds": [
+          "e251975f-43d3-55a3-a2c5-f1f0694aa2d8"
+        ],
+        "embeddingCostUsd": "0.000001",
+        "embeddingVersion": "openai-small-256-v1",
+        "semanticChunkIds": [
+          "e251975f-43d3-55a3-a2c5-f1f0694aa2d8"
+        ]
+      }
+    }
+  },
+  "retrievedPassageIds": [
+    "calibration-p1"
+  ],
+  "retrievalComparisons": {
+    "fullText": [
+      "calibration-p1"
+    ],
+    "semantic": [
+      "calibration-p1"
+    ],
+    "hybrid": [
+      "calibration-p1"
+    ]
+  },
+  "finishedAt": "2026-09-17T02:35:08.623Z"
+}

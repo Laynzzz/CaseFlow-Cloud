@@ -1,0 +1,257 @@
+{
+  "id": "textiles-007",
+  "startedAt": "2026-09-17T02:44:47.633Z",
+  "sourceMap": {
+    "7833ce74-b186-4fa9-826b-21c19bb72d96": "textiles-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "textiles-p1",
+      "source": {
+        "id": "7833ce74-b186-4fa9-826b-21c19bb72d96",
+        "kind": "POLICY",
+        "name": "Synthetic textiles-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 76,
+        "sha256": "42a5a37f75b42c1445a16176cfc26ea7049e5b75e7b6765c1eb286809bfd6805",
+        "jobId": "78ac6229-6522-4271-9391-2db21847d03f",
+        "failureCode": null
+      },
+      "chunks": {
+        "source": {
+          "id": "7833ce74-b186-4fa9-826b-21c19bb72d96",
+          "kind": "POLICY",
+          "name": "Synthetic textiles-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 76,
+          "sha256": "42a5a37f75b42c1445a16176cfc26ea7049e5b75e7b6765c1eb286809bfd6805",
+          "jobId": "78ac6229-6522-4271-9391-2db21847d03f",
+          "failureCode": null
+        },
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "items": [
+          {
+            "id": "3fb3a2cb-6b55-5b76-95ff-5dc72bdfcff3",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 76,
+            "text": "The office garden watering schedule is posted beside the courtyard entrance.",
+            "sha256": "42a5a37f75b42c1445a16176cfc26ea7049e5b75e7b6765c1eb286809bfd6805"
+          }
+        ]
+      }
+    }
+  ],
+  "tenantId": "758653eb-6969-4fe4-84b7-896c9448edc9",
+  "caseId": "b14aca02-2367-4813-8ab1-c9f7ed5e7f5d",
+  "quote": {
+    "id": "2974d079-1942-4214-8d75-bafb4e1e1288",
+    "kind": "QUOTE",
+    "name": "Synthetic textiles-007 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "b14aca02-2367-4813-8ab1-c9f7ed5e7f5d",
+    "mediaType": "text/plain",
+    "byteSize": 210,
+    "sha256": "d5a6dfc44e2c3e4ebff9e459b2e0a1dc4af3dba1cd1f928e69e3070b5cce98f5",
+    "jobId": "c87fa91e-2428-4195-bd05-860c2609aec1",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "7833ce74-b186-4fa9-826b-21c19bb72d96",
+        "name": "Synthetic textiles-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Washable fabric cover",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "9a14c3ca-afa6-4a97-875d-a70c9f665d72",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "16577310-5966-4b88-8fbe-6a2618bfb45b",
+      "output": {
+        "total": {
+          "value": "1406.65",
+          "citations": [
+            {
+              "quote": "1406.65",
+              "chunkId": "5aadbf68-f72b-5c20-85a4-e28e7da58c0b"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Synthetic Dune Fabric House 7",
+          "citations": [
+            {
+              "quote": "\"Synthetic Dune Fabric House 7\"",
+              "chunkId": "5aadbf68-f72b-5c20-85a4-e28e7da58c0b"
+            }
+          ]
+        },
+        "currency": {
+          "value": "USD",
+          "citations": [
+            {
+              "quote": "USD",
+              "chunkId": "5aadbf68-f72b-5c20-85a4-e28e7da58c0b"
+            }
+          ]
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "7",
+              "unitPrice": "200.95",
+              "description": "Washable fabric cover"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "\"Washable fabric cover\",7,200.95,1406.65",
+              "chunkId": "5aadbf68-f72b-5c20-85a4-e28e7da58c0b"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "5aadbf68-f72b-5c20-85a4-e28e7da58c0b": {
+          "page": 1,
+          "text": "Vendor quote export; one goods row; header names define the columns.\nsupplier,currencyCode,product,quantity,unitPrice,amountPayable\n\"Synthetic Dune Fabric House 7\",\"USD\",\"Washable fabric cover\",7,200.95,1406.65",
+          "start": 0,
+          "sourceId": "2974d079-1942-4214-8d75-bafb4e1e1288"
+        }
+      },
+      "revision": 2,
+      "sourceId": "2974d079-1942-4214-8d75-bafb4e1e1288",
+      "elapsedMs": 4593,
+      "promptHash": "9994d5b6a73cb574513871a8d07ab37bc67150805581d71b22c3b5f6800233bf",
+      "schemaHash": "07bd4916c12dbcfee67e3e3318972b0d44cbc946346a5b43eba9f9868920290d",
+      "inputTokens": 1009,
+      "outputTokens": 235,
+      "sourceSha256": "d5a6dfc44e2c3e4ebff9e459b2e0a1dc4af3dba1cd1f928e69e3070b5cce98f5",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000780",
+      "retrievedChunkIds": [
+        "5aadbf68-f72b-5c20-85a4-e28e7da58c0b"
+      ],
+      "retrievalElapsedMs": 0
+    }
+  },
+  "review": {
+    "jobId": "fa201020-6de9-4045-bfa1-49f6f83ddc17",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "57b05f6b-b1ad-4d24-a8f4-f85f656a0eee",
+      "output": {
+        "summary": "The purchase request is for a washable fabric cover with no specified vendor, cost center, justification, or line items, and a total amount of 0.00 USD. There is no policy evidence provided to assess compliance for missing purchase information.",
+        "citations": [],
+        "policy_findings": [],
+        "missing_information": [
+          "vendor",
+          "costCenter",
+          "justification",
+          "lineItems"
+        ],
+        "insufficient_evidence": true
+      },
+      "evidence": {},
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 3188,
+      "promptHash": "9ae8cfabea8fae562f76005188e4214e146b2656ff6f3bf88cde9389eab14be4",
+      "schemaHash": "43c27d82595881e9bbea698af054455bd8782f858ec5547502ad3f984a973610",
+      "inputTokens": 932,
+      "outputTokens": 83,
+      "sourceSha256": null,
+      "promptVersion": "purchase-review-2026-09-16-v6",
+      "schemaVersion": "purchase-review-v5",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Washable OR fabric OR cover OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000506",
+      "retrievedChunkIds": [],
+      "retrievalElapsedMs": 14,
+      "retrievalComparison": {
+        "model": "text-embedding-3-small",
+        "query": "Washable OR fabric OR cover OR purchase OR cost OR center OR justification",
+        "corpus": [
+          {
+            "cosine": 0.16569680037427428,
+            "sha256": "42a5a37f75b42c1445a16176cfc26ea7049e5b75e7b6765c1eb286809bfd6805",
+            "chunkId": "3fb3a2cb-6b55-5b76-95ff-5dc72bdfcff3",
+            "sourceId": "7833ce74-b186-4fa9-826b-21c19bb72d96"
+          }
+        ],
+        "method": "exact-cosine-rrf60-v1",
+        "elapsedMs": 2141,
+        "dimensions": 256,
+        "corpusCount": 1,
+        "cachedChunks": 0,
+        "hybridChunkIds": [
+          "3fb3a2cb-6b55-5b76-95ff-5dc72bdfcff3"
+        ],
+        "providerCalled": true,
+        "embeddingCallId": "6b25dba2-c2cf-4d37-9124-a8c06186553e",
+        "baselineChunkIds": [],
+        "embeddingCostUsd": "0.000001",
+        "embeddingVersion": "openai-small-256-v1",
+        "semanticChunkIds": [
+          "3fb3a2cb-6b55-5b76-95ff-5dc72bdfcff3"
+        ]
+      }
+    }
+  },
+  "retrievedPassageIds": [],
+  "retrievalComparisons": {
+    "fullText": [],
+    "semantic": [
+      "textiles-p1"
+    ],
+    "hybrid": [
+      "textiles-p1"
+    ]
+  },
+  "finishedAt": "2026-09-17T02:45:03.195Z"
+}

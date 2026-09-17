@@ -1,0 +1,65 @@
+{
+  "predictionsSha256": "ad5bdde8a94433372238e69e2174553da55e96af42d5ca5e35b7adf655dd5c1f",
+  "callsSha256": "61feaf7e50145c487f47a2b81c75e512c0c96b77626369c18e1cd4bde41b4867",
+  "jobTimingsSha256": "c4dfcf7b26976a1644a33fd5a06e05f8f22451ea2b55eebfcb38be7c4f0a2683",
+  "exportedTimingRows": 120,
+  "invalidJobIntervals": [],
+  "requestedJobCount": 120,
+  "recordedCallCount": 180,
+  "states": {
+    "SETTLED": 180
+  },
+  "jobsWithoutCalls": [],
+  "jobsWithMultipleCallAttempts": 0,
+  "knownEstimatedUsd": "0.092924",
+  "unsettledReservedUsd": "0",
+  "accountedUsd": "0.092924",
+  "providerElapsedMsByPurpose": {
+    "extraction": {
+      "count": 60,
+      "p50": 4639,
+      "p95": 6797
+    },
+    "retrieval-embedding": {
+      "count": 60,
+      "p50": 2046,
+      "p95": 2358
+    },
+    "review": {
+      "count": 60,
+      "p50": 4171,
+      "p95": 6203
+    }
+  },
+  "callsWithoutElapsed": 0,
+  "scenarioElapsedMs": {
+    "count": 60,
+    "p50": 17847,
+    "p95": 21705
+  },
+  "queueDelayMs": {
+    "count": 120,
+    "p50": 532,
+    "p95": 891
+  },
+  "jobEndToEndMs": {
+    "count": 120,
+    "p50": 6570,
+    "p95": 9160
+  },
+  "releaseGatePassed": false,
+  "definitions": {
+    "quantile": "Nearest rank, ceil(q*N), without interpolation.",
+    "providerElapsedMs": "Parent-observed admission/transport interval; includes child startup when enabled, not server-only inference.",
+    "scenarioElapsedMs": "Runner-observed setup, sign-in, uploads, indexing and both assistant jobs; not user completion time.",
+    "queueDelayMs": "API request transaction to first RUNNING worker outbox transaction; includes messaging/scheduling. Null if not exported. Invalid intervals excluded and listed.",
+    "jobEndToEndMs": "API request transaction to terminal API job update; includes worker processing and completion delivery. Invalid intervals excluded and listed.",
+    "accountedUsd": "Dated local pricing estimate plus full unknown reservations; not a provider invoice."
+  },
+  "limitations": [
+    "Sequential local synthetic run, not a controlled load benchmark.",
+    "Host sleep, startup, polling and other concurrent work can affect observations.",
+    "Wall-clock timestamps are not monotonic; negative intervals are preserved as anomalies, never clamped to zero.",
+    "Failed and unknown costs remain accounted; no user time-saving claim."
+  ]
+}

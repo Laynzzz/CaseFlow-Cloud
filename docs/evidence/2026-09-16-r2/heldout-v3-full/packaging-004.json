@@ -1,0 +1,212 @@
+{
+  "id": "packaging-004",
+  "startedAt": "2026-09-17T02:40:44.419Z",
+  "sourceMap": {
+    "cb47de01-b071-44c7-b1da-e586188cdf69": "packaging-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "packaging-p1",
+      "source": {
+        "id": "cb47de01-b071-44c7-b1da-e586188cdf69",
+        "kind": "POLICY",
+        "name": "Synthetic packaging-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 94,
+        "sha256": "a7fc66edbcf1c0352dffed6555fd6f274ea8f10eee6158a6e8b2d857d76eba9f",
+        "jobId": "dfefa023-9bdb-40d7-b557-197267e81708",
+        "failureCode": null
+      },
+      "chunks": {
+        "source": {
+          "id": "cb47de01-b071-44c7-b1da-e586188cdf69",
+          "kind": "POLICY",
+          "name": "Synthetic packaging-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 94,
+          "sha256": "a7fc66edbcf1c0352dffed6555fd6f274ea8f10eee6158a6e8b2d857d76eba9f",
+          "jobId": "dfefa023-9bdb-40d7-b557-197267e81708",
+          "failureCode": null
+        },
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "items": [
+          {
+            "id": "3b054b5a-db3f-510e-ae84-8cd0919dc9b6",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 94,
+            "text": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+            "sha256": "a7fc66edbcf1c0352dffed6555fd6f274ea8f10eee6158a6e8b2d857d76eba9f"
+          }
+        ]
+      }
+    }
+  ],
+  "tenantId": "bbc76a75-97be-41f4-955e-6756ba2f9d55",
+  "caseId": "9ac9e05a-7bcd-4b98-84d6-85693489810f",
+  "quote": {
+    "id": "16b71691-3b54-4107-ad69-ec0fcbabd7f5",
+    "kind": "QUOTE",
+    "name": "Synthetic packaging-004 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "9ac9e05a-7bcd-4b98-84d6-85693489810f",
+    "mediaType": "text/plain",
+    "byteSize": 241,
+    "sha256": "18c25c2c56b8fc07144a53aba8ddeb6cd8f920ed4a26e51d4be1ca98cae28c0b",
+    "jobId": "c60e14ba-4fda-41c4-9083-3a88b89d2ef3",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "cb47de01-b071-44c7-b1da-e586188cdf69",
+        "name": "Synthetic packaging-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Reusable packing tray",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "72ab1d19-bc6b-485f-9581-41d196c3ed64",
+    "kind": "EXTRACTION",
+    "status": "FAILED",
+    "failureCode": "INVALID_AI_OUTPUT",
+    "revision": 2,
+    "stale": false,
+    "result": null
+  },
+  "review": {
+    "jobId": "da691593-8fd5-4621-b282-710648cd59e6",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "fea420dc-908a-45bc-821c-818c9f171c04",
+      "output": {
+        "summary": "The purchase request describes a reusable packing tray with a total cost of 0.00 USD but does not provide the cost center, justification, vendor, or line items. Policy requires that packaging requests be approved only after the purchase request identifies its cost center.",
+        "citations": [
+          {
+            "quote": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+            "chunkId": "3b054b5a-db3f-510e-ae84-8cd0919dc9b6"
+          }
+        ],
+        "policy_findings": [
+          {
+            "claim": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+            "citations": [
+              {
+                "quote": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+                "chunkId": "3b054b5a-db3f-510e-ae84-8cd0919dc9b6"
+              }
+            ]
+          }
+        ],
+        "missing_information": [
+          "vendor",
+          "costCenter",
+          "justification",
+          "lineItems"
+        ],
+        "insufficient_evidence": false
+      },
+      "evidence": {
+        "3b054b5a-db3f-510e-ae84-8cd0919dc9b6": {
+          "page": 1,
+          "text": "Packaging requests may be approved only after the purchase request identifies its cost center.",
+          "start": 0,
+          "sourceId": "cb47de01-b071-44c7-b1da-e586188cdf69"
+        }
+      },
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 3860,
+      "promptHash": "008c8ec80c9dc2f879f9f33876e005d212c3e6eb699e1fd60e2468ca3ef04e5a",
+      "schemaHash": "758b0bc8b1e9bb9bef7e0c245f14dd2e836b07fe0e80ff6c536f7b52f20999fb",
+      "inputTokens": 1030,
+      "outputTokens": 202,
+      "sourceSha256": null,
+      "promptVersion": "purchase-review-2026-09-16-v6",
+      "schemaVersion": "purchase-review-v5",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Reusable OR packing OR tray OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000736",
+      "retrievedChunkIds": [
+        "3b054b5a-db3f-510e-ae84-8cd0919dc9b6"
+      ],
+      "retrievalElapsedMs": 15,
+      "retrievalComparison": {
+        "model": "text-embedding-3-small",
+        "query": "Reusable OR packing OR tray OR purchase OR cost OR center OR justification",
+        "corpus": [
+          {
+            "cosine": 0.5294793958601811,
+            "sha256": "a7fc66edbcf1c0352dffed6555fd6f274ea8f10eee6158a6e8b2d857d76eba9f",
+            "chunkId": "3b054b5a-db3f-510e-ae84-8cd0919dc9b6",
+            "sourceId": "cb47de01-b071-44c7-b1da-e586188cdf69"
+          }
+        ],
+        "method": "exact-cosine-rrf60-v1",
+        "elapsedMs": 2328,
+        "dimensions": 256,
+        "corpusCount": 1,
+        "cachedChunks": 0,
+        "hybridChunkIds": [
+          "3b054b5a-db3f-510e-ae84-8cd0919dc9b6"
+        ],
+        "providerCalled": true,
+        "embeddingCallId": "609e2049-e8ae-4ec4-a03f-1b5ee2065e8e",
+        "baselineChunkIds": [
+          "3b054b5a-db3f-510e-ae84-8cd0919dc9b6"
+        ],
+        "embeddingCostUsd": "0.000001",
+        "embeddingVersion": "openai-small-256-v1",
+        "semanticChunkIds": [
+          "3b054b5a-db3f-510e-ae84-8cd0919dc9b6"
+        ]
+      }
+    }
+  },
+  "retrievedPassageIds": [
+    "packaging-p1"
+  ],
+  "retrievalComparisons": {
+    "fullText": [
+      "packaging-p1"
+    ],
+    "semantic": [
+      "packaging-p1"
+    ],
+    "hybrid": [
+      "packaging-p1"
+    ]
+  },
+  "finishedAt": "2026-09-17T02:41:01.514Z"
+}

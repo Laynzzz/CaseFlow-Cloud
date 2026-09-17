@@ -1,0 +1,212 @@
+{
+  "id": "textiles-003",
+  "startedAt": "2026-09-17T02:43:27.702Z",
+  "sourceMap": {
+    "51719905-ccc5-41f7-a7bf-98bfa42338d6": "textiles-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "textiles-p1",
+      "source": {
+        "id": "51719905-ccc5-41f7-a7bf-98bfa42338d6",
+        "kind": "POLICY",
+        "name": "Synthetic textiles-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 133,
+        "sha256": "48cae365316102d22aa91f630faad85eaafec921c9c6d3f8bf8d3150f2f88a23",
+        "jobId": "440a8162-6338-4e01-91b3-4bec23a15cfa",
+        "failureCode": null
+      },
+      "chunks": {
+        "source": {
+          "id": "51719905-ccc5-41f7-a7bf-98bfa42338d6",
+          "kind": "POLICY",
+          "name": "Synthetic textiles-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 133,
+          "sha256": "48cae365316102d22aa91f630faad85eaafec921c9c6d3f8bf8d3150f2f88a23",
+          "jobId": "440a8162-6338-4e01-91b3-4bec23a15cfa",
+          "failureCode": null
+        },
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "items": [
+          {
+            "id": "6a3616ac-e973-563e-b60f-80c134c274ce",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 133,
+            "text": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+            "sha256": "48cae365316102d22aa91f630faad85eaafec921c9c6d3f8bf8d3150f2f88a23"
+          }
+        ]
+      }
+    }
+  ],
+  "tenantId": "5a2c4d7e-6e01-4f3f-b77c-4d435413ed6c",
+  "caseId": "d5cc0578-ccf4-43e6-b159-cdefe23be190",
+  "quote": {
+    "id": "a875c9ec-2273-40cd-a1dd-8cb60fdc0b78",
+    "kind": "QUOTE",
+    "name": "Synthetic textiles-003 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "d5cc0578-ccf4-43e6-b159-cdefe23be190",
+    "mediaType": "text/plain",
+    "byteSize": 205,
+    "sha256": "c65bc1a9d91a046bb14ba30763dab6e40a28ecef080f0310fa371a3cee24a78c",
+    "jobId": "5420102e-a661-4e10-be71-a4f248e60761",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "51719905-ccc5-41f7-a7bf-98bfa42338d6",
+        "name": "Synthetic textiles-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Washable fabric cover",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "54724f5f-cb38-4558-b64a-fdd57e6b4770",
+    "kind": "EXTRACTION",
+    "status": "FAILED",
+    "failureCode": "INVALID_AI_OUTPUT",
+    "revision": 2,
+    "stale": false,
+    "result": null
+  },
+  "review": {
+    "jobId": "eb66646a-9726-4081-ac22-33149571fced",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "11b7007b-86dc-4f8d-abd6-259fd619f081",
+      "output": {
+        "summary": "The purchase is for a washable fabric cover with a total cost of 0.00 USD, but it lacks a vendor, cost center, justification, and line items. Policy requires a justification describing the business need before approving a textiles purchase.",
+        "citations": [
+          {
+            "quote": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+            "chunkId": "6a3616ac-e973-563e-b60f-80c134c274ce"
+          }
+        ],
+        "policy_findings": [
+          {
+            "claim": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+            "citations": [
+              {
+                "quote": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+                "chunkId": "6a3616ac-e973-563e-b60f-80c134c274ce"
+              }
+            ]
+          }
+        ],
+        "missing_information": [
+          "vendor",
+          "costCenter",
+          "justification",
+          "lineItems"
+        ],
+        "insufficient_evidence": false
+      },
+      "evidence": {
+        "6a3616ac-e973-563e-b60f-80c134c274ce": {
+          "page": 1,
+          "text": "Before approving a textiles purchase, the reviewer must check that the request includes a justification describing the business need.",
+          "start": 0,
+          "sourceId": "51719905-ccc5-41f7-a7bf-98bfa42338d6"
+        }
+      },
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 4171,
+      "promptHash": "e7491f8fcdebf4bf26fb675c41eb6e40c45bcb144f930a0980a567b1e7ed7a49",
+      "schemaHash": "4c630d1cc25a2d087cd2048a0ed58a0a0113b932920baa225a4d7f483da811ad",
+      "inputTokens": 1032,
+      "outputTokens": 209,
+      "sourceSha256": null,
+      "promptVersion": "purchase-review-2026-09-16-v6",
+      "schemaVersion": "purchase-review-v5",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Washable OR fabric OR cover OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000748",
+      "retrievedChunkIds": [
+        "6a3616ac-e973-563e-b60f-80c134c274ce"
+      ],
+      "retrievalElapsedMs": 0,
+      "retrievalComparison": {
+        "model": "text-embedding-3-small",
+        "query": "Washable OR fabric OR cover OR purchase OR cost OR center OR justification",
+        "corpus": [
+          {
+            "cosine": 0.5287075085994757,
+            "sha256": "48cae365316102d22aa91f630faad85eaafec921c9c6d3f8bf8d3150f2f88a23",
+            "chunkId": "6a3616ac-e973-563e-b60f-80c134c274ce",
+            "sourceId": "51719905-ccc5-41f7-a7bf-98bfa42338d6"
+          }
+        ],
+        "method": "exact-cosine-rrf60-v1",
+        "elapsedMs": 2218,
+        "dimensions": 256,
+        "corpusCount": 1,
+        "cachedChunks": 0,
+        "hybridChunkIds": [
+          "6a3616ac-e973-563e-b60f-80c134c274ce"
+        ],
+        "providerCalled": true,
+        "embeddingCallId": "4836e40d-3b7d-4f36-805f-1c5b25262271",
+        "baselineChunkIds": [
+          "6a3616ac-e973-563e-b60f-80c134c274ce"
+        ],
+        "embeddingCostUsd": "0.000001",
+        "embeddingVersion": "openai-small-256-v1",
+        "semanticChunkIds": [
+          "6a3616ac-e973-563e-b60f-80c134c274ce"
+        ]
+      }
+    }
+  },
+  "retrievedPassageIds": [
+    "textiles-p1"
+  ],
+  "retrievalComparisons": {
+    "fullText": [
+      "textiles-p1"
+    ],
+    "semantic": [
+      "textiles-p1"
+    ],
+    "hybrid": [
+      "textiles-p1"
+    ]
+  },
+  "finishedAt": "2026-09-17T02:43:50.937Z"
+}

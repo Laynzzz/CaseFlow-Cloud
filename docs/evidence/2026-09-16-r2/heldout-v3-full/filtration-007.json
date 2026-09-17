@@ -1,0 +1,257 @@
+{
+  "id": "filtration-007",
+  "startedAt": "2026-09-17T02:38:43.362Z",
+  "sourceMap": {
+    "bb5db989-83d7-4101-9cd5-7143a09a34fc": "filtration-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "filtration-p1",
+      "source": {
+        "id": "bb5db989-83d7-4101-9cd5-7143a09a34fc",
+        "kind": "POLICY",
+        "name": "Synthetic filtration-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 76,
+        "sha256": "42a5a37f75b42c1445a16176cfc26ea7049e5b75e7b6765c1eb286809bfd6805",
+        "jobId": "8e83a14e-930e-48b3-b6c2-69b35929dd88",
+        "failureCode": null
+      },
+      "chunks": {
+        "source": {
+          "id": "bb5db989-83d7-4101-9cd5-7143a09a34fc",
+          "kind": "POLICY",
+          "name": "Synthetic filtration-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 76,
+          "sha256": "42a5a37f75b42c1445a16176cfc26ea7049e5b75e7b6765c1eb286809bfd6805",
+          "jobId": "8e83a14e-930e-48b3-b6c2-69b35929dd88",
+          "failureCode": null
+        },
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "items": [
+          {
+            "id": "5fe19b29-8709-5fd9-bcce-a516b5611557",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 76,
+            "text": "The office garden watering schedule is posted beside the courtyard entrance.",
+            "sha256": "42a5a37f75b42c1445a16176cfc26ea7049e5b75e7b6765c1eb286809bfd6805"
+          }
+        ]
+      }
+    }
+  ],
+  "tenantId": "15c1a623-4b15-4c5f-8fc9-eb8a0c186a4f",
+  "caseId": "dafb761c-457a-4ce1-b7a0-5193737b00dc",
+  "quote": {
+    "id": "ab5ff8a4-4fe5-437b-b96b-2f2e44f7dde5",
+    "kind": "QUOTE",
+    "name": "Synthetic filtration-007 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "dafb761c-457a-4ce1-b7a0-5193737b00dc",
+    "mediaType": "text/plain",
+    "byteSize": 295,
+    "sha256": "13550900bb96508f2722d70f2f4602b092b5b81c5b6667124cad7d3a7cd48892",
+    "jobId": "3949e6ce-87f4-430c-83e6-2737c439a399",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "bb5db989-83d7-4101-9cd5-7143a09a34fc",
+        "name": "Synthetic filtration-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Replacement filter pack",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "e4129ba3-e7ca-4ba0-acb8-4cebf358e6b5",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "947ef79f-fa2e-453b-8c4b-7af466ce11cf",
+      "output": {
+        "total": {
+          "value": "1079.05",
+          "citations": [
+            {
+              "quote": "<amountPayable>1079.05</amountPayable>",
+              "chunkId": "666976d1-6cd5-538c-819e-f13777f2d432"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Synthetic Brook Filter Atelier 7",
+          "citations": [
+            {
+              "quote": "<supplier>Synthetic Brook Filter Atelier 7</supplier>",
+              "chunkId": "666976d1-6cd5-538c-819e-f13777f2d432"
+            }
+          ]
+        },
+        "currency": {
+          "value": "CAD",
+          "citations": [
+            {
+              "quote": "<currencyCode>CAD</currencyCode>",
+              "chunkId": "666976d1-6cd5-538c-819e-f13777f2d432"
+            }
+          ]
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "7",
+              "unitPrice": "154.15",
+              "description": "Replacement filter pack"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "<description>Replacement filter pack</description>\n    <quantity>7</quantity>\n    <unitPrice>154.15</unitPrice>",
+              "chunkId": "666976d1-6cd5-538c-819e-f13777f2d432"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "666976d1-6cd5-538c-819e-f13777f2d432": {
+          "page": 1,
+          "text": "<vendorOffer>\n  <supplier>Synthetic Brook Filter Atelier 7</supplier>\n  <currencyCode>CAD</currencyCode>\n  <line>\n    <description>Replacement filter pack</description>\n    <quantity>7</quantity>\n    <unitPrice>154.15</unitPrice>\n  </line>\n  <amountPayable>1079.05</amountPayable>\n</vendorOffer>",
+          "start": 0,
+          "sourceId": "ab5ff8a4-4fe5-437b-b96b-2f2e44f7dde5"
+        }
+      },
+      "revision": 2,
+      "sourceId": "ab5ff8a4-4fe5-437b-b96b-2f2e44f7dde5",
+      "elapsedMs": 4093,
+      "promptHash": "818d2688e2febacbf610d4694285c688dd32ee194b019790b0910318515019fb",
+      "schemaHash": "366154f31c58748b1e2d6c77f44a638e1a8070af093c6a28acd58475d4af6d73",
+      "inputTokens": 1043,
+      "outputTokens": 257,
+      "sourceSha256": "13550900bb96508f2722d70f2f4602b092b5b81c5b6667124cad7d3a7cd48892",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000829",
+      "retrievedChunkIds": [
+        "666976d1-6cd5-538c-819e-f13777f2d432"
+      ],
+      "retrievalElapsedMs": 15
+    }
+  },
+  "review": {
+    "jobId": "4e88991f-f8c2-41b4-9087-2cbb0cf965f2",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "47938fc3-330b-455c-83f1-f47e52d1a011",
+      "output": {
+        "summary": "The purchase request is for a 'Replacement filter pack' with no vendor, cost center, justification, or line items provided. The total amount is specified as '0.00' USD. Policy compliance cannot be assessed due to missing policy evidence.",
+        "citations": [],
+        "policy_findings": [],
+        "missing_information": [
+          "vendor",
+          "costCenter",
+          "justification",
+          "lineItems"
+        ],
+        "insufficient_evidence": true
+      },
+      "evidence": {},
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 2983,
+      "promptHash": "f34afc16d1cb8bb45aecfa42669698089ebc978976729ada4f30643b67b21e72",
+      "schemaHash": "43c27d82595881e9bbea698af054455bd8782f858ec5547502ad3f984a973610",
+      "inputTokens": 931,
+      "outputTokens": 84,
+      "sourceSha256": null,
+      "promptVersion": "purchase-review-2026-09-16-v6",
+      "schemaVersion": "purchase-review-v5",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Replacement OR filter OR pack OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000507",
+      "retrievedChunkIds": [],
+      "retrievalElapsedMs": 15,
+      "retrievalComparison": {
+        "model": "text-embedding-3-small",
+        "query": "Replacement OR filter OR pack OR purchase OR cost OR center OR justification",
+        "corpus": [
+          {
+            "cosine": 0.12808573341388022,
+            "sha256": "42a5a37f75b42c1445a16176cfc26ea7049e5b75e7b6765c1eb286809bfd6805",
+            "chunkId": "5fe19b29-8709-5fd9-bcce-a516b5611557",
+            "sourceId": "bb5db989-83d7-4101-9cd5-7143a09a34fc"
+          }
+        ],
+        "method": "exact-cosine-rrf60-v1",
+        "elapsedMs": 1984,
+        "dimensions": 256,
+        "corpusCount": 1,
+        "cachedChunks": 0,
+        "hybridChunkIds": [
+          "5fe19b29-8709-5fd9-bcce-a516b5611557"
+        ],
+        "providerCalled": true,
+        "embeddingCallId": "9b6dfe35-7cd1-468e-affc-de4179ff7792",
+        "baselineChunkIds": [],
+        "embeddingCostUsd": "0.000001",
+        "embeddingVersion": "openai-small-256-v1",
+        "semanticChunkIds": [
+          "5fe19b29-8709-5fd9-bcce-a516b5611557"
+        ]
+      }
+    }
+  },
+  "retrievedPassageIds": [],
+  "retrievalComparisons": {
+    "fullText": [],
+    "semantic": [
+      "filtration-p1"
+    ],
+    "hybrid": [
+      "filtration-p1"
+    ]
+  },
+  "finishedAt": "2026-09-17T02:38:58.883Z"
+}

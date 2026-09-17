@@ -1,0 +1,257 @@
+{
+  "id": "calibration-007",
+  "startedAt": "2026-09-17T02:35:46.187Z",
+  "sourceMap": {
+    "3ee8fc25-a3da-4b7d-b7bd-7c79b8a1d985": "calibration-p1"
+  },
+  "policySources": [
+    {
+      "passageId": "calibration-p1",
+      "source": {
+        "id": "3ee8fc25-a3da-4b7d-b7bd-7c79b8a1d985",
+        "kind": "POLICY",
+        "name": "Synthetic calibration-p1",
+        "state": "PUBLISHED",
+        "version": 2,
+        "caseId": null,
+        "mediaType": "text/plain",
+        "byteSize": 76,
+        "sha256": "42a5a37f75b42c1445a16176cfc26ea7049e5b75e7b6765c1eb286809bfd6805",
+        "jobId": "ceaf4d0c-0af3-4db5-a626-0e9acba12cf2",
+        "failureCode": null
+      },
+      "chunks": {
+        "source": {
+          "id": "3ee8fc25-a3da-4b7d-b7bd-7c79b8a1d985",
+          "kind": "POLICY",
+          "name": "Synthetic calibration-p1",
+          "state": "PUBLISHED",
+          "version": 2,
+          "caseId": null,
+          "mediaType": "text/plain",
+          "byteSize": 76,
+          "sha256": "42a5a37f75b42c1445a16176cfc26ea7049e5b75e7b6765c1eb286809bfd6805",
+          "jobId": "ceaf4d0c-0af3-4db5-a626-0e9acba12cf2",
+          "failureCode": null
+        },
+        "metadata": {
+          "parserVersion": "pypdf-6.18.1+utf8-v1",
+          "chunkVersion": "page-window-1200-150-v1",
+          "pageCount": 1
+        },
+        "items": [
+          {
+            "id": "278465cf-e0b1-5a2d-8376-50c10ca5c4ed",
+            "page": 1,
+            "section": "Page 1",
+            "start": 0,
+            "end": 76,
+            "text": "The office garden watering schedule is posted beside the courtyard entrance.",
+            "sha256": "42a5a37f75b42c1445a16176cfc26ea7049e5b75e7b6765c1eb286809bfd6805"
+          }
+        ]
+      }
+    }
+  ],
+  "tenantId": "62fb1bf8-031e-4eff-8da6-d38e1a4e7be3",
+  "caseId": "36b9f32e-6f64-4e03-8a30-dd1dd9664e33",
+  "quote": {
+    "id": "0f942e78-4949-4590-8d57-4278a69c68b5",
+    "kind": "QUOTE",
+    "name": "Synthetic calibration-007 quote",
+    "state": "INDEXED",
+    "version": 1,
+    "caseId": "36b9f32e-6f64-4e03-8a30-dd1dd9664e33",
+    "mediaType": "text/plain",
+    "byteSize": 263,
+    "sha256": "91d01b02017306d61caa8cf40d003ec01262bf2989fc66326f72cf5e8dd16bb9",
+    "jobId": "046b2740-51ec-4c94-884e-8c18c610247d",
+    "failureCode": null
+  },
+  "policyPins": {
+    "items": [
+      {
+        "id": "3ee8fc25-a3da-4b7d-b7bd-7c79b8a1d985",
+        "name": "Synthetic calibration-p1",
+        "version": 2,
+        "state": "PUBLISHED"
+      }
+    ],
+    "initialized": true
+  },
+  "manualPurchase": {
+    "total": "0.00",
+    "vendor": "",
+    "currency": "USD",
+    "lineItems": [],
+    "costCenter": "",
+    "description": "Calibration weight set",
+    "justification": ""
+  },
+  "revision": 2,
+  "extraction": {
+    "jobId": "8640dade-187b-49ac-9652-39d4ae3187ec",
+    "kind": "EXTRACTION",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "88834207-7fb1-4e56-8d59-e9eb417bd25f",
+      "output": {
+        "total": {
+          "value": "915.25",
+          "citations": [
+            {
+              "quote": "Amount payable for this offer: 915.25",
+              "chunkId": "553a886e-8754-554d-805e-541aa8ba9975"
+            }
+          ]
+        },
+        "vendor": {
+          "value": "Synthetic Alder Gauge Studio 7",
+          "citations": [
+            {
+              "quote": "Issued by: Synthetic Alder Gauge Studio 7",
+              "chunkId": "553a886e-8754-554d-805e-541aa8ba9975"
+            }
+          ]
+        },
+        "currency": {
+          "value": "USD",
+          "citations": [
+            {
+              "quote": "All prices use currency code: USD",
+              "chunkId": "553a886e-8754-554d-805e-541aa8ba9975"
+            }
+          ]
+        },
+        "warnings": [],
+        "lineItems": {
+          "value": [
+            {
+              "quantity": "7",
+              "unitPrice": "130.75",
+              "description": "Calibration weight set"
+            }
+          ],
+          "citations": [
+            {
+              "quote": "| Calibration weight set | 7 | 130.75 | 915.25 |",
+              "chunkId": "553a886e-8754-554d-805e-541aa8ba9975"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "553a886e-8754-554d-805e-541aa8ba9975": {
+          "page": 1,
+          "text": "# Vendor offer\nIssued by: Synthetic Alder Gauge Studio 7\nAll prices use currency code: USD\n\n| Product | Ordered units | Unit price | Line amount |\n| --- | ---: | ---: | ---: |\n| Calibration weight set | 7 | 130.75 | 915.25 |\n\nAmount payable for this offer: 915.25",
+          "start": 0,
+          "sourceId": "0f942e78-4949-4590-8d57-4278a69c68b5"
+        }
+      },
+      "revision": 2,
+      "sourceId": "0f942e78-4949-4590-8d57-4278a69c68b5",
+      "elapsedMs": 11937,
+      "promptHash": "933f3008560c382423ec660620d5c0a68da0915cdcc41442b834fd99689cd4ee",
+      "schemaHash": "249d7cb48afb48fd0949a51d6b184a46085027af68b3f8730fe5ceae425a7528",
+      "inputTokens": 1025,
+      "outputTokens": 230,
+      "sourceSha256": "91d01b02017306d61caa8cf40d003ec01262bf2989fc66326f72cf5e8dd16bb9",
+      "promptVersion": "purchase-assistant-2026-09-15-v5",
+      "schemaVersion": "purchase-assistant-v4",
+      "sourceVersion": 1,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": null,
+      "retrievalMethod": "quote-pages-v1",
+      "estimatedCostUsd": "0.000778",
+      "retrievedChunkIds": [
+        "553a886e-8754-554d-805e-541aa8ba9975"
+      ],
+      "retrievalElapsedMs": 14
+    }
+  },
+  "review": {
+    "jobId": "4c41c445-8fe9-444e-a289-30638c6e033f",
+    "kind": "REVIEW",
+    "status": "SUCCEEDED",
+    "failureCode": null,
+    "revision": 2,
+    "stale": false,
+    "result": {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "callId": "1e54e920-e93b-4f86-b5fc-03222957d70d",
+      "output": {
+        "summary": "The purchase request is for a calibration weight set with a total amount of 0.00 USD, but lacks provided information for vendor, cost center, justification, and line items. There is no policy evidence supplied to assess compliance or requirements for these missing fields.",
+        "citations": [],
+        "policy_findings": [],
+        "missing_information": [
+          "vendor",
+          "costCenter",
+          "justification",
+          "lineItems"
+        ],
+        "insufficient_evidence": true
+      },
+      "evidence": {},
+      "revision": 2,
+      "sourceId": null,
+      "elapsedMs": 3250,
+      "promptHash": "8de467ed9f0742d1b8adc986193ead71e5982b2e55b99c6677601b54ddbb9f99",
+      "schemaHash": "43c27d82595881e9bbea698af054455bd8782f858ec5547502ad3f984a973610",
+      "inputTokens": 931,
+      "outputTokens": 87,
+      "sourceSha256": null,
+      "promptVersion": "purchase-review-2026-09-16-v6",
+      "schemaVersion": "purchase-review-v5",
+      "sourceVersion": null,
+      "pricingVersion": "openai-standard-2026-09-15",
+      "retrievalQuery": "Calibration OR weight OR set OR purchase OR cost OR center OR justification",
+      "retrievalMethod": "postgres-full-text-v1",
+      "estimatedCostUsd": "0.000512",
+      "retrievedChunkIds": [],
+      "retrievalElapsedMs": 16,
+      "retrievalComparison": {
+        "model": "text-embedding-3-small",
+        "query": "Calibration OR weight OR set OR purchase OR cost OR center OR justification",
+        "corpus": [
+          {
+            "cosine": 0.13791869282136512,
+            "sha256": "42a5a37f75b42c1445a16176cfc26ea7049e5b75e7b6765c1eb286809bfd6805",
+            "chunkId": "278465cf-e0b1-5a2d-8376-50c10ca5c4ed",
+            "sourceId": "3ee8fc25-a3da-4b7d-b7bd-7c79b8a1d985"
+          }
+        ],
+        "method": "exact-cosine-rrf60-v1",
+        "elapsedMs": 2061,
+        "dimensions": 256,
+        "corpusCount": 1,
+        "cachedChunks": 0,
+        "hybridChunkIds": [
+          "278465cf-e0b1-5a2d-8376-50c10ca5c4ed"
+        ],
+        "providerCalled": true,
+        "embeddingCallId": "1ea149ea-b242-4ebe-b139-41cfadca102d",
+        "baselineChunkIds": [],
+        "embeddingCostUsd": "0.000001",
+        "embeddingVersion": "openai-small-256-v1",
+        "semanticChunkIds": [
+          "278465cf-e0b1-5a2d-8376-50c10ca5c4ed"
+        ]
+      }
+    }
+  },
+  "retrievedPassageIds": [],
+  "retrievalComparisons": {
+    "fullText": [],
+    "semantic": [
+      "calibration-p1"
+    ],
+    "hybrid": [
+      "calibration-p1"
+    ]
+  },
+  "finishedAt": "2026-09-17T02:36:10.192Z"
+}
