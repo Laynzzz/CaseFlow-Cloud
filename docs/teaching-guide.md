@@ -1221,3 +1221,30 @@ this is not a production least-privilege certification. Static AWS validation
 and selected policy simulations passed, but actual deployment and its remaining
 permission dependencies are unverified. See [ADR 0009](adr/0009-deployment-access-bootstrap.md)
 and [access setup](../infrastructure/terraform/rehearsal/ACCESS.md).
+
+### Cloud foundation: name, state and images
+
+The owner grant has now been applied and verified. The first real AWS resources
+are the DNS zone, remote-state bucket and two empty image repositories. No
+application server has started; the purchase workflow is still verified locally.
+
+Route 53 is AWS's DNS service: it tells browsers where an application name points.
+Buying the name through Porkbun and creating a Route 53 zone are separate steps.
+The registrar must delegate to the zone's assigned nameservers before public
+DNS validation can establish our HTTPS certificate.
+
+Terraform uses HCL configuration locally to manage AWS resources. Its state
+maps declared resources to actual AWS identifiers. S3 holds that state remotely
+with encryption, blocked public access, HTTPS-only access and version history.
+Native S3 lock objects coordinate writes; their creation and release were
+observed during this apply, though concurrent-writer behavior was not tested.
+The state bucket lives outside the application stack so workload teardown does
+not erase the information needed to inspect or recover that stack. The trade-off
+is a separate foundation lifecycle and small retained storage cost.
+
+ECR stores deployable container images. We created the two empty repositories
+through the documented registry-only Terraform target exception. Applications
+will use immutable image digests after publishing; the current provisional
+zero digests cannot run a workload. Repository creation proves a narrow subset
+of permissions, not full deployment readiness. Evidence:
+[cloud foundation](evidence/2026-09-17-r3/cloud-foundation/summary.md).

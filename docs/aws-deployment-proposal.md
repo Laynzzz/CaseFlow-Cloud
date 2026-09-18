@@ -1,10 +1,12 @@
 # Short-lived AWS release rehearsal proposal
 
-Status: implemented Terraform scaffold with live read-only account/region
-discovery, 2026-09-17. No resources have been provisioned. The user established
-a limited AWS session in `us-east-1`, has an active Free plan with USD 100 in
-credits, and registered `laynexia.com` through Porkbun. DNS delegation, deployment
-permissions remain pending. The user authorized USD 10 of existing AWS credits
+Status: foundation provisioning started on 2026-09-17 (September 18 UTC).
+Owner-granted operator access is verified. The Route 53 zone, protected S3 state
+bucket and two empty ECR repositories exist; no application workload has started.
+The account remains Free, with USD 100 reported before creation. The user
+registered `laynexia.com` through Porkbun; registrar DNS delegation is pending.
+See [actual foundation evidence](evidence/2026-09-17-r3/cloud-foundation/summary.md).
+The user authorized USD 10 of existing AWS credits
 on 2026-09-17, with the account remaining on Free. The USD 10 AI evaluation
 ledger is separate from this cloud allowance.
 
@@ -40,8 +42,8 @@ materially more expensive and provides little additional release evidence.
   task IAM roles; no static S3 keys are injected. Record the selected object
   version/checksum and execute real S3 upload/download compatibility smoke.
 - One HTTPS ALB serves `caseflow.laynexia.com` and `auth.laynexia.com`. ACM DNS
-  validation requires DNS control; the purchased domain currently uses Porkbun
-  nameservers, with no matching Route 53 zone yet. No management endpoint is
+  validation requires DNS control; the Route 53 zone exists, with registrar
+  delegation from Porkbun still pending. No management endpoint is
   included in public ALB routing. [ACM domain validation](https://docs.aws.amazon.com/acm/latest/userguide/domain-ownership-validation.html)
 - A short-lived single EC2 `m7i-flex.large` (2 vCPU/8 GiB) hosts the pinned Kafka
   broker, temporary Keycloak identity service, and small monitoring stack. Its

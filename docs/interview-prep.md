@@ -808,3 +808,20 @@ preflight guards and separate launch statements address both. Offline tests,
 AWS policy validation and selected read-only simulations passed. Those checks
 do not prove a real deployment works. The USD 10 AWS-credit allowance is now
 approved; the owner grant and actual deployment remain pending.
+
+**What cloud steps have actually run now?** The owner grant is verified. We
+created the DNS zone and protected state bucket, initialized Terraform's remote
+backend, and applied a reviewed plan creating two empty ECR repositories.
+Persisted state and released locks were verified in S3. Public DNS delegation,
+application deployment, workflow smoke and cloud rollback are still pending.
+
+**Why keep Terraform state outside the application stack?** It records which
+real resources Terraform manages, so application teardown should not erase it.
+The bucket is private, encrypted, versioned and HTTPS-only. Follow-up: versions
+and locking help recovery and coordination, but do not replace access control
+or prove a disaster-recovery procedure. We have not tested simultaneous writers.
+
+**Does creating a DNS zone make the site live?** No. The registrar must first
+delegate the domain to the assigned nameservers; then certificate validation
+and application routing must work. Follow-up: cached delegation can delay that
+transition. Evidence: [foundation readback](evidence/2026-09-17-r3/cloud-foundation/summary.md).

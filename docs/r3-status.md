@@ -20,7 +20,7 @@ work. Performance and cloud claims need reproducible measurements.
 | Sustained load | [Bounded mixed load](../tests/load/results/2026-09-17T15-04-19-100Z/analysis.md): 420 iterations, 84 documents, zero errors/drops and drained backlog | Maximum throughput and cloud capacity are not measured |
 | Operations | [Exported traces](evidence/2026-09-17-r3/telemetry/summary.md), fixed-label metrics, [alerts and compatible-image rollback](evidence/2026-09-17-r3/monitoring-recovery/summary.md), [reconciliation/cleanup](operations-runbook.md) | Actual AWS rollout/rollback is pending |
 | CI and scans | [Local gate evidence](evidence/2026-09-17-r3/ci/summary.md): critical coverage, 60 Java/174 Python passing tests, reviewed scans | Hosted CI has not run; 44 worker OS findings across 8 CVEs have exact-version reviews expiring October 1 |
-| Cloud release | [Read-only AWS preflight](evidence/2026-09-17-r3/cloud-preflight/summary.md), USD 10 credit allowance approved, [reviewed access bootstrap](../infrastructure/terraform/rehearsal/ACCESS.md) tested | Owner executes access bootstrap; DNS delegation/state; actual deploy/smoke/rollback/teardown |
+| Cloud release | USD 10 credit allowance approved; owner access grant verified; [DNS zone, protected remote state and empty image registries created](evidence/2026-09-17-r3/cloud-foundation/summary.md) | Registrar nameserver delegation; image publication; actual deploy/smoke/rollback/teardown |
 | Portfolio | [Browser and clean checkout](evidence/2026-09-17-r3/demo/summary.md), [claim-to-evidence map](claim-to-evidence.md), architecture and learning notes | Cloud claims remain excluded; known UI and AI limitations recorded |
 
 ## First recovery batch

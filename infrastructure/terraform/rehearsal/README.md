@@ -1,9 +1,11 @@
 # AWS rehearsal scaffold
 
-Implemented source; **offline validation plus read-only AWS preflight**. The
-limited `caseflow-rehearsal` profile is signed in as `caseflow-operator`; account
-plan, quotas, regional offerings and domain DNS were checked. No account-backed
-Terraform plan was run and no resource was created. Successful
+Implemented source; **foundation provisioned, application deployment pending**.
+The `caseflow-rehearsal` profile is signed in as `caseflow-operator`; the owner's
+scoped policy grant is verified. Route 53 DNS, protected S3 remote state and two
+empty ECR repositories exist. A reviewed registry-only Terraform plan/apply
+succeeded; no application workload has started. Registrar delegation is pending.
+See [foundation evidence](../../../docs/evidence/2026-09-17-r3/cloud-foundation/summary.md). Successful
 `validate` or mocked tests do not establish deployability, quotas, engine/AMI
 availability, permissions, health or cloud acceptance. See
 [ADR 0007](../../../docs/adr/0007-cloud-rehearsal-profile.md) and the
@@ -36,16 +38,17 @@ container writes it into an ephemeral shared volume; Java and Python use
 
 ## Account and remote-state prerequisites
 
-The USD 10 AWS-credit allowance was approved on 2026-09-17. The next prerequisite
-is the owner's [one-time IAM bootstrap](ACCESS.md). Terraform now requires its
+The USD 10 AWS-credit allowance was approved on 2026-09-17. The owner's
+[one-time IAM bootstrap](ACCESS.md) has completed and its policies were verified.
+Terraform requires its
 `caseflow-access-runtime-boundary` managed policy on all five runtime roles.
 The boundary is owned outside the workload stack and cannot be edited by the
 operator. The account remains Free. Do not repeat the cloud-budget question.
 
 Current onboarding uses AWS CLI 2.36.48 browser-based `aws login` with an IAM
 user, not an IAM Identity Center session. It has `ReadOnlyAccess`,
-`SignInLocalDevelopmentAccess` and `IAMUserChangePassword`; it cannot provision
-this stack. The user completed:
+`SignInLocalDevelopmentAccess` and `IAMUserChangePassword`, plus the two reviewed
+CaseFlow deployment policies. The user completed:
 
 ```text
 aws login --profile caseflow-rehearsal --region us-east-1
@@ -83,7 +86,7 @@ Set `AWS_PROFILE` in the process, not a committed file; the provider refuses
 an account different from `account_id`. Do not enable Terraform debug logs
 around credential operations.
 
-## Deployment sequence (not executed)
+## Deployment sequence (registry bootstrap executed; remaining steps pending)
 
 1. Copy `example.tfvars` into ignored `terraform.tfvars`, replace every
    placeholder and set expiry/session metadata. Keep `enable_services=false`

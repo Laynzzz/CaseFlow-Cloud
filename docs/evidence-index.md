@@ -411,3 +411,8 @@ records 14 combined Python checks, two Terraform tests, static AWS policy
 validation and 11 read-only permission simulations. The owner must still run
 the setup before deployment; policies have not been granted by the agent.
 [AWS credit allowance](aws-credit-ledger.md) records the separate USD 10 approval.
+
+Subsequent [actual foundation provisioning](evidence/2026-09-17-r3/cloud-foundation/summary.md)
+verifies the completed owner grant, Route 53 zone, protected remote-state bucket,
+and registry-only Terraform plan/apply. Two empty ECR repositories now exist.
+Registrar delegation and actual application deployment/rollback remain pending.
