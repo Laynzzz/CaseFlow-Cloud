@@ -14,14 +14,14 @@ resource "aws_service_discovery_service" "application" {
       type = "A"
     }
   }
-  health_check_custom_config {}
+  health_check_custom_config { failure_threshold = 1 }
 }
 locals {
   logs = { logDriver = "awslogs", options = { awslogs-group = aws_cloudwatch_log_group.services.name, awslogs-region = var.region, awslogs-stream-prefix = "service" } }
   certificate_container = {
     name                   = "certificates", image = var.worker_image, essential = false, user = "0:0",
     readonlyRootFilesystem = true,
-    linuxParameters        = { capabilities = { drop = ["ALL"] } },
+    linuxParameters        = { capabilities = { add = [], drop = ["ALL"] } },
     entryPoint             = ["python", "-c"],
     command                = ["import base64,os; from pathlib import Path; Path('${local.ca_path}').write_bytes(base64.b64decode('${base64encode(local.ca_pem)}')); os.chmod('${local.ca_path}',0o644); os.chmod('/tmp',0o1777)"],
     mountPoints            = [{ sourceVolume = "certificates", containerPath = "/certs", readOnly = false }, { sourceVolume = "temporary", containerPath = "/tmp", readOnly = false }],
@@ -73,12 +73,12 @@ resource "aws_ecs_task_definition" "application" {
   container_definitions = jsonencode([local.certificate_container, {
     name             = each.value, image = each.value == "api" ? var.api_image : var.worker_image,
     essential        = true, user = "10001:10001", readonlyRootFilesystem = true,
-    linuxParameters  = { capabilities = { drop = ["ALL"] } },
+    linuxParameters  = { capabilities = { add = [], drop = ["ALL"] } },
     environment      = [for name, value in local.environment[each.value] : { name = name, value = value }],
     secrets          = local.runtime_secrets[each.value],
     dependsOn        = [{ containerName = "certificates", condition = "SUCCESS" }],
     mountPoints      = [{ sourceVolume = "certificates", containerPath = "/certs", readOnly = true }, { sourceVolume = "temporary", containerPath = "/tmp", readOnly = false }],
-    portMappings     = each.value == "api" ? [{ containerPort = 8080 }, { containerPort = 9091 }] : [{ containerPort = 8090 }],
+    portMappings     = each.value == "api" ? [{ containerPort = 8080, hostPort = 8080, protocol = "tcp" }, { containerPort = 9091, hostPort = 9091, protocol = "tcp" }] : [{ containerPort = 8090, hostPort = 8090, protocol = "tcp" }],
     healthCheck      = { command = each.value == "api" ? ["CMD", "java", "-cp", "/app/probe", "HealthProbe"] : ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8090/health',timeout=3).read()"], interval = 15, timeout = 5, retries = 4, startPeriod = 60 },
     stopTimeout      = 90,
     logConfiguration = local.logs
@@ -126,7 +126,7 @@ resource "aws_ecs_task_definition" "bootstrap" {
     name             = "bootstrap", image = var.worker_image, essential = true,
     entryPoint       = ["python", "-c"], command = [file("${path.module}/bootstrap.py")],
     user             = "0:0", readonlyRootFilesystem = true,
-    linuxParameters  = { capabilities = { drop = ["ALL"] } },
+    linuxParameters  = { capabilities = { add = [], drop = ["ALL"] } },
     mountPoints      = [{ sourceVolume = "temporary", containerPath = "/tmp", readOnly = false }],
     environment      = [{ name = "AWS_REGION", value = var.region }, { name = "BOOTSTRAP_CONFIG", value = jsonencode({ region = var.region, ca = base64encode(local.ca_pem), database = aws_db_instance.main.address, master = aws_db_instance.main.master_user_secret[0].secret_arn, secrets = { for key, value in aws_secretsmanager_secret.runtime : key => value.arn }, app = local.app_origin }) }],
     logConfiguration = local.logs

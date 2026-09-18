@@ -1,0 +1,17 @@
+{
+  "lastStatus": "STOPPED",
+  "stopCode": "EssentialContainerExited",
+  "containers": [
+    {
+      "name": "bootstrap",
+      "exitCode": 0
+    }
+  ],
+  "log": [
+    {
+      "timestamp": 1789692476568,
+      "message": "Bootstrap complete: runtime role grants and synthetic realm are stored; no secret values emitted.",
+      "ingestionTime": 1789692476896
+    }
+  ]
+}

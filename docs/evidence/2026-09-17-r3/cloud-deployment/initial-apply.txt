@@ -1,0 +1,285 @@
+aws_iam_role.auxiliary: Creating...
+aws_vpc.main: Creating...
+aws_ecs_cluster.main: Creating...
+aws_iam_role.execution: Creating...
+aws_iam_role.bootstrap: Creating...
+aws_db_parameter_group.main: Creating...
+aws_cloudwatch_log_group.services: Creating...
+aws_ebs_volume.auxiliary: Creating...
+aws_acm_certificate.main: Creating...
+aws_s3_bucket.objects: Creating...
+aws_cloudwatch_log_group.services: Creation complete after 1s [id=/caseflow/caseflow-rehearsal]
+aws_ecr_repository.app["worker"]: Modifying... [id=caseflow-rehearsal/worker]
+aws_iam_role.execution: Creation complete after 1s [id=caseflow-rehearsal-execution]
+aws_ecr_repository.app["api"]: Modifying... [id=caseflow-rehearsal/api]
+aws_iam_role.bootstrap: Creation complete after 1s [id=caseflow-rehearsal-bootstrap]
+aws_iam_role.application["api"]: Creating...
+aws_ecr_repository.app["worker"]: Modifications complete after 0s [id=caseflow-rehearsal/worker]
+aws_iam_role.application["worker"]: Creating...
+aws_ecr_repository.app["api"]: Modifications complete after 0s [id=caseflow-rehearsal/api]
+aws_secretsmanager_secret.runtime["migrator"]: Creating...
+aws_iam_role.application["api"]: Creation complete after 0s [id=caseflow-rehearsal-api]
+aws_secretsmanager_secret.runtime["worker"]: Creating...
+aws_db_parameter_group.main: Creation complete after 1s [id=caseflow-rehearsal]
+aws_secretsmanager_secret.runtime["keycloak-db"]: Creating...
+aws_iam_role.application["worker"]: Creation complete after 0s [id=caseflow-rehearsal-worker]
+aws_secretsmanager_secret.runtime["api"]: Creating...
+aws_iam_role.auxiliary: Creation complete after 2s [id=caseflow-rehearsal-auxiliary]
+aws_secretsmanager_secret.runtime["keycloak-realm"]: Creating...
+aws_secretsmanager_secret.runtime["migrator"]: Creation complete after 1s [id=arn:aws:secretsmanager:us-east-1:123456789012:secret:caseflow-rehearsal/migrator-xm0xaM]
+aws_secretsmanager_secret.runtime["keycloak-admin"]: Creating...
+aws_secretsmanager_secret.runtime["worker"]: Creation complete after 1s [id=arn:aws:secretsmanager:us-east-1:123456789012:secret:caseflow-rehearsal/worker-NTglZ0]
+aws_secretsmanager_secret.runtime["demo-password"]: Creating...
+aws_secretsmanager_secret.runtime["keycloak-db"]: Creation complete after 1s [id=arn:aws:secretsmanager:us-east-1:123456789012:secret:caseflow-rehearsal/keycloak-db-sJR20r]
+aws_iam_role_policy_attachment.execution: Creating...
+aws_secretsmanager_secret.runtime["api"]: Creation complete after 1s [id=arn:aws:secretsmanager:us-east-1:123456789012:secret:caseflow-rehearsal/api-mVbYXx]
+aws_iam_role_policy_attachment.ssm: Creating...
+aws_secretsmanager_secret.runtime["keycloak-realm"]: Creation complete after 0s [id=arn:aws:secretsmanager:us-east-1:123456789012:secret:caseflow-rehearsal/keycloak-realm-WX4CW3]
+aws_iam_instance_profile.auxiliary: Creating...
+aws_iam_role_policy_attachment.execution: Creation complete after 0s [id=caseflow-rehearsal-execution/arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy]
+aws_secretsmanager_secret.runtime["demo-password"]: Creation complete after 0s [id=arn:aws:secretsmanager:us-east-1:123456789012:secret:caseflow-rehearsal/demo-password-5F7c1T]
+aws_secretsmanager_secret.runtime["keycloak-admin"]: Creation complete after 0s [id=arn:aws:secretsmanager:us-east-1:123456789012:secret:caseflow-rehearsal/keycloak-admin-d8i2Y9]
+aws_iam_role_policy.execution_secrets: Creating...
+aws_iam_role_policy.auxiliary_secrets: Creating...
+aws_iam_role_policy_attachment.ssm: Creation complete after 0s [id=caseflow-rehearsal-auxiliary/arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore]
+aws_s3_bucket.objects: Creation complete after 2s [id=caseflow-rehearsal-123456789012-us-east-1]
+aws_s3_bucket_versioning.objects: Creating...
+aws_s3_bucket_policy.objects: Creating...
+aws_iam_role_policy.worker_cleanup: Creating...
+aws_iam_role_policy.execution_secrets: Creation complete after 0s [id=caseflow-rehearsal-execution:terraform-072793ed4eb1c40ab6319a4419]
+aws_s3_bucket_public_access_block.objects: Creating...
+aws_iam_role_policy.auxiliary_secrets: Creation complete after 0s [id=caseflow-rehearsal-auxiliary:terraform-1de7d9662a232b6bdbfc6184d6]
+aws_s3_bucket_server_side_encryption_configuration.objects: Creating...
+aws_iam_role_policy.worker_cleanup: Creation complete after 0s [id=caseflow-rehearsal-worker:terraform-95c6231fe3a442b3083722ec2e]
+aws_iam_role_policy.objects["api"]: Creating...
+aws_s3_bucket_policy.objects: Creation complete after 0s [id=caseflow-rehearsal-123456789012-us-east-1]
+aws_iam_role_policy.objects["worker"]: Creating...
+aws_iam_role_policy.objects["api"]: Creation complete after 0s [id=caseflow-rehearsal-api:terraform-348dcb484cd005b573f1dca7c2]
+aws_s3_bucket_server_side_encryption_configuration.objects: Creation complete after 0s [id=caseflow-rehearsal-123456789012-us-east-1]
+aws_vpc.main: Creation complete after 2s [id=vpc-0dcdd729d7bb56572]
+aws_s3_bucket_public_access_block.objects: Creation complete after 0s [id=caseflow-rehearsal-123456789012-us-east-1]
+aws_security_group.tasks: Creating...
+aws_lb_target_group.identity: Creating...
+aws_lb_target_group.api: Creating...
+aws_subnet.private[0]: Creating...
+aws_iam_role_policy.objects["worker"]: Creation complete after 0s [id=caseflow-rehearsal-worker:terraform-0fc1a8f72dd42207be64013d93]
+aws_internet_gateway.main: Creating...
+aws_subnet.private[0]: Creation complete after 1s [id=subnet-0a7b267533636595b]
+aws_subnet.private[1]: Creating...
+aws_lb_target_group.identity: Creation complete after 1s [id=arn:aws:elasticloadbalancing:us-east-1:123456789012:targetgroup/caseflow-rehearsal-oidc/e95cc3e7aa97e2d6]
+aws_subnet.public[0]: Creating...
+aws_s3_bucket_versioning.objects: Creation complete after 1s [id=caseflow-rehearsal-123456789012-us-east-1]
+aws_security_group.database: Creating...
+aws_lb_target_group.api: Creation complete after 1s [id=arn:aws:elasticloadbalancing:us-east-1:123456789012:targetgroup/caseflow-rehearsal-api/b28f348dc6f50177]
+aws_subnet.public[1]: Creating...
+aws_internet_gateway.main: Creation complete after 2s [id=igw-073c228aefd597ce8]
+aws_security_group.edge: Creating...
+aws_subnet.private[1]: Creation complete after 1s [id=subnet-065eb7fcf1ab4d5f1]
+aws_security_group.auxiliary: Creating...
+aws_security_group.tasks: Creation complete after 2s [id=sg-0dd61692e0fb54e3f]
+aws_subnet.public[1]: Creation complete after 1s [id=subnet-0b88cee7e2ada7c43]
+aws_service_discovery_private_dns_namespace.main: Creating...
+aws_route_table.public: Creating...
+aws_subnet.public[0]: Creation complete after 1s [id=subnet-0e8ddac1d832d8183]
+aws_db_subnet_group.main: Creating...
+aws_route_table.public: Creation complete after 1s [id=rtb-08bf3e05d37469b16]
+aws_route_table_association.public[1]: Creating...
+aws_security_group.database: Creation complete after 2s [id=sg-0d73b252a5070107f]
+aws_route_table_association.public[0]: Creating...
+aws_route_table_association.public[0]: Creation complete after 1s [id=rtbassoc-0b09bc0bdf7e317f2]
+aws_db_subnet_group.main: Creation complete after 2s [id=caseflow-rehearsal]
+aws_db_instance.main: Creating...
+aws_security_group.edge: Creation complete after 2s [id=sg-000073a88d586e148]
+aws_lb.main: Creating...
+aws_security_group.auxiliary: Creation complete after 2s [id=sg-07b3d854f0f3ce6f2]
+aws_vpc_security_group_ingress_rule.https: Creating...
+aws_vpc_security_group_ingress_rule.api: Creating...
+aws_vpc_security_group_ingress_rule.api: Creation complete after 0s [id=sgr-0f1871bdc6ec77d1e]
+aws_vpc_security_group_ingress_rule.identity: Creating...
+aws_vpc_security_group_ingress_rule.https: Creation complete after 0s [id=sgr-0b56badc2850bcbc6]
+aws_vpc_security_group_ingress_rule.metrics["9091"]: Creating...
+aws_acm_certificate.main: Creation complete after 6s [id=arn:aws:acm:us-east-1:123456789012:certificate/42785d89-68cf-4de5-8e7f-6153b4f9de4c]
+aws_vpc_security_group_ingress_rule.metrics["8090"]: Creating...
+aws_route_table_association.public[1]: Creation complete after 1s [id=rtbassoc-01db770f06935645b]
+aws_vpc_security_group_ingress_rule.database["auxiliary"]: Creating...
+aws_vpc_security_group_ingress_rule.identity: Creation complete after 0s [id=sgr-0323bbbbb3865f0b9]
+aws_vpc_security_group_ingress_rule.database["tasks"]: Creating...
+aws_vpc_security_group_ingress_rule.metrics["9091"]: Creation complete after 0s [id=sgr-0e4657c7f37ee2f32]
+aws_vpc_security_group_egress_rule.outbound["tasks"]: Creating...
+aws_vpc_security_group_ingress_rule.metrics["8090"]: Creation complete after 0s [id=sgr-0ca27992347faeb8d]
+aws_vpc_security_group_egress_rule.outbound["edge"]: Creating...
+aws_vpc_security_group_ingress_rule.database["auxiliary"]: Creation complete after 1s [id=sgr-0410d458edc173308]
+aws_vpc_security_group_egress_rule.outbound["auxiliary"]: Creating...
+aws_vpc_security_group_ingress_rule.database["tasks"]: Creation complete after 1s [id=sgr-0ddd39fe63ba96f61]
+aws_vpc_security_group_ingress_rule.internal_auxiliary["4318"]: Creating...
+aws_vpc_security_group_egress_rule.outbound["tasks"]: Creation complete after 1s [id=sgr-06e67c0148eeda830]
+aws_vpc_security_group_ingress_rule.internal_auxiliary["29092"]: Creating...
+aws_vpc_security_group_egress_rule.outbound["edge"]: Creation complete after 1s [id=sgr-03bd37838a6c6ec99]
+aws_route53_record.certificate["auth.laynexia.com"]: Creating...
+aws_vpc_security_group_egress_rule.outbound["auxiliary"]: Creation complete after 0s [id=sgr-0742cf2d6bf07eb62]
+aws_route53_record.certificate["caseflow.laynexia.com"]: Creating...
+aws_vpc_security_group_ingress_rule.internal_auxiliary["4318"]: Creation complete after 0s [id=sgr-0c25eaa1b46973941]
+aws_vpc_security_group_ingress_rule.internal_auxiliary["29092"]: Creation complete after 0s [id=sgr-06f19b5fcb42729b1]
+aws_iam_instance_profile.auxiliary: Creation complete after 6s [id=caseflow-rehearsal]
+aws_ecs_cluster.main: Still creating... [00m10s elapsed]
+aws_ebs_volume.auxiliary: Still creating... [00m10s elapsed]
+aws_ecs_cluster.main: Creation complete after 11s [id=arn:aws:ecs:us-east-1:123456789012:cluster/caseflow-rehearsal]
+aws_ebs_volume.auxiliary: Creation complete after 11s [id=vol-0cfa8b69ff336277b]
+aws_service_discovery_private_dns_namespace.main: Still creating... [00m10s elapsed]
+aws_db_instance.main: Still creating... [00m10s elapsed]
+aws_lb.main: Still creating... [00m10s elapsed]
+aws_route53_record.certificate["auth.laynexia.com"]: Still creating... [00m10s elapsed]
+aws_route53_record.certificate["caseflow.laynexia.com"]: Still creating... [00m10s elapsed]
+aws_service_discovery_private_dns_namespace.main: Still creating... [00m20s elapsed]
+aws_db_instance.main: Still creating... [00m20s elapsed]
+aws_lb.main: Still creating... [00m20s elapsed]
+aws_route53_record.certificate["auth.laynexia.com"]: Still creating... [00m20s elapsed]
+aws_route53_record.certificate["caseflow.laynexia.com"]: Still creating... [00m20s elapsed]
+aws_service_discovery_private_dns_namespace.main: Still creating... [00m30s elapsed]
+aws_db_instance.main: Still creating... [00m30s elapsed]
+aws_lb.main: Still creating... [00m30s elapsed]
+aws_route53_record.certificate["auth.laynexia.com"]: Still creating... [00m30s elapsed]
+aws_route53_record.certificate["caseflow.laynexia.com"]: Still creating... [00m30s elapsed]
+aws_route53_record.certificate["auth.laynexia.com"]: Creation complete after 30s [id=Z08031651TZAM5P9APM4K__b0c44da574584eff4ce4cf740e7697ff.auth.laynexia.com._CNAME]
+aws_route53_record.certificate["caseflow.laynexia.com"]: Creation complete after 31s [id=Z08031651TZAM5P9APM4K__4e763e5fb7341587b9fec1a9784dfc5f.caseflow.laynexia.com._CNAME]
+aws_acm_certificate_validation.main: Creating...
+aws_acm_certificate_validation.main: Creation complete after 0s [id=2026-09-18 00:38:26.334 +0000 UTC]
+aws_service_discovery_private_dns_namespace.main: Still creating... [00m40s elapsed]
+aws_db_instance.main: Still creating... [00m40s elapsed]
+aws_lb.main: Still creating... [00m40s elapsed]
+aws_service_discovery_private_dns_namespace.main: Creation complete after 44s [id=ns-ej6bwel7dnnktekv]
+aws_service_discovery_service.application["api"]: Creating...
+aws_service_discovery_service.application["worker"]: Creating...
+aws_service_discovery_service.application["worker"]: Creation complete after 0s [id=srv-dvf725exknxqi3e6]
+aws_service_discovery_service.application["api"]: Creation complete after 0s [id=srv-2eion7yaf33g7vs5]
+aws_db_instance.main: Still creating... [00m50s elapsed]
+aws_lb.main: Still creating... [00m50s elapsed]
+aws_db_instance.main: Still creating... [01m00s elapsed]
+aws_lb.main: Still creating... [01m00s elapsed]
+aws_db_instance.main: Still creating... [01m10s elapsed]
+aws_lb.main: Still creating... [01m10s elapsed]
+aws_db_instance.main: Still creating... [01m20s elapsed]
+aws_lb.main: Still creating... [01m20s elapsed]
+aws_db_instance.main: Still creating... [01m30s elapsed]
+aws_lb.main: Still creating... [01m30s elapsed]
+aws_db_instance.main: Still creating... [01m40s elapsed]
+aws_lb.main: Still creating... [01m40s elapsed]
+aws_db_instance.main: Still creating... [01m50s elapsed]
+aws_lb.main: Still creating... [01m50s elapsed]
+aws_db_instance.main: Still creating... [02m00s elapsed]
+aws_lb.main: Still creating... [02m00s elapsed]
+aws_db_instance.main: Still creating... [02m10s elapsed]
+aws_lb.main: Still creating... [02m10s elapsed]
+aws_db_instance.main: Still creating... [02m20s elapsed]
+aws_lb.main: Still creating... [02m20s elapsed]
+aws_lb.main: Creation complete after 2m21s [id=arn:aws:elasticloadbalancing:us-east-1:123456789012:loadbalancer/app/caseflow-rehearsal/edc41269f3908a22]
+aws_route53_record.hosts["caseflow.laynexia.com"]: Creating...
+aws_route53_record.hosts["auth.laynexia.com"]: Creating...
+aws_lb_listener.https: Creating...
+aws_lb_listener.https: Creation complete after 0s [id=arn:aws:elasticloadbalancing:us-east-1:123456789012:listener/app/caseflow-rehearsal/edc41269f3908a22/7f30d0fc99bbb307]
+aws_lb_listener_rule.api: Creating...
+aws_lb_listener_rule.identity: Creating...
+aws_lb_listener_rule.api: Creation complete after 0s [id=arn:aws:elasticloadbalancing:us-east-1:123456789012:listener-rule/app/caseflow-rehearsal/edc41269f3908a22/7f30d0fc99bbb307/9d6d57792e94a17c]
+aws_lb_listener_rule.identity: Creation complete after 1s [id=arn:aws:elasticloadbalancing:us-east-1:123456789012:listener-rule/app/caseflow-rehearsal/edc41269f3908a22/7f30d0fc99bbb307/194122d332ca1fa8]
+aws_db_instance.main: Still creating... [02m30s elapsed]
+aws_route53_record.hosts["caseflow.laynexia.com"]: Still creating... [00m10s elapsed]
+aws_route53_record.hosts["auth.laynexia.com"]: Still creating... [00m10s elapsed]
+aws_db_instance.main: Still creating... [02m40s elapsed]
+aws_route53_record.hosts["caseflow.laynexia.com"]: Still creating... [00m20s elapsed]
+aws_route53_record.hosts["auth.laynexia.com"]: Still creating... [00m20s elapsed]
+aws_db_instance.main: Still creating... [02m50s elapsed]
+aws_route53_record.hosts["auth.laynexia.com"]: Still creating... [00m30s elapsed]
+aws_route53_record.hosts["caseflow.laynexia.com"]: Still creating... [00m30s elapsed]
+aws_route53_record.hosts["auth.laynexia.com"]: Creation complete after 30s [id=Z08031651TZAM5P9APM4K_auth.laynexia.com_A]
+aws_route53_record.hosts["caseflow.laynexia.com"]: Creation complete after 31s [id=Z08031651TZAM5P9APM4K_caseflow.laynexia.com_A]
+aws_db_instance.main: Still creating... [03m00s elapsed]
+aws_db_instance.main: Still creating... [03m10s elapsed]
+aws_db_instance.main: Still creating... [03m20s elapsed]
+aws_db_instance.main: Still creating... [03m30s elapsed]
+aws_db_instance.main: Still creating... [03m40s elapsed]
+aws_db_instance.main: Still creating... [03m50s elapsed]
+aws_db_instance.main: Still creating... [04m00s elapsed]
+aws_db_instance.main: Still creating... [04m10s elapsed]
+aws_db_instance.main: Still creating... [04m20s elapsed]
+aws_db_instance.main: Still creating... [04m30s elapsed]
+aws_db_instance.main: Still creating... [04m40s elapsed]
+aws_db_instance.main: Still creating... [04m50s elapsed]
+aws_db_instance.main: Still creating... [05m00s elapsed]
+aws_db_instance.main: Still creating... [05m10s elapsed]
+aws_db_instance.main: Still creating... [05m20s elapsed]
+aws_db_instance.main: Still creating... [05m30s elapsed]
+aws_db_instance.main: Still creating... [05m40s elapsed]
+aws_db_instance.main: Still creating... [05m50s elapsed]
+aws_db_instance.main: Still creating... [06m00s elapsed]
+aws_db_instance.main: Still creating... [06m10s elapsed]
+aws_db_instance.main: Still creating... [06m20s elapsed]
+aws_db_instance.main: Still creating... [06m30s elapsed]
+aws_db_instance.main: Still creating... [06m40s elapsed]
+aws_db_instance.main: Still creating... [06m50s elapsed]
+aws_db_instance.main: Still creating... [07m00s elapsed]
+aws_db_instance.main: Still creating... [07m10s elapsed]
+aws_db_instance.main: Still creating... [07m20s elapsed]
+aws_db_instance.main: Still creating... [07m30s elapsed]
+aws_db_instance.main: Creation complete after 7m30s [id=db-T7GG6FXWLJ4UD5WNUXSAZTXZ5Y]
+aws_iam_role_policy.bootstrap: Creating...
+aws_ecs_task_definition.bootstrap: Creating...
+aws_instance.auxiliary: Creating...
+aws_iam_role_policy.bootstrap: Creation complete after 0s [id=caseflow-rehearsal-bootstrap:terraform-024bc750392f8bed3dce00e63c]
+aws_ecs_task_definition.bootstrap: Creation complete after 0s [id=caseflow-rehearsal-bootstrap]
+aws_instance.auxiliary: Still creating... [00m10s elapsed]
+aws_instance.auxiliary: Creation complete after 13s [id=i-06499168d73997cf0]
+aws_lb_target_group_attachment.identity: Creating...
+aws_volume_attachment.auxiliary: Creating...
+aws_ecs_task_definition.application["worker"]: Creating...
+aws_ecs_task_definition.application["api"]: Creating...
+aws_lb_target_group_attachment.identity: Creation complete after 0s [id=arn:aws:elasticloadbalancing:us-east-1:123456789012:targetgroup/caseflow-rehearsal-oidc/e95cc3e7aa97e2d6,i-06499168d73997cf0,8080]
+aws_ecs_task_definition.application["worker"]: Creation complete after 0s [id=caseflow-rehearsal-worker]
+aws_ecs_task_definition.application["api"]: Creation complete after 0s [id=caseflow-rehearsal-api]
+aws_ecs_service.application["worker"]: Creating...
+aws_ecs_service.application["api"]: Creating...
+aws_ecs_service.application["worker"]: Creation complete after 1s [id=arn:aws:ecs:us-east-1:123456789012:service/caseflow-rehearsal/worker]
+aws_ecs_service.application["api"]: Creation complete after 1s [id=arn:aws:ecs:us-east-1:123456789012:service/caseflow-rehearsal/api]
+aws_volume_attachment.auxiliary: Still creating... [00m10s elapsed]
+aws_volume_attachment.auxiliary: Still creating... [00m20s elapsed]
+aws_volume_attachment.auxiliary: Creation complete after 21s [id=vai-3182776274]
+
+Apply complete! Resources: 80 added, 2 changed, 0 destroyed.
+
+Outputs:
+
+app_url = "https://caseflow.laynexia.com"
+auxiliary_instance_id = "i-06499168d73997cf0"
+bootstrap_task_definition = "arn:aws:ecs:us-east-1:123456789012:task-definition/caseflow-rehearsal-bootstrap:1"
+cluster = "caseflow-rehearsal"
+network_configuration = {
+  "awsvpcConfiguration" = {
+    "assignPublicIp" = "ENABLED"
+    "securityGroups" = [
+      "sg-0dd61692e0fb54e3f",
+    ]
+    "subnets" = [
+      "subnet-0e8ddac1d832d8183",
+      "subnet-0b88cee7e2ada7c43",
+    ]
+  }
+}
+oidc_issuer = "https://auth.laynexia.com/realms/caseflow"
+repositories = {
+  "api" = "123456789012.dkr.ecr.us-east-1.amazonaws.com/caseflow-rehearsal/api"
+  "worker" = "123456789012.dkr.ecr.us-east-1.amazonaws.com/caseflow-rehearsal/worker"
+}
+retained_resources = {
+  "data_volume" = "vol-0cfa8b69ff336277b"
+  "database" = "db-T7GG6FXWLJ4UD5WNUXSAZTXZ5Y"
+  "logs" = "/caseflow/caseflow-rehearsal"
+  "objects" = "caseflow-rehearsal-123456789012-us-east-1"
+  "secrets" = {
+    "api" = "arn:aws:secretsmanager:us-east-1:123456789012:secret:caseflow-rehearsal/api-mVbYXx"
+    "demo-password" = "arn:aws:secretsmanager:us-east-1:123456789012:secret:caseflow-rehearsal/demo-password-5F7c1T"
+    "keycloak-admin" = "arn:aws:secretsmanager:us-east-1:123456789012:secret:caseflow-rehearsal/keycloak-admin-d8i2Y9"
+    "keycloak-db" = "arn:aws:secretsmanager:us-east-1:123456789012:secret:caseflow-rehearsal/keycloak-db-sJR20r"
+    "keycloak-realm" = "arn:aws:secretsmanager:us-east-1:123456789012:secret:caseflow-rehearsal/keycloak-realm-WX4CW3"
+    "migrator" = "arn:aws:secretsmanager:us-east-1:123456789012:secret:caseflow-rehearsal/migrator-xm0xaM"
+    "worker" = "arn:aws:secretsmanager:us-east-1:123456789012:secret:caseflow-rehearsal/worker-NTglZ0"
+  }
+}
