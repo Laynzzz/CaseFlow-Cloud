@@ -1,0 +1,53 @@
+aws_ecs_task_definition.application["api"]: Destroying... [id=caseflow-rehearsal-api]
+aws_ecs_task_definition.application["worker"]: Destroying... [id=caseflow-rehearsal-worker]
+aws_ecs_task_definition.application["worker"]: Destruction complete after 0s
+aws_ecs_task_definition.application["api"]: Destruction complete after 0s
+aws_ecs_task_definition.application["worker"]: Creating...
+aws_ecs_task_definition.application["api"]: Creating...
+aws_ecs_task_definition.application["worker"]: Creation complete after 1s [id=caseflow-rehearsal-worker]
+aws_ecs_task_definition.application["api"]: Creation complete after 1s [id=caseflow-rehearsal-api]
+aws_ecs_service.application["worker"]: Modifying... [id=arn:aws:ecs:us-east-1:123456789012:service/caseflow-rehearsal/worker]
+aws_ecs_service.application["api"]: Modifying... [id=arn:aws:ecs:us-east-1:123456789012:service/caseflow-rehearsal/api]
+aws_ecs_service.application["worker"]: Modifications complete after 0s [id=arn:aws:ecs:us-east-1:123456789012:service/caseflow-rehearsal/worker]
+aws_ecs_service.application["api"]: Modifications complete after 1s [id=arn:aws:ecs:us-east-1:123456789012:service/caseflow-rehearsal/api]
+
+Apply complete! Resources: 2 added, 2 changed, 2 destroyed.
+
+Outputs:
+
+app_url = "https://caseflow.laynexia.com"
+auxiliary_instance_id = "i-0c4bdf277c86d6627"
+bootstrap_task_definition = "arn:aws:ecs:us-east-1:123456789012:task-definition/caseflow-rehearsal-bootstrap:1"
+cluster = "caseflow-rehearsal"
+network_configuration = {
+  "awsvpcConfiguration" = {
+    "assignPublicIp" = "ENABLED"
+    "securityGroups" = [
+      "sg-0dd61692e0fb54e3f",
+    ]
+    "subnets" = [
+      "subnet-0e8ddac1d832d8183",
+      "subnet-0b88cee7e2ada7c43",
+    ]
+  }
+}
+oidc_issuer = "https://auth.laynexia.com/realms/caseflow"
+repositories = {
+  "api" = "123456789012.dkr.ecr.us-east-1.amazonaws.com/caseflow-rehearsal/api"
+  "worker" = "123456789012.dkr.ecr.us-east-1.amazonaws.com/caseflow-rehearsal/worker"
+}
+retained_resources = {
+  "data_volume" = "vol-0cfa8b69ff336277b"
+  "database" = "db-T7GG6FXWLJ4UD5WNUXSAZTXZ5Y"
+  "logs" = "/caseflow/caseflow-rehearsal"
+  "objects" = "caseflow-rehearsal-123456789012-us-east-1"
+  "secrets" = {
+    "api" = "arn:aws:secretsmanager:us-east-1:123456789012:secret:caseflow-rehearsal/api-mVbYXx"
+    "demo-password" = "arn:aws:secretsmanager:us-east-1:123456789012:secret:caseflow-rehearsal/demo-password-5F7c1T"
+    "keycloak-admin" = "arn:aws:secretsmanager:us-east-1:123456789012:secret:caseflow-rehearsal/keycloak-admin-d8i2Y9"
+    "keycloak-db" = "arn:aws:secretsmanager:us-east-1:123456789012:secret:caseflow-rehearsal/keycloak-db-sJR20r"
+    "keycloak-realm" = "arn:aws:secretsmanager:us-east-1:123456789012:secret:caseflow-rehearsal/keycloak-realm-WX4CW3"
+    "migrator" = "arn:aws:secretsmanager:us-east-1:123456789012:secret:caseflow-rehearsal/migrator-xm0xaM"
+    "worker" = "arn:aws:secretsmanager:us-east-1:123456789012:secret:caseflow-rehearsal/worker-NTglZ0"
+  }
+}

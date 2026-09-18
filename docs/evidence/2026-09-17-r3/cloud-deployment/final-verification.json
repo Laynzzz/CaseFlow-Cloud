@@ -1,0 +1,22 @@
+{
+  "observedAt": "2026-09-18T01:49:31.461295+00:00",
+  "terraformFormat": true,
+  "terraformValidate": true,
+  "terraformTests": {
+    "passed": 2,
+    "failed": 0
+  },
+  "warning": "Cloud Map failure_threshold deprecated in pinned AWS provider 6.62.0; recorded for upgrade.",
+  "localMarkdownLinksChecked": 297,
+  "changedFileSecretScan": {
+    "files": 29,
+    "leaks": 0,
+    "scope": "Changed and untracked evidence/documentation at pre-commit snapshot; earlier full source/history/dependency/image scans recorded separately."
+  },
+  "localPreviewHTTP": 200,
+  "localAPIHealth": {
+    "status": "UP",
+    "database": "UP"
+  },
+  "gitDiffWhitespaceCheck": true
+}

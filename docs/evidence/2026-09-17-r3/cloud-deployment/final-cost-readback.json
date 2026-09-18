@@ -1,0 +1,26 @@
+{
+  "observedAt": "2026-09-18T01:41:56.388532+00:00",
+  "accountPlan": {
+    "accountId": "123456789012",
+    "accountPlanType": "FREE",
+    "accountPlanStatus": "ACTIVE",
+    "accountPlanRemainingCredits": {
+      "amount": 140.0,
+      "unit": "USD"
+    },
+    "accountPlanExpirationDate": "2027-03-17T22:46:40.724000+00:00"
+  },
+  "sessionStartUTC": "2026-09-18T00:38:00Z",
+  "cleanupVerifiedUTC": "2026-09-18T01:41:56.388532+00:00",
+  "durationMinutesUpperBound": 64,
+  "estimatedSessionUSDRange": [
+    1,
+    2
+  ],
+  "actualBilledProjectCostUSD": null,
+  "balanceIsNotProjectMeter": true,
+  "awsCreditAllowanceUSD": 10,
+  "retainedDNSMonthlyEstimateUSD": 0.5,
+  "retainedStateBytes": 3606687,
+  "notes": "Estimate includes overhead reserve; delayed account-wide credits rose from 100 to 140. Added credits are not attributed to this project and do not increase the authorized allowance. State storage/requests and DNS queries are additional continuing usage."
+}

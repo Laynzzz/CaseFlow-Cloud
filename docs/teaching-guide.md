@@ -1296,3 +1296,49 @@ API publishing, worker execution/publication and Java completion through parent
 IDs. Resource/span allowlists passed on the exported trace. See the evolving
 [cloud report](evidence/2026-09-17-r3/cloud-deployment/summary.md) for rollout,
 rollback and cleanup outcomes; don't infer these from initial provisioning.
+
+
+### Cloud rollback: what the evidence proves
+
+Terraform is the infrastructure configuration tool, written in HCL and run from
+the operator's workstation. ECS is the AWS service that runs our Java/web and
+Python containers. Restoring an earlier image digest changes application code;
+it does not rewind PostgreSQL or S3. That distinction matters when an approved
+purchase already has a document.
+
+In the actual cloud rehearsal, the candidate changed only the Java metrics-export
+setting. We restored the original API and worker digests, waited for both ECS
+rollouts to complete, ran another whole purchase workflow, then downloaded and
+rehashed three pre-existing approved documents. Their approved states and selected
+bytes were unchanged. All 14 migrations remained successful, and the readback
+connection used TLS 1.3. The separate local rehearsal tests old images against an
+additive V14 migration; the cloud run is not a new schema-compatibility experiment.
+
+The alternative, restoring an old database snapshot with each image rollback,
+could discard purchases made after that snapshot. We therefore use compatible
+schema changes and preserve data while rolling images back. Breaking schema
+changes need a staged expand/contract migration, not an automatic image rollback.
+
+Cloud rehearsal evidence is a bounded self-test: no customers, cloud load test,
+cloud outage experiment or cloud AI provider call. See the
+[actual records](evidence/2026-09-17-r3/cloud-deployment/summary.md) before making
+an interview claim. The current AWS build also retains the worker's reviewed,
+expiring unfixed OS vulnerabilities.
+
+
+### Why cleanup is part of delivery
+
+The completed AWS rehearsal removed 82 Terraform-managed resources, then checked
+AWS directly. Empty Terraform state alone was insufficient: seven task-definition
+revisions were deliberately retained, and RDS created a final snapshot outside
+the remaining managed state. We inventoried and deleted only the new synthetic
+snapshot, then checked for manual and automated backups. The final inventory
+also verifies that root/data disks, public application routing and stored images
+are gone. Secret recovery records and protected state are not silently erased.
+
+DNS and state remain intentionally, so the app is offline but cost is not zero:
+about USD 0.50 per month for the public zone plus small state/query charges. A
+future lesson should compare persistent hosting with this bounded rehearsal and
+explain why delayed account credits cannot measure project spend. The final
+[R3 acceptance](evidence/2026-09-17-r3/r3-acceptance.md) links every required gate
+and preserves the experimental AI and scan limitations.

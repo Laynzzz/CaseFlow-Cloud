@@ -1,0 +1,27 @@
+{
+  "observedAt": "2026-09-18T01:22:00.176Z",
+  "allPassed": true,
+  "records": [
+    {
+      "caseId": "8974b9e9-ef9d-43b7-8715-0599b7396573",
+      "jobId": "a564eed0-86ad-4d50-897c-82e8f701205b",
+      "state": "APPROVED",
+      "sha256": "322461dff4af8699e5fed7a65024d987ac716b5e2293e90a400624a81d9208bd",
+      "byteSize": 36712
+    },
+    {
+      "caseId": "20980e6b-127c-4a1a-8e3a-8a49140d35b2",
+      "jobId": "9a982eb1-0bbc-4330-b75c-afc9d0d82fa8",
+      "state": "APPROVED",
+      "sha256": "f8aeeadc833886115190646eef6f0f81dee1c47f2fd2c352860c5169147fcdde",
+      "byteSize": 36712
+    },
+    {
+      "caseId": "f8baee2b-ec00-4ff5-bb7f-aec7d94d1473",
+      "jobId": "3319ba2b-5964-4c4b-bcb8-fe289e9d2854",
+      "state": "APPROVED",
+      "sha256": "a7d8070904849a677cf3a128ecb3635a6a390048f0844d651f8c80637a6e9fec",
+      "byteSize": 36745
+    }
+  ]
+}

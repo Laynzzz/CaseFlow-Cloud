@@ -1,0 +1,92 @@
+{
+  "migrations": [
+    [
+      "1",
+      "foundation",
+      1082620709,
+      true
+    ],
+    [
+      "2",
+      "purchase domain",
+      -414061331,
+      true
+    ],
+    [
+      "3",
+      "document jobs",
+      -439630462,
+      true
+    ],
+    [
+      "4",
+      "api worker view access",
+      836371122,
+      true
+    ],
+    [
+      "5",
+      "evidence sources",
+      -990858123,
+      true
+    ],
+    [
+      "6",
+      "policy pins",
+      1230051143,
+      true
+    ],
+    [
+      "7",
+      "ai spend ledger",
+      -518930411,
+      true
+    ],
+    [
+      "8",
+      "ai job results",
+      445298147,
+      true
+    ],
+    [
+      "9",
+      "ai response evidence",
+      1860327807,
+      true
+    ],
+    [
+      "10",
+      "embedding cache",
+      -1396027289,
+      true
+    ],
+    [
+      "11",
+      "worker operation signals",
+      1080193184,
+      true
+    ],
+    [
+      "12",
+      "document cleanup lock",
+      1626892249,
+      true
+    ],
+    [
+      "13",
+      "case state queue",
+      -2040301943,
+      true
+    ],
+    [
+      "14",
+      "durable trace context",
+      398960353,
+      true
+    ]
+  ],
+  "connectionTLS": [
+    true,
+    "TLSv1.3"
+  ]
+}

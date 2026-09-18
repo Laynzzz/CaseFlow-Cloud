@@ -1,15 +1,13 @@
 # AWS rehearsal scaffold
 
-Implemented source; **foundation provisioned, application deployment pending**.
-The `caseflow-rehearsal` profile is signed in as `caseflow-operator`; the owner's
-scoped policy grant is verified. Route 53 DNS, protected S3 remote state and two
-empty ECR repositories exist. A reviewed registry-only Terraform plan/apply
-succeeded; no application workload has started. Registrar delegation is pending.
-See [foundation evidence](../../../docs/evidence/2026-09-17-r3/cloud-foundation/summary.md). Successful
-`validate` or mocked tests do not establish deployability, quotas, engine/AMI
-availability, permissions, health or cloud acceptance. See
-[ADR 0007](../../../docs/adr/0007-cloud-rehearsal-profile.md) and the
-[cost proposal](../../../docs/aws-deployment-proposal.md).
+Actual HTTPS deployment, purchase/browser/S3 smoke and prior-image rollback
+passed September 17 local / September 18, 2026 UTC. Teardown is verified, with retained resources explicitly listed in the [cloud report](../../../docs/evidence/2026-09-17-r3/cloud-deployment/summary.md).
+The run used the scoped `caseflow-operator` profile, the Free account plan and
+the existing USD 10 AWS credit allowance. No hosted AI calls were needed.
+See [ADR 0007](../../../docs/adr/0007-cloud-rehearsal-profile.md),
+[ADR 0008](../../../docs/adr/0008-free-plan-rehearsal-sizing.md) and the
+[cost proposal](../../../docs/aws-deployment-proposal.md). Validation and mocked
+tests remain distinct from actual deployment evidence.
 
 ## Local verification (no AWS account)
 
@@ -20,7 +18,7 @@ syntax/schema and plan-level invariants using Terraform's mock provider:
 terraform -chdir=infrastructure/terraform/rehearsal init -backend=false -input=false
 terraform -chdir=infrastructure/terraform/rehearsal fmt -check
 terraform -chdir=infrastructure/terraform/rehearsal validate
-terraform -chdir=infrastructure/terraform/rehearsal test
+terraform -chdir=infrastructure/terraform/rehearsal test -var=enable_services=false
 ```
 
 Terraform 1.16.2 and AWS provider 6.62.0 were used. Commit the provider lock;
@@ -152,7 +150,7 @@ aws ecs run-task --cluster $clusterName --task-definition $bootstrapDefinition -
    locally with no network/capabilities to generate/check DOCX bytes; it does not
    execute inside ECS. Private worker health must be checked separately through
    ECS and private operations access. Both default and configured runner paths
-   passed locally; HTTPS/AWS execution is **unverified**. Record exact image digests and migration
+   passed locally and in the recorded HTTPS/AWS rehearsal. Record exact image digests and migration
    checksums with raw output and limitations.
 
 The API currently receives migrator credentials during startup, matching the
@@ -198,9 +196,33 @@ snapshots, S3 versions, encrypted EBS, ECR images, Secrets Manager records,
 CloudWatch logs, DNS and remote-state bucket. Do not call stopped tasks a full
 teardown. Record follow-up inventory and costs; budget alerts do not cap them.
 
-Known unverified cloud details: account IAM/SCP/quota behavior, regional image
-and PostgreSQL availability, bootstrap SQL privileges on actual RDS, EC2 package
-installation/EBS device discovery, Keycloak proxy/realm readiness, private DNS
-registration, task/init-volume permissions, S3 compatibility, trace export,
-health-gated rollout, rollback, billing and final resource inventory. Offline
-validation proves none of these cloud behaviors.
+## Observed cloud behavior and repeat-run limits
+
+The [actual report](../../../docs/evidence/2026-09-17-r3/cloud-deployment/summary.md)
+verifies this account's permissions/quotas, image and PostgreSQL availability,
+role bootstrap on RDS, corrected EC2 package installation/EBS mounting, HTTPS
+identity readiness, Cloud Map discovery, S3 upload/download, private telemetry,
+health-gated rollout and prior-image rollback. Other accounts, future catalog
+versions, maximum capacity, high availability and cloud dependency outages remain
+unverified. Delayed account credits are not exact project billing.
+
+The real deployment required `awscli-2` on AL2023, explicit provider round-trip
+defaults and 180 seconds of API startup grace. The Cloud Map threshold argument
+is deprecated but required for stable readback with pinned provider 6.62.0;
+revisit it during the next major provider upgrade. The candidate disables OTLP
+metrics export because Prometheus scrapes metrics and the collector accepts traces.
+
+Task definitions use `skip_destroy=true`, retaining revisions for rollback.
+Apply this flag to existing definitions before a replacement that must avoid
+old-definition deregistration. The scoped operator could not deregister on `*`;
+no permission expansion was made. Retained definitions do not run tasks. Inventory
+them separately after destroy; `list-task-definitions --family-prefix` takes a
+whole family name, so inspect the full list or each exact API/worker/bootstrap
+family rather than assuming a common string prefix matches all three.
+
+For a new rehearsal, rebuild and republish image digests, refresh the expiry tag,
+recheck the credit allowance and scan exceptions, and verify DNS and profile
+prerequisites. Secrets scheduled for seven-day recovery may block immediate name
+reuse; restore/reconcile the intended secrets or use a separately reviewed name.
+Do not create duplicate resources merely to bypass that recovery window. The
+protected source defaults remain unchanged after temporary teardown overrides.

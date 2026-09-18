@@ -1,0 +1,137 @@
+{
+  "observedAt": "2026-09-18T01:41:56.388532+00:00",
+  "instances": [
+    {
+      "id": "i-0c4bdf277c86d6627",
+      "state": "terminated"
+    },
+    {
+      "id": "i-06499168d73997cf0",
+      "state": "terminated"
+    }
+  ],
+  "volumes": [],
+  "vpcs": [],
+  "networkInterfaces": [],
+  "databases": [],
+  "snapshots": [],
+  "automatedBackups": {
+    "absent": true,
+    "awsErrorCode": "DBInstanceAutomatedBackupNotFound"
+  },
+  "loadBalancers": [],
+  "clusters": {
+    "clusters": [
+      {
+        "status": "INACTIVE",
+        "running": 0,
+        "pending": 0,
+        "services": 0
+      }
+    ],
+    "failures": []
+  },
+  "taskDefinitions": [
+    "arn:aws:ecs:us-east-1:123456789012:task-definition/caseflow-rehearsal-api:1",
+    "arn:aws:ecs:us-east-1:123456789012:task-definition/caseflow-rehearsal-api:2",
+    "arn:aws:ecs:us-east-1:123456789012:task-definition/caseflow-rehearsal-api:3",
+    "arn:aws:ecs:us-east-1:123456789012:task-definition/caseflow-rehearsal-bootstrap:1",
+    "arn:aws:ecs:us-east-1:123456789012:task-definition/caseflow-rehearsal-worker:1",
+    "arn:aws:ecs:us-east-1:123456789012:task-definition/caseflow-rehearsal-worker:2",
+    "arn:aws:ecs:us-east-1:123456789012:task-definition/caseflow-rehearsal-worker:3"
+  ],
+  "repositories": [],
+  "buckets": [
+    {
+      "name": "caseflow-rehearsal-state-123456789012-us-east-1",
+      "created": "2026-09-18T00:28:05+00:00"
+    }
+  ],
+  "logs": [],
+  "namespaces": [],
+  "certificates": [],
+  "dnsRecords": [
+    {
+      "name": "laynexia.com.",
+      "type": "NS"
+    },
+    {
+      "name": "laynexia.com.",
+      "type": "SOA"
+    }
+  ],
+  "hostedZones": [
+    {
+      "name": "laynexia.com.",
+      "id": "/hostedzone/Z08031651TZAM5P9APM4K",
+      "private": false
+    }
+  ],
+  "secrets": [
+    {
+      "name": "caseflow-rehearsal/migrator",
+      "deleted": "2026-09-17T21:34:43.064000-04:00",
+      "owning": null
+    },
+    {
+      "name": "caseflow-rehearsal/worker",
+      "deleted": "2026-09-17T21:34:42.834000-04:00",
+      "owning": null
+    },
+    {
+      "name": "caseflow-rehearsal/keycloak-db",
+      "deleted": "2026-09-17T21:34:43.026000-04:00",
+      "owning": null
+    },
+    {
+      "name": "caseflow-rehearsal/api",
+      "deleted": "2026-09-17T21:34:42.888000-04:00",
+      "owning": null
+    },
+    {
+      "name": "caseflow-rehearsal/keycloak-realm",
+      "deleted": "2026-09-17T21:34:42.998000-04:00",
+      "owning": null
+    },
+    {
+      "name": "caseflow-rehearsal/keycloak-admin",
+      "deleted": "2026-09-17T21:34:43.148000-04:00",
+      "owning": null
+    },
+    {
+      "name": "caseflow-rehearsal/demo-password",
+      "deleted": "2026-09-17T21:34:43.061000-04:00",
+      "owning": null
+    }
+  ],
+  "roles": [],
+  "policies": [
+    "caseflow-access-runtime-boundary",
+    "caseflow-access-identity-storage",
+    "caseflow-access-infrastructure"
+  ],
+  "stateVersions": {
+    "versionCount": 46,
+    "totalBytes": 3606687,
+    "deleteMarkerCount": 24
+  },
+  "accountPlan": {
+    "accountId": "123456789012",
+    "accountPlanType": "FREE",
+    "accountPlanStatus": "ACTIVE",
+    "accountPlanRemainingCredits": {
+      "amount": 140.0,
+      "unit": "USD"
+    },
+    "accountPlanExpirationDate": "2027-03-17T22:46:40.724000+00:00"
+  },
+  "terraformManagedResources": 0,
+  "accountServiceLinkedRoles": [
+    "AWSServiceRoleForECS",
+    "AWSServiceRoleForElasticLoadBalancing",
+    "AWSServiceRoleForRDS",
+    "AWSServiceRoleForResourceExplorer",
+    "AWSServiceRoleForSupport",
+    "AWSServiceRoleForTrustedAdvisor"
+  ]
+}

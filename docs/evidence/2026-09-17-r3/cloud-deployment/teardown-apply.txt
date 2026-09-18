@@ -1,0 +1,222 @@
+aws_iam_role_policy_attachment.ssm: Destroying... [id=caseflow-rehearsal-auxiliary/arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore]
+aws_s3_bucket_versioning.objects: Destroying... [id=caseflow-rehearsal-123456789012-us-east-1]
+aws_iam_role_policy.objects["api"]: Destroying... [id=caseflow-rehearsal-api:terraform-348dcb484cd005b573f1dca7c2]
+aws_s3_bucket_server_side_encryption_configuration.objects: Destroying... [id=caseflow-rehearsal-123456789012-us-east-1]
+aws_route53_record.hosts["caseflow.laynexia.com"]: Destroying... [id=Z08031651TZAM5P9APM4K_caseflow.laynexia.com_A]
+aws_vpc_security_group_ingress_rule.database["auxiliary"]: Destroying... [id=sgr-0410d458edc173308]
+aws_route53_record.hosts["auth.laynexia.com"]: Destroying... [id=Z08031651TZAM5P9APM4K_auth.laynexia.com_A]
+aws_vpc_security_group_egress_rule.outbound["tasks"]: Destroying... [id=sgr-06e67c0148eeda830]
+aws_vpc_security_group_ingress_rule.internal_auxiliary["4318"]: Destroying... [id=sgr-0c25eaa1b46973941]
+aws_ecs_service.application["api"]: Destroying... [id=arn:aws:ecs:us-east-1:123456789012:service/caseflow-rehearsal/api]
+aws_iam_role_policy_attachment.ssm: Destruction complete after 0s
+aws_lb_listener_rule.identity: Destroying... [id=arn:aws:elasticloadbalancing:us-east-1:123456789012:listener-rule/app/caseflow-rehearsal/edc41269f3908a22/7f30d0fc99bbb307/194122d332ca1fa8]
+aws_s3_bucket_server_side_encryption_configuration.objects: Destruction complete after 0s
+aws_vpc_security_group_ingress_rule.metrics["9091"]: Destroying... [id=sgr-0e4657c7f37ee2f32]
+aws_iam_role_policy.objects["api"]: Destruction complete after 0s
+aws_s3_bucket_public_access_block.objects: Destroying... [id=caseflow-rehearsal-123456789012-us-east-1]
+aws_s3_bucket_public_access_block.objects: Destruction complete after 0s
+aws_vpc_security_group_ingress_rule.https: Destroying... [id=sgr-0b56badc2850bcbc6]
+aws_vpc_security_group_egress_rule.outbound["tasks"]: Destruction complete after 0s
+aws_iam_role_policy.bootstrap: Destroying... [id=caseflow-rehearsal-bootstrap:terraform-024bc750392f8bed3dce00e63c]
+aws_vpc_security_group_ingress_rule.database["auxiliary"]: Destruction complete after 0s
+aws_ecr_repository.app["api"]: Destroying... [id=caseflow-rehearsal/api]
+aws_lb_listener_rule.identity: Destruction complete after 0s
+aws_lb_target_group_attachment.identity: Destroying... [id=arn:aws:elasticloadbalancing:us-east-1:123456789012:targetgroup/caseflow-rehearsal-oidc/e95cc3e7aa97e2d6,i-0c4bdf277c86d6627,8080]
+aws_vpc_security_group_ingress_rule.internal_auxiliary["4318"]: Destruction complete after 0s
+aws_ecs_task_definition.bootstrap: Destroying... [id=caseflow-rehearsal-bootstrap]
+aws_ecs_task_definition.bootstrap: Destruction complete after 0s
+aws_vpc_security_group_egress_rule.outbound["auxiliary"]: Destroying... [id=sgr-0742cf2d6bf07eb62]
+aws_lb_target_group_attachment.identity: Destruction complete after 0s
+aws_vpc_security_group_ingress_rule.metrics["8090"]: Destroying... [id=sgr-0ca27992347faeb8d]
+aws_iam_role_policy.bootstrap: Destruction complete after 0s
+aws_vpc_security_group_ingress_rule.internal_auxiliary["29092"]: Destroying... [id=sgr-06f19b5fcb42729b1]
+aws_vpc_security_group_ingress_rule.metrics["9091"]: Destruction complete after 0s
+aws_vpc_security_group_ingress_rule.database["tasks"]: Destroying... [id=sgr-0ddd39fe63ba96f61]
+aws_s3_bucket_versioning.objects: Destruction complete after 0s
+aws_vpc_security_group_egress_rule.outbound["edge"]: Destroying... [id=sgr-03bd37838a6c6ec99]
+aws_ecr_repository.app["api"]: Destruction complete after 0s
+aws_ecr_repository.app["worker"]: Destroying... [id=caseflow-rehearsal/worker]
+aws_vpc_security_group_egress_rule.outbound["auxiliary"]: Destruction complete after 0s
+aws_vpc_security_group_ingress_rule.api: Destroying... [id=sgr-0f1871bdc6ec77d1e]
+aws_vpc_security_group_ingress_rule.metrics["8090"]: Destruction complete after 0s
+aws_ecs_service.application["worker"]: Destroying... [id=arn:aws:ecs:us-east-1:123456789012:service/caseflow-rehearsal/worker]
+aws_vpc_security_group_ingress_rule.https: Destruction complete after 0s
+aws_s3_bucket_policy.objects: Destroying... [id=caseflow-rehearsal-123456789012-us-east-1]
+aws_vpc_security_group_ingress_rule.internal_auxiliary["29092"]: Destruction complete after 0s
+aws_vpc_security_group_ingress_rule.identity: Destroying... [id=sgr-0323bbbbb3865f0b9]
+aws_ecr_repository.app["worker"]: Destruction complete after 0s
+aws_iam_role_policy.objects["worker"]: Destroying... [id=caseflow-rehearsal-worker:terraform-0fc1a8f72dd42207be64013d93]
+aws_vpc_security_group_ingress_rule.database["tasks"]: Destruction complete after 0s
+aws_iam_role_policy.worker_cleanup: Destroying... [id=caseflow-rehearsal-worker:terraform-95c6231fe3a442b3083722ec2e]
+aws_iam_role_policy.worker_cleanup: Destruction complete after 1s
+aws_volume_attachment.auxiliary: Destroying... [id=vai-1107987258]
+aws_iam_role_policy.objects["worker"]: Destruction complete after 1s
+aws_iam_role_policy_attachment.execution: Destroying... [id=caseflow-rehearsal-execution/arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy]
+aws_s3_bucket_policy.objects: Destruction complete after 1s
+aws_lb_target_group.identity: Destroying... [id=arn:aws:elasticloadbalancing:us-east-1:123456789012:targetgroup/caseflow-rehearsal-oidc/e95cc3e7aa97e2d6]
+aws_vpc_security_group_egress_rule.outbound["edge"]: Destruction complete after 1s
+aws_iam_role.bootstrap: Destroying... [id=caseflow-rehearsal-bootstrap]
+aws_iam_role_policy_attachment.execution: Destruction complete after 0s
+aws_vpc_security_group_ingress_rule.api: Destruction complete after 1s
+aws_vpc_security_group_ingress_rule.identity: Destruction complete after 1s
+aws_lb_target_group.identity: Destruction complete after 0s
+aws_iam_role.bootstrap: Destruction complete after 0s
+aws_route53_record.hosts["auth.laynexia.com"]: Still destroying... [id=Z08031651TZAM5P9APM4K_auth.laynexia.com_A, 00m10s elapsed]
+aws_ecs_service.application["api"]: Still destroying... [id=arn:aws:ecs:us-east-1:123456789012:service/caseflow-rehearsal/api, 00m10s elapsed]
+aws_route53_record.hosts["caseflow.laynexia.com"]: Still destroying... [id=Z08031651TZAM5P9APM4K_caseflow.laynexia.com_A, 00m10s elapsed]
+aws_ecs_service.application["worker"]: Still destroying... [id=arn:aws:ecs:us-east-1:123456789012:service/caseflow-rehearsal/worker, 00m10s elapsed]
+aws_volume_attachment.auxiliary: Still destroying... [id=vai-1107987258, 00m10s elapsed]
+aws_volume_attachment.auxiliary: Destruction complete after 10s
+aws_route53_record.hosts["auth.laynexia.com"]: Still destroying... [id=Z08031651TZAM5P9APM4K_auth.laynexia.com_A, 00m20s elapsed]
+aws_route53_record.hosts["caseflow.laynexia.com"]: Still destroying... [id=Z08031651TZAM5P9APM4K_caseflow.laynexia.com_A, 00m20s elapsed]
+aws_ecs_service.application["api"]: Still destroying... [id=arn:aws:ecs:us-east-1:123456789012:service/caseflow-rehearsal/api, 00m20s elapsed]
+aws_ecs_service.application["worker"]: Still destroying... [id=arn:aws:ecs:us-east-1:123456789012:service/caseflow-rehearsal/worker, 00m20s elapsed]
+aws_ecs_service.application["worker"]: Destruction complete after 26s
+aws_ecs_service.application["api"]: Still destroying... [id=arn:aws:ecs:us-east-1:123456789012:service/caseflow-rehearsal/api, 00m30s elapsed]
+aws_route53_record.hosts["caseflow.laynexia.com"]: Still destroying... [id=Z08031651TZAM5P9APM4K_caseflow.laynexia.com_A, 00m30s elapsed]
+aws_route53_record.hosts["auth.laynexia.com"]: Still destroying... [id=Z08031651TZAM5P9APM4K_auth.laynexia.com_A, 00m30s elapsed]
+aws_route53_record.hosts["caseflow.laynexia.com"]: Destruction complete after 30s
+aws_route53_record.hosts["auth.laynexia.com"]: Destruction complete after 30s
+aws_ecs_service.application["api"]: Destruction complete after 36s
+aws_ecs_cluster.main: Destroying... [id=arn:aws:ecs:us-east-1:123456789012:cluster/caseflow-rehearsal]
+aws_iam_role_policy.execution_secrets: Destroying... [id=caseflow-rehearsal-execution:terraform-072793ed4eb1c40ab6319a4419]
+aws_service_discovery_service.application["worker"]: Destroying... [id=srv-dvf725exknxqi3e6]
+aws_service_discovery_service.application["api"]: Destroying... [id=srv-2eion7yaf33g7vs5]
+aws_lb_listener_rule.api: Destroying... [id=arn:aws:elasticloadbalancing:us-east-1:123456789012:listener-rule/app/caseflow-rehearsal/edc41269f3908a22/7f30d0fc99bbb307/9d6d57792e94a17c]
+aws_ecs_task_definition.application["worker"]: Destroying... [id=caseflow-rehearsal-worker]
+aws_security_group.tasks: Destroying... [id=sg-0dd61692e0fb54e3f]
+aws_ecs_task_definition.application["api"]: Destroying... [id=caseflow-rehearsal-api]
+aws_ecs_task_definition.application["worker"]: Destruction complete after 0s
+aws_ecs_task_definition.application["api"]: Destruction complete after 0s
+aws_cloudwatch_log_group.services: Destroying... [id=/caseflow/caseflow-rehearsal]
+aws_iam_role.application["api"]: Destroying... [id=caseflow-rehearsal-api]
+aws_iam_role.application["worker"]: Destroying... [id=caseflow-rehearsal-worker]
+aws_s3_bucket.objects: Destroying... [id=caseflow-rehearsal-123456789012-us-east-1]
+aws_iam_role_policy.execution_secrets: Destruction complete after 0s
+aws_instance.auxiliary: Destroying... [id=i-0c4bdf277c86d6627]
+aws_lb_listener_rule.api: Destruction complete after 0s
+aws_iam_role.execution: Destroying... [id=caseflow-rehearsal-execution]
+aws_ecs_cluster.main: Destruction complete after 0s
+aws_lb_target_group.api: Destroying... [id=arn:aws:elasticloadbalancing:us-east-1:123456789012:targetgroup/caseflow-rehearsal-api/b28f348dc6f50177]
+aws_cloudwatch_log_group.services: Destruction complete after 0s
+aws_lb_listener.https: Destroying... [id=arn:aws:elasticloadbalancing:us-east-1:123456789012:listener/app/caseflow-rehearsal/edc41269f3908a22/7f30d0fc99bbb307]
+aws_iam_role.application["api"]: Destruction complete after 0s
+aws_lb_target_group.api: Destruction complete after 1s
+aws_service_discovery_service.application["api"]: Destruction complete after 1s
+aws_service_discovery_service.application["worker"]: Destruction complete after 1s
+aws_service_discovery_private_dns_namespace.main: Destroying... [id=ns-ej6bwel7dnnktekv]
+aws_s3_bucket.objects: Destruction complete after 1s
+aws_iam_role.application["worker"]: Destruction complete after 1s
+aws_lb_listener.https: Destruction complete after 1s
+aws_acm_certificate_validation.main: Destroying... [id=2026-09-18 00:38:26.334 +0000 UTC]
+aws_acm_certificate_validation.main: Destruction complete after 0s
+aws_lb.main: Destroying... [id=arn:aws:elasticloadbalancing:us-east-1:123456789012:loadbalancer/app/caseflow-rehearsal/edc41269f3908a22]
+aws_route53_record.certificate["caseflow.laynexia.com"]: Destroying... [id=Z08031651TZAM5P9APM4K__4e763e5fb7341587b9fec1a9784dfc5f.caseflow.laynexia.com._CNAME]
+aws_route53_record.certificate["auth.laynexia.com"]: Destroying... [id=Z08031651TZAM5P9APM4K__b0c44da574584eff4ce4cf740e7697ff.auth.laynexia.com._CNAME]
+aws_iam_role.execution: Destruction complete after 1s
+aws_security_group.tasks: Destruction complete after 1s
+aws_instance.auxiliary: Still destroying... [id=i-0c4bdf277c86d6627, 00m10s elapsed]
+aws_service_discovery_private_dns_namespace.main: Still destroying... [id=ns-ej6bwel7dnnktekv, 00m10s elapsed]
+aws_lb.main: Still destroying... [id=arn:aws:elasticloadbalancing:us-east-1:...pp/caseflow-rehearsal/edc41269f3908a22, 00m10s elapsed]
+aws_route53_record.certificate["caseflow.laynexia.com"]: Still destroying... [id=Z08031651TZAM5P9APM4K__4e763e5fb7341587...9784dfc5f.caseflow.laynexia.com._CNAME, 00m10s elapsed]
+aws_route53_record.certificate["auth.laynexia.com"]: Still destroying... [id=Z08031651TZAM5P9APM4K__b0c44da574584eff4ce4cf740e7697ff.auth.laynexia.com._CNAME, 00m10s elapsed]
+aws_instance.auxiliary: Still destroying... [id=i-0c4bdf277c86d6627, 00m20s elapsed]
+aws_service_discovery_private_dns_namespace.main: Still destroying... [id=ns-ej6bwel7dnnktekv, 00m20s elapsed]
+aws_lb.main: Still destroying... [id=arn:aws:elasticloadbalancing:us-east-1:...pp/caseflow-rehearsal/edc41269f3908a22, 00m20s elapsed]
+aws_route53_record.certificate["caseflow.laynexia.com"]: Still destroying... [id=Z08031651TZAM5P9APM4K__4e763e5fb7341587...9784dfc5f.caseflow.laynexia.com._CNAME, 00m20s elapsed]
+aws_route53_record.certificate["auth.laynexia.com"]: Still destroying... [id=Z08031651TZAM5P9APM4K__b0c44da574584eff4ce4cf740e7697ff.auth.laynexia.com._CNAME, 00m20s elapsed]
+aws_lb.main: Destruction complete after 26s
+aws_security_group.edge: Destroying... [id=sg-000073a88d586e148]
+aws_security_group.edge: Destruction complete after 1s
+aws_instance.auxiliary: Destruction complete after 30s
+aws_iam_role_policy.auxiliary_secrets: Destroying... [id=caseflow-rehearsal-auxiliary:terraform-1de7d9662a232b6bdbfc6184d6]
+aws_route_table_association.public[1]: Destroying... [id=rtbassoc-01db770f06935645b]
+aws_ebs_volume.auxiliary: Destroying... [id=vol-0cfa8b69ff336277b]
+aws_route_table_association.public[0]: Destroying... [id=rtbassoc-0b09bc0bdf7e317f2]
+aws_iam_instance_profile.auxiliary: Destroying... [id=caseflow-rehearsal]
+aws_security_group.auxiliary: Destroying... [id=sg-07b3d854f0f3ce6f2]
+aws_db_instance.main: Destroying... [id=db-T7GG6FXWLJ4UD5WNUXSAZTXZ5Y]
+aws_iam_role_policy.auxiliary_secrets: Destruction complete after 0s
+aws_secretsmanager_secret.runtime["worker"]: Destroying... [id=arn:aws:secretsmanager:us-east-1:123456789012:secret:caseflow-rehearsal/worker-NTglZ0]
+aws_iam_instance_profile.auxiliary: Destruction complete after 0s
+aws_secretsmanager_secret.runtime["api"]: Destroying... [id=arn:aws:secretsmanager:us-east-1:123456789012:secret:caseflow-rehearsal/api-mVbYXx]
+aws_service_discovery_private_dns_namespace.main: Still destroying... [id=ns-ej6bwel7dnnktekv, 00m30s elapsed]
+aws_route_table_association.public[0]: Destruction complete after 1s
+aws_secretsmanager_secret.runtime["keycloak-realm"]: Destroying... [id=arn:aws:secretsmanager:us-east-1:123456789012:secret:caseflow-rehearsal/keycloak-realm-WX4CW3]
+aws_secretsmanager_secret.runtime["worker"]: Destruction complete after 1s
+aws_secretsmanager_secret.runtime["keycloak-db"]: Destroying... [id=arn:aws:secretsmanager:us-east-1:123456789012:secret:caseflow-rehearsal/keycloak-db-sJR20r]
+aws_secretsmanager_secret.runtime["api"]: Destruction complete after 1s
+aws_secretsmanager_secret.runtime["demo-password"]: Destroying... [id=arn:aws:secretsmanager:us-east-1:123456789012:secret:caseflow-rehearsal/demo-password-5F7c1T]
+aws_route53_record.certificate["caseflow.laynexia.com"]: Still destroying... [id=Z08031651TZAM5P9APM4K__4e763e5fb7341587...9784dfc5f.caseflow.laynexia.com._CNAME, 00m30s elapsed]
+aws_route53_record.certificate["auth.laynexia.com"]: Still destroying... [id=Z08031651TZAM5P9APM4K__b0c44da574584eff4ce4cf740e7697ff.auth.laynexia.com._CNAME, 00m30s elapsed]
+aws_route_table_association.public[1]: Destruction complete after 1s
+aws_secretsmanager_secret.runtime["migrator"]: Destroying... [id=arn:aws:secretsmanager:us-east-1:123456789012:secret:caseflow-rehearsal/migrator-xm0xaM]
+aws_secretsmanager_secret.runtime["keycloak-realm"]: Destruction complete after 0s
+aws_secretsmanager_secret.runtime["keycloak-admin"]: Destroying... [id=arn:aws:secretsmanager:us-east-1:123456789012:secret:caseflow-rehearsal/keycloak-admin-d8i2Y9]
+aws_secretsmanager_secret.runtime["keycloak-db"]: Destruction complete after 0s
+aws_iam_role.auxiliary: Destroying... [id=caseflow-rehearsal-auxiliary]
+aws_secretsmanager_secret.runtime["demo-password"]: Destruction complete after 0s
+aws_subnet.public[1]: Destroying... [id=subnet-0b88cee7e2ada7c43]
+aws_secretsmanager_secret.runtime["migrator"]: Destruction complete after 0s
+aws_route_table.public: Destroying... [id=rtb-08bf3e05d37469b16]
+aws_secretsmanager_secret.runtime["keycloak-admin"]: Destruction complete after 0s
+aws_subnet.public[0]: Destroying... [id=subnet-0e8ddac1d832d8183]
+aws_route53_record.certificate["auth.laynexia.com"]: Destruction complete after 30s
+aws_security_group.auxiliary: Destruction complete after 1s
+aws_route53_record.certificate["caseflow.laynexia.com"]: Destruction complete after 30s
+aws_acm_certificate.main: Destroying... [id=arn:aws:acm:us-east-1:123456789012:certificate/42785d89-68cf-4de5-8e7f-6153b4f9de4c]
+aws_iam_role.auxiliary: Destruction complete after 0s
+aws_acm_certificate.main: Destruction complete after 0s
+aws_subnet.public[1]: Destruction complete after 0s
+aws_subnet.public[0]: Destruction complete after 1s
+aws_route_table.public: Destruction complete after 1s
+aws_internet_gateway.main: Destroying... [id=igw-073c228aefd597ce8]
+aws_internet_gateway.main: Destruction complete after 0s
+aws_ebs_volume.auxiliary: Still destroying... [id=vol-0cfa8b69ff336277b, 00m10s elapsed]
+aws_db_instance.main: Still destroying... [id=db-T7GG6FXWLJ4UD5WNUXSAZTXZ5Y, 00m10s elapsed]
+aws_service_discovery_private_dns_namespace.main: Still destroying... [id=ns-ej6bwel7dnnktekv, 00m40s elapsed]
+aws_ebs_volume.auxiliary: Destruction complete after 11s
+aws_service_discovery_private_dns_namespace.main: Destruction complete after 43s
+aws_db_instance.main: Still destroying... [id=db-T7GG6FXWLJ4UD5WNUXSAZTXZ5Y, 00m20s elapsed]
+aws_db_instance.main: Still destroying... [id=db-T7GG6FXWLJ4UD5WNUXSAZTXZ5Y, 00m30s elapsed]
+aws_db_instance.main: Still destroying... [id=db-T7GG6FXWLJ4UD5WNUXSAZTXZ5Y, 00m40s elapsed]
+aws_db_instance.main: Still destroying... [id=db-T7GG6FXWLJ4UD5WNUXSAZTXZ5Y, 00m50s elapsed]
+aws_db_instance.main: Still destroying... [id=db-T7GG6FXWLJ4UD5WNUXSAZTXZ5Y, 01m00s elapsed]
+aws_db_instance.main: Still destroying... [id=db-T7GG6FXWLJ4UD5WNUXSAZTXZ5Y, 01m10s elapsed]
+aws_db_instance.main: Still destroying... [id=db-T7GG6FXWLJ4UD5WNUXSAZTXZ5Y, 01m20s elapsed]
+aws_db_instance.main: Still destroying... [id=db-T7GG6FXWLJ4UD5WNUXSAZTXZ5Y, 01m30s elapsed]
+aws_db_instance.main: Still destroying... [id=db-T7GG6FXWLJ4UD5WNUXSAZTXZ5Y, 01m40s elapsed]
+aws_db_instance.main: Still destroying... [id=db-T7GG6FXWLJ4UD5WNUXSAZTXZ5Y, 01m50s elapsed]
+aws_db_instance.main: Still destroying... [id=db-T7GG6FXWLJ4UD5WNUXSAZTXZ5Y, 02m00s elapsed]
+aws_db_instance.main: Still destroying... [id=db-T7GG6FXWLJ4UD5WNUXSAZTXZ5Y, 02m10s elapsed]
+aws_db_instance.main: Still destroying... [id=db-T7GG6FXWLJ4UD5WNUXSAZTXZ5Y, 02m20s elapsed]
+aws_db_instance.main: Still destroying... [id=db-T7GG6FXWLJ4UD5WNUXSAZTXZ5Y, 02m30s elapsed]
+aws_db_instance.main: Still destroying... [id=db-T7GG6FXWLJ4UD5WNUXSAZTXZ5Y, 02m40s elapsed]
+aws_db_instance.main: Still destroying... [id=db-T7GG6FXWLJ4UD5WNUXSAZTXZ5Y, 02m50s elapsed]
+aws_db_instance.main: Still destroying... [id=db-T7GG6FXWLJ4UD5WNUXSAZTXZ5Y, 03m00s elapsed]
+aws_db_instance.main: Still destroying... [id=db-T7GG6FXWLJ4UD5WNUXSAZTXZ5Y, 03m10s elapsed]
+aws_db_instance.main: Still destroying... [id=db-T7GG6FXWLJ4UD5WNUXSAZTXZ5Y, 03m20s elapsed]
+aws_db_instance.main: Still destroying... [id=db-T7GG6FXWLJ4UD5WNUXSAZTXZ5Y, 03m30s elapsed]
+aws_db_instance.main: Still destroying... [id=db-T7GG6FXWLJ4UD5WNUXSAZTXZ5Y, 03m40s elapsed]
+aws_db_instance.main: Still destroying... [id=db-T7GG6FXWLJ4UD5WNUXSAZTXZ5Y, 03m50s elapsed]
+aws_db_instance.main: Still destroying... [id=db-T7GG6FXWLJ4UD5WNUXSAZTXZ5Y, 04m00s elapsed]
+aws_db_instance.main: Still destroying... [id=db-T7GG6FXWLJ4UD5WNUXSAZTXZ5Y, 04m10s elapsed]
+aws_db_instance.main: Still destroying... [id=db-T7GG6FXWLJ4UD5WNUXSAZTXZ5Y, 04m20s elapsed]
+aws_db_instance.main: Still destroying... [id=db-T7GG6FXWLJ4UD5WNUXSAZTXZ5Y, 04m30s elapsed]
+aws_db_instance.main: Still destroying... [id=db-T7GG6FXWLJ4UD5WNUXSAZTXZ5Y, 04m40s elapsed]
+aws_db_instance.main: Still destroying... [id=db-T7GG6FXWLJ4UD5WNUXSAZTXZ5Y, 04m50s elapsed]
+aws_db_instance.main: Destruction complete after 4m55s
+aws_db_parameter_group.main: Destroying... [id=caseflow-rehearsal]
+aws_db_subnet_group.main: Destroying... [id=caseflow-rehearsal]
+aws_security_group.database: Destroying... [id=sg-0d73b252a5070107f]
+aws_db_parameter_group.main: Destruction complete after 0s
+aws_db_subnet_group.main: Destruction complete after 1s
+aws_subnet.private[1]: Destroying... [id=subnet-065eb7fcf1ab4d5f1]
+aws_subnet.private[0]: Destroying... [id=subnet-0a7b267533636595b]
+aws_security_group.database: Destruction complete after 1s
+aws_subnet.private[1]: Destruction complete after 0s
+aws_subnet.private[0]: Destruction complete after 0s
+aws_vpc.main: Destroying... [id=vpc-0dcdd729d7bb56572]
+aws_vpc.main: Destruction complete after 1s
+
+Apply complete! Resources: 0 added, 0 changed, 82 destroyed.

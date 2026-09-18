@@ -1,0 +1,70 @@
+{
+  "observedAt": "2026-09-18T01:32:32.712019+00:00",
+  "objects": [
+    {
+      "Key": "tenants/fd324354-ee2c-4522-89c4-33eabba99a36/documents/2621882d-4446-4186-a65a-e14eaa90d44c/attempt-1/fence-1/347bb663-001e-4406-a6be-b44ec90bb83d.docx",
+      "VersionId": "8obt2RnA5iBXyNSKZZi3F5sReOjpuz6z"
+    },
+    {
+      "Key": "tenants/fd324354-ee2c-4522-89c4-33eabba99a36/documents/3319ba2b-5964-4c4b-bcb8-fe289e9d2854/attempt-1/fence-1/43fd598f-e8d2-444b-8b45-a0d889050f0c.docx",
+      "VersionId": "Bu5smxl6jnk6d4VWz.svCNUg1VjSXUp6"
+    },
+    {
+      "Key": "tenants/fd324354-ee2c-4522-89c4-33eabba99a36/documents/842e6a35-3633-4fe7-98cb-5fab90bd917f/attempt-1/fence-1/b85dd5ef-3c56-46fc-96b7-2a65c05737d2.docx",
+      "VersionId": ".biTT9s._Z2lPnuGImAyFnuqcrTnBjZf"
+    },
+    {
+      "Key": "tenants/fd324354-ee2c-4522-89c4-33eabba99a36/documents/9a982eb1-0bbc-4330-b75c-afc9d0d82fa8/attempt-1/fence-1/d1926695-916d-4c34-813f-32b7d85b7eab.docx",
+      "VersionId": "CEKrrlm1_07qY0PU2ii3n4EqRg0wR4Db"
+    },
+    {
+      "Key": "tenants/fd324354-ee2c-4522-89c4-33eabba99a36/documents/a564eed0-86ad-4d50-897c-82e8f701205b/attempt-1/fence-1/f7253405-4bb2-4d72-b9d5-f97d561137ac.docx",
+      "VersionId": "J1aXHkdsevvko6ShZYXeciUOacY03O7s"
+    },
+    {
+      "Key": "tenants/fd324354-ee2c-4522-89c4-33eabba99a36/templates/01c57450-efbe-4439-9619-5dbb9ddf8177/a465b6c0-fb35-4495-a64a-4d39eb9fbabf.docx",
+      "VersionId": "Cj1oxWlDOKtblQjGtq9y4opaiQPK_IPq"
+    },
+    {
+      "Key": "tenants/fd324354-ee2c-4522-89c4-33eabba99a36/uploads/templates/01c57450-efbe-4439-9619-5dbb9ddf8177",
+      "VersionId": "8YwN5ab1l.NOx8v.FnsNvKdAo._A_uZK"
+    }
+  ],
+  "repositories": {
+    "caseflow-rehearsal/api": [
+      {
+        "imageDigest": "sha256:5241a81438d88a919f3fa8541157fac0cfcdf30b46d2a99836ecdba810eaa95a"
+      },
+      {
+        "imageDigest": "sha256:c278e9cc7738214899336f401a3e2b8a18e4659ab85241a422e88cf132805779"
+      },
+      {
+        "imageDigest": "sha256:cc99f73ae05de42a87034db1a77cdcb4398569d18c077f5e978303f0611ede41"
+      },
+      {
+        "imageDigest": "sha256:b9ade70cb896253ff95be9d831397a8591991f8f40835f0dc36743c8b01c77e9"
+      },
+      {
+        "imageDigest": "sha256:09e8f041231f796371a832180601f1d43fd377635d29859bb353e4baa48207e1",
+        "imageTag": "50decb5"
+      },
+      {
+        "imageDigest": "sha256:0d094b4874536de850f020bbae2cb99e3f661a3ede6f43b312b50036815dbdc1",
+        "imageTag": "metrics-fix"
+      }
+    ],
+    "caseflow-rehearsal/worker": [
+      {
+        "imageDigest": "sha256:566728a9b7e75bff3395938293507b8f8fcc125b02bbde42affe537d6a330349"
+      },
+      {
+        "imageDigest": "sha256:d45b1a0035439419a5ce40d17ac59f2c2d818ecf4d0a90280bed7cb408fb4871"
+      },
+      {
+        "imageDigest": "sha256:2311103ccc54e6961643d2777b7edd6fff5fa3658900cd372b63f8b33a36d15f",
+        "imageTag": "50decb5"
+      }
+    ]
+  },
+  "manualSnapshots": []
+}

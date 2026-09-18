@@ -3,8 +3,8 @@
 **Local functional/evaluation deliverable complete; AI remains experimental.**
 The [acceptance decision](evidence/2026-09-16-r2/r2-acceptance.md) maps actual
 evidence to plan.md §§3,12,17. Completion means working assisted/manual paths
-and published evaluation, not passing all provisional quality targets. R1 cloud
-gates remain open. R3 is the next phase under the user's existing authorization.
+and published evaluation, not passing all provisional quality targets. The R1
+cloud gate was subsequently closed during the [completed R3 release](evidence/2026-09-17-r3/r3-acceptance.md).
 
 | Product step | Implemented and verified | Remaining limitation |
 | --- | --- | --- |

@@ -1,7 +1,10 @@
 # Cloud deployment session
 
-Session started September 17, 2026 local time (September 18 UTC). In progress:
-this evidence is not a completed cloud acceptance or rollback claim.
+Session started September 17, 2026 local time (September 18 UTC). Actual HTTPS
+deployment, workflow/browser checks, candidate rollout and prior-image rollback
+and teardown have passed. Final inventory: September 18 at 01:41:56 UTC.
+The chronological checkpoints below retain failures and evidence boundaries;
+the [R3 acceptance record](../r3-acceptance.md) states the final release decision.
 
 ## Verified before application provisioning
 
@@ -91,7 +94,7 @@ Private SSM inspection verified three healthy Prometheus scrape targets, worker
 database health, and traces in Tempo. The initial query is in `trace-search.json`;
 cross-service trace inspection is a separate pending step.
 
-## Candidate rollout (in progress)
+## Candidate rollout and prior-image rollback
 
 The candidate disables automatic OTLP metrics export in application YAML because
 Prometheus already scrapes metrics and the collector accepts only traces. The
@@ -113,3 +116,118 @@ Files beside this report preserve DNS, published/local image identifiers,
 pre-apply cost readback, resource actions and scan decisions. Account identifiers
 are consistently replaced by synthetic `123456789012`; real credentials, state,
 binary plans and application secrets are excluded.
+
+
+Both candidate services reached `COMPLETED`, with one running task each. The
+candidate smoke passed and preserved the baseline purchase. The API candidate
+was built from `8e61fe1` plus the uncommitted metrics-export setting, subsequently
+committed in `a795184`; its image revision label `8e61fe1-cloud-metrics-fix` is a
+build label, not a clean Git commit. `candidate-image.json` pins the actual ECR
+index digest. The worker image was unchanged.
+
+`trace-verification.json` and `actual-trace.json` record 13 spans across Java and
+Python, including API publish, worker schedule/execute/publish and API completion.
+Cross-service parent IDs and exported metadata allowlists passed. Direct lookup
+by trace ID succeeded after a search returned no worker results; the reason for
+the empty search is unproven. All three private Prometheus targets were healthy.
+`candidate-log-check.json` records the checked window without the baseline's
+redundant automatic OTLP metrics-export warnings.
+
+The rollback restored the original API/worker digests and 0.1 trace sampling.
+Both services again reached `COMPLETED` (`rollback-services.json`). The complete
+smoke passed (`rollback-smoke.txt`), and separate post-rollback checks downloaded
+and rehashed the baseline, candidate and browser documents. All three approved
+records and checksums were preserved (`rollback-preservation.json`). This cloud
+candidate changed configuration, not schema; additive V14 migration compatibility
+has separate [local rollback evidence](../monitoring-recovery/summary.md).
+
+A read-only one-off task verified all 14 successful Flyway migrations and a TLS
+1.3 connection to RDS (`database-readback.json`). Its first attempt failed because
+`rds.force_ssl` is an RDS parameter-group setting, not a runtime PostgreSQL `SHOW`
+parameter. The corrected readback exited zero. No database state was changed by
+this check. RDS API readback separately reported `rds.force_ssl=1`.
+
+
+## Completed teardown and cost record
+
+The API/worker services first reached desired/running/pending counts of zero.
+All observed tasks then reached STOPPED; an early strict check waited for the
+last task to finish stopping before deleting any objects. Inventory recorded
+seven versions belonging to the one synthetic tenant and the exact two ECR
+repositories. Deleted those versions and image manifests, verified the containers
+empty, and retained the inventory (`pre-delete-inventory.json`).
+
+The reviewed stop plan disabled RDS/ALB deletion protection. Only the four
+persistent-resource lifecycle guards were temporarily relaxed to create the
+saved destroy plan, then the original protected source files were restored.
+The saved plan contained only deletion actions for 82 workload resources, with
+the external public DNS zone and state bucket excluded. Its successful apply
+is in `teardown-apply.txt`; no `force_destroy`/`force_delete` shortcut was used.
+
+RDS created the explicitly scoped final synthetic snapshot. It did not exist
+before this session. Its creation timestamp changed between creating/available
+readbacks; a strict equality guard stopped the first deletion attempt. Rechecked
+the exact source database resource ID and completed snapshot timestamp before
+deleting it. `snapshot-deletion.json` records that deletion; final AWS readback
+found no database, snapshots or retained automated backups.
+
+`teardown-inventory.json` verifies empty Terraform managed state and absence of
+workload compute, EBS, VPC/network interfaces, ALB, active ECS services/tasks,
+application bucket, ECR repositories, private namespace, logs and certificate.
+Both the initial failed and repaired EC2 instances are terminated. The RDS-owned
+master secret disappeared. Seven runtime secrets remain marked for deletion
+under the configured recovery window.
+
+Intentionally retained: the public DNS zone (NS/SOA only), protected state bucket
+(46 versions, 3,606,687 bytes), seven task-definition revisions, three owner-created
+access policies/operator access and account-managed service-linked roles. The
+first task-definition inventory used a partial family argument and returned no
+matches; the corrected full-list filter verifies all seven retained definitions.
+This is why API inventory was checked separately from Terraform's empty state.
+
+Cloud work ran about 64 minutes from full apply to final inventory. Estimated
+session cost is USD 1–2 with overhead reserve, **not a measured bill**. AWS still
+reports ACTIVE/FREE; account credits increased from USD 100 to USD 140, so their
+difference is not a project cost. The authorization remains USD 10. Retained DNS
+is about USD 0.50/month plus queries; protected state adds small storage/request
+charges. See `final-cost-readback.json` and the [credit ledger](../../../aws-credit-ledger.md).
+No hosted-AI calls occurred and no paid-plan upgrade was made.
+
+The AWS app is intentionally offline after this bounded rehearsal. Local preview
+and release volumes were left intact. Future deployment must republish images,
+refresh expiry/configuration, handle pending-deletion secret names, recheck
+credits and rerun current scan gates. No always-on hosting is claimed.
+
+
+## Reproduction and final verification
+
+Use the [AWS runbook](../../../../infrastructure/terraform/rehearsal/README.md)
+for prerequisites, secret bootstrap and health gates. This session used Windows,
+PowerShell, Terraform 1.16.2, AWS provider 6.62.0, Docker 29.0.1 and Node 22.20.0.
+The baseline source was `50decb5`; fixes and the candidate provenance are recorded
+above. Account identifiers are redacted; generated plans/credentials stay ignored.
+Representative commands actually used, from the repository root:
+
+```powershell
+$env:AWS_PROFILE = 'caseflow-rehearsal'
+terraform '-chdir=infrastructure/terraform/rehearsal' validate -no-color
+terraform '-chdir=infrastructure/terraform/rehearsal' test -no-color '-var=enable_services=false'
+node scripts/smoke-release.mjs infrastructure/terraform/rehearsal/generated/smoke.json
+terraform '-chdir=infrastructure/terraform/rehearsal' apply -input=false -no-color generated/rollback.tfplan
+terraform '-chdir=infrastructure/terraform/rehearsal' apply -input=false -no-color generated/destroy.tfplan
+terraform '-chdir=infrastructure/terraform/rehearsal' state list
+```
+
+Saved plans were individually inspected before execution; their names are not
+standalone deploy/destroy recipes. Smoke used the exact HTTPS application, issuer
+and S3 bucket origins plus an ignored synthetic credentials file. Final readbacks
+used AWS ECS/RDS/EC2/ELB/S3/ECR/Route 53/Secrets Manager APIs to check owned resources,
+not just Terraform output. The runbook explains prerequisites for a new session.
+
+After restoring protected defaults, format/validation and two mocked tests pass.
+The recorded Cloud Map deprecation warning remains. The initial final format
+check found only formatting in ignored local tfvars; formatting that file fixed
+it. Documentation link/hash checks and a targeted final secret scan passed.
+The local preview responds HTTP 200, and `/api/v1/health` reports API/database UP.
+See `final-verification.json`; previous full test/image scan evidence remains
+bound to its recorded images and is not presented as rerun by a documentation check.

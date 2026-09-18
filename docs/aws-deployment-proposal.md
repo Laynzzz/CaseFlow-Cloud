@@ -1,14 +1,12 @@
 # Short-lived AWS release rehearsal proposal
 
-Status: foundation provisioning started on 2026-09-17 (September 18 UTC).
-Owner-granted operator access is verified. The Route 53 zone, protected S3 state
-bucket and two empty ECR repositories exist; no application workload has started.
-The account remains Free, with USD 100 reported before creation. The user
-registered `laynexia.com` through Porkbun; registrar DNS delegation is pending.
-See [actual foundation evidence](evidence/2026-09-17-r3/cloud-foundation/summary.md).
-The user authorized USD 10 of existing AWS credits
-on 2026-09-17, with the account remaining on Free. The USD 10 AI evaluation
-ledger is separate from this cloud allowance.
+Status: **executed and torn down**, September 17 local / September 18, 2026 UTC.
+The actual HTTPS purchase/browser/S3 workflow, candidate rollout, rollback and
+remaining-resource inventory passed. [Cloud evidence](evidence/2026-09-17-r3/cloud-deployment/summary.md)
+and the [credit ledger](aws-credit-ledger.md) record outcomes and retained costs.
+The account remains Free. The USD 10 AWS allowance is separate from the AI ledger.
+The architecture and estimates below preserve the reviewed deployment proposal;
+provisioning prerequisites were satisfied during this session.
 
 [ADR 0008](adr/0008-free-plan-rehearsal-sizing.md) updates the initial instance
 sizes for the Free plan. [Read-only preflight evidence](evidence/2026-09-17-r3/cloud-preflight/summary.md)
@@ -43,13 +41,13 @@ materially more expensive and provides little additional release evidence.
   version/checksum and execute real S3 upload/download compatibility smoke.
 - One HTTPS ALB serves `caseflow.laynexia.com` and `auth.laynexia.com`. ACM DNS
   validation requires DNS control; the Route 53 zone exists, with registrar
-  delegation from Porkbun still pending. No management endpoint is
+  delegation from Porkbun verified during the session. No management endpoint is
   included in public ALB routing. [ACM domain validation](https://docs.aws.amazon.com/acm/latest/userguide/domain-ownership-validation.html)
 - A short-lived single EC2 `m7i-flex.large` (2 vCPU/8 GiB) hosts the pinned Kafka
   broker, temporary Keycloak identity service, and small monitoring stack. Its
   30 GiB encrypted gp3 disk retains broker/monitoring state during image rollout.
-  Kafka and identity share a failure domain and have no high availability;
-  record this explicitly in a cloud ADR before implementing. This larger
+  Kafka and identity share a failure domain and have no high availability, as
+  recorded in ADR 0007. This larger
   temporary host avoids assuming a 2 GiB machine can also hold every JVM and
   monitoring process. No public broker/admin/metrics ports; operational access
   uses SSM. Keycloak uses a separate database/role on RDS, production mode and
@@ -121,19 +119,19 @@ RDS burst CPU credits, extra ALB capacity/addresses and retained snapshots can
 increase this. Cloud Map resource/discovery charges, Route 53 DNS queries and
 Secrets Manager API calls are additional to this subtotal. IAM roles/policies
 do not add a per-role line item here; calls to services they authorize can incur
-charges. A new Route 53 hosted zone is still needed and adds DNS hosting charges.
+charges. The public Route 53 zone is retained and adds DNS hosting charges.
 Domain registration was purchased separately. The confirmed USD 100 credit
 balance is account-wide, not reserved for this project; credit eligibility and
 remaining balance must be checked during deployment.
 Budgets alerts are delayed monitoring, not a hard cap; teardown and inventory
 verification are the cost control.
 
-## Terraform layout implemented for offline review
+## Terraform layout exercised in AWS
 
 The single `infrastructure/terraform/rehearsal` root contains the network, data,
 edge, IAM, service, auxiliary-host and bootstrap definitions. Its
 [runbook](../infrastructure/terraform/rehearsal/README.md) distinguishes validated
-source from cloud behavior still unverified. The responsibilities below map to
+source from the separately recorded actual cloud behavior. The responsibilities below map to
 these implementation files (related concerns share files):
 
 | File | Responsibility |
@@ -162,14 +160,13 @@ rollback with old-case readback, then teardown and remaining-resource inventory.
 Retained S3 versions, snapshots, ECR images, logs, state bucket and domain/DNS
 must be named with their continuing costs.
 
-## Information needed before provisioning
+## Prerequisites for a future rehearsal
 
-The future account-backed step needs an AWS account with an authorized SSO/role
-profile, selected region, a separately accepted cloud budget/session duration,
-and DNS control for the application/authentication hostnames (or a selected
-existing OIDC provider and its client configuration). Never paste access keys
-into chat. These prerequisites do not block local release testing or Terraform
-source preparation; they do block paid provisioning and a truthful cloud release
-claim. The account, region, domain registration and USD 10 credit allowance
-are now established. The reviewed [one-time access setup](../infrastructure/terraform/rehearsal/ACCESS.md)
-is the next owner action; DNS delegation follows creation of its hosted zone.
+Account, us-east-1 region, domain, operator access, registrar delegation and the
+original USD 10 credit allowance were established for this completed session.
+Nothing further is needed from the user now. A future deployment must recheck
+login/credits and remaining allowance, publish fresh image digests, refresh the
+expiry tag, handle pending-deletion secret names and rerun scans before applying.
+Do not assume the allowance renews or leave the stack running indefinitely.
+The [access setup](../infrastructure/terraform/rehearsal/ACCESS.md) remains the
+record of the owner-granted prerequisites; do not repeat grants unnecessarily.

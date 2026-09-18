@@ -1,6 +1,6 @@
 # CaseFlow Cloud: the project structure
 
-Current local implementation, 2026-09-16. Release status and measured limitations
+Implemented locally and exercised in an AWS rehearsal, 2026-09-18 UTC. Release status and measured limitations
 live in [the R2 map](r2-status.md) and [evidence index](evidence-index.md).
 
 An employee wants to buy a $4,200 equipment package. They enter the reason,
@@ -43,7 +43,7 @@ and completion notifications; the durable job table records the work to execute.
 | Background work | Python parses files, calls AI and renders approved documents | [runtime.py](../services/worker/caseflow_worker/runtime.py) |
 | Stored relationships | PostgreSQL stores tenants, versions, jobs and audit events; SQL migrations change its structure | [db/migrations](../db/migrations) |
 | Sign-in | Keycloak implements OIDC; the API separately checks current tenant membership | [Access.java](../services/case-api/src/main/java/dev/caseflow/identity/Access.java) |
-| Files | SeaweedFS supplies S3-compatible local storage; AWS S3 deployment remains planned | [ObjectStorage.java](../services/case-api/src/main/java/dev/caseflow/documents/ObjectStorage.java) |
+| Files | SeaweedFS supplies local S3-compatible storage; actual AWS S3 upload/download is verified | [ObjectStorage.java](../services/case-api/src/main/java/dev/caseflow/documents/ObjectStorage.java) |
 | AI evidence | Versioned synthetic inputs, raw outputs and explicit grading measure quality | [evals/README.md](../evals/README.md) |
 
 ## The important boundaries
@@ -89,10 +89,15 @@ similarity and a combined ranking were evaluated as candidates. The small test
 corpora do not establish a general ranking advantage, so an additional vector
 database is not justified. See [retrieval decision](adr/0004-retrieval-comparison.md).
 
-Local implementation and synthetic checks are not cloud or production readiness.
-R2's assisted/manual journey and evaluation are locally complete with explicitly
-experimental AI; extraction missed its quality target. Cloud and R3 recovery,
-performance and operations gates remain open in the [R3 map](r3-status.md).
+The AWS rehearsal ran the Java/web and Python images in ECS/Fargate behind
+HTTPS ALB/ACM, with private RDS and S3. One temporary EC2 host ran Kafka, Keycloak
+and private monitoring; this shares a failure domain and provides no high
+availability. The cloud workflow and rollback passed, then all workload resources
+were removed. DNS and protected Terraform state remain for future deployment.
+
+R3 gates have [recorded acceptance](evidence/2026-09-17-r3/r3-acceptance.md). R2
+remains experimental because extraction missed its target. Local load/outage
+results and the bounded AWS smoke do not establish production readiness.
 Read [the teaching guide](teaching-guide.md)
 for the evolving reasoning and [interview preparation](interview-prep.md) for
 answers grounded in actual evidence.

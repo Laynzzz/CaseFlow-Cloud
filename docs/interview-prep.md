@@ -856,3 +856,28 @@ for rollback; retaining them avoids deregistration during replacement and fits
 the operator's existing access. They remain cleanup inventory even after tasks
 stop. Follow-up: image digests and compatible schemas still determine whether
 rollback works. Cloud candidate and prior-image tests must supply that evidence.
+
+
+### Observed AWS rollout and rollback
+
+**What did you actually deploy?** A synthetic purchase workflow over HTTPS using
+an ALB/ACM, Java/web and Python ECS tasks, private RDS PostgreSQL and private S3.
+A temporary EC2 host ran Kafka, Keycloak and private monitoring. A browser went
+through requester, manager and finance, then downloaded the correct DOCX.
+Follow-up: the shared auxiliary host and Single-AZ database are rehearsal cost
+choices with no high-availability claim; no hosted AI call ran in this cloud test.
+
+**How did you prove rollback kept business data?** We restored the baseline image
+digests after a configuration-only candidate, waited for both ECS rollouts, and
+re-ran the purchase smoke. Separate downloads verified identical checksums for
+three purchases created before rollback. Follow-up: this does not prove arbitrary
+schema rollback. Local testing separately covers old images with additive V14.
+Evidence: [rollback preservation](evidence/2026-09-17-r3/cloud-deployment/rollback-preservation.json)
+and [cloud report](evidence/2026-09-17-r3/cloud-deployment/summary.md).
+
+**Why isn't a credit balance a spending meter?** AWS reports an account-wide,
+delayed balance, and new credits may change it. We bound the running session,
+remove workloads and explicitly inventory retained DNS/state rather than
+subtracting two balances and calling the difference project cost. Follow-up:
+budget alerts do not enforce a hard spending cap; retained resources keep costs
+alive. The separate AI lifetime ledger remains USD 0.633975 of USD 10.

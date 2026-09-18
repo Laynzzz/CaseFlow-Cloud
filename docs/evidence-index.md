@@ -1,5 +1,16 @@
 # Evidence index
 
+## Current release decision — September 18 UTC
+
+[R3 acceptance](evidence/2026-09-17-r3/r3-acceptance.md) closes the required
+learning/portfolio gates and the deferred R1 cloud gate. [Actual AWS evidence](evidence/2026-09-17-r3/cloud-deployment/summary.md)
+includes HTTPS/browser/S3, 14 successful migrations, candidate/rollback service
+health, three preserved document hashes, private telemetry and verified teardown.
+[Remaining resources and costs](aws-credit-ledger.md) are explicit. R2 extraction
+remains below target; hosted CI is unexecuted and worker scan exceptions expire.
+Older checkpoint entries below describe their evidence at the time; this decision
+supersedes historical statements that cloud delivery is pending.
+
 ## September 17 UTC: dependency restarts and storage timeouts
 
 [Dependency batch](evidence/2026-09-17-r3/dependencies/summary.md) verifies actual

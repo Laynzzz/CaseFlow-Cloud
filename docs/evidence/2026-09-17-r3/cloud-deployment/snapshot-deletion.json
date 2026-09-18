@@ -1,0 +1,8 @@
+{
+  "observedAt": "2026-09-18T01:41:37.211130+00:00",
+  "id": "caseflow-rehearsal-final",
+  "created": "2026-09-18T01:39:06.822000+00:00",
+  "source": "db-T7GG6FXWLJ4UD5WNUXSAZTXZ5Y",
+  "status": "deleted",
+  "scope": "Only final snapshot created by this synthetic rehearsal; pre-delete manual snapshot inventory empty."
+}

@@ -1,6 +1,6 @@
 # CaseFlow Cloud — SWE / AI-SWE implementation plan
 
-Status: revised specification; implementation and measurements not yet completed  
+Status: R1 delivered; R2 experimental functional/evaluation release; R3 verified learning/portfolio release (2026-09-18 UTC)
 Revision: 2026-09-11  
 Primary target: backend/full-stack SWE and applied AI software engineering  
 Product: multi-tenant purchase approvals with an evidence-grounded AI review assistant  
@@ -371,19 +371,23 @@ Choose two or three strongest outcomes for the relevant resume. Do not claim rea
 
 ## 20. Definition of done
 
-- [ ] Each release has a separately recorded actual status.
-- [ ] Tenant/resource permissions and schema integrity have positive/negative tests.
-- [ ] Idempotency, leases, fencing and completion recovery contracts work.
-- [ ] One immutable output is selected per logical request despite retries.
-- [ ] Suggestions require acceptance and stale results cannot mutate new drafts.
-- [ ] AI inputs are scoped and versioned; citations and quality are evaluated.
-- [ ] Manual workflow survives provider errors.
-- [ ] Held-out results and baseline comparisons exist without tuning leakage.
-- [ ] Performance includes workload, environment, errors and queue health.
-- [ ] Cloud deploy/smoke/rollback/teardown were executed.
-- [ ] Clean-checkout demo uses synthetic data and documented prerequisites.
-- [ ] User evidence is correctly labeled pilot or self-test.
-- [ ] Every resume claim maps to observed evidence; missed targets remain visible.
+Actual decisions and evidence: [R3 acceptance](docs/evidence/2026-09-17-r3/r3-acceptance.md).
+Checked means the stated deliverable has evidence, not that every provisional AI
+quality target passed or the application is production-ready.
+
+- [x] Each release has a separately recorded actual status.
+- [x] Tenant/resource permissions and schema integrity have positive/negative tests.
+- [x] Idempotency, leases, fencing and completion recovery contracts work.
+- [x] One immutable output is selected per logical request despite retries.
+- [x] Suggestions require acceptance and stale results cannot mutate new drafts.
+- [x] AI inputs are scoped and versioned; citations and quality are evaluated.
+- [x] Manual workflow survives provider errors.
+- [x] Held-out results and baseline comparisons exist without tuning leakage.
+- [x] Performance includes workload, environment, errors and queue health.
+- [x] Cloud deploy/smoke/rollback/teardown were executed.
+- [x] Clean-checkout demo uses synthetic data and documented prerequisites.
+- [x] User evidence is correctly labeled pilot or self-test.
+- [x] Every resume claim maps to observed evidence; missed targets remain visible.
 
 Control scope, cloud/model expense, provider variability, crash gaps and synthetic-evaluation bias through release gates, bounded budgets, explicit recovery, held-out data and a working product before optional infrastructure.
 

@@ -1,0 +1,403 @@
+{
+    "services": [
+        {
+            "serviceArn": "arn:aws:ecs:us-east-1:123456789012:service/caseflow-rehearsal/api",
+            "serviceName": "api",
+            "clusterArn": "arn:aws:ecs:us-east-1:123456789012:cluster/caseflow-rehearsal",
+            "loadBalancers": [
+                {
+                    "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:123456789012:targetgroup/caseflow-rehearsal-api/b28f348dc6f50177",
+                    "containerName": "api",
+                    "containerPort": 8080
+                }
+            ],
+            "serviceRegistries": [
+                {
+                    "registryArn": "arn:aws:servicediscovery:us-east-1:123456789012:service/srv-2eion7yaf33g7vs5"
+                }
+            ],
+            "status": "ACTIVE",
+            "desiredCount": 1,
+            "runningCount": 1,
+            "pendingCount": 0,
+            "launchType": "FARGATE",
+            "platformVersion": "LATEST",
+            "platformFamily": "Linux",
+            "taskDefinition": "arn:aws:ecs:us-east-1:123456789012:task-definition/caseflow-rehearsal-api:3",
+            "deploymentConfiguration": {
+                "deploymentCircuitBreaker": {
+                    "enable": true,
+                    "rollback": true,
+                    "resetOnHealthyTask": true,
+                    "thresholdConfiguration": {
+                        "type": "BOUNDED_PERCENT",
+                        "value": 50
+                    }
+                },
+                "maximumPercent": 200,
+                "minimumHealthyPercent": 100,
+                "strategy": "ROLLING",
+                "bakeTimeInMinutes": 0
+            },
+            "deployments": [
+                {
+                    "id": "ecs-svc/0765628028844558540",
+                    "status": "PRIMARY",
+                    "taskDefinition": "arn:aws:ecs:us-east-1:123456789012:task-definition/caseflow-rehearsal-api:3",
+                    "desiredCount": 1,
+                    "pendingCount": 0,
+                    "runningCount": 1,
+                    "failedTasks": 0,
+                    "createdAt": "2026-09-17T21:16:51.539000-04:00",
+                    "updatedAt": "2026-09-17T21:20:18.461000-04:00",
+                    "launchType": "FARGATE",
+                    "platformVersion": "1.4.0",
+                    "platformFamily": "Linux",
+                    "networkConfiguration": {
+                        "awsvpcConfiguration": {
+                            "subnets": [
+                                "subnet-0e8ddac1d832d8183",
+                                "subnet-0b88cee7e2ada7c43"
+                            ],
+                            "securityGroups": [
+                                "sg-0dd61692e0fb54e3f"
+                            ],
+                            "assignPublicIp": "ENABLED"
+                        }
+                    },
+                    "rolloutState": "COMPLETED",
+                    "rolloutStateReason": "ECS deployment ecs-svc/0765628028844558540 completed."
+                }
+            ],
+            "roleArn": "arn:aws:iam::123456789012:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+            "events": [
+                {
+                    "id": "1048a1c7-0303-4299-bbb6-bdf14785d278",
+                    "createdAt": "2026-09-17T21:20:18.469000-04:00",
+                    "message": "(service api) has reached a steady state."
+                },
+                {
+                    "id": "21d814bc-e432-4130-8b14-c59e56c57957",
+                    "createdAt": "2026-09-17T21:20:18.468000-04:00",
+                    "message": "(service api) (deployment ecs-svc/0765628028844558540) deployment completed."
+                },
+                {
+                    "id": "ec9566db-146a-42de-a153-7ff155896b6f",
+                    "createdAt": "2026-09-17T21:19:17.036000-04:00",
+                    "message": "(service api, taskSet ecs-svc/6621108615576037730) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "292d1af2-03d0-475f-a8aa-f12e3033b551",
+                    "createdAt": "2026-09-17T21:19:17.030000-04:00",
+                    "message": "(service api) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:us-east-1:123456789012:targetgroup/caseflow-rehearsal-api/b28f348dc6f50177)"
+                },
+                {
+                    "id": "e120bc4b-0889-41ec-92fc-12d1091463a8",
+                    "createdAt": "2026-09-17T21:19:07.678000-04:00",
+                    "message": "(service api) has stopped 1 running tasks: (task 8428a48aeba44c5094d27eddd0693078)."
+                },
+                {
+                    "id": "32cb7865-ed0e-4cdd-84c6-6db2da51aaa8",
+                    "createdAt": "2026-09-17T21:17:45.857000-04:00",
+                    "message": "(service api) registered 1 targets in (target-group arn:aws:elasticloadbalancing:us-east-1:123456789012:targetgroup/caseflow-rehearsal-api/b28f348dc6f50177)"
+                },
+                {
+                    "id": "fd62e0ff-44cf-43bf-96d5-e2a7b4d8a177",
+                    "createdAt": "2026-09-17T21:17:05.329000-04:00",
+                    "message": "(service api) has started 1 tasks: (task 0ae78a2a66494a28a73ac28970b18cef)."
+                },
+                {
+                    "id": "7062977d-8769-43bb-8fd3-b4a64dfa10fa",
+                    "createdAt": "2026-09-17T21:14:20.530000-04:00",
+                    "message": "(service api) has reached a steady state."
+                },
+                {
+                    "id": "424c955f-98d4-4ff3-b3e1-38dbcaece859",
+                    "createdAt": "2026-09-17T21:14:20.529000-04:00",
+                    "message": "(service api) (deployment ecs-svc/6621108615576037730) deployment completed."
+                },
+                {
+                    "id": "0007547c-01e6-4211-977c-59e92ac82e58",
+                    "createdAt": "2026-09-17T21:13:08.677000-04:00",
+                    "message": "(service api, taskSet ecs-svc/2702158625232309352) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "c6aabc83-4622-4c9c-a724-7d98596eaa10",
+                    "createdAt": "2026-09-17T21:13:08.672000-04:00",
+                    "message": "(service api) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:us-east-1:123456789012:targetgroup/caseflow-rehearsal-api/b28f348dc6f50177)"
+                },
+                {
+                    "id": "34897c64-f622-415f-a78e-1073fccc2478",
+                    "createdAt": "2026-09-17T21:12:58.720000-04:00",
+                    "message": "(service api) has stopped 1 running tasks: (task 922f42e491384543a407db34ef12b50c)."
+                },
+                {
+                    "id": "75ebf223-21dd-401f-bb0e-454a54329afb",
+                    "createdAt": "2026-09-17T21:11:47.921000-04:00",
+                    "message": "(service api) registered 1 targets in (target-group arn:aws:elasticloadbalancing:us-east-1:123456789012:targetgroup/caseflow-rehearsal-api/b28f348dc6f50177)"
+                },
+                {
+                    "id": "d0d54829-dcea-4f4d-b7f3-066fef818c06",
+                    "createdAt": "2026-09-17T21:11:07.312000-04:00",
+                    "message": "(service api) has started 1 tasks: (task 8428a48aeba44c5094d27eddd0693078)."
+                },
+                {
+                    "id": "2dbca767-14f0-44ab-89d6-89063ecce949",
+                    "createdAt": "2026-09-17T20:57:18.496000-04:00",
+                    "message": "(service api) has reached a steady state."
+                },
+                {
+                    "id": "5c401c5d-3727-4733-a4e4-9d94e460ca85",
+                    "createdAt": "2026-09-17T20:57:08.687000-04:00",
+                    "message": "(service api) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:us-east-1:123456789012:targetgroup/caseflow-rehearsal-api/b28f348dc6f50177)"
+                },
+                {
+                    "id": "08c08bd9-d18a-48a1-be94-73236cc44092",
+                    "createdAt": "2026-09-17T20:57:08.571000-04:00",
+                    "message": "(service api, taskSet ecs-svc/2702158625232309352) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "8522d439-5397-4a75-bc09-634540dbcb22",
+                    "createdAt": "2026-09-17T20:57:08.566000-04:00",
+                    "message": "(service api) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:us-east-1:123456789012:targetgroup/caseflow-rehearsal-api/b28f348dc6f50177)"
+                },
+                {
+                    "id": "20d62994-2849-447c-ab0f-9a924a332f74",
+                    "createdAt": "2026-09-17T20:56:58.185000-04:00",
+                    "message": "(service api) has stopped 1 running tasks: (task 011fe17def094262864fea115f597d2a)."
+                },
+                {
+                    "id": "5cf4b62e-2757-4d24-9c21-8c91d9fa345a",
+                    "createdAt": "2026-09-17T20:56:58.152000-04:00",
+                    "message": "(service api) (task 011fe17def094262864fea115f597d2a) (port 8080) is unhealthy in (target-group arn:aws:elasticloadbalancing:us-east-1:123456789012:targetgroup/caseflow-rehearsal-api/b28f348dc6f50177) due to (reason Health checks failed)."
+                },
+                {
+                    "id": "5ed59196-46e2-4a00-b347-a2f5edef2162",
+                    "createdAt": "2026-09-17T20:56:19.812000-04:00",
+                    "message": "(service api) registered 1 targets in (target-group arn:aws:elasticloadbalancing:us-east-1:123456789012:targetgroup/caseflow-rehearsal-api/b28f348dc6f50177)"
+                },
+                {
+                    "id": "8f99fcb8-bd18-452d-a3d9-4b3a48a499cc",
+                    "createdAt": "2026-09-17T20:55:41.466000-04:00",
+                    "message": "(service api) has started 1 tasks: (task 011fe17def094262864fea115f597d2a). Amazon ECS replaced 1 tasks due to an unhealthy status."
+                },
+                {
+                    "id": "88c37050-9af6-4932-b6e4-d0f9078cf6af",
+                    "createdAt": "2026-09-17T20:55:03.262000-04:00",
+                    "message": "(service api) registered 1 targets in (target-group arn:aws:elasticloadbalancing:us-east-1:123456789012:targetgroup/caseflow-rehearsal-api/b28f348dc6f50177)"
+                },
+                {
+                    "id": "4d9a4d54-9d4b-4160-ac1a-83056f1248ae",
+                    "createdAt": "2026-09-17T20:54:25.959000-04:00",
+                    "message": "(service api) has started 1 tasks: (task 922f42e491384543a407db34ef12b50c)."
+                },
+                {
+                    "id": "11d44976-7bc1-4f00-9fea-c6c3074e5f5c",
+                    "createdAt": "2026-09-17T20:46:14.148000-04:00",
+                    "message": "(service api) has reached a steady state."
+                },
+                {
+                    "id": "74f21147-2718-4de3-ba94-39941be578cf",
+                    "createdAt": "2026-09-17T20:46:14.147000-04:00",
+                    "message": "(service api) (deployment ecs-svc/2702158625232309352) deployment completed."
+                }
+            ],
+            "createdAt": "2026-09-17T20:45:56.443000-04:00",
+            "currentServiceRevisions": [
+                {
+                    "arn": "arn:aws:ecs:us-east-1:123456789012:service-revision/caseflow-rehearsal/api/0765628028844558540",
+                    "requestedTaskCount": 1,
+                    "runningTaskCount": 1,
+                    "pendingTaskCount": 0
+                }
+            ],
+            "placementConstraints": [],
+            "placementStrategy": [],
+            "networkConfiguration": {
+                "awsvpcConfiguration": {
+                    "subnets": [
+                        "subnet-0e8ddac1d832d8183",
+                        "subnet-0b88cee7e2ada7c43"
+                    ],
+                    "securityGroups": [
+                        "sg-0dd61692e0fb54e3f"
+                    ],
+                    "assignPublicIp": "ENABLED"
+                }
+            },
+            "healthCheckGracePeriodSeconds": 180,
+            "schedulingStrategy": "REPLICA",
+            "deploymentController": {
+                "type": "ECS"
+            },
+            "createdBy": "arn:aws:iam::123456789012:user/caseflow-operator",
+            "enableECSManagedTags": false,
+            "propagateTags": "NONE",
+            "enableExecuteCommand": false,
+            "availabilityZoneRebalancing": "ENABLED",
+            "resourceManagementType": "CUSTOMER"
+        },
+        {
+            "serviceArn": "arn:aws:ecs:us-east-1:123456789012:service/caseflow-rehearsal/worker",
+            "serviceName": "worker",
+            "clusterArn": "arn:aws:ecs:us-east-1:123456789012:cluster/caseflow-rehearsal",
+            "loadBalancers": [],
+            "serviceRegistries": [
+                {
+                    "registryArn": "arn:aws:servicediscovery:us-east-1:123456789012:service/srv-dvf725exknxqi3e6"
+                }
+            ],
+            "status": "ACTIVE",
+            "desiredCount": 1,
+            "runningCount": 1,
+            "pendingCount": 0,
+            "launchType": "FARGATE",
+            "platformVersion": "LATEST",
+            "platformFamily": "Linux",
+            "taskDefinition": "arn:aws:ecs:us-east-1:123456789012:task-definition/caseflow-rehearsal-worker:3",
+            "deploymentConfiguration": {
+                "deploymentCircuitBreaker": {
+                    "enable": true,
+                    "rollback": true,
+                    "resetOnHealthyTask": true,
+                    "thresholdConfiguration": {
+                        "type": "BOUNDED_PERCENT",
+                        "value": 50
+                    }
+                },
+                "maximumPercent": 200,
+                "minimumHealthyPercent": 100,
+                "strategy": "ROLLING",
+                "bakeTimeInMinutes": 0
+            },
+            "deployments": [
+                {
+                    "id": "ecs-svc/2130887187812494947",
+                    "status": "PRIMARY",
+                    "taskDefinition": "arn:aws:ecs:us-east-1:123456789012:task-definition/caseflow-rehearsal-worker:3",
+                    "desiredCount": 1,
+                    "pendingCount": 0,
+                    "runningCount": 1,
+                    "failedTasks": 0,
+                    "createdAt": "2026-09-17T21:16:51.406000-04:00",
+                    "updatedAt": "2026-09-17T21:19:43.412000-04:00",
+                    "launchType": "FARGATE",
+                    "platformVersion": "1.4.0",
+                    "platformFamily": "Linux",
+                    "networkConfiguration": {
+                        "awsvpcConfiguration": {
+                            "subnets": [
+                                "subnet-0e8ddac1d832d8183",
+                                "subnet-0b88cee7e2ada7c43"
+                            ],
+                            "securityGroups": [
+                                "sg-0dd61692e0fb54e3f"
+                            ],
+                            "assignPublicIp": "ENABLED"
+                        }
+                    },
+                    "rolloutState": "COMPLETED",
+                    "rolloutStateReason": "ECS deployment ecs-svc/2130887187812494947 completed."
+                }
+            ],
+            "roleArn": "arn:aws:iam::123456789012:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+            "events": [
+                {
+                    "id": "6748f352-86e3-4556-8d7e-b49d1f1863af",
+                    "createdAt": "2026-09-17T21:19:43.422000-04:00",
+                    "message": "(service worker) has reached a steady state."
+                },
+                {
+                    "id": "17963569-deca-4a1e-afe3-5ef171d2c68e",
+                    "createdAt": "2026-09-17T21:19:43.421000-04:00",
+                    "message": "(service worker) (deployment ecs-svc/2130887187812494947) deployment completed."
+                },
+                {
+                    "id": "03881cef-8335-4c93-92fe-0b7a3c733845",
+                    "createdAt": "2026-09-17T21:18:00.286000-04:00",
+                    "message": "(service worker) has stopped 1 running tasks: (task c412464f50a144f58f9fb21148166a32)."
+                },
+                {
+                    "id": "9c358c8c-4b97-45ba-8f06-9fbf7025f1ff",
+                    "createdAt": "2026-09-17T21:17:09.730000-04:00",
+                    "message": "(service worker) has started 1 tasks: (task 6c93290d2f0446799e99b5fd3d453e66)."
+                },
+                {
+                    "id": "2f7143a7-ffd6-47e0-af43-f295539b956a",
+                    "createdAt": "2026-09-17T21:14:31.532000-04:00",
+                    "message": "(service worker) has reached a steady state."
+                },
+                {
+                    "id": "b88d7582-2854-45fd-ad41-1201766b033f",
+                    "createdAt": "2026-09-17T21:14:31.531000-04:00",
+                    "message": "(service worker) (deployment ecs-svc/8185861194898073216) deployment completed."
+                },
+                {
+                    "id": "087867a1-d3cf-4aa5-9efe-5bca49c223b7",
+                    "createdAt": "2026-09-17T21:12:18.888000-04:00",
+                    "message": "(service worker) has stopped 1 running tasks: (task fd37fb34ffc24d8d8e15947bcb372afd)."
+                },
+                {
+                    "id": "516041d4-d77e-4cd9-8703-cac5af2ca3d5",
+                    "createdAt": "2026-09-17T21:11:06.945000-04:00",
+                    "message": "(service worker) has started 1 tasks: (task c412464f50a144f58f9fb21148166a32)."
+                },
+                {
+                    "id": "88b18be3-41c1-4f06-86f5-d7450b13cc8a",
+                    "createdAt": "2026-09-17T20:56:06.408000-04:00",
+                    "message": "(service worker) has reached a steady state."
+                },
+                {
+                    "id": "99f1f327-75ae-4b69-a692-48a7e5502a29",
+                    "createdAt": "2026-09-17T20:54:25.156000-04:00",
+                    "message": "(service worker) has started 1 tasks: (task fd37fb34ffc24d8d8e15947bcb372afd)."
+                },
+                {
+                    "id": "5eb5a28f-90b2-4458-8b80-f8d58a5f4b7d",
+                    "createdAt": "2026-09-17T20:46:08.517000-04:00",
+                    "message": "(service worker) has reached a steady state."
+                },
+                {
+                    "id": "8a2277c5-2cfc-413e-aa17-d2892db4ae8b",
+                    "createdAt": "2026-09-17T20:46:08.516000-04:00",
+                    "message": "(service worker) (deployment ecs-svc/3846395302152371309) deployment completed."
+                }
+            ],
+            "createdAt": "2026-09-17T20:45:56.383000-04:00",
+            "currentServiceRevisions": [
+                {
+                    "arn": "arn:aws:ecs:us-east-1:123456789012:service-revision/caseflow-rehearsal/worker/2130887187812494947",
+                    "requestedTaskCount": 1,
+                    "runningTaskCount": 1,
+                    "pendingTaskCount": 0
+                }
+            ],
+            "placementConstraints": [],
+            "placementStrategy": [],
+            "networkConfiguration": {
+                "awsvpcConfiguration": {
+                    "subnets": [
+                        "subnet-0e8ddac1d832d8183",
+                        "subnet-0b88cee7e2ada7c43"
+                    ],
+                    "securityGroups": [
+                        "sg-0dd61692e0fb54e3f"
+                    ],
+                    "assignPublicIp": "ENABLED"
+                }
+            },
+            "healthCheckGracePeriodSeconds": 0,
+            "schedulingStrategy": "REPLICA",
+            "deploymentController": {
+                "type": "ECS"
+            },
+            "createdBy": "arn:aws:iam::123456789012:user/caseflow-operator",
+            "enableECSManagedTags": false,
+            "propagateTags": "NONE",
+            "enableExecuteCommand": false,
+            "availabilityZoneRebalancing": "ENABLED",
+            "resourceManagementType": "CUSTOMER"
+        }
+    ],
+    "failures": []
+}

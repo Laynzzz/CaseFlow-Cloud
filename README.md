@@ -22,8 +22,9 @@ Verified against local PostgreSQL and Keycloak: tenant/resource access,
 deactivation, stale writes, duplicate commands, concurrent final approval,
 ordered decisions and cursor behavior. See [evidence](docs/evidence-index.md).
 
-**R1's cloud gate remains unfinished:** local browser-to-DOCX, isolation,
-concurrency and recovery checks pass, but no AWS deployment is claimed.
+**R1 is delivered:** local and actual AWS browser-to-DOCX, tenant isolation,
+approvals, migrations and document checks pass. The temporary cloud stack was
+torn down after verification; the public app is intentionally offline.
 
 **R2 is locally complete as an experimental learning release.** Assisted and
 manual paths work, actual held-out results and three fixed-subset repetitions
@@ -43,13 +44,17 @@ No human time savings, production readiness or adoption is claimed.
 See [fresh results](docs/evidence/2026-09-16-r2/heldout-v3-summary.md),
 [browser evidence](docs/evidence/2026-09-16-r2/browser-journey/README.md),
 [R2 map](docs/r2-status.md), and [architecture](docs/architecture.md).
-R3 reliability and operations are now in progress; see the
-[remaining-work map](docs/r3-status.md). Local crash/replay, mixed load, query
-optimization, monitoring, dependency recovery and compatible-image rollback have
-recorded evidence. A clean checkout builds and completes the manual demo. CI
-commands pass locally; worker image scans retain expiring reviewed OS findings.
-AWS deploy/smoke/rollback/teardown remains the release blocker. See the
-[claim-to-evidence map](docs/claim-to-evidence.md) and [AWS proposal](docs/aws-deployment-proposal.md).
+**R3 is complete as a bounded learning/portfolio release.** The
+[acceptance record](docs/evidence/2026-09-17-r3/r3-acceptance.md) maps the plan to
+actual crash/replay, mixed-load, SQL, monitoring, recovery, demo and AWS evidence.
+Cloud candidate rollout and rollback preserved three approved documents; cleanup
+verified no remaining workload compute, database, application storage or snapshots.
+DNS and protected Terraform state remain, at about USD 0.50/month plus small
+storage/request charges. See the [credit ledger](docs/aws-credit-ledger.md).
+
+Hosted GitHub CI has not run. Worker image scans retain expiring reviewed OS
+findings; extraction remains below target. See the [project map](docs/r3-status.md)
+and [claim-to-evidence map](docs/claim-to-evidence.md).
 
 For the simplest demonstration using Node and Docker, follow the
 [packaged demo](docs/demo-scenario.md#packaged-manual-demo). The development
@@ -76,7 +81,8 @@ fixtures. Compose runs services in the background. Keycloak's HTTP discovery
 endpoint must be ready before sign-in; realm import can take longer than
 container startup. The environment script loads credentials without printing
 them. Flyway uses the migration role; requests use the restricted API role.
-Cloud migration separation remains planned.
+AWS also uses the dedicated migration role at API startup; moving Flyway into
+a standalone task remains a hardening option.
 
 In another terminal:
 
