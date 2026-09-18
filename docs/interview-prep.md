@@ -825,3 +825,15 @@ or prove a disaster-recovery procedure. We have not tested simultaneous writers.
 delegate the domain to the assigned nameservers; then certificate validation
 and application routing must work. Follow-up: cached delegation can delay that
 transition. Evidence: [foundation readback](evidence/2026-09-17-r3/cloud-foundation/summary.md).
+
+**Why use an image digest for deployment?** It identifies exact published image
+content. We recorded the source revision, local image ID and ECR manifest digest,
+then put the ECR digest in Terraform. The browser's external OIDC URL was baked
+into the API/web image. Follow-up: identity configuration, secrets and database
+schema still affect behavior; immutable images alone do not prove reproducibility.
+
+**Does a successful Terraform apply mean a successful release?** No. We first
+provision with application tasks at zero, initialize the database/identity, and
+then require service health plus the actual purchase/approval/document workflow.
+The certificate has been issued in AWS; full cloud workflow and rollback are
+still pending at this checkpoint. [Deployment evidence](evidence/2026-09-17-r3/cloud-deployment/summary.md).

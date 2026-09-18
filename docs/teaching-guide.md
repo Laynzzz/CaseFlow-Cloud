@@ -1248,3 +1248,22 @@ will use immutable image digests after publishing; the current provisional
 zero digests cannot run a workload. Repository creation proves a narrow subset
 of permissions, not full deployment readiness. Evidence:
 [cloud foundation](evidence/2026-09-17-r3/cloud-foundation/summary.md).
+
+### Releasing a specific build to AWS
+
+The real cloud session now has published API/web and worker images. Docker
+packages each service with its runtime; ECR stores the package in AWS. We deploy
+the registry's content digest, not only a tag, so later tag changes cannot
+silently change the intended release. The API image also contains the React
+build, whose identity-provider URL must be configured at build time. Database
+addresses and secret references are supplied at runtime instead.
+
+Terraform's reviewed full plan creates the infrastructure with application
+desired counts at zero. A valid HTTPS certificate proves domain validation,
+but it does not prove database initialization, identity readiness or approvals.
+Those are separate gates before enabling tasks and running the purchase smoke.
+This deliberate staging avoids treating infrastructure creation as a successful
+release. The trade-off is a longer deployment procedure with explicit checks.
+At this checkpoint ACM validation has passed; database creation is in progress.
+See [session evidence](evidence/2026-09-17-r3/cloud-deployment/summary.md) for
+the current, changing verification state.
