@@ -1,0 +1,26 @@
+{
+  "api": {
+    "registryId": "123456789012",
+    "repositoryName": "caseflow-rehearsal/api",
+    "imageDigest": "sha256:09e8f041231f796371a832180601f1d43fd377635d29859bb353e4baa48207e1",
+    "imageTags": [
+      "50decb5"
+    ],
+    "imageSizeInBytes": 176325310,
+    "imagePushedAt": "2026-09-17T20:33:58.547000-04:00",
+    "imageManifestMediaType": "application/vnd.oci.image.index.v1+json",
+    "imageStatus": "ACTIVE"
+  },
+  "worker": {
+    "registryId": "123456789012",
+    "repositoryName": "caseflow-rehearsal/worker",
+    "imageDigest": "sha256:2311103ccc54e6961643d2777b7edd6fff5fa3658900cd372b63f8b33a36d15f",
+    "imageTags": [
+      "50decb5"
+    ],
+    "imageSizeInBytes": 101282958,
+    "imagePushedAt": "2026-09-17T20:34:10.806000-04:00",
+    "imageManifestMediaType": "application/vnd.oci.image.index.v1+json",
+    "imageStatus": "ACTIVE"
+  }
+}

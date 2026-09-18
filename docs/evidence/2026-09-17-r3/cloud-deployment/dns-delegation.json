@@ -1,0 +1,46 @@
+[
+  {
+    "NameHost": "ns-1965.awsdns-53.co.uk",
+    "Name": "laynexia.com",
+    "Type": 2,
+    "CharacterSet": 1,
+    "Section": 1,
+    "DataLength": 8,
+    "TTL": 21600,
+    "QueryType": 2,
+    "Server": "ns-1965.awsdns-53.co.uk"
+  },
+  {
+    "NameHost": "ns-431.awsdns-53.com",
+    "Name": "laynexia.com",
+    "Type": 2,
+    "CharacterSet": 1,
+    "Section": 1,
+    "DataLength": 8,
+    "TTL": 21600,
+    "QueryType": 2,
+    "Server": "ns-431.awsdns-53.com"
+  },
+  {
+    "NameHost": "ns-678.awsdns-20.net",
+    "Name": "laynexia.com",
+    "Type": 2,
+    "CharacterSet": 1,
+    "Section": 1,
+    "DataLength": 8,
+    "TTL": 21600,
+    "QueryType": 2,
+    "Server": "ns-678.awsdns-20.net"
+  },
+  {
+    "NameHost": "ns-1409.awsdns-48.org",
+    "Name": "laynexia.com",
+    "Type": 2,
+    "CharacterSet": 1,
+    "Section": 1,
+    "DataLength": 8,
+    "TTL": 21600,
+    "QueryType": 2,
+    "Server": "ns-1409.awsdns-48.org"
+  }
+]

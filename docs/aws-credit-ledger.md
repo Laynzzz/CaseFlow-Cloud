@@ -11,6 +11,7 @@ the domain registration purchase. Do not request the same allowance again.
 | September 17 read-only preflight | USD 100 reported | No project cloud resources provisioned |
 | Permission bootstrap preparation | No newer balance measurement | Policies prepared/validated/simulated; owner grant pending |
 | September 17 foundation bootstrap (September 18 UTC) | USD 100 reported immediately before creation | Owner grant verified; Route 53 zone, protected state bucket and two empty ECR repositories created |
+| Full rehearsal apply started, September 18 approximately 00:38 UTC | USD 100 reported before apply | DNS delegation verified, images published; reviewed full plan provisioning infrastructure with application tasks at zero |
 
 Foundation timestamps: Route 53 zone created September 18 at 00:24:07 UTC;
 state bucket created at 00:28:04 UTC. Registry creation timestamps and verified
@@ -22,7 +23,10 @@ S3 state versions/requests add a small usage charge (not measured yet). The two
 repositories are empty, so no image storage has accumulated. Reserve USD 1 of
 the allowance for foundation/storage/request overhead; this is an estimate,
 not a billed charge or hard limit. The account credit balance can lag usage.
-Compute's four-hour rehearsal window has not started. These foundation resources
+The supervised infrastructure session began approximately 00:38 UTC on September
+18; target cleanup by 04:38 UTC or sooner after verification or a blocking failure.
+DNS validation has succeeded. [Deployment evidence](evidence/2026-09-17-r3/cloud-deployment/summary.md)
+tracks the in-progress resources; image storage now also accrues usage. These foundation resources
 remain intentionally retained for the next deployment step; ongoing cost is not zero.
 
 The balance is account-wide and can change due to other activity. It is not an

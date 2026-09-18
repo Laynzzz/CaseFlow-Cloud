@@ -1,0 +1,14 @@
+{
+  "accountPlanType": "FREE",
+  "accountPlanStatus": "ACTIVE",
+  "accountPlanRemainingCredits": {
+    "amount": 100.0,
+    "unit": "USD"
+  },
+  "accountPlanExpirationDate": "2027-03-17T22:46:40.724000+00:00",
+  "observedAt": "2026-09-18T00:36:13.343165+00:00",
+  "plannedHourlySubtotalUSD": 0.22,
+  "maximumComputeHours": 4,
+  "foundationReserveUSD": 1,
+  "sharedAWSAllowanceUSD": 10
+}

@@ -1,0 +1,494 @@
+[
+  {
+    "address": "aws_acm_certificate.main",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_acm_certificate_validation.main",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_cloudwatch_log_group.services",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_db_instance.main",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_db_parameter_group.main",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_db_subnet_group.main",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_ebs_volume.auxiliary",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_ecr_repository.app[\"api\"]",
+    "actions": [
+      "update"
+    ]
+  },
+  {
+    "address": "aws_ecr_repository.app[\"worker\"]",
+    "actions": [
+      "update"
+    ]
+  },
+  {
+    "address": "aws_ecs_cluster.main",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_ecs_service.application[\"api\"]",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_ecs_service.application[\"worker\"]",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_ecs_task_definition.application[\"api\"]",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_ecs_task_definition.application[\"worker\"]",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_ecs_task_definition.bootstrap",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_iam_instance_profile.auxiliary",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_iam_role.application[\"api\"]",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_iam_role.application[\"worker\"]",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_iam_role.auxiliary",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_iam_role.bootstrap",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_iam_role.execution",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_iam_role_policy.auxiliary_secrets",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_iam_role_policy.bootstrap",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_iam_role_policy.execution_secrets",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_iam_role_policy.objects[\"api\"]",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_iam_role_policy.objects[\"worker\"]",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_iam_role_policy.worker_cleanup",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_iam_role_policy_attachment.execution",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_iam_role_policy_attachment.ssm",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_instance.auxiliary",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_internet_gateway.main",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_lb.main",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_lb_listener.https",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_lb_listener_rule.api",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_lb_listener_rule.identity",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_lb_target_group.api",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_lb_target_group.identity",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_lb_target_group_attachment.identity",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_route53_record.certificate[\"auth.laynexia.com\"]",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_route53_record.certificate[\"caseflow.laynexia.com\"]",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_route53_record.hosts[\"auth.laynexia.com\"]",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_route53_record.hosts[\"caseflow.laynexia.com\"]",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_route_table.public",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_route_table_association.public[0]",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_route_table_association.public[1]",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_s3_bucket.objects",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_s3_bucket_policy.objects",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_s3_bucket_public_access_block.objects",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_s3_bucket_server_side_encryption_configuration.objects",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_s3_bucket_versioning.objects",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_secretsmanager_secret.runtime[\"api\"]",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_secretsmanager_secret.runtime[\"demo-password\"]",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_secretsmanager_secret.runtime[\"keycloak-admin\"]",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_secretsmanager_secret.runtime[\"keycloak-db\"]",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_secretsmanager_secret.runtime[\"keycloak-realm\"]",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_secretsmanager_secret.runtime[\"migrator\"]",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_secretsmanager_secret.runtime[\"worker\"]",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_security_group.auxiliary",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_security_group.database",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_security_group.edge",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_security_group.tasks",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_service_discovery_private_dns_namespace.main",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_service_discovery_service.application[\"api\"]",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_service_discovery_service.application[\"worker\"]",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_subnet.private[0]",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_subnet.private[1]",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_subnet.public[0]",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_subnet.public[1]",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_volume_attachment.auxiliary",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_vpc.main",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_vpc_security_group_egress_rule.outbound[\"auxiliary\"]",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_vpc_security_group_egress_rule.outbound[\"edge\"]",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_vpc_security_group_egress_rule.outbound[\"tasks\"]",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_vpc_security_group_ingress_rule.api",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_vpc_security_group_ingress_rule.database[\"auxiliary\"]",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_vpc_security_group_ingress_rule.database[\"tasks\"]",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_vpc_security_group_ingress_rule.https",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_vpc_security_group_ingress_rule.identity",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_vpc_security_group_ingress_rule.internal_auxiliary[\"29092\"]",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_vpc_security_group_ingress_rule.internal_auxiliary[\"4318\"]",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_vpc_security_group_ingress_rule.metrics[\"8090\"]",
+    "actions": [
+      "create"
+    ]
+  },
+  {
+    "address": "aws_vpc_security_group_ingress_rule.metrics[\"9091\"]",
+    "actions": [
+      "create"
+    ]
+  }
+]
