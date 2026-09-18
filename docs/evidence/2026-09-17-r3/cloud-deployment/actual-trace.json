@@ -1,0 +1,207 @@
+{
+  "batches": [
+    {
+      "resource": {
+        "attributes": [
+          {
+            "key": "service.name",
+            "value": {
+              "stringValue": "case-api"
+            }
+          }
+        ]
+      },
+      "scopeSpans": [
+        {
+          "scope": {
+            "name": "org.springframework.boot",
+            "version": "4.1.1"
+          },
+          "spans": [
+            {
+              "traceId": "FnFX8FBancaexiZqHhd2Dg==",
+              "spanId": "gvG3LWqsoWA=",
+              "parentSpanId": "p/5Su8fNp6E=",
+              "name": "caseflow.operation",
+              "kind": "SPAN_KIND_INTERNAL",
+              "startTimeUnixNano": "1789694012466819462",
+              "endTimeUnixNano": "1789694012575166184",
+              "status": {
+                "code": "STATUS_CODE_OK"
+              }
+            },
+            {
+              "traceId": "FnFX8FBancaexiZqHhd2Dg==",
+              "spanId": "X9V5bwuui/Y=",
+              "parentSpanId": "p/5Su8fNp6E=",
+              "name": "caseflow.operation",
+              "kind": "SPAN_KIND_INTERNAL",
+              "startTimeUnixNano": "1789694012575278266",
+              "endTimeUnixNano": "1789694012575545854",
+              "status": {
+                "code": "STATUS_CODE_OK"
+              }
+            },
+            {
+              "traceId": "FnFX8FBancaexiZqHhd2Dg==",
+              "spanId": "aJosTn1Ucxw=",
+              "parentSpanId": "MG9C1mwL+fc=",
+              "name": "caseflow.operation",
+              "kind": "SPAN_KIND_INTERNAL",
+              "startTimeUnixNano": "1789694012463777909",
+              "endTimeUnixNano": "1789694012465573084",
+              "status": {
+                "code": "STATUS_CODE_OK"
+              }
+            },
+            {
+              "traceId": "FnFX8FBancaexiZqHhd2Dg==",
+              "spanId": "jJ1xyaUWB2Q=",
+              "parentSpanId": "MG9C1mwL+fc=",
+              "name": "caseflow.operation",
+              "kind": "SPAN_KIND_INTERNAL",
+              "startTimeUnixNano": "1789694012465801761",
+              "endTimeUnixNano": "1789694012466090258",
+              "status": {
+                "code": "STATUS_CODE_OK"
+              }
+            },
+            {
+              "traceId": "FnFX8FBancaexiZqHhd2Dg==",
+              "spanId": "MG9C1mwL+fc=",
+              "parentSpanId": "p/5Su8fNp6E=",
+              "name": "caseflow.operation",
+              "kind": "SPAN_KIND_INTERNAL",
+              "startTimeUnixNano": "1789694012463297109",
+              "endTimeUnixNano": "1789694012466757609",
+              "status": {
+                "code": "STATUS_CODE_OK"
+              }
+            },
+            {
+              "traceId": "FnFX8FBancaexiZqHhd2Dg==",
+              "spanId": "p/5Su8fNp6E=",
+              "name": "caseflow.operation",
+              "kind": "SPAN_KIND_SERVER",
+              "startTimeUnixNano": "1789694012462702908",
+              "endTimeUnixNano": "1789694012575734482",
+              "status": {}
+            }
+          ]
+        },
+        {
+          "scope": {
+            "name": "caseflow-api"
+          },
+          "spans": [
+            {
+              "traceId": "FnFX8FBancaexiZqHhd2Dg==",
+              "spanId": "KfKOgpR0HzE=",
+              "parentSpanId": "ApLxI9gXQVE=",
+              "name": "api.complete",
+              "kind": "SPAN_KIND_INTERNAL",
+              "startTimeUnixNano": "1789694013566028343",
+              "endTimeUnixNano": "1789694013576285004",
+              "status": {}
+            },
+            {
+              "traceId": "FnFX8FBancaexiZqHhd2Dg==",
+              "spanId": "VTZcQL0KIgw=",
+              "parentSpanId": "QvG6sIQkpxo=",
+              "name": "api.complete",
+              "kind": "SPAN_KIND_INTERNAL",
+              "startTimeUnixNano": "1789694014135437848",
+              "endTimeUnixNano": "1789694014142153163",
+              "status": {}
+            },
+            {
+              "traceId": "FnFX8FBancaexiZqHhd2Dg==",
+              "spanId": "OlHnSTIYTIk=",
+              "parentSpanId": "gvG3LWqsoWA=",
+              "name": "api.publish",
+              "kind": "SPAN_KIND_INTERNAL",
+              "startTimeUnixNano": "1789694012782369749",
+              "endTimeUnixNano": "1789694012893743225",
+              "status": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "resource": {
+        "attributes": [
+          {
+            "key": "service.name",
+            "value": {
+              "stringValue": "case-worker"
+            }
+          }
+        ]
+      },
+      "scopeSpans": [
+        {
+          "scope": {
+            "name": "caseflow-worker"
+          },
+          "spans": [
+            {
+              "traceId": "FnFX8FBancaexiZqHhd2Dg==",
+              "spanId": "gk3g4Gkq0D0=",
+              "parentSpanId": "OlHnSTIYTIk=",
+              "name": "worker.schedule",
+              "kind": "SPAN_KIND_INTERNAL",
+              "startTimeUnixNano": "1789694012888654752",
+              "endTimeUnixNano": "1789694012946145619",
+              "status": {}
+            },
+            {
+              "traceId": "FnFX8FBancaexiZqHhd2Dg==",
+              "spanId": "6aOgGJgMjq4=",
+              "parentSpanId": "OlHnSTIYTIk=",
+              "name": "worker.execute",
+              "kind": "SPAN_KIND_INTERNAL",
+              "startTimeUnixNano": "1789694013010917942",
+              "endTimeUnixNano": "1789694013553208606",
+              "attributes": [
+                {
+                  "key": "job.kind",
+                  "value": {
+                    "stringValue": "DOCUMENT"
+                  }
+                },
+                {
+                  "key": "outcome",
+                  "value": {
+                    "stringValue": "succeeded"
+                  }
+                }
+              ],
+              "status": {}
+            },
+            {
+              "traceId": "FnFX8FBancaexiZqHhd2Dg==",
+              "spanId": "ApLxI9gXQVE=",
+              "parentSpanId": "OlHnSTIYTIk=",
+              "name": "worker.publish",
+              "kind": "SPAN_KIND_INTERNAL",
+              "startTimeUnixNano": "1789694013556266421",
+              "endTimeUnixNano": "1789694013564685694",
+              "status": {}
+            },
+            {
+              "traceId": "FnFX8FBancaexiZqHhd2Dg==",
+              "spanId": "QvG6sIQkpxo=",
+              "parentSpanId": "6aOgGJgMjq4=",
+              "name": "worker.publish",
+              "kind": "SPAN_KIND_INTERNAL",
+              "startTimeUnixNano": "1789694014127615804",
+              "endTimeUnixNano": "1789694014135978514",
+              "status": {}
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+rehearsal.tftest.hcl... in progress
+  run "safe_rehearsal_defaults"... pass
+
+Warning: Argument is deprecated
+
+  with aws_service_discovery_service.application,
+  on services.tf line 17, in resource "aws_service_discovery_service" "application":
+  17:   health_check_custom_config { failure_threshold = 1 }
+
+failure_threshold is deprecated. The argument is no longer supported by AWS
+and the value is always set to 1. The attribute will be removed in a future
+major version.
+
+(and 2 more similar warnings elsewhere)
+
+  run "invalid_sampling_is_rejected"... pass
+
+Warning: Argument is deprecated
+
+  with aws_service_discovery_service.application,
+  on services.tf line 17, in resource "aws_service_discovery_service" "application":
+  17:   health_check_custom_config { failure_threshold = 1 }
+
+failure_threshold is deprecated. The argument is no longer supported by AWS
+and the value is always set to 1. The attribute will be removed in a future
+major version.
+
+(and 2 more similar warnings elsewhere)
+
+rehearsal.tftest.hcl... tearing down
+rehearsal.tftest.hcl... pass
+
+Success! 2 passed, 0 failed.

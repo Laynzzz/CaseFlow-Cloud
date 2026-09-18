@@ -1,0 +1,1 @@
+PASS packaged SPA deep links, PKCE, API/operations denial, tenant denial, prior approved case preserved, two approvals, Kafka/worker completion and SHA-256 verified DOCX; synthetic case 20980e6b-127c-4a1a-8e3a-8a49140d35b2. No paid AI calls.

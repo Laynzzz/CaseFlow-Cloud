@@ -1267,3 +1267,32 @@ release. The trade-off is a longer deployment procedure with explicit checks.
 At this checkpoint ACM validation has passed; database creation is in progress.
 See [session evidence](evidence/2026-09-17-r3/cloud-deployment/summary.md) for
 the current, changing verification state.
+
+### What actual deployment caught
+
+Real AWS execution found issues that mocked plans could not: an incorrect Linux
+package name stopped cloud-init, implicit provider defaults caused repeat-plan
+changes, and zero ALB startup grace replaced the Java task before it finished
+initializing. We corrected the package, made round-trip defaults explicit and
+gave the API 180 seconds of startup grace. Health checks still run; the grace
+period delays ECS replacement decisions for a starting task. A longer grace
+also delays detection of a genuinely broken startup, so this is not an excuse
+to hide failures indefinitely.
+
+The cloud collector accepts traces, while Prometheus scrapes metrics. Spring's
+automatic OTLP metrics exporter therefore produced 404 warnings without adding
+useful monitoring. The candidate disables that exporter; real logs and workflow
+smoke verify the change. Its database schema and business code remain unchanged.
+
+The operator could register task definitions but could not deregister them with
+the scoped grant. Terraform now retains immutable definitions with `skip_destroy`
+so rollback can use prior images without expanding access. This setting was
+first applied to the existing definitions before replacing them. The trade-off
+is retained configuration metadata that must be inventoried after teardown;
+retained definitions do not themselves run containers or incur task compute.
+
+The AWS browser journey and DOCX verification passed. A real 13-span trace links
+API publishing, worker execution/publication and Java completion through parent
+IDs. Resource/span allowlists passed on the exported trace. See the evolving
+[cloud report](evidence/2026-09-17-r3/cloud-deployment/summary.md) for rollout,
+rollback and cleanup outcomes; don't infer these from initial provisioning.

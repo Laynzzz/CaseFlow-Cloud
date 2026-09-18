@@ -1,0 +1,8 @@
+{
+  "stream": "service/api/8428a48aeba44c5094d27eddd0693078",
+  "eventsRead": 53,
+  "firstTimestamp": 1789693892918,
+  "lastTimestamp": 1789693953368,
+  "startupObserved": true,
+  "redundantOtlpMetricExporterAbsent": true
+}

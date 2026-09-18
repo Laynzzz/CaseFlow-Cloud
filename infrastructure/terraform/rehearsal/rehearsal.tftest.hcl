@@ -15,6 +15,10 @@ variables {
 run "safe_rehearsal_defaults" {
   command = plan
   assert {
+    condition     = coalesce(aws_ecs_service.application["api"].health_check_grace_period_seconds, 0) >= 120
+    error_message = "The API needs a startup grace period for Java initialization and forward migrations before ECS reacts to ALB health."
+  }
+  assert {
     condition     = aws_db_instance.main.instance_class == "db.t4g.micro" && aws_instance.auxiliary.instance_type == "m7i-flex.large"
     error_message = "Default rehearsal sizes must match the reviewed Free-plan instance selection."
   }

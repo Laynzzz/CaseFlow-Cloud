@@ -35,6 +35,10 @@ logging:
     format:
       console: ecs
 management:
+  otlp:
+    metrics:
+      export:
+        enabled: false # Prometheus scrapes metrics; the OTLP collector accepts traces only.
   server:
     address: ${MANAGEMENT_ADDRESS:127.0.0.1}
     port: ${MANAGEMENT_PORT:9091}

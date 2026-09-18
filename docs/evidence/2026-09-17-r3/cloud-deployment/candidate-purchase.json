@@ -1,0 +1,15 @@
+{
+  "tenantId": "fd324354-ee2c-4522-89c4-33eabba99a36",
+  "workflowId": "d273c263-636c-4799-9ecb-eaa520c4825c",
+  "templateId": "01c57450-efbe-4439-9619-5dbb9ddf8177",
+  "caseId": "20980e6b-127c-4a1a-8e3a-8a49140d35b2",
+  "jobId": "9a982eb1-0bbc-4330-b75c-afc9d0d82fa8",
+  "sha256": "f8aeeadc833886115190646eef6f0f81dee1c47f2fd2c352860c5169147fcdde",
+  "users": {
+    "admin": "6865efe1-903e-4a44-94c1-a775cbb5f7d2",
+    "requester": "81ec10a2-7e68-4be0-832b-214beea5de9c",
+    "manager": "28060928-1681-45f4-857a-acf7995212e9",
+    "finance": "496dcfa8-b0b4-4ff7-b76e-eb0b0418387b",
+    "outsider": "8ad3a66c-dfa3-4594-b1c9-929a6a146d81"
+  }
+}

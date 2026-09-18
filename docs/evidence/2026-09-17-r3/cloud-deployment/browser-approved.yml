@@ -1,0 +1,111 @@
+- generic [ref=f11e3]:
+  - link "Skip to content" [ref=f11e4] [cursor=pointer]:
+    - /url: "#workspace"
+  - complementary [ref=f11e5]:
+    - link "CaseFlowCloud" [ref=f11e6] [cursor=pointer]:
+      - /url: /
+    - generic [ref=f11e7]:
+      - text: Organization
+      - combobox "Organization" [ref=f11e8]:
+        - option "Select organization" [disabled]
+        - option "Release Acme Studio" [selected]
+    - navigation "Main navigation" [ref=f11e9]:
+      - link "Purchase requests" [ref=f11e10] [cursor=pointer]:
+        - /url: /
+      - link "My account" [ref=f11e11] [cursor=pointer]:
+        - /url: /account
+    - generic [ref=f11e12]:
+      - strong [ref=f11e13]: finance
+      - generic [ref=f11e14]: approver
+      - button "Sign out" [ref=f11e15] [cursor=pointer]
+  - main [ref=f11e16]:
+    - link "← Purchase requests" [ref=f11e53] [cursor=pointer]:
+      - /url: /
+    - generic [ref=f11e54]:
+      - generic [ref=f11e55]:
+        - paragraph [ref=f11e56]: Synthetic AWS Browser Supplies
+        - heading "AWS browser rehearsal laptop" [level=1] [ref=f11e57]
+      - generic [ref=f11e58]: approved
+    - generic [ref=f11e59]:
+      - generic [ref=f11e60]:
+        - heading "Purchase details" [level=2] [ref=f11e61]
+        - generic [ref=f11e62]:
+          - term [ref=f11e63]: Total
+          - definition [ref=f11e64]: USD 4200.00
+          - term [ref=f11e65]: Cost center
+          - definition [ref=f11e66]: CLOUD-TRAINING
+          - term [ref=f11e67]: Business justification
+          - definition [ref=f11e68]: Synthetic verification of cloud purchase approvals
+        - table [ref=f11e70]:
+          - rowgroup [ref=f11e71]:
+            - row [ref=f11e72]:
+              - columnheader "Item" [ref=f11e73]
+              - columnheader "Quantity" [ref=f11e74]
+              - columnheader "Unit price" [ref=f11e75]
+          - rowgroup [ref=f11e76]:
+            - row [ref=f11e77]:
+              - cell "Laptop" [ref=f11e78]
+              - cell "1" [ref=f11e79]
+              - cell "4200.00" [ref=f11e80]
+        - paragraph [ref=f11e81]: Saved version 4 · 9/17/2026, 9:08:04 PM
+      - generic [ref=f11e82]:
+        - heading "Approval steps" [level=2] [ref=f11e83]
+        - generic [ref=f11e84]:
+          - generic [ref=f11e85]: "01"
+          - generic [ref=f11e86]:
+            - heading "First review" [level=3] [ref=f11e87]
+            - paragraph [ref=f11e88]: manager
+            - generic [ref=f11e89]: approved
+        - generic [ref=f11e90]:
+          - generic [ref=f11e91]: "02"
+          - generic [ref=f11e92]:
+            - heading "Final review" [level=3] [ref=f11e93]
+            - paragraph [ref=f11e94]: finance
+            - generic [ref=f11e132]: approved
+    - generic [ref=f11e133]:
+      - heading "Approved document" [level=2] [ref=f11e134]
+      - paragraph [ref=f11e135]: The purchase is approved. Document processing has a separate status.
+      - generic [ref=f11e136]:
+        - generic [ref=f11e137]:
+          - generic [ref=f11e138]: succeeded
+          - paragraph [ref=f11e139]: Generation attempt 1 · 36 KB
+        - button "Download Word document" [ref=f11e146] [cursor=pointer]
+      - paragraph [ref=f11e140]: Download links expire after 60 seconds. Previously issued links remain usable until they expire.
+    - generic [ref=f11e98]:
+      - heading "Policies for this purchase" [level=2] [ref=f11e99]
+      - paragraph [ref=f11e100]: These are the selected policy versions. The requester can refresh them while the purchase is a draft; they become fixed when approval starts.
+      - paragraph [ref=f11e141]: No policies were published when this selection was made.
+    - generic [ref=f11e102]:
+      - heading "Vendor quotes" [level=2] [ref=f11e103]
+      - paragraph [ref=f11e104]: Attach the quote that supports this purchase. Your saved purchase details stay under your control.
+      - button "Check source status" [ref=f11e105] [cursor=pointer]
+      - paragraph [ref=f11e106]: No quotes attached yet.
+    - generic [ref=f11e107]:
+      - heading "AI review assistant" [level=2] [ref=f11e108]
+      - paragraph [ref=f11e109]: Experimental assistance. Check each suggestion against its source. You choose what to save; people make every approval decision.
+      - status [ref=f11e142]: Live AI testing is not configured. You can enter purchase details manually and read or search the policies above.
+      - button "Check AI status" [ref=f11e112] [cursor=pointer]
+    - generic [ref=f11e113]:
+      - heading "Discussion and audit history" [level=2] [ref=f11e114]
+      - generic [ref=f11e115]:
+        - generic [ref=f11e116]:
+          - text: Add a comment
+          - textbox "Add a comment" [ref=f11e117]
+        - button "Post comment" [disabled] [ref=f11e118]
+      - list [ref=f11e119]:
+        - listitem [ref=f11e143]:
+          - strong [ref=f11e144]: case approve
+          - time [ref=f11e145]: 9/17/2026, 9:08:04 PM
+        - listitem [ref=f11e120]:
+          - strong [ref=f11e121]: case approve
+          - time [ref=f11e122]: 9/17/2026, 9:06:51 PM
+        - listitem [ref=f11e123]:
+          - strong [ref=f11e124]: case started
+          - time [ref=f11e125]: 9/17/2026, 9:04:44 PM
+        - listitem [ref=f11e126]:
+          - strong [ref=f11e127]: assignments changed
+          - time [ref=f11e128]: 9/17/2026, 9:04:42 PM
+        - listitem [ref=f11e129]:
+          - strong [ref=f11e130]: draft created
+          - time [ref=f11e131]: 9/17/2026, 9:04:05 PM
+    - generic [ref=f11e52]: Development build · Synthetic demonstration data

@@ -837,3 +837,22 @@ provision with application tasks at zero, initialize the database/identity, and
 then require service health plus the actual purchase/approval/document workflow.
 The certificate has been issued in AWS; full cloud workflow and rollback are
 still pending at this checkpoint. [Deployment evidence](evidence/2026-09-17-r3/cloud-deployment/summary.md).
+
+**What did real AWS testing catch that local tests missed?** An AL2023 package
+name error, provider-default drift and an API startup grace of zero. We inspected
+cloud-init and ECS/ALB evidence, corrected each cause, required a no-change plan,
+and tested the actual workflow. The API now has a 180-second startup grace.
+Follow-up: this improves startup tolerance but cannot replace health/workflow tests.
+
+**How did you verify cloud background-job observability?** A trace fetched from
+the private Tempo service contains 13 spans from Java and Python, including
+publish, schedule, execute and completion parent relationships. We checked the
+actual exported attributes against the metadata allowlist. A trace search initially
+returned no worker result; direct lookup by the worker log's trace ID succeeded.
+Follow-up: this is one bounded correlated trace, not universal export coverage.
+
+**Why retain old task definitions?** They describe immutable revisions useful
+for rollback; retaining them avoids deregistration during replacement and fits
+the operator's existing access. They remain cleanup inventory even after tasks
+stop. Follow-up: image digests and compatible schemas still determine whether
+rollback works. Cloud candidate and prior-image tests must supply that evidence.

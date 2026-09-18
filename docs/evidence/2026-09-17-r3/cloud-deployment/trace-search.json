@@ -1,0 +1,80 @@
+{
+  "traces": [
+    {
+      "traceID": "35353a0e68590741f8bd4399f28e1acd",
+      "rootServiceName": "case-api",
+      "rootTraceName": "caseflow.operation",
+      "startTimeUnixNano": "1789693184248225761",
+      "durationMs": 2
+    },
+    {
+      "traceID": "83e5f29cf7f2bcf0209b6c1218c4a19",
+      "rootServiceName": "case-api",
+      "rootTraceName": "caseflow.operation",
+      "startTimeUnixNano": "1789693180674887274",
+      "durationMs": 2
+    },
+    {
+      "traceID": "8414bf98464268acf6ad596b5ae11ffc",
+      "rootServiceName": "case-api",
+      "rootTraceName": "caseflow.operation",
+      "startTimeUnixNano": "1789693179166112563",
+      "durationMs": 2
+    },
+    {
+      "traceID": "180f9611b7c9d5cd018422e89d3c2f99",
+      "rootServiceName": "case-api",
+      "rootTraceName": "caseflow.operation",
+      "startTimeUnixNano": "1789692977455460901",
+      "durationMs": 106
+    },
+    {
+      "traceID": "45d793410de854c800ffaf759a495f7a",
+      "rootServiceName": "case-api",
+      "rootTraceName": "caseflow.operation",
+      "startTimeUnixNano": "1789692973545038449",
+      "durationMs": 3
+    },
+    {
+      "traceID": "e1d19de423456dc9f6fcf1ce21edaa9d",
+      "rootServiceName": "case-api",
+      "rootTraceName": "caseflow.operation",
+      "startTimeUnixNano": "1789692972536941967",
+      "durationMs": 4
+    },
+    {
+      "traceID": "efda366c7c19492ffb11b13b6184164a",
+      "rootServiceName": "case-api",
+      "rootTraceName": "caseflow.operation",
+      "startTimeUnixNano": "1789692970017798976",
+      "durationMs": 6
+    },
+    {
+      "traceID": "b1856d4d0edc0dbef4c90faa19ae62d3",
+      "rootServiceName": "case-api",
+      "rootTraceName": "caseflow.operation",
+      "startTimeUnixNano": "1789692963656184556",
+      "durationMs": 111
+    },
+    {
+      "traceID": "ddc95fb9b819801c08f733d218492177",
+      "rootServiceName": "case-api",
+      "rootTraceName": "caseflow.operation",
+      "startTimeUnixNano": "1789692962454449047",
+      "durationMs": 9
+    },
+    {
+      "traceID": "b2437c0c332151680aea88876a07adbc",
+      "rootServiceName": "case-api",
+      "rootTraceName": "caseflow.operation",
+      "startTimeUnixNano": "1789692955260873350",
+      "durationMs": 494
+    }
+  ],
+  "metrics": {
+    "inspectedTraces": 22,
+    "inspectedBytes": "40869",
+    "completedJobs": 3,
+    "totalJobs": 3
+  }
+}

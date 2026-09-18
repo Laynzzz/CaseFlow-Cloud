@@ -56,6 +56,7 @@ locals {
   }
 }
 resource "aws_ecs_task_definition" "application" {
+  skip_destroy             = true # Retain immutable revisions for rollback; inventory them at teardown.
   for_each                 = toset(["api", "worker"])
   family                   = "${var.name}-${each.value}"
   requires_compatibilities = ["FARGATE"]
@@ -91,6 +92,7 @@ resource "aws_ecs_service" "application" {
   task_definition                    = aws_ecs_task_definition.application[each.value].arn
   desired_count                      = var.enable_services ? 1 : 0
   launch_type                        = "FARGATE"
+  health_check_grace_period_seconds  = each.value == "api" ? 180 : null
   deployment_minimum_healthy_percent = 100
   deployment_maximum_percent         = 200
   deployment_circuit_breaker {
@@ -114,6 +116,7 @@ resource "aws_ecs_service" "application" {
   depends_on = [aws_lb_listener.https, aws_lb_listener_rule.api, aws_iam_role_policy.execution_secrets]
 }
 resource "aws_ecs_task_definition" "bootstrap" {
+  skip_destroy             = true
   family                   = "${var.name}-bootstrap"
   requires_compatibilities = ["FARGATE"]
   network_mode             = "awsvpc"

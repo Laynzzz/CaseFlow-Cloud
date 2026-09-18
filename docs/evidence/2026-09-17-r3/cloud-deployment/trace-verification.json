@@ -1,0 +1,39 @@
+{
+  "traceId": "167157f0505a9dc69ec6266a1e17760e",
+  "services": [
+    "case-api",
+    "case-worker"
+  ],
+  "spanCount": 13,
+  "operationNames": [
+    "api.complete",
+    "api.publish",
+    "caseflow.operation",
+    "worker.execute",
+    "worker.publish",
+    "worker.schedule"
+  ],
+  "crossServiceParentEdges": [
+    {
+      "from": "worker.publish",
+      "to": "api.complete"
+    },
+    {
+      "from": "worker.publish",
+      "to": "api.complete"
+    },
+    {
+      "from": "api.publish",
+      "to": "worker.schedule"
+    },
+    {
+      "from": "api.publish",
+      "to": "worker.execute"
+    },
+    {
+      "from": "api.publish",
+      "to": "worker.publish"
+    }
+  ],
+  "metadataAllowlistPassed": true
+}

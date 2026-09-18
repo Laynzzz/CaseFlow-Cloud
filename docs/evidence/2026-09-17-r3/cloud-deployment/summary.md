@@ -56,6 +56,59 @@ for migration when the pinned provider removes this argument.
 Actual HTTPS OIDC readiness and application workflow remain pending. A first
 request during Keycloak startup returned 502; this is not a passed health gate.
 
+## Baseline cloud workflow and browser gate
+
+Subsequent HTTPS OIDC discovery passed. The auxiliary host completed cloud-init;
+Kafka, Keycloak, collector, Tempo, Prometheus and Grafana started. The first API
+task was replaced during Java startup because ECS's ALB health grace was zero.
+An added startup-grace assertion failed, then passed with a 180-second API grace.
+The real update changed only that service setting. Both services reached steady
+state afterward. Local mocked tests must use `-var=enable_services=false` when
+an ignored active-deployment tfvars exists, so that the default-safety test does
+not inherit the running session's desired counts.
+
+The initial smoke saw an empty 401 on authenticated `/me` during stabilization;
+later attempts passed without an authentication-code change. Root cause of that
+transient response is unproven. A subsequent run reached download verification
+but rejected the configured S3 hostname: the SDK uses the bucket's global
+`s3.amazonaws.com` hostname in us-east-1. Corrected the ignored smoke configuration
+to that exact observed bucket origin; did not weaken origin checks.
+
+The original smoke runner then passed HTTPS SPA deep links, PKCE login, operations
+and tenant denial, two approvals, Kafka/worker completion, real S3 download,
+SHA-256/length and DOCX contents. `baseline-purchase.json` identifies the approved
+case and checksum. No live AI calls occurred.
+
+Separately, an actual Playwright browser completed requester draft/assignment/
+submission, manager approval and finance approval for a second synthetic USD 4,200
+purchase. The UI reported document success; its download produced a DOCX with
+the expected vendor and price, no unresolved markers, and recorded checksum.
+See `browser-result.json`, screenshot, snapshot and document. The in-app browser
+runtime failed initialization; an isolated Playwright CLI browser was used.
+Known favicon 401 errors remain, as in the local UI evidence.
+
+Private SSM inspection verified three healthy Prometheus scrape targets, worker
+database health, and traces in Tempo. The initial query is in `trace-search.json`;
+cross-service trace inspection is a separate pending step.
+
+## Candidate rollout (in progress)
+
+The candidate disables automatic OTLP metrics export in application YAML because
+Prometheus already scrapes metrics and the collector accepts only traces. The
+baseline was logging 404 responses for redundant metric exports. The exact
+Spring Boot 4.1.1 configuration metadata confirmed the property. The candidate
+image build and HIGH/CRITICAL scan pass. Business code and V14 schema are unchanged.
+
+The first rollout attempt failed when Terraform tried to deregister the old task
+definition: the operator's scoped grant does not authorize this action on `*`.
+No permissions were expanded. Configured and first applied `skip_destroy=true`
+on the three definitions with baseline images unchanged, retaining immutable
+revisions for rollback and explicit teardown inventory. Then replanned candidate
+rollout; only API/worker definitions and their services change. Full sampling is
+enabled temporarily for the bounded trace test. Rollback restores baseline image
+and sampling inputs. Retained definitions do not imply running tasks and must
+remain explicitly listed if operator permissions cannot remove them at cleanup.
+
 Files beside this report preserve DNS, published/local image identifiers,
 pre-apply cost readback, resource actions and scan decisions. Account identifiers
 are consistently replaced by synthetic `123456789012`; real credentials, state,

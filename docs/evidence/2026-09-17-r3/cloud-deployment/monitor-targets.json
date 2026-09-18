@@ -1,0 +1,91 @@
+{
+  "status": "success",
+  "data": {
+    "activeTargets": [
+      {
+        "discoveredLabels": {
+          "__address__": "api.caseflow-rehearsal.internal:9091",
+          "__always_scrape_classic_histograms__": "false",
+          "__convert_classic_histograms_to_nhcb__": "false",
+          "__metrics_path__": "/actuator/prometheus",
+          "__scheme__": "http",
+          "__scrape_interval__": "15s",
+          "__scrape_native_histograms__": "false",
+          "__scrape_timeout__": "10s",
+          "job": "caseflow-api"
+        },
+        "labels": {
+          "instance": "api.caseflow-rehearsal.internal:9091",
+          "job": "caseflow-api"
+        },
+        "scrapePool": "caseflow-api",
+        "scrapeUrl": "http://api.caseflow-rehearsal.internal:9091/actuator/prometheus",
+        "globalUrl": "http://api.caseflow-rehearsal.internal:9091/actuator/prometheus",
+        "lastError": "",
+        "lastScrape": "2026-09-18T01:01:32.449635529Z",
+        "lastScrapeDuration": 0.119579148,
+        "health": "up",
+        "scrapeInterval": "15s",
+        "scrapeTimeout": "10s"
+      },
+      {
+        "discoveredLabels": {
+          "__address__": "otel-collector:8888",
+          "__always_scrape_classic_histograms__": "false",
+          "__convert_classic_histograms_to_nhcb__": "false",
+          "__metrics_path__": "/metrics",
+          "__scheme__": "http",
+          "__scrape_interval__": "15s",
+          "__scrape_native_histograms__": "false",
+          "__scrape_timeout__": "10s",
+          "job": "caseflow-collector"
+        },
+        "labels": {
+          "instance": "otel-collector:8888",
+          "job": "caseflow-collector"
+        },
+        "scrapePool": "caseflow-collector",
+        "scrapeUrl": "http://otel-collector:8888/metrics",
+        "globalUrl": "http://otel-collector:8888/metrics",
+        "lastError": "",
+        "lastScrape": "2026-09-18T01:01:38.154313701Z",
+        "lastScrapeDuration": 0.001498114,
+        "health": "up",
+        "scrapeInterval": "15s",
+        "scrapeTimeout": "10s"
+      },
+      {
+        "discoveredLabels": {
+          "__address__": "worker.caseflow-rehearsal.internal:8090",
+          "__always_scrape_classic_histograms__": "false",
+          "__convert_classic_histograms_to_nhcb__": "false",
+          "__metrics_path__": "/metrics",
+          "__scheme__": "http",
+          "__scrape_interval__": "15s",
+          "__scrape_native_histograms__": "false",
+          "__scrape_timeout__": "10s",
+          "job": "caseflow-worker"
+        },
+        "labels": {
+          "instance": "worker.caseflow-rehearsal.internal:8090",
+          "job": "caseflow-worker"
+        },
+        "scrapePool": "caseflow-worker",
+        "scrapeUrl": "http://worker.caseflow-rehearsal.internal:8090/metrics",
+        "globalUrl": "http://worker.caseflow-rehearsal.internal:8090/metrics",
+        "lastError": "",
+        "lastScrape": "2026-09-18T01:01:34.780918684Z",
+        "lastScrapeDuration": 0.070263745,
+        "health": "up",
+        "scrapeInterval": "15s",
+        "scrapeTimeout": "10s"
+      }
+    ],
+    "droppedTargets": [],
+    "droppedTargetCounts": {
+      "caseflow-api": 0,
+      "caseflow-collector": 0,
+      "caseflow-worker": 0
+    }
+  }
+}

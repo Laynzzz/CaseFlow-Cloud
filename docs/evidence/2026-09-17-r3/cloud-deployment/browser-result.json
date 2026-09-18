@@ -1,0 +1,15 @@
+{
+  "caseId": "f8baee2b-ec00-4ff5-bb7f-aec7d94d1473",
+  "origin": "https://caseflow.laynexia.com",
+  "actors": [
+    "requester",
+    "manager",
+    "finance"
+  ],
+  "method": "Observed Playwright CLI browser interactions; actual HTTPS sign-ins, draft, assignments, submission and ordered approvals; download through UI",
+  "downloadSha256": "a7d8070904849a677cf3a128ecb3635a6a390048f0844d651f8c80637a6e9fec",
+  "byteSize": 36745,
+  "contentVerified": true,
+  "knownUIIssue": "favicon requests return 401",
+  "inAppBrowser": "runtime initialization failed; isolated Playwright fallback"
+}

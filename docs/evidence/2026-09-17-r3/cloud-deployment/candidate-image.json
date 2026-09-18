@@ -1,0 +1,16 @@
+{
+    "imageDetails": [
+        {
+            "registryId": "123456789012",
+            "repositoryName": "caseflow-rehearsal/api",
+            "imageDigest": "sha256:0d094b4874536de850f020bbae2cb99e3f661a3ede6f43b312b50036815dbdc1",
+            "imageTags": [
+                "metrics-fix"
+            ],
+            "imageSizeInBytes": 176325404,
+            "imagePushedAt": "2026-09-17T21:04:41.148000-04:00",
+            "imageManifestMediaType": "application/vnd.oci.image.index.v1+json",
+            "imageStatus": "ACTIVE"
+        }
+    ]
+}
